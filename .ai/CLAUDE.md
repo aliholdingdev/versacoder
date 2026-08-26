@@ -245,7 +245,36 @@ Her guardrail ihlali tespit edildiğinde:
 
 ---
 
-## 11. Gerçek Kod Durumu (Audit Trail - 2026-08-26)
+## 11. ProjeSpec Referansı
+
+### 11.1 Spec Dosyaları
+
+| Dosya | İçerik | Konum |
+|-------|--------|-------|
+| `spec/versacoder-spec.md` | Ana teknik şartname (~2500+ satır) | `.ai/spec/` |
+| `spec/versacoder-spec-summary.md` | Şartname özeti (~200 satır) | `.ai/spec/` |
+| `spec/index.md` | Spec indeksi | `.ai/spec/` |
+
+### 11.2 Spec Kullanım Akışı
+
+```
+Kullanıcı İsteği
+  → Spec oku → Karar ver → Kod yaz → Doğrula → Test et → Logla
+```
+
+### 11.3 Spec Güncelleme Protokolü
+
+| Adım | Aksiyon | Sorumlu |
+|------|---------|---------|
+| 1 | Spec değişikliğini belirle | Plan Agent |
+| 2 | ADR oluştur (gerekirse) | MO |
+| 3 | Spec'i güncelle | Build Agent |
+| 4 | Vault senkronizasyonu | MO |
+| 5 | Audit trail ekle | MO |
+
+---
+
+## 12. Gerçek Kod Durumu (Audit Trail - 2026-08-26)
 
 ### 11.1 Çalışan Katmanlar (9/36 Proje)
 
@@ -693,6 +722,7 @@ docs(readme): Kurulum talimatları güncellendi
 | 1.0.0 | 2026-08-26 | İlk sürüm, tüm guardrails tanımlandı |
 | 1.1.0 | 2026-08-26 | Vault enhance - Gerçek kod audit trail eklendi |
 | 1.2.0 | 2026-08-26 | Enhanced - Hata yönetimi, isimlendirme, test, monitoring, backup bölümleri eklendi |
+| 1.3.0 | 2026-08-26 | ProjeSpec referansı eklendi, spec dosyaları oluşturuldu |
 
 ---
 

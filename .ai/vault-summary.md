@@ -64,52 +64,79 @@ version: 1.0.0
 
 ```
 .ai/
-├── CLAUDE.md              # AI anayasası (~780 satır) ✅
-├── AGENTS.md              # Agent kayıt defteri (515 satır) ✅
-├── WORKFLOW.md            # Süreçler (534 satır) ✅
-├── brain.md               # Mimari kararlar (~650 satır) ✅ GÜNCEL
-├── index.md               # Master katalog (516 satır) ✅
-├── keys.md                # Keyword haritası (116 satır) ✅
-├── MEMORY.md              # Session hafızası (352 satır) ✅
-├── log.md                 # Audit trail ✅
-├── engine.md              # Orkestrasyon motoru (216 satır) ✅
-├── ROLE.md                # Rol tanımı (499 satır) ✅
-├── ULTRA-THINKING.md      # Ultra düşünme ✅
-├── glossary.md            # Teknik terimler (294 satır) ✅
-├── project-plan.md        # Proje planı (~650 satır) ✅ GÜNCEL
+├── CLAUDE.md              # AI anayasası (~573 satır) ✅
+├── AGENTS.md              # Agent kayıt defteri (410 satır) ✅
+├── WORKFLOW.md            # Süreçler (647 satır) ✅
+├── brain.md               # Mimari kararlar (1896 satır) ✅
+├── index.md               # Master katalog (623+ satır) ✅ GÜNCEL
+├── keys.md                # Keyword haritası (810 satır) ✅
+├── MEMORY.md              # Session hafızası (469 satır) ✅
+├── log.md                 # Audit trail (455 satır) ✅
+├── engine.md              # Orkestrasyon motoru (509 satır) ✅
+├── ROLE.md                # Rol tanımı (684 satır) ✅
+├── ULTRA-THINKING.md      # Ultra düşünme (414 satır) ✅
+├── glossary.md            # Teknik terimler (482 satır) ✅
+├── project-plan.md        # Proje planı (807+ satır) ✅ GÜNCEL
 ├── vault-summary.md       # Vault özeti (Bu dosya) ✅ GÜNCEL
 ├── .agents/               # Agent profilleri (7 dosya) ✅
 ├── .diagram/              # Diyagramlar ✅
 ├── .templates/            # Şablonlar ✅
-├── architecture/          # Mimari dokümanlar (8 katman) ✅
+├── architecture/          # Mimari dokümanlar (20+ dosya) ✅
+│   ├── 00-overview/       # Genel bakış (2 dosya)
+│   ├── l0-domain/         # Domain katmanı
+│   ├── l1-abstractions/   # Soyutlama katmanı
+│   ├── l2-application/    # Uygulama katmanı
+│   ├── l3-crosscutting/   # Kesenekler
+│   ├── l4-infrastructure/ # Altyapı (AI + Data)
+│   ├── l5-protocol/       # Protokol katmanı
+│   ├── l6-host/           # Host katmanı
+│   └── l7-ui/             # UI katmanı (4761 satır!)
 ├── context/               # Context yönetimi ✅
 ├── decisions/             # ADR'ler (11 ADR) ✅
 ├── learning/              # Öğrenme sistemi ✅
 ├── memory/                # Bellek yönetimi ✅
 ├── project/               # Proje analizi ✅
-├── rules/                 # Kurallar ✅
-├── skills/                # Skill'ler (6 skill) ✅
-└── ui-design/             # UI tasarımı ✅
+├── rules/                 # Kurallar (6 dosya) ✅
+│   ├── coding-standards.md      # C# 12, SOLID (~769 satır)
+│   ├── security-architecture.md # OWASP, JWT (~700 satır)
+│   ├── performance-guidelines.md # Async, caching (~692 satır)
+│   ├── plugin-development.md    # Plugin geliştirme (~502 satır)
+│   ├── deployment-guide.md      # CI/CD, Docker (~3639 satır)
+│   └── mcp-integration.md       # MCP entegrasyonu (~474 satır)
+├── skills/                # Skill'ler (11 dosya) ✅
+│   ├── architecture-skill.md     # Mimari (~390 satır)
+│   ├── cicd-skill.md             # CI/CD (~1557 satır)
+│   ├── code-generation-skill.md  # Kod üretimi (~320 satır)
+│   ├── debugging-skill.md        # Hata ayıklama (~234 satır)
+│   ├── documentation-skill.md    # Doküman (~275 satır)
+│   ├── monitoring-skill.md       # Monitoring (~495 satır)
+│   ├── realtime-skill.md         # Real-time (~538 satır)
+│   ├── refactoring-skill.md      # Refactoring (~267 satır)
+│   ├── sectoral-agents-skill.md  # Sektörel agent (~332 satır)
+│   └── testing-skill.md          # Test (~325 satır)
+└── spec/                  # Teknik şartname ✅
+    ├── versacoder-spec.md        # Ana şartname (908 satır)
+    └── versacoder-spec-summary.md # Özet (110 satır)
 ```
 
-### 2.2 Dosya Boyutları (Güncel)
+### 2.2 Dosya Boyutları (Güncel - 2026-08-26)
 
 | Dosya | Boyut | Satır | Durum |
 |-------|-------|-------|-------|
-| CLAUDE.md | ~32 KB | ~780 | ✅ GÜNCEL (audit trail eklendi) |
-| AGENTS.md | ~17 KB | 515 | ✅ |
-| WORKFLOW.md | ~16 KB | 534 | ✅ |
-| brain.md | ~26 KB | ~650 | ✅ GÜNCEL (gerçek kod durumu eklendi) |
-| index.md | ~16 KB | 516 | ✅ |
-| keys.md | ~5 KB | 116 | ✅ |
-| MEMORY.md | ~12 KB | 352 | ✅ |
-| log.md | ~15 KB | — | ✅ |
-| engine.md | ~8 KB | 216 | ✅ |
-| ROLE.md | ~15 KB | 499 | ✅ |
-| ULTRA-THINKING.md | ~15 KB | — | ✅ |
-| glossary.md | ~9 KB | 294 | ✅ |
-| project-plan.md | ~26 KB | ~650 | ✅ GÜNCEL (geliştirme sırası eklendi) |
-| vault-summary.md | Bu dosya | — | ✅ GÜNCEL |
+| CLAUDE.md | ~28 KB | 573 | ✅ |
+| AGENTS.md | ~17 KB | 410 | ✅ |
+| WORKFLOW.md | ~22 KB | 647 | ✅ |
+| brain.md | ~65 KB | 1896 | ✅ |
+| index.md | ~20 KB | 623+ | ✅ GÜNCEL |
+| keys.md | ~32 KB | 810 | ✅ |
+| MEMORY.md | ~18 KB | 469 | ✅ |
+| log.md | ~16 KB | 455 | ✅ |
+| engine.md | ~18 KB | 509 | ✅ |
+| ROLE.md | ~26 KB | 684 | ✅ |
+| ULTRA-THINKING.md | ~15 KB | 414 | ✅ |
+| glossary.md | ~18 KB | 482 | ✅ |
+| project-plan.md | ~32 KB | 807+ | ✅ GÜNCEL |
+| vault-summary.md | Bu dosya | 594+ | ✅ GÜNCEL |
 
 ---
 
@@ -459,14 +486,17 @@ diğer vault dosyaları (ihtiyaç halinde)
 
 | Metrik | Değer |
 |--------|-------|
-| Version | 1.2.0 |
+| Version | 1.6.0 |
 | Status | Aktif |
-| Total Files | 65+ |
-| Total Lines | 10,000+ |
-| Vault Categories | 12 |
+| Total Files | 90+ |
+| Total Lines | 45,000+ |
+| Vault Categories | 14 |
 | Security Rules | 5 |
-| Performance Metrics | 5 |
+| Performance Metrics | 10+ |
 | Error Codes | 7 |
+| Skills | 11 |
+| Rules | 6 |
+| ADR | 11 |
 
 ---
 
@@ -478,7 +508,9 @@ diğer vault dosyaları (ihtiyaç halinde)
 | 1.1.0 | 2026-08-25 | Web araştırması eklendi, proje planı güncellendi |
 | 1.2.0 | 2026-08-25 | Gerçek kod audit trail eklendi |
 | 1.3.0 | 2026-08-26 | Vault enhance - Tüm dosyalar 500+ satıra yükseltildi |
-| 1.4.0 | 2026-08-26 | Vault kullanım kılavuzu, entegrasyon noktaları, güvenlik bölümleri eklendi |
+| 1.4.0 | 2026-08-26 | Vault kullanım kılavuzu, entegrasyon noktaları eklendi |
+| 1.5.0 | 2026-08-26 | Sektörel agent kataloğu (60+), yeni skills (realtime, monitoring, sectoral) |
+| 1.6.0 | 2026-08-26 | CI/CD deployment planı, deployment stratejisi genişletildi |
 
 ### 14.1 Sürüm Detayları
 
@@ -522,27 +554,28 @@ diğer vault dosyaları (ihtiyaç halinde)
 
 | İstatistik | Değer |
 |------------|-------|
-| Toplam dosya | 65+ |
-| Toplam satır | 10,000+ |
-| Ortalama satır/dosya | ~150 |
-| En büyük dosya | architecture-detailed.md (1031 satır) |
-| En küçük dosya | AGENTS.md (19 satır) |
-| Kategori sayısı | 12 |
+| Toplam dosya | 90+ |
+| Toplam satır | 45,000+ |
+| Ortalama satır/dosya | ~500 |
+| En büyük dosya | ui-guide.md (4761 satır) |
+| En küçük dosya | .agents/AGENTS.md (17 satır) |
+| Kategori sayısı | 14 |
 
 ### 15.2 Dosya Dağılımı
 
 | Kategori | Dosya Sayısı | Toplam Satır |
 |----------|--------------|--------------|
-| Core (CLAUDE, AGENTS, WORKFLOW, brain) | 4 | ~2,500 |
-| Agent profilleri | 8 | ~500 |
-| Mimari rehberler | 9 | ~2,000 |
-| Decisions | 12 | ~2,500 |
-| Rules | 6 | ~400 |
-| Skills | 7 | ~350 |
-| Templates | 6 | ~800 |
-| Context | 4 | ~220 |
-| Learning | 5 | ~370 |
-| Diğer | 4 | ~1,500 |
+| Core (CLAUDE, AGENTS, WORKFLOW, brain) | 4 | ~3,529 |
+| Agent profilleri | 8 | ~3,050 |
+| Mimari rehberler | 20+ | ~10,000+ |
+| Decisions | 12 | ~1,630 |
+| Rules | 6 | ~6,776 |
+| Skills | 11 | ~5,330 |
+| Templates | 6 | ~1,886 |
+| Context | 5 | ~522 |
+| Learning | 5 | ~320 |
+| Spec | 3 | ~1,018 |
+| Diğer | 10+ | ~14,000+ |
 
 ### 15.3 Kalite Metrikleri
 
