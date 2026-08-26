@@ -1,0 +1,26 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    { "query": "path:.ai/CLAUDE.md", "color": { "a": 1, "rgb": 14701138 } },
+    { "query": "path:.ai/AGENTS.md", "color": { "a": 1, "rgb": 3481224 } },
+    { "query": "path:.ai/brain.md", "color": { "a": 1, "rgb": 14348799 } },
+    { "query": "path:.ai/architecture/", "color": { "a": 1, "rgb": 5763719 } },
+    { "query": "path:.ai/.agents/", "color": { "a": 1, "rgb": 15105570 } }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250
+}

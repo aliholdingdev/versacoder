@@ -1,0 +1,21 @@
+{
+  "fontFamily": "Cascadia Code, JetBrains Mono, Consolas, monospace",
+  "interfaceFontSize": 14,
+  "darkMode": true,
+  "promptDelete": false,
+  "showFrontmatter": true,
+  "livePreview": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "useTab": false,
+  "defaultViewMode": "source",
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./attachments",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "trashOption": "local",
+  "lang": "tr"
+}

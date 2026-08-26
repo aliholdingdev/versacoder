@@ -1,0 +1,12 @@
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.AssemblyInfoInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.AssemblyInfo.cs
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.csproj.CoreCompileInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\bin\Debug\net8.0\VersaCoder.CrossCutting.deps.json
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\bin\Debug\net8.0\VersaCoder.CrossCutting.dll
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\bin\Debug\net8.0\VersaCoder.CrossCutting.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.csproj.AssemblyReference.cache
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.dll
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\refint\VersaCoder.CrossCutting.dll
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\VersaCoder.CrossCutting.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.CrossCutting\obj\Debug\net8.0\ref\VersaCoder.CrossCutting.dll

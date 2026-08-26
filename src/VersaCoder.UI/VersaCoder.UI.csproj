@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>VersaCoder.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VersaCoder.Host\VersaCoder.Host.csproj" />
+    <ProjectReference Include="..\VersaCoder.Application\VersaCoder.Application.csproj" />
+    <ProjectReference Include="..\VersaCoder.Abstractions\VersaCoder.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="DevExpress.Win.Design" Version="24.2.3" />
+  </ItemGroup>
+
+</Project>

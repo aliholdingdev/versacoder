@@ -1,0 +1,17 @@
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.csproj.AssemblyReference.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.GeneratedMSBuildEditorConfig.editorconfig
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.AssemblyInfoInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.AssemblyInfo.cs
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.csproj.CoreCompileInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Infrastructure.AI.deps.json
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Infrastructure.AI.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Infrastructure.AI.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Abstractions.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Domain.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Domain.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\bin\Debug\net8.0\VersaCoder.Abstractions.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCod.561B9F02.Up2Date
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\refint\VersaCoder.Infrastructure.AI.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\VersaCoder.Infrastructure.AI.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Infrastructure.AI\obj\Debug\net8.0\ref\VersaCoder.Infrastructure.AI.dll

@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "e0cda86f6615e8c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "f951320006227663",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "84db4360e10863b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "architecture/l3-crosscutting/crosscutting-guide.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "crosscutting-guide"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2fee624dc97e92d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "f7a6e3539bda7ba9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3181f536a2e47f8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Dosya Gezgini"
+            }
+          },
+          {
+            "id": "3430799c6f80de8c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ara"
+            }
+          },
+          {
+            "id": "7a303422e4a8b47e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Yer İmleri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "627b0d3e0f66fbf4",
+    "type": "split",
+    "children": [
+      {
+        "id": "d69cd133266ad0ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "866f151782d7f8db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "architecture/l3-crosscutting/crosscutting-guide.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Geri Bağlantılar"
+            }
+          },
+          {
+            "id": "e56baf58fce1b027",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "architecture/l3-crosscutting/crosscutting-guide.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Giden bağlantılar"
+            }
+          },
+          {
+            "id": "14bd8245ee1f9e1c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiketler"
+            }
+          },
+          {
+            "id": "041b5bd13356145b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tüm özellikler"
+            }
+          },
+          {
+            "id": "f794bd88a83e9c7e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "architecture/l3-crosscutting/crosscutting-guide.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Anahat"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Hızlı geçişi aç": false,
+      "graph:Grafik görünümünü aç": false,
+      "canvas:Yeni tuval oluşturun": false,
+      "daily-notes:Bugünün Notunu Aç": false,
+      "templates:Şablon ekle": false,
+      "command-palette:Komut paletini aç": false,
+      "bases:Yeni taban oluştur": false
+    }
+  },
+  "active": "84db4360e10863b1",
+  "lastOpenFiles": [
+    "architecture/l2-application/application-guide.md",
+    "architecture/l1-abstractions/abstractions-guide.md",
+    "architecture/l0-domain/domain-guide.md",
+    "architecture/00-overview/architecture-master.md",
+    "architecture/00-overview/architecture-detailed.md",
+    "vault-summary.md",
+    "ULTRA-THINKING.md",
+    "MEMORY.md",
+    "log.md",
+    "project-plan.md",
+    "rules/security-architecture.md",
+    "rules/plugin-development.md",
+    "rules/performance-guidelines.md",
+    "rules/mcp-integration.md",
+    "rules/deployment-guide.md",
+    "rules/coding-standards.md",
+    "skills/testing-skill.md",
+    "skills/refactoring-skill.md",
+    "skills/index.md",
+    "skills/debugging-skill.md",
+    "skills/code-generation-skill.md",
+    "skills/architecture-skill.md",
+    "WORKFLOW.md",
+    "ROLE.md",
+    "index.md",
+    "keys.md",
+    "glossary.md.cabd7259ff029ac2ffabb5e18fe0a49c.tmp",
+    "ULTRA-THINKING.md.45604efde93980986e0e98a0dd6c046b.tmp",
+    "ROLE.md.43173c9e57c9d153ac92dc4be73b0817.tmp",
+    "MEMORY.md.c58827e42a55fc0785818ea06e27332e.tmp",
+    "keys.md.966217f8d277167c0a827eca63e57929.tmp",
+    "index.md.d557cdf0d426329f104d040bf0f3e0fc.tmp",
+    "brain.md.ab0b1a816896826791ac2c18cdaaee02.tmp",
+    "WORKFLOW.md.847bbae2b6aa2cd31276ad4ca3c13735.tmp",
+    "AGENTS.md.96a7cdb5f2d313b039b139c4da169639.tmp",
+    "CLAUDE.md.2051828a67e0f557bb54e12bafd5fed5.tmp"
+  ]
+}

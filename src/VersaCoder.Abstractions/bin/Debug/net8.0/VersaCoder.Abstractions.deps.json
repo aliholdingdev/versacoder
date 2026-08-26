@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VersaCoder.Abstractions/1.0.0": {
+        "dependencies": {
+          "VersaCoder.Domain": "1.0.0"
+        },
+        "runtime": {
+          "VersaCoder.Abstractions.dll": {}
+        }
+      },
+      "VersaCoder.Domain/1.0.0": {
+        "runtime": {
+          "VersaCoder.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VersaCoder.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VersaCoder.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

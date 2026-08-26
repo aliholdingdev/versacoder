@@ -1,0 +1,11 @@
+{
+  "templates:insert-template": [
+    { "modifiers": ["Alt"], "key": "t" }
+  ],
+  "graph:open": [
+    { "modifiers": ["Alt"], "key": "g" }
+  ],
+  "switcher:open": [
+    { "modifiers": ["Control"], "key": "o" }
+  ]
+}

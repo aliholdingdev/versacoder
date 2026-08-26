@@ -1,0 +1,17 @@
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.csproj.AssemblyReference.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.AssemblyInfoInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.AssemblyInfo.cs
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.csproj.CoreCompileInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Application.deps.json
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Application.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Application.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Abstractions.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Domain.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Domain.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Application\bin\Debug\net8.0\VersaCoder.Abstractions.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCod.E4B0C027.Up2Date
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\refint\VersaCoder.Application.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\VersaCoder.Application.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Application\obj\Debug\net8.0\ref\VersaCoder.Application.dll

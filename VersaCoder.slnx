@@ -1,0 +1,40 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/VersaCoder.Abstractions/VersaCoder.Abstractions.csproj" />
+    <Project Path="src/VersaCoder.Application/VersaCoder.Application.csproj" />
+    <Project Path="src/VersaCoder.CrossCutting/VersaCoder.CrossCutting.csproj" />
+    <Project Path="src/VersaCoder.Domain/VersaCoder.Domain.csproj" />
+    <Project Path="src/VersaCoder.Host/VersaCoder.Host.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.AI/VersaCoder.Infrastructure.AI.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Auth/VersaCoder.Infrastructure.Auth.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Caching/VersaCoder.Infrastructure.Caching.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.CodeAnalysis/VersaCoder.Infrastructure.CodeAnalysis.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Config/VersaCoder.Infrastructure.Config.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Context/VersaCoder.Infrastructure.Context.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Data/VersaCoder.Infrastructure.Data.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Diagram/VersaCoder.Infrastructure.Diagram.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Documentation/VersaCoder.Infrastructure.Documentation.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.FileSystem/VersaCoder.Infrastructure.FileSystem.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Git/VersaCoder.Infrastructure.Git.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Integration/VersaCoder.Infrastructure.Integration.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Learning/VersaCoder.Infrastructure.Learning.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.MCP/VersaCoder.Infrastructure.MCP.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Messaging/VersaCoder.Infrastructure.Messaging.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Network/VersaCoder.Infrastructure.Network.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Observability/VersaCoder.Infrastructure.Observability.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Plugins/VersaCoder.Infrastructure.Plugins.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.ProjectAnalysis/VersaCoder.Infrastructure.ProjectAnalysis.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Refactoring/VersaCoder.Infrastructure.Refactoring.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Security/VersaCoder.Infrastructure.Security.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Services/VersaCoder.Infrastructure.Services.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Testing/VersaCoder.Infrastructure.Testing.csproj" />
+    <Project Path="src/VersaCoder.Infrastructure.Versioning/VersaCoder.Infrastructure.Versioning.csproj" />
+    <Project Path="src/VersaCoder.Protocol/VersaCoder.Protocol.csproj" />
+    <Project Path="src/VersaCoder.UI/VersaCoder.UI.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/VersaCoder.Application.Tests/VersaCoder.Application.Tests.csproj" />
+    <Project Path="tests/VersaCoder.Domain.Tests/VersaCoder.Domain.Tests.csproj" />
+    <Project Path="tests/VersaCoder.Infrastructure.Tests/VersaCoder.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>

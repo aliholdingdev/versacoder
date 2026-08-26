@@ -1,0 +1,11 @@
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\bin\Debug\net8.0\VersaCoder.Domain.deps.json
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\bin\Debug\net8.0\VersaCoder.Domain.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\bin\Debug\net8.0\VersaCoder.Domain.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.AssemblyInfoInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.AssemblyInfo.cs
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.csproj.CoreCompileInputs.cache
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\refint\VersaCoder.Domain.dll
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\VersaCoder.Domain.pdb
+C:\www\versacoder\versacoder\src\VersaCoder.Domain\obj\Debug\net8.0\ref\VersaCoder.Domain.dll
