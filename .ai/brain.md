@@ -497,9 +497,82 @@ services.AddHealthChecks()
 
 ---
 
-## 15. Teknoloji Kararları
+## 15. Gerçek Kod Durumu (Audit - 2026-08-26)
 
-### 15.1 Teknoloji Seçim Matrisi
+### 15.1 Çalışan Katmanlar
+
+| Proje | Katman | Satır | Durum | Önem |
+|-------|--------|-------|-------|------|
+| VersaCoder.Domain | L0 | ~800 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.Abstractions | L1 | ~600 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.Application | L2 | ~2500 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.CrossCutting | L3 | ~200 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.Infrastructure.Data | L4.1 | ~1200 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.Infrastructure.AI | L4.2 | ~800 | ✅ Çalışıyor | ZORUNLU |
+| VersaCoder.Infrastructure.Logging | L4.28 | ~275 | ✅ Çalışıyor | ORTA |
+| VersaCoder.Infrastructure.Reporting | L4.29 | ~310 | ✅ Çalışıyor | ORTA |
+| VersaCoder.Host | L6 | ~65 | ✅ Çalışıyor | ZORUNLU |
+
+### 15.2 Boş Stub Projeler (26 Proje)
+
+| Proje | Katman | Hedef | Öncelik |
+|-------|--------|-------|---------|
+| VersaCoder.Protocol | L5 | MCP protokolü | YÜKSEK |
+| VersaCoder.Infrastructure.Git | L4.22 | LibGit2Sharp | YÜKSEK |
+| VersaCoder.Infrastructure.MCP | L4.3 | MCP client/server | YÜKSEK |
+| VersaCoder.Infrastructure.Context | L4.14 | Context assembly | YÜKSEK |
+| VersaCoder.Infrastructure.Config | L4.5 | Uygulama ayarları | YÜKSEK |
+| VersaCoder.Infrastructure.FileSystem | L4.10 | Dosya sistemi | YÜKSEK |
+| VersaCoder.Infrastructure.Auth | L4.4 | API key yönetimi | ORTA |
+| VersaCoder.Infrastructure.Security | L4.12 | Şifreleme, token | ORTA |
+| VersaCoder.Infrastructure.Plugins | L4.6 | Plugin sistemi | ORTA |
+| VersaCoder.Infrastructure.Services | L4.7 | Yardımcı servisler | ORTA |
+| VersaCoder.Infrastructure.Caching | L4.8 | Önbellek | ORTA |
+| VersaCoder.Infrastructure.Network | L4.11 | HTTP/WebSocket | ORTA |
+| VersaCoder.Infrastructure.Messaging | L4.9 | Event bus | DÜŞÜK |
+| VersaCoder.Infrastructure.Diagram | L4.16 | Diyagram işleme | DÜŞÜK |
+| VersaCoder.Infrastructure.Documentation | L4.19 | Otomatik doküman | DÜŞÜK |
+| VersaCoder.Infrastructure.Learning | L4.15 | Öğrenme persistansı | DÜŞÜK |
+| VersaCoder.Infrastructure.Backup | L4.26 | Yedekleme | DÜŞÜK |
+| VersaCoder.Infrastructure.ProjectAnalysis | L4.17 | Proje analizi | DÜŞÜK |
+| VersaCoder.Infrastructure.Versioning | L4.27 | Versiyon yönetimi | DÜŞÜK |
+| VersaCoder.Infrastructure.Integration | L4.23 | Dış entegrasyon | DÜŞÜK |
+| VersaCoder.Infrastructure.Testing | L4.18 | Test altyapısı | DÜŞÜK |
+| VersaCoder.Infrastructure.CodeAnalysis | L4.21 | Roslyn/AST | DÜŞÜK |
+| VersaCoder.Infrastructure.Observability | L4.13 | Monitoring | DÜŞÜK |
+| VersaCoder.Infrastructure.Templating | L4.24 | Şablon motoru | DÜŞÜK |
+| VersaCoder.Infrastructure.Refactoring | L4.20 | Refactoring araçları | DÜŞÜK |
+| VersaCoder.Infrastructure.Deployment | L4.25 | Dağıtım | DÜŞÜK |
+
+### 15.3 UI Durumu
+
+| Bileşen | Durum |
+|---------|-------|
+| VersaCoder.UI (L7) | ❌ Boş form |
+| DevExpress Ribbon | Henüz eklenmemiş |
+| MVVM (CommunityToolkit) | Henüz kullanılmamış |
+| MDI Container | Henüz eklenmemiş |
+
+### 15.4 Kritik Eksikler Sıralaması
+
+```
+1. UI katmanı (DevExpress WinForms + MDI + Ribbon)     → YÜKSEK
+2. MCP protokolü (Protocol projesi)                     → YÜKSEK
+3. Context yönetimi (vault/file/project context)        → YÜKSEK
+4. Git entegrasyonu (LibGit2Sharp)                      → YÜKSEK
+5. Configuration sistemi                                → YÜKSEK
+6. FileSystem servisleri                                → YÜKSEK
+7. Auth/Security                                        → ORTA
+8. Plugin sistemi                                       → ORTA
+9. Caching                                              → ORTA
+10. Network servisleri                                  → ORTA
+```
+
+---
+
+## 16. Teknoloji Kararları
+
+### 16.1 Teknoloji Seçim Matrisi
 
 | İhtiyaç | Seçilen | Alternatifler | Sebep |
 |---------|---------|----------------|-------|

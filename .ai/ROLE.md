@@ -494,6 +494,15 @@ Dokümantasyon oluşturan, özetleme yapan ve markdown içerik üreten uzman age
 
 ---
 
+## 15. Versions & Changelog
+
+| Version | Tarih | Değişiklik |
+|---------|-------|-----------|
+| 1.0.0 | 2026-08-25 | İlk sürüm, tüm roller ve yetkiler tanımlandı |
+| 1.1.0 | 2026-08-26 | Enhanced - Performans metrikleri, erişim kontrol matrisi güncellendi |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

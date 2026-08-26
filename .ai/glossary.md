@@ -290,5 +290,341 @@ version: 1.0.0
 
 ---
 
+## Ek Terimler (Devam)
+
+### Repository Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Veri erişim soyutlaması |
+| Kullanım | Domain ile veritabanı arasındaki köprü |
+| Yönetim | Dependency Injection |
+| Metotlar | GetByIdAsync, GetAllAsync, AddAsync, UpdateAsync, DeleteAsync |
+
+### Unit of Work
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Birden fazla repository'yi tek transaction'da yönetme |
+| Kullanım | Atomik işlemler |
+| Yönetim | DbContext |
+| Metotlar | SaveChangesAsync |
+
+### Value Object
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Değer tabanlı, immutable nesneler |
+| Kullanım | Küçük, ölçülebilir değerler |
+| Yönetim | Record struct veya class |
+| Örnekler | Money, Address, Email |
+
+### Domain Event
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Domain'de gerçekleşen önemli olaylar |
+| Kullanım | Asenkron iletişim |
+| Yönetim | MediatR |
+| Örnekler | SessionCreated, MessageSent |
+
+### Anti-Corruption Layer
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Dış sistemlerle iletişimi soyutlama katmanı |
+| Kullanım | Eski sistem entegrasyonu |
+| Yönetim | Adapter pattern |
+| Kullanım Alanı | Infrastructure katmanı |
+
+### Bounded Context
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Domain'in sınırlı olduğu bağlam |
+| Kullanım | Domain分割 |
+| Yönetim | DDD |
+| Örnekler | Chat, Session, User |
+
+### Aggregate Root
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Aggregate'in kök varlığı |
+| Kullanım | Transaction kontrolü |
+| Yönetim | Domain |
+| Örnekler | Session (Message'ların root'u) |
+
+### Domain Service
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Domain mantığını içeren servis |
+| Kullanım | Birden fazla entity gerektiren işlemler |
+| Yönetim | Domain katmanı |
+| Örnekler | PricingService, ValidationService |
+
+### Application Service
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Uygulama mantığını içeren servis |
+| Kullanım | Use case'leri orkestre etme |
+| Yönetim | Application katmanı |
+| Örnekler | SessionService, ChatService |
+
+### Infrastructure Service
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Teknik altyapı servisleri |
+| Kullanım | Dosya sistemi, ağ, veritabanı |
+| Yönetim | Infrastructure katmanı |
+| Örnekler | FileService, EmailService |
+
+### Cross-Cutting Concern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Tüm katmanları etkileyen konular |
+| Kullanım | Loglama, güvenlik, cache |
+| Yönetim | MediatR Pipeline |
+| Örnekler | LoggingBehavior, ValidationBehavior |
+
+### Middleware
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | İstek/yanıt hattında çalışan bileşen |
+| Kullanım | Önişleme, sonişleme |
+| Yönetim | Pipeline |
+| Örnekler | ErrorHandlingMiddleware, LoggingMiddleware |
+
+### Decorator Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Mevcut nesneye davranış ekleme |
+| Kullanım | Mevcut kodu değiştirmeden genişletme |
+| Yönetim | DI Container |
+| Örnekler | CachedRepository, LoggedRepository |
+
+### Strategy Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Çalışma zamanında algoritma seçimi |
+| Kullanım | Farklı algoritmalar |
+| Yönetim | DI Container |
+| Örnekler | Different LLM providers |
+
+### Observer Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Olaylara tepki veren nesneler |
+| Kullanım | Asenkron iletişim |
+| Yönetim | Event Bus |
+| Örnekler | Session events |
+
+### Factory Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Nesne oluşturma soyutlaması |
+| Kullanım | Karmaşık nesne oluşturma |
+| Yönetim | DI Container |
+| Örnekler | RepositoryFactory, ServiceFactory |
+
+### Builder Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Adım adım nesne oluşturma |
+| Kullanım | Karmaşık yapılandırma |
+| Yönetim | Fluent API |
+| Örnekler | QueryBuilder, ConfigurationBuilder |
+
+### Pipeline Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | İşlemleri sıralı olarak zincirleme |
+| Kullanım | İstek iş akışı |
+| Yönetim | MediatR |
+| Örnekler | Validation → Logging → Execution |
+
+### Circuit Breaker
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Hata durumunda çağrıyı kesme |
+| Kullanım | Dayanıklılık |
+| Yönetim | Polly |
+| Örnekler | AI provider circuit breaker |
+
+### Retry Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Başarısız çağrıyı tekrarlama |
+| Kullanım | Geçici hatalar |
+| Yönetim | Polly |
+| Örnekler | Network retry, API retry |
+
+### CQRS
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Komut ve sorguları ayırma |
+| Kullanım | Okuma/yazma optimizasyonu |
+| Yönetim | MediatR |
+| Componentler | Command, Query, Handler, Result |
+
+### Event Sourcing
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Olayları depolayarak durum yönetimi |
+| Kullanım | Audit trail, time travel |
+| Yönetim | Event Store |
+| Benefit | Tam geçmiş |
+
+### Saga Pattern
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Dağıtılmış transaction yönetimi |
+| Kullanım | Uzun süren işlemler |
+| Yönetim | Choreography veya Orchestration |
+| Örnekler | Multi-step AI workflow |
+
+### Idempotency
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Aynı isteğin tekrar tekrar gönderilmesinin etkisi |
+| Kullanım | API güvenliği |
+| Yönetim | Idempotency key |
+| Örnek | Payment processing |
+
+### Backpressure
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Yoğun yük altında sistemi koruma |
+| Kullanım | Load management |
+| Yönetim | Rate limiting |
+| Örnek | API rate limiting |
+
+### Graceful Degradation
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Hata durumunda düşüş gösterme |
+| Kullanım | Sistem dayanıklılığı |
+| Yönetim | Fallback strategy |
+| Örnek | AI provider fallback |
+
+### Observability
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Sistem iç görürlüğü |
+| Kullanım | Monitoring, debugging |
+| Yönetim | Logging, Metrics, Tracing |
+| Componentler | Logs, Metrics, Traces |
+
+### Telemetry
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Sistem verilerini toplama |
+| Kullanım | Performans izleme |
+| Yönetim | OpenTelemetry |
+| Componentler | Logs, Metrics, Traces |
+
+### Health Check
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Sistem sağlığını kontrol etme |
+| Kullanım | Awake monitoring |
+| Yönetim | ASP.NET Health Checks |
+| Durumlar | Healthy, Degraded, Unhealthy |
+
+### Readiness Probe
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Sistem trafiğe hazır mı kontrolü |
+| Kullanım | Kubernetes |
+| Yönetim | Startup check |
+| Timing | Başlangıç sonrası |
+
+### Liveness Probe
+
+| Özellik | Tanım |
+|---------|-------|
+| Tanım | Sistem hala çalışıyor mu kontrolü |
+| Kullanım | Kubernetes |
+| Yönetim | Periodic check |
+| Timing | Düzenli aralıklarla |
+
+---
+
+## Terim İlişkileri
+
+### Katman İlişkileri
+
+```
+L0 Domain ← L1 Abstractions ← L2 Application
+                                    ↓
+                              L3 CrossCutting
+                                    ↓
+                    L4 Infrastructure ← L5 Protocol
+                                    ↓
+                              L6 Host → L7 UI
+```
+
+### Agent İlişkileri
+
+```
+MO (Master Orchestrator)
+├── Build Agent (Kod)
+├── Plan Agent (Planlama)
+├── Explore Agent (Analiz)
+├── General Agent (Genel)
+├── Summary Agent (Doküman)
+└── Title Agent (İsimlendirme)
+```
+
+### Teknoloji İlişkileri
+
+```
+DevExpress (UI) → CommunityToolkit.Mvvm (MVVM)
+    ↓
+MediatR (CQRS) → FluentValidation (Doğrulama)
+    ↓
+EF Core (ORM) → SQLite (DB) → WAL Mode
+    ↓
+Serilog (Log) → Polly (Dayanıklılık)
+```
+
+---
+
+## Quality Report
+
+| Metrik | Değer |
+|--------|-------|
+| Version | 1.2.0 |
+| Status | Active |
+| Total Terms | 60+ |
+| Categories | 4 |
+| Detailed Terms | 20+ |
+| Relationships | 3 |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
