@@ -112,5 +112,206 @@ Bu dosya, AI ajanlarının hangi keyword'leri hangi vault dosyalarına yönlendi
 
 ---
 
+## 4. Token Optimizasyon Haritası
+
+### 4.1 Dosya Boyutu ve Token Karşılıkları
+
+| Dosya | Satır | Tahmini Token | Öncelik |
+|-------|-------|---------------|---------|
+| CLAUDE.md | ~700 | ~6000 | Zorunlu |
+| AGENTS.md | ~600 | ~5000 | Zorunlu |
+| WORKFLOW.md | ~600 | ~4000 | Zorunlu |
+| brain.md | ~600 | ~4000 | Zorunlu |
+| ROLE.md | ~550 | ~5000 | Zorunlu |
+| index.md | ~600 | ~1500 | Opsiyonel |
+| keys.md | ~150 | ~1000 | Opsiyonel |
+
+### 4.2 Lazy Loading Stratejisi
+
+| Senaryo | Yüklenen Dosyalar | Token |
+|---------|-------------------|-------|
+| Session Başlatma | CLAUDE.md, AGENTS.md | ~11,000 |
+| Kod Yazma | + WORKFLOW.md, brain.md | ~19,000 |
+| Mimari Planlama | + ROLE.md, index.md | ~26,500 |
+| Tam Yükleme | Tüm dosyalar | ~26,500 |
+
+### 4.3 Kategori Bazlı Yükleme
+
+| Kategori | Dosyalar | Kullanım |
+|----------|----------|----------|
+| Core | CLAUDE.md, AGENTS.md | Her session |
+| Workflow | WORKFLOW.md | Geliştirme |
+| Architecture | brain.md | Mimari kararlar |
+| Roles | ROLE.md | Görev dağıtımı |
+| Navigation | index.md, keys.md | Arama |
+
+---
+
+## 5. Keyword → Agent Routing Detail
+
+### 5.1 Build Agent Keywords
+
+| Keyword | Kullanım | Öncelik |
+|---------|----------|---------|
+| kod, code | Kod yazma | Yüksek |
+| class | Sınıf oluşturma | Yüksek |
+| method | Method oluşturma | Yüksek |
+| property | Property oluşturma | Yüksek |
+| service | Servis oluşturma | Yüksek |
+| repository | Repository oluşturma | Yüksek |
+| handler | Handler oluşturma | Yüksek |
+| test | Test yazma | Yüksek |
+| bug | Hata düzeltme | Yüksek |
+| fix | Düzeltme | Yüksek |
+| refactor | Yeniden yapılandırma | Orta |
+| optimize | Optimizasyon | Orta |
+
+### 5.2 Plan Agent Keywords
+
+| Keyword | Kullanım | Öncelik |
+|---------|----------|---------|
+| plan | Planlama | Yüksek |
+| mimari | Mimari planlama | Yüksek |
+| architecture | Mimari planlama | Yüksek |
+| task | Görev dağıtımı | Yüksek |
+| phase | Aşama planlama | Yüksek |
+| milestone | Kilometre taşı | Yüksek |
+| design | Tasarım | Yüksek |
+| structure | Yapı tasarımı | Yüksek |
+| module | Modül tasarımı | Yüksek |
+
+### 5.3 Explore Agent Keywords
+
+| Keyword | Kullanım | Öncelik |
+|---------|----------|---------|
+| analiz | Kod analizi | Orta |
+| tarama | Dosya tarama | Orta |
+| grep | İçerik arama | Orta |
+| glob | Dosya arama | Orta |
+| dosya bul | Dosya bulma | Orta |
+| search | Arama | Orta |
+| find | Bulma | Orta |
+| scan | Tarama | Orta |
+| review | İnceleme | Orta |
+
+### 5.4 Summary Agent Keywords
+
+| Keyword | Kullanım | Öncelik |
+|---------|----------|---------|
+| doc | Dokümantasyon | Orta |
+| özet | Özetleme | Orta |
+| dokümantasyon | Dokümantasyon | Orta |
+| markdown | Markdown yazma | Orta |
+| readme | README oluşturma | Orta |
+| changelog | Changelog güncelleme | Orta |
+| adr | ADR yazma | Orta |
+
+### 5.5 Title Agent Keywords
+
+| Keyword | Kullanım | Öncelik |
+|---------|----------|---------|
+| başlık | Başlık oluşturma | Düşük |
+| isim | İsim bulma | Düşük |
+| naming | İsimlendirme | Düşük |
+| convention | Kural | Düşük |
+| pattern | Kalıp | Düşük |
+
+---
+
+## 6. Arama Optimizasyonu
+
+### 6.1 Hızlı Arama Yolları
+
+| İhtiyaç | Arama Yöntemi | Hız |
+|---------|---------------|-----|
+| Dosya bulma | Glob pattern | ~10ms |
+| İçerik arama | Grep regex | ~50ms |
+| Keyword eşleme | keys.md | ~5ms |
+| Semantic arama | AI embedding | ~500ms |
+
+### 6.2 Glob Pattern Örnekleri
+
+| Pattern | Amaç |
+|---------|------|
+| `**/*.cs` | Tüm C# dosyaları |
+| `src/**/*.cs` | src altındaki C# dosyaları |
+| `.ai/**/*.md` | Vault'taki tüm MD dosyaları |
+| `tests/**/*.cs` | Tüm test dosyaları |
+
+### 6.3 Grep Pattern Örnekleri
+
+| Pattern | Amaç |
+|---------|------|
+| `class\s+\w+` | Tüm class tanımları |
+| `interface\s+I\w+` | Tüm interface tanımları |
+| `public\s+async\s+Task` | Tüm async methodlar |
+| `TODO\|FIXME\|HACK` | Yapılacaklar |
+
+---
+
+## 7. Bağlam Toplama Rehberi
+
+### 7.1 Prompt Analizi
+
+```
+Kullanıcı Prompt'u
+  → [1. Keyword Çıkarma] — keys.md'den eşle
+    → [2. Dosya Seçimi] — İlgili dosyaları bul
+      → [3. Token Hesaplama] — Bütçe kontrolü
+        → [4. Yükleme] — Dosyaları yükle
+          → [5. Bağlam Oluşturma] — Context oluştur
+```
+
+### 7.2 Token Bütçesi Yönetimi
+
+```csharp
+public class TokenBudgetManager
+{
+    private const int MaxTokens = 26500;
+    private const int ReservedTokens = 5000; // Response için
+    
+    public List<VaultFile> SelectFiles(string prompt, List<VaultFile> availableFiles)
+    {
+        var selectedFiles = new List<VaultFile>();
+        var currentTokens = 0;
+        
+        // 1. Zorunlu dosyaları yükle
+        foreach (var file in availableFiles.Where(f => f.IsMandatory))
+        {
+            if (currentTokens + file.EstimatedTokens <= MaxTokens - ReservedTokens)
+            {
+                selectedFiles.Add(file);
+                currentTokens += file.EstimatedTokens;
+            }
+        }
+        
+        // 2. Prompt'a göre ilgili dosyaları ekle
+        var relevantFiles = GetRelevantFiles(prompt, availableFiles);
+        foreach (var file in relevantFiles)
+        {
+            if (currentTokens + file.EstimatedTokens <= MaxTokens - ReservedTokens)
+            {
+                selectedFiles.Add(file);
+                currentTokens += file.EstimatedTokens;
+            }
+        }
+        
+        return selectedFiles;
+    }
+}
+```
+
+### 7.3 Bağlam Kalitesi Metrikleri
+
+| Metrik | Hedef | Kritik Eşik |
+|--------|-------|-------------|
+| Dosya kapsama | > %80 | < %50 |
+| Token verimliliği | > %70 | < %50 |
+| Alakalılık | > %90 | < %70 |
+| Tamlık | > %95 | < %80 |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
+**Mode:** Red Team · Human Mode · Truth Mode

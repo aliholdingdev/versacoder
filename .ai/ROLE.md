@@ -494,6 +494,173 @@ Dokümantasyon oluşturan, özetleme yapan ve markdown içerik üreten uzman age
 
 ---
 
+## 15. Agent State Machine
+
+### 15.1 Durum Tanımları
+
+| Durum | Tanım | Geçişler |
+|-------|-------|----------|
+| Idle | Görev bekliyor | → Assigned |
+| Assigned | Görev atandı | → Executing, → Cancelled |
+| Executing | Çalışıyor | → Completed, → Blocked, → Failed |
+| Blocked | Engellendi | → Executing, → Escalated |
+| Failed | Başarısız | → Retry, → Escalated |
+| Completed | Tamamlandı | → Idle |
+| Escalated | Yukarı taşındı | → Assigned |
+
+### 15.2 Durum Geçiş Diyagramı
+
+```
+[Idle] → [Assigned] → [Executing] → [Completed]
+                         ↓
+                      [Blocked]
+                         ↓
+                      [Failed]
+                         ↓
+                      [Escalated]
+```
+
+### 15.3 Durum Geçiş Kuralları
+
+```csharp
+public class AgentStateMachine
+{
+    private AgentState _currentState = AgentState.Idle;
+    
+    public void TransitionTo(AgentState newState)
+    {
+        if (!IsValidTransition(_currentState, newState))
+        {
+            throw new InvalidStateException(_currentState, newState);
+        }
+        
+        _currentState = newState;
+        OnStateChange(newState);
+    }
+    
+    private bool IsValidTransition(AgentState from, AgentState to)
+    {
+        return (from, to) switch
+        {
+            (AgentState.Idle, AgentState.Assigned) => true,
+            (AgentState.Assigned, AgentState.Executing) => true,
+            (AgentState.Assigned, AgentState.Cancelled) => true,
+            (AgentState.Executing, AgentState.Completed) => true,
+            (AgentState.Executing, AgentState.Blocked) => true,
+            (AgentState.Executing, AgentState.Failed) => true,
+            (AgentState.Blocked, AgentState.Executing) => true,
+            (AgentState.Blocked, AgentState.Escalated) => true,
+            (AgentState.Failed, AgentState.Retry) => true,
+            (AgentState.Failed, AgentState.Escalated) => true,
+            _ => false
+        };
+    }
+}
+```
+
+---
+
+## 16. Agent Communication Protocol
+
+### 16.1 Mesaj Formatı
+
+```csharp
+public record AgentMessage
+{
+    public Guid MessageId { get; init; } = Guid.NewGuid();
+    public AgentMessageType Type { get; init; }
+    public string FromAgent { get; init; } = string.Empty;
+    public string ToAgent { get; init; } = string.Empty;
+    public AgentPriority Priority { get; init; }
+    public AgentMessagePayload Payload { get; init; } = new();
+    public DateTime Timestamp { get; init; } = DateTime.UtcNow;
+    public Guid CorrelationId { get; init; } = Guid.NewGuid();
+}
+
+public record AgentMessagePayload
+{
+    public string Subject { get; init; } = string.Empty;
+    public string Details { get; init; } = string.Empty;
+    public List<string> AffectedFiles { get; init; } = new();
+    public DateTime? Deadline { get; init; }
+    public Dictionary<string, object> Context { get; init; } = new();
+}
+```
+
+### 16.2 İletişim Akışı Diyagramı
+
+```
+Agent A → [Message] → Message Queue → [Router] → Agent B
+                                    ↓
+                              MO (Logger)
+                                    ↓
+                              log.md (Audit)
+```
+
+### 16.3 Bildirim Kanalları
+
+| Kanal | Kullanım | Öncelik | Implementation |
+|-------|----------|---------|----------------|
+| log.md | Audit trail | Tümü | Append-only |
+| Console | Debug bilgisi | LOW | Serilog |
+| Dialog | İnsan onayı | HIGH | DevExpress Dialog |
+| Alert | Kritik hatalar | CRITICAL | DevExpress Alert |
+
+---
+
+## 17. Agent Performance Optimization
+
+### 17.1 Performans Metrikleri
+
+| Metrik | Hedef | Kritik Eşik | Ölçüm |
+|--------|-------|-------------|-------|
+| Yanıt süresi | < 2 sn | > 5 sn | Stopwatch |
+| Görev tamamlama | < 30 sn | > 60 sn | Timer |
+| Hata oranı | < %1 | > %5 | Counter |
+| Başarı oranı | > %95 | < %80 | Calculator |
+| Memory kullanımı | < 500 MB | > 1 GB | GC.GetTotalMemory |
+| CPU kullanımı | < %30 | > %80 | PerformanceCounter |
+
+### 17.2 Optimization Stratejileri
+
+| Strateji | Kullanım | Etki |
+|----------|----------|------|
+| Caching | Sık kullanılan veriler | %50 hız kazancı |
+| Async/Await | I/O bound işlemler | Thread verimliliği |
+| Connection Pooling | DB bağlantıları | Bağlantı yönetimi |
+| Lazy Loading | Büyük nesneler | Memory optimizasyonu |
+| Batch Processing | Toplu işlemler | Throughput artışı |
+
+### 17.3 Resource Management
+
+```csharp
+public class ResourceManager : IDisposable
+{
+    private readonly SemaphoreSlim _semaphore = new(10, 10); // Max 10 concurrent
+    private readonly ConcurrentDictionary<string, DateTime> _activeTasks = new();
+    
+    public async Task<T> ExecuteWithResourceAsync<T>(
+        string resourceId,
+        Func<Task<T>> operation,
+        CancellationToken ct)
+    {
+        await _semaphore.WaitAsync(ct);
+        try
+        {
+            _activeTasks.TryAdd(resourceId, DateTime.UtcNow);
+            return await operation();
+        }
+        finally
+        {
+            _activeTasks.TryRemove(resourceId, out _);
+            _semaphore.Release();
+        }
+    }
+}
+```
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

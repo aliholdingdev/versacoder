@@ -529,6 +529,172 @@ public async Task<SessionId> CreateSession(CreateSessionRequest request)
 
 ---
 
+## 16. Proje Yaşam Döngüsü
+
+### 16.1 Faz Tanımları
+
+| Faz | Amaç | Çıktı | Süre |
+|-----|------|-------|------|
+| Inception | Vizyon tanımı | Proje charter'ı | 1 hafta |
+| Elaboration | Mimari plan | ADR'ler, prototip | 2 hafta |
+| Construction | Geliştirme | Working software | 8-12 hafta |
+| Transition | Dağıtım | Production-ready | 1-2 hafta |
+
+### 16.2 Milestone Tanımları
+
+| Milestone | Kriter | Sonraki Faz |
+|-----------|--------|-------------|
+| M1: Vision Approved | Proje onaylandı | Elaboration |
+| M2: Architecture Baseline | Mimari kararlar alındı | Construction |
+| M3: Core Features | Temel özellikler tamamlandı | Construction |
+| M4: Beta Release | Beta dağıtımı | Transition |
+| M5: Production | Üretim dağıtımı | Maintenance |
+
+### 16.3 Risk Yönetimi
+
+| Risk Seviyesi | Aksiyon | Sorumlu |
+|---------------|---------|---------|
+| Critical | Derhal durdur + insan onayı | MO → İnsan |
+| High | Alternatif plan oluştur | Plan Agent |
+| Medium | İzle + raporla | Build Agent |
+| Low | Dokümante et | Summary Agent |
+
+---
+
+## 17. Entegrasyon Testleri
+
+### 17.1 Entegrasyon Test Stratejisi
+
+| Test Türü | Amaç | Araç | Sıklık |
+|-----------|------|------|--------|
+| API Test | Endpoint doğrulama | xUnit + HttpClient | Her PR |
+| Database Test | Veri bütünlüğü | Testcontainers | Her PR |
+| AI Provider Test | Provider entegrasyonu | Mock + Real | Haftada 1 |
+| UI Test | Kullanıcı akışı | Playwright | Sprint sonu |
+
+### 17.2 Test Verisi Yönetimi
+
+```csharp
+public class TestDataBuilder
+{
+    public static Session CreateTestSession() => new()
+    {
+        Id = SessionId.New(),
+        Name = "Test Session",
+        CreatedAt = DateTime.UtcNow,
+        Status = SessionStatus.Active
+    };
+    
+    public static Message CreateTestMessage(SessionId sessionId) => new()
+    {
+        Id = MessageId.New(),
+        SessionId = sessionId,
+        Content = "Test message",
+        Role = MessageRole.User,
+        CreatedAt = DateTime.UtcNow
+    };
+}
+```
+
+### 17.3 Mock Stratejisi
+
+| Bileşen | Mock Türü | Kullanım |
+|---------|-----------|----------|
+| ILLMProvider | In-Memory Mock | Unit test |
+| IRepository | In-Memory Mock | Unit test |
+| IDbContext | In-Memory SQLite | Integration test |
+| HttpClient | WireMock | External API test |
+
+---
+
+## 18. Dokümantasyon Yaşam Döngüsü
+
+### 18.1 Doküman Versiyonlama
+
+| Doküman | Versiyonlama | Güncelleme |
+|---------|-------------|------------|
+| README.md | Git tag | Her release |
+| ARCHITECTURE.md | ADR-based | Mimari değişiklikte |
+| API.md | OpenAPI spec | Endpoint değiştiğinde |
+| CHANGELOG.md | SemVer | Her release'te |
+| CONTRIBUTING.md | Manuel | Gerektiğinde |
+
+### 18.2 API Dokümantasyonu
+
+```csharp
+/// <summary>
+/// Yeni bir session oluşturur.
+/// </summary>
+/// <param name="request">Session oluşturma isteği</param>
+/// <returns>Oluşturulan session'ın ID'si</returns>
+/// <exception name="ValidationException">Geçersiz input durumunda</exception>
+/// <exception name="DuplicateException">Mevcut session durumunda</exception>
+/// <example>
+/// POST /api/sessions
+/// {
+///   "name": "My Session",
+///   "projectId": "proj-123"
+/// }
+/// </example>
+public async Task<SessionId> CreateSession(CreateSessionRequest request)
+{
+    // Implementation
+}
+```
+
+### 18.3 Şablon Kütüphanesi
+
+| Şablon | Kullanım | İçerik |
+|--------|----------|--------|
+| Entity Template | Yeni varlık | Class, property, validation |
+| Repository Template | Veri erişimi | Interface, implementation |
+| Handler Template | CQRS handler | Command/Query handler |
+| Service Template | İş mantığı | Interface, implementation |
+| Test Template | Unit test | Arrange, Act, Assert |
+
+---
+
+## 19. Monitoring & Observability
+
+### 19.1 Three Pillars
+
+| Pillar | Araç | Kullanım |
+|--------|------|----------|
+| Logs | Serilog | Olay kayıtları |
+| Metrics | Custom | Performans metrikleri |
+| Traces | Custom | İşlem takibi |
+
+### 19.2 Health Check Endpoint
+
+```csharp
+services.AddHealthChecks()
+    .AddSQLite("Data Source=versacoder.db", name: "database")
+    .AddCheck<ProviderHealthCheck>("ai-provider")
+    .AddCheck<MemoryHealthCheck>("memory");
+```
+
+### 19.3 Alerting Kuralları
+
+| Alert | Koşul | Aksiyon | Timeout |
+|-------|-------|---------|---------|
+| High Response Time | > 1s (5 dk) | Bildirim | 15 dk |
+| High Error Rate | > 1% (5 dk) | Bildirim + Escalation | 30 dk |
+| High Memory | > 1GB (10 dk) | Restart | 5 dk |
+| Service Down | 3 consecutive fails | Auto-restart + Bildirim | Anlık |
+| Database Slow | > 200ms (10 dk) | Uyarı | 1 saat |
+
+### 19.4 Log Stratejisi
+
+```csharp
+// Structured logging ile Serilog
+Log.Information("Session created: {SessionId} for project {ProjectId}", 
+    sessionId, projectId);
+
+// Output: {"SessionId":"abc-123","ProjectId":"proj-456","Message":"Session created: abc-123 for project proj-456"}
+```
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

@@ -98,5 +98,54 @@ Versa Coder platformunun **30 katmanlı mimarisinin** genel tanımı, katman ba�
 
 ---
 
+## 6. Mevcut Durum Özeti
+
+### 6.1 Implementasyon Durumu
+
+| Katman | Proje | Durum | Satır |
+|--------|-------|-------|-------|
+| L0 | VersaCoder.Domain | ✅ Tam | ~1200 |
+| L1 | VersaCoder.Abstractions | ✅ Tam | ~800 |
+| L2 | VersaCoder.Application | ✅ Kısmi | ~1500 |
+| L3 | VersaCoder.CrossCutting | ✅ Tam | ~300 |
+| L4 | VersaCoder.Infrastructure.Data | ✅ Tam | ~1200 |
+| L4 | VersaCoder.Infrastructure.AI | ✅ Tam | ~600 |
+| L4 | VersaCoder.Infrastructure.Logging | ✅ Tam | ~300 |
+| L4 | VersaCoder.Infrastructure.Reporting | 🔄 Kısmi | ~200 |
+| L4 | Diğer 20 modül | ❌ Stub | ~0 |
+| L5 | VersaCoder.Protocol | ❌ Stub | ~0 |
+| L6 | VersaCoder.Host | 🔄 Kısmi | ~100 |
+| L7 | VersaCoder.UI | ❌ Stub | ~20 |
+| Test | VersaCoder.*.Tests | ❌ Boş | ~0 |
+
+### 6.2 Kritik Eksikler
+
+| # | Eksik | Öncelik | Tahmini Süre |
+|---|-------|---------|--------------|
+| 1 | UI (L7) - DevExpress WinForms | Yüksek | 2-3 hafta |
+| 2 | Infrastructure.Git - LibGit2Sharp | Yüksek | 1 hafta |
+| 3 | Infrastructure.Config | Yüksek | 3 gün |
+| 4 | Infrastructure.Context | Yüksek | 1 hafta |
+| 5 | Infrastructure.MCP | Orta | 2 hafta |
+| 6 | Infrastructure.Security | Orta | 1 hafta |
+| 7 | Infrastructure.Caching | Orta | 3 gün |
+| 8 | Infrastructure.Plugins | Orta | 1 hafta |
+| 9 | Tests - xUnit | Yüksek | Sürekli |
+| 10 | ReportService implementasyonu | Düşük | 3 gün |
+
+### 6.3 OpenCode Eşleştirme Haritası
+
+| VersaCoder Modülü | OpenCode Karşılığı | Durum |
+|-------------------|-------------------|-------|
+| Session Management | `core/src/session.ts` | ✅ Eşleşti |
+| AI Provider | `llm/src/providers/` | ✅ Eşleşti |
+| Tool System | `core/src/tool/builtins/` | 🔄 Kısmi |
+| Event System | `core/src/event.ts` | ❌ Eksik |
+| Plugin System | `core/src/plugin.ts` | ❌ Eksik |
+| MCP Integration | `packages/protocol/` | ❌ Eksik |
+| Context Assembly | `core/src/session/context.ts` | ❌ Eksik |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26

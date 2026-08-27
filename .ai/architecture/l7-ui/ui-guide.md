@@ -58,59 +58,48 @@ UI katmanı, Versa Coder'ın **görsel arayüzünü** tanımlar. DevExpress 2026
 
 ### 3.1 Ana Pencere
 
-| Bileşen | Kullanım |
-|---------|----------|
-| `RibbonForm` | Ana pencere — Office tarzı ribbon |
-| `RibbonControl` | Üst ribbon menü |
-| `BarManager` | Bar yönetimi (ribbon ile çakışmaz) |
-| `RibbonStatusBar` | Alt durum çubuğu |
+| Bileşen | Kullanım | Durum |
+|---------|----------|-------|
+| `RibbonForm` | Ana pencere — Office tarzı ribbon | ❌ Stub |
+| `RibbonControl` | Üst ribbon menü | ❌ Stub |
+| `BarManager` | Bar yönetimi | ❌ Stub |
+| `RibbonStatusBar` | Alt durum çubuğu | ❌ Stub |
 
 ### 3.2 Sol Panel
 
-| Bileşen | Kullanım |
-|---------|----------|
-| `DockManager` | Sürükle-bırak panel yönetimi |
-| `DockPanel` | Sol panel container |
-| `AccordionControl` | Katlanır menü (Solution Explorer) |
-| `TreeList` | Dosya ağacı görünümü |
-| `ImageCollection` | Dosya tipi ikonları |
+| Bileşen | Kullanım | Durum |
+|---------|----------|-------|
+| `DockManager` | Sürükle-bırak panel yönetimi | ❌ Stub |
+| `DockPanel` | Sol panel container | ❌ Stub |
+| `AccordionControl` | Katlanır menü | ❌ Stub |
+| `TreeList` | Dosya ağacı görünümü | ❌ Stub |
+| `ImageCollection` | Dosya tipi ikonları | ❌ Stub |
 
 ### 3.3 Merkezi Alan
 
-| Bileşen | Kullanım |
-|---------|----------|
-| `XtraTabbedMdiManager` | Sekmeli MDI yönetimi |
-| `XtraTabControl` | Kod editörü sekmeleri |
-| `XtraTabPage` | Her dosya ayrı sekme |
-| `MemoEdit` | Kod editörü (syntax highlight) |
-| `BarAndDockingController` | Tüm bar/docking ayarları |
+| Bileşen | Kullanım | Durum |
+|---------|----------|-------|
+| `XtraTabbedMdiManager` | Sekmeli MDI yönetimi | ❌ Stub |
+| `XtraTabControl` | Kod editörü sekmeleri | ❌ Stub |
+| `XtraTabPage` | Her dosya ayrı sekme | ❌ Stub |
+| `MemoEdit` | Kod editörü | ❌ Stub |
 
 ### 3.4 Sağ Panel
 
-| Bileşen | Kullanım |
-|---------|----------|
-| `DockPanel` | Sağ panel container |
-| `MemoEdit` | AI chat alanı |
-| `ButtonEdit` | Prompt giriş alanı |
-| `ListBoxControl` | Session listesi |
-| `GridControl` | Veri tabloları |
+| Bileşen | Kullanım | Durum |
+|---------|----------|-------|
+| `DockPanel` | Sağ panel container | ❌ Stub |
+| `MemoEdit` | AI chat alanı | ❌ Stub |
+| `ButtonEdit` | Prompt giriş alanı | ❌ Stub |
+| `ListBoxControl` | Session listesi | ❌ Stub |
+| `GridControl` | Veri tabloları | ❌ Stub |
 
 ### 3.5 Alt Panel
 
-| Bileşen | Kullanım |
-|---------|----------|
-| `DockPanel` | Alt panel container |
-| `MemoEdit` | Terminal/Output alanı |
-| `LabelControl` | Status bilgisi |
-
-### 3.6 Ek Bileşenler
-
-| Bileşen | Kullanım |
-|---------|----------|
-| `SplashScreenManager` | Başlangıç ekranı |
-| `DefaultLookAndFeel` | Tema yönetimi |
-| `BarAndDockingController` | Global ayarlar |
-| `SkinManager` | DevExpress skin yönetimi |
+| Bileşen | Kullanım | Durum |
+|---------|----------|-------|
+| `DockPanel` | Alt panel container | ❌ Stub |
+| `MemoEdit` | Terminal/Output alanı | ❌ Stub |
 
 ---
 
@@ -124,8 +113,8 @@ UI katmanı, Versa Coder'ın **görsel arayüzünü** tanımlar. DevExpress 2026
 │  ├── ChatPanelView.cs                           │
 │  └── TerminalPanelView.cs                       │
 ├─────────────────────────────────────────────────┤
-│  ViewModel                                      │
-│  ├── MainViewModel.cs (CommunityToolkit.Mvvm)   │
+│  ViewModel (CommunityToolkit.Mvvm)              │
+│  ├── MainViewModel.cs                           │
 │  ├── SolutionPanelViewModel.cs                  │
 │  ├── ChatPanelViewModel.cs                      │
 │  └── TerminalPanelViewModel.cs                  │
@@ -186,7 +175,18 @@ Ribbon
 
 ---
 
-## 6. Kurallar
+## 6. View-ViewModel İlişkisi
+
+| View | ViewModel | Binding |
+|------|-----------|---------|
+| MainForm | MainViewModel | SessionList, CurrentSession |
+| SolutionPanelView | SolutionPanelViewModel | FileTree, SelectedFile |
+| ChatPanelView | ChatPanelViewModel | Messages, Prompt |
+| TerminalPanelView | TerminalPanelViewModel | Output, Commands |
+
+---
+
+## 7. Kurallar
 
 | # | Kural | Açıklama |
 |---|-------|----------|
@@ -195,8 +195,9 @@ Ribbon
 | 3 | **BindableBase** | Tüm ViewModel'lar BindableBase'den türetilir |
 | 4 | **ICommand** | Tıklama işlemleri ICommand ile |
 | 5 | **ObservableProperty** | Data binding için [ObservableProperty] attribute |
+| 6 | **Temiz Kod** | View'da iş mantığı yasak |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26

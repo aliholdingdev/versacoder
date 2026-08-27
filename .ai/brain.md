@@ -525,6 +525,305 @@ services.AddHealthChecks()
 
 ---
 
+## 16. Mimari Kalıplar (Patterns)
+
+### 16.1 Kullanılan Kalıplar
+
+| Pattern | Kullanım | Katman |
+|---------|----------|--------|
+| Repository | Veri erişimi soyutlaması | L1-L4 |
+| Unit of Work | İşlem yönetimi | L3-L4 |
+| CQRS | Command/Query ayrımı | L2 |
+| Mediator | Bileşenler arası iletişim | L2 |
+| Factory | Nesne oluşturma | L2-L4 |
+| Strategy | Algoritma seçimi | L2-L3 |
+| Observer | Olay yönetimi | L2-L3 |
+| Decorator | Davranış ekleme | L3-L4 |
+| Adapter | Dış servis uyumluluğu | L4 |
+| Facade | Karmaşık API basitleştirme | L4-L5 |
+
+### 16.2 Anti-Patternlerden Kaçınılması
+
+| Anti-Pattern | Tehlike | Çözüm |
+|--------------|---------|-------|
+| God Class | Bakımı zor kod | Single Responsibility |
+| Spaghetti Code | Anlaşılmaz kod | Clean Architecture |
+| Golden Hammer | Yanlış araç seçimi | Strategy Pattern |
+| Copy-Paste | Kod tekrarı | DRY principle |
+| Premature Optimization | Karmaşık kod | YAGNI principle |
+
+---
+
+## 17. Domain-Driven Design (DDD)
+
+### 17.1 Bounded Contexts
+
+| Context | İçerik | Aggregates |
+|---------|--------|------------|
+| Session Management | Oturum yönetimi | Session, Message |
+| Project Management | Proje yönetimi | Project, FileEntry |
+| Task Management | Görev yönetimi | TaskItem, TaskList |
+| Learning System | Öğrenme sistemi | LearningEntry |
+| AI Integration | AI entegrasyonu | Provider, Model |
+| Security | Güvenlik | User, Permission |
+
+### 17.2 Aggregate Root Kuralları
+
+```csharp
+// Aggregate Root base class
+public abstract class AggregateRoot<TId> : IAuditableEntity where TId : notnull
+{
+    public TId Id { get; protected set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    
+    private readonly List<IDomainEvent> _domainEvents = new();
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+    
+    protected void RaiseDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
+    
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
+    }
+}
+```
+
+### 17.3 Domain Event Kullanımı
+
+```csharp
+// Domain event örneği
+public class SessionCreatedEvent : IDomainEvent
+{
+    public SessionId SessionId { get; }
+    public DateTime OccurredOn { get; }
+    
+    public SessionCreatedEvent(SessionId sessionId)
+    {
+        SessionId = sessionId;
+        OccurredOn = DateTime.UtcNow;
+    }
+}
+
+// Event handler
+public class SessionCreatedEventHandler : INotificationHandler<SessionCreatedEvent>
+{
+    public async Task Handle(SessionCreatedEvent notification, CancellationToken cancellationToken)
+    {
+        // Indexleme başlat
+        // Notification gönder
+        // Logging yap
+    }
+}
+```
+
+---
+
+## 18. Dependency Injection Rehberi
+
+### 18.1 Servis Kayıt Stratejisi
+
+```csharp
+// Layer-based registration
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection AddVersaCoder(this IServiceCollection services)
+    {
+        // L0: Domain (generally no DI needed)
+        
+        // L1: Abstractions
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ISessionRepository, SessionRepository>();
+        
+        // L2: Application
+        services.AddMediatR(cfg => 
+            cfg.RegisterServicesFromAssembly(typeof(CreateSessionHandler).Assembly));
+        
+        // L3: CrossCutting
+        services.AddScoped<IValidationService, ValidationService>();
+        services.AddScoped<ICachingService, CachingService>();
+        
+        // L4: Infrastructure
+        services.AddDbContext<VersaCoderDbContext>(options =>
+            options.UseSqlite("Data Source=versacoder.db"));
+        
+        // L5: Protocol
+        services.AddSingleton<IProviderRouter, ProviderRouter>();
+        
+        return services;
+    }
+}
+```
+
+### 18.2 Lifetime Kuralları
+
+| Lifetime | Kullanım | Örnek |
+|----------|----------|-------|
+| Singleton | Stateless servisler | ProviderRouter, Logger |
+| Scoped | Request bazlı | DbContext, Repository |
+| Transient | Hafif servisler | Validator, Mapper |
+
+---
+
+## 19. Test Mimarisi
+
+### 19.1 Test Katmanları
+
+| Katman | Test Türü | Araç | Kapsama |
+|--------|-----------|------|---------|
+| L0 | Unit Test | xUnit + Moq | %90 |
+| L1 | Unit Test | xUnit + Moq | %85 |
+| L2 | Unit/Integration | xUnit + Moq/Testcontainers | %85 |
+| L3 | Integration | xUnit + Testcontainers | %80 |
+| L4 | Integration | xUnit + Testcontainers | %75 |
+| L5 | Integration | xUnit + Mock | %70 |
+| L6 | Integration | xUnit | %70 |
+| L7 | UI Test | Playwright | %60 |
+
+### 19.2 Test Helper Örneği
+
+```csharp
+public static class TestHelpers
+{
+    public static DbContextOptions<VersaCoderDbContext> CreateInMemoryOptions()
+    {
+        return new DbContextOptionsBuilder<VersaCoderDbContext>()
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+            .Options;
+    }
+    
+    public static Mock<IRepository<T>> CreateMockRepository<T>() where T : class
+    {
+        return new Mock<IRepository<T>>();
+    }
+}
+```
+
+---
+
+## 20. Performance Optimization
+
+### 20.1 Caching Stratejisi
+
+| Cache Level | TTL | Kullanım | Implementation |
+|-------------|-----|----------|----------------|
+| L1 Memory | 5 dk | Sık kullanılan | IMemoryCache |
+| L2 Distributed | 1 saat | Paylaşımlı | IDistributedCache |
+| L3 Response | 15 dk | API yanıtları | ResponseCaching |
+| L4 Query | 30 dk | DB sorguları | Custom |
+
+### 20.2 Async/Await Best Practices
+
+```csharp
+// ✅ DOĞRU: Always use CancellationToken
+public async Task<Session> GetSessionAsync(SessionId id, CancellationToken ct)
+{
+    return await _repository.GetByIdAsync(id, ct);
+}
+
+// ✅ DOĞRU: Configure await
+public async Task<Session> GetSessionAsync(SessionId id, CancellationToken ct)
+{
+    return await _repository.GetByIdAsync(id, ct).ConfigureAwait(false);
+}
+
+// ❌ YANLIŞ: Deadlock risk
+public Session GetSession(SessionId id)
+{
+    return _repository.GetById(id).Result;
+}
+
+// ❌ YANLIŞ: Missing CancellationToken
+public async Task<Session> GetSessionAsync(SessionId id)
+{
+    return await _repository.GetByIdAsync(id);
+}
+```
+
+### 20.3 Memory Management
+
+```csharp
+// ✅ DOĞRU: Use streams for large data
+public async Task ProcessLargeFileAsync(string filePath, CancellationToken ct)
+{
+    await using var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, 
+        FileShare.Read, bufferSize: 81920, useAsync: true);
+    
+    using var reader = new StreamReader(stream);
+    while (await reader.ReadLineAsync(ct) is { } line)
+    {
+        // Process line
+    }
+}
+
+// ❌ YANLIŞ: Loading entire file into memory
+public async Task ProcessLargeFileAsync(string filePath)
+{
+    var content = await File.ReadAllTextAsync(filePath); // Memory issue!
+    // Process content
+}
+```
+
+---
+
+## 21. Security Best Practices
+
+### 21.1 Input Validation
+
+```csharp
+// FluentValidation ile
+public class CreateSessionValidator : AbstractValidator<CreateSessionRequest>
+{
+    public CreateSessionValidator()
+    {
+        RuleFor(x => x.Name)
+            .NotEmpty()
+            .MaximumLength(200)
+            .Matches("^[a-zA-Z0-9 ]*$");
+        
+        RuleFor(x => x.ProjectId)
+            .NotEmpty();
+    }
+}
+```
+
+### 21.2 SQL Injection Prevention
+
+```csharp
+// ✅ DOĞRU: EF Core parameterized queries
+var sessions = await _context.Sessions
+    .Where(s => s.Name.Contains(searchTerm))
+    .ToListAsync();
+
+// ❌ YANLIŞ: Raw SQL with string concatenation
+var query = $"SELECT * FROM Sessions WHERE Name LIKE '%{searchTerm}%'";
+```
+
+### 21.3 Sensitive Data Handling
+
+```csharp
+// API keys - never in code
+public class ApiKeyManager
+{
+    private readonly IConfiguration _config;
+    
+    public string GetApiKey(string provider)
+    {
+        return _config[$"ApiKeys:{provider}"] 
+            ?? throw new ApiKeyNotFoundException(provider);
+    }
+}
+
+// Logging - mask sensitive data
+Log.Information("API call to {Provider} with key {ApiKey}", 
+    provider, apiKey.Mask()); // Output: "API call to OpenAI with key sk-...abc"
+```
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

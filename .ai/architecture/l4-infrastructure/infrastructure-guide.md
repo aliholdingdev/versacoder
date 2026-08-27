@@ -23,35 +23,37 @@ Infrastructure katmanı, **28 altyapı modülünü** barındırır. Her modül a
 
 ## 2. Modül Haritası
 
-| # | Modül | Katman | Durum | Tanım |
-|---|-------|--------|-------|-------|
-| 1 | Infrastructure.Data | L4 | ✅ Implemente | SQLite, EF Core, Repository |
-| 2 | Infrastructure.AI | L4 | ✅ Implemente | LLM Provider, Agent Runner |
-| 3 | Infrastructure.MCP | L5 | 🔄 Stub | MCP Client/Server |
-| 4 | Infrastructure.Auth | L7 | 🔄 Stub | API Key, Credential |
-| 5 | Infrastructure.Config | L8 | 🔄 Stub | Uygulama Ayarları |
-| 6 | Infrastructure.Plugins | L9 | 🔄 Stub | Plugin Sistemi |
-| 7 | Infrastructure.Services | L10 | 🔄 Stub | Yardımcı Servisler |
-| 8 | Infrastructure.Caching | L11 | 🔄 Stub | Önbellek Yönetimi |
-| 9 | Infrastructure.Messaging | L12 | 🔄 Stub | Event Bus, Messaging |
-| 10 | Infrastructure.FileSystem | L13 | 🔄 Stub | Dosya Sistemi |
-| 11 | Infrastructure.Network | L14 | 🔄 Stub | HTTP Client, WebSocket |
-| 12 | Infrastructure.Security | L15 | 🔄 Stub | Şifreleme, Token |
-| 13 | Infrastructure.Observability | L16 | 🔄 Stub | Monitoring, Metrics |
-| 14 | Infrastructure.Context | L17 | 🔄 Stub | Context Assembly |
-| 15 | Infrastructure.Learning | L18 | 🔄 Stub | Pattern, Düzeltme |
-| 16 | Infrastructure.Diagram | L19 | 🔄 Stub | Diyagram OKuma |
-| 17 | Infrastructure.ProjectAnalysis | L20 | 🔄 Stub | Proje İndeksleme |
-| 18 | Infrastructure.Testing | L21 | 🔄 Stub | Test Altyapısı |
-| 19 | Infrastructure.Documentation | L22 | 🔄 Stub | Otomatik Doc |
-| 20 | Infrastructure.Refactoring | L23 | 🔄 Stub | Refactoring |
-| 21 | Infrastructure.CodeAnalysis | L24 | 🔄 Stub | Kod Analizi |
-| 22 | Infrastructure.Git | L25 | 🔄 Stub | Git Entegrasyonu |
-| 23 | Infrastructure.Integration | L26 | 🔄 Stub | Üçüncü Parti |
-| 24 | Infrastructure.Templating | L27 | 🔄 Stub | Şablon Sistemi |
-| 25 | Infrastructure.Deployment | L28 | 🔄 Stub | Dağıtım |
-| 26 | Infrastructure.Backup | L29 | 🔄 Stub | Yedekleme |
-| 27 | Infrastructure.Versioning | L30 | 🔄 Stub | Versiyon |
+| # | Modül | Durum | Tanım | Satır |
+|---|-------|-------|-------|-------|
+| 1 | Infrastructure.Data | ✅ Implemente | SQLite, EF Core, Repository | ~1200 |
+| 2 | Infrastructure.AI | ✅ Implemente | LLM Provider, Agent Runner | ~600 |
+| 3 | Infrastructure.Logging | ✅ Implemente | JsonFileLogger, structured logging | ~300 |
+| 4 | Infrastructure.Reporting | 🔄 Kısmi | Excel/PDF export | ~200 |
+| 5 | Infrastructure.Git | ❌ Stub | LibGit2Sharp entegrasyonu | ~0 |
+| 6 | Infrastructure.Config | ❌ Stub | Uygulama ayarları | ~0 |
+| 7 | Infrastructure.Context | ❌ Stub | Context assembly | ~0 |
+| 8 | Infrastructure.MCP | ❌ Stub | Model Context Protocol | ~0 |
+| 9 | Infrastructure.Plugins | ❌ Stub | Plugin sistemi | ~0 |
+| 10 | Infrastructure.Security | ❌ Stub | Şifreleme, token | ~0 |
+| 11 | Infrastructure.Caching | ❌ Stub | Önbellek yönetimi | ~0 |
+| 12 | Infrastructure.Messaging | ❌ Stub | Event bus, messaging | ~0 |
+| 13 | Infrastructure.FileSystem | ❌ Stub | Dosya sistemi | ~0 |
+| 14 | Infrastructure.Network | ❌ Stub | HTTP, WebSocket | ~0 |
+| 15 | Infrastructure.Auth | ❌ Stub | Kimlik doğrulama | ~0 |
+| 16 | Infrastructure.Observability | ❌ Stub | Monitoring, metrics | ~0 |
+| 17 | Infrastructure.Learning | ❌ Stub | Pattern, düzeltme | ~0 |
+| 18 | Infrastructure.Diagram | ❌ Stub | Diyagram okuma | ~0 |
+| 19 | Infrastructure.ProjectAnalysis | ❌ Stub | Roslyn tabanlı analiz | ~0 |
+| 20 | Infrastructure.Testing | ❌ Stub | Test altyapısı | ~0 |
+| 21 | Infrastructure.Documentation | ❌ Stub | Otomatik doc | ~0 |
+| 22 | Infrastructure.Refactoring | ❌ Stub | Refactoring | ~0 |
+| 23 | Infrastructure.CodeAnalysis | ❌ Stub | Kod analizi | ~0 |
+| 24 | Infrastructure.Integration | ❌ Stub | Üçüncü parti | ~0 |
+| 25 | Infrastructure.Templating | ❌ Stub | Şablon sistemi | ~0 |
+| 26 | Infrastructure.Deployment | ❌ Stub | Dağıtım | ~0 |
+| 27 | Infrastructure.Backup | ❌ Stub | Yedekleme | ~0 |
+| 28 | Infrastructure.Versioning | ❌ Stub | Versiyon | ~0 |
+| 29 | Infrastructure.Services | ❌ Stub | Yardımcı servisler | ~0 |
 
 ---
 
@@ -59,25 +61,49 @@ Infrastructure katmanı, **28 altyapı modülünü** barındırır. Her modül a
 
 ### 3.1 Infrastructure.Data
 
-| bileşen | Dosya | Tanım |
+| Bileşen | Dosya | Tanım |
 |---------|-------|-------|
-| `VersaCoderDbContext` | `Infrastructure.Data/Context/VersaCoderDbContext.cs` | EF Core DbContext |
-| `Repository<T>` | `Infrastructure.Data/Repositories/Repository.cs` | Genel repository |
-| `SessionRepository` | `Infrastructure.Data/Repositories/SessionRepository.cs` | Session CRUD |
-| `MessageRepository` | `Infrastructure.Data/Repositories/MessageRepository.cs` | Message CRUD |
-| Entity Configurations | `Infrastructure.Data/Configurations/` | EF config |
+| `VersaCoderDbContext` | `Context/VersaCoderDbContext.cs` | EF Core DbContext, 12 DbSet |
+| `Repository<T>` | `Repositories/Repository.cs` | Genel repository, 52 satır |
+| `SessionRepository` | `Repositories/SessionRepository.cs` | Session CRUD |
+| `MessageRepository` | `Repositories/MessageRepository.cs` | Message CRUD |
+| `ProjectRepository` | `Repositories/ProjectRepository.cs` | Project CRUD |
+| `FileRepository` | `Repositories/FileRepository.cs` | FileEntry CRUD |
+| `LearningRepository` | `Repositories/LearningRepository.cs` | Learning CRUD |
+| `SettingRepository` | `Repositories/SettingRepository.cs` | Setting CRUD |
+| `TaskRepository` | `Repositories/TaskRepository.cs` | Task CRUD (34 method) |
+| `TaskListRepository` | `Repositories/TaskListRepository.cs` | TaskList CRUD |
+| `AuditLogRepository` | `Repositories/AuditLogRepository.cs` | AuditLog CRUD |
+| 12 Entity Config | `Configurations/` | EF config, indexes, relationships |
+| `DependencyInjection.cs` | DI registration | SQLite WAL, all repos |
 
 ### 3.2 Infrastructure.AI
 
-| bileşen | Dosya | Tanım |
+| Bileşen | Dosya | Tanım |
 |---------|-------|-------|
-| `AgentRunner` | `Infrastructure.AI/AgentRunner.cs` | Agent çalıştırma |
-| `ProviderRouter` | `Infrastructure.AI/ProviderRouter.cs` | Provider yönlendirme |
-| `ToolRegistry` | `Infrastructure.AI/ToolRegistry.cs` | Tool kayıt |
-| `OpenAIProvider` | `Infrastructure.AI/Providers/OpenAIProvider.cs` | OpenAI entegrasyonu |
-| `AnthropicProvider` | `Infrastructure.AI/Providers/AnthropicProvider.cs` | Anthropic entegrasyonu |
-| `OllamaProvider` | `Infrastructure.AI/Providers/OllamaProvider.cs` | Ollama entegrasyonu |
-| `CustomProvider` | `Infrastructure.AI/Providers/CustomProvider.cs` | Özel provider |
+| `AgentRunner` | `AgentRunner.cs` | IAgentRunner implementasyonu, 174 satır |
+| `ProviderRouter` | `ProviderRouter.cs` | Multi-provider routing, 53 satır |
+| `ToolRegistry` | `ToolRegistry.cs` | 5 built-in tool, 147 satır |
+| `OpenAIProvider` | `Providers/OpenAIProvider.cs` | OpenAI entegrasyonu (streaming) |
+| `AnthropicProvider` | `Providers/AnthropicProvider.cs` | Anthropic entegrasyonu |
+| `OllamaProvider` | `Providers/OllamaProvider.cs` | Ollama entegrasyonu |
+| `CustomProvider` | `Providers/CustomProvider.cs` | Özel provider |
+| `DependencyInjection.cs` | DI registration | Tüm provider'lar |
+
+### 3.3 Infrastructure.Logging
+
+| Bileşen | Dosya | Tanım |
+|---------|-------|-------|
+| `JsonFileLogger` | `JsonFileLogger.cs` | Thread-safe, append-only, rotation, 275 satır |
+| `DependencyInjection.cs` | DI registration | Logger kaydı |
+
+### 3.4 Infrastructure.Reporting
+
+| Bileşen | Dosya | Tanım |
+|---------|-------|-------|
+| `ExcelExporter` | `ExcelExporter.cs` | EPPlus tabanlı |
+| `PdfExporter` | `PdfExporter.cs` | PDFsharp tabanlı |
+| `DependencyInjection.cs` | DI registration | Exporter kaydı |
 
 ---
 
@@ -89,17 +115,42 @@ services.AddDbContext<VersaCoderDbContext>(options =>
     options.UseSqlite("Data Source=versacoder.db;Cache=Shared;Journal Mode=WAL;"));
 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddScoped<ISessionRepository, SessionRepository>();
+services.AddScoped<IMessageRepository, MessageRepository>();
+services.AddScoped<IProjectRepository, ProjectRepository>();
+services.AddScoped<IFileRepository, FileRepository>();
+services.AddScoped<ILearningRepository, LearningRepository>();
+services.AddScoped<ISettingRepository, SettingRepository>();
+services.AddScoped<ITaskRepository, TaskRepository>();
+services.AddScoped<ITaskListRepository, TaskListRepository>();
+services.AddScoped<IAuditLogRepository, AuditLogRepository>();
+services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Infrastructure.AI
 services.AddSingleton<ProviderRouter>();
 services.AddScoped<IAgentRunner, AgentRunner>();
 services.AddSingleton<ToolRegistry>();
 services.AddSingleton<ILLMProvider, OpenAIProvider>();
+services.AddSingleton<ILLMProvider, AnthropicProvider>();
+services.AddSingleton<ILLMProvider, OllamaProvider>();
 ```
 
 ---
 
-## 5. Kurallar
+## 5. OpenCode Eşleştirme
+
+| VersaCoder Modülü | OpenCode Karşılığı | Durum |
+|-------------------|-------------------|-------|
+| Infrastructure.Data | `core/src/database/` | ✅ Eşleşti |
+| Infrastructure.AI | `llm/src/providers/` | ✅ Eşleşti |
+| Infrastructure.Logging | `core/src/log.ts` | ✅ Eşleşti |
+| Infrastructure.Git | `core/src/git/` | ❌ Eksik |
+| Infrastructure.MCP | `packages/protocol/` | ❌ Eksik |
+| Infrastructure.Plugins | `core/src/plugin.ts` | ❌ Eksik |
+| Infrastructure.Config | `core/src/config.ts` | ❌ Eksik |
+
+---
+
+## 6. Kurallar
 
 | # | Kural |
 |---|-------|
@@ -107,8 +158,10 @@ services.AddSingleton<ILLMProvider, OpenAIProvider>();
 | 2 | Her modül ayrı proje |
 | 3 | Dependency Injection zorunlu |
 | 4 | Interface-first tasarım |
+| 5 | SQLite WAL modu zorunlu |
+| 6 | EF Core DbContext ONLY (Dapper yasak) |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26

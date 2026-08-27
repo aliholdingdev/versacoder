@@ -36,8 +36,9 @@ public class AgentRunner : IAgentRunner
         try
         {
             // Assemble context
+            var agentRole = MapAgentRole(agentName);
             var context = await _contextManager.AssembleAsync(
-                Domain.Enums.AgentRole.BUILD,
+                agentRole,
                 request.SessionId,
                 cancellationToken);
 
@@ -171,4 +172,15 @@ public class AgentRunner : IAgentRunner
             _ => "You are a VersaCoder AI assistant."
         };
     }
+
+    private static Domain.Enums.AgentRole MapAgentRole(string agentName) => agentName switch
+    {
+        AgentNames.BUILD => Domain.Enums.AgentRole.BUILD,
+        AgentNames.PLAN => Domain.Enums.AgentRole.PLAN,
+        AgentNames.EXPLORE => Domain.Enums.AgentRole.EXPLORE,
+        AgentNames.GENERAL => Domain.Enums.AgentRole.GENERAL,
+        AgentNames.SUMMARY => Domain.Enums.AgentRole.SUMMARY,
+        AgentNames.TITLE => Domain.Enums.AgentRole.TITLE,
+        _ => Domain.Enums.AgentRole.BUILD
+    };
 }

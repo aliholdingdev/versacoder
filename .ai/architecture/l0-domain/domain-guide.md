@@ -23,25 +23,43 @@ Domain katmanı, Versa Coder'ın **iş mantığının kalbidir**. Hiçbir dış 
 
 ## 2. Mevcut Varlıklar (Entities)
 
-| Entity | Dosya | Tanım |
-|--------|-------|-------|
-| `Session` | `VersaCoder.Domain/Entities/Session.cs` | Oturum bilgisi |
-| `Message` | `VersaCoder.Domain/Entities/Message.cs` | Mesaj içeriği |
-| `Project` | `VersaCoder.Domain/Entities/Project.cs` | Proje bilgisi |
-| `FileEntry` | `VersaCoder.Domain/Entities/FileEntry.cs` | Dosya kaydı |
-| `LearningEntry` | `VersaCoder.Domain/Entities/LearningEntry.cs` | Öğrenme kaydı |
-| `Setting` | `VersaCoder.Domain/Entities/Setting.cs` | Uygulama ayarı |
+### 2.1 Core Entities
+
+| Entity | Dosya | Tanım | Satır | Durum |
+|--------|-------|-------|-------|-------|
+| `Session` | `Entities/Session.cs` | AI oturumu, branching, parent-child | 55 | ✅ |
+| `Message` | `Entities/Message.cs` | Mesaj içeriği, role-based | 25 | ✅ |
+| `Project` | `Entities/Project.cs` | Proje bilgisi, analysis results | 31 | ✅ |
+| `FileEntry` | `Entities/FileEntry.cs` | Dosya kaydı, hash tracking | 35 | ✅ |
+| `LearningEntry` | `Entities/LearningEntry.cs` | Öğrenme kaydı, 4 kategori | 37 | ✅ |
+| `Setting` | `Entities/Setting.cs` | Uygulama ayarı, key-value | 28 | ✅ |
+
+### 2.2 Task Management Entities
+
+| Entity | Dosya | Tanım | Satır | Durum |
+|--------|-------|-------|-------|-------|
+| `TaskItem` | `Entities/TaskItem.cs` | Görev kalemi, state machine (7 durum) | 214 | ✅ |
+| `TaskList` | `Entities/TaskList.cs` | Görev listesi, archiving | 111 | ✅ |
+| `TaskTag` | `Entities/TaskTag.cs` | Etiket, name/color validation | 46 | ✅ |
+| `TaskDependency` | `Entities/TaskDependency.cs` | Bağımlılık, 4 tip (FS/SS/FF/SF) | 65 | ✅ |
+| `TaskReminder` | `Entities/TaskReminder.cs` | Hatırlatma, due check | 42 | ✅ |
+
+### 2.3 Audit Entity
+
+| Entity | Dosya | Tanım | Satır | Durum |
+|--------|-------|-------|-------|-------|
+| `AuditLog` | `Entities/AuditLog.cs` | Denetim kaydı, structured logging | 192 | ✅ |
 
 ---
 
 ## 3. Değer Objeleri (Value Objects)
 
-| Value Object | Dosya | Tanım |
-|--------------|-------|-------|
-| `FilePath` | `VersaCoder.Domain/ValueObjects/FilePath.cs` | Dosya yolu (record, validation) |
-| `ModelName` | `VersaCoder.Domain/ValueObjects/ModelName.cs` | Model adı |
-| `SessionId` | `VersaCoder.Domain/ValueObjects/SessionId.cs` | Session UUID |
-| `Timestamp` | `VersaCoder.Domain/ValueObjects/Timestamp.cs` | Zaman damgası |
+| Value Object | Dosya | Tanım | Properties |
+|--------------|-------|-------|------------|
+| `FilePath` | `ValueObjects/FilePath.cs` | Dosya yolu (record, validation) | Path, Extension, IsDirectory |
+| `ModelName` | `ValueObjects/ModelName.cs` | Model adı | Provider, Model, Version |
+| `SessionId` | `ValueObjects/SessionId.cs` | Session UUID | Value (Guid) |
+| `Timestamp` | `ValueObjects/Timestamp.cs` | Zaman damgası | Value (DateTime) |
 
 ---
 
@@ -49,37 +67,55 @@ Domain katmanı, Versa Coder'ın **iş mantığının kalbidir**. Hiçbir dış 
 
 | Enum | Dosya | Değerler |
 |------|-------|----------|
-| `AgentRole` | `VersaCoder.Domain/Enums/AgentRole.cs` | MO, Build, Plan, Explore, General, Summary, Title, Compaction |
-| `ContextType` | `VersaCoder.Domain/Enums/ContextType.cs` | Project, File, Session, Skill, Diagram |
-| `FileType` | `VersaCoder.Domain/Enums/FileType.cs` | Source, Config, Documentation, Test |
-| `LearningCategory` | `VersaCoder.Domain/Enums/LearningCategory.cs` | Pattern, Correction, Knowledge, Rule |
-| `Priority` | `VersaCoder.Domain/Enums/Priority.cs` | Critical, High, Medium, Low |
-| `SessionState` | `VersaCoder.Domain/Enums/SessionState.cs` | Active, Paused, Completed |
+| `AgentRole` | `Enums/AgentRole.cs` | MO, Build, Plan, Explore, General, Summary, Title, Compaction |
+| `SessionState` | `Enums/SessionState.cs` | Active, Paused, Completed |
+| `TaskItemStatus` | `Enums/TaskItemStatus.cs` | Todo, InProgress, Done, Cancelled, Blocked, Deferred, Review |
+| `Priority` | `Enums/Priority.cs` | Critical, High, Medium, Low |
+| `ContextType` | `Enums/ContextType.cs` | Project, File, Session, Skill, Diagram |
+| `FileType` | `Enums/FileType.cs` | Source, Config, Documentation, Test |
+| `LearningCategory` | `Enums/LearningCategory.cs` | Pattern, Correction, Knowledge, Rule |
+| `DurationType` | `Enums/DurationType.cs` | Minutes, Hours, Days |
+| `DependencyType` | `Enums/DependencyType.cs` | FinishToStart, StartToStart, FinishToFinish, StartToFinish |
+| `AuditLogLevel` | `Enums/AuditLogLevel.cs` | Info, Warning, Error, Critical |
+| `ReportType` | `Enums/ReportType.cs` | Session, Project, Task, Learning, Audit, Performance, Cost, Usage, Summary, Custom |
+| `ReportFormat` | `Enums/ReportFormat.cs` | Markdown, Html, Json, Csv, Excel, Pdf |
 
 ---
 
-## 5. Sabitler (Constants)
-
-| Sabit | Dosya | İçerik |
-|-------|-------|--------|
-| `AgentNames` | `VersaCoder.Domain/Constants/AgentNames.cs` | 8 agent adı |
-| `ToolNames` | `VersaCoder.Domain/Constants/ToolNames.cs` | 47 tool adı |
-| `SystemConstants` | `VersaCoder.Domain/Constants/SystemConstants.cs` | Sistem sabitleri |
-
----
-
-## 6. Domain Event'ler
+## 5. Domain Event'ler
 
 | Event | Tetikleyici | Aksiyon |
 |-------|-------------|---------|
-| `SessionCreated` | Yeni oturum | Log + UI güncelle |
-| `SessionCompleted` | Oturum sonu | Summary + Arşivle |
-| `MessageAdded` | Yeni mesaj | Context güncelle |
-| `LearningRecorded` | Öğrenme | Pattern kaydet |
+| `SessionCreatedEvent` | Yeni oturum | Indexleme başlat |
+| `PromptSentEvent` | Prompt gönderimi | AI çağrısı |
+| `ResponseReceivedEvent` | AI yanıtı | Message kaydı |
+| `ToolExecutedEvent` | Tool kullanımı | Sonuç işlenir |
+| `LearningRecordedEvent` | Öğrenme | Knowledge base güncelleme |
+| `AgentHandoverEvent` | Agent değişimi | Context transfer |
 
 ---
 
-## 7. Kurallar
+## 6. Sabitler (Constants)
+
+| Sabit | Dosya | İçerik |
+|-------|-------|--------|
+| `AgentNames` | `Constants/AgentNames.cs` | 8 agent adı (MO, Build, Plan, Explore, General, Summary, Title, Compaction) |
+| `ToolNames` | `Constants/ToolNames.cs` | 48 tool adı (dosya, terminal, git, ai, mcp, proje, session, context) |
+| `SystemConstants` | `Constants/SystemConstants.cs` | Sistem sabitleri |
+
+---
+
+## 7. Domain Interfaces
+
+| Interface | Dosya | Tanım |
+|-----------|-------|-------|
+| `IRepository<T>` | `Interfaces/IRepository.cs` | Genel repository arayüzü |
+| `IUnitOfWork` | `Interfaces/IUnitOfWork.cs` | İşlem yönetimi |
+| `IDomainEventBus` | `Interfaces/IDomainEventBus.cs` | Domain event yayını |
+
+---
+
+## 8. Kurallar
 
 | # | Kural | Açıklama |
 |---|-------|----------|
@@ -88,8 +124,10 @@ Domain katmanı, Versa Coder'ın **iş mantığının kalbidir**. Hiçbir dış 
 | 3 | Layer Violation yasağı | L0 → L2/L3 referans YOK |
 | 4 | Value Object validation | Record'larda constructor validation |
 | 5 | Entity behavior | Sadece data değil, davranış da içerebilir |
+| 6 | State Machine | TaskItem 7 durumlu state machine |
+| 7 | Domain Events | Tüm önemli olaylar event olarak yayınlanır |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26

@@ -11,8 +11,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructureAI(this IServiceCollection services, IConfiguration configuration)
     {
-        // Register HttpClient factory
-        services.AddHttpClient();
+        // Register named HttpClients for each provider
+        services.AddHttpClient("OpenAI");
+        services.AddHttpClient("Anthropic");
+        services.AddHttpClient("Ollama");
+        services.AddHttpClient("Custom");
 
         // Register Options
         services.Configure<OpenAIOptions>(configuration.GetSection("AI:OpenAI"));

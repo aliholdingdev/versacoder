@@ -23,57 +23,67 @@ Application katmanı, **use case'leri, command/query'leri ve DTO'ları** içerir
 
 ## 2. Commands (CQRS Write)
 
-| Command | Dosya | Tanım |
-|---------|-------|-------|
-| `CreateSessionCommand` | `VersaCoder.Application/Commands/CreateSessionCommand.cs` | Yeni oturum oluştur |
-| `SendPromptCommand` | `VersaCoder.Application/Commands/SendPromptCommand.cs` | Prompt gönder |
-| `BranchSessionCommand` | `VersaCoder.Application/Commands/BranchSessionCommand.cs` | Oturum dalı oluştur |
-| `CompleteSessionCommand` | `VersaCoder.Application/Commands/CompleteSessionCommand.cs` | Oturumu tamamla |
-| `CreateProjectCommand` | `VersaCoder.Application/Commands/CreateProjectCommand.cs` | Proje oluştur |
-| `RecordLearningCommand` | `VersaCoder.Application/Commands/RecordLearningCommand.cs` | Öğrenme kaydet |
+| Command | Dosya | Tanım | Validation |
+|---------|-------|-------|------------|
+| `CreateSessionCommand` | `Commands/CreateSessionCommand.cs` | Yeni oturum oluştur | SessionValidator |
+| `SendPromptCommand` | `Commands/SendPromptCommand.cs` | Prompt gönder | PromptValidator |
+| `BranchSessionCommand` | `Commands/BranchSessionCommand.cs` | Oturum dalı oluştur | BranchValidator |
+| `CompleteSessionCommand` | `Commands/CompleteSessionCommand.cs` | Oturumu tamamla | CompleteValidator |
+| `CreateProjectCommand` | `Commands/CreateProjectCommand.cs` | Proje oluştur | ProjectValidator |
+| `RecordLearningCommand` | `Commands/RecordLearningCommand.cs` | Öğrenme kaydet | LearningValidator |
 
 ---
 
 ## 3. Queries (CQRS Read)
 
-| Query | Dosya | Tanım |
-|-------|-------|-------|
-| `GetSessionQuery` | `VersaCoder.Application/Queries/GetSessionQuery.cs` | Tek oturum al |
-| `GetSessionMessagesQuery` | `VersaCoder.Application/Queries/GetSessionMessagesQuery.cs` | Oturum mesajlarını al |
-| `GetProjectQuery` | `VersaCoder.Application/Queries/GetProjectQuery.cs` | Tek proje al |
-| `GetContextQuery` | `VersaCoder.Application/Queries/GetContextQuery.cs` | Context al |
-| `GetAllSessionsQuery` | `VersaCoder.Application/Queries/GetAllSessionsQuery.cs` | Tüm oturumları al |
-| `GetAllProjectsQuery` | `VersaCoder.Application/Queries/GetAllProjectsQuery.cs` | Tüm projeleri al |
+| Query | Dosya | Tanım | Response |
+|-------|-------|-------|----------|
+| `GetSessionQuery` | `Queries/GetSessionQuery.cs` | Tek oturum al | SessionDto |
+| `GetAllSessionsQuery` | `Queries/GetAllSessionsQuery.cs` | Tüm oturumları al | List<SessionDto> |
+| `GetSessionMessagesQuery` | `Queries/GetSessionMessagesQuery.cs` | Oturum mesajlarını al | List<MessageDto> |
+| `GetProjectQuery` | `Queries/GetProjectQuery.cs` | Tek proje al | ProjectDto |
+| `GetAllProjectsQuery` | `Queries/GetAllProjectsQuery.cs` | Tüm projeleri al | List<ProjectDto> |
+| `GetContextQuery` | `Queries/GetContextQuery.cs` | Context al | ContextDto |
 
 ---
 
 ## 4. Handlers
 
-| Handler | Command/Query | Tanım |
-|---------|---------------|-------|
-| `CreateSessionHandler` | `CreateSessionCommand` | Session oluştur |
-| `SendPromptHandler` | `SendPromptCommand` | Prompt işle |
-| `BranchSessionHandler` | `BranchSessionCommand` | Dal oluştur |
-| `CompleteSessionHandler` | `CompleteSessionCommand` | Tamamla |
-| `CreateProjectHandler` | `CreateProjectCommand` | Proje oluştur |
-| `RecordLearningHandler` | `RecordLearningCommand` | Öğrenme kaydet |
-| `GetSessionHandler` | `GetSessionQuery` | Session oku |
-| `GetSessionMessagesHandler` | `GetSessionMessagesQuery` | Mesajları oku |
+| Handler | Command/Query | Tanım | Satır |
+|---------|---------------|-------|-------|
+| `CreateSessionHandler` | `CreateSessionCommand` | Session oluştur | ~80 |
+| `SendPromptHandler` | `SendPromptCommand` | Prompt işle (IAgentRunner çağırır) | ~100 |
+| `BranchSessionHandler` | `BranchSessionCommand` | Dal oluştur | ~60 |
+| `CompleteSessionHandler` | `CompleteSessionCommand` | Tamamla | ~40 |
+| `CreateProjectHandler` | `CreateProjectCommand` | Proje oluştur | ~50 |
+| `RecordLearningHandler` | `RecordLearningCommand` | Öğrenme kaydet | ~40 |
+| `GetSessionHandler` | `GetSessionQuery` | Session oku | ~30 |
+| `GetSessionMessagesHandler` | `GetSessionMessagesQuery` | Mesajları oku | ~30 |
 
 ---
 
 ## 5. Services
 
-| Servis | Dosya | Tanım |
-|--------|-------|-------|
-| `AgentSelectorService` | `VersaCoder.Application/Services/AgentSelectorService.cs` | Agent seçimi |
-| `ContextManagerService` | `VersaCoder.Application/Services/ContextManagerService.cs` | Context yönetimi |
-| `DiagramTeacherService` | `VersaCoder.Application/Services/DiagramTeacherService.cs` | Diyagram öğretme |
-| `GitService` | `VersaCoder.Application/Services/GitService.cs` | Git işlemleri |
-| `LearningService` | `VersaCoder.Application/Services/LearningService.cs` | Öğrenme |
-| `ProjectAnalyzerService` | `VersaCoder.Application/Services/ProjectAnalyzerService.cs` | Proje analizi |
-| `SessionManagerService` | `VersaCoder.Application/Services/SessionManagerService.cs` | Session yönetimi |
-| `TemplateService` | `VersaCoder.Application/Services/TemplateService.cs` | Şablon sistemi |
+### 5.1 Core Servisler
+
+| Servis | Dosya | Tanım | Durum | Satır |
+|--------|-------|-------|-------|-------|
+| `SessionManagerService` | `Services/SessionManagerService.cs` | Session yönetimi | ✅ Tam | 121 |
+| `ContextManagerService` | `Services/ContextManagerService.cs` | Context yönetimi | 🔄 Kısmi | 63 |
+| `AgentSelectorService` | `Services/AgentSelectorService.cs` | Agent seçimi | ✅ Tam | 36 |
+| `LogService` | `Services/LogService.cs` | Log yönetimi | ✅ Tam | 199 |
+| `LearningService` | `Services/LearningService.cs` | Öğrenme | ✅ Tam | 71 |
+| `GitService` | `Services/GitService.cs` | Git işlemleri | ❌ Stub | 56 |
+| `ProjectAnalyzerService` | `Services/ProjectAnalyzerService.cs` | Proje analizi | 🔄 Basit | 67 |
+| `TemplateService` | `Services/TemplateService.cs` | Şablon sistemi | ✅ Tam | — |
+| `ReportService` | — | Raporlama | ❌ Eksik | — |
+| `DiagramTeacherService` | — | Diyagram öğretme | ❌ Eksik | — |
+
+### 5.2 Task Management Servisleri
+
+| Servis | Dosya | Tanım | Durum | Satır |
+|--------|-------|-------|-------|-------|
+| `TaskService` | `Services/TaskService.cs` | Görev yönetimi | ✅ Tam (tag stubs) | 563 |
 
 ---
 
@@ -81,11 +91,15 @@ Application katmanı, **use case'leri, command/query'leri ve DTO'ları** içerir
 
 | DTO | Dosya | Tanım |
 |-----|-------|-------|
-| `SessionDto` | `VersaCoder.Application/DTOs/SessionDto.cs` | Session verisi |
-| `MessageDto` | `VersaCoder.Application/DTOs/MessageDto.cs` | Mesaj verisi |
-| `ProjectDto` | `VersaCoder.Application/DTOs/ProjectDto.cs` | Proje verisi |
-| `ContextDto` | `VersaCoder.Application/DTOs/ContextDto.cs` | Context verisi |
-| `AgentDto` | `VersaCoder.Application/DTOs/AgentDto.cs` | Agent verisi |
+| `SessionDto` | `DTOs/SessionDto.cs` | Session verisi |
+| `MessageDto` | `DTOs/MessageDto.cs` | Mesaj verisi |
+| `ProjectDto` | `DTOs/ProjectDto.cs` | Proje verisi |
+| `ContextDto` | `DTOs/ContextDto.cs` | Context verisi |
+| `AgentDto` | `DTOs/AgentDto.cs` | Agent verisi |
+| `LogDto` | `DTOs/LogDto.cs` | Log verisi |
+| `ReportDto` | `DTOs/ReportDto.cs` | Rapor verisi |
+| `TaskDto` | `DTOs/TaskDto.cs` | Görev verisi |
+| `TaskListDto` | `DTOs/TaskListDto.cs` | Görev listesi verisi |
 
 ---
 
@@ -93,12 +107,32 @@ Application katmanı, **use case'leri, command/query'leri ve DTO'ları** içerir
 
 | Yapı | Dosya | Tanım |
 |------|-------|-------|
-| `Result<T>` | `VersaCoder.Application/Common/Result.cs` | Monad pattern (Success/Failure) |
-| `PaginatedList<T>` | `VersaCoder.Application/Common/PaginatedList.cs` | Sayfalı liste |
+| `Result<T>` | `Common/Result.cs` | Monad pattern (Success/Failure) |
+| `PaginatedList<T>` | `Common/PaginatedList.cs` | Sayfalı liste |
 
 ---
 
-## 8. Kurallar
+## 8. MediatR Pipeline
+
+```
+Request → LoggingBehavior → PerformanceBehavior → ValidationBehavior → Handler → Response
+```
+
+---
+
+## 9. OpenCode Eşleştirme
+
+| VersaCoder | OpenCode | Durum |
+|------------|----------|-------|
+| CreateSessionCommand | `session.create()` | ✅ Eşleşti |
+| SendPromptCommand | `session.prompt()` | ✅ Eşleşti |
+| SessionManagerService | `session` interface | ✅ Eşleşti |
+| ContextManagerService | `session.context` | 🔄 Kısmi |
+| AgentSelectorService | `agent.select()` | ✅ Eşleşti |
+
+---
+
+## 10. Kurallar
 
 | # | Kural |
 |---|-------|
@@ -106,8 +140,9 @@ Application katmanı, **use case'leri, command/query'leri ve DTO'ları** içerir
 | 2 | Validation FluentValidation ile |
 | 3 | Business logic Domain'e ait — Application sadece orkestra eder |
 | 4 | DTO'lar simple data transfer — behavior yok |
+| 5 | Her handler için unit test yazılmalı |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26

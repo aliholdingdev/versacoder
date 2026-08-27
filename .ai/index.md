@@ -511,6 +511,116 @@ public interface ISkill
 
 ---
 
+## 13. Vault Kullanım Rehberi
+
+### 13.1 Session Başlatma
+
+Her AI session başlatıldığında aşağıdaki sırayla yüklenmelidir:
+
+```
+1. CLAUDE.md → AI anayasası (zorunlu)
+2. AGENTS.md → Ajan kayıt defteri (zorunlu)
+3. WORKFLOW.md → Mühendislik süreçleri (zorunlu)
+4. brain.md → Mimari kararlar (zorunlu)
+5. ROLE.md → Rol tanımları (zorunlu)
+6. index.md → Ana katalog (opsiyonel)
+7. keys.md → Anahtar kelime eşleme (opsiyonel)
+```
+
+### 13.2 Token Optimizasyonu
+
+| Strateji | Kullanım | Tasarruf |
+|----------|----------|----------|
+| Lazy Loading | İhtiyaç duyulan dosyalar | %60 |
+| Category Filter | Kategori bazlı yükleme | %40 |
+| Summary First | Özet → Detaylı geçiş | %50 |
+| Cache | Sık kullanılan dosyalar | %30 |
+
+### 13.3 Arama Stratejisi
+
+| Arama Türü | Yöntem | Hız |
+|------------|--------|-----|
+| Dosya adı | Glob pattern | Hızlı |
+| İçerik | Grep regex | Orta |
+| Keyword | keys.md eşleme | Hızlı |
+| Semantic | AI embedding | Yavaş |
+
+### 13.4 Bağlam Toplama
+
+```csharp
+// Context assembly örneği
+public class ContextAssembler
+{
+    public async Task<Context> AssembleAsync(string userPrompt, CancellationToken ct)
+    {
+        var context = new Context();
+        
+        // 1. Vault'tan temel bilgileri yükle
+        context.CoreFiles = await LoadCoreFilesAsync(ct);
+        
+        // 2. Prompt'a göre ilgili dosyaları bul
+        var keywords = ExtractKeywords(userPrompt);
+        context.RelevantFiles = await FindRelevantFilesAsync(keywords, ct);
+        
+        // 3. Session geçmişini yükle
+        context.SessionHistory = await LoadSessionHistoryAsync(ct);
+        
+        // 4. Proje durumunu yükle
+        context.ProjectState = await LoadProjectStateAsync(ct);
+        
+        return context;
+    }
+}
+```
+
+---
+
+## 14. Vault Güncelleme Protokolü
+
+### 14.1 Güncelleme Yetkisi
+
+| Dosya | Güncelleyen | Onay |
+|-------|-------------|------|
+| CLAUDE.md | MO + İnsan | İnsan onayı |
+| AGENTS.md | MO + İnsan | İnsan onayı |
+| WORKFLOW.md | MO + İnsan | İnsan onayı |
+| brain.md | MO + İnsan | İnsan onayı |
+| ROLE.md | MO + İnsan | İnsan onayı |
+| index.md | MO | Otomatik |
+| keys.md | MO | Otomatik |
+| .agents/* | MO | Otomatik |
+| .templates/* | Build Agent | MO onayı |
+
+### 14.2 Versiyonlama
+
+```markdown
+## [1.1.0] - 2026-08-26
+
+### Changed
+- CLAUDE.md: Guardrail kategorileri eklendi
+- AGENTS.md: İletişim protokolleri eklendi
+- WORKFLOW.md: Proje yaşam döngüsü eklendi
+- brain.md: DDD kalıpları eklendi
+- ROLE.md: State machine eklendi
+
+### Added
+- Section 15: Agent State Machine
+- Section 16: Agent Communication Protocol
+- Section 17: Agent Performance Optimization
+```
+
+### 14.3 Değişiklik Takibi
+
+| Tarih | Dosya | Değişiklik | Sorumlu |
+|-------|-------|-----------|---------|
+| 2026-08-26 | CLAUDE.md | Guardrail kategorileri | MO |
+| 2026-08-26 | AGENTS.md | İletişim protokolleri | MO |
+| 2026-08-26 | WORKFLOW.md | Proje yaşam döngüsü | MO |
+| 2026-08-26 | brain.md | DDD kalıpları | MO |
+| 2026-08-26 | ROLE.md | State machine | MO |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

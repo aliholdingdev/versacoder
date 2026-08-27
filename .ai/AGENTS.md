@@ -494,7 +494,94 @@ Level 1 (Domain Lead) → Level 2 (Tech Lead) → Level 3 (Arch Lead) → İnsan
 
 ---
 
-## 15. Quality Report
+## 15. Agent İletişim Protokolleri
+
+### 15.1 Mesaj Formatı
+
+```json
+{
+  "messageId": "uuid",
+  "type": "TASK_ASSIGNMENT | HANDOVER | ESCALATION | STATUS_UPDATE | HEALTH_CHECK",
+  "from": "agent_id",
+  "to": "agent_id | mo | human",
+  "priority": "CRITICAL | HIGH | MEDIUM | LOW",
+  "payload": {
+    "subject": "Brief description",
+    "details": "Detailed information",
+    "affectedFiles": ["file1.cs", "file2.cs"],
+    "deadline": "2026-08-25T12:00:00Z",
+    "context": {}
+  },
+  "timestamp": "2026-08-25T12:00:00Z",
+  "correlationId": "uuid"
+}
+```
+
+### 15.2 İletişim Akışı
+
+```
+Agent A → [Message] → Message Queue → [Router] → Agent B
+                                    ↓
+                              MO (Logger)
+```
+
+### 15.3 Bildirim Kanalları
+
+| Kanal | Kullanım | Öncelik |
+|-------|----------|---------|
+| log.md | Audit trail | Tümü |
+| Console | Debug bilgisi | LOW |
+| Dialog | İnsan onayı | HIGH |
+| Alert | Kritik hatalar | CRITICAL |
+
+---
+
+## 16. Performans Metrikleri
+
+### 16.1 Agent Metrikleri
+
+| Metrik | Hedef | Kritik Eşik |
+|--------|-------|-------------|
+| Yanıt süresi | < 2 sn | > 5 sn |
+| Görev tamamlama | < 30 sn | > 60 sn |
+| Hata oranı | < %1 | > %5 |
+| Başarı oranı | > %95 | < %80 |
+
+### 16.2 Sistem Metrikleri
+
+| Metrik | Hedef | Kritik Eşik |
+|--------|-------|-------------|
+| Memory kullanımı | < 500 MB | > 1 GB |
+| CPU kullanımı | < %30 | > %80 |
+| Disk I/O | < 100 MB/s | > 500 MB/s |
+| Network | < 10 ms | > 100 ms |
+
+---
+
+## 17. Backup & Recovery
+
+### 17.1 Backup Stratejisi
+
+| Veri | Sıklık | Saklama | Yöntem |
+|------|--------|---------|--------|
+| Vault | Her değişiklik | Kalıcı | Git |
+| Session Logs | Günlük | 90 gün | Dosya |
+| Agent States | Her görev | 30 gün | JSON |
+| Config | Her değişiklik | Kalıcı | Git |
+
+### 17.2 Recovery Prosedürü
+
+```
+1. Veri kaybını tespit et
+2. Etkilenen veriyi belirle
+3. Backup'tan kurtar
+4. Doğrula
+5. Devam et
+```
+
+---
+
+## 18. Quality Report
 
 | Metrik | Değer |
 |--------|-------|
@@ -507,9 +594,12 @@ Level 1 (Domain Lead) → Level 2 (Tech Lead) → Level 3 (Arch Lead) → İnsan
 | Eskalasyon Senaryoları | 9 |
 | Health States | 5 |
 | Lock Rules | 4 |
+| Communication Protocols | 3 |
+| Performance Metrics | 8 |
+| Backup Strategy | 4 veri tipi |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

@@ -23,11 +23,11 @@ CrossCutting katmanı, uygulama genelinde **logging, exception handling ve valid
 
 ## 2. MediatR Pipeline Behaviors
 
-| Behavior | Dosya | Tanım |
-|----------|-------|-------|
-| `LoggingBehavior<TRequest,TResponse>` | `VersaCoder.CrossCutting/Behaviors/LoggingBehavior.cs` | Her handler öncesi/sonrası log |
-| `PerformanceBehavior<TRequest,TResponse>` | `VersaCoder.CrossCutting/Behaviors/PerformanceBehavior.cs` | 500ms üzeri yavaş handler uyarı |
-| `ValidationBehavior<TRequest,TResponse>` | `VersaCoder.CrossCutting/Behaviors/ValidationBehavior.cs` | FluentValidation doğrulama |
+| Behavior | Dosya | Tanım | Satır |
+|----------|-------|-------|-------|
+| `LoggingBehavior<TRequest,TResponse>` | `Behaviors/LoggingBehavior.cs` | Her handler öncesi/sonrası log | 29 |
+| `PerformanceBehavior<TRequest,TResponse>` | `Behaviors/PerformanceBehavior.cs` | 500ms üzeri yavaş handler uyarı | — |
+| `ValidationBehavior<TRequest,TResponse>` | `Behaviors/ValidationBehavior.cs` | FluentValidation doğrulama | 43 |
 
 ---
 
@@ -35,22 +35,59 @@ CrossCutting katmanı, uygulama genelinde **logging, exception handling ve valid
 
 | Exception | Dosya | Tanım |
 |-----------|-------|-------|
-| `DomainException` | `VersaCoder.CrossCutting/Exceptions/DomainException.cs` | Domain kural ihlali |
-| `NotFoundException` | `VersaCoder.CrossCutting/Exceptions/NotFoundException.cs` | Kaynak bulunamadı |
-| `ValidationException` | `VersaCoder.CrossCutting/Exceptions/ValidationException.cs` | Validasyon hatası |
-| `GlobalExceptionHandler` | `VersaCoder.CrossCutting/Exceptions/GlobalExceptionHandler.cs` | Merkezi hata yönetimi |
+| `DomainException` | `Exceptions/DomainException.cs` | Domain kural ihlali |
+| `NotFoundException` | `Exceptions/NotFoundException.cs` | Kaynak bulunamadı |
+| `ValidationException` | `Exceptions/ValidationException.cs` | Validasyon hatası |
+| `GlobalExceptionHandler` | `Exceptions/GlobalExceptionHandler.cs` | Merkezi hata yönetimi |
 
 ---
 
 ## 4. Pipeline Akışı
 
 ```
-Request → LoggingBehavior → PerformanceBehavior → ValidationBehavior → Handler → Response
+Request
+  → LoggingBehavior (log yaz)
+    → PerformanceBehavior (süre ölç)
+      → ValidationBehavior (FluentValidation kontrol)
+        → Handler (iş mantığı)
+          → Response
 ```
 
 ---
 
-## 5. Kurallar
+## 5. Hata Hiyerarşisi
+
+```
+VersaCoderException (Base)
+  ├── DomainException
+  │     ├── ValidationException
+  │     ├── NotFoundException
+  │     └── DuplicateException
+  ├── InfrastructureException
+  │     ├── DatabaseException
+  │     ├── ProviderException
+  │     └── NetworkException
+  └── ProtocolException
+        ├── MCPException
+        └── AgentException
+```
+
+---
+
+## 6. Logging Stratejisi
+
+| Level | Kullanım | Örnek |
+|-------|----------|-------|
+| Verbose | Detaylı debug | Variable values |
+| Debug | Geliştirme bilgisi | Method entry/exit |
+| Information | Normal olaylar | Request completed |
+| Warning | Uyarılar | Slow query |
+| Error | Hatalar | Exception thrown |
+| Fatal | Kritik hatalar | System crash |
+
+---
+
+## 7. Kurallar
 
 | # | Kural |
 |---|-------|
@@ -58,8 +95,9 @@ Request → LoggingBehavior → PerformanceBehavior → ValidationBehavior → H
 | 2 | CrossCutting, Domain'e bağımlı DEĞİL (L3 → L0 ❌) |
 | 3 | Tüm handler'lar pipeline behaviors'lardan geçer |
 | 4 | Hatalar merkezi olarak yönetilir |
+| 5 | Structured logging zorunlu (Serilog) |
 
 ---
 
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
