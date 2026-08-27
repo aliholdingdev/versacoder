@@ -347,6 +347,244 @@ CREATED → ACTIVE → PAUSED → COMPLETED → ARCHIVED
 
 ---
 
+## 16. Session Veri Modelleri
+
+### 16.1 Session Entity
+
+```csharp
+public class Session
+{
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public Guid ProjectId { get; private set; }
+    public SessionStatus Status { get; private set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime? CompletedAt { get; private set; }
+    public string? BranchName { get; private set; }
+    public Guid? ParentSessionId { get; private set; }
+    
+    // Navigation
+    public Project Project { get; private set; }
+    public Session? ParentSession { get; private set; }
+    public ICollection<Session> ChildSessions { get; private set; }
+    public ICollection<Message> Messages { get; private set; }
+}
+```
+
+### 16.2 Message Entity
+
+```csharp
+public class Message
+{
+    public Guid Id { get; private set; }
+    public Guid SessionId { get; private set; }
+    public MessageRole Role { get; private set; }
+    public string Content { get; private set; }
+    public DateTime Timestamp { get; private set; }
+    public int TokenCount { get; private set; }
+    public string? Metadata { get; private set; }
+    
+    // Navigation
+    public Session Session { get; private set; }
+}
+```
+
+### 16.3 Session DTO'ları
+
+```csharp
+// Read DTO
+public record SessionDto(
+    Guid Id,
+    string Name,
+    SessionStatus Status,
+    DateTime CreatedAt,
+    DateTime? CompletedAt,
+    int MessageCount,
+    int TotalTokens);
+
+// Create Command
+public record CreateSessionCommand(
+    string Name,
+    Guid ProjectId,
+    string? BranchName = null);
+
+// Update Command
+public record UpdateSessionCommand(
+    Guid Id,
+    string? Name = null,
+    SessionStatus? Status = null);
+```
+
+---
+
+## 17. Session API Endpointleri
+
+### 17.1 REST API
+
+| Endpoint | Method | Amaç |
+|----------|--------|------|
+| `/api/sessions` | GET | Tüm session'ları listele |
+| `/api/sessions/{id}` | GET | Belirli session'ı getir |
+| `/api/sessions` | POST | Yeni session oluştur |
+| `/api/sessions/{id}` | PUT | Session'ı güncelle |
+| `/api/sessions/{id}` | DELETE | Session'ı sil |
+| `/api/sessions/{id}/messages` | GET | Session mesajlarını getir |
+| `/api/sessions/{id}/branch` | POST | Yeni dal oluştur |
+| `/api/sessions/{id}/merge` | POST | Dal birleştir |
+| `/api/sessions/{id}/revert` | POST | Önceki duruma dön |
+
+### 17.2 CQRS Query/Command
+
+```csharp
+// Queries
+public record GetSessionByIdQuery(Guid Id) : IRequest<SessionDto?>;
+public record GetAllSessionsQuery() : IRequest<IReadOnlyList<SessionDto>>;
+public record GetSessionMessagesQuery(Guid SessionId) : IRequest<IReadOnlyList<MessageDto>>;
+
+// Commands
+public record CreateSessionCommand(string Name, Guid ProjectId) : IRequest<Guid>;
+public record UpdateSessionCommand(Guid Id, string? Name) : IRequest<Unit>;
+public record DeleteSessionCommand(Guid Id) : IRequest<Unit>;
+public record ArchiveSessionCommand(Guid Id) : IRequest<Unit>;
+```
+
+---
+
+## 18. Session İş Akış Diyagramları
+
+### 18.1 Session Oluşturma Akışı
+
+```
+Kullanıcı → "Yeni session oluştur"
+    ↓
+MO → Anahtar kelime analizi
+    ↓
+MO → Build Agent seç
+    ↓
+Build Agent → Vault oku
+    ↓
+Build Agent → Template yükle
+    ↓
+Build Agent → Entity oluştur
+    ↓
+Build Agent → Repository implement et
+    ↓
+Build Agent → Handler yaz
+    ↓
+Build Agent → Test yaz
+    ↓
+Build Agent → Build + Test çalıştır
+    ↓
+MO → Sonucu raporla
+    ↓
+Kullanıcı → Onay ver
+```
+
+### 18.2 Session Branching Akışı
+
+```
+Kullanıcı → "Bu session'dan dal oluştur"
+    ↓
+MO → Mevcut session'ı kaydet
+    ↓
+MO → Yeni dal ID'si oluştur
+    ↓
+MO → Geçmiş kopyasını oluştur
+    ↓
+MO → Yeni dal'ı aktif yap
+    ↓
+MO → Log kaydı oluştur
+    ↓
+Kullanıcı → Devam et
+```
+
+### 18.3 Session Merge Akışı
+
+```
+Kullanıcı → "Bu iki dal'ı birleştir"
+    ↓
+MO → Hedef dal'ı seç
+    ↓
+MO → Çakışmaları kontrol et
+    ↓
+MO → Çakışmaları çöz
+    ↓
+MO → Birleştirmeyi uygula
+    ↓
+MO → Log kaydı oluştur
+    ↓
+Kullanıcı → Onay ver
+```
+
+---
+
+## 19. Session Hata Yönetimi
+
+### 19.1 Hata Türleri
+
+| Hata | Seviye | Aksiyon |
+|------|--------|---------|
+| Session bulunamadı | ERROR | 404 döndür |
+| Session zaten aktif | WARNING | Uyarı göster |
+| Branch çakışması | ERROR | Çakışma çöz |
+| Merge başarısız | ERROR | Geri al |
+| Revert başarısız | ERROR | Log + bildirim |
+| Token limiti aşıldı | WARNING | Yeni session başlat |
+| Memory overflow | ERROR | Session'ı arşivle |
+
+### 19.2 Hata Kodları
+
+| Kod | Açıklama |
+|-----|----------|
+| SES-001 | Session bulunamadı |
+| SES-002 | Session zaten aktif |
+| SES-003 | Branch çakışması |
+| SES-004 | Merge başarısız |
+| SES-005 | Revert başarısız |
+| SES-006 | Token limiti aşıldı |
+| SES-007 | Memory overflow |
+
+---
+
+## 20. Session Optimizasyonu
+
+### 20.1 Performans Optimizasyonları
+
+| Teknik | Açıklama | Kazanç |
+|--------|----------|--------|
+| Lazy loading | Mesajları gerektiğinde yükle | Bellek tasarrufu |
+| Pagination | Büyük listeleri sayfala | Hız artışı |
+| Caching | Sık erişilen verileri önbellekle | yanıt süresi |
+| Indexing | Sorgu alanlarını indeksle | Sorgu hızı |
+| Compression | Büyük mesajları sıkıştır | Depolama tasarrufu |
+
+### 20.2 Depolama Optimizasyonları
+
+| Teknik | Açıklama | Kazanç |
+|--------|----------|--------|
+| Archiving | Eski session'ları arşivle | Depolama tasarrufu |
+| Cleanup | Gereksiz verileri temizle | Depolama tasarrufu |
+| Deduplication | Tekrar eden verileri kaldır | Depolama tasarrufu |
+| Partitioning | Verileri bölümle | Sorgu hızı |
+
+---
+
+## 21. Quality Report
+
+| Metrik | Değer |
+|--------|-------|
+| Version | 1.1.0 |
+| Status | Active |
+| Session States | 5 |
+| Memory Levels | 4 |
+| Recovery Scenarios | 4 |
+| Security Rules | 4 |
+| Metrics | 5 |
+| API Endpoints | 9 |
+| Error Codes | 7 |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
 **Mode:** Red Team · Human Mode · Truth Mode

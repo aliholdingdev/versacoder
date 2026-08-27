@@ -62,15 +62,37 @@ reference:
 │   ├── handler.md
 │   └── service.md
 │
-├── architecture/                # Katman Dokümanları
-│   ├── L0-domain.md
-│   ├── L1-abstractions.md
-│   ├── L2-application.md
-│   ├── L3-crosscutting.md
-│   ├── L4-infrastructure.md
-│   ├── L5-protocol.md
-│   ├── L6-host.md
-│   └── L7-ui.md
+├── spec/                        # ProjeSpec (Teknik Şartname)
+│   ├── index.md                 # Spec indeksi
+│   ├── versacoder-spec.md       # Ana teknik şartname (~2500+ satır)
+│   └── versacoder-spec-summary.md # Şartname özeti
+│
+├── architecture/                # Katman Dokümanları (20+ dosya)
+│   ├── 00-overview/
+│   │   ├── architecture-master.md      # Genel mimari (~83 satır)
+│   │   └── architecture-detailed.md    # Detaylı mimari (~888 satır)
+│   ├── l0-domain/
+│   │   └── domain-guide.md             # Domain katmanı (~508 satır)
+│   ├── l1-abstractions/
+│   │   └── abstractions-guide.md       # Soyutlama katmanı (~445 satır)
+│   ├── l2-application/
+│   │   └── application-guide.md        # Uygulama katmanı (~533 satır)
+│   ├── l3-crosscutting/
+│   │   └── crosscutting-guide.md       # Kesenekler (~446 satır)
+│   ├── l4-infrastructure/
+│   │   ├── infrastructure-guide.md     # Altyapı genel (~547 satır)
+│   │   ├── ai/
+│   │   │   ├── agent-runner.md         # Agent çalıştırıcı (~133 satır)
+│   │   │   ├── provider-router.md      # Provider yönlendirici (~116 satır)
+│   │   │   └── tool-system.md          # Tool sistemi (~123 satır)
+│   │   └── data/
+│   │       └── database-schema.md      # Veritabanı şeması (~125 satır)
+│   ├── l5-protocol/
+│   │   └── protocol-guide.md           # Protokol katmanı (~462 satır)
+│   ├── l6-host/
+│   │   └── host-guide.md               # Host katmanı (~574 satır)
+│   └── l7-ui/
+│       └── ui-guide.md                 # UI katmanı (~4761 satır, DevExpress/WPF/MAUI/Blazor)
 │
 ├── context/                     # Bağlam Yönetimi
 │   ├── index.md
@@ -106,21 +128,26 @@ reference:
 │   ├── analysis.md
 │   └── metrics.md
 │
-├── rules/                       # Kurallar Motoru
-│   ├── index.md
-│   ├── coding-standards.md
-│   ├── security-architecture.md
-│   ├── performance-guidelines.md
-│   └── plugin-development.md
+├── rules/                       # Kurallar Motoru (6 dosya)
+│   ├── coding-standards.md          # C# 12, SOLID, refactoring (~769 satır)
+│   ├── security-architecture.md     # OWASP, JWT, API güvenliği (~700 satır)
+│   ├── performance-guidelines.md    # Async, caching, DB optimizasyonu (~692 satır)
+│   ├── plugin-development.md        # Plugin geliştirme (~502 satır)
+│   ├── deployment-guide.md          # CI/CD, deployment (~3639 satır)
+│   └── mcp-integration.md           # MCP entegrasyonu (~474 satır)
 │
-├── skills/                      # AI Yetenekleri
+├── skills/                      # AI Yetenekleri (11 dosya)
 │   ├── index.md
-│   ├── architecture.md
-│   ├── code-generation.md
-│   ├── debugging.md
-│   ├── documentation.md
-│   ├── refactoring.md
-│   └── testing.md
+│   ├── architecture-skill.md        # Mimari planlama (~390 satır)
+│   ├── cicd-skill.md                # CI/CD otomasyonu (~1557 satır)
+│   ├── code-generation-skill.md     # Kod üretimi (~320 satır)
+│   ├── debugging-skill.md           # Hata ayıklama (~234 satır)
+│   ├── documentation-skill.md       # Dokümantasyon (~275 satır)
+│   ├── monitoring-skill.md          # Prometheus, Serilog, OpenTelemetry (~495 satır)
+│   ├── realtime-skill.md            # SignalR, real-time özellikler (~538 satır)
+│   ├── refactoring-skill.md         # Yeniden yapılandırma (~267 satır)
+│   ├── sectoral-agents-skill.md     # Sektörel agent yönetimi (~332 satır)
+│   └── testing-skill.md             # Test yazma (~325 satır)
 │
 └── ui-design/                   # UI Tasarım Dokümanları
     ├── index.md
@@ -146,7 +173,8 @@ reference:
 | Rules | 5 | ~1000 |
 | Skills | 7 | ~1400 |
 | UI Design | 4 | ~800 |
-| **Toplam** | **74** | **~19,400** |
+| Spec | 3 | ~3000 |
+| **Toplam** | **77** | **~22,400** |
 
 ---
 
@@ -410,12 +438,14 @@ public class ContextAssembler
 
 ### 9.1 Kategoriler
 
-| Kategori | Dosya | İçerik |
-|----------|-------|--------|
-| Coding | coding-standards.md | Kod yazım kuralları |
-| Security | security-architecture.md | Güvenlik mimarisi |
-| Performance | performance-guidelines.md | Performans kılavuzu |
-| Plugin | plugin-development.md | Plugin geliştirme |
+| Kategori | Dosya | İçerik | Satır |
+|----------|-------|--------|-------|
+| Coding | coding-standards.md | C# 12, SOLID, refactoring | ~769 |
+| Security | security-architecture.md | OWASP, JWT, API güvenliği | ~700 |
+| Performance | performance-guidelines.md | Async, caching, DB optimizasyonu | ~692 |
+| Plugin | plugin-development.md | Plugin geliştirme | ~502 |
+| Deployment | deployment-guide.md | CI/CD, GitHub Actions, Docker | ~3639 |
+| MCP | mcp-integration.md | MCP client/server, tool register | ~474 |
 
 ### 9.2 Kural Uygulama
 
@@ -435,14 +465,18 @@ public interface IRule
 
 ### 10.1 Skill Listesi
 
-| Skill | Amaç | Kullanım |
-|-------|------|----------|
-| architecture | Mimari planlama | Plan Agent |
-| code-generation | Kod üretimi | Build Agent |
-| debugging | Hata ayıklama | Build Agent |
-| documentation | Dokümantasyon | Summary Agent |
-| refactoring | Yeniden yapılandırma | Build Agent |
-| testing | Test yazma | Build Agent |
+| Skill | Amaç | Kullanım | Satır |
+|-------|------|----------|-------|
+| architecture-skill | Mimari planlama | Plan Agent | ~390 |
+| cicd-skill | CI/CD otomasyonu, GitHub Actions | DevOps Agent | ~1557 |
+| code-generation-skill | Kod üretimi | Build Agent | ~320 |
+| debugging-skill | Hata ayıklama | Build Agent | ~234 |
+| documentation-skill | Dokümantasyon | Summary Agent | ~275 |
+| monitoring-skill | Prometheus, Serilog, OpenTelemetry | General Agent | ~495 |
+| realtime-skill | SignalR hub'ları, reconnection | Build Agent | ~538 |
+| refactoring-skill | Yeniden yapılandırma | Build Agent | ~267 |
+| sectoral-agents-skill | Sektörel agent yönetimi | MO | ~332 |
+| testing-skill | Test yazma | Build Agent | ~325 |
 
 ### 10.2 Skill Yükleme
 
@@ -486,15 +520,17 @@ public interface ISkill
 
 | Metrik | Değer |
 |--------|-------|
-| Toplam Dosya | 74 |
+| Toplam Dosya | 90+ |
 | Core Dosya | 10 |
 | Agent Profili | 7 |
-| Mimari Diyagram | 4 |
+| Mimari Diyagram | 20+ |
 | Şablon | 5 |
-| ADR | 8 |
-| Skill | 6 |
-| Toplam Satır | ~19,400 |
-| Tahmini Token | ~26,500 |
+| ADR | 11 |
+| Skill | 11 |
+| Rules | 6 |
+| Spec | 3 |
+| Toplam Satır | ~45,000+ |
+| Tahmini Token | ~55,000+ |
 
 ### 12.2 Kapsam
 
@@ -511,6 +547,7 @@ public interface ISkill
 
 ---
 
+<<<<<<< HEAD
 ## 13. Vault Kullanım Rehberi
 
 ### 13.1 Session Başlatma
@@ -618,6 +655,63 @@ public class ContextAssembler
 | 2026-08-26 | WORKFLOW.md | Proje yaşam döngüsü | MO |
 | 2026-08-26 | brain.md | DDD kalıpları | MO |
 | 2026-08-26 | ROLE.md | State machine | MO |
+=======
+## 13. Sektörel Agent Kataloğu (60+ Agent)
+
+### 13.1 Sektörel Agent Listesi
+
+| # | Agent | Kod Adı | Sektör | Uzmanlık |
+|---|-------|---------|--------|----------|
+| 1 | **Otomotiv Agent** | `automotive` | Otomotiv | CAN Bus, OBD-II, AUTOSAR |
+| 2 | **Sağlık Agent** | `healthcare` | Sağlık | HL7, FHIR, DICOM |
+| 3 | **Finans Agent** | `finance` | Finans | Trading, Risk, Compliance |
+| 4 | **Oyun Agent** | `gaming` | Oyun | Game Engine, Physics, Audio |
+| 5 | **IoT Agent** | `iot` | IoT | MQTT, CoAP, Zigbee |
+| 6 | **Siber Güvenlik Agent** | `cybersecurity` | Siber Güvenlik | Penetration, Forensics |
+| 7 | **Yapay Zeka Agent** | `ai` | Yapay Zeka | ML, DL, NLP, CV |
+| 8 | **Blockchain Agent** | `blockchain` | Blockchain | Smart Contract, DApp |
+| 9 | **Eğitim Agent** | `education` | Eğitim | LMS, E-learning |
+| 10 | **E-ticaret Agent** | `ecommerce` | E-ticaret | Payment, Inventory |
+| 11 | **Mühendislik Agent** | `engineering` | Mühendislik | CAD, CAM, Simulation |
+| 12 | **Hukuk Agent** | `legal` | Hukuk | Contract, Compliance |
+| 13 | **Gayrimenkul Agent** | `realestate` | Gayrimenkul | Property, Valuation |
+| 14 | **Lojistik Agent** | `logistics` | Lojistik | Supply Chain, Fleet |
+| 15 | **Tarım Agent** | `agriculture` | Tarım | Precision, IoT |
+| 16 | **Enerji Agent** | `energy` | Enerji | Smart Grid, SCADA |
+| 17 | **Savunma Agent** | `defense` | Savunma | C4ISR, EW |
+| 18 | **Uzay Agent** | `aerospace` | Uzay | GNC, Avionics |
+| 19 | **Deniz Agent** | `marine` | Deniz | Navigation, Communication |
+| 20 | **Madencilik Agent** | `mining` | Madencilik | Exploration, Processing |
+
+### 13.2 Sektör Tespit Algoritması
+
+```csharp
+public Sector DetectSector(string userInput)
+{
+    var input = userInput.ToLowerInvariant();
+    
+    // Anahtar kelime eşleme
+    foreach (var mapping in _sectorKeywords)
+    {
+        if (mapping.Keywords.Any(k => input.Contains(k)))
+            return mapping.Sector;
+    }
+    
+    // Varsayılan: Genel
+    return Sector.General;
+}
+```
+
+### 13.3 Sektör-Spesifik Kurallar
+
+| Sektör | Standart | Kural |
+|--------|----------|-------|
+| Otomotiv | MISRA-C, AUTOSAR | Memory-safe coding |
+| Sağlık | HIPAA, HL7 | Data encryption |
+| Finans | PCI-DSS, SOX | Audit trail |
+| Savunma | DO-178C, MISRA | Zero defect |
+| Gıda | HACCP | Traceability |
+>>>>>>> c3e202adbf05605c413ce8e18757b121c201aecb
 
 ---
 

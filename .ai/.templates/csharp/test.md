@@ -201,5 +201,250 @@ mockDialog
 
 ---
 
-**Authority:** Vault Steward  
-**Last Updated:** 2026-08-25
+## 4. Integration Test Template
+
+### 4.1 API Integration Test
+
+```csharp
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Xunit;
+
+namespace {TestNamespace}
+{
+    /// <summary>
+    /// API integration test'leri
+    /// </summary>
+    public class ApiIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
+    {
+        private readonly WebApplicationFactory<Program> _factory;
+        private readonly HttpClient _client;
+
+        public ApiIntegrationTests(WebApplicationFactory<Program> factory)
+        {
+            _factory = factory;
+            _client = factory.CreateClient();
+        }
+
+        [Fact]
+        public async Task GetSessions_ReturnsSuccess()
+        {
+            // Act
+            var response = await _client.GetAsync("/api/sessions");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync();
+            Assert.NotNull(content);
+        }
+
+        [Fact]
+        public async Task CreateSession_ReturnsCreated()
+        {
+            // Arrange
+            var command = new CreateSessionCommand("Test Session", Guid.NewGuid());
+            var content = new StringContent(
+                JsonSerializer.Serialize(command),
+                Encoding.UTF8,
+                "application/json");
+
+            // Act
+            var response = await _client.PostAsync("/api/sessions", content);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task GetSession_NotFound()
+        {
+            // Act
+            var response = await _client.GetAsync($"/api/sessions/{Guid.NewGuid()}");
+
+            // Assert
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+    }
+}
+```
+
+---
+
+## 5. Test Data Builders
+
+### 5.1 Session Builder
+
+```csharp
+namespace {TestNamespace}
+{
+    /// <summary>
+    /// Session test data builder
+    /// </summary>
+    public class SessionBuilder
+    {
+        private string _name = "Test Session";
+        private Guid _projectId = Guid.NewGuid();
+        private SessionState _state = SessionState.ACTIVE;
+        private DateTime _createdAt = DateTime.UtcNow;
+
+        public static SessionBuilder New() => new();
+
+        public SessionBuilder WithName(string name)
+        {
+            _name = name;
+            return this;
+        }
+
+        public SessionBuilder WithProjectId(Guid projectId)
+        {
+            _projectId = projectId;
+            return this;
+        }
+
+        public SessionBuilder WithState(SessionState state)
+        {
+            _state = state;
+            return this;
+        }
+
+        public SessionBuilder WithCreatedAt(DateTime createdAt)
+        {
+            _createdAt = createdAt;
+            return this;
+        }
+
+        public Session Build()
+        {
+            var session = new Session(_name, _projectId);
+            return session;
+        }
+    }
+}
+```
+
+### 5.2 User Builder
+
+```csharp
+namespace {TestNamespace}
+{
+    /// <summary>
+    /// User test data builder
+    /// </summary>
+    public class UserBuilder
+    {
+        private string _name = "Test User";
+        private string _email = "test@example.com";
+        private bool _isVip = false;
+
+        public static UserBuilder New() => new();
+
+        public UserBuilder WithName(string name)
+        {
+            _name = name;
+            return this;
+        }
+
+        public UserBuilder WithEmail(string email)
+        {
+            _email = email;
+            return this;
+        }
+
+        public UserBuilder AsVip()
+        {
+            _isVip = true;
+            return this;
+        }
+
+        public User Build()
+        {
+            return new User
+            {
+                Name = _name,
+                Email = _email,
+                IsVip = _isVip
+            };
+        }
+    }
+}
+```
+
+---
+
+## 6. Assertion Helpers
+
+### 6.1 Custom Assertions
+
+```csharp
+namespace {TestNamespace}
+{
+    /// <summary>
+    /// Özel assertion yardımcıları
+    /// </summary>
+    public static class AssertExtensions
+    {
+        public static void shouldBe(this string actual, string expected)
+        {
+            Assert.Equal(expected, actual);
+        }
+
+        public static void shouldNotBeNull(this object? actual)
+        {
+            Assert.NotNull(actual);
+        }
+
+        public static void shouldBeTrue(this bool actual)
+        {
+            Assert.True(actual);
+        }
+
+        public static void shouldBeFalse(this bool actual)
+        {
+            Assert.False(actual);
+        }
+
+        public static void shouldBeGreaterThan(this int actual, int expected)
+        {
+            Assert.True(actual > expected);
+        }
+    }
+}
+```
+
+---
+
+## 7. Test Checklist
+
+| # | Kontrol | Durum |
+|---|---------|-------|
+| 1 | Arrange kısmı açık | ☐ |
+| 2 | Act kısmı basit | ☐ |
+| 3 | Assert kısmı spesifik | ☐ |
+| 4 | Test izole | ☐ |
+| 5 | Test tekrarlanabilir | ☐ |
+| 6 | Mock'lar doğru kullanıldı | ☐ |
+| 7 | Edge case'ler test edildi | ☐ |
+| 8 | Test ismi açıklayıcı | ☐ |
+
+---
+
+## 8. Quality Report
+
+| Metrik | Değer |
+|--------|-------|
+| Version | 1.1.0 |
+| Status | Active |
+| Test Types | 3 (Unit, Integration, Builder) |
+| Mock Examples | 3 |
+| Builder Examples | 2 |
+
+---
+
+**Authority:** Vault Steward
+**Last Updated:** 2026-08-26
+**Mode:** Red Team · Human Mode · Truth Mode

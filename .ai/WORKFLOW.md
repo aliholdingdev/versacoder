@@ -285,33 +285,333 @@ description: Kısa açıklama (max 50 karakter)
 
 ---
 
-## 8. CI/CD Süreçleri
+## 8. CI/CD & Deployment Süreçleri
 
-### 8.1 Pipeline Adımları
+### 8.1 GitHub Actions Pipeline
+
+#### 8.1.1 Build Workflow (develop/feature push)
+
+```yaml
+name: Build & Test
+on:
+  push:
+    branches: [develop, 'feature/**']
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-version: ['8.0.x']
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Cache NuGet packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: ${{ runner.os }}-nuget-
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage"
+
+    - name: Upload coverage
+      uses: codecov/codecov-action@v4
+      with:
+        files: '**/coverage.cobertura.xml'
+```
+
+#### 8.1.2 Release Workflow (main push)
+
+```yaml
+name: Release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: windows-latest
+    environment: production
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Test
+      run: dotnet test --configuration Release
+
+    - name: Publish
+      run: dotnet publish src/VersaCoder.Host/VersaCoder.Host.csproj -c Release -o ./publish
+
+    - name: Docker Build & Push
+      run: |
+        docker build -t versacoder:${{ github.sha }} .
+        docker tag versacoder:${{ github.sha }} versacoder:latest
+        docker push versacoder:${{ github.sha }}
+        docker push versacoder:latest
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ github.run_number }}
+        generate_release_notes: true
+```
+
+#### 8.1.3 Nightly Build Workflow
+
+```yaml
+name: Nightly Build
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Her gece 02:00 UTC
+
+jobs:
+  nightly:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Full Build & Test
+      run: |
+        dotnet restore
+        dotnet build --configuration Release
+        dotnet test --configuration Release --logger trx
+    - name: SonarQube Analysis
+      run: |
+        dotnet sonarscanner begin /k:"versacoder-nightly" /d:sonar.host.url="${{ secrets.SONAR_HOST }}"
+        dotnet build --configuration Release
+        dotnet sonarscanner end
+```
+
+### 8.2 Build Pipeline Aşamaları
 
 ```
-[1. Build] → [2. Test] → [3. Analyze] → [4. Security Scan] → [5. Package] → [6. Deploy]
+[1. Restore] → [2. Build] → [3. Test] → [4. Analyze] → [5. Security Scan] → [6. Package] → [7. Deploy]
 ```
 
-### 8.2 Build Pipeline
+| Adım | Araç | Komut | Başarı Koşulu | Timeout |
+|------|------|-------|---------------|---------|
+| Restore | NuGet | `dotnet restore` | 0 hata | 5 dk |
+| Build | MSBuild | `dotnet build -c Release` | 0 hata, 0 uyarı | 10 dk |
+| Test | xUnit | `dotnet test -c Release` | %80+ coverage | 15 dk |
+| Analyze | Roslyn/SonarQube | `dotnet format --verify-no-changes` | Quality Gate pass | 10 dk |
+| Security | Snyk/Trivy | Security scan | 0 kritik hata | 10 dk |
+| Package | dotnet | `dotnet publish -c Release` | Başarılı | 5 dk |
+| Deploy | Docker/Manual | Container build + push | Başarılı | 10 dk |
 
-| Adım | Araç | Başarı Koşulu |
-|------|------|---------------|
-| Restore | dotnet restore | 0 hata |
-| Build | dotnet build | 0 hata, 0 uyarı |
-| Test | dotnet test | %80覆盖 |
-| Analyze | SonarQube | Quality Gate pass |
-| Security | Security Code Scan | 0 kritik hata |
-| Package | dotnet publish | Başarılı |
-| Deploy | Docker / Manual | Başarılı |
+### 8.3 Docker Containerization
 
-### 8.3 Deployment Stratejisi
+#### 8.3.1 Multi-stage Dockerfile
 
-| Ortam | Trigger | Manuel Onay |
-|-------|---------|-------------|
-| Development | develop push | Hayır |
-| Staging | release push | Evet |
-| Production | main push | Evet (2 kişi) |
+```dockerfile
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+COPY *.sln .
+COPY src/VersaCoder.Domain/*.csproj src/VersaCoder.Domain/
+COPY src/VersaCoder.Abstractions/*.csproj src/VersaCoder.Abstractions/
+COPY src/VersaCoder.Application/*.csproj src/VersaCoder.Application/
+COPY src/VersaCoder.CrossCutting/*.csproj src/VersaCoder.CrossCutting/
+COPY src/VersaCoder.Infrastructure.Data/*.csproj src/VersaCoder.Infrastructure.Data/
+COPY src/VersaCoder.Infrastructure.AI/*.csproj src/VersaCoder.Infrastructure.AI/
+COPY src/VersaCoder.Host/*.csproj src/VersaCoder.Host/
+
+RUN dotnet restore
+COPY . .
+RUN dotnet publish src/VersaCoder.Host/VersaCoder.Host.csproj -c Release -o /app/publish
+
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD curl -f http://localhost:8080/health || exit 1
+
+ENTRYPOINT ["dotnet", "VersaCoder.Host.dll"]
+```
+
+#### 8.3.2 Docker Compose (Development)
+
+```yaml
+version: '3.8'
+services:
+  versacoder:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/versacoder.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+```
+
+### 8.4 Deployment Stratejileri
+
+| Strateji | Açıklama | Avantaj | Dezavantaj |
+|----------|----------|---------|------------|
+| Blue-Green | İki tam kopya, geçiş anlık | Sıfır downtime, kolay rollback | 2x kaynak |
+| Canary | Yeni versiyon kademeli | Risk azaltma, geri bildirim | Karmaşık routing |
+| Rolling | Kademeli güncelleme | Az kaynak | Yavaş geçiş |
+| Recreate | Eski sil, yeni kur | Basit | Downtime var |
+
+#### 8.4.1 Blue-Green Deployment Akışı
+
+```
+Mevcut (Blue) ←── Load Balancer ──→ Yeni (Green)
+                    ↓
+            Health Check OK
+                    ↓
+            Traffic Switch
+                    ↓
+            Blue → Standby (rollback için)
+```
+
+#### 8.4.2 Rollback Prosedürü
+
+| Adım | Aksiyon | Sorumlu | Süre |
+|------|---------|---------|------|
+| 1 | Sorunu tespit et | Monitoring alert | Anlık |
+| 2 | Rollback karar ver | Tech Lead | 5 dk |
+| 3 | Traffic'ı Blue'ya çevir | DevOps | 1 dk |
+| 4 | Green'ı durdur | DevOps | 1 dk |
+| 5 | Database rollback (gerekirse) | DBA | 5-30 dk |
+| 6 | Doğrulama yap | QA | 10 dk |
+| 7 | Incident report oluştur | Sorumlu | 30 dk |
+
+### 8.5 Release Management
+
+#### 8.5.1 Semantic Versioning
+
+```
+MAJOR.MINOR.PATCH
+
+MAJOR: Breaking API changes veya büyük mimari değişiklikler
+MINOR: Backward-compatible yeni özellikler
+PATCH: Backward-compatible bug düzeltmeleri
+
+Örnek: 1.2.3
+  1 → İlk major release
+  2 → İkinci minor özellik eklentisi
+  3 → Üçüncü patch düzeltmesi
+```
+
+#### 8.5.2 Changelog Formatı
+
+```markdown
+## [1.2.0] - 2026-08-26
+
+### Added
+- SignalR real-time entegrasyonu
+- Sektörel agent desteği (60+ sektör)
+- GitHub Actions CI/CD pipeline
+
+### Changed
+- UI performans optimizasyonu
+- Veritabanı query optimizasyonu
+
+### Fixed
+- Session branching hatası düzeltildi
+- Memory leak giderildi
+
+### Deprecated
+- Eski provider API (v1) — v2.0'da kaldırılacak
+
+### Security
+- JWT token yenileme mechanizması güçlendirildi
+```
+
+### 8.6 Environment Yönetimi
+
+| Ortam | Database | API Keys | Log Level | Monitoring |
+|-------|----------|----------|-----------|------------|
+| Development | SQLite (local) | Test keys | Debug | Console |
+| Staging | SQLite (shared) | Staging keys | Information | Grafana |
+| Production | SQLite (WAL) | Prod keys (vault) | Warning | Grafana + Alerting |
+
+#### 8.6.1 Secret Yönetimi
+
+```yaml
+# GitHub Secrets yapısı
+secrets:
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  DOCKER_REGISTRY_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+  AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+  PROD_DATABASE_STRING: ${{ secrets.PROD_DB_STRING }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_KEY }}
+```
+
+### 8.7 Code Quality Gates
+
+| Gate | Koşul | Zorunlu | Araç |
+|------|-------|---------|------|
+| Build | 0 hata | ✅ | dotnet build |
+| Test Coverage | ≥ %80 | ✅ | Coverlet |
+| Code Style | 0 uyarı | ✅ | dotnet format |
+| SonarQube Quality Gate | Pass | ✅ | SonarQube |
+| Security Scan | 0 kritik | ✅ | Snyk |
+| License Check | Approved | ✅ | license-checker |
+
+### 8.8 Branching & Merge Stratejisi
+
+```
+main (production) ← Release only, 2 reviewer onayı
+  ↑
+develop (integration) ← Feature merge, CI pass
+  ↑
+feature/TASK-001-xxx ← Tek developer, PR → develop
+hotfix/TASK-002-xxx ← Acil fix, PR → main + develop
+```
+
+#### 8.8.1 Branch Protection Kuralları
+
+| Kural | Değer |
+|-------|-------|
+| Require pull request | ✅ |
+| Required reviewers | ≥ 1 |
+| Require status checks | ✅ (build + test) |
+| Require branches up to date | ✅ |
+| Require conversation resolution | ✅ |
+| Require linear history | ✅ (squash merge) |
+| Include administrators | ✅ |
 
 ---
 

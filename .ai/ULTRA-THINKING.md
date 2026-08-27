@@ -316,5 +316,228 @@ DOĞRULA → LSP, typecheck, test, template uyumu
 
 ---
 
+## 11. Düşünme Örnekleri
+
+### 11.1 Örnek 1: Yeni Entity Oluşturma
+
+```markdown
+## Düşünme Süreci - ChatSession Entity
+
+### 1. Vault Oku
+- [x] CLAUDE.md okundu - Guardrails: §4.1 #1 (Plan zorunlu), #6 (Şablon zorunlu)
+- [x] AGENTS.md okundu - Build Agent: L0-L4 arası kod yazabilir
+- [x] brain.md okundu - Domain kuralları: Entity = Sınıf, Value Object = Record
+
+### 2. Bağlam Analizi
+- Domain: Chat Session yönetimi
+- Katman: L0 - Domain
+- Dosyalar: 
+  - Yeni: `Domain/Entities/ChatSession.cs`
+  - Etkilenen: Yok (yeni dosya)
+- Bağımlılıklar: Yok (L0 en alt katman)
+- Mevcut kod: `Session.cs` mevcut, benzer yapıda
+
+### 3. Hata Kontrolü
+- [x] Syntax kontrolü - C# 12 syntax
+- [x] Type safety - Guid id, string name
+- [x] Security check - Hassas veri yok
+
+### 4. Sonuç Tahmini
+- Etki alanı: Session yönetimi modülü
+- Edge cases: Boş isim, null id, Unicode karakter
+- Performance: Minimal (basit entity)
+
+### 5. Doğrulama
+- [ ] LSP pass
+- [ ] TypeCheck pass
+- [ ] Test pass
+```
+
+### 11.2 Örnek 2: Repository Implementasyonu
+
+```markdown
+## Düşünme Süreci - ChatSessionRepository
+
+### 1. Vault Oku
+- [x] CLAUDE.md okundu - Guardrails: §4.1 #13 (EF Core DbContext ONLY)
+- [x] AGENTS.md okundu - Build Agent: L4'te repository yazabilir
+- [x] brain.md okundu - Repository pattern: Interface L1, Impl L4
+
+### 2. Bağlam Analizi
+- Domain: Veri erişimi
+- Katman: L4.1 - Infrastructure.Data
+- Dosyalar:
+  - Yeni: `Infrastructure.Data/Repositories/ChatSessionRepository.cs`
+  - Referans: `Abstractions/Repositories/IChatSessionRepository.cs`
+  - Referans: `Infrastructure.Data/Context/VersaCoderDbContext.cs`
+- Bağımlılıklar: Domain (L0), Abstractions (L1), Application (L2)
+
+### 3. Hata Kontrolü
+- [x] Syntax kontrolü - Async/Await kullanımı
+- [x] Type safety - Null check, CancellationToken
+- [x] Security check - SQL injection riski yok (EF Core)
+
+### 4. Sonuç Tahmini
+- Etki alanı: Tüm session işlemleri
+- Edge cases: DB connection failure, timeout, cancellation
+- Performance: Lazy loading riski, Include kullanımı
+
+### 5. Doğrulama
+- [ ] LSP pass
+- [ ] TypeCheck pass
+- [ ] Test pass
+```
+
+### 11.3 Örnek 3: UI ViewModel Oluşturma
+
+```markdown
+## Düşünme Süreci - ChatSessionViewModel
+
+### 1. Vault Oku
+- [x] CLAUDE.md okundu - Guardrails: §4.1 #14 (WinForms code-behind yasak), #15 (DevExpress zorunlu)
+- [x] AGENTS.md okundu - Build Agent: UI'da ViewModel yazabilir
+- [x] brain.md okundu - MVVM: CommunityToolkit.Mvvm, ObservableProperty, RelayCommand
+
+### 2. Bağlam Analizi
+- Domain: UI katmanı
+- Katman: L7 - UI
+- Dosyalar:
+  - Yeni: `UI/ViewModels/ChatSessionViewModel.cs`
+  - Referans: `Domain/Entities/ChatSession.cs`
+  - Referans: `Abstractions/Services/IChatSessionService.cs`
+- Bağımlılıklar: CommunityToolkit.Mvvm, Abstractions
+
+### 3. Hata Kontrolü
+- [x] Syntax kontrolü - Source generator kullanımı
+- [x] Type safety - INotifyPropertyChanged
+- [x] Security check - Hassas veri yok
+
+### 4. Sonuç Tahmini
+- Etki alanı: Session UI bileşenleri
+- Edge cases: Binding DataContext, async loading
+- Performance: UI thread blocking riski
+
+### 5. Doğrulama
+- [ ] LSP pass
+- [ ] TypeCheck pass
+- [ ] Test pass
+```
+
+### 11.4 Örnek 4: Migration Oluşturma
+
+```markdown
+## Düşünme Süreci - AddChatSessionTable
+
+### 1. Vault Oku
+- [x] CLAUDE.md okundu - Guardrails: §4.1 #16 (SQLite WAL modu)
+- [x] AGENTS.md okundu - Build Agent: Migration oluşturabilir
+- [x] brain.md okundu - EF Migration: conventions-based, Fluent API
+
+### 2. Bağlam Analizi
+- Domain: Veritabanı şeması
+- Katman: L4.1 - Infrastructure.Data
+- Dosyalar:
+  - Değişen: `Infrastructure.Data/Context/VersaCoderDbContext.cs`
+  - Yeni: `Infrastructure.Data/Migrations/{Timestamp}_AddChatSession.cs`
+- Bağımlılıklar: EF Core, SQLite
+
+### 3. Hata Kontrolü
+- [x] Syntax kontrolü - Migration syntax
+- [x] Type safety - Column types
+- [x] Security check - Nullability
+
+### 4. Sonuç Tahmini
+- Etki alanı: DB şeması değişikliği
+- Edge cases: Data loss riski, index creation
+- Performance: Migration hızı, lock riski
+
+### 5. Doğrulama
+- [ ] LSP pass
+- [ ] TypeCheck pass
+- [ ] Migration test
+```
+
+---
+
+## 12. Düşünme Hata Senaryoları
+
+### 12.1 Vault Okunamadı
+
+| Durum | Aksiyon |
+|-------|---------|
+| Vault dosyası eksik | Hata logla, devam et, insan onayı |
+| Vault dosyası bozuk | Hata logla, geri yükle, devam et |
+| Vault timeout | Log WARN, en son bilgiyi kullan |
+
+### 12.2 Bağlam Anlaşılamadı
+
+| Durum | Aksiyon |
+|-------|---------|
+| Domain belirsiz | Soru sor (question tool) |
+| Katman belirsiz | Varsayılan: En yakın katman |
+| Dosya belirsiz | Glob ile ara |
+
+### 12.3 Hata Kontrolü Başarısız
+
+| Durum | Aksiyon |
+|-------|---------|
+| Syntax hatası | Düzelt, tekrar kontrol et |
+| Type hatası | Düzelt, tekrar kontrol et |
+| Security hatası | DUR, insana bildir |
+
+### 12.4 Tahmin Başarısız
+
+| Durum | Aksiyon |
+|-------|---------|
+| Edge case bulunamadı | Varsayılan: NULL, empty, whitespace |
+| Performans belirsiz | Varsayılan: Kötü senaryo |
+
+### 12.5 Doğrulama Başarısız
+
+| Durum | Aksiyon |
+|-------|---------|
+| LSP hatası | Düzelt, tekrar doğrula |
+| Test hatası | Düzelt, tekrar çalıştır |
+| Template uyumsuzluğu | Template'i güncelle |
+
+---
+
+## 13. Düşünme İstatistikleri
+
+### 13.1 Günlük İstatistikler
+
+| Metrik | Hedef | Ölçüm |
+|--------|-------|-------|
+| Toplam düşünce sayısı | İzleme | Her görev |
+| Başarılı düşünce | > %90 | İlk seferde doğru |
+| Başarısız düşünce | < %10 | Geri alma |
+| Ortalama düşünce süresi | < 30s | Zaman ölçümü |
+
+### 13.2 Haftalık İstatistikler
+
+| Metrik | Hedef | Ölçüm |
+|--------|-------|-------|
+| Vault okuma sıklığı | %100 | Her görev |
+| Hata tespit oranı | > %80 | Bug tracker |
+| Kalite artışı | İzleme | Trend analizi |
+
+---
+
+## 14. Quality Report
+
+| Metrik | Değer |
+|--------|-------|
+| Version | 1.1.0 |
+| Status | Active |
+| Steps | 5 |
+| Timeout Rules | 5 |
+| Scenarios | 4 |
+| Error Scenarios | 5 |
+| Metrics | 8 |
+| Examples | 4 |
+
+---
+
 **Authority:** Vault Steward
-**Last Updated:** 2026-08-25
+**Last Updated:** 2026-08-26
+**Mode:** Red Team · Human Mode · Truth Mode
