@@ -1,0 +1,131 @@
+---
+title: "data-binding-basics - VersaCoder"
+type: knowledge
+category: winforms
+status: active
+version: 1.0.0
+updated: 2026-10-04
+authority: SSOT
+scope: "WinForms veri baglamanin parcalarini (Binding, BindingSource, CurrencyManager), yon ve guncelleme kurallarini ve ihlal belirtilerini tanimlar"
+---
+
+# Data Binding Temelleri
+
+**Zorunlu Baglantilar:** [validation-form-level](validation-form-level.md) · [data-access-rules](../../.rules/data-access-rules.md) · [coding-standards](../../.rules/coding-standards.md) · [designer-cs-trio-rule](designer-cs-trio-rule.md) · [vault indeks](../index.md)
+
+> **Tek cumlelik sorumluluk:** *Bir control'e deger nasil baglanir, kim guncel kaydi bilir, iki yonlu guncelleme ne zaman patlar* sorusunun tek cevabidir.
+
+---
+
+## §0 Ozet (Answer First)
+
+WinForms baglamasi uc parcadan olusur: **`Binding`** (control property <-> kaynak property), **`BindingSource`** (sira + filtre + koleksiyon uzerindeki tek muhatap), **`CurrencyManager`** (aktif satir: `Position`, `Current`). Kaynak **`INotifyPropertyChanged`** implemente etmiyorsa alan guncellemesi ekrana yansimaz; `DataSource`'a **yeni liste** vermek (`ResetBindings`) ile tek satir guncellemek (`ResetCurrentBinding`) ayri islerdir. Veri kaynagi bu vault'ta **ADO.NET + Dapper**'dir; baglama **ara katmanin DTO'su** uzerinden yapilir, `DataTable` yalnizca hizli liste icindir.
+
+```text
+control property  <--- Binding --->  DTO / IList  <--- BindingSource --->  Position (aktif satir)
+                                          |
+                                    INotifyPropertyChanged yoksa -> ekranda ESKI deger kalir
+```
+
+---
+
+## §1 Baglama parcalari
+
+| Parca | Ne yapar | Tipik kullanim |
+|---|---|---|
+| `Binding` | tek property eslesmesi | `nameBox.DataBindings.Add("Text", src, "Name")` |
+| `BindingSource` | sira + filtre + `AddNew`/`Remove` | `Position`, grid besleme |
+| `CurrencyManager` | aktif kayit | `bindingSource.CurrencyManager.Position` |
+| `INotifyPropertyChanged` | alan degisimi ekrana yansir | DTO / view-model |
+| `IList` / `DataTable` | koleksiyon kaynagi | liste, hizli tablo |
+| `BindingNavigator` | ileri/geri/kaydet cubugu | klasik CRUD |
+
+```csharp
+var source = new BindingSource();
+source.DataSource = _sessions.LoadAll();       // IList<SessionDto>
+
+nameBox.DataBindings.Add("Text", source, "Name");
+idLabel.DataBindings.Add("Text", source, "Id");
+grid.DataSource = source;
+```
+
+---
+
+## §2 Yon ve guncelleme kurallari
+
+| Durum | Davranis | Cozum |
+|---|---|---|
+| kaynak `INotifyPropertyChanged` yayiyor | alan -> ekran **canli** | DTO'da `OnPropertyChanged` |
+| kaynak yalniz `IList` | yalnizca satir degisimi yansir | `ResetBindings()` |
+| `DataSource` = yeni liste | sifirdan yukleme | `ResetBindings(...)` |
+| control `Text` bosaltildi, `FormattingEnabled=false` | bosaltma yazilmaz | gerekliyse `FormattingEnabled=true` |
+| bir alan baska alani dogruluyor | `Validating` zinciri | `AutoValidate` (bkz. [validation-form-level](validation-form-level.md)) |
+| kaynakta SQL | **YASAK** (G2 / DA-03) | Dapper + `@p1` parametreli sorgu |
+
+> **KURAL:** Control'e **dogrudan** bagli DTO **kaydetme icin kullanilmaz**; kaydetme `Application` katmanina gider ve parametreli SQL ile yapilir.
+
+---
+
+## §3 TFM farki (net48 vs net10.0-windows)
+
+| Konu | `net48` | `net10.0-windows` |
+|---|---|---|
+| `Binding` / `BindingSource` / `CurrencyManager` | var | var - **ayni API** |
+| `INotifyPropertyChanged` | var | var |
+| `DataTable` / `DataView` | `System.Data` yerlesik | Windows Desktop paketinde yerlesik |
+| nullable anotasyonu | yok | `string?` / `T?` |
+| `System.ComponentModel.Annotations` | yerlesik | yerlesik (DataAnnotations) |
+| `await foreach` | paket gerekir | `AsyncEnumerable` (10.0+) |
+
+> **Sonuc:** baglama **API'si iki bacakta birebir aynidir**; fark yalnizca NRT anotasyonu ve asenkron koleksiyon yardimcilari. Kod `#if` **icermemeli**.
+
+---
+
+## §4 C# 7.3 (net48) vs C# 14 - ortak kaynak tablosu
+
+| Ozellik | C# 7.3 | C# 14 | Ortak kaynak |
+|---|---|---|---|
+| property bildirimi | blok `get/set` | expression body (`=>`) | expression body 7.3'te de var (getter icin) |
+| event yayimi | `var h = Ev; if (h != null)` | `Ev?.Invoke(...)` | `?.` 6.0+ -> ortak kodda da calisir |
+| `nameof` | var (6.0+) | ayni | **her iki bacakta ayni** |
+| nullable event | `PropertyChangedEventHandler` | `?` | 7.3'te `?` yok |
+
+INPC kalibi her iki bacakta da ayni isi gorur: `if (value == x) return;` kisa devre, sonra alan yazimi, sonra `PropertyChanged` yayimi (7.3: handler kopyala + `!= null`; 14: `?.Invoke` + `nameof`).
+
+---
+
+## §5 Ihlal belirtisi
+
+| Ihlal | Belirti | Duzeltme |
+|---|---|---|
+| DTO `INotifyPropertyChanged` yok | alan guncellenince ekranda eski deger | DTO'ya INPC ekle ya da `ResetBindings` |
+| her tus vurusunda tam liste reset | ekran titremesi, kayit konumu kaybi | yalniz satir guncellemesi / `Position` |
+| control'e dogrudan DB nesnesi | UI katmani veri erisimi biliyor (G2 riski) | DTO + `Application` katmani |
+| `grid.DataSource = null` ile temizleme | abonelikler kopmaz | `Dispose` + `DataSource = null` sirasi |
+| SQL'i baglama kodunda yazmak | string-concat SQL (DA-03) | Dapper parametreli (ADR-005) |
+
+---
+
+## §6 Tarama tablosu (kim neyi degistirir)
+
+| Aranacak | `.Form.cs` | `.Designer.cs` | Beklenen |
+|---|---|---|---|
+| `DataBindings.Add` | veri baglama kodu | - | DTO uzerinden |
+| `new BindingSource()` | kodda kurulur | - | tek muhatap |
+| `SuspendLayout(` | **0** DOĞRULAMA GEREKLI | var | - |
+| string-concat SQL | **0** DOĞRULAMA GEREKLI | **0** DOĞRULAMA GEREKLI | parametreli sorgu |
+| `INotifyPropertyChanged` | DTO tanimi | - | her guncelleyen DTO'da |
+
+Kontrol listesi: baglama sirasi `DataSource` -> kolonlar, SQL parametreli, kolonlar tasarimcida, layout anahtari benzersiz, iki bacakta `dotnet build` -> 0 hata DOĞRULAMA GEREKLI.
+
+---
+
+## §9 Kanit
+
+| Kaynak dosya | Ne alindi |
+|---|---|
+| `knowledge\winforms\data-binding-basics.md` (kaynak vault) | parca tablosu, yon/guncelleme tablosu, TFM tablosu, C# 7.3/14 karsilastirmasi, ihlal belirtileri |
+| `.rules\data-access-rules.md` | parametreli sorgu, EF Core yasagi |
+| `.rules\coding-standards.md` | DTO/katman yazim kurali |
+
+> Kanitsiz iddia icin DOĞRULAMA GEREKLI yazilir; bu dosyada kaynak disi bilgi yoktur.

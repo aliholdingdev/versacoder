@@ -1,0 +1,17 @@
+# build output
+bin/
+obj/
+artifacts/
+TestResults/
+*.user
+*.suo
+
+# visual studio
+.vs/
+
+# node (opencode plugin deps - never committed)
+node_modules/
+
+# local / scratch
+*.old.*
+*.log
