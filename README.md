@@ -1,53 +1,103 @@
 ---
-title: README - VersaCoder depo tanitimi
-type: overview
-category: root
+title: "VersaCoder — README"
+type: readme
+category: docs
 status: active
 version: 1.0.0
-updated: 2026-10-04
+updated: 2026-10-05
 authority: SSOT
-scope: "Repo koku; bu depoda ne var, teknoloji kararlari hangi kaynakta, ilk adim hangi dosya"
+scope: "Depo kökü README: ne yapar, hızlı başlangıç, katmanlar, yapılandırma, testler, mimari not, referanslar"
 ---
 
 # VersaCoder
 
-> **Tek cumlelik sorumluluk:** bu depoda **ne oldugunu**, teknoloji secimlerinin
-> **kaynagini** ve ilk adim **okuma sirasini** tek yerde soyler.
+> **Ajan/üretim SSOT'lu `.ai/` vault'u + henüz kurulmamış VersaCoder masaüstü kod tabanı.**
+> Şu an depo **yalnızca belgedir**: `src/`, `tests/` ve `.sln` diskte **yok** (2026-10-05 ölçümü).
 
-## §0 Ozet (Answer First)
+## 1. Ne Yapar (Answer First)
 
-- **Ne:** VersaCoder - .NET masaustunde calisan **agentic IDE** (WinForms + DevExpress):
-  gelistirici tek pencerede kod yazar, ajanin cagrisini canli gorur, onaysiz yikici
-  islem yapilmaz. Urun tanimi: [.ai/VISION.md](.ai/VISION.md); kapsam: [.ai/PROJECTS.md](.ai/PROJECTS.md).
-- **Bu depoda su an:** 4 kok dokuman (`CLAUDE`, `AGENTS`, `README`, `WORKFLOW`) +
-  bilgi bankasi `.ai/` (vault: kural, ADR, sablon, spec, bilgi, rapor, prompt, olcum scriptleri).
-- **Ilk adim:** [AGENTS.md](AGENTS.md) §1 okuma sirasi. Bu dosya tanitimdir, kural degildir
-  (kural: [.ai/CLAUDE.md](.ai/CLAUDE.md)).
+- **vault:** 553 Markdown dosyasıyla kural, ADR, katman spec ve şablon tutar.
+- **kapı:** `GATE-003` kullanıcı onayından önce tek satır `.cs` yazılmaz.
+- **kod:** 9 üretim projesi (K0..K8) + test projesi **henüz yazılmadı** — `DOĞRULAMA GEREKLİ`.
 
-## §1 Depo icerigi (olculmus: 2026-10-04)
+## 2. Hızlı Başlangıç
 
-| Yol | Ne | Not |
+```powershell
+# on (bu makinede dogrulanmis)
+git status --short
+dotnet --version                                   # 10.0.301
+powershell -NoProfile -ExecutionPolicy Bypass -File .\.ai\scripts\check-links.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\.ai\scripts\measure-vault.ps1
+```
+
+```powershell
+# kod kismi - .sln yokken CALISMAZ (DOĞRULAMA GEREKLİ)
+dotnet build                                       # .sln YOK -> "MSB1003"
+dotnet test                                        # tests/ YOK -> "hedef bulunamadi"
+```
+
+**Sıralama:** `.ai/.templates/index.md` → görev şablonu → `.ai/.rules/` → kod → `rules-check`.
+
+## 3. Katmanlar / Kullanım
+
+| Katman | Sorumluluk | Referans | Diskte |
+|---|---|---|---|
+| `.ai/.templates/` | 38 şablon, 10 alt klasör | [templates](./.ai/.templates/index.md) | ✅ 38 MD |
+| `.ai/.rules/` | kalıcı kural metni | [rules](./.ai/.rules/index.md) | ✅ 18 MD |
+| `.ai/.decisions/` | ADR-001..030 (0 boşluk) | [adr-index](./.ai/.decisions/adr-index.md) | ✅ 32 MD |
+| `.ai/architecture/` | katman spec + catalog | [architecture](./.ai/architecture/index.md) | ✅ 129 MD |
+| `.ai/checklists/` + `.ai/.agents/` | gate listesi · 7 ajan profili | [index](./.ai/index.md) | ✅ 32 MD · 7 MD |
+| `.ai/scripts/` | 14 PS1 ölçüm betiği | [check-links.ps1](./.ai/scripts/check-links.ps1) | ✅ 14 PS1 |
+| `src/**` | 9 üretim projesi (K0..K8) | `CLAUDE.md` §B5 | ❌ **YOK** |
+| `tests/**` | unit + integration, hedef %90 | — | ❌ **YOK** |
+
+## 4. Yapılandırma
+
+| Anahtar | Varsayılan | Not |
 |---|---|---|
-| `CLAUDE.md` | kisa kural yonlendirmesi (5 kirmizi cizgi) | kural metni `.ai/CLAUDE.md`'de |
-| `AGENTS.md` | oturum boot: okuma sirasi, ajan matrisi, cikti kutusu, kapi kurali | otomatik yuklenen tek talimat |
-| `README.md` | bu dosya | tanitim |
-| `WORKFLOW.md` | kapi zinciri ozeti | tam metin `.ai/WORKFLOW.md` |
-| `.ai/` | vault (bilgi bankasi) | giris: [.ai/index.md](.ai/index.md); 16 klasor + 14 kok belge + olcum scriptleri |
-| `.opencode/` | komut ve skill dosyalari | `/prompt-maker`, `/gate`, `rules-check` |
-| `.gitignore` | git dislama kurallari | - |
+| `global.json` | SDK 10.0.301 | dosya **YOK** — `DOĞRULAMA GEREKLİ` |
+| `Directory.Packages.props` | CPM kilidi | dosya **YOK** — `DOĞRULAMA GEREKLİ` |
+| Frontmatter | 8 alan, UTF-8 (BOM'suz) | `.ai/**` 553/553 uyumlu |
+| Token bütçesi | 50.000 / oturum | kök dosya payı ≤ %3 |
+| DevExpress | **yalnız v26.1** (ADR) | paket henüz kurulmadı |
+| Veri erişimi | ADO.NET + Dapper | EF Core **yok** (G2 · ADR-005) |
 
-## §2 Teknoloji anayasasi (secim + kaynak)
+## 5. Testler
 
-| Karar | Secim | Kaynak |
+```powershell
+# su an calisir (belge dogrulamasi)
+powershell -NoProfile -ExecutionPolicy Bypass -File .\.ai\scripts\check-links.ps1
+# kod testleri - tests/ YOK oldugu icin CALISMAZ (DOĞRULAMA GEREKLİ)
+dotnet test --filter "FullyQualifiedName~VersaCoder"
+```
+
+## 6. Mimari Not
+
+```text
+C:\versacoder
++-- CLAUDE.md ............. kural + K0..K8 + G1..G12 (SSOT baglantisi)
++-- AGENTS.md ............. golge (20 satir, "Kaynak: CLAUDE.md")
++-- README.md ............. bu dosya
++-- WORKFLOW.md ........... kapi/kapı ozeti
++-- .ai/ .................. 553 MD vault
+     +-- .templates/ ...... 38   sablon
+     +-- .rules/ .......... 18   kural
+     +-- .decisions/ ...... 32   (ADR-001..030)
+     +-- architecture/ .... 129  katman spec
+     +-- scripts/ ......... 14   ps1
++-- src/ .................. YOK (GATE-004 onayi bekliyor)
++-- tests/ ................ YOK
+```
+
+Yön: `K6 -> K7 -> {K5, K4} -> K3 -> K2 -> K1 -> K0`; yukarı bakan referans ihlaldir.
+
+## 7. Referanslar
+
+| # | Kaynak | Yol |
 |---|---|---|
-| TFM | `net48` + `net10.0-windows` (ikili bacak) | [ADR-001](.ai/.decisions/accepted/ADR-001-dual-target-net48-net10.md) |
-| UI | DevExpress v26.1, `RibbonControlStyle.Office2010` | [ADR-004](.ai/.decisions/accepted/ADR-004-devexpress-universal-v261-office2010.md) + [.ai/.rules/devexpress-rules.md](.ai/.rules/devexpress-rules.md) |
-| Veri | ADO.NET + Dapper, parametreli sorgu; `EF Core` yasak (G2) | [.ai/.rules/data-access-rules.md](.ai/.rules/data-access-rules.md) |
-| Test | xUnit + NSubstitute + NetArchTest (CPM ile kilitli) | [.ai/ROLE.md](.ai/ROLE.md) |
-
-## §3 Nereden baslanir
-
-1. [AGENTS.md](AGENTS.md) - okuma sirasi + ajan dagitimi + cikti kutusu.
-2. [WORKFLOW.md](WORKFLOW.md) - kapi zinciri (`GATE-004a -> 003 -> 004 -> 005 -> 006`).
-3. [.ai/index.md](.ai/index.md) - vault haritasi + olcum sayaclari (§4).
-4. [.ai/log.md](.ai/log.md) - son durum kaydi (hangi kapi, ne bitti).
+| 1 | Kök kural (SSOT) | [CLAUDE.md](./CLAUDE.md) |
+| 2 | Gölge ajan dosyası | [AGENTS.md](./AGENTS.md) |
+| 3 | Kapı özeti | [WORKFLOW.md](./WORKFLOW.md) |
+| 4 | Vault navigasyonu | [.ai/index.md](./.ai/index.md) |
+| 5 | Şablon envanteri | [.ai/.templates/index.md](./.ai/.templates/index.md) |
+| 6 | Mimari indeks | [.ai/architecture/index.md](./.ai/architecture/index.md) |

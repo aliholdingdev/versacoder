@@ -1,526 +1,443 @@
 ---
-title: "VersaCoder — AI Anayasası (Constitution)"
-type: constitution
-category: vault-root
+title: "VERSA CODER — Vault Kural Metni (G1..G12)"
+type: rules
+category: root
 status: active
 version: 1.0.0
-updated: 2026-09-29
+updated: 2026-10-06
 authority: SSOT
-scope: "Vault genelinde bağlayıcı 12 hard guardrail (G1..G12), yasak listesi, kanıt formatı ve dur/bekle kuralları. Çatışan diğer tüm .ai dosyaları bu dosyanın altındadır."
+scope: "G1..G12 kural metni, vault okuma sırası, hard guardrail tablosu, ne yap/ne yapma ve 50.000 token bütçe — kök CLAUDE.md yalnız bağlantı verir"
 ---
 
-# VersaCoder — AI Anayasası (`CLAUDE.md`)
+# VERSA CODER — Vault Kural Metni (G1..G12)
 
-**Zorunlu Bağlantılar:** [index](index.md) · [WORKFLOW](WORKFLOW.md) · [ROLE](ROLE.md) · [AGENTS](AGENTS.md) · [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md) · [MEMORY](MEMORY.md) · [log](log.md) · [keys](keys.md)
+**Zorunlu Bağlantılar:** [kök CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [WORKFLOW](../WORKFLOW.md) · [README](../README.md) · [templates](.templates/index.md) · [templates CLAUDE](.templates/CLAUDE.md)
 
-> **Tek cümlelik sorumluluk:** *Hangi davranış kesinlikle yasak, bilgi yoksa ne yazılır, kanıt nasıl sunulur, ne zaman durulur* sorusunun tek cevabıdır.
-> Bu dosya **bağlayıcıdır**; WORKFLOW.md, ROLE.md ve AGENTS.md ile çelişirse bu dosya kazanır.
+> **Tek cümlelik sorumluluk:** *Bu vault'ta hangi kural geçerlidir, ihlali ne olur, tespiti nasıl yapılır?* sorusunun tek cevabı bu dosyadır; kök `CLAUDE.md` yalnız tek-satır özet ve bağlantı verir (G12).
 
 ---
 
 ## §0 Özet (Answer First)
 
-- **12 guardrail (G1..G12) ihlal edilemez.** İhlal = iş RED; rapor biçimi sabittir: **konum + neden + düzeltme**.
-- **En çok tekrarlanan 7 yasak:** EF Core · string-concat SQL · DevExpress `v26.1` dışı sürüm ve `Office2010` dışı ribbon stili · kanıtsız "bitti" · uydurma bilgi · Unicode kutu çizim · yetki dışı kod yazımı.
-- **Kanıt = çalıştırılmış komutun çıktısı.** Çıktısız teknik iddia uydurmadır (G9) ve madde silinir.
-- **Dur/Bekle çizgisi nettir:** GATE-003 kapalıyken `src/**` altına **tek satır `.cs` bile yazılamaz**; onay yalnız kullanıcıdan gelir.
-- **Mimari bağ ADR-028 ile kilitli:** 8 makro katman (l0..l7) · 52 düğüm · 9 üretim + 1-2 test projesi · çift TFM `net48;net10.0-windows`.
+**Cevap:** Kural metni **burada** yaşar (§4.5) · okuma sırası §3.1'dedir (kök CLAUDE §B4) · guardrail tablosu §3.3'tedir · bütçe §5.2'dedir (50.000 token/oturum). Dayanağı olmayan iddia uydurulmaz, `DOĞRULAMA GEREKLİ` ile işaretlenir (G9).
 
----
-
-## §1 Hard Guardrails (G1..G12)
-
-> 12 madde **ihlal edilemez**; her madde `kural / yasak / ihlalde / kanıt` dörtlüsündedir. Bir alan boşsa madde geçersizdir.
-
-| G | Kural | Yasak | İhlalde | Kanıt |
-|---|---|---|---|---|
-| **G1 Sıfırdan yazım** | Eski vault (`C:\www\versacoder\versacoder\.ai`) yalnız **bilgi kaynağıdır**; içerik elle, sıfırdan yazılır | `Copy-Item` ile `.ai` kopyalamak · blok yapıştırma · "aynısını VersaCoder için" | RED — dosya silinir, yeniden yazılır | `git status --porcelain` (yalnız beklenen `.ai/` girdileri) + cümle benzerliği taraması |
-| **G2 EF Core + string-concat SQL** | Veri erişimi **ADO.NET + Dapper**; her sorgu **parametreli**; migration = ham SQL + `schema_version` | `Microsoft.EntityFrameworkCore*` · `DbContext` · LINQ-to-Entities · `$"SELECT …{x}"` · `+` ile sorgu birleştirme · `CommandTimeout` 0 | CRITICAL — build RED, iş durur | EF referans taraması = **0 satır**; SQL birleştirme taraması = **0 satır** |
-| **G3 DevExpress sürüm + ribbon** | DevExpress **v26.1** tek sürüm; ribbon yalnız **`RibbonControlStyle.Office2010`**; ana pencere `RibbonForm` | `24.2` · `23.x` · `25.x` · Office2007 / Office2010Silver / Office2010Blue dışı stil · `XtraForm` ana pencere | CRITICAL — RED; sürüm düşürme asla sessiz yapılmaz | `Directory.Packages.props` içinde tek DevExpress satırı + `src/**/*.cs` stil taraması |
-| **G4 Vault biçimi, UTF-8, ASCII** | Her MD **8 alanlı YAML frontmatter** (`title,type,category,status,version,updated,authority,scope`), UTF-8, 0 bozuk link, 0 mojibake | frontmatter'sız dosya · bozuk `[...](...)` linki · CP1254/latin-karışımı kayıt · **Unicode kutu çizim (`U+2500-U+257F` aralığı)** · `WIP`/`~`/`TBD` | RED — biçim düzeltilir; diyagram `|`, `-`, `+` ile yeniden çizilir | Frontmatter taraması = 0 eksik · link taraması = 0 bozuk · mojibake taraması = 0 |
-| **G5 Kanıtsız "bitti"** | "Bitti/tamam" **yalnız** build + test + tarama çıktısıyla söylenir | "Muhtemelen derlenir" · "testler geçer" (çıktı yok) · "kod temiz" (inceleme yok) | RED — iş bitmedi sayılır, gate yeniden açılır | Konsol çıktısı alıntısı: proje adı + hata sayacı + süre |
-| **G6 Tek bacaklı tasarım** | Her karar **iki bacakta**: `net48` + `net10.0-windows`; `#if` **yalnız** platform/API farkında | "net48'yi sonra bakarız" · platform kodunu çoğaltmak · `#if` içinde iş mantığı | HIGH — mimari RED | İki ayrı derleme çıktısı: `-f net48` ve `-f net10.0-windows`, ikisi de 0 hata |
-| **G7 Yıkıcı işlem onayı** | Silme / overwrite / `git reset --hard` / `push --force` **öncesi** kullanıcı onayı | Sessiz `Remove-Item -Recurse` · mevcut dosyayı sormadan geçersiz kılma · onaysız kapsam dışı ekleme | CRITICAL — işlem durdurulur | `log.md` içinde tarihli onay satırı |
-| **G8 Sürüm / teknoloji sapması** | Yığın değişmez: C# · WinForms · DevExpress v26.1 · Dapper · xUnit + NSubstitute + NetArchTest · CPM | Alternatif ORM · JS framework · ribbon dışı stil · "geçici" diye paket eklemek | RED → `DECISION BLOCKED` → kullanıcı onayı | `Directory.Packages.props` okuma raporu (tek kilit listesi) |
-| **G9 Uydurma (zero-hallucination)** | Her teknik iddianın etiketi ve kaynağı vardır | Var olmayan dosya/class/API/NuGet/sürüm/benchmark/güvenlik iddiasını gerçek gibi yazmak · etiketsiz iddia | RED — madde silinir | Etiket + kaynak satırı (bkz. §3) |
-| **G10 Çelişki işleme** | Kaynak çelişirse `CONFLICT DETECTED`; çözülmediyse `DECISION BLOCKED` + kullanıcıya tek soru | Çelişkiyi sessizce çözmek · iki sürümü birden tutmak · tahminle köprülemek | RED — karar geçersiz | `log.md` içinde etiket satırı |
-| **G11 Gizli işlem yok** | Yıkıcı, geri alınamaz ya da uzun süreli sessiz iş **önceden** raporlanır | Arka planda paket kurulumu · sessiz migration · kullanıcı farkında olmadan dosya değişikliği | CRITICAL | Görev listesi / komut geçmişi + onay satırı |
-| **G12 Yetki ve gate disiplini** | Kod yalnız **rolün X alanında** yazılır; gate'leri **kullanıcı** kapatır | GATE-003 kapalıyken `.cs` yazmak · `architect`/`reviewer` kod yazması · `developer`'ın `.Designer.cs`/`.resx`'i elle düzeltmesi · ajanın gate'i kendisi kapatması | RED — yazılan dosyalar geri alınır, iş gate başına döner | Gate kapanış kaydı (`log.md`) + dosya sahipliği listesi |
-
-### §1.1 Madde madde derinlik — her G için NEDEN / İYİ-KÖTÜ / YAKALAMA / İHLALDE
-
-> Aşağıdaki 12 alt madde §1 tablosunun **açıklamasıdır**, tablo yerine geçmez. Tablo kısa kuralı, bu bölüm gerekçesini ve yakalama yöntemini verir; çelişirse tablo kazanır.
-
-### §1.1.1 G1 — Sıfırdan yazım
-
-**NEDEN:** Eski vault yalnız bilgi kaynağıdır; metni olduğu gibi taşımak, VersaCoder'ın kendi kararlarını ve kısıtlarını bilmeden çalışmaya başlamak demektir. Yapıştırılmış parça sonradan sessizce düzeltilemez, borç birikir — bu yüzden kural "bilgiden faydalan, metni sıfırdan yaz" şeklinde kurulmuştur.
-
-```text
-KOTU : Copy-Item C:\www\versacoder\versacoder\.ai\* .ai\ -Recurse
-KOTU : "eski vaultta aynısı böyleydi, buraya yapıştırıyorum"
-IYI  : eski vaultu OKU -> maddeyi kendi cümlenle YAZ -> git status yalniz .ai/ satirlari gosterir
-```
-
-**YAKALAMA:** `git status --porcelain` (`.ai/` dışında satır varsa RED) + cümle benzerliği taraması; ayrıca `.ai/` dışı yazma (`C:\www\`, `*.old.*`) G7 ile çift ihlaldir.
-
-**İHLALDE:** dosya silinir ve yeniden yazılır; harcanan süre iş sayılmaz, iş G1 başına döner.
-
-### §1.1.2 G2 — EF Core ve string-concat SQL
-
-**NEDEN:** Çift bacaklı (`net48` + `net10.0-windows`) bir masaüstü ürününde ORM, iki bacağı da aynı taşıma maliyetine sokar ve migration'ı sürüm tablosundan koparır. Parametresiz SQL ayrıca en pahalı güvenlik açığı sınıfıdır (SQL injection); bu yüzden tek seçenek ADO.NET + parametreli sorgudur.
-
-```text
-KOTU : new DbContextOptionsBuilder<VaultContext>()...          (G2, CRITICAL)
-KOTU : cmd.CommandText = "SELECT * FROM T WHERE Id = " + id;    (concat)
-IYI  : cmd.CommandText = "SELECT * FROM T WHERE Id = @p1";
-       cmd.Parameters.AddWithValue("@p1", id);
-```
-
-**YAKALAMA:** `Select-String -Path *.csproj,Directory.Packages.props -Pattern EntityFrameworkCore` -> **0 satır**; birleştirme taraması -> **0 satır** (§2 satır 1–2).
-
-**İHLALDE:** build RED, iş durur; migration yolu ham SQL + `schema_version` olarak geri alınır.
-
-### §1.1.3 G3 — DevExpress sürümü ve ribbon stili
-
-**NEDEN:** Sürüm düşüşü ya da ribbon stili değişimi tasarım zamanında sessiz yapılır, kod yazıldıktan sonra binlerce satırda geri alınır. Tek sürüm (`v26.1`) ve tek stil (`RibbonControlStyle.Office2010`) sayesinde kontrol listeleri ve ekran kontrolü aynı kaynaktan okunur.
-
-```text
-KOTU : <PackageVersion Include="DevExpress.Win" Version="24.2" />
-KOTU : ribbon.RibbonForm ... RibbonControlStyle.Office2007
-IYI  : <PackageVersion Include="DevExpress.Win" Version="26.1" />
-       ribbon.RibbonStyle = RibbonControlStyle.Office2010;   // ana pencere RibbonForm
-```
-
-**YAKALAMA:** `Directory.Packages.props` içinde tek DevExpress satırı + `src/**/*.cs` stil taraması (§2 satır 3–4).
-
-**İHLALDE:** RED; sürüm düşürme asla sessiz yapılmaz, `DECISION BLOCKED` ile kullanıcıya sorulur.
-
-### §1.1.4 G4 — Vault biçimi, UTF-8 ve ASCII
-
-**NEDEN:** Frontmatter'sız dosya okunamaz, bozuk link ölü gezinme üretir, mojibake sonradan geri dönüşü olmayan bozulmadır. Unicode kutu çizimi (`U+2500-U+257F`) ise bazı araçlarda bozuk bayta düşer; bu yüzden kutular yalnız `|`, `-`, `+` ile kurulur.
-
-```text
-KOTU : dosya --- satiri ile baslamiyor, link hedefi yok
-KOTU : Unicode kutu-cizim (U+2500 serisi; taslak kalin/ince cizgi + kose) / emoji
-IYI  : +------+  ->  | - + ile ayni kutu, UTF-8 kayit, hedefi mevcut link
-```
-
-**YAKALAMA:** frontmatter taraması = 0 eksik · link taraması = 0 bozuk · mojibake taraması = 0 · kutu taraması = 0 (§2 satır 5–8).
-
-**İHLALDE:** RED — biçim düzeltilir; diyagram `|`, `-`, `+` ile yeniden çizilir.
-
-### §1.1.5 G5 — Kanıtsız "bitti"
-
-**NEDEN:** Kanıtsız kapanış, gate'in kapanış yetkisini ajanın üstüne alması demektir. Kapı yalnız çalıştırılmış komutun çıktısıyla kapanır; çıktısız beyan yanlış güven üretir ve hata sonraki gate'e taşınır.
-
-```text
-KOTU : "kod temiz, derleniyor gibi"        (cikti yok)
-KOTU : "testler geciyor"                   (sayi yok, sure yok)
-IYI  : dotnet build -> 0 hata (net48, net10.0-windows) / 42 sn
-       dotnet test  -> 18 gecti / 0 basarisiz / 3,1 sn
-```
-
-**YAKALAMA:** §3 kanıt kutusunun `KANIT` satırı boşsa iş bitmemiş sayılır; kapanış `log.md`'de Quality Report olmadan verilmez.
-
-**İHLALDE:** RED — iş bitmedi sayılır, gate yeniden açılır.
-
-### §1.1.6 G6 — Tek bacaklı tasarım
-
-**NEDEN:** Ürün iki bacakta yaşıyor; tek bacakta yazılırsa diğer bacak kod yazıldıktan sonra keşfedilir ve `#if` çöplüğüne dönüşür. `#if` yalnız platform/API farkında kullanılmalı, iş mantığı asla ikiye bölünmemelidir.
-
-```text
-KOTU : #if NET48  ... is mantigi ... #else ... ayni is mantigi ... #endif
-KOTU : "net48'yi sonra bakariz"
-IYI  : iki bacakta AYNI is mantigi; #if yalnizca platform/API farki (DateTime / Path / surucu)
-```
-
-**YAKALAMA:** iki ayrı derleme çıktısı: `-f net48` ve `-f net10.0-windows`, ikisi de 0 hata.
-
-**İHLALDE:** HIGH — mimari RED; bacaklardan biri derlenmeden iş ilerlemez.
-
-### §1.1.7 G7 — Yıkıcı işlem onayı
-
-**NEDEN:** Geri alınamaz işlem, geri dönüşü olmayan bilgi kaybıdır. Onay tek satırlık ve seçenekli sorulmalı; ajan onayı kendi başına verirse kullanıcı verisinin nereye gittiğini bilemez.
-
-```text
-KOTU : Remove-Item -Recurse -Force src\legacy   (sorgusuz)
-IYI  : G7 ONAYI: src/legacy silinecek - geri alinabilir: HAYIR
-       A) uygula   B) iptal   C) alternatif oner   -> onay BEKLENIYOR
-```
-
-**YAKALAMA:** komut geçmişi + `log.md` içinde tarihli onay satırı; onaysız işlem geçmişi kanıtsız sayılır.
-
-**İHLALDE:** CRITICAL — işlem durdurulur, kurtarma yolu kullanıcıya sorulur.
-
-### §1.1.8 G8 — Sürüm / teknoloji sapması
-
-**NEDEN:** Yığın değişmez (C# · WinForms · DevExpress v26.1 · Dapper · xUnit + NSubstitute + NetArchTest · CPM). Her "geçici" paket, kalıcı bir bağımlılık ve gelecekteki bir migration işidir; alternatif ORM ya da JS framework ürünün mimari sözleşmesini değiştirir.
-
-```text
-KOTU : <PackageReference Include="Dapper" /> + "gecici" diye NLog eklendi
-KOTU : ribbon yerine bootstrap benzeri UI kutuphanesi
-IYI  : tek kilit listesi Directory.Packages.props; yeni paket = kullanici onayi
-```
-
-**YAKALAMA:** `Directory.Packages.props` okuma raporu (tek kilit listesi) — yeni satır onaysızsa RED.
-
-**İHLALDE:** RED -> `DECISION BLOCKED` -> kullanıcı onayı; "geçici çözüm" diye bir kapı yoktur.
-
-### §1.1.9 G9 — Uydurma (zero-hallucination)
-
-**NEDEN:** Var olmayan dosya, API, sürüm ya da benchmark'ı gerçek gibi yazmak vault'un tüm sayım ve katalog zincirini kirletir; yanlış bilgi bir kez girdi mi kalıcı hale gelir. Bu yüzden her teknik iddianın etiketi zorunludur.
-
-```text
-KOTU : "Vault'ta 500 dosya var"        (etiketsiz, komutsuz)
-KOTU : "Bu API v26.1'de var"           (kaynaksiz)
-IYI  : SOURCE_VERIFIED - ADR-028 2.1  /  NEEDS_VALIDATION - komut: <komut>
-       sayiyi bilmiyorsan: DOĞRULAMA GEREKLI
-```
-
-**YAKALAMA:** etiket-satır eşleşmesi: iddia satırında etiket yoksa madde silinir; sayısal iddialar `scripts/measure-vault.ps1` çıktısıyla karşılaştırılır.
-
-**İHLALDE:** RED — madde silinir, kaynak olmadan geri yazılmaz.
-
-### §1.1.10 G10 — Çelişki işleme
-
-**NEDEN:** İki kaynak çeliştiğinde sessiz seçim yapmak, kararın gerekçesini yok eder. Çelişki etiketlenip kullanıcıya tek soru olarak giderse hem kayıt kalır hem de yanlış varsayım zinciri kırılır.
-
-```text
-KOTU : "ADR-013 farkli diyor, ben dependency-map'i esas aliyorum"  (sessiz)
-IYI  : CONFLICT DETECTED - ADR-013 2.3 <-> dependency-map 2
-       DECISION BLOCKED - secenek: A) matrisi gecerli say  B) ADR guncelle
-       (tek soru, kullanici onayina)
-```
-
-**YAKALAMA:** `log.md` içinde etiket satırının olup olmadığı; etiketsiz "çözüm" varsa otomatik RED.
-
-**İHLALDE:** RED — karar geçersiz sayılır, iş `DECISION BLOCKED` durumuna döner.
-
-### §1.1.11 G11 — Gizli işlem yok
-
-**NEDEN:** Arka planda kurulan paket, sessiz migration ya da kullanıcı farkında olmadan değişen dosya, kullanıcı denetimini ortadan kaldırır. Uzun süreli sessiz iş ayrıca geri dönüş maliyetini önceden hesaplanamaz hale getirir.
-
-```text
-KOTU : (arka planda) dotnet add package X   +  "ekledim" dememek
-KOTU : migration'i sessizce calistirip sonraki asamaya gecmek
-IYI  : onceden raporla -> "3 dosya degisecek, ~5 dk" -> onay -> islem -> kanit
-```
-
-**YAKALAMA:** görev listesi / komut geçmişi ile onay satırının eşleşmesi; eşleşmeyen yazma işlemi gizli sayılır.
-
-**İHLALDE:** CRITICAL — işlem geri alınır, kullanıcıya raporlanır.
-
-### §1.1.12 G12 — Yetki ve gate disiplini
-
-**NEDEN:** Kapıyı kapatan ile işi yapan aynı kişi olursa gate kontrol işlevini kaybedir. `architect`/`reviewer` kod yazarsa denetlenecek taraf kalmaz; `developer` `.Designer.cs`'i elleyince üretici ile manuel değişiklik çakışır.
-
-```text
-KOTU : GATE-003 kapalıyken Program.cs'e satir eklemek
-KOTU : "tum testler gecti" deyip GATE-005'i kendim kapatmak
-IYI  : gate hazir -> kabul kriteri kaniti -> kullanici onayi -> gate kapanir
-```
-
-**YAKALAMA:** gate kapanış kaydı (`log.md`) + dosya sahipliği listesi; kapalı gate'de `.cs` yazımı taraması.
-
-**İHLALDE:** RED — yazılan dosyalar geri alınır, iş gate başına döner.
-
----
-
-## §2 Yasaklar Özeti ve Tespit Komutları
-
-> Guardrail "ben uygularım" demekle değil, **çalıştırılan komutun çıktısıyla** uygulanır. Çıktısız beyan = G5 ihlali.
-
-| # | Yasak | Tespit komutu (PowerShell) | Beklenen |
-|---|---|---|---|
-| 1 | EF Core | `Select-String -Path *.csproj,Directory.Packages.props -Pattern EntityFrameworkCore` | **0 satır** |
-| 2 | String-concat SQL | `Select-String -Path src\**\*.cs -Pattern '"\s*\+\s*\w*(Id\|Name)'` | **0 satır** |
-| 3 | DevExpress sürümü | `Select-String -Path Directory.Packages.props -Pattern 'DevExpress\.\w+ \d+\.\d+'` | tek sürüm `26.1` |
-| 4 | Ribbon stili | `Select-String -Path src\**\*.cs -Pattern 'RibbonControlStyle\.\w+'` | yalnız `Office2010` |
-| 5 | Frontmatter'sız MD | ilk satırı `---` olmayan `.ai/**/*.md` sayımı | **0 dosya** |
-| 6 | Bozuk link | vault link taraması | `BROKEN = 0` |
-| 7 | Mojibake | `.ai/**/*.md` ilk 200 bayt kontrolü | `0 dosya` |
-| 8 | Unicode kutu çizim | `Select-String -Path .ai\**\*.md -Pattern ("[" + [char]0x2500 + "-" + [char]0x257F + "]")` | **0 satır** |
-
-> Komutlar **salt okunurdur**: yazma yetkisi olan tek şey vault içi `write`/`edit` tir; `C:\www\` ve `*.old.*` üzerinde yazma G7 + G1 çift ihlalidir.
-
-### §2.1 Senaryo akışları — gelen isteğe göre 3–4 adımlı tepki
-
-> Aşağıdaki akışlar "ne diyeceğim" sorusunu yanıtlar; her akış bir guardrail'e bağlanır ve **adım atlanmaz**. Adım atlanan akış, ilgili G maddesinin ihlali sayılır.
-
-| # | Gelen istek | Akış (sırayla) | Bağlı guardrail |
-|---|---|---|---|
-| 1 | "EF Core kur, ORM olarak onu kullanalım" | (1) İstek tek cümleyle RED edilir: veri erişimi ADO.NET + Dapper'dır, migration ham SQL + `schema_version`. (2) Alternatif önerilir: `l0`'da repository portu, `l4`'te uygulama. (3) Kullanıcı ısrar ederse etiket `DECISION BLOCKED` yazılır ve tek soru sorulur. (4) Onay gelmeden tek satır paket eklenmez. | G2 + G8 |
-| 2 | "Bitti dedin, kanıtı göster" | (1) §3.4'teki dört satır doldurulur. (2) Boş satır varsa "eksik" denir, "bitti" tekrarlanmaz. (3) Eksik kanıt üretilemiyorsa `UNKNOWN` yazılır ve iş o adımda durur. (4) Kanıt tamamsa gate kapanış kanıtı kullanıcıya sunulur. | G5 + G9 |
-| 3 | "Başka vault'tan olduğu gibi kopyala" | (1) İstek G1 kapsamındadır; metin kopyası yasaktır. (2) Kaynak okunur, bilgi not edilir, madde kendi cümlesiyle yeniden yazılır. (3) Benzerlik ve `git status` taraması çalıştırılır. (4) Sonuç kanıt kutusuna yazılır. | G1 |
-| 4 | "Gate'i sen kapat, devam edelim" | (1) G12 hatırlatılır: ajan gate'i hazırlar, kapatmaz. (2) Kabul kriterlerinin kanıtı hazırlanır. (3) Onay istemi şablonuyla (§4.2) kullanıcıya çıkılır. (4) Onay gelmeden sonraki aşamaya geçilmez. | G12 + G7 |
-| 5 | "Bir kere böyle yap, sonra düzeltiriz" | (1) G8'in "geçici paket" yasağı hatırlatılır. (2) Alternatifin maliyeti tek satır yazılarak sunulur. (3) Kullanıcı yine de onaylarsa onay `log.md`'ye tarihli düşülür. (4) "Geçici" diye eklenen paket sessizce bırakılmaz, kayıtta kalır. | G8 + G11 |
-| 6 | "Bu sayıları rapora yaz, ölçmeye gerek yok" | (1) G9 ile RED: ölçülmemiş sayı girmez. (2) Ölçüm komutu çalıştırılır, çıktısı alınır. (3) Çıktı yoksa hücre `DOĞRULAMA GEREKLI` ile işaretlenir. (4) Rapora yalnız çıkan sayı yazılır. | G9 |
-| 7 | "Şu dosyayı sil, sonra bakarız" | (1) §4.2'deki G7 onay istemi gönderilir. (2) Onay gelmeden komut çalışmaz. (3) Onay geldiyse işlem + tarih `log.md`'ye yazılır. (4) Sonuç kanıt kutusuna eklenir. | G7 + G11 |
-
-**Akışların ortak kuralı:** her akışın son adımı ya bir kanıt kutusu ya da bir dur/bekle etiketidir; akış "tamam" diye kapanmaz, **kapatılabilir** hale gelir.
-
-### §2.2 İhlal yakalama zinciri — hangi madde hangi araçla görülür
-
-| # | Madde | Yakalama aracı | Sıklığı |
-|---|---|---|---|
-| 1 | G1 kopya | `git status --porcelain` + cümle benzerliği | her iş sonunda |
-| 2 | G2 EF Core / concat SQL | `Select-String` taramaları (§2 satır 1–2) | her kod işinde |
-| 3 | G3 sürüm / ribbon | `Directory.Packages.props` + stil taraması | paket değişiminde |
-| 4 | G4 biçim / link / kutu | `scripts/check-links.ps1`, `scripts/find-mojibake.ps1` | her MD üretiminde |
-| 5 | G5 kanıtsız kapanış | kanıt kutusunun `KANIT` satırı | her gate kapanışında |
-| 6 | G6 tek bacak | `-f net48` ve `-f net10.0-windows` derlemesi | her build'de |
-| 7 | G7/G11 onaysız iş | görev listesi + `log.md` onay satırı | her yıkıcı işlemden önce |
-| 8 | G8 sapma | `Directory.Packages.props` okuma raporu | her paket eklemesinde |
-| 9 | G12 yetki / gate | gate kapanış kaydı + dosya sahipliği | her aşama geçişinde |
-
----
-
-## §3 Kanıt Formatı
-
-### §3.1 Doğrulama etiketleri (7 adet)
-
-| Durum | Doğru yazım | Yanlış yazım |
+| Soru | Cevap | Bölüm |
 |---|---|---|
-| Diskte okuyup gördüm | `REPOSITORY_VERIFIED — .ai/index.md:12 (2026-09-29)` | "index'de yazıyordu" |
-| Verilen belgede okudum | `SOURCE_VERIFIED — ADR-028 §2.1` | "planda öyle" |
-| Üçüncü taraf kaynak kodunda | `REFERENCE_VERIFIED — dosya + satır` | "kaynak böyle yapıyor" |
-| Web'de doğruladım | `WEB_VERIFIED — <URL> (tarih)` | "internette öyle" |
-| Kendi çıkarımım | `INFERRED — doğrulanmadı` | doğrulanmış gibi sunmak |
-| Doğrulanmalı | `NEEDS_VALIDATION — komut: <komut>` ya da `DOĞRULAMA GEREKLI` | "sorun olmaz" |
-| Bilmiyorum | `UNKNOWN` + işi durdur | tahmin yazmak |
+| Kural metni nerede yaşar? | bu dosya, §4.5 | §4.5 |
+| Okuma sırası nedir? | 5 halkalı tek yönlü zincir | §3.1 |
+| Guardrail ihlali ne yapar? | Red · Duraklat | §3.3 |
+| Bütçe nedir? | 50.000 token/oturum | §5.2 |
+| Yeni belge hangi söze uyar? | 8 alan frontmatter · boyut sınıfı | §3.2 |
 
-> **KURAL:** Etiketsiz teknik iddia — hangi alanda olursa olsun (mimari, DevExpress, SQL, Windows API) — **uydurmadır** ve madde silinir.
+**İçindekiler:** [§1 Amaç](#1-amaç) · [§2 Kapsam](#2-kapsam) · [§3 Mimari](#3-mimari) · [§4 Kurallar](#4-kurallar) · [§5 Workflow](#5-workflow) · [§6 Doğrulama](#6-doğrulama) · [§7 Referanslar](#7-referanslar)
 
-### §3.2 Kanıt kutusu (zorunlu 4 satır)
+---
 
-```text
-KANIT   : <komut> -> <sayilar>            (CIKTI EKI)
-VAULT   : <tarama> -> MD=NNN, FM=0 eksik, BROKEN=0, MOJIBAKE=0
-KODE    : dotnet build -> 0 hata (net48, net10.0-windows)
-TEST    : dotnet test  -> X gecti / 0 basarisiz / Y sn
-```
+## §1 Amaç
 
-### §3.3 Hata raporu biçimi
+Bu dosya, `.ai/` vault'unun **G1..G12 kural metninin** tek gerçek kaynağıdır (SSOT). Kök [CLAUDE](../CLAUDE.md) §B6 yalnız 12 tek-satır özet ve bağlantı taşır; ayrıntı buraya bağlanır (`[kök] 60`: "metin `.ai/.rules/` ve `.ai/CLAUDE.md` §4.5'tedir"). SRP (G12) gereği kural metni kök dosyaya **kopyalanmaz**.
 
-```text
-KONUM     : src/VersaCoder.Infrastructure/SessionRepository.cs:64
-NEDEN     : $"SELECT ... {id}" - string-concat (G2, CRITICAL)
-DUZELTME  : CommandText + Parameters.Add ile parametreli sorgu (~6 dk)
-KANIT     : dotnet build -> 0 hata; tarama -> 0 eslesme
-```
+### §1.1 Dosya Ayrımı
 
-**Yasaklı ifade → doğru ifade:**
+| Dosya | Rol | İçerik | Durum |
+|---|---|---|---|
+| `CLAUDE.md` (kök) | önyükleme + bağlantı | rol · B4 okuma sırası · B6 tek-satır özet · B9 bütçe | ✅ (`[kök] 32–116`) |
+| `.ai/CLAUDE.md` (bu dosya) | kural metni SSOT | G1..G12 kapsam/ihlal/tespit/dayanak · guardrail tablosu | ✅ bu üretim |
+| `.templates/CLAUDE.md` | `.templates/` dizin kuralı | ayrı dosya — bu dosyanın **hedefi değil** | ✅ |
+| `.ai/.rules/*.md` | kök dosyanın iddia ettiği kural metni | kök "18 MD" der, `[çk] 41` disk = **YOK** der → sayı **DOĞRULAMA GEREKLİ** | ❌ YOK |
 
-| YASAK ifade | DEĞERİ |
+**Dayanak:** `[env] 337–338` (envanter §3.10 dizin ağacı: `.rules\` `.decisions\` `architecture\` `checklists\` `scripts\` `index.md` `CLAUDE.md` `WORKFLOW.md` `keys.md` `log.md` `adr\` = "YOK (AŞAMA C)") · `[çk] 41` (CF-08) · `[çk] 24` (kök omurga ertelendi, linkler silinmeyecek).
+
+### §1.2 Dayanak Anahtarı
+
+§4.5'teki `Dayanak` satırları bu kısaltmaları kullanır; satır numaraları 2026-10-06 ölçümüne göredir.
+
+| Kısaltma | Dosya | Aç |
+|---|---|---|
+| `[kök]` | depo kökü `CLAUDE.md` | [aç](../CLAUDE.md) |
+| `[env]` | `.templates/index.md` | [aç](.templates/index.md) |
+| `[söz]` | `.templates/new-doc-contract.md` | [aç](.templates/new-doc-contract.md) |
+| `[çk]` | `reports/conflict-register-001-master-prompts.md` | [aç](reports/conflict-register-001-master-prompts.md) |
+
+---
+
+## §2 Kapsam
+
+**İçinde:** G1..G12 kural metni · vault okuma sırası · hard guardrail tablosu · frontmatter ve boyut sözleşmesinin özeti · 50.000 token bütçe · ne yap/ne yapma.
+**Dışında:** kod (`src/` YOK, `[kök] 108`) · ADR karar metni (`.ai/.decisions/` YOK, `[çk] 62`) · şablon envanteri · kapı tanımı.
+
+| Kapsam | Kapsam Dışı — nereye gider |
 |---|---|
-| "Muhtemelen derlenir" | `dotnet build -> 0 hata (net48 + net10.0-windows)` |
-| "Testler geçiyor" (çıktı yok) | `dotnet test -> 12 gecti / 0 basarisiz / 0,8 sn` |
-| "Vault'ta her şey yerinde" | `link taramasi -> BROKEN=0, MOJIBAKE=0` |
-| "Biraz sonra devam ederiz" | `≈15 dk sonra gate kapanışı` |
+| §3.1 okuma sırası (kök CLAUDE §B4) | katman spec'i → `.ai/architecture/` (YOK) |
+| §3.2 frontmatter 8 alan sözleşmesi | şablon envanteri → [templates](.templates/index.md) |
+| §3.3 + §4.5 G1..G12 guardrail metni | ADR karar metni → `.ai/.decisions/` (YOK) |
+| §5.1 üretim akışı · §5.2 bütçe | kapı tanımı → [WORKFLOW](../WORKFLOW.md) |
+| §6 doğrulama komutları | ölçüm betikleri → `.ai/scripts/` (YOK, `[çk] 99`) |
 
-### §3.4 Gate kanıt kutusu (WORKFLOW §2 biçimi — ajan kutusuyla KARIŞTIRILMAZ)
+### §2.1 Kapsam Sınırı Testi
 
-> Bu kutu **gate'in** kabul kanıtıdır; [WORKFLOW.md](WORKFLOW.md) §2'de 4 satır olarak tanımlıdır. Ajanların 5 alanlı çıktı kutusu [AGENTS.md](AGENTS.md) §2'dedir. İkisi aynı şey değildir ve biri diğerinin yerine kullanılamaz (SSOT).
+**İlk `EVET` işi belirler:**
 
-```text
-KANIT   : <sayac> -> MD=NNN, FM=0 eksik, BROKEN=0, MOJIBAKE=0
-DOSYA   : .ai/CLAUDE.md, .ai/WORKFLOW.md, .ai/ROLE.md, .ai/AGENTS.md
-EKSIK   : YOK   (varsa: DOĞRULAMA GEREKLI maddesi yazilir)
-SONRAKI : <adim, ~ sure>
-```
+1. Soru "hangi kural geçerli, ihlali ne, tespiti nasıl"? → **EVET** — bu dosya §4.5
+2. Soru "yeni MD dosyası hangi söze uyar"? → [new-doc-contract](.templates/new-doc-contract.md)
+3. Soru "şablon iskeleti nedir, envanterde kaç şablon var"? → [templates](.templates/index.md)
+4. Soru "hangi kapı, hangi faz, ne üretilmez"? → [WORKFLOW](../WORKFLOW.md)
+5. Hiçbiri → bu dosya kullanılmaz; önce §3.1 okuma sırası baştan çalıştırılır.
 
-| Satır | Ne taşır | Boş bırakılır mı | Boşsa ne olur |
-|---|---|---|---|
-| `KANIT` | Çalıştırılmış komutun çıktısı (sayı ya da PASS/RED) | Hayır | G5 ihlali — iş bitmedi sayılır |
-| `DOSYA` | Dokunulan dosya yolları; hiç dokunulmadıysa `yok` | Hayır | Kapsam belirsiz — gate bekler |
-| `EKSIK` | Bilinmeyen / doğrulanmamış madde; yoksa `YOK` | Hayır | `DOĞRULAMA GEREKLI` yazılır, madde kapanmaz |
-| `SONRAKI` | Sıradaki adım + tahmini süre | Hayır | Sıra belirsiz — iş durur |
-
-**Doldurma örneği (biçim, sayılar uydurma değildir):**
-
-```text
-KANIT   : powershell -NoProfile -ExecutionPolicy Bypass -File scripts/measure-vault.ps1 -> MD=<olculen>, FM=0, MOJIBAKE=0
-DOSYA   : .ai/index.md, .ai/CLAUDE.md
-EKSIK   : DOĞRULAMA GEREKLI - scripts/check-links.ps1 ciktisi alinmadi
-SONRAKI : check-links calistir (~2 dk)
-```
-
-**Karıştırma belirtisi:** kutuda `BASLIK` ya da `RİSK` satırı görülmüşse bu ajan kutusudur, gate kutusu değildir; gate kanıtı geçersiz sayılır ve dört satırla tekrar istenir.
+**HAYIR soruları:** harici vault'tan cümle var mı (G1)? · yer tutucu kalmış mı (G4)? · diskte olmayan hedefe bağlantı yazılmış mı (G7)?
 
 ---
 
-## §4 Dur / Bekle Kuralları
+## §3 Mimari
 
-### §4.1 Durduran 5 durum
+### §3.1 Vault Okuma Sırası (kök CLAUDE §B4)
 
-| # | Durum | Etiket | Yapılacak |
-|---|---|---|---|
-| 1 | **GATE-003 kapalı** (wireframe onayı yok) | `GATE-OPEN` | `.cs` yazımı **yasak**; okuma/planlama serbest |
-| 2 | Yıkıcı işlem gerekiyor | `G7 ONAYI` | Tek satır onay sorusu + A/B/C; onay gelmeden komut çalışmaz |
-| 3 | Yeni paket / sürüm / ORM | `G8` | Kullanıcı onayı; "geçici çözüm" yok |
-| 4 | Aynı hata 3 düzeltmede çözülmedi | `3-STRIKE` | Kod yazmayı bırak, şüpheli varsayımı **adlandır**, A/B/C ile sor |
-| 5 | Bilgi yok / çelişki çözülmedi | `UNKNOWN` / `DECISION BLOCKED` | Madde yazma, işi durdur |
+Zincir tek yönlüdür; ilk halka eksikse sonrakiler okunmaz. Tablo `[kök] 34–41` ile birebirdir.
 
-### §4.2 Onay istemi şablonu
-
-```text
-G7 ONAYI GEREKIYOR
-  ISLEM  : <tam yol> - <ne yapilacak>
-  ETKI   : <geri alinabilir mi: EVET/HAYIR + kurtarma yolu>
-  SECENEK: A) uygula   B) iptal   C) alternatif oner
-  BEKLEME: onay gelmeden ISLEM YAPILMAZ
-```
-
-### §4.3 Gate'ler kimin (özet)
-
-| Gate | Ne kapatır | Kapatan |
-|---|---|---|
-| GATE-004a | Vault yeşil (500 MD · 0 bozuk link · 0 mojibake) | kullanıcı (kanıt: [WORKFLOW](WORKFLOW.md) §2) |
-| **GATE-003** | **UI onayı — HARD STOP** | **yalnız kullanıcı** |
-| GATE-004 | İskelet + iki bacak build + ilk commit | kullanıcı (kanıt: `dotnet build`) |
-| GATE-005 | Test + NetArchTest 0 ihlal | kullanıcı (kanıt: `dotnet test`) |
-| GATE-006 | Teslim | kullanıcı |
-
-> **KURAL:** Ajan gate'i **hazırlar**, asla **kapatmaz**. Gate ayrıntısı [WORKFLOW.md](WORKFLOW.md) §2'dedir; burası yalnız bağlayan çizgidir.
-
-### §4.4 3-STRIKE sonrası ne olur — durum tablosu
-
-| # | 3. strike sonrası durum | Etiket | Ajanın yapacağı | Kullanıcının göreceği |
+| Sıra | Okunan | Ne verir | Tekrar eder mi | Disk (2026-10-06) |
 |---|---|---|---|---|
-| 1 | Aynı hata üç kez tekrarladı | `3-STRIKE` | Kod yazmayı bırak, şüpheli varsayımı **adlandır**, A/B/C ile sor | Bloke raporu (6 satır) |
-| 2 | Gate kapalı, iş kod gerektiriyor | `GATE-OPEN` | Okuma ve planlama serbest; tek satır `.cs` yazma | Gate kapanış istemi |
-| 3 | Yıkıcı işlem gerekiyor | `G7 ONAYI` | Tek satırlık onay sorusu + A/B/C | Onay şablonu (§4.2) |
-| 4 | Yeni paket / sürüm / ORM isteği | `G8` | Alternatifi öner, "geçici çözüm" kapısı olmadığını yaz | `DECISION BLOCKED` + tek soru |
-| 5 | Bilgi yok ya da çelişki çözülmedi | `UNKNOWN` / `DECISION BLOCKED` | Madde yazma, işi o adımda durdur | `DOĞRULAMA GEREKLI` maddesi |
+| 1 | `CLAUDE.md` (kök) | rol, vault bağları, katman özeti, yasaklar | Hayır — yalnız bağlantı | ✅ |
+| 2 | `.templates/index.md` | 44 şablon envanteri + §3.7 kalite sözleşmesi | Hayır | ✅ |
+| 3 | `.ai/.rules/*.md` | kalıcı kural metni | Hayır | ❌ YOK → kural metni **bu dosya §4.5** |
+| 4 | `.ai/architecture/index.md` · `.ai/WORKFLOW.md` | katman gerçeği · kapı gerçeği | Hayır | ❌ YOK → kapı [WORKFLOW](../WORKFLOW.md) |
+| 5 | Görevin kendi şablonu | üretilcek dosyanın iskeleti | Hayır | göreli |
 
-**Ortak sonuç:** beş durumun beşinde de iş **durmaz, askıya alınır**; askıya alma `log.md`'ye yazılır ve iş askıdayken başka aşamaya sıçramaz.
+```text
++--------------------------------------------------------------+
+| [1] kok CLAUDE.md     rol + baglanti + tek-satir ozet (B6)    |
+|   v                                                           |
+| [2] .templates/index.md   44 sablon + kalo sozlesmesi         |
+|   v                                                           |
+| [3] .ai/.rules/*.md       YOK -> kural metni .ai/CLAUDE.md    |
+|   v                                                           |
+| [4] architecture + WORKFLOW  YOK -> kopek WORKFLOW.md         |
+|   v                                                           |
+| [5] gorevin sablonu   <== KAPI: butce 50.000 token/oturum     |
++--------------------------------------------------------------+
+```
+
+**Durum:** `[3]`–`[4]` halkaları diskte YOK → zincir **planlıdır**; kural metni bu dosyaya çekilmiştir (`[kök] 60`, `[env] 337–338`).
+
+### §3.2 Frontmatter Sözleşmesi (8 alan)
+
+Dosyanın **ilk 9 satırı**: açılış `---`, ardından sırayla sabit 8 alan; 9. alan (`tags` vb.) redtir (`[söz] 294–295`). Sıra değiştirilemez (D3).
+
+| # | Alan | Bu Dosyadaki Değer | Eksikse |
+|---|---|---|---|
+| 1 | `title` | `"VERSA CODER — Vault Kural Metni (G1..G12)"` | Red |
+| 2 | `type` | `rules` | Red |
+| 3 | `category` | `root` | Red |
+| 4 | `status` | `active` | Red |
+| 5 | `version` | `1.0.0` (üç bölüm) | Red |
+| 6 | `updated` | `2026-10-06` (ISO, üretim günü) | Red |
+| 7 | `authority` | `SSOT` | Red |
+| 8 | `scope` | 1 satır Türkçe kapsam cümlesi | Red |
+
+**Dayanak:** `[env] 269–282` (§3.7) · `[söz] 27–42` (§1) · `[söz] 285–295` (§9.1 D1–D6) · **CF-03** `[çk] 36` + `[çk] 55` — envanterdeki `part` iddiası reddedildi, kazanan **disk: 38/38 `scope`**.
+
+### §3.3 Hard Guardrail Tablosu (G1..G12)
+
+Kaynak `[env] 409–424` (§4.5). Kapsam · İhlal · Tespit sütunları birebir oradan; açıklama ve dayanak §4.5'te.
+
+| ID | Kapsam | İhlal | Tespit yolu |
+|---|---|---|---|
+| G1 | `tümü` | Red + sil | envanter §7.2 R1 · `[söz]` §11 R14 |
+| G2 | B/D | Red | `Select-String 'EntityFramework'` |
+| G3 | `tümü` | Red | envanter §6.1 K1 · `[söz]` §9.1 D1–D3 |
+| G4 | **üretim çıktısı** (CF-04) | Red | envanter §5.3 K5 |
+| G5 | `tümü` | Red | gözden geçirme · `[söz]` §12/4 |
+| G6 | `.templates/**` — `prompts/` + `reports/` hariç (D4) | Red | envanter §5.3 K3 |
+| G7 | `tümü` | Red | envanter §5.3 K6 · `[söz]` §12/3 |
+| G8 | C/D — ekran dosyası + `src/**`; şablon serbest (CF-10) | **Duraklat** | [WORKFLOW](../WORKFLOW.md) |
+| G9 | A/B | Red | `ADR-001…030` (`.ai/.decisions/`) |
+| G10 | B | Red | `Query-Template.md` |
+| G11 | D | Red | xunit + coverage |
+| G12 | envanter | Red | envanter §1.1 M7 |
 
 ---
 
-## §5 Katman Yasakları (ADR-028 bağlayıcı)
+## §4 Kurallar
 
-**Bağlayıcı kaynak:** [ADR-028 — Katmanlı Mimari Baz Kararı](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md)
+### §4.1 Yazım Sırası
 
-| Makro katman | Proje | Kesinlikle YASAK |
-|---|---|---|
-| `l0` Abstractions (N01-N05) | `VersaCoder.Abstractions` | DevExpress · ADO.NET · dosya/saat okuyan somut sınıf |
-| `l1` Domain (N06-N11) | `VersaCoder.Domain` | Infrastructure/Host/UI `using` · SQL · `DateTime.Now` |
-| `l2` Application (N12-N18) | `VersaCoder.Application` | Infrastructure'i tanıma · UI tipini iş mantığında taşımak |
-| `l3` Crosscutting (N19-N24) | `VersaCoder.Crosscutting` | Kural iş mantığı · `l0` dışına bağımlılık |
-| `l4` Infrastructure (N25-N32) | `VersaCoder.Infrastructure` | EF Core · string-concat SQL · parametresiz `Execute` |
-| `l5` Protocol (N33-N37) | `VersaCoder.Protocol` | UI tipine referans · runtime üretim SQL'i |
-| `l6` Host (N38-N40) | `VersaCoder.Host` | İş mantığı (yalnız kompozisyon + startup) |
-| `l7` UI + CLI (N41-N44) | `VersaCoder.Desktop` + `VersaCoder.Cli` | İş mantığı · yetkisiz `.Designer.cs`/`.resx` müdahalesi |
-| test | `VersaCoder.Tests` (+ gerekirse `VersaCoder.ArchitectureTests`) | Üretim kodunda "küçük düzeltme" |
+| # | Adım | Kural | İhlal |
+|---|---|---|---|
+| 1 | Önce `.templates/` | şablonu olmayan çıktı üretilmez | Red (`[env] 367`) |
+| 2 | Sıra: envanter → dizin CLAUDE → Part A → B → C → D | part atlanmaz | Red (`[env] 368`) |
+| 3 | İçerik özgün, yapı referanslı | cümle kopyalanmaz (G1) | Red (`[env] 369`) |
+| 4 | Şablon yazımında envanter değiştirilmez | tek geçiş `PLANLI → YAZILDI` | Red (`[env] 370`) |
+| 5 | Her şablondan sonra §6.1 checklist | 17/17 geçmeden sıradakine geçilmez | Red (`[env] 371`) |
 
-**İzinli yön (saf ASCII):**
+### §4.2 Onay Akışı
 
-```text
- l7-ui  ------>  l6-host  ------>  l5-protocol
-                      |                  |
-                      v                  v
-              l4-infrastructure --> l2-application --> l1-domain --> l0-abstractions
-                      |                     |                 ^
-                      +--> l3-crosscutting --+                 |
-                             (l3 yalniz l0'a baglanir)          |
-                                                                |
-                     (her katman iceriye yalniz interface ile baglanir)
-```
+| Adım | Rol | Ne Onaylar | Süre |
+|---|---|---|---|
+| 1 | `docs-writer` | Taslak + frontmatter (8 alan) | 10 dk |
+| 2 | `reviewer` | `[env]` §6.1 checklist (17 madde) | 8 dk |
+| 3 | `architect` | Mimari tutarlılık (katman sırası, G2, G9) | 6 dk |
+| 4 | `security` | Part A/B — `adr-security` + G10 | 5 dk |
+| 5 | `master-orchestrator` | Part geçişi + Quality Report | 5 dk |
 
-**İki doğrudan ok yasağı (8x8 matris):** `l4 -> l2` **X** · `l5 -> l4` **X** · `l3` yalnız `l0`. Matrisin tamamı NetArchTest `LayerRulesTests` ile aynı kaynaktan gelir; detay [layer-boundary-check](checklists/layer-boundary-check.md).
+> Toplam ≈ **34 dk/part**. **3 red** sonrası iş durur; gerekçe `master-orchestrator`'a yükseltilir (`[env] 383`).
 
-### §5.1 ADR-028 özet tablosu — 8 katman × proje × sorumluluk
+### §4.3 Sürüm ve Değişiklik
 
-> Bu tablo **özet**tir; bağlayıcı metin [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.1'dedir. Tablo ile ADR çelişirse ADR kazanır ve çelişki `CONFLICT DETECTED` ile raporlanır.
+| Olay | Sürüm | `updated` | Kayıt |
+|---|---|---|---|
+| İlk yazım `0.1.0 → 1.0.0` | `major` | evet | `updated` + `log.md` |
+| Bölüm eklenmesi (`§x.y`) | `minor` | evet | Quality Report |
+| Yalnız tablo satırı ekleme | `patch` | evet | `updated` |
+| Bölüm silme / yeniden adlandırma | `major` | evet | bağlantı veren dosyalar |
 
-| # | Makro katman | Proje (.csproj) | N-kod | Sorumluluk (ne taşıyor) | Sınırını bozan şey |
+**Kural:** `version` her zaman üç bölüm, `updated` her zaman ISO `YYYY-MM-DD` (`[env] 407`). `log.md` diskte YOK (AŞAMA C) → kayıt **DOĞRULAMA GEREKLİ**, tahmin yazılmaz (`[env] 338`).
+
+### §4.4 Ne Yap / Ne Yapma
+
+Dayanak: `[kök] 79–91` (B7).
+
+| ✅ Yap | ❌ Yapma (ilk satırda DUR) |
+|---|---|
+| Bağlantı ver, kuralı **okumaya** git | Kural metnini kök dosyaya kopyala (G12) |
+| Katmanı `l0..l7` koduyla söyle | Katman adı uydur / numarayı kaydır |
+| Olmayana `DOĞRULAMA GEREKLİ` yaz | Olmayan dosyayı "şurada" diye göster |
+| Bağlantıyı tek satırda `·` ile tut | 8+ bağlantı · dağınık navigasyon |
+| Tarihi ISO yaz (`YYYY-MM-DD`) | Serbest tarih biçimi |
+| DevExpress sürümünü ADR'den al (`26.1`) | "en güncel sürüm" kanıtsız iddiası |
+| `@p1..@pN` örneğini göster | String concat SQL örneği ver |
+| Ölç, sonra "tamam" de | Kanıtsız "hizalı/doğru" iddiası (G9) |
+| Ürün adı `VERSACODER` / VersaCoder | Eski ürün adını hiçbir yerde geçirmek |
+| İş bitince `log.md`'ye tek satır düş | Kök dosyayı her oturumda yeniden yaz |
+
+### §4.5 Hard Guardrails — G1..G12 Kural Metni
+
+Her kural: **tek satır özet → kapsam → ihlal → tespit yolu → dayanak**. Kapsam/ihlal/tespit `[env] 409–424`'ten birebir; dayanak satır numaraları §1.2 anahtarını kullanır.
+
+#### G1 — Harici vault'tan içerik kopyalanamaz
+
+**Özet (tek satır):** Harici vault'tan içerik kopyalanamaz; yalnız **yapı** referans alınır, içerik özgün yazılır.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `tümü` | **Red + sil** — dosya silinir, özgün yeniden yazılır | envanter §7.2 R1 · `[söz]` §11 R14 | `[env] 413` · `[kök] 64` · `[söz] 90` |
+
+#### G2 — EF Core yasak
+
+**Özet (tek satır):** EF Core yasak; veri erişimi ADO.NET + Dapper, her sorgu `@p1..@pN` parametreli.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `B` (şablon) · `D` (kanıt) | **Red** | `Select-String 'EntityFramework'` — sıfır eşleşme | `[env] 414` · `[kök] 65` · `[söz] 86` |
+
+> **Not:** `src/` diskte yok (`[kök] 108`) → parametreli sorgunun **kod kanıtı DOĞRULAMA GEREKLİ**; kural metni şablon ve ADR düzeyinde geçerlidir.
+
+#### G3 — Frontmatter'sız Markdown yasak
+
+**Özet (tek satır):** Frontmatter'sız Markdown yasak; ilk 9 satırda 8 alan tam ve sırayla (`title, type, category, status, version, updated, authority, scope`).
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `tümü` | **Red** | envanter §6.1 K1 · `[söz]` §9.1 D1–D3 (alan 8 · ayraç 2 · sıra 8) | `[env] 415` · `[env] 269–282` · `[çk] 36, 55` |
+
+> **Not (CF-03):** envanter §3.7 sekizinci alan için `part` öne sürmüş, `[çk] 55` ölçümü `part=0, scope=38` bulmuştur → kazanan **disk**; `part` bilgisi envanterin sütunundadır, frontmatter'da değil.
+
+#### G4 — Üretilen dosyada yer tutucu kalmaz
+
+**Özet (tek satır):** Şablondan üretilen **gerçek dosyada** çift süslü parantezle sarılmış yer tutucu adedi 0 olmalıdır; şablonun kendisinde yer tutucu **serbesttir**.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| **üretim çıktısı** (şablon değil) | **Red** | envanter §5.3 K5 — şablonda çıkan sayı **bilgidir, red değildir** | `[env] 416` · `[env] 500` · `[çk] 37, 56` · `[söz] 207–208` |
+
+#### G5 — Türkçe zorunlu, mojibake yasak
+
+**Özet (tek satır):** Türkçe zorunlu; mojibake, BOM ve bozuk çift bayt yasak — kodlama UTF-8 **BOM'suz**.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `tümü` | **Red** | gözden geçirme · `[söz]` §12/4 (mojibake 0 · BOM yok · Türkçe harf > 0) | `[env] 417` · `[kök] 68` · `[söz] 94` |
+
+#### G6 — 480 satır altı şablon reddedilir
+
+**Özet (tek satır):** `< 480` satırlık şablon reddedilir; tek muaf `.templates/CLAUDE.md` (90–140 satır / 5–8 KB).
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `.templates/**` — `prompts/` ve `reports/` **hariç** (D4) | **Red** | envanter §5.3 K3 — satır sayımı | `[env] 418` · `[çk] 38, 57, 93` · `[söz] 308–309` |
+
+> **Not (CF-05 / D4):** 480 altındaki 9 dosya (24 · 81 · 90 · 102 · 103 · 117 · 122 · 144 · 479 satır) ≥480'e çıkarılıyor; `CLAUDE.md` 139 satır muaf. Kapsam `.templates/**` ile sabitlendi (`[çk] 93`, durum 🔄 üretimde). `prompts/` + `reports/` 3–8 KB sözleşmesine tabidir (`[söz] 190`).
+
+#### G7 — Bozuk bağlantı yasak
+
+**Özet (tek satır):** Bozuk bağlantı yasak; markdown bağlantısının **her hedefi diskte var olmalıdır**; silme/overwrite kullanıcı onayı ister.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `tümü` | **Red** | envanter §5.3 K6 · `[söz]` §12/3 — kırık hedef listesi boş olmalı | `[env] 419` · `[env] 511` · `[kök] 70` · `[söz] 68` |
+
+> **Not:** `.ai/` kök hedefleri (`index.md`, `keys.md`, `.rules/`, `.decisions/`, `architecture/`, `scripts/`, `WORKFLOW.md`, `log.md`) diskte YOK (`[env] 337–338`) → bu dosyada **bağlantı olarak yazılmaz**, düz metin kalır.
+
+#### G8 — GATE-003 onayı
+
+**Özet (tek satır):** `GATE-003` onaysız **üretilmiş ekran dosyası** ve `src/**` kodu üretilmez; şablon üretimi serbesttir.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `C` (ekran) · `D` (kod) — şablon **hariç** | **Duraklat** | [WORKFLOW](../WORKFLOW.md) | `[env] 420` · `[kök] 71` · `[çk] 43, 60` |
+
+> **Not (CF-10):** kök CLAUDE "ekran/**kod**" der (SSOT), envanter "ekran/**dosya**" der → kazanan **kök CLAUDE**: kapı ekran dosyasını ve `src/**` kodunu bloklar, **şablonu bloklamaz**; döngü (şablon → ekran → onay) aksi halde kapanmaz (`[çk] 60`).
+
+#### G9 — ADR'siz mimari karar yok
+
+**Özet (tek satır):** ADR'siz mimari karar yok; `.ai/.decisions/` dışında karar belgesi yazılmaz, kanıtsız sayı yazılmaz.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `A` · `B` | **Red** | `ADR-001…030` — yolu `.ai/.decisions/` | `[env] 421` · `[kök] 72` · `[çk] 46, 62` |
+
+> **Not (CF-13):** iki yol iki aralık çakışıyordu (`.ai/.decisions/` `ADR-001…030` ↔ envanter `.ai/adr/` `ADR-001…008`); kazanan **kök CLAUDE**, 11 noktada düzeltildi. İkisi de diskte yok → ADR'lerin varlığı ve aralık tutarlılığı **DOĞRULAMA GEREKLİ** (`[çk] 62`).
+
+#### G10 — String concat SQL yasak
+
+**Özet (tek satır):** SQL'de string concat yasak; her sorgu `@p1..@pN` parametreli ve indeks notlu yazılır.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `B` | **Red** | `Query-Template.md` — `@pN` kalıbı | `[env] 422` · `[kök] 73` · `[söz] 86` |
+
+#### G11 — Uyarılar hata, coverage %90
+
+**Özet (tek satır):** `TreatWarningsAsErrors=true` ve %90 coverage ihlali = red.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| `D` | **Red** | xunit + coverage çıktısı | `[env] 423` · `[kök] 74` |
+
+> **Not:** `tests/` ve `.sln` diskte YOK (`[kök] 109`) → coverage ölçümü **DOĞRULAMA GEREKLİ**; kural yalnız plan düzeyinde geçerlidir.
+
+#### G12 — Envantere içerik kopyalanamaz (SRP)
+
+**Özet (tek satır):** Envanterde içerik tekrarı yasak; şablon/kural içeriği kendi dosyasında yaşar, envantere yalnız satır + bağlantı girer.
+
+| Kapsam | İhlal | Tespit yolu | Dayanak |
+|---|---|---|---|
+| envanter (bu dosya hariç) | **Red** | envanter §1.1 M7 | `[env] 424` · `[kök] 75` |
+
+---
+
+## §5 Workflow
+
+### §5.1 9 Adımlı Üretim Akışı
+
+Birebir `[env] 428–441` (§5.1).
+
+| Adım | İş | Çıktı | Sorumlu | Zaman | Kapı |
 |---|---|---|---|---|---|
-| 1 | `l0` Abstractions | `VersaCoder.Abstractions` | N01-N05 | Arayüzler ve sözleşmeler; hiçbir somut uygulama | Somut sınıf, dış paket referansı, DevExpress |
-| 2 | `l1` Domain | `VersaCoder.Domain` | N06-N11 | İş kuralları ve varlıklar; saf C#, yan etkisiz | `Infrastructure`/`UI` `using` · SQL · `DateTime.Now` |
-| 3 | `l2` Application | `VersaCoder.Application` | N12-N18 | Kullanıcı senaryoları; portları çağırır, sırayı yönetir | Infrastructure'i tanımak · UI tipini iş mantığında taşımak |
-| 4 | `l3` Crosscutting | `VersaCoder.Crosscutting` | N19-N24 | Kesit sorumlulukları: log, hata biçimi, zaman/saat sarmalayıcı | Kural iş mantığı · `l0` dışına bağımlılık |
-| 5 | `l4` Infrastructure | `VersaCoder.Infrastructure` | N25-N32 | ADO.NET + Dapper sorguları, dosya, ağ, migration uygulaması | EF Core · string-concat SQL · parametresiz `Execute` |
-| 6 | `l5` Protocol | `VersaCoder.Protocol` | N33-N37 | Araçlarla konuşma sözleşmesi: araç çağrısı, akış (stream) | UI tipine referans · çalışma zamanı üretim SQL'i |
-| 7 | `l6` Host | `VersaCoder.Host` | N38-N40 | Kompozisyon ve başlangıç: doğru kayıtlar, doğru yaşam döngüsü | İş mantığı yazmak (yalnız kurulum + birleştirme) |
-| 8 | `l7` UI + CLI | `VersaCoder.Desktop` + `VersaCoder.Cli` | N41-N44 | RibbonForm ekranları ve komut satırı yüzeyi | İş mantığı · yetkisiz `.Designer.cs`/`.resx` müdahalesi |
-| — | test | `VersaCoder.Tests` (+ gerekirse `VersaCoder.ArchitectureTests`) | — | Üretim kodunu sınar; NetArchTest yön denetimini çalıştırır | Üretim kodunda "küçük düzeltme" |
+| 1 | Talep ayrıştırma | envanterde `PLANLI` satır | docs-writer | 2 dk | — |
+| 2 | İskelet taraması | §3.7 sözleşmesinden bölüm listesi | docs-writer | 3 dk | — |
+| 3 | Tür + hedef atama | `Tür`, `Hedef Dosya` | architect | 2 dk | — |
+| 4 | Taslak yazım | frontmatter + H1 + 7 bölüm | docs-writer | 20 dk | — |
+| 5 | Yer tutucu temizliği | yer tutucu = 0 | docs-writer | 3 dk | G4 |
+| 6 | Bağlantı denetimi | kırık bağlantı = 0 | reviewer | 4 dk | G7 |
+| 7 | Ölçüm | satır/KB raporu | reviewer | 2 dk | G6 |
+| 8 | Part geçiş kontrolü | geç / kal | master-orchestrator | 3 dk | §6.3 |
+| 9 | Onay + kayıt | `YAZILDI` + Quality Report | master-orchestrator | 6 dk | §6.4 |
+| | **Toplam/şablon** | | | **≈ 45 dk** | |
 
-**Tek satırlık okuma yönü:** `l7 -> l6 -> l5 -> l4 -> l2 -> l1 -> l0`; `l3` yalnız `l0`'a bakar; `l4` ile `l2` arasında doğrudan ok **yok** (port `l0`'da, uygulaması `l4`'te).
+### §5.2 Bütçe ve Güncelleme Tetikleri
 
-**Yeni tip nereye yazılır (hızlı karar):** tip arayüzse `l0`, iş kuralıysa `l1`, senaryoysa `l2`, kesit ise `l3`, somut dış dünya erişimiyse `l4`, araç sözleşmesiyse `l5`, kurulum ise `l6`, ekran/komut ise `l7`. Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index.md](architecture/index.md).
-
----
-
-## §6 Sayısal Gerçekler (uydurma yasak)
-
-| # | Sayı | Anlam | Kaynak |
-|---|---|---|---|
-| 1 | **8 makro katman / 52 düğüm** | l0..l7 + N01-N44 alt katman (klasör/namespace düzeyi) | ADR-028 §2.1 |
-| 2 | **9 üretim + 1-2 test projesi** | en fazla 11 `.csproj` × 2 TFM = 22 hedef | ADR-028 §2.1 |
-| 3 | **5440 katalog kaydı** | `count-components` = **PASS, 0 marj** (tek satır silinirse RED) | ADR-028 C4/§4 |
-| 4 | **K3 = 618 giriş / 616 benzersiz** | K3 envanteri **kapsam dışı**; kataloga girmez | ADR-028 §2.2 |
-| 5 | **CPM'te test paketleri yok** | `NetArchTest.Rules` · `xunit` · `Microsoft.NET.Test.Sdk` · `NSubstitute` `PackageVersion` satırları eklenmedi → **NU1008 riski** | ADR-028 C5/§2.3 |
-| 6 | **500 MD** | GATE-004a eşiği; ölçüm gate kapanışında alınır | bu vaultun gate eşiği |
-| 7 | **7 ekran** | wireframe kapsamı: `01-start-page` … `07-settings` | [VISION](VISION.md) |
-
-> Bir hücrede kaynak yoksa hücreye **`DOĞRULAMA GEREKLI`** yazılır; tahmin sayı girmez (G9).
-
----
-
-## §7 SSS (Anayasa — 8 Soru)
-
-**S1 — Başka bir `.ai` dosyası bu anayasayla çelişirse?** Bu dosya kazanır; çelişki ayrıca `G10` etiketiyle raporlanır ve ilgili dosya düzeltilir.
-
-**S2 — Kanıtım yoksa ne yazarım?** `UNKNOWN` ya da `NEEDS_VALIDATION` (`DOĞRULAMA GEREKLI`) — ve işi o adımda durdurursun.
-
-**S3 — Bu anayasayı kim değiştirebilir?** Yalnız kullanıcı. G maddesi eklemek/silmek kullanıcı onayı ister ve `log.md`'ye kaydedilir.
-
-**S4 — Bu anayasa ile başka bir `.ai` dosyasındaki kural aynı şeyi mi söylüyor?** Söylüyorsa tekrar etme, yalnız [index.md](index.md) üzerinden bağ ver; farklı söylüyorsa bu dosya kazanır ve fark `log.md`'ye not edilir. Aynı madde iki dosyada ayrı ayrı yaşarsa SSOT ihlali başlar.
-
-**S5 — Kanıt kutusu ile ajan çıktı kutusunu karıştırırsam ne olur?** Gate kanıtı geçersiz sayılır: 5 alanlı kutu (`BASLIK/KAPSAM/KARAR/RİSK/KANIT`) ajanın özetidir, 4 satır (`KANIT/DOSYA/EKSIK/SONRAKI`) gate'in kabul kanıtdır. Farklı yerde kullanılan kutu, o gate'de yeniden istenir.
-
-**S6 — "Bilmiyorum" demek işi batırır mı?** Hayır; gizlemek batırır. `UNKNOWN` + işi o adımda durdurmak doğru davranıştır (§3.1). Tahmin yazmak G9 ihlalidir ve madde silinir — silinen madde, yazılmamış sayılır.
-
-**S7 — G maddeleri sırasıyla ezberlenmeli mi?** Hayır; §2'deki 8 tespit komutu maddelerin çoğunu otomatik yakalar. Ezber yerine akış bilgisi yeterlidir: neyi yaptığını söyle → hangi G'ye dokunuyor → kanıtı üret → kutuyu doldur.
-
-**S8 — Bir madde birden fazla G'ye giriyorsa hangisi geçerli?** En ağır olanı (`CRITICAL` > `HIGH` > `RED`) raporlanır, ayrıca ilgili tüm maddeler `log.md`'ye tek satırda etiketlenir. Ağırlık sırası §1 tablosundaki `İhlalde` sütunundan okunur.
-
----
-
-## §8 Doğrulama
-
-- [ ] Frontmatter 8 alan, ilk satır `---`, `authority: SSOT`, `updated: 2026-09-29`
-- [ ] G1..G12 tek tek `kural/yasak/ihlalde/kanıt` dörtlüsünde; 7 ana yasak açıkça yazılı
-- [ ] §3'te 7 doğrulama etiketi + 4 satır kanıt kutusu + hata raporu üçlüsü
-- [ ] §4'te 5 dur/bekle durumu + G7 onay şablonu
-- [ ] §5 ADR-028'e bağlı, diyagram **saf ASCII** (Unicode kutu çizim yok)
-- [ ] §6 sayıları yalnız kaynaklı; kaynaksız hücre `DOĞRULAMA GEREKLI`
-- [ ] Tüm markdown linkleri yalnız izinli hedeflere (bkz. başlık bağlantıları)
-
-### §8.1 Kırmızı ekip — anayasanın en sık delinen 8 yeri
-
-| # | Delik | Belirtisi | Yakalama | Düzeltme |
-|---|---|---|---|---|
-| 1 | "Geçici paket" eklenmiş | `Directory.Packages.props`'ta onaysız satır | §2 satır 3 | Paketi kaldır ya da `G8` onayı al |
-| 2 | Kanıt kutusu `KANIT` satırı boş | Kapanışta komut çıktısı yok | §3.4 tablosu | Komutu çalıştır, çıktıyı yaz; yoksa `UNKNOWN` |
-| 3 | Diyagramda Unicode çizim | `U+2500-U+257F` taraması > 0 | §2 satır 8 | `|`, `-`, `+` ile yeniden çiz |
-| 4 | Katman oku ters | `l4 -> l2` ya da `l5 -> l4` kullanan kod | NetArchTest `LayerRulesTests` | Portu `l0`'a, uygulamayı `l4`'e taşı |
-| 5 | Ajanın gate'i kapatması | `log.md`'de onay satırı yok, gate kapanmış | §4.3 tablosu | Gate'i yeniden aç, kapanışı kullanıcıya sor |
-| 6 | Etiketsiz iddia | "olması gerekir" / "herhalde" benzeri ifade | §3.1 tablosu | Etiketi ekle ya da maddeyi sil |
-| 7 | Tek bacakta bırakılmış kod | Bir TFM'de derleniyor, diğeri hata veriyor | `-f net48` ve `-f net10.0-windows` | `#if`'i yalnız platform farkına indir |
-| 8 | Kopya metin | Cümleler eski vaultla birebir aynı | G1 benzerlik taraması | Maddeleri kendi cümlenle yeniden yaz |
-
-**Ortak belirti:** sekiz deliğin yedisi **kanıt eksikliği** olarak görünür; bu yüzden §3.4 kutusu doldurulmadan hiçbir iş "bitti" sayılmaz.
-
----
-
-## §9 Referanslar
-
-| # | Kaynak | Yol |
+| Öğe | Değer | Dayanak |
 |---|---|---|
-| 1 | Katman/proje baz kararı (bağlayıcı) | `.decisions/accepted/ADR-028-layered-baseline-9-projects.md` |
-| 2 | Süreç ve gate'ler | `WORKFLOW.md` |
-| 3 | Rol ve karar hiyerarşisi | `ROLE.md` |
-| 4 | Ajan dağıtım matrisi | `AGENTS.md` |
-| 5 | Katman sınırı kontrol listesi | `checklists/layer-boundary-check.md` |
-| 6 | Navigasyon · karar defteri · oturum durumu | `index.md` · `brain.md` · `MEMORY.md` |
+| Oturum bütçesi | **50.000 token** | `[kök] 114` |
+| Kök dosya payı | ≤ %3 (~1.500 token) — > 2.000 → RED | `[kök] 114` |
+| Bu dosyanın (`\.ai/CLAUDE.md`) kendi payı | ayrı eşik kaynaklı değil → **DOĞRULAMA GEREKLİ** | — |
+| Güncelleme tetigi | kural / katman / rol değişince → `version` minor + `updated` + `log.md` | `[kök] 115` |
+| Yalnız düzeltme | bağlantı ya da imleç → `version` patch + tek satır log | `[kök] 116` |
+| Süre bütçesi (üretim) | 44 şablon ≈ 275 dk + %15 tampon ≈ 5,0 saat | `[env] 443–451` |
+
+**Aşım davranışı:** bütçe aşılırsa iş değil **okuma** yemiştir → §4.5'te metin değil bağlantı yazılır; kırmızı akış `[söz]` §11 R15.
+
+### §5.3 Hata Modları
+
+| # | Hata Modu | Belirti | Düzeltme |
+|---|---|---|---|
+| 1 | Kural kopyası | kök dosyada uzun G paragrafı | bağlantıya çevir (G12) |
+| 2 | Olmayan hedefe bağlantı | §6.3 çıktısında kırık var | bağlantıyı kaldır, düz metne çevir (G7) |
+| 3 | Yer tutucu sızıntısı | üretim çıktısında çift süslü parantez kalıbı | temizle, yeniden ölç (G4) |
+| 4 | Katman / kapı kayması | `l7 Host` gibi yanlış kod | kök CLAUDE §B5 · [WORKFLOW](../WORKFLOW.md) |
+| 5 | Kanıtsız sayı | komut çıktısız "553 MD" gibi iddia | `DOĞRULAMA GEREKLİ` (G9) |
+
+---
+
+## §6 Doğrulama
+
+### §6.1 Kontrol Listesi
+
+| # | Kontrol | Beklenen | İlgili |
+|---|---|---|---|
+| K1 | Frontmatter ilk 9 satır · 8 alan · sıra birebir | 8/8 | G3 · §3.2 |
+| K2 | `authority: SSOT` · `version` üç bölüm · `updated` ISO | birebir | G3 |
+| K3 | H1 tek + `**Zorunlu Bağlantılar:**` 6 bağlantı | 1 satır · 6 | G7 |
+| K4 | Kırık bağlantı | 0 | G7 · §6.3 |
+| K5 | İlk 3 bayt `45,45,45` (BOM yok) · mojibake | `45,45,45` · 0 | G5 |
+| K6 | G1..G12 bloğu 12/12 · her blokta 5 alan + dayanak | 12/12 | §4.5 |
+| K7 | Üretim çıktısında yer tutucu | 0 | G4 |
+| K8 | Satır aralığı | 300–500 | iş sözleşmesi |
+| K9 | `EntityFramework` geçen satır | 0 | G2 · G10 |
+| K10 | Kanıtsız sayı / eski ürün adı izi | 0 · 0 | G1 · G9 |
+
+### §6.2 Red Sinyalleri
+
+| # | Sinyal | Aksiyon |
+|---|---|---|
+| R1 | §6.3 çıktısında kırık bağlantı | **DUR** — hedefi üret ya da bağlantıyı sil (G7) |
+| R2 | Üretim çıktısında yer tutucu | **DUR** — doldur (G4) |
+| R3 | Diskte olmayan hedefe "şurada" demek | **DUR** — `DOĞRULAMA GEREKLİ` (G9) |
+| R4 | Frontmatter 8 alan dışında 9. alan | **DUR** — `[söz] 295` |
+| R5 | `EntityFramework` / concat SQL geçen satır | **DUR** — G2 · G10 |
+| R6 | Ölçüm çıktısı olmadan "tamam" beyanı | **DUR** — çıktı istenir (G9) |
+
+### §6.3 Salt Okunur Doğrulama Komutu
+
+```powershell
+$f = 'C:\versacoder\.ai\CLAUDE.md'
+'  satir : {0}   (300-500)' -f (Get-Content $f -Encoding UTF8).Count
+'  KB    : {0:N1}' -f ((Get-Item $f).Length / 1KB)
+'  ilk3  : {0}      (45,45,45 olmali)' -f (([System.IO.File]::ReadAllBytes($f))[0..2] -join ',')
+$t = Select-String -LiteralPath $f -Pattern '\]\(([^)#]+)\)' -AllMatches |
+     ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique
+$k = $t | Where-Object { -not (Test-Path (Join-Path 'C:\versacoder\.ai' $_)) }
+'  link  : {0} hedef · kiranik {1}  (0 olmali)' -f $t.Count, @($k).Count
+$k
+```
+
+**Geçme kriteri:** satır 300–500 · ilk 3 bayt `45,45,45` · kırık bağlantı **0** · `DOĞRULAMA GEREKLİ` işaretli iddialar dışında kanıtsız sayı **0**.
+
+---
+
+## §7 Referanslar
+
+### §7.1 Kaynaklar
+
+| Dosya | Ne için | Durum (2026-10-06) |
+|---|---|---|
+| [kök CLAUDE](../CLAUDE.md) | §B4 okuma sırası · §B6 tek-satır özet · §B7 ne yap/ne yapma · §B9 bütçe | ✅ okundu |
+| [templates index](.templates/index.md) | §3.7 frontmatter · §4.5 guardrail · §5.1 akış · §5.3 tespit · §6.1 checklist | ✅ okundu |
+| [new-doc-contract](.templates/new-doc-contract.md) | yeni belge sözleşmesi · §1 8 alan · §9.1 denetim · §10.1 boyut · §11 red | ✅ okundu |
+| [çakışma kaydı](reports/conflict-register-001-master-prompts.md) | CF-03 · CF-04 · CF-05/D4 · CF-10 · CF-13 | ✅ okundu |
+| [adim4 raporu](reports/adim4-vault-skeleton-001.md) | `.ai/` taxonomisi (CF-12 · D3) | ✅ diskte |
+| [WORKFLOW](../WORKFLOW.md) | kapı gerçeği — `GATE-003` (G8) | ✅ diskte |
+| [AGENTS](../AGENTS.md) · [README](../README.md) | gölge dosya · tanım | ✅ diskte |
+| `prompts/01-master-enterprise-engineering-v2.md` · `prompts/02-master-project-installation-v1.md` | planlama çerçevesi — vault'a uymayan yerde **vault kazanır** (`[çk] 73`) | ✅ diskte |
+| `prompts/` · `reports/` · `.ai/` kök omurgası | AŞAMA C — `.rules/` `.decisions/` `architecture/` `checklists/` `scripts/` `index.md` `keys.md` `WORKFLOW.md` `log.md` `adr/` | ❌ YOK (`[env] 337–338`) |
+
+### §7.2 Red Team — Sık Yapılan Hatalar
+
+| # | Hata | Neden Yanlış | Doğrusu |
+|---|---|---|---|
+| 1 | Kuralı kök dosyaya kopyalamak | iki gerçek kaynağı, biri çürür (G12) | tek satır özet + bağlantı (§1.1) |
+| 2 | `.ai/` YOK hedefe bağlantı yazmak | kırık bağlantı = G7 ihlali | düz metin + `DOĞRULAMA GEREKLİ` (§3.3 Not) |
+| 3 | Şablonda yer tutucu görünce kırmızı alarm | CF-04: şablonun doğası | 0 araması yalnız **üretim çıktısında** (G4) |
+| 4 | `.templates/` dışı dosyaya 480 satır dayatmak | D4 kapsamı `.templates/**` | `prompts/` + `reports/` → 3–8 KB (G6) |
+| 5 | Ölçüm çıktısız "bağlantılar sağlam" demek | kanıtsız beyan (G9) | §6.3 çıktısını yapıştır |
+
+**SSUT beyanı:** Bu dosya, `.ai/` altındaki **G1..G12 kural metninin tek** kaynağıdır; kök `CLAUDE.md` yalnız bağlantı verir (G12), `.templates/CLAUDE.md` ayrı bir dizin kuralıdır, `.ai/` içine ikinci kök kural dosyası yazılmaz (G7).

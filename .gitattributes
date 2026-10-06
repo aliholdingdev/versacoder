@@ -1,0 +1,7 @@
+# Satir sonu politikasi — vault olcumleri BAYT uzerinden calisir
+# (claud-md-template K20 = 25-34 KB). CRLF, her MD'de +N bayt siyirir ve
+# olcumu yalanlatir: LF blob 34.727 B iken CRLF calisma dosyasi 35.347 B olur.
+# core.autocrlf=true olsa da attributes onceliklidir.
+*.md text eol=lf
+*.ps1 text eol=lf
+*.sh text eol=lf

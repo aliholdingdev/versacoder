@@ -4,7 +4,7 @@ type: template
 category: template
 status: active
 version: 1.0.0
-updated: 2026-09-25
+updated: 2026-10-05
 authority: SSOT
 scope: "katman sartnamesi sablonu: sozlesmeler, bagimlilik yasagi ve dogrulama adimlari"
 ---
@@ -17,7 +17,7 @@ scope: "katman sartnamesi sablonu: sozlesmeler, bagimlilik yasagi ve dogrulama a
 
 ## §1 Amaç
 
-Bu şablon, VersaCoder K0..K8 katmanlarından **birinin** şartnamesini (`.ai/architecture/layer-<ad>.md`) tek biçimde üretir: sınır iki tabloda, bağımlılık tek tabloda, kanıt §5.3 komut setinde durur.
+Bu şablon, VersaCoder l0..l7 katmanlarından **birinin** şartnamesini (`.ai/architecture/layer-<ad>.md`) tek biçimde üretir: sınır iki tabloda, bağımlılık tek tabloda, kanıt §5.3 komut setinde durur.
 
 SRP: genel yığın `architecture-template`'in, matris `dependency-rule-template`'in, çizim `ascii-diagram-template`'in işidir; bu dosya **tek katmanın içine** bakar, kardeşlerini tekrarlamaz (envanter G12).
 
@@ -27,26 +27,26 @@ SRP: genel yığın `architecture-template`'in, matris `dependency-rule-template
 |------|-------|
 | Şablon / Yol | `layer-spec-template.md` · `.ai/.templates/architecture/` |
 | Hedef Dosya | `.ai/architecture/layer-<ad>.md` → `C:\versacoder\.ai\architecture\` |
-| Kapsam | tam **1** katman (K0..K8'den biri); tetikleyici: sınır/port/`.csproj` değişimi |
+| Kapsam | tam **1** katman (l0..l7'den biri); tetikleyici: sınır/port/`.csproj` değişimi |
 | Sorumlu / Onay | `architect` / `reviewer` · kabul `master-orchestrator` · gate `GATE-004` |
 | Bağlı Şablonlar | `architecture-template` · `dependency-rule-template` · `ascii-diagram-template` |
 | Kodlama / Sürüm | UTF-8 BOM'suz (mojibake YASAK) · `1.0.0` / `SSOT` |
 
 ### §1.2 Disk Kanıtları ve Boşluk (YAGNI)
 
-İddia → kanıt. Kanıt yoksa uydurulmaz; satır `⚠️ VERIFICATION REQUIRED` kalır. Ölçüm: `C:\versacoder`, 2026-09-25.
+İddia → kanıt. Kanıt yoksa uydurulmaz; satır `⚠️ VERIFICATION REQUIRED` kalır. Ölçüm: `C:\versacoder`, 2026-10-05.
 
 | # | İddia | Disk Kanıtı | Durum |
 |---|-------|-------------|-------|
-| E1 | `.ai/.templates/architecture/` klasörü | `architecture-template.md` 34.059 B · `ascii-diagram-template.md` 38.121 B | ✅ Doğrulandı |
+| E1 | `.ai/.templates/architecture/` klasörü | `architecture-template.md` 34.177 B · `ascii-diagram-template.md` 31.188 B | ✅ Doğrulandı |
 | E2 | `layer-spec-template.md` envanterde `PLANLI` | bu dosya yazıldı; envanter satırı hâlâ `PLANLI` | ✅ Doğrulandı |
-| E3 | Şablon envanteri `.ai/.templates/index.md` | 606 satır / 38.816 B · 44 şablon kaydı | ✅ Doğrulandı |
-| E4 | Dizin kuralı `.ai/.templates/CLAUDE.md` | 132 satır / 7.047 B · 14 rol listesi | ✅ Doğrulandı |
-| E5 | `.ai/architecture/` (hedef dizin) | `.ai/` altında yalnız `.templates/` var | ❌ YOK |
-| E6 | `.ai/architecture/index.md` · `.ai/WORKFLOW.md` | iki dosya da yok | ❌ YOK |
-| E7 | `.ai/.rules/` (7 MD) · `.ai/keys.md` · `.ai/log.md` | `.rules/` dizini yok, 0 dosya | ❌ YOK |
+| E3 | Şablon envanteri `.ai/.templates/index.md` | 625 satır / 42.541 B · 44 şablon kaydı | ✅ Doğrulandı |
+| E4 | Dizin kuralı `.ai/.templates/CLAUDE.md` | dosya yok; git'te hiç commit edilmedi | ❌ YOK |
+| E5 | `.ai/architecture/` (hedef dizin) | dizin **var** | ✅ Doğrulandı |
+| E6 | `.ai/architecture/index.md` · `.ai/WORKFLOW.md` | her ikisi **var** (16,9 KB · 40,0 KB) | ✅ Doğrulandı |
+| E7 | `.ai/.rules/` · `.ai/keys.md` · `.ai/log.md` | üçü **var**: 18 MD · 35,0 KB · 60,2 KB | ✅ Doğrulandı |
 | E8 | `.ai/adr/` + `ADR-001…008` | dizin yok | ❌ YOK |
-| E9 | `src/**`, `VersaCoder.sln`, `tests/**` | kökte yalnız `.ai` + `.git` | ❌ YOK |
+| E9 | `src/**`, `VersaCoder.sln`, `tests/**` | üçü de yok; kök = 9 kayıt | ❌ YOK |
 | E10 | `Directory.Packages.props` · `global.json` · `versacoder.db` | kökte üçü de yok | ❌ YOK |
 | E11 | DevExpress `26.1` · ADO.NET + Dapper · `@p1..@pN` · ikili TFM | yalnız şablon metinlerinde; kod kanıtı yok | ⚠️ VERIFICATION REQUIRED |
 | E12 | Yasaklı vault'lar (`C:\www\` altındaki iki referans deposu) | yalnız **yapı** referansı; tek kelime kopyalanmadı | 🔒 YASAK |
@@ -59,7 +59,7 @@ SRP: genel yığın `architecture-template`'in, matris `dependency-rule-template
 |---|-------------|-----------|-------|
 | 1 | Tek katman sınırı/izin/portu yazılmıyor · port veya `.csproj` değişti | ✅ Evet | `.ai/architecture/layer-<ad>.md` |
 | 2 | YAPAR/YAPMAZ sınırı tartışmaya açıldı | ✅ Evet | aynı dosya + ADR (karar ise) |
-| 3 | K0..K8 yığını, proje ağacı, TFM · 9×9 matris, ihlal taraması, çizim | ❌ | `architecture-template` / `dependency-rule` / `ascii-diagram` |
+| 3 | l0..l7 yığını, proje ağacı, TFM · 9×9 matris, ihlal taraması, çizim | ❌ | `architecture-template` / `dependency-rule` / `ascii-diagram` |
 
 ### §1.4 Özet
 
@@ -73,9 +73,6 @@ SRP: genel yığın `architecture-template`'in, matris `dependency-rule-template
 ---
 
 ## §2 Kapsam
-
-**İçinde:** tek katman şartnamesi, sınır tabloları, API/imza listesi, hata sözleşmesi, performans ve test bütçesi, kırmızı çizgiler, salt-okunur doğrulama.
-**Dışında:** çok katmanlı genel belge, bağımlılık matrisi, diyagram, kod üretimi, ADR.
 
 ### §2.1 Dosya Tipi → Sorumlu Eşlemesi
 
@@ -92,7 +89,7 @@ Dosyaya sırayla sor; **ilk `HAYIR`** yanlış şablonu işaret eder:
 
 | # | Soru | Beklenen | Beklenmezse |
 |---|------|----------|-------------|
-| S1 | Dosya **tek** bir katmanı (K0..K8) anlatıyor mu? | `EVET` | iki+ katman → `architecture-template` |
+| S1 | Dosya **tek** bir katmanı (l0..l7) anlatıyor mu? | `EVET` | iki+ katman → `architecture-template` |
 | S2 | İçinde 9×9 matris veya ihlal tarama komutu var mı? | `HAYIR` | varsa → `dependency-rule-template` |
 | S3 | Konu geri alınabilir tek bir **karar** mı? | `HAYIR` | evetse → `adr-template` |
 | S4 | Çıktı bir `.cs` iskeleti mi? | `HAYIR` | evetse → `backend/*-template` |
@@ -131,23 +128,23 @@ template: layer-spec-template.md
 Bölümler: `§1` Amaç (künye, kanıtlar, tetikleyici, özet) · `§2` Kapsam · `§3` Mimari (iskelet → dolu örnek) · `§4` Kurallar (G1..G12) · `§5` Workflow · `§6` Doğrulama · `§7` Referanslar
 ````
 
-### §3.2 Katman Kimliği (K0..K8 kartı)
+### §3.2 Katman Kimliği (l0..l7 kartı)
 
-Kodlar sabittir (`architecture-template` §3.2 ile aynı); şartnamede **tek** satır işaretlenir.
+Kodlar sabittir (ADR-028 §2.1 — `architecture-template` §3.2 ile aynı); şartnamede **tek** satır işaretlenir.
 
 | Kod | Katman | Proje | Sahip Rol | TFM | Şartname |
 |-----|--------|-------|-----------|-----|----------|
-| K8 | Test | `tests/VersaCoder.Tests`, `tests/VersaCoder.IntegrationTests` | `testing` | `net10.0-windows` | `layer-test.md` |
-| K7 | Host | `VersaCoder.Host` | `devops-engineer` | `net48;net10.0-windows` | `layer-host.md` |
-| K6 | UI | `VersaCoder.Desktop`, `VersaCoder.Cli` | `ui-designer` | Desktop `net48` · Cli `net10.0-windows` | `layer-ui.md` |
-| K5 | Protocol | `VersaCoder.Protocol` | `developer` | `net48;net10.0-windows` | `layer-protocol.md` |
-| K4 | Infrastructure | `VersaCoder.Infrastructure` | `database-optimizer` | `net48;net10.0-windows` | `layer-infrastructure.md` |
-| K3 | Application | `VersaCoder.Application` | `developer` | `net48;net10.0-windows` | `layer-application.md` |
-| K2 | Domain | `VersaCoder.Domain` | `architect` | `net48;net10.0-windows` | `layer-domain.md` |
-| K1 | Abstractions | `VersaCoder.Abstractions` | `architect` | `net48;net10.0-windows` | `layer-abstractions.md` |
-| K0 | CrossCutting | `VersaCoder.CrossCutting` | `developer` | `net48;net10.0-windows` | `layer-crosscutting.md` |
+| l0 | Abstractions | `VersaCoder.Abstractions` | `architect` | `net48;net10.0-windows` | `layer-abstractions.md` |
+| l1 | Domain | `VersaCoder.Domain` | `architect` | `net48;net10.0-windows` | `layer-domain.md` |
+| l2 | Application | `VersaCoder.Application` | `developer` | `net48;net10.0-windows` | `layer-application.md` |
+| l3 | Crosscutting | `VersaCoder.Crosscutting` | `developer` | `net48;net10.0-windows` | `layer-crosscutting.md` |
+| l4 | Infrastructure | `VersaCoder.Infrastructure` | `database-optimizer` | `net48;net10.0-windows` | `layer-infrastructure.md` |
+| l5 | Protocol | `VersaCoder.Protocol` | `developer` | `net48;net10.0-windows` | `layer-protocol.md` |
+| l6 | Host | `VersaCoder.Host` | `devops-engineer` | `net48;net10.0-windows` | `layer-host.md` |
+| l7 | UI + CLI | `VersaCoder.Desktop`, `VersaCoder.Cli` | `ui-designer` | Desktop `net48` · Cli `net10.0-windows` | `layer-ui.md` |
+| test | Test | `tests/VersaCoder.Tests`, `tests/VersaCoder.ArchitectureTests` | `testing` | `net10.0-windows` | `layer-test.md` |
 
-Kimlik satırı tek formatta: `K4 · Infrastructure · VersaCoder.Infrastructure · sahip database-optimizer · TFM net48;net10.0-windows · spec layer-infrastructure.md · gate GATE-004`.
+Kimlik satırı tek formatta: `l4 · Infrastructure · VersaCoder.Infrastructure · sahip database-optimizer · TFM net48;net10.0-windows · spec layer-infrastructure.md · gate GATE-004`.
 
 ### §3.3 Sorumluluk Sınırı — İki Ayrı Tablo
 
@@ -181,7 +178,7 @@ Yön tablosu `architecture-template` §3.4; 9×9 yorumu `dependency-rule-templat
 
 | Yön | Hedefler | Koşul | Sınır Testi |
 |-----|----------|-------|-------------|
-| İzinli (`✓`) | K1 Abstractions (+ §3.2 alt katmanları) | doğrudan `ProjectReference` | §5.3/2 tutarlı |
+| İzinli (`✓`) | l0 Abstractions (+ §3.2 alt katmanları) | doğrudan `ProjectReference` | §5.3/2 tutarlı |
 | Koşullu (`△`) | Application/Infrastructure port eşlemesi | yalnız arayüz; somut tip yok | §5.3/4 `using` temiz |
 | Yasak (`✗`) | UI, Test ve yetkisiz katmanlar | hiçbir koşulda yok | §5.3/3 = 0 |
 | Dışa | BCL + CPM paketi (`Directory.Packages.props`) | tek sürüm kaynağı | paket adı ADR'ye bağlı |
@@ -194,8 +191,8 @@ Yön tablosu `architecture-template` §3.4; 9×9 yorumu `dependency-rule-templat
 | R2 | Infrastructure → UI **asla** | ters akış, döngü riski |
 | R3 | UI (Desktop/Cli) → yalnız Host | katmanlara doğrudan erişim yok |
 | R4 | Domain → `System.Data` / Dapper / dosya / git **asla** | saf C# katmanı |
-| R5 | Herhangi bir katman → Test **asla** | üretim kodu K8'e bakamaz |
-| R6 | CrossCutting'e yalnız Host ve Test bakar | en alt sabit |
+| R5 | Herhangi bir katman → Test **asla** | üretim kodu test'e bakamaz |
+| R6 | Crosscutting'e yalnız Host ve Test bakar | en alt sabit |
 
 ### §3.5 Public API Yüzeyi (arayüz + imza tablosu)
 
@@ -266,14 +263,14 @@ Kabul kriterleri:
 
 ### §3.9 Dolu VersaCoder Örneği — `VersaCoder.Infrastructure`
 
-> Gerçek VersaCoder verisiyle doldurulmuş **K4** şartnamesi. `src/` diskte olmadığı için (§1.2 E9) imza ve ms değerleri **taslaktır**; kod yazıldığında §5.3/2–6 ile güncellenir.
+> Gerçek VersaCoder verisiyle doldurulmuş **l4** şartnamesi. `src/` diskte olmadığı için (§1.2 E9) imza ve ms değerleri **taslaktır**; kod yazıldığında §5.3/2–6 ile güncellenir.
 
 | Alan | Değer |
 |------|-------|
-| Kimlik | `K4 · Infrastructure · VersaCoder.Infrastructure · database-optimizer · net48;net10.0-windows · layer-infrastructure.md` |
+| Kimlik | `l4 · Infrastructure · VersaCoder.Infrastructure · database-optimizer · net48;net10.0-windows · layer-infrastructure.md` |
 | NE YAPAR | ADO.NET + Dapper ile `versacoder.db` · `@p1..@pN` sorgu · `I*Repository` portları · migration `V0xx__*.sql` · `schema_version` |
 | NE YAPMAZ | EF Core / `DbContext` (ADR-004) · UI tipine bakmak · concat SQL · use case · DevExpress · secret |
-| İzinli bağımlılık | `✓` K2, K1 · `△` K3 (yalnız port eşlemesi) · `✗` K5, K6, K7, K0, K8 |
+| İzinli bağımlılık | `✓` l1, l0 · `△` l2 (yalnız port eşlemesi) · `✗` l5, l7, l6, l3, test |
 | Kırmızı çizgi | `Microsoft.EntityFrameworkCore` geçen satır = 0 · her sorgu `@p1/@p2` içerir · `System.Data` yalnız bu katmanda |
 | Public API | `IItemRepository.GetAsync(Guid, CancellationToken)` → `Task<Result<Item>>` · `IUnitOfWork.CommitAsync(CancellationToken)` → `Task<Result<bool>>` |
 | Hata yolu | `SqliteException` → `Result.Fail(Error.Database(...))` + log · null argüman → `ArgumentException` · exception dışarı **çıkmaz** |
@@ -402,8 +399,8 @@ Get-ChildItem 'C:\versacoder' -Recurse -Filter *.csproj -ErrorAction SilentlyCon
 # 3) YASAK KENARLAR — cikti 0 satir OLMALI (matris: dependency-rule §3.3)
 $yasak = 'VersaCoder\.Domain\s*->\s*VersaCoder\.(Application|Infrastructure|Protocol|Host|Desktop|Cli)',
   'VersaCoder\.Application\s*->\s*VersaCoder\.(Infrastructure|Host|Desktop|Cli)',
-  'VersaCoder\.(Abstractions|CrossCutting)\s*->\s*VersaCoder\.',
-  'VersaCoder\.(Desktop|Cli)\s*->\s*VersaCoder\.(Domain|Application|Infrastructure|Protocol|CrossCutting)',
+  'VersaCoder\.(Abstractions|Crosscutting)\s*->\s*VersaCoder\.',
+  'VersaCoder\.(Desktop|Cli)\s*->\s*VersaCoder\.(Domain|Application|Infrastructure|Protocol|Crosscutting)',
   'VersaCoder\.Host\s*->\s*VersaCoder\.(Desktop|Cli)'
 Get-ChildItem 'C:\versacoder' -Recurse -Filter *.csproj -ErrorAction SilentlyContinue | ForEach-Object {
   $k = $_.BaseName
@@ -415,7 +412,7 @@ Get-ChildItem 'C:\versacoder' -Recurse -Filter *.csproj -ErrorAction SilentlyCon
 
 ```powershell
 # 4) NAMESPACE SINIRI — katman disi "using" 0 satir OLMALI
-$kalip = @{ 'VersaCoder.Domain' = 'VersaCoder\.(Application|Infrastructure|Protocol|Host|Desktop|Cli|CrossCutting)'
+$kalip = @{ 'VersaCoder.Domain' = 'VersaCoder\.(Application|Infrastructure|Protocol|Host|Desktop|Cli|Crosscutting)'
   'VersaCoder.Application' = 'VersaCoder\.(Infrastructure|Host|Desktop|Cli)'
   'VersaCoder.Infrastructure' = 'VersaCoder\.(Host|Desktop|Cli)'
   'VersaCoder.Desktop' = 'VersaCoder\.(Domain|Application|Infrastructure|Protocol)' }
@@ -474,7 +471,7 @@ $hizasiz = ($lines | Where-Object { $_ -match '^[+|]' -and $_.Length -ne 66 }).C
 | K5 | §1.2 her satır `✅`/`❌`/`⚠️` + yorum yasağı | 0 boş hücre | G5 |
 | K6 | §2.1 dosya tipi → sorumlu · §2.2 S1..S5 cevaplı | 5/5 | §2.2 |
 | K7 | §3.1 kalıp bloğu dört tırnak içinde; `{{…}}` yalnız orada | 0 dışarıda | G4 |
-| K8 | §3.2 kimlik = K0..K8'den **tek** satır | 1 işaretli | §3.2 |
+| K8 | §3.2 kimlik = l0..l7'den **tek** satır | 1 işaretli | §3.2 |
 | K9 | §3.3 Tablo A ≥ 6 ve Tablo B ≥ 6 dolu | 2 tablo | §3.3 |
 | K10 | §3.4 izin/yasak + kırmızı çizgi ≥ 6 satır | dolu | §3.4 |
 | K11 | §3.5 imza tablosu ≥ 6 satır | dolu | §3.5 |
@@ -516,7 +513,7 @@ $hizasiz = ($lines | Where-Object { $_ -match '^[+|]' -and $_.Length -ne 66 }).C
 | Dosya | İlişki | Ne Verir |
 |-------|--------|----------|
 | `.ai/.templates/index.md` · `CLAUDE.md` | Envanter + dizin kuralı | satır #14 · Part B · §3.7 · erişim sırası, ≥480, 14 rol |
-| `.ai/.templates/architecture/architecture-template.md` | Kardeş | K0..K8 kartı + yön tablosu (§3.2, §3.4 kaynağı) |
+| `.ai/.templates/architecture/architecture-template.md` | Kardeş | l0..l7 kartı + yön tablosu (§3.2, §3.4 kaynağı) |
 | `.ai/.templates/architecture/dependency-rule-template.md` | Kardeş | 9×9 matris, ihlal komutu, ban listesi |
 | `ascii-diagram-template.md` · `adr/adr-architecture-template.md` | Kardeş | kutu alfabesi + 66 hizası · ADR biçimi |
 | `.ai/architecture/layer-<ad>.md` · `.ai/log.md` | **üretilen** | ikisi de diskte YOK (§1.2 E5, E7) |
@@ -537,13 +534,13 @@ $hizasiz = ($lines | Where-Object { $_ -match '^[+|]' -and $_.Length -ne 66 }).C
 
 ### §7.1 VersaCoder Bağlantıları
 
-| # | Kaynak | Yol | Ne İçin | Durum (2026-09-25) |
+| # | Kaynak | Yol | Ne İçin | Durum (2026-10-05) |
 |---|--------|-----|---------|---------------------|
-| 1 | Envanter + dizin kuralı | `index.md` · `CLAUDE.md` | satır #14, §3.7 · ≥480, 7 bölüm, 14 rol | ✅ 606 / 132 satır |
-| 2 | Biçim altın örneği | `architecture/ascii-diagram-template.md` | 7 bölüm yoğunluğu, 66 hizası | ✅ 38.121 B |
-| 3 | Kardeşler | `architecture-template.md` · `dependency-rule-template.md` | K0..K8 kartı, yön, matris | ✅ 34.059 B · bu Part'de yazılıyor |
-| 4 | İkinci format referansı | `adr/adr-template.md` | §1.2 kanıt disiplini, §5.3 komutları | ✅ 39.870 B |
-| 5 | Katman / gate / kural / karar / kod gerçeği | `.ai/architecture/index.md` · `WORKFLOW.md` · `.rules/*.md` · `adr/ADR-*` · `src/**` | §3.2, `GATE-004`, G2/G10, §5.3 hedefleri | ❌ / ⚠️ (§1.2 E6–E10) |
+| 1 | Envanter + dizin kuralı | `index.md` · `CLAUDE.md` | satır #14, §3.7 · ≥480, 7 bölüm | ✅ 625 satır · ❌ `CLAUDE.md` YOK |
+| 2 | Biçim altın örneği | `architecture/ascii-diagram-template.md` | 7 bölüm yoğunluğu, 66 hizası | ✅ 31.188 B |
+| 3 | Kardeşler | `architecture-template.md` · `dependency-rule-template.md` | l0..l7 kartı, yön, matris | ✅ 34.177 B · ❌ `dependency-rule` YOK |
+| 4 | İkinci format referansı | `adr/adr-template.md` | §1.2 kanıt disiplini, §5.3 komutları | ✅ 36.296 B |
+| 5 | Katman / gate / kural / karar / kod gerçeği | `.ai/architecture/index.md` · `WORKFLOW.md` · `.rules/*.md` · `adr/ADR-*` · `src/**` | §3.2, `GATE-004`, G2/G10, §5.3 hedefleri | ✅ / ❌ (§1.2 E6–E10) |
 
 ### §7.2 Red Team — Sık Yapılan Hatalar
 
@@ -551,7 +548,7 @@ $hizasiz = ($lines | Where-Object { $_ -match '^[+|]' -and $_.Length -ne 66 }).C
 |---|------|--------------|---------|
 | 1 | Katman sınırını tek tabloda anlatmak | "yapar" şişer, "yapmaz" görünmez | §3.3 **iki ayrı tablo** (A ≥ 6, B ≥ 6) |
 | 2 | Şartnameye 9×9 matrisi kopyalamak | İki SSOT doğar, biri yalan söyler | matris `dependency-rule`'de; burada tek katman satırı |
-| 3 | Genel mimariyi buraya tekrar yazmak | K0..K8 yığını iki yerde yaşar | yalnız **bir** K kodu işaretlenir (§3.2) |
+| 3 | Genel mimariyi buraya tekrar yazmak | l0..l7 yığını iki yerde yaşar | yalnız **bir** K kodu işaretlenir (§3.2) |
 | 4 | UI'ın Infrastructure'e erişimine izin vermek | Katman fikri koddan kopar | R2 + §5.3/3 yasak kenar |
 | 5 | EF Core geçmişi bırakmak | ADR-004 ihlali, kopya kaynak | ADO.NET + Dapper + `@p1..@pN` |
 | 6 | Exception'ı tek hata yolu yapmak | UI'da iş kuralı hatası patlar | `Result<T>` + fail-fast istisna (§3.6) |
