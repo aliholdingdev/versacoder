@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "OpenRouter ve NVIDIA NIM LLM sağlayıcılarının port sözleşmesi (IAgentProvider), endpoint, anahtar yönetimi, hata kodları (VC-E-06xx) ve AI.Engine entegrasyonu - VC-LLM-001..014 gereksinimleri"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # LLM Provider Spec — OpenRouter + NVIDIA NIM

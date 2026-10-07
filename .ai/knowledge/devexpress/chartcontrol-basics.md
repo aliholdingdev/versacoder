@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "ChartControl temelleri: BindToData ile Dapper DataTable baglama, seri/eksen/etiket/gosterge ayarlari (v26.1)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ChartControl Temelleri (v26.1)

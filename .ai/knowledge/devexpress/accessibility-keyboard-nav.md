@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DevExpress v26.1 erisilebilirlik ve klavye navigasyonu: AccessibleName/Role, TabIndex/TabStop, BarItem.Shortcut, grid ok tuslari ve iki bacak farki"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Erisilebilirlik ve Klavye Navigasyonu (v26.1)

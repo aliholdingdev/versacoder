@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "İnceleme ölçütleri, bulgu biçimi ve seviyeleri, PASS (GREEN) / RED kararının kanıt koşulu — `reviewer` rolünün tek kaynağı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Kod İnceleme Şartnamesi (`spec/review-spec.md`)
@@ -49,7 +52,7 @@ scope: "İnceleme ölçütleri, bulgu biçimi ve seviyeleri, PASS (GREEN) / RED 
 | 3 | İki bacak | net48 **ve** net10 build/test yeşil | [build-spec](build-spec.md) |
 | 4 | Katman yönü | NetArchTest 0 ihlal · `#if` yalnız platform | [protocol-layer-spec](protocol-layer-spec.md) |
 | 5 | Güvenlik | Secret/izin/rolmelenme (SEC-01..16) | [security-spec](security-spec.md) |
-| 6 | Vault/MD | Frontmatter 8 alan · link 0 bozuk · mojibake 0 | [docs-spec](docs-spec.md) |
+| 6 | Vault/MD | Frontmatter 11 alan · link 0 bozuk · mojibake 0 | [docs-spec](docs-spec.md) |
 | 7 | Performans | Bütçe ölçümü var mı (p95) | [performance-spec](performance-spec.md) |
 
 ### §2.2 Bulgu biçimi ve seviyeler

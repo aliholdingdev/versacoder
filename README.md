@@ -5,7 +5,7 @@ category: docs
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: shadow
 scope: "Depo kökü README: künye bannerı, ne yapar, hızlı başlangıç, katmanlar, yapılandırma, testler, mimari not, hedef sistem diyagramı, referanslar"
 ---
 

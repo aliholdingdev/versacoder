@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Form constructor'nda ne yapilmadigini, Load / Shown / Activated ayrimini ve ilk veri yuklemenin dogru yerini tanimlar."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Form Constructor mi, Load mi?

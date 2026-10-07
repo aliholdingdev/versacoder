@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "async void metotlarinin yalniz nerede kullanildigini, kacinan istisnalarin nereye gittigini ve her olay isleyicisinde kurulmasi gereken hata kafesini tanimlar."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # `async void` Olay Isleyicileri ve Hata Yuzeyi

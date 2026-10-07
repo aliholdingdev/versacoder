@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: ".Designer.cs ve .resx uzerindeki son soz hakkini, elle mudahalenin sartlarini, geri alinma bicimini ve dosya okuma kuralini tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # .Designer.cs / .resx Elle Duzenleme Politikasi

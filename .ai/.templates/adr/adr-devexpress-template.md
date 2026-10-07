@@ -5,8 +5,11 @@ category: adr
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "DevExpress masastu UI ADR sablonu: RibbonForm, Designer.cs ve tema kararlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ADR Şablonu — DevExpress / Masaüstü UI Kararları

@@ -5,8 +5,11 @@ category: templates
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "GATE-004a icin uretilen tum yeni MD dosyalarinin frontmatter, link, boyut ve yasak kurallari - ihlal GATE-004a'yi kapatir"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Yeni Vault Dosyasi Sozlesmesi
@@ -34,7 +37,7 @@ category: <ayni klasor adi>
 status: active
 version: 1.0.0
 updated: <YYYY-MM-DD - dosyanin uretilip guncellendigi tarih>
-authority: SSOT
+authority: primary
 scope: "<1 satir kapsam - ne cevaplar>"
 ---
 ```

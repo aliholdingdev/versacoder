@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: reference
 scope: "Kanitli ogrenimlerin (DERS/LESSON) yazildigi yer: kabul kriteri, ornek basliklar ve kanit zorunlulugu - kanitsiz ders RED"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Bilgi İndeksi (knowledge/)
@@ -71,7 +74,7 @@ scope: "Kanitli ogrenimlerin (DERS/LESSON) yazildigi yer: kabul kriteri, ornek b
 |---|---|---|---|
 | 1 | Kanıt topla (komutu çalıştır, çıktıyı al) | ham çıktı | 5 dk |
 | 2 | Dosya adını §2 tablosundan/rezervden seç | `NN-konu-dersleri.md` | 1 dk |
-| 3 | Frontmatter 8 alan + tek cümlelik sorumluluk + §0 | iskelet | 4 dk |
+| 3 | Frontmatter 11 alan + tek cümlelik sorumluluk + §0 | iskelet | 4 dk |
 | 4 | Kanıt tablosunu yaz (iddia · durum · kanıt) | §1 tablosu | 6 dk |
 | 5 | Bu indekse 1 satır ekle | §2/§6 kaydı | 2 dk |
 

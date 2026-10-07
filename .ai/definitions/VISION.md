@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "VersaCoder'in ne ürettiği, 7 ekran + CLI ürün haritası, platform anatomisi, 4 farklılaştırıcı, 3 persona, kapsam dışı ve doğrulama listesi"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Ürün Vizyonu (`VISION.md`)
@@ -109,7 +112,7 @@ scope: "VersaCoder'in ne ürettiği, 7 ekran + CLI ürün haritası, platform an
 | Yetenek | Ne üretir | Ajan (AGENTS §2) | Kanıt |
 |---|---|---|---|
 | **Kod** | `.cs` + build + test | `developer` → `reviewer` → `tester` | `dotnet build/test` çıktısı |
-| **Dokümantasyon** | `.md` (vault/spec/report) | `docs-writer` | Frontmatter 8 alan + `check-links` = 0 |
+| **Dokümantasyon** | `.md` (vault/spec/report) | `docs-writer` | Frontmatter 11 alan + `check-links` = 0 |
 | **Görsel üretim** | render prompt + görsel | `visual-director` | Render çıktısı ya da `[VERIFY]` parametre |
 
 **Görsel üretim hattının ayrıntısı** [AGENTS](agents.md) §8.5'tedir (8 adım:
@@ -629,7 +632,7 @@ konusu değildir; 11-12 ise henüz yazılmamış kapsamdır ve kapıdan geçerke
 
 ## §8 Doğrulama
 
-- [ ] Frontmatter 8 alan, `authority: SSOT`, `updated: 2026-09-29`
+- [ ] Frontmatter 11 alan, `authority: primary`, `updated: 2026-09-29`
 - [ ] H1 + tek cümlelik sorumluluk + §0 Özet (Answer First) var
 - [ ] 7 ekran adı ADR-025 ile birebir; her satırda 2-3 cümle + kullanıcı + katman dolu
 - [ ] ASCII diyagramda Unicode kutu karakteri yok

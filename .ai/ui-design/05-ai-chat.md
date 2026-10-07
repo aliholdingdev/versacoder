@@ -5,8 +5,11 @@ category: ui
 status: draft
 version: 1.1.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "05-ai-chat ekranının wireframe'i: akış render, giriş/kontrol düğmeleri, model seçici, dosya üçlüsü, etkileşim kuralları — GATE-003 onayı bekliyor"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 05 — AI CHAT

@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Ayarlar ekranı: profil/tercih grupları, sağlayıcı-model seçimi, secret girişi (şifreli), doğrulama ve kaydetme akışı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Ayarlar Şartnamesi — VersaCoder

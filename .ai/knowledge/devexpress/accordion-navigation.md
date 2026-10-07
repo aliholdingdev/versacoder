@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "AccordionControl ile outlook benzeri yan menu: grup/oge hiyerarsisi, ElementClick, arama kutusu ve gorunum modlari"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # AccordionControl Yan Navigasyonu

@@ -5,8 +5,11 @@ category: ui
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "09-terminal ekraninin wireframe'i: dock alt paneli MemoEdit (ReadOnly) + TextEdit komut girdisi + gecmis + durum alani + Stop/Temizle dugmeleri - CLI sistemi terminalden kullanilir, VC-CLI-015 baglantisi ve GATE-003 onay alani - onaysiz tek satir .cs yazilmaz"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 09 — Terminal (CLI Dock Paneli)

@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: reference
 scope: "knowledge/data altindaki 25 dosyanin kayit defteri: ADO.NET + Dapper, parameterized SQL, migration, provider, secret, timeout"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Veri Erisimi Bilgi Bankasi (knowledge/data/)

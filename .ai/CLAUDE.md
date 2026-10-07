@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "Vault genelinde bağlayıcı 12 hard guardrail (G1..G12), yasak listesi, kanıt formatı, dur/bekle kuralları ve mimari sınır yasakları"
+tags: [claude]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — AI Anayasası (`CLAUDE.md`)
@@ -285,7 +288,7 @@ Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index
 
 ## §8 Doğrulama
 
-- [ ] Frontmatter 8 alan, ilk satır `---`, `authority: SSOT`, `updated: 2026-10-07`
+- [ ] Frontmatter 11 alan, ilk satır `---`, `authority: primary`, `updated: 2026-10-07`
 - [ ] G1..G12 tek tek `kural/yasak/ihlalde/kanıt` dörtlüsünde
 - [ ] §3'te 7 doğrulama etiketi + 4 satır kanıt kutusu + hata raporu
 - [ ] §4'te 5 dur/bekle durumu + G7 onay şablonu

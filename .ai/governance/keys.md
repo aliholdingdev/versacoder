@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Kelime/soru → hedef dosya hız haritası, 91 satır anahtar + soru kalıpları + klasör eşlemesi"
+tags: [governance]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # keys.md — Anahtar Kelime Haritası
@@ -23,7 +26,7 @@ scope: "Kelime/soru → hedef dosya hız haritası, 91 satır anahtar + soru kal
 | 2 | Hızlı yol hangisi? | Soru kalıbıysa §2, kelimeyse §1; ikisi de tek satırda dosya adı döndürür. |
 | 3 | Derinlik nerede? | §1.1 gruplar, §2.1 ADR soruları, §2.2 kök envanter, §2.3 klasör eşlemesi, §3.1 arama kalıpları. |
 | 4 | Ne zaman durulur? | §1'de satır yoksa `index.md` §1 haritasına inilir; o da yoksa `log.md`'ye kayıt açılır ve `architect` beklenir. |
-| 5 | SSOT ne demek? | `authority: SSOT` bu konuda tek doğru dosya demektir; ikinci kopya açmak yasaktır (ADR-021). |
+| 5 | SSOT ne demek? | `authority: primary` bu konuda tek doğru dosya demektir; ikinci kopya açmak yasaktır (ADR-021). |
 
 **Kullanım sırası:** kelimeyi bul → hedef dosyayı aç → hedefteki § numarasına in. Bu dosyada okumaya devam etmek, aramanın kendisini ertelemektir.
 
@@ -403,7 +406,7 @@ Kapsam dışı satırı, bilgi eksikliği değil yönlendirme borcudur; her sat�
 
 | # | Kontrol | Hedef | Nasıl bakılır |
 |---|---------|-------|---------------|
-| 1 | Frontmatter | 8 alan, `authority: SSOT`, `updated: 2026-10-07` | ilk satır `---`, 8. satır `---` |
+| 1 | Frontmatter | 8 alan, `authority: primary`, `updated: 2026-10-07` | ilk satır `---`, 8. satır `---` |
 | 2 | Boyut | 30–88 KB bandında | `(Get-Item .ai/keys.md).Length/1KB` — ölçüm yazılır, tahmin değil |
 | 3 | Tablo bütünlüğü | §1'de 101 satır, her satır 5 sütun dolu | satır sayımı; boş sütun = o kelime cevapsız demektir |
 | 4 | Link | Yalnız mevcut dosyalara | `pwsh -File scripts/check-links.ps1` → `BOZUK = 0` |

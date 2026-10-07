@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "test plani sablonu: senaryolar, oncelikler, ortam ve kabul kriterleri"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Test Plan Template — Test Planı Şablonu

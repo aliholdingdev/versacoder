@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Dock sirasini, panel kalibi secimini, panel durum kaydini (user.config) ve DevExpress DockManager ile ayrimi tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Docking ve Panel Kalibi

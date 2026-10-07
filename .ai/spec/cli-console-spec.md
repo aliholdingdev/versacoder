@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "09-cli-console tam ekran CLI yuzeyinin bolge/olcu/klavye sozlesmesi (VC-U-0901..0912), OpenCode-benzeri gorunum, 09-terminal dock siniri ve GATE-003 onay alani"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 09 — CLI KONSOLU (OpenCode-Benzeri Tam Ekran CLI Yuzeyi)

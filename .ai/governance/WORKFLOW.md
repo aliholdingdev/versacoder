@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "GATE-004a -> GATE-003 -> GATE-004 -> GATE-005 -> GATE-006 zinciri, her gate'in sahibi/kabul kriteri/kanıt kutusu/süre tahmini, paralel geliştirme akışı (l0..l7), commit kuralı ve uçtan uca yaşam döngüsü"
+tags: [governance]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Süreç ve GATE Sistemi (`WORKFLOW.md`)
@@ -109,7 +112,7 @@ scope: "GATE-004a -> GATE-003 -> GATE-004 -> GATE-005 -> GATE-006 zinciri, her g
 | Alan | Değer |
 |---|---|
 | **Sahip** | Üretim: `architect` · Kapatan: **kullanıcı** |
-| **Kabul kriteri** | **500 MD** tam · her dosyada **8 alanlı frontmatter** · **0 bozuk link** · **0 mojibake (UTF-8)** · diyagramlarda **0 Unicode kutu çizim** · 4 çekirdek dosya (CLAUDE/WORKFLOW/ROLE/AGENTS) 10-16 KB bandında |
+| **Kabul kriteri** | **500 MD** tam · her dosyada **11 alanlı frontmatter** · **0 bozuk link** · **0 mojibake (UTF-8)** · diyagramlarda **0 Unicode kutu çizim** · 4 çekirdek dosya (CLAUDE/WORKFLOW/ROLE/AGENTS) 10-16 KB bandında |
 | **Kanıt kutusu** | `KANIT: sayac -> MD=NNN, FM=0 eksik, BROKEN=0, MOJIBAKE=0, BOX=0` · `DOSYA: <yazılanlar>` · `EKSIK: <YOK ya da DOĞRULAMA GEREKLI>` · `SONRAKI: <adım, ≈ süre>` |
 | **Süre tahmini** | **≈45 dk** |
 | **Red nedenleri** | Eksik frontmatter · bozuk link · mojibake · kutu çizim · ölçüm çıktısı olmadan "vault hazır" beyanı |
@@ -196,7 +199,7 @@ GATE-003 - UI onayi bekleniyor (HARD STOP)
 
 **Kabul kriterleri (madde madde):**
 
-1. `ui-design/01..07` — **7/7** dosya diskte, her biri 8 alanlı frontmatter'lı
+1. `ui-design/01..07` — **7/7** dosya diskte, her biri 11 alanlı frontmatter'lı
 2. Wireframe ve mimari diyagramlarda Unicode kutu çizim **0** satır
 3. Envanterdeki her kontrol yalnız DevExpress **v26.1**; sürüm dışı satır 0
 4. Ana pencere `RibbonForm`, ribbon stili **yalnız** `RibbonControlStyle.Office2010`
@@ -656,7 +659,7 @@ SONRAKI : hedefi olustur ya da linki kaldir, sonra olcumu tekrar kos (~5 dk)
 
 ## §6 Doğrulama
 
-- [ ] Frontmatter 8 alan, `authority: SSOT`, `updated: 2026-10-07`
+- [ ] Frontmatter 11 alan, `authority: primary`, `updated: 2026-10-07`
 - [ ] 5 gate'in **hepsinde** Sahip · Kabul kriteri · Kanıt kutusu · Süre tahmini var
 - [ ] §0.1 6 aşamalı yaşam döngüsü gate'lerle eşleştirilmiş (prompt kaynağı: ai.05)
 - [ ] GATE-003 `HARD STOP` + "onaysız tek satır `.cs` yasak" açıkça yazılı

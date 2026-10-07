@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DbConnection yasam dongusu: factory ile acma, kisa omurlu kullanma, kapatma ve havuza iade (DA-04 / DA-09 / DA-10)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ado-net-connection - ADO.NET Baglanti Yasam Dongusu

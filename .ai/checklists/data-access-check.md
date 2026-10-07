@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-005 + ADR-016 + ADR-017 — EF yok, DbConnection yalniz l4, parametreli SQL"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Veri Erisim (ADO.NET + Dapper) Kontrolu

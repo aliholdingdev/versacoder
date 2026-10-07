@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Microsoft.Data.SqlClient 5.2.x kurulumu, CPM paket satiri, baglanti metni yazimi ve factory kaydi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # sqlserver-provider-setup — SQL Server Sağlayıcı Kurulumu

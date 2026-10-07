@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Sayfalama: OFFSET vs keyset (cursor), dialekt PagingClause, sayfa siniri ve kayip/satlama riskleri"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # pagination-offset-keyset — Sayfalama Stratejileri

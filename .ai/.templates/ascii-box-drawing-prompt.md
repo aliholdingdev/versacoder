@@ -5,8 +5,11 @@ category: templates
 status: active
 version: 2.0.0
 updated: 2026-10-01
-authority: SSOT
+authority: reference
 scope: "ASCII kutu (+ - |) ile diyagramlari sirfirdan dogru yazan, kopyala-yapistir hazir prompt"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ASCII Box-Drawing Yeniden Yazma Promptu

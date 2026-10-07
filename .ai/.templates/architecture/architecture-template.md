@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "genel mimari sablonu: K0..K8 katman yigini, sorumluluklar ve bagimlilik kurallari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Genel Mimari Şablonu (K0..K8 Katman Yığını)
@@ -119,7 +122,7 @@ category: architecture
 status: draft            # draft | review | accepted
 version: 0.1.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 related_gates: [GATE-004]
 related_adrs: [ADR-001, ADR-004, ADR-005, ADR-006]
 template: architecture-template.md
@@ -265,7 +268,7 @@ category: architecture
 status: {{DRAFT|REVIEW|ACCEPTED}}
 version: {{X.Y.Z}}
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 related_gates: [GATE-004]
 related_adrs: [{{ADR_LISTESI}}]
 template: architecture-template.md
@@ -357,7 +360,7 @@ template: architecture-template.md
 |---|-----------|-------|--------------|
 | G1 | Kopyalama yasak | `C:\www\coremusic.net\.ai` ve `C:\www\versacoder\versacoder.ai` içeriği kopyalanamaz; yalnız yapı referanstır | Belge **reddedilir**, silinir |
 | G2 | EF Core yasak | Veri erişimi **ADO.NET + Dapper**, `@p1..@pN` | **DUR** — §3.6/§3.7 ADR-004 satırı düzeltilir |
-| G3 | Frontmatter zorunlu | 7 alan + `authority: SSOT` ilk 9 satırda | **DUR** — belge `draft` kalır |
+| G3 | Frontmatter zorunlu | 7 alan + `authority: primary` ilk 9 satırda | **DUR** — belge `draft` kalır |
 | G4 | Yer tutucu temizliği | Üretilen belgede çift süslü parantezli tutucu = 0 (yalnız §3.9) | **DUR** — doldurulmadan teslim yok |
 | G5 | Kanıt zorunlu | Matris/tablo olmadan "doğru" iddiası yazılamaz | `⚠️ VERIFICATION REQUIRED` + §1.2 |
 | G6 | Uzunluk | 480–660 satır / 15–32 KB dışı | **DUR** — ölçüm (§5.3/1) geçene kadar |
@@ -458,7 +461,7 @@ Get-Content -LiteralPath $f -Encoding UTF8 | ForEach-Object {
 
 ### §6.1 Kontrol Listesi
 
-- [ ] 01 Frontmatter 7 alan eksiksiz + `authority: SSOT`
+- [ ] 01 Frontmatter 7 alan eksiksiz + `authority: primary`
 - [ ] 02 H1 + `**Zorunlu Bağlantılar:**` (6 wiki bağlantı)
 - [ ] 03 §1.1–§1.4 dolu; §1.2'de her satır `✅` / `❌` / `⚠️ VERIFICATION REQUIRED`
 - [ ] 04 §1.2 sonunda yorum yasağı cümlesi var

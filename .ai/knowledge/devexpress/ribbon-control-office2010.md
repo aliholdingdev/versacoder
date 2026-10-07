@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "RibbonControlStyle.Office2010 tek stil kanunu: hangi davranisi degistirir, hangi ozellikler bu stile bagimlidir, diger stiller neden yasaktir"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # RibbonControl Office2010 Stili

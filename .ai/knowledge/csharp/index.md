@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: reference
 scope: "knowledge/csharp altindaki 29 teknik dosyanin kayit defteri: sorumluluk, izinli link hedefleri ve konuya gore yonlendirme"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # C# / .NET Knowledge Index (csharp/)

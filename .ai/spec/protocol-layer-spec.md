@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "l5 (N33–N37) katman sınırı, sürümleme el sıkışması ve fail-closed hata davranışı — ADR-013 l5 ile tutarlı tek kaynak"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Protokol Katmanı Şartnamesi (`spec/protocol-layer-spec.md`)

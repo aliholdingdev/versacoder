@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "DevExpress v26.1 kontrolleri: Grid, TreeList, Editör, Ribbon, Layout — 35 dosyanin tek satir ozeti ve tam baglanti listesi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Devexpress — Bilgi Kümesi İndeksi
@@ -19,7 +22,7 @@ scope: "DevExpress v26.1 kontrolleri: Grid, TreeList, Editör, Ribbon, Layout �
 
 ## §0 Özet (Answer First)
 
-- **35 dosya** · 8 alanlı frontmatter · 3–8 KB (ölçüm 2026-10-07)
+- **35 dosya** · 11 alanlı frontmatter · 3–8 KB (ölçüm 2026-10-07)
 - **Kullanım:** konuyu tablada bul → dosya adına tıkla → § bölümlerine in.
 - **Küme içi tam bağlantı:** her dosya, aşağıdaki tabloda listelenen diğer 34 kardeşine linklidir.
 

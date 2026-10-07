@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DevExpress v26.1 global gorunum (look & feel) yonetimi: UserLookAndFeel + SkinManager, Office2010 ribbon stili ile iliskisi, karar matrisi ve iki bacak farki"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Global Tema ve Office2010

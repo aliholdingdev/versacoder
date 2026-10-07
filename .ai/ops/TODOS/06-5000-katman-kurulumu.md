@@ -5,8 +5,11 @@ category: todos
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-030 v2 (4 kademe, 3 ekseni, 8·12·16·20 yon grubu) uygulamasinin asama sirasi: dogrulama -> K0 -> Faz A..D -> K1; her asama tek is sinirli, kapi durumu ve bagimliligi yazili, kanitsiz kapanmaz"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Faz 06 — 5000+ Katman Kurulumu

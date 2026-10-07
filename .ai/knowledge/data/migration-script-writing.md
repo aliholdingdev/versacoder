@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Saf SQL migration yazim kurallari: V0001__ad.sql, idempotent up, down blogu, iki saglayici dialect farki (DA-07 / DA-11 / DA-12)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # migration-script-writing — Migration Yazım Kuralları

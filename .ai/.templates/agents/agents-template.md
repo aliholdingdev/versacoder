@@ -5,8 +5,11 @@ category: agents
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "ajan profil sablonu: rol, arac seti, yetki ve cikti sozlesmesi"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Agent Profil Şablonu — `.ai/.agents/<rol>.md`
@@ -126,7 +129,7 @@ category: agents
 status: draft | review | active | archived
 version: <major.minor.patch>
 updated: <YYYY-MM-DD>
-authority: SSOT
+authority: primary
 ---
 ```
 
@@ -321,7 +324,7 @@ category: agents
 status: draft
 version: 1.0.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 ---
 
 # {{DISPLAY_NAME}} — VersaCoder Agent Profili
@@ -460,7 +463,7 @@ authority: SSOT
 1. Her düzenleme `version` artırır: düzeltme → **patch**, yeni satır/bölüm → **minor**,
    `Allowed`/`Forbidden` Scope değişikliği → **major**.
 2. `updated` her düzenlemede `YYYY-MM-DD` olarak yenilenir.
-3. `authority: SSOT` **hiçbir** sürümde değiştirilemez (G2).
+3. `authority: primary` **hiçbir** sürümde değiştirilemez (G2).
 4. `active` profilin `major` değişikliği önce `review`'a düşer; sessiz `active → active` **yasaktır**.
 5. Her değişiklik `.ai/log.md`'ye tek satır yazar: `tarih | rol | dosya | sürüm | neden`.
 6. Diff alınmadan commit **yok**; kanıt `git diff --stat` çıktısıdır.
@@ -471,7 +474,7 @@ authority: SSOT
 | ID | Guardrail | Kural kaynağı | Tespit yöntemi | İhlal Sonucu |
 |---|---|---|---|---|
 | **G1** | Frontmatter 7 alan eksiksiz | `§3.1` | `Select-String '^authority:'` | Dosya reddedilir; `active` olamaz |
-| **G2** | `authority: SSOT` değişmez | Vault kuralı | Frontmatter diff | Değişiklik geri alınır + `log.md` |
+| **G2** | `authority: primary` değişmez | Vault kuralı | Frontmatter diff | Değişiklik geri alınır + `log.md` |
 | **G3** | `## §1`..`## §7` silinemez | Bu şablon | Başlık sayısı = 7 | Dosya revert; iş `draft`'a döner |
 | **G4** | Forbidden Scope kural dışı yazılamaz | `§3.5` | `security` taraması | İşlem durur, `security` bilinir |
 | **G5** | EF Core / `DbContext` yok | `ADR-004` | `Select-String 'DbContext'` | **Build durur**; PR reddi |
@@ -552,7 +555,7 @@ Select-String -Path 'C:\versacoder\.ai\.agents\*.md' -Pattern '\xc3\xbc|\xc3\xb6
 Profil yalnızca **16/16** işaretlendiğinde `status: active` alır.
 
 - [ ] 1. Frontmatter 7 alan eksiksiz: `title, type, category, status, version, updated, authority`
-- [ ] 2. `authority: SSOT` değiştirilmemiş (G2)
+- [ ] 2. `authority: primary` değiştirilmemiş (G2)
 - [ ] 3. `type: agent-profile` ve `category: agents` sabit
 - [ ] 4. H1 başlığı dosya adındaki slug'ı (`<rol>.md`) birebir içeriyor
 - [ ] 5. `**Zorunlu Bağlantılar:**` satırı var ve `.ai` içine göreli wiki-link kullanıyor

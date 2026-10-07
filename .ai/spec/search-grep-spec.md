@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Kod içinde arama: grep (içerik) ve glob (dosya adı), sonuç listesi, filtreler ve editöre atlama"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Arama (grep/glob) Şartnamesi — VersaCoder

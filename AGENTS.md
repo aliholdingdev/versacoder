@@ -5,7 +5,7 @@ category: root
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: shadow
 scope: "Kök AGENTS.md: kural metni değil yalnız bağlantı; asıl belge .ai/AGENTS.md'dir"
 ---
 

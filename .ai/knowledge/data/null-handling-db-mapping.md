@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "SQL NULL ile C# null/unbox iliskisi: nullable tipler, DBNull, varsayilan deger tuzagi, ISO-8601 tarih donusumu (DA-08)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # null-handling-db-mapping — NULL ve Eşleme

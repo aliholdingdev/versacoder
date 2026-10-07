@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Yerel DbTransaction ile atomiklik: tek birim-tek commit, rollback, izolasyon seviyesi, TransactionScope yasagi (DA-13)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # transaction-scope-local — Yerel Transaction Politikası

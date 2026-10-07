@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "net48 ve net10.0-windows bacaklarinda saglayici secimi: SqlClient ortak surum, SQLite yalniz net10 test, #if disiplini"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # dual-tfm-provider-choice - Iki Bacakta Saglayici Secimi

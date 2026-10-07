@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Skin, appearance ve format katmanlarinin yazilis sirasi, AppearanceObject ozellikleri, DX-08 ve DPI sinirlari"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Skin ve Appearance Ozellestirme

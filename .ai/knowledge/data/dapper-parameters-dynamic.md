@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Dapper parametre yazimi: anonim nesne vs DynamicParameters, cikti parametresi, null / DBNull, IN listesi genisletme (DA-03)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # dapper-parameters-dynamic - Dapper Parametre Yazimi

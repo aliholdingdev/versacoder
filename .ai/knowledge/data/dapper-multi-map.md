@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Dapper coklu esleme: splitOn ile ikili / haritali sorgu, baba-cocuk, QueryMultiple ile birden cok result-set (DA-16)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # dapper-multi-map - Coklu Esleme ve QueryMultiple

@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "SplitContainer kullanim kosullarini, panel sirasinin dock yapisina etkisini ve MinimumSize/SplitterDistance tuzaklarini tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # SplitContainer, Panel Sirasi ve Boyut Kisitlari

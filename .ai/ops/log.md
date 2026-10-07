@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "Vault'un gunlugu: 2026-09-29 .. 2026-10-07 tarihli isler, her satirda kanit + sonraki adim; kanitsiz satir DOĞRULAMA GEREKLİ ile kapanir"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # LOG — Islem Gunlugu (append-only kanit defteri)
@@ -525,7 +528,7 @@ pwsh -File C:\versacoder\.ai\scripts\find-mojibake.ps1    # hedef 0 dosya
 
 ### §5.2 Bicim kutusu
 
-- [ ] Ilk satir `---`; frontmatter `title, type, category, status, version, updated, authority, owner, scope` — `type: report`, `updated: 2026-09-30`, `authority: SSOT`
+- [ ] Ilk satir `---`; frontmatter 11 alan (8 eski + tags/source/supersedes) — `type: report`, `updated: 2026-09-30`, `authority: primary`
 - [ ] Tek H1 + **Zorunlu Baglantilar** satiri + `> Tek cumlelik sorumluluk` + `## §0 Ozet (Answer First)`
 - [ ] Bolumler `## §1..§5`; en az **3 tablo + 1 ASCII kutu** (`|` `-` `+`); Unicode kutu cizim karakteri YOK (`U+2500` ve tarzlari)
 - [ ] Madde listeleri en fazla 5 madde; UTF-8 Turkce; mojibake ornegi yok; linkler yalniz izinli 26 hedeften (dis web adresi / e-posta linki **YOK**)

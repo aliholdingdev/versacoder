@@ -5,8 +5,11 @@ category: engine
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "l5 Protocol arac sozlesmesi: ITool/ToolCall/ToolResult, JSON sema + tool_schema_version, hata degerdir, iki bacak kontrakt testi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # l5 Protocol - Arac Sozlemesi ve Sema

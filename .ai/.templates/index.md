@@ -5,8 +5,11 @@ category: templates
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "Hangi sablon var, nerede durur, kim yazar, kac KB, hangi part - sablon kaydi (icerik tekrari yok)"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Şablon Envanteri (Template Inventory)
@@ -38,7 +41,7 @@ scope: "Hangi sablon var, nerede durur, kim yazar, kac KB, hangi part - sablon k
 | 2 | Envanter tek satır = tek denetim noktası | 44 şablonun 16 maddelik checklist'i ayrı ayrı sarmalanır |
 | 3 | Ölçüm tek yerden yapılır | `520–680 satır / 26–38 KB` hedefi tutmaz |
 | 4 | Part geçişleri tek akıştan yönetilir | A tamamlanmadan C başlar, sözleşme atlanır |
-| 5 | `authority: SSOT` anlamı kalmaz | ADR, README ve şablonlar birbirini çeliştirir |
+| 5 | `authority: primary` anlamı kalmaz | ADR, README ve şablonlar birbirini çeliştirir |
 
 ### §1.1 Envanter Kuralları
 
@@ -506,7 +509,7 @@ Select-String -Path $md -Pattern '\]\((\.\.?\/[^)#]+)\)' -AllMatches | ForEach-O
 | # | Kontrol | Beklenen | İlgili |
 |---|---|---|---|
 | K1 | YAML frontmatter, 7 alan eksiksiz | `title,type,category,status,version,updated,authority` | G3 |
-| K2 | `authority: SSOT` birebir yazıyor | `SSOT` | §3.7 |
+| K2 | `authority: primary` birebir yazıyor | `SSOT` | §3.7 |
 | K3 | H1 + `**Zorunlu Bağlantılar:**` satırı | 1 satır | §3.7 |
 | K4 | İçindekiler var ve bağlantılıyor | 7 bölüm | §3.7 |
 | K5 | 7 bölüm tam (`§1…§7`) | 7/7 | §3.7 |

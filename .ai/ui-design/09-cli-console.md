@@ -5,8 +5,11 @@ category: ui
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "09-cli-console ekraninin dosya adi sozlesmesi + SSUT yonlendirmesi (tekrar yok)"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 09-cli-console (wireframe gecis notu)

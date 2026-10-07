@@ -5,8 +5,11 @@ category: adr
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "Nygard klasik ADR sablonu: durum, baglam, karar ve sonuc bolumleri"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ADR Şablonu — Michael Nygard Klasik Biçimi (Nygard Hafif Varyantı)
@@ -123,7 +126,7 @@ category: architecture
 status: draft            # draft | review | accepted | rejected | superseded
 version: 0.1.0           # major = supersede, minor = revizyon, patch = imla
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 supersedes: null         # örn. ADR-004
 superseded_by: null      # örn. ADR-012
 decision_date: 2026-09-25
@@ -199,7 +202,7 @@ category: architecture
 status: accepted
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 supersedes: null
 superseded_by: null
 decision_date: 2026-09-25
@@ -281,7 +284,7 @@ category: {{architecture|data|security|ui|process}}
 status: draft
 version: 0.1.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 supersedes: {{ADR_ID|NULL}}
 superseded_by: null
 decision_date: {{YYYY-MM-DD}}
@@ -361,7 +364,7 @@ Select-String -Path "{{DOSYA}}" -Pattern "{{DESEN}}"
 
 ## §6 Doğrulama
 ### §6.1 Onay kutuları
-- [ ] 01 Frontmatter 11 alan eksiksiz, authority: SSOT
+- [ ] 01 Frontmatter 11 alan eksiksiz, authority: primary
 - [ ] 02 §1–§7 bölümlerinin 7'si de mevcut
 - [ ] 03–18 … (bu şablon §6.1 listesinin tamamı)
 ### §6.2 Red sinyalleri
@@ -452,7 +455,7 @@ Diğer her durum: **YENİ ADR** (`ADR-NNN+1`). Düzenlemek §6.2 RS-4 sinyalini 
 
 | # | Guardrail | Kural | İhlal Sonucu |
 |---|---|---|---|
-| G1 | Frontmatter SSOT | `authority: SSOT` + 11 alan (§3.1) eksiksiz | Aşama 2 **DUR**; dosya `draft`'a döner |
+| G1 | Frontmatter SSOT | `authority: primary` + 11 alan (§3.1) eksiksiz | Aşama 2 **DUR**; dosya `draft`'a döner |
 | G2 | Slug İngilizce, metin Türkçe | Başlık/slug İngilizce; gövde Türkçe; mojibake yasak | Commit geri alınır; `reviewer` düzeltme ister |
 | G3 | Secret sızıntısı yasak | `keys.md` içeriği, anahtar, parola ADR'ye kopyalanamaz | **Otomatik DUR** + `security` bildirimi; `rejected` |
 | G4 | EF Core yasak | EF Core öneren veri kararı geçersizdir | `rejected` + ADR-004'e çelişki kaydı |
@@ -533,7 +536,7 @@ Blok salt-okunurdur: `Set-`, `Remove-`, `New-`, `Move-`, `Rename-` yoktur (G14).
 ### §6.1 Onay kutusu listesi (18 madde)
 
 - [ ] 01 — Frontmatter 11 alan eksiksiz (`title…template`).
-- [ ] 02 — `authority: SSOT` birebir yazılı.
+- [ ] 02 — `authority: primary` birebir yazılı.
 - [ ] 03 — `status` ∈ {draft, review, accepted, rejected, superseded}.
 - [ ] 04 — H1 var ve `ADR-NNN:` ile başlıyor.
 - [ ] 05 — `**Zorunlu Bağlantılar:**` satırı var, `.ai` içine göre göreli.

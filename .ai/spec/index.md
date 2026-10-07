@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.2.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "spec/ altindaki tum teknik şartnamelerin kayit ve navigasyon noktasi - hangi spec nerede, kimin, hangi gate'e bagli"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Spec Dizini

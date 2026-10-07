@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Form acilirken tetiklenen Load, Shown ve Activated olaylarinin farkini, hangi isin nereye konacagini ve ilk yukleme mantiginin nasil korunacagini tanimlar."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # `Load`, `Shown` ve `Activated` Olaylari

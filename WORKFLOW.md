@@ -5,7 +5,7 @@ category: root
 status: active
 version: 2.1.0
 updated: 2026-10-07
-authority: SSOT
+authority: shadow
 scope: "Repo kökü; kapı adları ve sırası - kapı kriterleri .ai/WORKFLOW.md'de, durum kanıtı .ai/log.md'dedir"
 ---
 

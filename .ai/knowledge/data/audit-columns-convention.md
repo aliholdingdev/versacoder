@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Audit kolonlari: CreatedAt / UpdatedAt / DeletedAt UTC ISO-8601, soft delete, TimeProvider tek kaynagi (DA-15)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # audit-columns-convention - Audit Kolon Sozlesmesi

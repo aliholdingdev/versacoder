@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-015 designer/resx sozlesmesi — form uclusu, ui-designer sahipligi, GATE-003"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # WinForms Designer / Form Uclusu Kontrolu

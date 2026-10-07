@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "GATE-005 kapsam kapisi — coverage bandi, atlanan test 0, gerekce zorunlulugu"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Test Kapsam (Coverage) Kapisi

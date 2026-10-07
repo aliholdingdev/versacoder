@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "NuGet Central Package Management, Directory.Build.props sorumluluğu ve sürüm kilidi (DevExpress v26.1 · SqlClient 5.2.x) — yeni paket eklemenin tek yolu"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Paketleme Şartnamesi (`spec/packaging-spec.md`)

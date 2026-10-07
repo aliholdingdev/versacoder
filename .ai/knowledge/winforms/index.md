@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "WinForms Form uclusu, layout, async, erisilebilirlik, Designer — 32 dosyanin tek satir ozeti ve tam baglanti listesi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Winforms — Bilgi Kümesi İndeksi
@@ -19,7 +22,7 @@ scope: "WinForms Form uclusu, layout, async, erisilebilirlik, Designer — 32 do
 
 ## §0 Özet (Answer First)
 
-- **32 dosya** · 8 alanlı frontmatter · 3–8 KB (ölçüm 2026-10-07)
+- **32 dosya** · 11 alanlı frontmatter · 3–8 KB (ölçüm 2026-10-07)
 - **Kullanım:** konuyu tablada bul → dosya adına tıkla → § bölümlerine in.
 - **Küme içi tam bağlantı:** her dosya, aşağıdaki tabloda listelenen diğer 31 kardeşine linklidir.
 

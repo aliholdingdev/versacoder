@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Vault MD dosyasının zorunlu yapısı (frontmatter, §0, tablo, boyut), link izinleri, UTF-8/mojibake, kanıt ve kopyalama yasağı — GATE-004a'nın ölçüt kaynağı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Belge (Vault/MD) Şartnamesi (`spec/docs-spec.md`)
@@ -20,7 +23,7 @@ scope: "Vault MD dosyasının zorunlu yapısı (frontmatter, §0, tablo, boyut),
 
 ## §0 Özet (Answer First)
 
-Her yeni/değişen vault `.md` dosyası: **UTF-8** · **ilk satır `---`** · **8 alanlı frontmatter** (`authority: SSOT`, `updated` güncel) · **`## §0 Özet (Answer First)`** · **≥3 tablo** (ya da 1 tablo + ASCII kutu diyagramı) · **≤5 madde** · **3–8 KB** · **yalnız izinli göreli hedeflere link** · **`check-links.ps1` = 0 bozuk** · **mojibake = 0**. Kanıtsız "bitti" (G5), kopya içerik (ADR-002) ve kod içi bilgi (EF Core / string-concat SQL) bu şartnamede geçersizdir.
+Her yeni/değişen vault `.md` dosyası: **UTF-8** · **ilk satır `---`** · **11 alanlı frontmatter** (`authority: primary`, `updated` güncel) · **`## §0 Özet (Answer First)`** · **≥3 tablo** (ya da 1 tablo + ASCII kutu diyagramı) · **≤5 madde** · **3–8 KB** · **yalnız izinli göreli hedeflere link** · **`check-links.ps1` = 0 bozuk** · **mojibake = 0**. Kanıtsız "bitti" (G5), kopya içerik (ADR-002) ve kod içi bilgi (EF Core / string-concat SQL) bu şartnamede geçersizdir.
 
 ---
 
@@ -29,7 +32,7 @@ Her yeni/değişen vault `.md` dosyası: **UTF-8** · **ilk satır `---`** · **
 | # | Katman | Şart | İhlalde |
 |---|---|---|---|
 | 1 | Kodlama | UTF-8, LF/CR-LF, CR-only yok | `mojibake 0` ihlali → RED |
-| 2 | Frontmatter | 8 alan, ilk satır `---`, `authority: SSOT` | `NoFrontmatter` / eksik alan → RED |
+| 2 | Frontmatter | 8 alan, ilk satır `---`, `authority: primary` | `NoFrontmatter` / eksik alan → RED |
 | 3 | Başlık | `# H1` = frontmatter `title` ile aynı anlam | LOW bulgu |
 | 4 | Zorunlu bağlantılar | `**Zorunlu Bağlantılar:**` satırı | LOW bulgu |
 | 5 | Tek cümle | `> **Tek cümlelik sorumluluk:**` | MEDIUM |
@@ -49,7 +52,7 @@ category: <klasör adı>
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 owner: architect
 scope: "<1 satır kapsam — ne cevaplar>"
 ---

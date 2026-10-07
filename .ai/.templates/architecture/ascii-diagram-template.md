@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "ASCII kutu diyagram sablonu: kenar karakterleri, hizalama ve olcu kontrolu"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — ASCII/Unicode Box Diagram Şablonu
@@ -549,7 +552,7 @@ Select-String -Path 'C:\versacoder\.ai\*\*.md' -Pattern '<== KAPI:'
 
 ### §6.1 Kontrol Listesi
 
-- [ ] Frontmatter tam (`title, type, category, status, version, updated, authority: SSOT`)
+- [ ] Frontmatter tam (`title, type, category, status, version, updated, authority: primary`)
 - [ ] H1 + `**Zorunlu Bağlantılar:**` (6 bağlantı)
 - [ ] §1.1–§1.4 dolu
 - [ ] §2.1–§2.2 dolu

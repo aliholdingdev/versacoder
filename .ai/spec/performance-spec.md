@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Bütçe değerleri `.rules/performance-guidelines.md` (B1..B10); bu belge ÖLÇÜM YÖNTEMİ — ne, nerede, kaç örnek, hangi araçla ölçülür"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Performans Ölçüm Şartnamesi (`spec/performance-spec.md`)

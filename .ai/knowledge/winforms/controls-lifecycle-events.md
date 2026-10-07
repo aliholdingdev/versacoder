@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Control baz sinifinin olaylarini, parent-child olusum ve dispose sirasini, odak/vurgu/desen bozulmalarini ve iki bacak farklarini tanimlar."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Control Olay Hayati

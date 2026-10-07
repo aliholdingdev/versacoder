@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "Dapper esleme sablonu: kolon-ozellik eslemesi, tipler ve sorgu ornegi"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Dapper Kolon→Özellik Eşleme Şablonu
@@ -321,7 +324,7 @@ category: infrastructure
 status: draft
 version: 0.1.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 ---
 # MAP-NNN — {{SLUG}}
 
@@ -522,7 +525,7 @@ if (Test-Path $db) {
 
 ### §6.1 Kontrol Listesi
 
-- [ ] Frontmatter 7 alan tam (`title,type,category,status,version,updated,authority: SSOT`)
+- [ ] Frontmatter 7 alan tam (`title,type,category,status,version,updated,authority: primary`)
 - [ ] H1 + `**Zorunlu Bağlantılar:**` (6 bağlantı)
 - [ ] §1.1–§1.4 dolu (§1.2 gerçek disk kanıtı + ⚠️ + yorum yasağı)
 - [ ] §2.1–§2.2 dolu

@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "GridView kolon baglari, tip ve bicim katmanlari, unbound kolonlar ve CustomColumnDisplayText metin uretimi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # GridView Kolon Baglari ve Bicim

@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-005 — migration = saf SQL + schema_version; ORM migration yasak"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Migration (Saf SQL) Kontrolu

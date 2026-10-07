@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-012 + ADR-014 — CPM, .csproj icinde Version=0, iki bacakta ayni major"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Bagimlilik / Paket Guncelleme Kontrolu

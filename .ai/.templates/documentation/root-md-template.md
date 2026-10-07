@@ -5,8 +5,11 @@ category: templates/documentation
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "kok MD sablonu: tek ekran ozet, ust/alt baglantilar ve durum satiri"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Şablon — Kök MD Belgesi (`root-md-template.md`)
@@ -79,7 +82,7 @@ category: vault-root
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "<tek cümle>"
 ---
 
@@ -123,7 +126,7 @@ scope: "<tek cümle>"
 
 ## §6 Doğrulama Checklist'i
 
-- [ ] Frontmatter 8 alan + `authority: SSOT`
+- [ ] Frontmatter 11 alan + `authority: primary`
 - [ ] "Zorunlu Bağlantılar" satırı 10 hedefi de içeriyor
 - [ ] Boyut **30–88 KB** bandında (±%10)
 - [ ] Tek H1, § numaralı bölümler

@@ -5,8 +5,11 @@ category: ui
 status: draft
 version: 1.1.0
 updated: 2026-09-29
-authority: SSOT
+authority: reference
 scope: "03-solution-explorer ekranının wireframe'i: TreeList kolonları, arama paneli, sağ tık menüsü, dosya üçlüsü, etkileşim kuralları — GATE-003 onayı bekliyor"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 03 — SOLUTION EXPLORER

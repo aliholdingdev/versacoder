@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "catch sirasi ve when filtresi, throw vs throw ex, istisna-Result siniri ve iki bacakta arguman kontrol API'leri"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # exception-handling-patterns — İstisna kalıpları

@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "XtraTabControl + XtraTabPage ile sekme duzeni: baslik konumu, cok satir, gezinme butonlari ve secim olayi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # XtraTabControl Coklu Sayfa Duzeni

@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "ADR-002 + ADR-024 + ADR-029 — sifirdan yazim, CoreMusic vault dokunulmaz, ASCII kutu"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Dokumantasyon ve Kopya Icerik Kontrolu
@@ -38,7 +41,7 @@ scope: "ADR-002 + ADR-024 + ADR-029 — sifirdan yazim, CoreMusic vault dokunulm
 - [ ] **2.** Baskasiyla birebir ayni blok **0** (benzerlik taramasi)
 - [ ] **3.** `C:\www\coremusic...\` vaultuna **yazma** (ADR-024 — yalnizca yapi referansi)
 - [ ] **4.** ASCII kutu `U+2500-U+257F` **0 satir** (ADR-029)
-- [ ] **5.** Frontmatter 8 alan + `authority: SSOT`
+- [ ] **5.** Frontmatter 11 alan + `authority: primary`
 - [ ] **6.** Yer tutucu (WIP/TBD/~) **0** (G4)
 
 ## §2 Yakalama (komut / tarama)

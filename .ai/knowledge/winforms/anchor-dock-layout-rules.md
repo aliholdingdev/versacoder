@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Pencere boyutlandiginda kontrollerin davranisi: Anchor/Dock farki, AutoSize tuzagi, Resize olayinda yerlestirme yazmama kurali"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Anchor ve Dock ile Layout Kurallari

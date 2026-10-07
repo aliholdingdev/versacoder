@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "İki bacak (`net48` + `net10.0-windows`) derleme sırası, koşullu derleme (`#if`) kuralı ve CI adımları — GATE-004 kanıtının tanımı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Build Şartnamesi (`spec/build-spec.md`)

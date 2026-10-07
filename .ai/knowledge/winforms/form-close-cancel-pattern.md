@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "FormClosing iptalini, kaydet-sorma oruntusunu, CloseReason ayrimini ve FormClosed ile Dispose arasindaki sirayi tanimlar."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Kapanisi Iptal Etme ve Kaydet-Sorma

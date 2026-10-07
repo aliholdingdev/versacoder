@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Bağlam bütçesi limitleri, compaction (derleme) tetikleyicileri ve derleme sonrası korunanlar — ADR-008 (context-assembly) ile tutarlı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Bağlam Bütçesi Şartnamesi (`spec/context-budget-spec.md`)

@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "API dokumantasyon sablonu: uclar, parametreler, ornekler ve hata kodlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — API Dokümantasyon Şablonu
@@ -178,7 +181,7 @@ Dört şey dokümanda **tekrar edilmez**, yalnız tanımlanır:
 
 | Öğe | Kural | Doğru | Yanlış |
 |-----|-------|-------|--------|
-| Frontmatter | 7 alan, ilk 9 satır | `authority: SSOT` | alan eksik / yazım farkı |
+| Frontmatter | 7 alan, ilk 9 satır | `authority: primary` | alan eksik / yazım farkı |
 | H1 | tek tane, `# ` | `# VersaCoder — <Servis> API` | iki H1 · `##` |
 | Bağlantı | `**Zorunlu Bağlantılar:**` + 6 `[[…]]` | `·` ayracılı | 5 altı · markdown `](…)` |
 | Dil | Türkçe; yol/anahtar İngilizce | `GET` · `Authorization` | karışık dil |
@@ -311,7 +314,7 @@ category: api
 status: draft
 version: 1.0.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 ---
 # VersaCoder — {{SERVIS}} API
 **Zorunlu Bağlantılar:** [[{{BAG_1}}]] · [[{{BAG_2}}]] · [[{{BAG_3}}]] · [[{{BAG_4}}]] · [[{{BAG_5}}]] · [[{{BAG_6}}]]
@@ -391,7 +394,7 @@ authority: SSOT
 |---|-----------|--------------|
 | G1 | Harici vault'tan (`C:\www\…`) cümle/dosya kopyalanması | **DUR** — silinir, özgün yazılır |
 | G2 | `EntityFramework` / EF Core referansı | **DUR** — ADR-004, ADO.NET + Dapper |
-| G3 | Frontmatter 7 alan eksik / `authority: SSOT` bozuk | **DUR** — §5.3/4 |
+| G3 | Frontmatter 7 alan eksik / `authority: primary` bozuk | **DUR** — §5.3/4 |
 | G4 | Üretilen dokümanda `{{…}}` (kalıp bloğu hariç) | **DUR** — §5.3/4 |
 | G5 | Kanıtsız iddia: "test edildi", "üretimde çalışıyor" | **DUR** — sayı/kanıt yoksa `⚠️` |
 | G6 | Gizli alan (token/parola/anahtar) tabloda veya örnekte | **DUR** — §5.3/5 |
@@ -520,7 +523,7 @@ $kirik | ForEach-Object { '  KIRIK -> ' + $_ }
 
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
-| K1 | Frontmatter 7 alan + `authority: SSOT` birebir | 7/7 | §3.2 · §5.3/4 |
+| K1 | Frontmatter 7 alan + `authority: primary` birebir | 7/7 | §3.2 · §5.3/4 |
 | K2 | H1 tek + `**Zorunlu Bağlantılar:**` satırı | 1 satır | §3.2 |
 | K3 | Bağlantı sayısı | 6 | §4.3 |
 | K4 | Blok haritası A1..A9 | 9/9 | §3.1 |

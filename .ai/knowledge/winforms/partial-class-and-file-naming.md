@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Form dosya adi = sinif adi kurali, partial class butunlugu, tek sinif/dosya, #region yasagi ve namespace eslemesi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Dosya Adi, Sinif Adi, partial

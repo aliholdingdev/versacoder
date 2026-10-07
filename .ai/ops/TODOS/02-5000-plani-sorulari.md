@@ -5,8 +5,11 @@ category: todos
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "5000+ maddelik katmanli mimari plani uretmek icin kullaniciya sorulacak 4 soru; cevap bekleniyor, vault isini bloklamaz"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Faz 02 — 5000+ Katmanlı Plan Soruları

@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "10-ai-chat-console tam ekran sohbet yuzeyinin bolge/olcu/komut sozlesmesi (VC-U-1001..1010), oturum sekmeleri, 05-ai-chat dock siniri ve GATE-003 onay alani"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 10 — AI CHAT KONSOLU (Oturum Sekmeli Tam Ekran Sohbet)

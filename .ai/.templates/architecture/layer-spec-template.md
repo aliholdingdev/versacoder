@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "katman sartnamesi sablonu: sozlesmeler, bagimlilik yasagi ve dogrulama adimlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Katman Şartnamesi (Layer Spec) Şablonu
@@ -115,7 +118,7 @@ type: architecture
 status: {{DRAFT|REVIEW|ACCEPTED}}
 version: {{X.Y.Z}}
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 layer_code: {{K0_K1_K2_K3_K4_K5_K6_K7_K8}}
 project: {{VersaCoder.Ad}}
 owner: {{ROL}}
@@ -332,7 +335,7 @@ Kabul kriterleri:
 |---|-----------|--------------|
 | G1 | Yasaklı vault'lardan cümle kopyalanamaz; yalnız **yapı** referans | Şartname **reddedilir**, satır silinir |
 | G2 | EF Core / `DbContext` anlatılamaz — ADO.NET + Dapper | **DUR** — §3.9 ADR-004 satırı düzeltilir |
-| G3 | Frontmatter 7 alan + `authority: SSOT` ilk 9 satırda | **DUR** — dosya `draft` kalır |
+| G3 | Frontmatter 7 alan + `authority: primary` ilk 9 satırda | **DUR** — dosya `draft` kalır |
 | G4 | Yer tutucu yalnız §3.1 bloğunda; şartnamede = 0 | **DUR** — doldurulmadan teslim yok |
 | G5 | §1.2 kanıtı olmadan "var / uygulanmıştır" iddiası | `⚠️ VERIFICATION REQUIRED` + §1.2 satırı |
 | G6 | 480–660 satır / 25–34 KB dışı | **DUR** — §5.3/6 ölçümü geçene kadar |
@@ -468,7 +471,7 @@ $hizasiz = ($lines | Where-Object { $_ -match '^[+|]' -and $_.Length -ne 66 }).C
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
 | K1 | Frontmatter 7 alan eksiksiz | 7/7 | G3 |
-| K2 | `authority: SSOT` birebir | `SSOT` | G3 |
+| K2 | `authority: primary` birebir | `SSOT` | G3 |
 | K3 | H1 + `**Zorunlu Bağlantılar:**` (6 wiki bağlantı) | 1 satır | §3.1 |
 | K4 | §1.1–§1.4 dolu; §1.4 = Özet tablosu | 4/4 | §3.7 |
 | K5 | §1.2 her satır `✅`/`❌`/`⚠️` + yorum yasağı | 0 boş hücre | G5 |

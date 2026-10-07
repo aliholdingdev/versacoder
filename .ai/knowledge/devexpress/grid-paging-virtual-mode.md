@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "GridControl'da sayfalama (Dapper OFFSET/FETCH), sanal kolonlar ve buyuk veri icin BeginUpdate/RefreshDataSource"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Grid Sayfalama ve Sanal Mod

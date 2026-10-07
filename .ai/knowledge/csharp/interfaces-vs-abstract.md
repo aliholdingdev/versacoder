@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "interface ile abstract class secimi, default interface metodu yasagi ve iki bacakta kalitim/arayuz farklari"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # interfaces-vs-abstract — Arayüz mü, soyut sınıf mı

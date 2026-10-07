@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Chat ≠ Agent ≠ LLM ayrımı, ajan dağıtım matrisi, çıktı kutusu, External Agent protokolü, orchestrator akışı, eşzamanlılık"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # AGENTS — Ajan Sistemi ve Orkestrasyon Protokolü
@@ -133,7 +136,7 @@ Agentic sistem niyeti mühendislik görevine dönüştürür.
 | Güvenlik | `security-auditor` | Bulgu listesi + §3 kutusu | OWASP kalemi + severity |
 | UI / ekran | `ui-designer` | [glossary](glossary.md) terimli tasarım + §3 kutusu | 7 ekrandan birinin adı (`01-start-page` .. `07-settings`) |
 | Görsel üretim / render | `visual-director` | Prompt + görsel analiz + §3 kutusu | Render çıktısı ya da `[VERIFY]` etiketli parametre |
-| Dokümantasyon üretimi | `docs-writer` | Markdown + §3 kutusu | Frontmatter 8 alan + link taraması |
+| Dokümantasyon üretimi | `docs-writer` | Markdown + §3 kutusu | Frontmatter 11 alan + link taraması |
 | Harici ajan çalıştırma | `orchestrator` (adapter) | Normalized result + §3 kutusu | Build/test/static analysis çıktısı |
 | Tanım dışı (hepsi dışında) | `general` (varsayılan) | Serbest + §3 kutusu | Kendi sözü değil, kanıta dayalı |
 

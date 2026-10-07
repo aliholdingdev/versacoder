@@ -5,8 +5,11 @@ category: agents
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "alt-ajan gorev sablonu: gorev tanimi, girdi/bagimlilik ve tamamlama olcutu"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Alt-Ajan Görev Çağrısı Şablonu — parent → child
@@ -132,7 +135,7 @@ category: agents
 status: dispatched | checkpoint | completed | failed
 version: 1.0.0
 updated: <YYYY-MM-DD>
-authority: SSOT
+authority: primary
 ---
 ```
 
@@ -294,7 +297,7 @@ category: agents
 status: dispatched
 version: 1.0.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 ---
 
 # {{DISCIPLINE}} — Görev Çağrısı ({{TASK_ID}})
@@ -411,7 +414,7 @@ authority: SSOT
 ### §4.4 Değişiklik kontrolü
 
 1. Görev çerçevesi değişirse **yeni `TASK_ID`** açılır; aynı ID ile yeniden gönderim **yasaktır**.
-2. `authority: SSOT` hiçbir sürümde değiştirilemez (G2).
+2. `authority: primary` hiçbir sürümde değiştirilemez (G2).
 3. `completed → dispatched` sessiz yeniden açılış **yasaktır**; `retry` yeni ID ile olur.
 4. Bağlam paketi (`§3.4`) gönderimden sonra değiştirilemez; değişiklik yeni görevdir.
 5. Her dispatch, checkpoint ve sonuç `.ai/log.md`'ye tek satır yazar:
@@ -425,7 +428,7 @@ authority: SSOT
 | ID | Guardrail | Kural kaynağı | Tespit yöntemi | İhlal Sonucu |
 |---|---|---|---|---|
 | **G1** | `type: subagent-task` ve 7 alan eksiksiz | `§3.1` | Prompt ilk satırı | Çağrı reddedilir |
-| **G2** | `authority: SSOT` değişmez | Vault kuralı | Prompt diff | Çağrı geri alınır + `log.md` |
+| **G2** | `authority: primary` değişmez | Vault kuralı | Prompt diff | Çağrı geri alınır + `log.md` |
 | **G3** | `## §1`..`## §7` silinemez | Bu şablon | Başlık sayısı = 7 | Kalıp revert, çağrı `failed` |
 | **G4** | Tek promptta tek disiplin | `§2.1` | Prompt taraması | Çağrı iptal, ikiye bölünür |
 | **G5** | EF Core / `DbContext` üretimi | `ADR-004` | Çıktı taraması | **Build durur**; sonuç reddi |
@@ -511,7 +514,7 @@ Select-String -Path 'C:\versacoder\.ai\log.md' -Pattern 'TOKEN: \d+'  # toplam �
 Görev yalnızca **16/16** işaretlendiğinde `status: completed` alır.
 
 - [ ] 1. Prompt `type: subagent-task` ve 7 alan eksiksiz başlıyor (G1)
-- [ ] 2. `authority: SSOT` değiştirilmemiş (G2)
+- [ ] 2. `authority: primary` değiştirilmemiş (G2)
 - [ ] 3. `## §1 Amaç` başlığı tam metinle duruyor (G3)
 - [ ] 4. `## §2 Kapsam` içinde Kapsam ve Kapsam Dışı tabloları ikisi de var
 - [ ] 5. `§2.1` disiplin → görev tipi eşlemesi 8 satır dolu

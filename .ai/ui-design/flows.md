@@ -5,8 +5,11 @@ category: ui
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "giris -> 01-start-page -> 02-main-ide -> 03/04/05/06 -> 07-settings omurgasi, 08-ascii-art-viewer + 09-terminal + 09-cli-console + 10-ai-chat-console giris/cikisi ve her wireframe in en az 1 girisi + 1 cikisi (gate-003-ui-onay soru 8 kaniti)"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # flows.md - Ekranlar Arası Geçiş Akışları

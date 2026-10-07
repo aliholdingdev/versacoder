@@ -5,8 +5,11 @@ category: ui
 status: active
 version: 1.2.0
 updated: 2026-10-01
-authority: SSOT
+authority: reference
 scope: "08-ascii-art-viewer ekranının wireframe'i: Windows pencere kabuğu (başlık çubuğu, - o x düğmeleri, menü, durum çubuğu), galeri / tuval / özellikler bölgeleri, dışa aktar diyalogu, Unicode (UTF-8 + türkçe harf + dolgu) desteği ve GATE-003 onay alanı - onaysız tek satır .cs yazılmaz"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 08 — ASCII/UNICODE ART VIEWER

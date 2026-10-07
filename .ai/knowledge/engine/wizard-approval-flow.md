@@ -5,8 +5,11 @@ category: engine
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Wizard: niyet -> 5 adim -> kademeli onay; onay verilmeden tool cagrisi ve dosya yazimi yok (ADR-009 / ADR-025)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Wizard - Adim Adim Onay Akisi

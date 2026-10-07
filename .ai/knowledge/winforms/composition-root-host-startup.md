@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Uygulamanin nerede kuruldugunu, Program.cs'in ne icerip ne iceremedigini, #if platform sinirini ve container yasam dongusunu tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Composition Root ve Program.cs Baslangic Akisi

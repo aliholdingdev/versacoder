@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "23 denetim listesinin tam envanteri, hangisinin hangi kapi/ADR ile ilgisi, referans sayilari ve eksiklerin durumu"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # checklists — Kapi ve Denetim Listeleri Indeksi

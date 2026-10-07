@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "LayoutControl ile form duzeni: gruplar, tabb grup, tablo/akis modlari, boyut kisitlari ve etiket ayarlari"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # LayoutControl Gruplama ve Tablo Modu

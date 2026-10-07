@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Hata sınıflandırma (VC-E-NNNN), taşıma biçimi (Result<T>), kullanıcıya gösterim ve kayit"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Hata Yönetimi Şartnamesi — VersaCoder

@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Oturum modeli — durum makinesi (created/running/paused/completed/failed), SQLite kalıcılığı, transcript yapısı, resume/kurtarma ve eşzamanlılık kuralları (VC-SES-NNN)"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Oturum Şartnamesi (`spec/session-spec.md`)

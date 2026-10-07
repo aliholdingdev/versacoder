@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DevExpress Form uclusu, .Designer.cs anatomiisi, nerede ne yazilir ve runtime ozellestirme siniri - iki bacak farki"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Designer Dosyasi ve Runtime Ozellestirme (v26.1)

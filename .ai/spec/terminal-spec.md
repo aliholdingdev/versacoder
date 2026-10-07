@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.1.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "CLI çıktısı yakalama, komut çalıştırma gösterimi, sanitization, timeout, iptal + VersaCoder CLI (VC-CLI-001..016) ile entegrasyonu, komut ağacı, exit code, geçmiş"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Terminal Şartnamesi — VersaCoder

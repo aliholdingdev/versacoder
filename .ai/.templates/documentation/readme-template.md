@@ -5,8 +5,11 @@ category: templates/documentation
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "README sablonu: tanitim, kurulum, kullanim ve baglanan belgeler"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Şablon — README (`readme-template.md`)
@@ -34,7 +37,7 @@ category: docs
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "<bu README'nin kapsadığı tek dağı>"
 ---
 
@@ -99,7 +102,7 @@ dotnet test
 
 ## §4 Doğrulama
 
-- [ ] Frontmatter 8 alan
+- [ ] Frontmatter 11 alan
 - [ ] "Ne Yapar" ≤ 3 madde
 - [ ] Komutlar bu makinede çalışıyor (kanıt: çıktı)
 - [ ] Tablo satırları disk/kod ile eşleşiyor

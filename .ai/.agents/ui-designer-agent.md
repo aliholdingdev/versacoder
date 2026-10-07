@@ -5,8 +5,11 @@ category: agents
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: reference
 scope: C:\versacoder\.ai\.agents
+tags: [.agents]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 # UI Designer Agent Profili
 

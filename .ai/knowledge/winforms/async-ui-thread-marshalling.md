@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Arka planda calisan isin sonucunun UI thread'e donusu: SynchronizationContext, Invoke/BeginInvoke, IProgress, .Result/.Wait yasagi ve iki bacak API farklari"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Async ve UI Thread Marshalling

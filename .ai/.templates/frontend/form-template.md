@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "WinForms form sablonu: XForm.cs iskeleti, kontroller ve olay baglamalari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — WinForms Form (XForm.cs) Şablonu
@@ -494,7 +497,7 @@ Get-ChildItem $src -Recurse -Filter '*.cs' -EA SilentlyContinue | ForEach-Object
 
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
-| K1 | Frontmatter 7 alan + `authority: SSOT` | 7/7 · `SSOT` | §5.3 |
+| K1 | Frontmatter 7 alan + `authority: primary` | 7/7 · `SSOT` | §5.3 |
 | K2 | H1 + `**Zorunlu Bağlantılar:**` (6 bağlantı) | 1 satır | üst kısım |
 | K3 | `§1.1–§1.4` dolu | 4/4 | §1 |
 | K4 | §1.2 disk kanıtları + `⚠️` + yorum yasağı | var | §1.2 |

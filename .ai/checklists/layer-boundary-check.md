@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "Katman siniri 13 sorusu — ADR-028 8x8 matris, NetArchTest, yon yasaklari; GATE-005 kabul kriteri 3"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Katman Siniri Kontrolu — 13 Soru

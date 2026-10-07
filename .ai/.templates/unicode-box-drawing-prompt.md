@@ -5,8 +5,11 @@ category: templates
 status: superseded
 version: 1.1.0
 updated: 2026-10-01
-authority: SSOT
+authority: reference
 scope: "EMEKLI: Unicode kutu-arti promptu kaldirildi; halefi ascii-box-drawing-prompt.md"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Unicode Box-Drawing Promptu — EMEKLİ

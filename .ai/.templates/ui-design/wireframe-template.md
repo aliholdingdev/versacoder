@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "tel kafes (wireframe) sablonu: ekran kutulari, alan etiketleri ve gezinme notlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Tel Kafes (Wireframe) Şablonu
@@ -533,8 +536,8 @@ Get-ChildItem 'C:\versacoder\.ai\.templates\ui-design\*.md' | ForEach-Object {
 
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
-| K1 | Frontmatter 8 alan (`title…part`) | 8/8 | §5.3/6 |
-| K2 | `authority: SSOT` birebir | `SSOT` | §5.3/6 |
+| K1 | Frontmatter 11 alan (`title…part`) | 8/8 | §5.3/6 |
+| K2 | `authority: primary` birebir | `SSOT` | §5.3/6 |
 | K3 | H1 + `**Zorunlu Bağlantılar:**` (6 bağlantı) | 1 satır | §5.3/6 |
 | K4 | `## §1…§7` | 7/7 | §5.3/6 |
 | K5 | `§1.1–§1.4` dolu | 4/4 | §1 |

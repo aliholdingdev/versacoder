@@ -5,8 +5,11 @@ category: adr
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "ADR kayit defteri sablonu: index.md satir bicimi, numaralandirma ve durum sutunlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ADR Dizin Şablonu — ADR Kayıt Defteri
@@ -65,7 +68,7 @@ scope: "ADR kayit defteri sablonu: index.md satir bicimi, numaralandirma ve duru
 | 2 | Klasörler: `accepted/`, `draft/`, `rejected/` | ⚠️ VERIFICATION REQUIRED |
 | 3 | ADR planı: ADR-001..ADR-008 (+ ADR-010 örneği) | plan belgesi ⚠️ |
 | 4 | GATE-000..005 kapıları ADR'lerle ilişkili | ⚠️ VERIFICATION REQUIRED |
-| 5 | Frontmatter 7 alan, `authority: SSOT` | [rules](../../.rules) |
+| 5 | Frontmatter 7 alan, `authority: primary` | [rules](../../.rules) |
 | 6 | Slug'lar İngilizce, içerik Türkçe | [rules](../../.rules) |
 | 7 | Test: xunit, %90 coverage | [rules](../../.rules) |
 | 8 | Vault kök: index.md, architecture/index.md, keys.md | [index](../../index.md) |
@@ -317,7 +320,7 @@ Select-String -Path .ai\decisions\index.md -Pattern 'status:'
 # 4 — supersede işaretlerini gör (kopuk olmamalı)
 Select-String -Path .ai\decisions\*.md -Pattern 'superseded'
 # 5 — frontmatter alanlarını gör (7 alan eksiksiz olmalı)
-Select-String -Path .ai\decisions\*.md -Pattern 'authority: SSOT'
+Select-String -Path .ai\decisions\*.md -Pattern 'authority: primary'
 # 6 — index.md dosyalarını gör (tek SSOT olmalı)
 Get-ChildItem .ai\decisions -Recurse -Filter *.md
 ```

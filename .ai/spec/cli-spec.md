@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "VersaCoder CLI'nin komut agaci, arguman sozdizimi, cikti bicimlendirme, exit code, config dosyasi ve terminal UI entegrasyonu - VC-CLI-001..016 gereksinimleri"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder CLI — Komut Satırı Arayüzü Spec

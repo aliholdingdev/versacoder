@@ -1,5 +1,9 @@
 ---
 description: Degisen dosyalari .ai/.rules icindeki 16 kural karsisinda denetler
+authority: derived
+tags: [archive]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 Kural denetimi: $ARGUMENTS

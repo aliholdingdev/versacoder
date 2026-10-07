@@ -5,8 +5,11 @@ category: adr
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "genel ADR sablonu: baslik, durum, baglam, karar, sonuc ve kanit baglantilari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — ADR (Karar Kaydı) Genel Şablonu
@@ -292,7 +295,7 @@ category: adr
 status: {{PROPOSED_ACCEPTED_DEPRECATED_SUPERSEDED}}
 version: 1.0.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 karar: "{{TEK_CUMLE}}"
 karar_tarihi: {{YYYY-MM-DD}}
 karar_verenler: [{{ROL_1}}, {{ROL_2}}]
@@ -401,7 +404,7 @@ superseded_by: {{ADR_NNN_Veya_NULL}}
 | G1 | Tek karar cümlesi yok (yok / iki / paragraf) | **DUR** — ADR kabul edilmez |
 | G2 | Alternatifsiz (§3.4 tablosu < 2 satır veya boş hücre) | **DUR** — alternatif yazılır |
 | G3 | Sonuçsuz (§3.5 tablolarından biri boş) | **DUR** — sonuç ödenmeden kabul yok |
-| G4 | `authority: SSOT` yok veya yazım farklı | **DUR** — §5.3/3 |
+| G4 | `authority: primary` yok veya yazım farklı | **DUR** — §5.3/3 |
 | G5 | Numara deliği, tekrar veya `ADR-NNN` formatı bozuk | **DUR** — §5.3/5 |
 | G6 | Defter `superseded` diyor ama eski dosya işaretlenmemiş (ya da tersi) | **DUR** — defter ↔ dosya uyuşmazlığı |
 | G7 | `.ai/adr/` dışında karar belgesi | **DUR** — dosya taşınır |
@@ -464,7 +467,7 @@ Get-ChildItem 'C:\versacoder\.ai\.templates\adr' -Filter *.md -ErrorAction Silen
     $head = (Get-Content $_.FullName -TotalCount 16 -ErrorAction SilentlyContinue) -join "`n"
     $miss = $need | Where-Object { $head -notmatch ('(?m)^' + $_ + ':') }
     if ($miss) { '{0} -> eksik: {1}' -f $_.Name, ($miss -join ', ') } }
-# 3) authority: SSOT — sapma 0
+# 3) authority: primary — sapma 0
 Get-ChildItem 'C:\versacoder\.ai\.templates\adr\*.md','C:\versacoder\.ai\adr\*.md' -ErrorAction SilentlyContinue |
   ForEach-Object { if (-not ((Get-Content $_.FullName -Raw) -match '(?m)^authority:\s*SSOT\s*$')) {
       'SSOT YOK -> ' + $_.Name } }
@@ -524,7 +527,7 @@ Get-ChildItem 'C:\versacoder\.ai' -Recurse -Filter *.md -ErrorAction SilentlyCon
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
 | K1 | Frontmatter 7 alan (`title…authority`) | 7/7 | §3.1 |
-| K2 | `authority: SSOT` birebir yazıyor | `SSOT` | §5.3/3 |
+| K2 | `authority: primary` birebir yazıyor | `SSOT` | §5.3/3 |
 | K3 | H1 + `**Zorunlu Bağlantılar:**` (6 bağlantı) | 1 satır | üst kısım |
 | K4 | ADR'e özgü alanlar: `karar`, `karar_tarihi`, `karar_verenler` | 3/3 | §3.1 |
 | K5 | Üretilen ADR'nin §1–§7 başlıkları | 7/7 | §5.3/4 |

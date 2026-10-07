@@ -5,8 +5,11 @@ category: ".ai/.decisions"
 status: proposed
 version: 0.2.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "VersaCoder Studio/IDE kapsamında görsel üretim (render) sağlayıcısının hangi katmana yerleşeceği, port/adapter modeli, desteklenecek üç sağlayıcı yolu (OpenRouter image · ayrı sağlayıcılar · harici CLI) ve doğrulanmamış açık konular"
+tags: [adr]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ADR-031 — Görsel Üretim Sağlayıcı Entegrasyonu (ÖNERİ)
@@ -514,7 +517,7 @@ Correctness → Security → Maintainability → Performance → Simplicity`
 
 ## §10 Doğrulama
 
-- [ ] Frontmatter 8 alan · `status: proposed` · `version: 0.2.0` · `updated: 2026-10-07`
+- [ ] Frontmatter 11 alan · `status: proposed` · `version: 0.2.0` · `updated: 2026-10-07`
 - [ ] §4'te 12 satır `SOURCE_VERIFIED` (dosya + § numarası ile)
 - [ ] §5.1 2 kaynak `WEB_VERIFIED` + §5.1.1 **canlı** 59 model + §5.2 yol B `WEB (ikincil)` + `NEEDS_VALIDATION` ayrı işaretli
 - [ ] G10 fiyat çelişkisi tek rakam seçilmeden kayıtlı (§5.1)

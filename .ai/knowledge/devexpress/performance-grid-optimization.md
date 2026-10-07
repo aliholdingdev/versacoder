@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DevExpress v26.1 GridControl performansi: veri yukleme, gorunum ayarlari, iki bacak olcum adimi ve kural tablosu"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Grid Performans Optimizasyonu

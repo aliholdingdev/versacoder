@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Protocol katmanı sözleşmesi — mesaj zarfı (envelope), oturum yaşam döngüsü mesajları, tool-call contract, hata kodları (VC-E-NNNN), opencode v1.18.32 sürüm uyumu, serileştirme ve timeout/retry kuralları (VC-PRC-NNN)"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Protokol Şartnamesi (`spec/protocol-spec.md`)

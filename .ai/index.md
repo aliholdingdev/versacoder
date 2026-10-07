@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "Tum vault klasor ve dosyalarinin navigasyonu, hizli yol tarifleri ve kalite kapisi sayaclari"
+tags: [index]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Vault Ana Index
@@ -283,7 +286,7 @@ scope: "Tum vault klasor ve dosyalarinin navigasyonu, hizli yol tarifleri ve kal
 | 9 | "DevExpress hangi surum, hangi ribbon stili?" | [.rules/index.md](.rules/index.md) | Kural envanteri — surum ve ribbon stili oradan tek satirda iner |
 | 10 | "Test stratejisi nerede?" | [spec/index.md](spec/index.md) | 40 spec icinde test stratejisi de var; kapsam ve coverage beklentisi orada |
 | 11 | "Vault'ta kac MD var, bozuk linki nasil bulurum?" | [index.md](index.md) | Bu dosya §4 — uc olcum komutu ve hedefleri canli olarak orada durur |
-| 12 | "Yeni ADR/dosya acmadan once hangi sozlesmeden geciyorum?" | [.templates/new-doc-contract.md](.templates/new-doc-contract.md) | Frontmatter 8 alan, izinli linkler, boyut bandi ve yasaklar |
+| 12 | "Yeni ADR/dosya acmadan once hangi sozlesmeden geciyorum?" | [.templates/new-doc-contract.md](.templates/new-doc-contract.md) | Frontmatter 11 alan, izinli linkler, boyut bandi ve yasaklar |
 
 **Kural:** soru listede yoksa [keys.md](governance/keys.md) aranir (anahtar kelime → dosya); o da cevap vermezse soru `log.md`'ye kayit acar ve `architect` karar verir.
 
@@ -294,7 +297,7 @@ scope: "Tum vault klasor ve dosyalarinin navigasyonu, hizli yol tarifleri ve kal
 | 1 | Ne aradigini soru olarak yaz | §3'te eslesme var mi? | Bulunan satir no |
 | 2 | Yoksa [keys.md](governance/keys.md) ara | Anahtar kelime → dosya | Hedef dosya yolu |
 | 3 | Hedefi oku, baglantiyi takip et | §1 haritasi disina cikma | Okunan dosya adi |
-| 4 | Dosya uretilecekse | [.templates/new-doc-contract.md](.templates/new-doc-contract.md) + §1.1 | Frontmatter 8 alan |
+| 4 | Dosya uretilecekse | [.templates/new-doc-contract.md](.templates/new-doc-contract.md) + §1.1 | Frontmatter 11 alan |
 | 5 | Bitti ise | §4 sayaclarini calistir | 4 komut ciktisi |
 
 ### §3.2 Okuma sirasi rehberi — vault'u ilk kez acan biri neyi ONCE okur
@@ -410,7 +413,7 @@ cikti yoksa         -> "olculmedi" yaz; olculmemis sayi girmez (G9)
 
 ## §5 Dogrulama
 
-- [ ] Frontmatter 8 alan tam, `authority: SSOT`, `updated: 2026-10-07`.
+- [ ] Frontmatter 11 alan tam, `authority: primary`, `updated: 2026-10-07`.
 - [ ] Tek H1 + "Tek cumlelik sorumluluk" satiri + §0 Ozet (5 madde).
 - [ ] §1 haritasi 15 klasoru de kapsiyor; `.sql/` notu dusulmus.
 - [ ] §2'deki tum linkler yalniz bu envanterdeki hedeflere gidiyor; bozuk link = 0.
@@ -434,7 +437,7 @@ cikti yoksa         -> "olculmedi" yaz; olculmemis sayi girmez (G9)
 | # | Kontrol | Hedef | Nasil bakilir |
 |---|---|---|---|
 | 1 | Boyut | 30–88 KB bandinda (kok belge sozlesmesi) | `(Get-Item .ai/index.md).Length/1KB` — olcen deger yazilir, tahmin degil |
-| 2 | Frontmatter | 8 alan, `authority: SSOT`, `updated: 2026-09-29` | Ilk satir `---`, son satir `---` |
+| 2 | Frontmatter | 8 alan, `authority: primary`, `updated: 2026-09-29` | Ilk satir `---`, son satir `---` |
 | 3 | Kopya | Baska vault'tan metin yapistirmasi yok | Bilgiden faydalan, cumleyi kendin yaz (CLAUDE G1) |
 | 4 | Link | Yalniz envanterde listelenen hedefler | `scripts/check-links.ps1` -> BOZUK = 0 |
 | 5 | Kod | Emoji yok, Unicode kutu cizimi yok | Diyagramlar yalniz `|`, `-`, `+` ile kurulur |

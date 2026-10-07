@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 2.1.0
 updated: 2026-10-02
-authority: SSOT
+authority: primary
 scope: "5000+ katmanin (tip + dugum + uretim .dll) nasil uretildigi, adlandirildigi, hedefe ilerlemenin nasil olculdugu, yon grubunun (1 grup = 1 fiziksel .dll) nasil bolundugu ve kapilara nasil baglandigi — ADR-030 v2.1 spec karsiligi; gereksinim kimligi VC-LAY-NNN"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Spec — 5000+ Katman (`spec/layering-5000-spec.md`)

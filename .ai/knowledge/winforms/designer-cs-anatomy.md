@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "XxxForm.Designer.cs dosyasinin bolum bolum anatomisini, tek InitializeComponent kaynagini ve .cs ile sinirin nerede bittigini tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # .Designer.cs Anatomisi

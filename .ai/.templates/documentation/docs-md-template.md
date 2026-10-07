@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "genel docs-md sablonu: amac, bolumler ve belge turu alanlari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Genel Doküman (docs-md) Şablonu
@@ -139,7 +142,7 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 5. **`.cs` / `.sql` üretiyor mu?** → backend/infrastructure şablonları.
 6. **Yukarıdakilerin hiçbiri değilse ve içerik `.ai/**` içindeyse** → **bu şablon**.
 
-`HAYIR` soruları: CoreMusic/versacoder.ai içeriği mi (G1)? · EF Core geçen satır var mı (G2)? · Frontmatter 8 alan dolu mu (G3)? · `{{…}}` §3.9 bloğu dışında mı (G4)? · `.ai/.rules/` ile çelişen kural mı (SSUT)?
+`HAYIR` soruları: CoreMusic/versacoder.ai içeriği mi (G1)? · EF Core geçen satır var mı (G2)? · Frontmatter 11 alan dolu mu (G3)? · `{{…}}` §3.9 bloğu dışında mı (G4)? · `.ai/.rules/` ile çelişen kural mı (SSUT)?
 
 ---
 
@@ -160,7 +163,7 @@ Bu bölüm hem **şablonun kendi yapısını** hem **üretilen belgenin yapısı
 | 7 | `authority` | Evet | `SSOT` — bu belge kendi konusunun tek kaynağı | RED |
 | 8 | `part` | Evet | `C` (documentation şablonları) | RED |
 
-**Kurallar:** (a) Alan adı **İngilizce**, değer proje diline göre; (b) `updated` yalnız **içerik** değişince güncellenir, biçimsel düzeltmede bırakılır; (c) `authority: SSOT` çelişen ikinci bir belge varsa **tekrar olan satır silinir**; (d) Frontmatter'sız MD yasaktır (G3).
+**Kurallar:** (a) Alan adı **İngilizce**, değer proje diline göre; (b) `updated` yalnız **içerik** değişince güncellenir, biçimsel düzeltmede bırakılır; (c) `authority: primary` çelişen ikinci bir belge varsa **tekrar olan satır silinir**; (d) Frontmatter'sız MD yasaktır (G3).
 
 ### §3.2 Dosya Adı, Yeri ve H1
 
@@ -184,7 +187,7 @@ category: <documentation|reports|rules|spec>
 status: <active|draft|deprecated>
 version: <major.minor.patch>
 updated: <YYYY-MM-DD>
-authority: SSOT
+authority: primary
 part: C
 ---
 
@@ -324,7 +327,7 @@ category: {{documentation|reports|rules|spec}}
 status: draft
 version: 0.1.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 part: C
 ---
 
@@ -361,7 +364,7 @@ part: C
 |---|------|-------|------|
 | 1 | Şablon var mı kontrolü (envantere bak) | doğru şablon satırı | şablon yoksa üretme, `PLANLI` aç |
 | 2 | `§2.2` sınır testini koş | docs-md = evet | yanlış şablon = yeniden yazım |
-| 3 | Frontmatter 8 alan | `§3.1` | G3 RED |
+| 3 | Frontmatter 11 alan | `§3.1` | G3 RED |
 | 4 | H1 + Zorunlu Bağlantılar + tek cümlelik sorumluluk | üst blok | — |
 | 5 | `§1.2` disk kanıtlarını **ölçerek** doldur | kanıt tablosu | tahmin = ⚠️ |
 | 6 | `§3.3` iskeletiyle bölümleri aç | 7 bölüm | tek `## Giriş` = RED |
@@ -458,7 +461,7 @@ part: C
 Altı komut da **hiçbir dosyayı değiştirmez**; hedef yoksa dürüstçe `DIZIN YOK` yazar.
 
 ```powershell
-# 1) Frontmatter 8 alan + tek H1 (eksik = 0 olmali)
+# 1) Frontmatter 11 alan + tek H1 (eksik = 0 olmali)
 $md = 'C:\versacoder\.ai\documentation\ornek.md'
 if (-not (Test-Path $md)) { 'DOSYA YOK -> once uret' } else {
   $t = Get-Content $md -Raw
@@ -521,7 +524,7 @@ if ($t -match 'EntityFramework') { 'EF CORE GECIYOR (G2)' }
 
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
-| K1 | Frontmatter 8 alan + `authority: SSOT` + `part: C` | 8/8 | §3.1 |
+| K1 | Frontmatter 11 alan + `authority: primary` + `part: C` | 8/8 | §3.1 |
 | K2 | H1 tek + `**Zorunlu Bağlantılar:**` (4–6) | 1 satır | §3.2 |
 | K3 | `§1.1–§1.4` dolu | 4/4 | §1 |
 | K4 | `§1.2` disk kanıtları: iddia · durum · kanıt + yorum yasağı | var | §1.2 |

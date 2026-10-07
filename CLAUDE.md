@@ -5,7 +5,7 @@ category: root
 status: active
 version: 2.1.0
 updated: 2026-10-07
-authority: SSOT
+authority: shadow
 scope: "Depo kökü CLAUDE.md: rol, vault bağları, l0..l7 katman özeti, G1..G12 tek satır özet, ne yap/ne yapma, disk durumu, bütçe ve doğrulama - kural metni değil, bağlantı"
 ---
 

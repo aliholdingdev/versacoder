@@ -5,8 +5,11 @@ category: ui
 status: draft
 version: 1.2.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "11 wireframe dosyasinin navigasyonu (01..10 + 08-terminal), ekran adi sozlesmesi (01-start-page..10-ai-chat-console), dosya uclusu kurali (cs/Designer.cs/resx), GATE-003 cikti paketi ve ONAY PAKETI (S7) - onaysiz tek satir .cs yazilmaz"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # `ui-design/` — Ekran Wireframe Klasörü

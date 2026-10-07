@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Giris (prompt) -> hazirlik (vault okuma) -> dagitim (AGENTS matrisi) -> kontrol (checkpoint) -> teslim (kutu) zinciri; paralellik limiti, devir paketi, 3-STRIKE, butce, hata modlari ve end-to-end agentic model"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # engine — Orkestrasyon Motoru
@@ -775,7 +778,7 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 
 | # | Kontrol | Beklenen | Kanıt |
 |---|---|---|---|
-| 1 | Frontmatter 8 alan dolu | `authority: SSOT` · `owner: architect` · `updated: 2026-09-29` | İlk satır `---` |
+| 1 | Frontmatter 11 alan dolu | `authority: primary` · `owner: architect` · `updated: 2026-09-29` | İlk satır `---` |
 | 2 | Bu dosyanın tüm linkleri izinli hedefe | Bozuk link **0** | link taraması |
 | 3 | Diyagramlar saf ASCII | `\| - +` dışında kutu çizim **0** | `U+2500-U+257F` taraması = 0 |
 | 4 | 5 bileşen tek tek tanımlı | Giriş · Hazırlık · Dağıtım · Kontrol · Teslim | §1 |

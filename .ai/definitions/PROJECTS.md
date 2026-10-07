@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "VersaCoder 9 üretim + 1-2 test projesi, dış bağımlılıklar, risk defteri, kapsam dışı kararları ve prompt kaynağındaki DLL organizasyonu"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # PROJECTS — Proje Envanteri

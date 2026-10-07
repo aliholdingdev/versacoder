@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Agent araçları için tek sözleşme — tool şeması (ad/açıklama/parametre/sonuç), kayıt ve keşif, doğrulama, izin kapısı (allow/ask/deny), sandbox kısıtları ve örnek tanımlar (VC-TLS-NNN)"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Tool Şartnamesi (`spec/tool-spec.md`)

@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "kucuk CLAUDE.md / AGENTS.md sablonu: baglam, kurallar ve komut kisayollari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Kök CLAUDE.md / AGENTS.md Şablonu
@@ -182,7 +185,7 @@ Kök dosya her oturumda bütçeden yer kaplar; uzarsa **iş değil okuma** yemi�
 
 | Öğe | Kural | Doğru | Yanlış |
 |-----|-------|-------|--------|
-| Frontmatter | kök dosyada 7 alan, ilk 9 satır | `authority: SSOT` | alan eksik / yazım farkı |
+| Frontmatter | kök dosyada 7 alan, ilk 9 satır | `authority: primary` | alan eksik / yazım farkı |
 | H1 | tek tane, `# ` | `# VERSA CODER — Kök Kural Dosyası` | iki H1 · `##` |
 | Bağlantı | `**Zorunlu Bağlantılar:**` + 6 `[[…]]` | `·` ayracılı | 5 altı · markdown `](…)` |
 | Dil | Türkçe; slug/yol İngilizce | `katman listesi` · `src/` | karışık dil |
@@ -312,7 +315,7 @@ category: root
 status: active
 version: 1.0.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 ---
 # VERSA CODER — Kök Kural Dosyası
 **Zorunlu Bağlantılar:** [[{{BAG_1}}]] · [[{{BAG_2}}]] · [[{{BAG_3}}]] · [[{{BAG_4}}]] · [[{{BAG_5}}]] · [[{{BAG_6}}]]
@@ -390,7 +393,7 @@ authority: SSOT
 |---|-----------|--------------|
 | G1 | Harici vault'tan (`C:\www\…`) cümle kopyalanması | **DUR** — dosya silinir, özgün yazılır |
 | G2 | `EntityFramework` / EF Core referansı (özet bile olsa) | **DUR** — ADR-004, ADO.NET + Dapper |
-| G3 | Frontmatter 7 alan eksik / `authority: SSOT` bozuk | **DUR** — §5.3/5 |
+| G3 | Frontmatter 7 alan eksik / `authority: primary` bozuk | **DUR** — §5.3/5 |
 | G4 | Üretilen kök dosyada `{{…}}` (kalıp bloğu hariç) | **DUR** — §5.3/5 |
 | G5 | `AGENTS.md` içinde kural metni kopyası | **DUR** — 10–20 satırlık gölge |
 | G6 | Üretilen dosya < 100 / > 260 satır | **DUR** — §4.3 |
@@ -518,7 +521,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 
 | # | Kontrol | Beklenen | İlgili |
 |---|---------|----------|--------|
-| K1 | Frontmatter 7 alan + `authority: SSOT` birebir | 7/7 | §3.2 · §5.3/5 |
+| K1 | Frontmatter 7 alan + `authority: primary` birebir | 7/7 | §3.2 · §5.3/5 |
 | K2 | H1 tek + `**Zorunlu Bağlantılar:**` satırı | 1 satır | §3.2 |
 | K3 | Bağlantı sayısı | 6 | §4.3 |
 | K4 | Blok haritası B1..B10 | 10/10 | §3.1 |

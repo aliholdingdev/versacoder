@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "l4 (N25–N32) sekiz alt katman sınırı — provider, fs, git, llm-http, tool-runner; neye bakabilir, hangi arayüzle döner"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Altyapı Katmanı Şartnamesi (`spec/infra-layer-spec.md`)

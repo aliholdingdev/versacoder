@@ -5,8 +5,11 @@ category: templates
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "GATE-004a icin uretilecek tum yeni MD dosyalarinin klasor, sayi ve tema listesi - subagent gorev spec'i burasi"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # GATE-004a Batch Manifestosu

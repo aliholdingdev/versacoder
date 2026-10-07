@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Metin/kod görüntüleme ve düzenleme, sekme yaşam döngüsü, sözdizimi gösterimi, satır numarası, kaydetme ve kirli durum"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Kod Editörü Şartnamesi — VersaCoder

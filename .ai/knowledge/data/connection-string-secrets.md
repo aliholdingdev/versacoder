@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Baglanti metni sirrlarinin DPAPI ile sifreli saklanmasi, duz metin yasagi, rotasyon ve denetim listesi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # connection-string-secrets - Baglanti Metni ve Sirlar

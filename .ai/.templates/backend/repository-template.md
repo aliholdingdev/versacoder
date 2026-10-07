@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-10-01
-authority: SSOT
+authority: reference
 scope: "repository sablonu: arayuz, implementasyon ve orchestrator kalibinin iskeleti"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Repository Template — Arayüz Sözleşmesi ve Orchestratör Kalıbı

@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Her formun neden tam uc dosyadan olustugunu, hangi dosyanin hangi yetkiye sahip oldugunu ve .cs dosyasinda tasarim koduna neden izin verilmedigini tanimlar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Designer.cs + .resx + Kod-Behind Uclusu Kurali

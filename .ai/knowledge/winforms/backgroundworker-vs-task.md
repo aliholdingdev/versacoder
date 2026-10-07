@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "Arka plan isi icin BackgroundWorker ile Task/async arasindaki secimi: olaylar, iptal, hata yonetimi, test edilebilirlik ve iki bacak (net48 / net10.0-windows) farklari."
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # `BackgroundWorker` mi, `Task` mi?

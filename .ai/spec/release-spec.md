@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Sürümleme (semver + etiket), changelog üretimi ve paket/artifact çıkarma koşulları — GATE-006 girişi"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Sürüm ve Yayın Şartnamesi (`spec/release-spec.md`)

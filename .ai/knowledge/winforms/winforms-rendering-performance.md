@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "WinForms render performansi: Paint maliyeti, DoubleBuffered/flicker, Invalidate ile Refresh ayrimi, VirtualMode ve olcum yontemi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # WinForms Render Performansi

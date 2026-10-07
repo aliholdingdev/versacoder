@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "VersaCoder ürün seviyesi gereksinimleri — 7 ekran, ana kullanıcı yolculukları, fonksiyonel gereksinimler (VC-PRD-NNN), fonksiyonel olmayanlar ve kapsam dışı"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Ürün Şartnamesi (`spec/versacoder-spec.md`)

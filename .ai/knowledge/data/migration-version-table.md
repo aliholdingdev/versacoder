@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "__Migrations surum tablosu semasi, SHA-256 checksum, fail-fast dogrulama ve IMigrationRunner akisi (DA-11)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # migration-version-table — Sürüm Tablosu ve Checksum

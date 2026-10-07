@@ -5,8 +5,11 @@ category: ui
 status: draft
 version: 1.2.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "01-start-page ekranının wireframe'i: bölge haritası, ölçü tablosu, QAT + Uygulama Dugmesi + tab-page ribbon (Office2010), dosya üçlüsü, etkileşim kuralları, TFM notu — GATE-003 onayı bekliyor"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # 01 — START PAGE

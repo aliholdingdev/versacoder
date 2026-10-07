@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Main IDE RibbonForm kabuğu: ribbon/menü, dock panel yerleşimi, durum çubuğu, pencere yönetimi - ne görünür, ne nereye bağlanır"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # UI Shell Şartnamesi — VersaCoder

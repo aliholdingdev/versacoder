@@ -1,5 +1,9 @@
 ---
 description: Guncel gate durumunu, kabul kriterini ve siradaki adimi raporlar (kapi acmaz)
+authority: derived
+tags: [archive]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 Gate durumu: $ARGUMENTS

@@ -1,6 +1,10 @@
 ---
 name: prompt-maker
 description: Prompt Maker — prompt girisinde oturum baslatmadan Once proje-ozel sorular sorar (ASKING QUESTIONS modu), cevaplardan sonra promptu isler ve sablon ciktiyi uretir. Tetikler: "prompt maker", "/prompt-maker", "promptu isle", "promptu genislet".
+authority: derived
+tags: [archive]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Prompt Maker — VersaCoder

@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "StatusBarControl + BarStaticItem/BarEditItem kullanimi, guncelleme noktalari, ribbon ile iliski ve iki bacak farki"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # StatusBar ve Bar Ogeleri (v26.1)

@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "Sohbet paneli: mesaj akışı, bağlam çipleri, streaming yanıt gösterimi, iptal/duraklat ve hata geri bildirimi"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # AI Chat Şartnamesi — VersaCoder

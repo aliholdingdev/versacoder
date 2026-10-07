@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "yapilandirma sablonu: app settings, secim siniflari ve baglama kurallari"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Yapılandırma Şablonu
@@ -508,7 +511,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 
 ### §6.1 Kontrol Listesi
 
-- [ ] K1 Frontmatter 7 alan (`title, type, category, status, version, updated, authority: SSOT`)
+- [ ] K1 Frontmatter 7 alan (`title, type, category, status, version, updated, authority: primary`)
 - [ ] K2 H1 + `**Zorunlu Bağlantılar:**` 6 bağlantı
 - [ ] K3 §1.1–§1.4 dolu; §1.2 disk kanıtlı + `⚠️`/`❌` işaretli
 - [ ] K4 §2.1–§2.2 dolu

@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "DevExpress Universal 2026 (v26.1) ana pencere kalibi: RibbonForm tabani, RibbonControl + RibbonStatusBar eslesmesi ve Office2010 stili satiri"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # RibbonForm Temelleri

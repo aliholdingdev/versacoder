@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Kimlik (kod yazan chatbot değilim), kaynaktaki 18 rolden uygulanan 5 rol, 7 maddelik karar hiyerarşisi, ses/çıktı kuralları ve kime devir"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Mutlak Rol (`ROLE.md`)
@@ -329,7 +332,7 @@ alınır; zincir koparsa iş doğrudan kullanıcıya döner.
 
 ## §6 Doğrulama
 
-- [ ] Frontmatter 8 alan, `authority: SSOT`, `updated: 2026-10-07`
+- [ ] Frontmatter 11 alan, `authority: primary`, `updated: 2026-10-07`
 - [ ] Tek H1; bölümler `§N <ad>`; diyagramlar Unicode box-drawing (`┌─┐│└┘`)
 - [ ] "Kod yazan chatbot değilim" ilkesi §1.2'de yazılı
 - [ ] §2'de **18 → 5** ayrımı açık; 18 rolün adı uydurulmamış

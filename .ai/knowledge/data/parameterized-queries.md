@@ -5,8 +5,11 @@ category: data
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Her sorguda @ad parametresi zorunlulugu, IN/LIKE/ORDER BY kaliplari, string-concat SQL yasagi (DA-03 / G2)"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # parameterized-queries — Parametreli Sorgu Kalıpları

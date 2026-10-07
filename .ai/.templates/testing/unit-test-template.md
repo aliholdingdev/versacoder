@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "birim test sablonu: arrange-act-assert akisi, assertion ve kenar durumlar"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Birim Test Şablonu (Unit Test)
@@ -520,7 +523,7 @@ foreach ($l in $n) {
 
 ### §6.1 Kod içi kontrol listesi (≥20)
 
-- [ ] Frontmatter 7 alan + `authority: SSOT` (ilk 9 satır)
+- [ ] Frontmatter 7 alan + `authority: primary` (ilk 9 satır)
 - [ ] H1 + `**Zorunlu Bağlantılar:**` 5 bağlantı
 - [ ] 7 bölüm tam (`§1…§7`) · alt bölüm `§1.1–§1.4`, `§2.1–§2.2`
 - [ ] `§3.1–§3.9` tam · §3.9 dolu örnek + `{{…}}` kalıp bloğu

@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "CQRS handler sablonu: komut/sorgu sozlesmesi, Result kullanimi ve bagimlilik enjeksiyonu"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Command/Query Handler Şablonu (CQRS İskeleti)
@@ -142,7 +145,7 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 ---
 ```
 
@@ -495,7 +498,7 @@ dotnet test 'C:\versacoder\tests\VersaCoder.Tests' --filter 'FullyQualifiedName~
 
 ### §6.1 Kontrol Listesi (20 madde)
 
-- [ ] 01 Frontmatter 7 alan eksiksiz; `authority: SSOT`
+- [ ] 01 Frontmatter 7 alan eksiksiz; `authority: primary`
 - [ ] 02 H1 + `**Zorunlu Bağlantılar:**` 6 bağlantı
 - [ ] 03 §1.1–§1.4 dolu; §1.2'de `⚠️ VERIFICATION REQUIRED` satırı var
 - [ ] 04 §1.2 iddia/kanıt/durum — yorum yok

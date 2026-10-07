@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: derived
 scope: "Vault'un kalici hafizasi: kanitli dersler (DERS-KANIT-GECERLILIK-ADR), tekrar eden karar desenleri, kara liste, hafiza guncelleme kurali ve tarihli kayit defteri"
+tags: [memory]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # MEMORY — Kalici Dersler, Karar Desenleri ve Kayit Defteri
@@ -352,7 +355,7 @@ Tek gun, tek defter: **2026-09-29**. Asagidaki 22 kayit bu gunun olcum ve isleri
 
 ### §6.1 Biçim
 
-- [ ] Frontmatter `title, type, category, status, version, updated, authority, owner, scope` — ilk satir `---`, `updated: 2026-09-29`, `authority: SSOT`
+- [ ] Frontmatter `title, type, category, status, version, updated, authority, owner, scope` — ilk satir `---`, `updated: 2026-09-29`, `authority: primary`
 - [ ] Tek H1 + **Zorunlu Baglantilar** satiri + `> Tek cumlelik sorumluluk` + `## §0 Ozet (Answer First)`
 - [ ] Bolumler `## §1..§6`; en az **3 tablo + 1 ASCII kutu** (`|` `-` `+`; Unicode kutu cizim karakteri YOK — `U+2500` ve tarzlari)
 - [ ] Madde listeleri en fazla 5 madde; tablo satirlari olcum/kanit icindir

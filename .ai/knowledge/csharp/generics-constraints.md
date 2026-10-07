@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "where kisitlarinin sinifi, C# 7.3'te mevcut kisitlar ve C# 8-14'te eklenenlerin iki bacak dagilimi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # generics-constraints — Generic kısıtlar

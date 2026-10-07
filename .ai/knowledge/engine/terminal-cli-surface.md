@@ -5,8 +5,11 @@ category: engine
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "VersaCoder.Cli konsol yuzeyi: l0..l6 ortek cekirdek (ADR-010), ekran karsiliklari, CI/otomasyon senaryolari, ekrana gore islem tablosu"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Terminal / CLI Yuzeyi

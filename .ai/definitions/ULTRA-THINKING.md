@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Karmasik karar oncesi hazirlik ve derin dusunme: 5 kriter, 5 adim, karar formati (ADR cevirme), kanit hiyerarsisi, tuzaklar, ADR-028 uretim kaydi ve prompt kaynakli akis"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ULTRA-THINKING — Uzun Düşünme Protokolü
@@ -592,7 +595,7 @@ Tur 3'te **hiçbir** katılımcı A'ya karşı çıkmadı; 6 itirazın tamamı *
 
 | # | Kontrol | Beklenen | Kanıt |
 |---|---|---|---|
-| 1 | Frontmatter 8 alan | `authority: SSOT` · `updated: 2026-10-07` · `category: ".ai"` · `type: knowledge` | İlk satır `---` |
+| 1 | Frontmatter 11 alan | `authority: primary` · `updated: 2026-10-07` · `category: ".ai"` · `type: knowledge` | İlk satır `---` |
 | 2 | 5 tetik kriteri tanımlı | Çelişki · 3. düzeltme · pahalı karar · kanıtsızlık · yıkıcı | §1.1 |
 | 3 | Protokol dışı durumlar yazılı | 4 satır | §1.2 |
 | 4 | 5 adım sıralı ve atlanamaz | Kaynak → Alternatif → Kanıt → Karar → Risk | §2.1 + §2.2 |

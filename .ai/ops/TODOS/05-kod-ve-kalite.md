@@ -5,8 +5,11 @@ category: todos
 status: blocked
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "l0-l7 uygulama kodunun katman katman nasil yazilacagi, NetArchTest 8x8, test kapsami ve cikis kriterleri — GATE-003 sonrasi acilir"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Faz 05 — Kod Uygulaması ve Kalite (GATE-005)

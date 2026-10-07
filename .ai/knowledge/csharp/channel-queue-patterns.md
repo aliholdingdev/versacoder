@@ -5,8 +5,11 @@ category: knowledge
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "System.Threading.Channels ile kilitsiz siralama: kuyruk tipi secimi, Complete/Completion akisi, UI siniri ve net48 paket farki"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # channel-queue-patterns — Kuyruk ile sıra ve izolasyon

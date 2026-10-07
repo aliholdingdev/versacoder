@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-10-01
-authority: SSOT
+authority: primary
 scope: "Prompt Maker aracinin giris/kabul sozlesmesi (MOD A / MOD B), oturumun girdi hatti (Exploration Gate -> Instruction) ve sonradan eklenecek ozelliklerin kayit listesi"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Prompt Maker ve Oturum Girdi Hattı (`spec/prompt-maker-spec.md`)

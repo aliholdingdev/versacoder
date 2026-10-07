@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "l6 (N38–N40): bootstrap pipeline sırası, tek DI kayıt noktası, config köprüsü ve açılış bütçesi (≤ 2 sn)"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Host Katmanı Şartnamesi (`spec/host-layer-spec.md`)

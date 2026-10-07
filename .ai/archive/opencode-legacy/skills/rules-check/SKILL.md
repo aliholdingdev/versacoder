@@ -1,6 +1,10 @@
 ---
 name: rules-check
 description: Kod yazimindan sonra degisen dosyalari .ai/.rules icindeki 16 kural karsisinda denetler, ihlali dosya:satir raporlar. Tetikler: "kurallari calistir", "rules check", "kural denetimi", "rule run".
+authority: derived
+tags: [archive]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Rules Check — `.ai/.rules/**`

@@ -5,8 +5,11 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "application servis sablonu: islem akisi, yetki kontrolu ve Result donusleri"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Application Servis Şablonu (Service Template)
@@ -153,7 +156,7 @@ category: template
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 ---
 ```
 
@@ -400,7 +403,7 @@ public sealed class WorkspaceService : IWorkspaceService
 | G8 | Serviste elle `IDbConnection.Open()` / transaction | **DUR** — repository katmanına |
 | G9 | `catch (Exception) { /* yut */ }` | **DUR** — en az `Result.Fail` veya log + rethrow |
 | G10 | Coverage < %90 veya `dotnet test` kırmızı | iş birleştirilemez |
-| G11 | Frontmatter 7 alan eksiksiz değil / `authority: SSOT` yok | dosya RED |
+| G11 | Frontmatter 7 alan eksiksiz değil / `authority: primary` yok | dosya RED |
 | G12 | Satır < 480 veya > 660 / KB < 15 veya > 32 | dosya RED — §5.3/7 ölçülür |
 | G13 | `CoreMusic` adı geçerse (ürün = VERSA CODER) | dosya RED + ad temizlenir |
 | G14 | Mojibake (Latin-1 artığı iki-bayt desen) veya CP1254 kodlaması | dosya UTF-8 BOM'suz yeniden yazılır |
@@ -509,7 +512,7 @@ dotnet test 'C:\versacoder\tests\VersaCoder.Tests' --filter 'FullyQualifiedName~
 
 ### §6.1 Kontrol Listesi (18 madde)
 
-- [ ] 01 Frontmatter 7 alan eksiksiz; `authority: SSOT`
+- [ ] 01 Frontmatter 7 alan eksiksiz; `authority: primary`
 - [ ] 02 H1 + `**Zorunlu Bağlantılar:**` 6 bağlantı
 - [ ] 03 §1.1–§1.4 dolu; §1.2'de `⚠️ VERIFICATION REQUIRED` olan satır var
 - [ ] 04 §1.2'de yorum yok — yalnız iddia/kanıt/durum

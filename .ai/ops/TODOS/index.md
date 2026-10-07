@@ -5,8 +5,11 @@ category: todos
 status: active
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "Tum vault task/todo/checklist kayitlarinin tek yerde toplandigi, siraya gore faz dosyalarina bolundugu ana indeks; kullanim kurali ('su dosyayi yap'), siralama gerekcesi ve guncel proje durumu"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # TODOS — Görev Fazları İndeksi

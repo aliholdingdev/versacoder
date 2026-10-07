@@ -5,8 +5,11 @@ category: adr
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: reference
 scope: "veri katmani ADR sablonu: sema, SQL migration ve schema_version varyanti"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # ADR Şablonu — Veri Yığını, Şema, SQL Migration ve `schema_version` Varyantı
@@ -117,7 +120,7 @@ category: data
 status: draft            # draft | review | accepted | rejected | superseded
 version: 0.1.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 supersedes: null
 superseded_by: null
 decision_date: 2026-09-25
@@ -190,7 +193,7 @@ category: data
 status: accepted
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 supersedes: null
 superseded_by: null
 decision_date: 2026-09-25
@@ -281,7 +284,7 @@ category: data
 status: draft
 version: 0.1.0
 updated: {{YYYY-MM-DD}}
-authority: SSOT
+authority: primary
 supersedes: {{ADR_ID|NULL}}
 superseded_by: null
 decision_date: {{YYYY-MM-DD}}
@@ -362,7 +365,7 @@ Select-String -Path "{{MIGRATION_DIZINI}}" -Pattern "@p1"
 
 ## §6 Doğrulama
 ### §6.1 Onay kutuları
-- [ ] 01 Frontmatter 11 alan eksiksiz, authority: SSOT
+- [ ] 01 Frontmatter 11 alan eksiksiz, authority: primary
 - [ ] 02 §1–§7 bölümlerinin 7'si de mevcut
 - [ ] 03–18 … (bu şablon §6.1 listesi)
 ### §6.2 Red sinyalleri
@@ -444,7 +447,7 @@ Migration dosyaları **asla silinmez**; revizyon yeni `NNNN_*.sql` dosyasıdır.
 
 | # | Guardrail | Kural | İhlal Sonucu |
 |---|---|---|---|
-| G1 | Frontmatter SSOT | `authority: SSOT` + 11 alan eksiksiz | Aşama 1 **DUR**; `draft` |
+| G1 | Frontmatter SSOT | `authority: primary` + 11 alan eksiksiz | Aşama 1 **DUR**; `draft` |
 | G2 | Slug İngilizce, metin Türkçe | mojibake yasak | Commit geri alınır |
 | G3 | Secret sızıntısı yasak | Connection string/parola ADR'ye girmez; `keys.md` yalnız varlık kanıtı | **DUR** + `security`; `rejected` |
 | G4 | EF Core yasak | EF Core/ORM öneren karar geçersizdir | **RED**: ADR `rejected`, ADR-004'e çelişki kaydı |
@@ -526,7 +529,7 @@ Blok salt-okunurdur (G14): `Set-`, `Remove-`, `New-`, `Invoke-Sqlcmd` yoktur. Mi
 ### §6.1 Onay kutusu listesi (18 madde)
 
 - [ ] 01 — Frontmatter 11 alan eksiksiz (`title…template`).
-- [ ] 02 — `authority: SSOT` birebir yazılı.
+- [ ] 02 — `authority: primary` birebir yazılı.
 - [ ] 03 — `status` ∈ {draft, review, accepted, rejected, superseded}.
 - [ ] 04 — H1 `ADR-NNN:` ile başlıyor.
 - [ ] 05 — `**Zorunlu Bağlantılar:**` satırı var, göreli wiki-link.

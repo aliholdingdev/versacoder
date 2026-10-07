@@ -5,8 +5,11 @@ category: ".ai"
 status: active
 version: 3.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: primary
 scope: "Vault'ta geçen terimlerin TR/EN/ELI10 tanımları (124 terim), sık karışan çiftler, RED listesi"
+tags: [identity]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # glossary.md — Terimler Sözlüğü
@@ -335,7 +338,7 @@ Soru kelimeyle değil, dosyayla başlıyorsa ters arama yapılır: dosya açıl�
 
 | # | Kontrol | Hedef | Nasıl bakılır |
 |---|---------|-------|---------------|
-| 1 | Frontmatter | 8 alan, `authority: SSOT`, `updated: 2026-10-07` | ilk satır `---`, 8. satır `---` |
+| 1 | Frontmatter | 8 alan, `authority: primary`, `updated: 2026-10-07` | ilk satır `---`, 8. satır `---` |
 | 2 | Terim sayısı | §1 tablosu 136 satır | satır sayımı; §0'daki sayı ile aynı olmalı |
 | 3 | Sütun doluluğu | her satırda ELI10 tek cümle ve bağlı dosya var | boş hücre = tanımsız terim |
 | 4 | Link | yalnız mevcut dosyalara | `pwsh -File scripts/check-links.ps1` → `BOZUK = 0` |

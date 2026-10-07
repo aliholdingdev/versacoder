@@ -5,8 +5,11 @@ category: todos
 status: blocked
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "7 wireframe'in kullaniciya sunulup onaylanmasi; onaysiz tek satir .cs yazilmaz — sunum sirasi ve onay kaydi"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Faz 04 — GATE-003: 7 Wireframe Onayı

@@ -5,8 +5,11 @@ category: session-log
 status: active
 version: "1.0.0"
 updated: "2026-09-25"
-authority: SSOT
+authority: reference
 scope: "oturum kaydi sablonu: log.md ve sessions/*.md icin zorunlu satir bicimi ve alanlar"
+tags: [template]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 **Zorunlu Bağlantılar:** [[../.rules/rules-index|Kural Dizini]] · [[../.rules/token-budget|Token Bütçesi]] · [[../.rules/evidence-and-verification|Kanıt ve Doğrulama]] · [[../adr-index|ADR Dizini]] · [[../agents-index|Ajan Kataloğu]] · [[gates-index|Kapılar]] · [[session-log-template|Bu Şablon]]
@@ -90,7 +93,7 @@ Bu şablon **zorunludur**; 5 şartın **hepsi** true olmalı:
 
 ### §3.1 Frontmatter YAML bloğu
 
-`title, type, category, status, version, updated, authority` — 7 alan zorunlu; `authority: SSOT` hiçbir sürümde değiştirilemez.
+`title, type, category, status, version, updated, authority` — 7 alan zorunlu; `authority: primary` hiçbir sürümde değiştirilemez.
 
 ```yaml
 ---
@@ -100,7 +103,7 @@ category: session-log
 status: active          # draft | active | archived
 version: "1.0.0"
 updated: "YYYY-MM-DD"
-authority: SSOT
+authority: primary
 ---
 ```
 
@@ -312,7 +315,7 @@ authority: SSOT
 
 ### §4.4 Değişiklik kontrolü
 
-1. `authority: SSOT` hiçbir sürümde değiştirilemez (`G2`).
+1. `authority: primary` hiçbir sürümde değiştirilemez (`G2`).
 2. `## §1`..`## §7` başlıklarından biri silinemez (`G3`).
 3. `archived` kayıt yalnızca `architect` onayıyla yeniden açılır; geçmiş satırlar **silinmez**, üstüne düzeltme satırı eklenir.
 4. Her değişiklik `version` artırır ve `updated` tarihini günceller.
@@ -323,7 +326,7 @@ authority: SSOT
 | ID | Guardrail | Kural kaynağı | Tespit yöntemi | İhlal Sonucu |
 |---|---|---|---|---|
 | **G1** | Frontmatter 7 alan eksiksiz | `§3.1` | İlk 10 satır | Dosya geçersiz sayılır |
-| **G2** | `authority: SSOT` değişmez | Vault kuralı | Diff | Kayıt geri alınır |
+| **G2** | `authority: primary` değişmez | Vault kuralı | Diff | Kayıt geri alınır |
 | **G3** | `## §1`..`## §7` silinemez | Bu şablon | Başlık sayısı = 7 | Kalıp revert |
 | **G4** | `İlerleme (n/8)` 8 satır | `§3.4` | `— [ ]`/`— [x]` sayımı | Checkpoint kabul edilmez |
 | **G5** | EF Core / `DbContext` anılmaz | `ADR-004` | Dosya taraması | Satır silinir |
@@ -393,7 +396,7 @@ authority: SSOT
 ### §6.1 Onay kutusu listesi
 
 - [ ] 1. Frontmatter `title, type, category, status, version, updated, authority` 7 alan eksiksiz
-- [ ] 2. `authority: SSOT` yazıyor, `updated` BUGÜN tarihinde
+- [ ] 2. `authority: primary` yazıyor, `updated` BUGÜN tarihinde
 - [ ] 3. `## §1 Amaç` … `## §7 Referanslar` — tam 7 bölüm, sırası aynı
 - [ ] 4. H1 hemen frontmatter altında, `**Zorunlu Bağlantılar:**` satırı var
 - [ ] 5. `§1.2` tablosunda `⚠️ VERIFICATION REQUIRED` satırı duruyor

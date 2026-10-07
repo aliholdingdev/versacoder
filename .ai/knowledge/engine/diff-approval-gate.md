@@ -5,8 +5,11 @@ category: engine
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Diff onay blogu: l2 durum makinesi, 05 -> onay -> 06 -> 04 akisi, red edilirse dosya etkisi yok, GATE-003 HARD STOP"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Diff Onay Blogu ve Gate

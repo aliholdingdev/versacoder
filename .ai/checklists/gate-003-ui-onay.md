@@ -5,8 +5,11 @@ category: checklists
 status: active
 version: 1.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "GATE-003 UI approval — HARD STOP, 7 wireframe, DevExpress v26.1, RibbonForm, kullanici onayi"
+tags: [checklist]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # GATE-003 — UI Onayi (HARD STOP)

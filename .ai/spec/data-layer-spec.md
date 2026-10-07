@@ -5,8 +5,11 @@ category: spec
 status: active
 version: 1.0.0
 updated: 2026-09-25
-authority: SSOT
+authority: primary
 scope: "l4 veri alt kümesi: repository sınırı, parameterized SQL zorunluluğu, bağlantı yaşam döngüsü, provider soyutlaması (ADR-005 / ADR-012)"
+tags: [spec]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # VersaCoder — Veri Katmanı Şartnamesi (`spec/data-layer-spec.md`)

@@ -5,8 +5,11 @@ category: devexpress
 status: active
 version: 1.0.0
 updated: 2026-09-30
-authority: SSOT
+authority: primary
 scope: "SplashScreenManager ile splash, wait form, overlay ve progress panel secimi; acma-kapama sirasi ve yaygin tuzaklar"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # SplashScreen ve WaitForm Gostergeleri

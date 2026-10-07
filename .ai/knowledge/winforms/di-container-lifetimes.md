@@ -5,8 +5,11 @@ category: winforms
 status: active
 version: 1.0.0
 updated: 2026-09-29
-authority: SSOT
+authority: primary
 scope: "Singleton/transient omurlerinin hangi servise verilecegi, WinForms'ta scope karsiligi (form omru) ve yanlis omurun yarattigi bellek sizintisi"
+tags: [knowledge]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # DI Container Omurleri ve Form Kaydi

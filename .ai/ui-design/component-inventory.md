@@ -5,8 +5,11 @@ category: ui
 status: active
 version: 1.0.0
 updated: 2026-10-02
-authority: SSOT
+authority: reference
 scope: "01-start-page..10-ai-chat-console wireframe'lerinde (11 dosya) gecen her kontrolun DevExpress Universal v26.1 karsiligi, DX-09 karsilastirmasi, DOĞRULAMA GEREKLİ listesi ve ad eslesme tablosu (gate-003-ui-onay soru 4/5/9 kaniti)"
+tags: [ui-design]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # component-inventory.md - Kontrol Envanteri

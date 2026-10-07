@@ -5,8 +5,11 @@ category: todos
 status: blocked
 version: 2.0.0
 updated: 2026-10-07
-authority: SSOT
+authority: reference
 scope: "9+2 proje iskeleti, CPM, TFM net48;net10.0-windows, NetArchTest, ilk commit adimlari — GATE-004a onayindan sonra acilir"
+tags: [ops]
+source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi)"
+supersedes: ""
 ---
 
 # Faz 03 — Faz D: Kod İskeleti (GATE-004)
