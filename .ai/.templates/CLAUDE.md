@@ -14,11 +14,11 @@ scope: "şablon klasörü kuralı: ne yaşar, okuma sırası, kategori eşlemesi
 
 ## §1 Amaç
 ### §1.1 Ne Yaşar?
-Klasörde: `index.md` envanter · bu dosya kural · `session-log-template.md` kayıt · 10 klasörde 38 şablon = 47 MD.
+Klasörde: `index.md` envanter · bu dosya kural · `session-log-template.md` kayıt · 11 klasörde 42 şablon = 51 MD.
 ### §1.2 Ne Üretmez?
 Kural metni, ADR, envanter satırı, kod kopyalanmaz; yalnız bağlantı (G12). Tek dosya tek gerçek.
 ### §1.3 Disk Kanıtı
-2026-10-05: `.ai/.templates/**` = 47 MD (45+bu 2); `.ai/.rules/` ve `.ai/architecture/` YOK → link yok (G7).
+2026-10-06: `.ai/.templates/**` = 51 MD (49+bu 2); `.ai/.rules/` ve `.ai/architecture/` YOK → link yok (G7).
 ### §1.4 Okuma Sırası
 `index.md` (şablon) → görev şablonu (iskelet) → kural (bağlantı). Ters okuma yasak; halka eksikse üretim başlamaz.
 ## §2 Kapsam
@@ -28,7 +28,7 @@ Kural metni, ADR, envanter satırı, kod kopyalanmaz; yalnız bağlantı (G12). 
 Şablona sıra sor: kılavuz → bu dosya · iskelet → `*-template` · kayıt → `index.md` · karar → ADR · kod → `backend/*`.
 ## §3 Mimari
 ### §3.1 Klasör Ağacı
-`adr`7 `agents`2 `architecture`4 `backend`3 `documentation`7 `frontend`2 `infrastructure`4 `query`1 `testing`3 `ui-design`5 = 38 + kök 9 = 47 MD.
+`adr`7 `agents`2 `architecture`4 `backend`3 `documentation`8 `frontend`3 `infrastructure`4 `other`2 `query`1 `testing`3 `ui-design`5 = 42 + kök 9 = 51 MD.
 ### §3.2 Kategori → Hedef
 `adr`·`architecture`·`documentation`·`query`·`ui-design`→`.ai/<ad>` · `agents`→`.ai/.agents` · `backend`·`infrastructure`→`src/**` · `frontend`→`src/VersaCoder.Desktop/**` · `testing`→`tests/**`
 ### §3.3 Okuma Sırası
@@ -55,7 +55,7 @@ Yalnız `.templates/**` + kök `CLAUDE.md`·`AGENTS.md`·`README.md`·`WORKFLOW.
 ### §4.2 Onay
 §3.8 beş aşama; Quality Report oturum kaydına, red aşamaya 1'e döner.
 ### §4.3 Ölçüt
-Şablon ≥ 480/27,0 KB · bu dosya 90–140/5–8 · envanter 520–680/26–38 · link 0 · katman `l0..l7`.
+Şablon ≥ 480/27,0 KB · bu dosya 90–140/5–8 · envanter 480–780/26–46 · link 0 · katman `l0..l7`.
 ### §4.4 Değişiklik
 metin `patch` · bölüm `minor`+Quality Report · ad/silme `major`+oturum kaydı · durum `patch`.
 ### §4.5 Hard Guardrails (Otomatik DUR)
@@ -85,7 +85,7 @@ $d='C:\versacoder\.ai\.templates\CLAUDE.md'; $b=Split-Path $d   # G6: 90-140/5-8
 ([regex]::Matches((Get-Content $d -Raw),']\(([^)#]+)\)')|%{ $_.Groups[1].Value }|?{ $_ -notmatch '^https?:' }|Sort-Object -Unique|?{ -not (Test-Path (Join-Path $b $_)) }).Count   # G7
 $r=Get-Content $d -Raw; ([regex]::Matches($r,'\{\{[A-Z0-9_]+\}\}')).Count; ([IO.File]::ReadAllBytes($d)[0] -eq 0xEF); ($r -match '\uFFFD|\u00C3')   # G4/G5
 (Select-String -Path "$b\index.md" -Pattern 'templates/CLAUDE.md').Line   # satır #2
-(Get-ChildItem $b -Recurse -Filter *.md).Count   # 47
+(Get-ChildItem $b -Recurse -Filter *.md).Count   # 51
 ```
 ### §5.4 Quality Report
 ```markdown
@@ -120,7 +120,7 @@ Part yalnız ileri A → B → C → D; geri serbest, sıçrama yasak. Kapanış
 ### §6.4 İlgili Dosyalar
 Envanter [index](index.md) · kayıt [session-log](session-log-template.md) · iskelet [arch](architecture/architecture-template.md) · bkz §7.1
 ### §6.5 Envantere Özgü Kontroller
-Satır #2 `Durum = YAZILDI` · `Tahmini KB 6,9` ↔ 5–8 · `.templates/` 47 MD · G6 muafı = bu dosya.
+Satır #2 `Durum = YAZILDI` · `Tahmini KB 7,9` ↔ 5–8 · `.templates/` 51 MD · G6 muafı = bu dosya.
 ## §7 Referanslar
 ### §7.1 Kaynaklar
 Tek gerçek [index](index.md) · kök [CLAUDE](../../CLAUDE.md) · kapı [WORKFLOW](../../WORKFLOW.md) · gold [form](frontend/form-template.md).

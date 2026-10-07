@@ -59,30 +59,30 @@ scope: "Hangi sablon var, nerede durur, kim yazar, kac KB, hangi part - sablon k
 
 ### §1.2 Disk Kanıtları
 
-`.ai/.templates/` altındaki **12 katalog satırı** — 6'sı diskte mevcut, 6'sı planlı (2026-09-25 disk ölçümü):
+`.ai/.templates/` altındaki **12 katalog satırı** — 11'i diskte, 1'i planlı (`csharp/`) (2026-10-06 disk ölçümü):
 
 Kök: `C:\versacoder\.ai\.templates\`
 
 | # | Klasör | Yol | İçerik | Dosya | KB | Kanıt |
 |---|---|---|---|---|---|---|
-| 1 | `adr` | `.ai/.templates/adr/` | **7 şablon** (adr-template, adr-architecture, adr-data, adr-devexpress, adr-nygard, adr-security, adr-index) | 7 | 198,8 | ✅ Ölçüm 2026-09-25 |
-| 2 | `agents` | `.ai/.templates/agents/` | **2 şablon** (agents-template, subagent-template) | 2 | 61,3 | ✅ Ölçüm 2026-09-25 |
-| 3 | `architecture` | `.ai/.templates/architecture/` | **3 şablon** (architecture-template, ascii-diagram-template, layer-spec-template) | 3 | 109,5 | ✅ Ölçüm 2026-09-25 |
-| 4 | `backend` | `.ai/.templates/backend/` | **3 şablon** (service-template, handler-template, repository-template) | 3 | 93,6 | ✅ Ölçüm 2026-09-25 |
+| 1 | `adr` | `.ai/.templates/adr/` | **7 şablon** (adr-template, adr-architecture, adr-data, adr-devexpress, adr-nygard, adr-security, adr-index) | 7 | 208,3 | ✅ Ölçüm 2026-10-06 |
+| 2 | `agents` | `.ai/.templates/agents/` | **2 şablon** (agents-template, subagent-template) | 2 | 62,0 | ✅ Ölçüm 2026-10-06 |
+| 3 | `architecture` | `.ai/.templates/architecture/` | **4 şablon** (architecture-template, ascii-diagram-template, dependency-rule-template, layer-spec-template) | 4 | 139,4 | ✅ Ölçüm 2026-10-06 |
+| 4 | `backend` | `.ai/.templates/backend/` | **3 şablon** (service-template, handler-template, repository-template) | 3 | 94,6 | ✅ Ölçüm 2026-10-06 |
 | 5 | `csharp` | `.ai/.templates/csharp/` | **KLASÖR YOK** - katalogda planlı (§2.1: stok, üretim yok) | 0 | 0,0 | ⬜ Planlı |
-| 6 | `documentation` | `.ai/.templates/documentation/` | **6 şablon** (api-doc, claude-md, docs-md, katman-readme, readme, root-md) | 6 | 137,6 | ✅ Ölçüm 2026-10-01 |
-| 7 | `frontend` | `.ai/.templates/frontend/` | **1 şablon** (form) | 1 | 32,5 | ✅ Ölçüm 2026-10-01 |
-| 8 | `infrastructure` | `.ai/.templates/infrastructure/` | **4 şablon** (migration, dapper-mapping, provider, configuration) | 4 | 125,3 | ✅ Ölçüm 2026-09-25 |
-| 9 | `other` | `.ai/.templates/other/` | **KLASÖR YOK** - PART 6'da `cli-command` şablonu gelecek | 0 | 0,0 | ⬜ Planlı (PART 6) |
-| 10 | `query` | `.ai/.templates/query/` | **1 şablon** (Query-Template) | 1 | 29,2 | ✅ Ölçüm 2026-09-25 |
-| 11 | `testing` | `.ai/.templates/testing/` | **2 şablon** (test-plan, unit-test) | 2 | 57,8 | ✅ Ölçüm 2026-10-01 |
-| 12 | `ui-design` | `.ai/.templates/ui-design/` | **1 şablon** (wireframe) | 1 | 33,9 | ✅ Ölçüm 2026-10-01 |
+| 6 | `documentation` | `.ai/.templates/documentation/` | **8 şablon** (api-doc, claude-md, docs-md, katman-readme, readme, root-md, security-audit, WikiPage) | 8 | 248,2 | ✅ Ölçüm 2026-10-06 |
+| 7 | `frontend` | `.ai/.templates/frontend/` | **3 şablon** (form, component, ribbon) | 3 | 113,0 | ✅ Ölçüm 2026-10-06 |
+| 8 | `infrastructure` | `.ai/.templates/infrastructure/` | **4 şablon** (migration, dapper-mapping, provider, configuration) | 4 | 125,8 | ✅ Ölçüm 2026-10-06 |
+| 9 | `other` | `.ai/.templates/other/` | **2 şablon** (cli-command, winforms-form) | 2 | 70,7 | ✅ Ölçüm 2026-10-06 |
+| 10 | `query` | `.ai/.templates/query/` | **1 şablon** (Query-Template) | 1 | 29,2 | ✅ Ölçüm 2026-10-06 |
+| 11 | `testing` | `.ai/.templates/testing/` | **3 şablon** (test-plan, unit-test, integration-test) | 3 | 102,1 | ✅ Ölçüm 2026-10-06 |
+| 12 | `ui-design` | `.ai/.templates/ui-design/` | **5 şablon** (wireframe, screen-spec, flow, reference, prompt) | 5 | 183,3 | ✅ Ölçüm 2026-10-06 |
 
-**Ölçüm toplamı:** 10 klasör + kök = **36 MD · 946,8 KB** (ölçüm 2026-10-01) · `csharp`/`other` klasörleri hâlâ yok (planlı, 0 MD).
+**Ölçüm toplamı:** 11 klasör + kök = **51 MD · 1.640,4 KB** (ölçüm 2026-10-06) · yalnız `csharp/` yok (planlı, 0 MD) · kök 9 MD · 263,7 KB · klasör 42 MD · 1.376,7 KB.
 
-**Dürüstlük notu:** Tablo 2026-09-25'te diskten okunarak ölçüldü (`Get-ChildItem -Recurse -Filter *.md`); tek kelime kopyalanmadı. `⚠️ VERIFICATION REQUIRED` işaretleri kaldırıldı (12/12 satır ölçüldü). **Klasör varlığı ile katalog satırı ayrıdır:** 6 satır "KLASÖR YOK" = katalogda tanımlı ama henüz üretilmemiş (PART sırasına göre §4.1).
+**Dürüstlük notu:** Tablo 2026-10-06'da diskten okunarak ölçüldü (`Get-ChildItem -Recurse -Filter *.md`); tek kelime kopyalanmadı. `⚠️ VERIFICATION REQUIRED` işaretleri kaldırıldı (12/12 satır ölçüldü). **Klasör varlığı ile katalog satırı ayrıdır:** 1 satır "KLASÖR YOK" (`csharp/` = katalogda tanımlı ama üretilmemiş, §4.1) · `other/` 2026-10-06'da diskte (2 MD · 70,7 KB).
 
-Beyan (hedef disk, **ölçüm 2026-10-06**, `Get-ChildItem -Recurse -File -Force`): `.ai/` = `.templates/` **50 MD** · `prompts/` **2** · `reports/` **1** · **kök 0**. **YOK:** `.rules/` · `.agents/` · `ui-design/` · `index.md` · `CLAUDE.md` · `WORKFLOW.md` · `keys.md` · `log.md` · `.decisions/` · `architecture/` · `checklists/` · `scripts/`. §3'ün 44 satırı **katalog**dur; katalog satırı ≠ disk dosyası (§4.1). Kayıt dışı 5 dosya §7.3 E3–E7. Önceki (2026-10-04) beyanı `kök 14 MD · reports 2 MD` iddia ediyordu, ölçülemedi → düzeltildi (**CF-09**).
+Beyan (hedef disk, **ölçüm 2026-10-06**, `Get-ChildItem -Recurse -File -Force`): `.ai/` = `.templates/` **51 MD** · `wiki/` **36** · `raw/` **21** · `sources/` **21** · `prompts/` **0** · `reports/` **0** · **kök 3** (`CLAUDE.md` · `index.md` · `log.md`). **YOK:** `.rules/` · `.agents/` · `ui-design/` · `WORKFLOW.md` · `keys.md` · `.decisions/` · `architecture/` · `checklists/` · `scripts/`. §3'ün 44 satırı **katalog**dur; katalog satırı ≠ disk dosyası (§4.1) · **51 = 44 envanter kaydı + 7 envanter dışı (§7.3 E1–E7)**. Önceki (2026-10-04) beyanı `kök 14 MD · reports 2 MD` iddia ediyordu, ölçülemedi → düzeltildi (**CF-09**).
 
 ### §1.3 Şablon Türleri
 
@@ -178,7 +178,7 @@ Beyan (hedef disk, **ölçüm 2026-10-06**, `Get-ChildItem -Recurse -File -Force
 | # | Şablon | Yol | Tür | Hedef Dosya | Durum | Sorumlu | Tahmini KB | Part |
 |---|---|---|---|---|---|---|---|---|
 | 1 | `index` | `.ai/.templates/index.md` | `T-ENV` | `.ai/.templates/index.md` | YAZILDI | docs-writer | 38,5 | A |
-| 2 | `CLAUDE` | `.ai/.templates/CLAUDE.md` | `T-DK` | `.ai/.templates/CLAUDE.md` | YAZILDI | master-orchestrator | 6,9 | A |
+| 2 | `CLAUDE` | `.ai/.templates/CLAUDE.md` | `T-DK` | `.ai/.templates/CLAUDE.md` | YAZILDI | master-orchestrator | 7,9 | A |
 | 3 | `session-log-template` | `.ai/.templates/session-log-template.md` | `T-KYT` | `.ai/log.md` | YAZILDI | docs-writer | 22,2 | A |
 | 4 | `adr-template` | `.ai/.templates/adr/adr-template.md` | `T-ADR` | `.ai/.decisions/ADR-NNN-*.md` | YAZILDI | architect | 34,9 | A |
 | 5 | `adr-nygard-template` | `.ai/.templates/adr/adr-nygard-template.md` | `T-ADR` | `.ai/.decisions/ADR-NNN-*.md` | YAZILDI | architect | 31,1 | A |
@@ -330,19 +330,23 @@ Yeni satır eklerken kopyalanacak kalıp (yalnız `{{…}}` doldurulur):
 
 ```text
 C:\versacoder\.ai\                          [ölçüm 2026-10-06]
-+-- .templates\  50 MD  ·  12 alt klasör + 9 kök dosya   ← bu envanter (#1–#44)
-+-- prompts\      2 MD  ·  01 master-enterprise (v2.0.0) · 02 master-installation (v1.0.0)
-+-- reports\      1 MD  ·  conflict-register-001 (CF-01…CF-14)
-+-- kök           0 MD  ·  ⚠️ AŞAMA C'ye kadar ÜRETİLMEZ — §4.3 bağımlılıklar yalnız bağlanır
++-- .templates\  51 MD  ·  11 alt klasör + 9 kök dosya   ← bu envanter (#1–#44)
++-- wiki\        36 MD  ·  36 sayfa
++-- raw\         21 MD  ·  21 dosya
++-- sources\     21 MD  ·  21 dosya
++-- prompts\      0 MD  ·  2 kurulum dosyası silindi (01 master-enterprise · 02 master-installation)
++-- reports\      0 MD  ·  2 rapor silindi (adim4 · conflict-register-001)
++-- kök           3 MD  ·  CLAUDE.md · index.md · log.md (üretilmiş); kalanı AŞAMA C'ye kadar ÜRETİLMEZ — §4.3 bağımlılıklar yalnız bağlanır
 +-- YOK (AŞAMA C)  .rules\  .decisions\  architecture\  checklists\  scripts\  .agents\  ui-design\
-+-- YOK (AŞAMA C)  index.md  CLAUDE.md  WORKFLOW.md  keys.md  log.md  adr\
++-- YOK (AŞAMA C)  WORKFLOW.md  keys.md  adr\
     .templates\ kök dosyalar:
       index.md (#1, BU DOSYA) · CLAUDE.md (#2) · session-log-template.md (#3)
       llm-provider-template · new-doc-contract · winform-form-designer-template
       ascii-box-drawing-prompt · batch-manifest-gate004a · unicode-box-drawing-prompt [EMEKLİ]
     .templates\ alt klasör (MD): adr\ 7 · agents\ 2 · architecture\ 4 · backend\ 3 · query\ 1
       · infrastructure\ 4 · ui-design\ 5 · frontend\ 3 · documentation\ 8 · testing\ 3
-      · other\ 1 (cli-command #44 henüz yok) · csharp\ (boş — stok, §6.5 K6)
+      · other\ 2 (winforms-form #43 · cli-command #44) · csharp\ (yok — planlı, §6.5 K6)
+      = 42 kategori MD + 9 kök MD = 51 MD
 ```
 
 ### §3.11 Bağımlılık Haritası

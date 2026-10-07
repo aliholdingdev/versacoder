@@ -98,7 +98,7 @@ referans ihlaldir. **Test katman değildir** — ayrı projedir (9 üretim + 1-2
 | 3 | `README.md` · `WORKFLOW.md` | tanım · kapı özeti | ✅ 2653 B · 1630 B |
 | 4 | `.ai/index.md` | vault navigasyonu (553 MD, 16 klasör) | ✅ 39,1 KB |
 | 5 | `.ai/CLAUDE.md` | G1..G12 kural metni | ✅ 36 KB |
-| 6 | `.ai/.templates/index.md` | şablon envanteri (38 MD, 10 alt klasör) | ✅ |
+| 6 | `.ai/.templates/index.md` | şablon envanteri (51 MD, 11 alt klasör) | ✅ |
 | 7 | `.ai/.rules/` | 18 MD kural metni | ✅ 18 MD |
 | 8 | `.ai/.decisions/` | ADR-001..030 (0 boşluk) + `adr-index.md` | ✅ 32 MD |
 | 9 | `.ai/architecture/` | katman spec + catalog | ✅ 129 MD |
