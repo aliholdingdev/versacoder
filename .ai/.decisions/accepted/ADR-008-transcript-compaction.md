@@ -49,4 +49,4 @@ silinseydi geçmiş konuşma kanıtı kaybolurdu.
 
 ## §7 İlgili
 
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

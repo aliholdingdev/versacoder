@@ -11,7 +11,7 @@ scope: "08-ascii-art-viewer ekranının wireframe'i: Windows pencere kabuğu (ba
 
 # 08 — ASCII/UNICODE ART VIEWER
 
-**Zorunlu Bağlantılar:** [ui-design/index](README.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
 
 > **Tek cümlelik sorumluluk:** ASCII **ve Unicode** sanat dosyalarını Windows penceresi
 > kabuğu içinde gösteren izleyicinin pencere düğmelerini, bölgelerini ve tıklama akışını tanımlar.

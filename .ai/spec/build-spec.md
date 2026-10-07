@@ -11,7 +11,7 @@ scope: "İki bacak (`net48` + `net10.0-windows`) derleme sırası, koşullu derl
 
 # VersaCoder — Build Şartnamesi (`spec/build-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [packaging-spec](packaging-spec.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [packaging-spec](packaging-spec.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Hangi komutla, hangi sırayla, hangi koşullu derleme kuralıyla derlenir ve yeşil build kanıtı nedir* sorusunun tek cevabıdır.
 

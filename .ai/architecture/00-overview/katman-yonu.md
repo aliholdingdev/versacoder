@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [layer-rules](../../.rules/layer-rules.md)
+**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-rules](../../.rules/layer-rules.md)
 
 # Katman Yönü (tek kaynak)
 
@@ -39,4 +39,4 @@ değildir (ADR-028 §2.3).
 
 ## İlgili
 
-- [layer-rules](../../.rules/layer-rules.md) · [ADR-030](../../.decisions/accepted/ADR-030-5000-layers-class-level.md)
+- [layer-rules](../../.rules/layer-rules.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md)

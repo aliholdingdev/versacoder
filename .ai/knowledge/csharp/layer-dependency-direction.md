@@ -11,8 +11,8 @@ scope: csharp
 
 # Katman Bagimlilik Yonu
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [ADR-028 Katman Temeli](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [SOLID Kurallari](../../.rules/solid-rules.md) | [SOLID Uygulamalari](solid-principles-applications.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [ADR-028 Katman Temeli](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [SOLID Kurallari](../../.rules/solid-rules.md) | [SOLID Uygulamalari](solid-principles-applications.md) | [C Sharp Index](index.md)
+**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
 
 > **Tek cumlelik sorumluluk:** Ok yonu disaridan ice dogrudur; Domain hicbir katmani referans almaz, Application Infrastructure'a bakmaz.
@@ -87,9 +87,9 @@ services.AddSingleton<ISessionRepository, DapperSessionRepository>();
 
 ## §8 İlgili Kaynaklar
 
-- [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [SOLID Kurallari](../../.rules/solid-rules.md) · [SOLID Uygulamalari](solid-principles-applications.md) · [C Sharp Index](index.md)
+- [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [SOLID Kurallari](../../.rules/solid-rules.md) · [SOLID Uygulamalari](solid-principles-applications.md) · [C Sharp Index](index.md)
 
 ## §9 Kanit
 
 - Yon diyagrami ve kural metni SOLID kural dosyasindaki katman bolumunden derlendi. Kaynak: [SOLID Kurallari](../../.rules/solid-rules.md).
-- 9 proje / katman temeli [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) ile sabit; proje sayisi/guncel matris DOĞRULAMA GEREKLİ.
+- 9 proje / katman temeli [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) ile sabit; proje sayisi/guncel matris DOĞRULAMA GEREKLİ.

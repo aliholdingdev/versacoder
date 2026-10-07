@@ -48,5 +48,5 @@ kesilince ürün susardı; anahtar koda girerdi.
 
 ## §7 İlgili
 
-- [ADR-018-secret-dpapi-keys-map.md](ADR-018-secret-dpapi-keys-map.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-018-secret-dpapi-keys-map.md](adr-018-secret-dpapi-keys-map.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

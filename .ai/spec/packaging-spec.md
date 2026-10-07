@@ -11,7 +11,7 @@ scope: "NuGet Central Package Management, Directory.Build.props sorumluluğu ve 
 
 # VersaCoder — Paketleme Şartnamesi (`spec/packaging-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [release-spec](release-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [release-spec](release-spec.md) · [deployment-spec](deployment-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir NuGet paketi nereye, hangi sürümle ve kimin onayıyla girer; proje dosyaları hangi ortak ayarları paylaşır* sorusunun tek cevabıdır.
 

@@ -11,7 +11,7 @@ scope: "23 denetim listesinin tam envanteri, hangisinin hangi kapi/ADR ile ilgis
 
 # checklists — Kapi ve Denetim Listeleri Indeksi
 
-**Zorunlu Baglantilar:** [vault index](../index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [TODOS index](../TODOS/index.md)
+**Zorunlu Baglantilar:** [vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [TODOS index](../ops/todos/index.md)
 
 > **Tek cumlelik sorumluluk:** Bir isin hangi denetim listesinden gectigini, o listeyi
 > ne zaman ve kimin calistiracagini ve RED uretirse ne olacagini tek tabloda soyler.
@@ -31,7 +31,7 @@ GATE-004a (vault olcumu)  -->  GATE-003 (wireframe + onay)  -->
 GATE-004 (iskelet + build + ilk commit)  -->  GATE-005 (test + kapsam)  -->  GATE-006 (teslim)
 ```
 
-> Kapilar [WORKFLOW](../WORKFLOW.md) §1 ile ayni siradadir; **atlanan kapi geri gelir**.
+> Kapilar [WORKFLOW](../governance/workflow.md) §1 ile ayni siradadir; **atlanan kapi geri gelir**.
 > Her kapida once bu dizindeki ilgili liste calistirilir, sonra kanit kutusu doldurulur.
 
 ## §1 Sert Kapi Listeleri (5 — WORKFLOW §2 kaynakli)
@@ -115,4 +115,4 @@ GATE-004 (iskelet + build + ilk commit)  -->  GATE-005 (test + kapsam)  -->  GAT
 
 ## §5 Iliskili Dosyalar
 
-[vault index](../index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [PROJECTS](../PROJECTS.md) · [VISION](../VISION.md) · [keys](../keys.md) · [glossary](../glossary.md) · [log](../log.md) · [TODOS index](../TODOS/index.md) · [ADR-031](../.decisions/draft/ADR-031-visual-production-provider.md)
+[vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [PROJECTS](../definitions/projects.md) · [VISION](../definitions/vision.md) · [keys](../governance/keys.md) · [glossary](../definitions/glossary.md) · [log](../ops/log.md) · [TODOS index](../ops/todos/index.md) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)

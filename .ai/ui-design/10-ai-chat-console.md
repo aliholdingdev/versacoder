@@ -11,7 +11,7 @@ scope: "10-ai-chat-console ekraninin dosya adi sozlesmesi + SSUT yonlendirmesi (
 
 # 10-ai-chat-console (wireframe gecis notu)
 
-**Zorunlu Baglantilar:** [ui-design/README](README.md) · [spec dosyasi](../spec/ai-chat-console-spec.md)
+**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [spec dosyasi](../spec/ai-chat-console-spec.md)
 
 > **Tek cumlelik sorumluluk:** ui-design/10-ai-chat-console.md icinde yasar; tam wireframe ../spec/ai-chat-console-spec.md (SSUT) sorusunun tek cevabidir.
 
@@ -31,5 +31,5 @@ Bu dosya 10-ai-chat-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [ui-design/README](README.md) §0 + §7.1 | ekran adi + onay satiri |
+| 1 | [ui-design/README](readme.md) §0 + §7.1 | ekran adi + onay satiri |
 | 2 | [ai-chat-console-spec](../spec/ai-chat-console-spec.md) | tam wireframe + davranis |

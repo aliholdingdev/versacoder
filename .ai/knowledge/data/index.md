@@ -11,8 +11,8 @@ scope: "knowledge/data altindaki 25 dosyanin kayit defteri: ADO.NET + Dapper, pa
 
 # Veri Erisimi Bilgi Bankasi (knowledge/data/)
 
-**Zorunlu Baglantilar:** [vault index](../../index.md) · [knowledge index](../index.md) · [data-access-rules](../../.rules/data-access-rules.md) · [ADR-005](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) · [ADR-012](../../.decisions/accepted/ADR-012-dual-tfm-data-provider.md)
-**Küme + Hub:** [data index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault index](../../index.md) · [knowledge index](../index.md) · [data-access-rules](../../.rules/data-access-rules.md) · [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [ADR-012](../../.decisions/accepted/adr-012-dual-tfm-data-provider.md)
+**Küme + Hub:** [data index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 
 > **Tek cumlelik sorumluluk:** *Veri erisimi konusunda hangi dosya hangi soruyu cevaplar* sorusunun tek cevabidir.
 > Karar `.decisions/`'te (ADR-005 · ADR-012), kural `.rules/data-access-rules.md`'dedir; bu klasor **bilgi** verir (SRP).
@@ -83,7 +83,7 @@ scope: "knowledge/data altindaki 25 dosyanin kayit defteri: ADO.NET + Dapper, pa
 | Bilgi indeksi | [knowledge index](../index.md) |
 | Vault girisi | [vault index](../../index.md) |
 | Kural | [data-access-rules](../../.rules/data-access-rules.md) |
-| Karar | [ADR-005](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) |
+| Karar | [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) |
 
 ---
 

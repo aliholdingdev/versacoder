@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Kodlama Standartları
 
@@ -80,5 +80,5 @@ duplicate taraması.
 
 ## İlgili
 
-- [rules-index](index.md) · [ADR-002](../.decisions/accepted/ADR-002-vault-ownership-no-copy.md)
-- [ADR-003](../.decisions/accepted/ADR-003-vault-structure-500md-frontmatter.md)
+- [rules-index](index.md) · [ADR-002](../.decisions/accepted/adr-002-vault-ownership-no-copy.md)
+- [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md)

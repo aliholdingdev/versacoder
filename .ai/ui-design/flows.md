@@ -11,7 +11,7 @@ scope: "giris -> 01-start-page -> 02-main-ide -> 03/04/05/06 -> 07-settings omur
 
 # flows.md - Ekranlar Arası Geçiş Akışları
 
-**Zorunlu Baglantilar:** [ui-design/index](README.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [08-ascii-art-viewer](08-ascii-art-viewer.md) · [VISION](../VISION.md) · [WORKFLOW](../WORKFLOW.md) · [gate-003 checklist](../checklists/gate-003-ui-onay.md)
+**Zorunlu Baglantilar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [08-ascii-art-viewer](08-ascii-art-viewer.md) · [VISION](../definitions/vision.md) · [WORKFLOW](../governance/workflow.md) · [gate-003 checklist](../checklists/gate-003-ui-onay.md)
 
 > **Tek cumlelik sorumluluk:** Uygulama girisinden 8 ekrana nasil ulasilip her ekrandan
 > nereye cikildigi sorusunun tek cevabidir.
@@ -151,7 +151,7 @@ Ok aciklamasi: `-->` yonlu geçiş, `+-->` dal, `[...]` tetik. Kutu cizimi yalni
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [01..08 wireframe](README.md) §3 etkileşim kuralları | tetik -> hedef eslesmesi |
-| 2 | [VISION](../VISION.md) §2.3-§2.9 | ekran akış adimlari |
+| 1 | [01..08 wireframe](readme.md) §3 etkileşim kuralları | tetik -> hedef eslesmesi |
+| 2 | [VISION](../definitions/vision.md) §2.3-§2.9 | ekran akış adimlari |
 | 3 | [gate-003 checklist](../checklists/gate-003-ui-onay.md) soru 8 | giriş/çıkış zorunlulugu |
-| 4 | [WORKFLOW](../WORKFLOW.md) | flows.md eslikci dosya sarti |
+| 4 | [WORKFLOW](../governance/workflow.md) | flows.md eslikci dosya sarti |

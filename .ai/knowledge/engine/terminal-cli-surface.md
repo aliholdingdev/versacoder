@@ -11,8 +11,8 @@ scope: "VersaCoder.Cli konsol yuzeyi: l0..l6 ortek cekirdek (ADR-010), ekran kar
 
 # Terminal / CLI Yuzeyi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../VISION.md) · [glossary](../../glossary.md) · [ADR-010](../../.decisions/accepted/ADR-010-cli-desktop-shared-core.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [glossary](../../definitions/glossary.md) · [ADR-010](../../.decisions/accepted/adr-010-cli-desktop-shared-core.md)
+**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [keys](../../governance/keys.md)
 **Kardeşler (engine · 4/8):** [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [protocol-tool-schema](protocol-tool-schema.md) · [wizard-approval-flow](wizard-approval-flow.md)
 
 > **Tek cumlelik sorumluluk:** *Bir is ekrandan mi CLIden mi yapilir, cekirdek nerede ortaktir* sorusunun tek cevabidir.
@@ -94,7 +94,7 @@ scope: "VersaCoder.Cli konsol yuzeyi: l0..l6 ortek cekirdek (ADR-010), ekran kar
 | Streaming ciktisi (05) | [agent-streaming-sse](agent-streaming-sse.md) |
 | Oturum / kanit kapanisi | [session-checkpoint-persistence](session-checkpoint-persistence.md) |
 | Paralel sinir (CI'da da gecerli) | [parallel-batch-limit](parallel-batch-limit.md) |
-| Terimler | [glossary](../../glossary.md) |
+| Terimler | [glossary](../../definitions/glossary.md) |
 
 ---
 

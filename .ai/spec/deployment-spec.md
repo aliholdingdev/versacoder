@@ -11,7 +11,7 @@ scope: "Masaüstü dağıtımı (MSI / ClickOnce / taşınabilir notlar) ve CLI 
 
 # VersaCoder — Dağıtım Şartnamesi (`spec/deployment-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [release-spec](release-spec.md) · [packaging-spec](packaging-spec.md) · [migration-spec](migration-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [release-spec](release-spec.md) · [packaging-spec](packaging-spec.md) · [migration-spec](migration-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Masaüstü uygulaması ile CLI hangi araçla, hangi makineye ve nasıl geri alınarak dağıtılır* sorusunun tek cevabıdır.
 > CI matrisi/rollback adımları `.rules/deployment-guide.md` §2–§4'tedir (tekrar yok); bu belge **dağıtım kanalı seçimi ve kurulum davranışı**dır.

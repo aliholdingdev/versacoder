@@ -11,7 +11,7 @@ scope: "Bütçe değerleri `.rules/performance-guidelines.md` (B1..B10); bu belg
 
 # VersaCoder — Performans Ölçüm Şartnamesi (`spec/performance-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bütçe ihlalini **kim, hangi araçla, kaç örnekle** kanıtlar ya da temizler* sorusunun tek cevabıdır.
 > Bütçe **değerleri** `.rules/performance-guidelines.md` §1 (B1..B10) dosyasındadır — burada **tekrar edilmez** (SSOT); bu belge yalnız **ölçüm yöntemi + kabul kanıtı**dır.

@@ -11,7 +11,7 @@ scope: "04-code-editor ekranının wireframe'i: sekme şeridi, kod alanı, outli
 
 # 04 — CODE EDITOR
 
-**Zorunlu Bağlantılar:** [ui-design/index](README.md) · [02-main-ide](02-main-ide.md) · [03-solution-explorer](03-solution-explorer.md) · [.rules/data-access-rules.md](../.rules/data-access-rules.md) · [spec/test-strategy.md](../spec/test-strategy.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [02-main-ide](02-main-ide.md) · [03-solution-explorer](03-solution-explorer.md) · [.rules/data-access-rules.md](../.rules/data-access-rules.md) · [spec/test-strategy.md](../spec/test-strategy.md) · [devexpress-rules](../.rules/devexpress-rules.md)
 
 > **Tek cümlelik sorumluluk:** Kod editörünün hangi panellerden oluştuğu, kaydetme/analiz
 > akışının nereye gittiği sorusunun tek cevabıdır.

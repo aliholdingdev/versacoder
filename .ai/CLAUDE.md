@@ -11,7 +11,7 @@ scope: "Vault genelinde bağlayıcı 12 hard guardrail (G1..G12), yasak listesi,
 
 # VersaCoder — AI Anayasası (`CLAUDE.md`)
 
-**Zorunlu Bağlantılar:** [index](index.md) · [WORKFLOW](WORKFLOW.md) · [ROLE](ROLE.md) · [AGENTS](AGENTS.md) · [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md) · [MEMORY](MEMORY.md) · [log](log.md) · [keys](keys.md)
+**Zorunlu Bağlantılar:** [index](index.md) · [WORKFLOW](governance/workflow.md) · [ROLE](definitions/role.md) · [AGENTS](definitions/agents.md) · [ADR-028](.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md) · [MEMORY](memory/memory.md) · [log](ops/log.md) · [keys](governance/keys.md)
 
 > **Tek cümlelik sorumluluk:** *Hangi davranış kesinlikle yasak, bilgi yoksa ne yazılır,
 > kanıt nasıl sunulur, ne zaman durulur* sorusunun tek cevabıdır.
@@ -127,7 +127,7 @@ G12 KOTU : GATE-003 kapalıyken Program.cs'e satır eklemek
 ```
 
 **Karıştırma belirtisi:** kutuda `BASLIK` ya da `RİSK` satırı görürsen bu ajan
-kutusudur ([AGENTS.md](AGENTS.md) §3); gate kanıtı geçersiz sayılır.
+kutusudur ([AGENTS.md](definitions/agents.md) §3); gate kanıtı geçersiz sayılır.
 
 ### §3.3 Hata raporu biçimi
 
@@ -182,7 +182,7 @@ kutusudur ([AGENTS.md](AGENTS.md) §3); gate kanıtı geçersiz sayılır.
 
 ## §5 Katman Yasakları (ADR-028 bağlayıcı)
 
-**Bağlayıcı:** [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md)
+**Bağlayıcı:** [ADR-028](.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md)
 
 ### §5.1 İzinli yön (saf ASCII)
 
@@ -257,7 +257,7 @@ Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index
 | 2 | **9 üretim + 1-2 test projesi** | en fazla 11 `.csproj` × 2 TFM | ADR-028 §2.1 |
 | 3 | **5440 katalog kaydı** | `count-components` = PASS | ADR-028 §4 |
 | 4 | **500 MD** | GATE-004a eşiği | vault gate eşiği |
-| 5 | **7 ekran** | `01-start-page` … `07-settings` | [VISION](VISION.md) |
+| 5 | **7 ekran** | `01-start-page` … `07-settings` | [VISION](definitions/vision.md) |
 
 > Kaynaksız hücreye **`DOĞRULAMA GEREKLI`** yazılır; tahmin sayı girmez (G9).
 
@@ -322,14 +322,14 @@ Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index
 | 6 | Navigasyon · karar defteri · oturum durumu | `index.md` · `brain.md` · `MEMORY.md` |
 | 7 | Prompt kaynağı (mimari) | `G:/…/versacoder proje planlaması ai.08.md` |
 | 8 | Prompt kaynağı (proje tanımı) | `G:/…/versacoder proje planlaması ai.04.md` |
-| CLAUDE | [CLAUDE](CLAUDE.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
-| engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| PROJECTS | [PROJECTS](PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| ULTRA | [ULTRA](ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok CLAUDE | [kok CLAUDE](../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok README | [kok README](../README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok AGENTS | [kok AGENTS](../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok WORKFLOW | [kok WORKFLOW](../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| CLAUDE | [CLAUDE](claude.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| engine | [engine](definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| PROJECTS | [PROJECTS](definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| ULTRA | [ULTRA](definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok CLAUDE | [kok CLAUDE](../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok README | [kok README](../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok AGENTS | [kok AGENTS](../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok WORKFLOW | [kok WORKFLOW](../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |

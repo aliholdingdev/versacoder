@@ -11,7 +11,7 @@ scope: "l4 veri alt kümesi: repository sınırı, parameterized SQL zorunluluğ
 
 # VersaCoder — Veri Katmanı Şartnamesi (`spec/data-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [infra-layer-spec](infra-layer-spec.md) · [migration-spec](migration-spec.md) · [security-spec](security-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [infra-layer-spec](infra-layer-spec.md) · [migration-spec](migration-spec.md) · [security-spec](security-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Veritabanına kim, hangi teknolojiyle, hangi SQL biçimiyle ve hangi timeout ile ulaşır* sorusunun tek cevabıdır.
 > Kural listesi `.rules/data-access-rules.md` (DA-01..DA-16), şema değişikliği [migration-spec](migration-spec.md)'tedir — bu belge **sınır ve davranış**tır.

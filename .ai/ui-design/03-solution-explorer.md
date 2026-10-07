@@ -11,7 +11,7 @@ scope: "03-solution-explorer ekranının wireframe'i: TreeList kolonları, arama
 
 # 03 — SOLUTION EXPLORER
 
-**Zorunlu Bağlantılar:** [ui-design/index](README.md) · [02-main-ide](02-main-ide.md) · [04-code-editor](04-code-editor.md) · [ui-rules](../.rules/ui-rules.md) · [.rules/data-access-rules.md](../.rules/data-access-rules.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
+**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [02-main-ide](02-main-ide.md) · [04-code-editor](04-code-editor.md) · [ui-rules](../.rules/ui-rules.md) · [.rules/data-access-rules.md](../.rules/data-access-rules.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
 
 > **Tek cümlelik sorumluluk:** Proje ağacının hangi alanlardan oluştuğu, arama/sağ-tık akışının
 > nereye gittiği sorusunun tek cevabıdır.
@@ -125,6 +125,6 @@ Sağ tık menüsü (ayrı pencere):
 | 1 | Kaynak wireframe `ui-design/03-solution-explorer.md` (eski vault) | alan/ağaç/menü listesi |
 | 2 | [.rules/data-access-rules.md](../.rules/data-access-rules.md) DA-01 | formda SQL yok |
 | 3 | [ui-rules](../.rules/ui-rules.md) | klavye gezinme + kontrast |
-| 4 | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | ağaç verisi l5/l4 yolu |
+| 4 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | ağaç verisi l5/l4 yolu |
 
 > `IProjectTreeService` arayüz adı taslaktır; kesinleştiği yer `l0` (`DOĞRULAMA GEREKLİ`).

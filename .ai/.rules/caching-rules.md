@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Önbellek Kuralları
 
@@ -32,4 +32,4 @@ supersedes: ""
 
 ## İlgili
 
-- [rules-index](index.md) · [ADR-032](../.decisions/accepted/ADR-032-ai-control-plane.md) §2.10
+- [rules-index](index.md) · [ADR-032](../.decisions/accepted/adr-032-ai-control-plane.md) §2.10

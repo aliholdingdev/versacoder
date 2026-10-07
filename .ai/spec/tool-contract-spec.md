@@ -11,7 +11,7 @@ scope: "Tool çağrısının çalışma sözleşmesi: girdi/çıktı zarfı davr
 
 # VersaCoder — Tool Çalışma Sözleşmesi (`spec/tool-contract-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [tool-spec](tool-spec.md) · [protocol-layer-spec](protocol-layer-spec.md) · [security-spec](security-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [tool-spec](tool-spec.md) · [protocol-layer-spec](protocol-layer-spec.md) · [security-spec](security-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir tool çağrısı hangi girdiyle başlar, hangi çıktı/zaman/asgari garantiyle biter, hata ve timeout'ta ne olur* sorusunun tek cevabıdır.
 > **Tanım/şema/izin/sandbox** [tool-spec](tool-spec.md)'tedir; **zarf tipi** [protocol-layer-spec](protocol-layer-spec.md) §2'dedir — bu belge yalnız **çalışma (runtime) sözleşmesidir**.

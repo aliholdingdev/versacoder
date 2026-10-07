@@ -11,7 +11,7 @@ scope: "5000+ katmanin (tip + dugum + uretim .dll) nasil uretildigi, adlandirild
 
 # Spec — 5000+ Katman (`spec/layering-5000-spec.md`)
 
-**Zorunlu Baglantilar:** [index](index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [test-strategy](test-strategy.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [ADR-030](../.decisions/accepted/ADR-030-5000-layers-class-level.md) · [ADR-014](../.decisions/accepted/ADR-014-slnx-and-cpm.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [layer-rules](../.rules/layer-rules.md)
+**Zorunlu Baglantilar:** [index](index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [test-strategy](test-strategy.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [ADR-030](../.decisions/accepted/adr-030-5000-layers-class-level.md) · [ADR-014](../.decisions/accepted/adr-014-slnx-and-cpm.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-rules](../.rules/layer-rules.md)
 
 > **Tek cumlelik sorumluluk:** *5000+ katman (tip **ve** dugum) hangi kuralla uretilir, kademe nasil olculur, yon grubu nasil buyur ve hangi gate'e baglanir* sorusunun tek cevabi.
 > Gereksinim kimligi bicimi: **`VC-LAY-NNN`**. Her madde test edilebilir yazilir (G5).

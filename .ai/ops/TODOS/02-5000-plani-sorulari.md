@@ -11,7 +11,7 @@ scope: "5000+ maddelik katmanli mimari plani uretmek icin kullaniciya sorulacak 
 
 # Faz 02 — 5000+ Katmanlı Plan Soruları
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [VISION](../VISION.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [spec index](../spec/index.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [VISION](../../definitions/vision.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [spec index](../../spec/index.md) · [WORKFLOW](../../governance/workflow.md)
 
 > **Tek cümlelik sorumluluk:** 5000+ maddelik katmanlı mimari planın hangi birimde,
 

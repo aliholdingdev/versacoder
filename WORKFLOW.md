@@ -11,7 +11,7 @@ scope: "Repo kökü; kapı adları ve sırası - kapı kriterleri .ai/WORKFLOW.m
 
 # WORKFLOW — Kapı zinciri (özet)
 
-**Zorunlu Bağlantılar:** [index](.ai/index.md) · [templates](.ai/.templates/index.md) · [WORKFLOW](.ai/WORKFLOW.md) · [checklists](.ai/checklists/index.md) · [log](.ai/log.md) · [AGENTS](.ai/AGENTS.md)
+**Zorunlu Bağlantılar:** [index](.ai/index.md) · [templates](.ai/.templates/index.md) · [WORKFLOW](.ai/governance/workflow.md) · [checklists](.ai/checklists/index.md) · [log](.ai/ops/log.md) · [AGENTS](.ai/definitions/agents.md)
 
 > **Tek cümlelik sorumluluk:** kapı adlarını ve sırasını tek satırda verir; kapı
 > kriterleri, kanıt kutusu biçimi ve durum SSOT dosyalardadır — burada tekrarlanmaz.
@@ -33,12 +33,12 @@ GATE-004a (vault) -> GATE-003 (UI onayi, HARD STOP) -> GATE-004 (iskelet + ilk c
 ## §2 Kural (tek satır)
 
 - **Kapıyı yalnız kullanıcı açar**; RED veren kapı işi üreten ajana döndürür,
-  başka ajana devredilmez — [`AGENTS`](.ai/AGENTS.md) §1.3.
+  başka ajana devredilmez — [`AGENTS`](.ai/definitions/agents.md) §1.3.
 - **Sıra atlanmaz:** `GATE-003` onayından **önce** `src/**` altına tek satır `.cs` yazılmaz.
-- **Kapı RED'i strike sayılmaz** (gate kuralı, ajan yöntemi değil) — [`AGENTS`](.ai/AGENTS.md) §4.3.
+- **Kapı RED'i strike sayılmaz** (gate kuralı, ajan yöntemi değil) — [`AGENTS`](.ai/definitions/agents.md) §4.3.
 - **Tam metin** (kapı kriterleri, kanıt kutusu `KANIT/DOSYA/EKSIK/SONRAKI`, süreler):
-  [`WORKFLOW`](.ai/WORKFLOW.md) §2.
-- **Günlük durum** (hangi kapı açık/kapalı, son onay ne zaman): [`log`](.ai/log.md)
+  [`WORKFLOW`](.ai/governance/workflow.md) §2.
+- **Günlük durum** (hangi kapı açık/kapalı, son onay ne zaman): [`log`](.ai/ops/log.md)
   son kaydı — burada tahmin yazılmaz.
 - **Kapalı soru:** "kapı kriteri tam nedir?" → `.ai/WORKFLOW.md`;
   "şimdi durum ne?" → `.ai/log.md`.
@@ -71,17 +71,17 @@ Bu dosyanin diger 18 vault dosyasina baglantilari (eksiksiz; hicbir baglanti sil
 
 | # | Dosya | Ne tasiyor |
 |---|---|---|
-| CLAUDE | [CLAUDE](.ai/CLAUDE.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
-| ROLE | [ROLE](.ai/ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](.ai/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](.ai/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| VISION | [VISION](.ai/VISION.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](.ai/PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](.ai/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| keys | [keys](.ai/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
-| MEMORY | [MEMORY](.ai/MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| ULTRA | [ULTRA](.ai/ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.ai/.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok CLAUDE | [kok CLAUDE](./CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok README | [kok README](./README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok AGENTS | [kok AGENTS](./AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| CLAUDE | [CLAUDE](.ai/claude.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| ROLE | [ROLE](.ai/definitions/role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [engine](.ai/definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.ai/.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| VISION | [VISION](.ai/definitions/vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [PROJECTS](.ai/definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](.ai/definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| keys | [keys](.ai/governance/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
+| MEMORY | [MEMORY](.ai/memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| ULTRA | [ULTRA](.ai/definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.ai/.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok CLAUDE | [kok CLAUDE](claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok README | [kok README](readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok AGENTS | [kok AGENTS](agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

@@ -11,7 +11,7 @@ scope: "Tema + ribbon stili (yalnız Office2010), koyu/acik tercihi ve özel ren
 
 # Tema Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [ui-shell](ui-shell-spec.md) · [localization](localization-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [ui-shell](ui-shell-spec.md) · [localization](localization-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Hangi görünüm (skin) ve ribbon stili kullanılır, koyu/açık tercihi nasıl uygulanır, neler bilinçli kapsam dışıdır* sorusunun tek cevabıdır.
 > **Değiştirilemez:** `RibbonControlStyle.Office2010` (ADR-004 / G3). Bu satırı kıran kod RED'dir.

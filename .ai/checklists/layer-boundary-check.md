@@ -11,7 +11,7 @@ scope: "Katman siniri 13 sorusu — ADR-028 8x8 matris, NetArchTest, yon yasakla
 
 # Katman Siniri Kontrolu — 13 Soru
 
-**Zorunlu Baglantilar:** [checklist index](index.md) · [vault index](../index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [TODOS index](../TODOS/index.md)
+**Zorunlu Baglantilar:** [checklist index](index.md) · [vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [TODOS index](../ops/todos/index.md)
 
 > **Tek cumlelik sorumluluk:** Mimari ciktinin ADR-028 yon matrisinden gecip gecmedigini 13 maddeyle denetler.
 
@@ -19,17 +19,17 @@ scope: "Katman siniri 13 sorusu — ADR-028 8x8 matris, NetArchTest, yon yasakla
 
 - **Kullanim:** bu gecisten once yukaridan asagi tek tek isaretlenir; **1 madde bile bossa RED**.
 - **Kapatan:** kullanici — bu liste yalniz kanit hazirlar (G12).
-- **Kanit bicimi:** [WORKFLOW](../WORKFLOW.md) §2 4 satir (`KANIT/DOSYA/EKSIK/SONRAKI`).
-- **Sira:** [WORKFLOW](../WORKFLOW.md) §1 gate sirasinda ilgili kapidan **once** calistirilir.
+- **Kanit bicimi:** [WORKFLOW](../governance/workflow.md) §2 4 satir (`KANIT/DOSYA/EKSIK/SONRAKI`).
+- **Sira:** [WORKFLOW](../governance/workflow.md) §1 gate sirasinda ilgili kapidan **once** calistirilir.
 
 ### §0.1 Calistirma zamanlamasi
 
 | Alan | Deger |
 |---|---|
 | Ne zaman | ilgili is baslamadan **once** (on-kontrol) ya da kapi kapanisinda (kanit) |
-| Kim hazirlar | isin ureticisi (matristeki ajan — [AGENTS](../AGENTS.md) §2) |
+| Kim hazirlar | isin ureticisi (matristeki ajan — [AGENTS](../definitions/agents.md) §2) |
 | Kim kapatir | **yalniz kullanici** (G12) |
-| Suresi asilirsa | is durur + [log](../log.md) raporu (WORKFLOW §2, 20 dk esigi) |
+| Suresi asilirsa | is durur + [log](../ops/log.md) raporu (WORKFLOW §2, 20 dk esigi) |
 | Kanit kutusu | §4 — 4 satir, `EKSIK` bos birakilmaz |
 
 ## §1 Kabul Kriterleri (13 madde)
@@ -78,9 +78,9 @@ SONRAKI : <adim, ~ sure>
 
 ## §5 Kaynak (bu liste nereden turetilmistir)
 
-- [WORKFLOW](../WORKFLOW.md) §2.4 (GATE-005 kabul kriteri + 13 soru madde 3) · §3.3 (izinli yon tablosu)
-- [CLAUDE](../CLAUDE.md) §5 (katman yasaklari + 8x8 matris) · §2 (tespit komutlari)
-- [brain](../brain.md) §1.1 ADR-013/028 yakalama satirlari · §4.1 (RED tablosu)
+- [WORKFLOW](../governance/workflow.md) §2.4 (GATE-005 kabul kriteri + 13 soru madde 3) · §3.3 (izinli yon tablosu)
+- [CLAUDE](../claude.md) §5 (katman yasaklari + 8x8 matris) · §2 (tespit komutlari)
+- [brain](../.decisions/brain.md) §1.1 ADR-013/028 yakalama satirlari · §4.1 (RED tablosu)
 - ADR-028 §2.3 madde 2 (matris = NetArchTest) · §C6 duzeltme 2
 - **Turetme notu:** orijinal "13 soru" metni vaultta yoktur; 13 madde yukaridaki kaynaklardaki yasak/kabul maddelerinden **turetilmistir** -> `DOĞRULAMA GEREKLI`
 
@@ -90,7 +90,7 @@ SONRAKI : <adim, ~ sure>
 
 ## §6 Iliskili Dosyalar
 
-[index](index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [PROJECTS](../PROJECTS.md) · [VISION](../VISION.md) · [keys](../keys.md) · [glossary](../glossary.md) · [log](../log.md) · [TODOS index](../TODOS/index.md) · [ADR-031](../.decisions/draft/ADR-031-visual-production-provider.md)
+[index](index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [PROJECTS](../definitions/projects.md) · [VISION](../definitions/vision.md) · [keys](../governance/keys.md) · [glossary](../definitions/glossary.md) · [log](../ops/log.md) · [TODOS index](../ops/todos/index.md) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)
 
 ### §6.1 Ayni gecisten gecen diger checklist'ler
 

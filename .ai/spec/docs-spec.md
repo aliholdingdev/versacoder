@@ -11,7 +11,7 @@ scope: "Vault MD dosyasının zorunlu yapısı (frontmatter, §0, tablo, boyut),
 
 # VersaCoder — Belge (Vault/MD) Şartnamesi (`spec/docs-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [test-strategy](test-strategy.md) · [review-spec](review-spec.md) · [build-spec](build-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [test-strategy](test-strategy.md) · [review-spec](review-spec.md) · [build-spec](build-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Vault'a yazılan her `.md` dosyası hangi yapıya uyar, hangi hedeflere link verir ve neyle kanıtlanır* sorusunun tek cevabıdır.
 > Üretim şablonu `.ai/.templates/new-doc-contract.md` (batch kuralları); bu belge **şartnamedir** — ihlalini `review-spec` §2.1.6 üzerinden `reviewer` RED eder.

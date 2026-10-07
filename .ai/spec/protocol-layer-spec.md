@@ -11,7 +11,7 @@ scope: "l5 (N33–N37) katman sınırı, sürümleme el sıkışması ve fail-cl
 
 # VersaCoder — Protokol Katmanı Şartnamesi (`spec/protocol-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [protocol-spec](protocol-spec.md) · [tool-contract-spec](tool-contract-spec.md) · [session-spec](session-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [protocol-spec](protocol-spec.md) · [tool-contract-spec](tool-contract-spec.md) · [session-spec](session-spec.md)
 
 > **Tek cümlelik sorumluluk:** *l5 hangi mesajları/şemaları taşır, hangi katmanlara bakmaz ve sürüm uyuşmazlığında nasıl davranır* sorusunun tek cevabıdır.
 > Mesaj zarfının **içeriği** (tip adları, alanlar) [protocol-spec](protocol-spec.md)'tadır; bu belge **katman sınırı + sürüm kuralı** ile sınırlıdır (SSOT).

@@ -11,7 +11,7 @@ scope: "Değişiklik gösterimi (satır diff), kabul/geri alma eylemleri, onay k
 
 # Diff Görünümü Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [code-editor](code-editor-spec.md) · [error-handling](error-handling-spec.md) · [persistence](persistence-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [code-editor](code-editor-spec.md) · [error-handling](error-handling-spec.md) · [persistence](persistence-spec.md)
 
 > **Tek cümlelik sorumluluk:** *İki metin arasındaki fark nasıl gösterilir ve bir değişiklik ne zaman kabul edilir/geri alınır* sorusunun tek cevabıdır.
 > Diff **salt okunur bir görüntüdür**; dosyaya yalnız kabul/geri alma eylemi yazar.

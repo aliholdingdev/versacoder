@@ -11,7 +11,7 @@ scope: "l4 (N25–N32) sekiz alt katman sınırı — provider, fs, git, llm-htt
 
 # VersaCoder — Altyapı Katmanı Şartnamesi (`spec/infra-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [security-spec](security-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [tool-contract-spec](tool-contract-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [security-spec](security-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [tool-contract-spec](tool-contract-spec.md)
 
 > **Tek cümlelik sorumluluk:** *l4'ün sekiz alt katmanı hangi somut teknolojiyi kullanır, hangi arayüzle yukarı döner ve nerede durur* sorusunun tek cevabıdır.
 > Veri erişim **kuralları** [data-layer-spec](data-layer-spec.md)'te, migration akışı [migration-spec](migration-spec.md)'tadır (tekrar yok).

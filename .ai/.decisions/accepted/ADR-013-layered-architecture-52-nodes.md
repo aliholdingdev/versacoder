@@ -50,6 +50,6 @@ Sayım tek kaynaktan gelir (ADR-027); sayaç script'tedir, elle sayılmaz.
 
 ## §7 İlgili
 
-- [ADR-028-layered-baseline-9-projects.md](ADR-028-layered-baseline-9-projects.md)
-- [ADR-030-5000-layers-class-level.md](ADR-030-5000-layers-class-level.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-028-layered-baseline-9-projects.md](adr-028-layered-baseline-9-projects.md)
+- [ADR-030-5000-layers-class-level.md](adr-030-5000-layers-class-level.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

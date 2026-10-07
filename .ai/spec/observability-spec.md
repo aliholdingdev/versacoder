@@ -11,7 +11,7 @@ scope: "Log, metrik ve izleme - biçim, seviye, sink'ler, sayaçlar ve korelasyo
 
 # Gözlemlenebilirlik Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [notification](notification-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [notification](notification-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Ne loglanır, ne ölçülür, nasıl izlenir ve bunların hepsi l3 Crosscutting ile nasıl tutarlı kalır* sorusunun tek cevabıdır.
 > **SSOT:** log/cache/clock/config/retry arayüzleri [l3 Crosscutting](../architecture/index.md) şartnamesindedir; bu dosya yalnız **kullanım sözleşmesini** yazar.

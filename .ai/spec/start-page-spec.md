@@ -11,7 +11,7 @@ scope: "Karşılama ekranı: son projeler, hızlı aksiyonlar, arama ve açılı
 
 # Start Page Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [project-model](project-model-spec.md) · [ui-shell](ui-shell-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [project-model](project-model-spec.md) · [ui-shell](ui-shell-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Uygulama açıldığında kullanıcı ne görür, son proje listesi nereden gelir ve hızlı aksiyonlar hangi komuta gider* sorusunun tek cevabıdır.
 > Start Page bir **karşılama görünümüdür**; proje açma işleminin kendisi [project-model](project-model-spec.md) kapsamındadır.

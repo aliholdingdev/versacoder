@@ -191,6 +191,6 @@ kriteri revize edilmiştir.
 
 ## §6 İlgili
 
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
-- [ADR-028](ADR-028-layered-baseline-9-projects.md) (product katman baz)
-- [ADR-029](ADR-029-ascii-box-drawing-only.md) (D22 revizyonu bu ADR'de)
+- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [ADR-028](adr-028-layered-baseline-9-projects.md) (product katman baz)
+- [ADR-029](adr-029-ascii-box-drawing-only.md) (D22 revizyonu bu ADR'de)

@@ -12,7 +12,7 @@ scope: "async tum yol kurali, ConfigureAwait secimi, beklemenin yasak oldugu iki
 # async-await-basics — Asenkron yazım temeli
 
 **Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [cancellation-token-policy](cancellation-token-policy.md) · [task-vs-value-task](task-vs-value-task.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp 6/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir is asenkron nasil yazilir, `ConfigureAwait` nerede kirma yapar ve asenkron zincir hangi uc noktada kirilir* sorusunun tek cevabidir.
@@ -61,7 +61,7 @@ Tek kural **async all the way**: asenkron bir metodu cagiriyorsan cagiran da `as
 | `PeriodicTimer` | Yok — .NET 6+ | Var |
 | CA2007 (ConfigureAwait dogrulama) | analiz eklentisiyle | SDK analizleriyle yerlesik |
 
-> **TAHHUT:** `net48`'de `await foreach` acmak uc parcali karardir: paket referansi + `LangVersion` + test. Tek bacaga yazilan asenkron kod diger bacagi kiratmadan once deney degil, karardir — [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) baglaminda `architect` onayi gerekir.
+> **TAHHUT:** `net48`'de `await foreach` acmak uc parcali karardir: paket referansi + `LangVersion` + test. Tek bacaga yazilan asenkron kod diger bacagi kiratmadan once deney degil, karardir — [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) baglaminda `architect` onayi gerekir.
 
 ## §3 Ornek: iki katman, iki yazim
 

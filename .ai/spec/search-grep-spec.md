@@ -11,7 +11,7 @@ scope: "Kod içinde arama: grep (içerik) ve glob (dosya adı), sonuç listesi, 
 
 # Arama (grep/glob) Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [task-queue](task-queue-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [task-queue](task-queue-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir kalıp proje genelinde nasıl taranır, sonuçlar nasıl listelenir ve tıklayınca editör nasıl açılır* sorusunun tek cevabıdır.
 > Arama **salt okunurdur**; dosyaya hiç yazmaz, hedefi workspace kökü dışında olamaz.

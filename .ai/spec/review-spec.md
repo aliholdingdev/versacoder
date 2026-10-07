@@ -11,10 +11,10 @@ scope: "İnceleme ölçütleri, bulgu biçimi ve seviyeleri, PASS (GREEN) / RED 
 
 # VersaCoder — Kod İnceleme Şartnamesi (`spec/review-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [docs-spec](docs-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [docs-spec](docs-spec.md)
 
 > **Tek cümlelik sorumluluk:** *İnceleme hangi ölçütlerle yapılır, bulgu nasıl yazılır ve PASS/RED neye kanıtlanır* sorusunun tek cevabıdır.
-> Rol/SLA/devre akışı `.ai/AGENTS.md` §2.3 ve [WORKFLOW](../WORKFLOW.md) §3'tedir (tekrar yok); bu belge **ölçüt + karar kanıtı**dır.
+> Rol/SLA/devre akışı `.ai/AGENTS.md` §2.3 ve [WORKFLOW](../governance/workflow.md) §3'tedir (tekrar yok); bu belge **ölçüt + karar kanıtı**dır.
 
 ---
 
@@ -30,7 +30,7 @@ scope: "İnceleme ölçütleri, bulgu biçimi ve seviyeleri, PASS (GREEN) / RED 
 |---|---|---|
 | 1 | İnceleme ölçütleri (statik + mimari + iki bacak) | Test **üretimi**: [test-strategy](test-strategy.md) |
 | 2 | Bulgu biçimi, seviye tanımı, RED dönüş yolu | Rol yetkisi/SLA: `.ai/AGENTS.md` §2.3 |
-| 3 | GREEN için zorunlu kanıt seti | Gate çıkış kontrolü: [WORKFLOW](../WORKFLOW.md) §3 |
+| 3 | GREEN için zorunlu kanıt seti | Gate çıkış kontrolü: [WORKFLOW](../governance/workflow.md) §3 |
 | 4 | Vault/MD inceleme ölçütları | Belge kuralları: [docs-spec](docs-spec.md) |
 | 5 | Performans ölçümünün incelemeye girişi | Ölçüm yöntemi: [performance-spec](performance-spec.md) |
 

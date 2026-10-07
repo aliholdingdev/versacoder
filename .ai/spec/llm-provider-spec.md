@@ -11,7 +11,7 @@ scope: "OpenRouter ve NVIDIA NIM LLM sağlayıcılarının port sözleşmesi (IA
 
 # LLM Provider Spec — OpenRouter + NVIDIA NIM
 
-**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [tool-spec](tool-spec.md) · [protocol-spec](protocol-spec.md) · [cli-spec](cli-spec.md) · [session-spec](session-spec.md) · [security-rules](../.rules/security-rules.md) · [data-access-rules](../.rules/data-access-rules.md)
+**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [tool-spec](tool-spec.md) · [protocol-spec](protocol-spec.md) · [cli-spec](cli-spec.md) · [session-spec](session-spec.md) · [security-rules](../.rules/security-rules.md) · [data-access-rules](../.rules/data-access-rules.md)
 
 > **Tek cümlelik sorumluluk:** *OpenRouter ve NVIDIA NIM sağlayıcıları nasıl bağlanır, port (l0) nasıl tanımlanır, anahtarlar nerede tutulur, hangi hata kodu ne anlama gelir* sorusunun tek cevabı.
 > Gereksinim kimliği: **`VC-LLM-NNN`** · Hata kodları **`VC-E-0601..0615`** · Port: `IAgentProvider` (l0) · Uygulama: `VersaCoder.AI.Engine` (K0400-K0449).

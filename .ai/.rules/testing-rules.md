@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Test Kuralları (G6 G16)
 
@@ -48,5 +48,5 @@ HIGH — "bitti" denemez (G5); iş tamamlanmadı sayılır.
 
 ## İlgili
 
-- [ADR-001](../.decisions/accepted/ADR-001-dual-target-net48-net10.md)
-- [ADR-019](../.decisions/accepted/ADR-019-dual-leg-build-test.md)
+- [ADR-001](../.decisions/accepted/adr-001-dual-target-net48-net10.md)
+- [ADR-019](../.decisions/accepted/adr-019-dual-leg-build-test.md)

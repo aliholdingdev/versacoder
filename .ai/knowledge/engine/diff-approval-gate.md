@@ -11,8 +11,8 @@ scope: "Diff onay blogu: l2 durum makinesi, 05 -> onay -> 06 -> 04 akisi, red ed
 
 # Diff Onay Blogu ve Gate
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../VISION.md) · [ADR-025](../../.decisions/accepted/ADR-025-gate003-ui-hard-stop.md) · [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-025](../../.decisions/accepted/adr-025-gate003-ui-hard-stop.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (engine · 5/8):** [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [terminal-cli-surface](terminal-cli-surface.md)
 
 > **Tek cumlelik sorumluluk:** *Bir dosya degisikligi ne zaman yazilir, onay kimin elindedir* sorusunun tek cevabidir.

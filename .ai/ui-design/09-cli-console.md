@@ -11,7 +11,7 @@ scope: "09-cli-console ekraninin dosya adi sozlesmesi + SSUT yonlendirmesi (tekr
 
 # 09-cli-console (wireframe gecis notu)
 
-**Zorunlu Baglantilar:** [ui-design/README](README.md) · [spec dosyasi](../spec/cli-console-spec.md)
+**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [spec dosyasi](../spec/cli-console-spec.md)
 
 > **Tek cumlelik sorumluluk:** ui-design/09-cli-console.md icinde yasar; tam wireframe ../spec/cli-console-spec.md (SSUT) sorusunun tek cevabidir.
 
@@ -31,5 +31,5 @@ Bu dosya 09-cli-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe (bo
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [ui-design/README](README.md) §0 + §7.1 | ekran adi + onay satiri |
+| 1 | [ui-design/README](readme.md) §0 + §7.1 | ekran adi + onay satiri |
 | 2 | [cli-console-spec](../spec/cli-console-spec.md) | tam wireframe + davranis |

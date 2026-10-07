@@ -11,7 +11,7 @@ scope: "Dil/çeviri yaklaşımı, kaynak yönetimi (.resx + ResourceManager), an
 
 # Yerelleştirme Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [error-handling](error-handling-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [error-handling](error-handling-spec.md)
 
 > **Tek cümlelik sorumluluk:** *UI metinleri nerede yaşar, nasıl okunur ve dil değiştirme ne zaman (kapsam dışı) sayılır* sorusunun tek cevabıdır.
 > **Kapsam notu:** çok dilli arayüz **açık kapsam dışıdır** (`versacoder-spec.md` §6); bu şartname yalnız kaynak **düzenini** şart koşar.

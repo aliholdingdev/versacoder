@@ -11,7 +11,7 @@ scope: "Tercih/oturum saklama: nereye yazılır, hangi veri hangi biçimde, şif
 
 # Kalıcılık Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [settings](settings-spec.md) · [session-spec](session-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [settings](settings-spec.md) · [session-spec](session-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Hangi veri nereye, hangi biçimle ve hangi güvenle yazılır* sorusunun tek cevabıdır.
 > Veri erişimi **ADO.NET + Dapper** ve **parametreli** sorgulardır; **EF Core ve string-concat SQL yok** (G2 / ADR-005).

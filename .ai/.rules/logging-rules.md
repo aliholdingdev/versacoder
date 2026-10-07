@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Loglama Kuralları (ADR-026)
 
@@ -38,5 +38,5 @@ RED (format) — kod incelemesi; iki bacakta alan adları ayrışması = çözü
 
 ## İlgili
 
-- [ADR-026](../.decisions/accepted/ADR-026-structured-log-5-levels.md)
+- [ADR-026](../.decisions/accepted/adr-026-structured-log-5-levels.md)
 - [error-handling-rules](error-handling-rules.md)

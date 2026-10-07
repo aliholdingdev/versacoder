@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # Architect Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
 
 > **Tek cumlelik sorumluluk:** Architect; katman sinirlarini, proje referanslarini ve ADR uyumunu tasarlar, kod yazmaz, kaniti gate dosyasina yazar.
 
@@ -27,9 +27,9 @@ Architect, kod tabaninin iskeletini koruyan ajan. Mimari karari veren degil; ver
 
 ## §1 On Kosullar
 
-- [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) okunmus olmali.
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) okunmus olmali.
 - [layer-boundary-check](../checklists/layer-boundary-check.md) elinde olmali.
-- [WORKFLOW.md](../WORKFLOW.md) gate sirasi biliniyor olmali.
+- [WORKFLOW.md](../governance/workflow.md) gate sirasi biliniyor olmali.
 
 ## §2 Adimlar
 

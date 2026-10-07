@@ -12,7 +12,7 @@ scope: "System.Threading.Channels ile kilitsiz siralama: kuyruk tipi secimi, Com
 # channel-queue-patterns — Kuyruk ile sıra ve izolasyon
 
 **Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [threading-locking](threading-locking.md) · [cancellation-token-policy](cancellation-token-policy.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp 5/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Birden fazla kaynaktan gelen is tek tuketicide sirayla nasil yurutulur ve kuyruk nasil saglam kapatilir* sorusunun tek cevabidir.

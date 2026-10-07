@@ -11,7 +11,7 @@ scope: "VersaCoder CLI'nin komut agaci, arguman sozdizimi, cikti bicimlendirme, 
 
 # VersaCoder CLI — Komut Satırı Arayüzü Spec
 
-**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [terminal-spec](terminal-spec.md) · [tool-spec](tool-spec.md) · [versacoder-spec](versacoder-spec.md) · [ui-shell-spec](ui-shell-spec.md) · [testing-rules](../.rules/testing-rules.md) · [security-rules](../.rules/security-rules.md)
+**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [terminal-spec](terminal-spec.md) · [tool-spec](tool-spec.md) · [versacoder-spec](versacoder-spec.md) · [ui-shell-spec](ui-shell-spec.md) · [testing-rules](../.rules/testing-rules.md) · [security-rules](../.rules/security-rules.md)
 
 > **Tek cümlelik sorumluluk:** *CLI hangi komutları alır, nasıl çözümlenir, ne döner ve terminal UI'ya nasıl bağlanır* sorusunun tek cevabı.
 > Gereksinim kimliği: **`VC-CLI-NNN`** · Hata kodları `VC-E-05xx` · Bağımlılık: [terminal-spec](terminal-spec.md) (görüntüleme) + [tool-spec](tool-spec.md) (izin).
@@ -24,7 +24,7 @@ scope: "VersaCoder CLI'nin komut agaci, arguman sozdizimi, cikti bicimlendirme, 
 
 | Alan | Değer | Kaynak |
 |---|---|---|
-| Proje | `VersaCoder.CLI` · K bandı `K0750-K0799` | [k5000-dll-list](../architecture/layer-5000/k5000-dll-list.md) §2.4 |
+| Proje | `VersaCoder.CLI` · K bandı `K0750-K0799` | [k5000-dll-list](../architecture/layer-5000/index.md) §2.4 |
 | TFM | `net48;net10.0-windows` (çift bacak, G6) | ADR-001 |
 | Gereksinim | `VC-CLI-001..016` (16 madde) | bu dosya §2 |
 | Hata kodu | `VC-E-0500..0599` | bu dosya §4 |

@@ -11,7 +11,7 @@ scope: "Oturum modeli — durum makinesi (created/running/paused/completed/faile
 
 # VersaCoder — Oturum Şartnamesi (`spec/session-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys.md](../keys.md) · [versacoder-spec.md](./versacoder-spec.md) · [protocol-spec.md](./protocol-spec.md) · [tool-spec.md](./tool-spec.md) · [test-strategy.md](./test-strategy.md) · [../.rules/data-access-rules.md](../.rules/data-access-rules.md)
+**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [versacoder-spec.md](versacoder-spec.md) · [protocol-spec.md](protocol-spec.md) · [tool-spec.md](tool-spec.md) · [test-strategy.md](test-strategy.md) · [../.rules/data-access-rules.md](../.rules/data-access-rules.md)
 
 > **Tek cümlelik sorumluluk:** *Bir oturum (agent görevi) nedir, hangi durumlarda bulunur, nerede saklanır, nasıl devam ettirilir/kurtarılır, kim yazabilir* sorusunun tek cevabıdır.
 > Gereksinim kimliği: **`VC-SES-NNN`**. Bu belge `keys.md` #20 (agent, session, orkestrasyon, streaming) karşılığıdır.

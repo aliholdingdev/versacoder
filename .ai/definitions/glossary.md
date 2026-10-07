@@ -11,7 +11,7 @@ scope: "Vault'ta geçen terimlerin TR/EN/ELI10 tanımları (124 terim), sık kar
 
 # glossary.md — Terimler Sözlüğü
 
-**Zorunlu Bağlantılar:** [index](index.md) · [keys](keys.md) · [brain](brain.md) · [CLAUDE](CLAUDE.md) · [WORKFLOW](WORKFLOW.md) · [VISION](VISION.md) · [PROJECTS](PROJECTS.md) · [AGENTS](AGENTS.md) · [spec/index](spec/index.md) · [.rules/index](.rules/index.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [keys](../governance/keys.md) · [brain](../.decisions/brain.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [VISION](vision.md) · [PROJECTS](projects.md) · [AGENTS](agents.md) · [spec/index](../spec/index.md) · [.rules/index](../.rules/index.md)
 
 > **Tek cümlelik sorumluluk:** Vault'ta geçen her terimi Türkçe karşılığı ve "10 yaşındaki çocuğa anlatır gibi" tek cümlele tanımlayıp hangi dosyaya bağlandığını yazmak.
 
@@ -172,7 +172,7 @@ Sütunlar: TR karşılığı · EN karşılığı · ELI10 tek cümle · terimin
 | 135 | Görsel doğrulanmış kaynak | Visual source of truth | Referans görsel, ondan çıkarılan her bilginin birincil kaynağıdır. | `AGENTS.md` §8.5 |
 | 136 | Adaptif soru motoru | Adaptive question engine | Cevaba göre bir sonraki soruyu belirleyen, aynı soruyu tekrarlamayan sorma döngüsüdür. | `AGENTS.md` §5.4 |
 
-**İlgili (bu tablodaki terimlerin evleri):** [AGENTS](AGENTS.md) · [CLAUDE](CLAUDE.md) · [WORKFLOW](WORKFLOW.md) · [ROLE](ROLE.md) · [brain](brain.md) · [VISION](VISION.md) · [PROJECTS](PROJECTS.md) · [keys](keys.md) · [engine](engine.md) · [MEMORY](MEMORY.md) · [index](index.md).
+**İlgili (bu tablodaki terimlerin evleri):** [AGENTS](agents.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [ROLE](role.md) · [brain](../.decisions/brain.md) · [VISION](vision.md) · [PROJECTS](projects.md) · [keys](../governance/keys.md) · [engine](engine.md) · [MEMORY](../memory/memory.md) · [index](../index.md).
 ### §1.1 Terim kümeleri (hangi küme nerede kullanılır)
 
 | # | Küme | Terim aralığı | Kullanıldığı dosya | Ne zaman okunur |
@@ -320,16 +320,16 @@ Soru kelimeyle değil, dosyayla başlıyorsa ters arama yapılır: dosya açıl�
 
 ---
 
-| ROLE | [ROLE](ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| ROLE | [ROLE](role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
 | engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| MEMORY | [MEMORY](MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok README | [kok README](../README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok CLAUDE | [kok CLAUDE](../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok AGENTS | [kok AGENTS](../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok WORKFLOW | [kok WORKFLOW](../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| MEMORY | [MEMORY](../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](../ops/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok WORKFLOW | [kok WORKFLOW](../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |
 
 ## §5 Doğrulama
 

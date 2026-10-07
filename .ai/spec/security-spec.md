@@ -11,7 +11,7 @@ scope: "Secret yönetimi, izin modeli (allow/ask/deny) ve SQL enjeksiyon savunma
 
 # VersaCoder — Güvenlik Şartnamesi (`spec/security-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [tool-contract-spec](tool-contract-spec.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [tool-contract-spec](tool-contract-spec.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Secret nerede ve nasıl saklanır, kim neye izinlidir ve SQL enjeksiyonu hangi üç katmanda durdurulur* sorusunun tek cevabıdır.
 > Kural numaraları (SEC-01..SEC-16) `.rules/security-rules.md`'dedir; bu belge **uygulama davranışı**nı anlatır (tekrar yok).
@@ -32,7 +32,7 @@ Secret **repo'da ve düz metinde durmaz** (DPAPI / AES-256-GCM ile şifreli, ana
 | 2 | İzin modeli davranışı (`allow/ask/deny`, timeout'ta `deny`) | İzin matrisi + sandbox şeması: [tool-contract-spec](tool-contract-spec.md) |
 | 3 | SQL injection savunmasının üç katmanı | Repository davranışı: [data-layer-spec](data-layer-spec.md) |
 | 4 | Log/transcript kırmızıaltma (maskelenen değer tipleri) | Hata kodu listesi: [protocol-spec](protocol-spec.md) |
-| 5 | Yıkıcı işlem onayı (G7/G11) ve audit izi | Onay mercii/gate: [WORKFLOW](../WORKFLOW.md) §3 |
+| 5 | Yıkıcı işlem onayı (G7/G11) ve audit izi | Onay mercii/gate: [WORKFLOW](../governance/workflow.md) §3 |
 
 > **YASAK:** Repo'ya ham anahtar/`Password=`/`sk-` · `ECB`/sabit IV · `BinaryFormatter` · maskelenmemiş log · onaysız migration/silme (SEC-15).
 

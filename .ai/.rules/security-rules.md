@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Güvenlik Kuralları (G7)
 
@@ -47,5 +47,5 @@ G7: CRITICAL — işlem durdurulur. Secret: RED — anahtar rotasyonu önerilir.
 
 ## İlgili
 
-- [ADR-018](../.decisions/accepted/ADR-018-secret-dpapi-keys-map.md)
+- [ADR-018](../.decisions/accepted/adr-018-secret-dpapi-keys-map.md)
 - [data-access-rules](data-access-rules.md)

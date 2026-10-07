@@ -11,7 +11,7 @@ scope: "VersaCoder 9 üretim + 1-2 test projesi, dış bağımlılıklar, risk d
 
 # PROJECTS — Proje Envanteri
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [CLAUDE](CLAUDE.md) · [WORKFLOW](WORKFLOW.md) · [keys](keys.md) · [brain](brain.md) · [MEMORY](MEMORY.md) · [log](log.md) · [architecture/index](architecture/index.md) · [.templates/index](.templates/index.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [AGENTS](agents.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [keys](../governance/keys.md) · [brain](../.decisions/brain.md) · [MEMORY](../memory/memory.md) · [log](../ops/log.md) · [architecture/index](../architecture/index.md) · [.templates/index](../.templates/index.md)
 
 > **Tek cümlelik sorumluluk:** VersaCoder'ın 9 üretim + 1-2 test projesini, dış bağımlılıklarını, risk defterini ve kapsam dışı kararlarını tek yerde tutmak.
 
@@ -58,11 +58,11 @@ l1 domain  : VersaCoder.Domain
 l0 sözleşmeler: VersaCoder.Abstractions
 ```
 
-**Ad uyarısı (DOĞRULAMA GEREKLİ):** yukarıdaki `l2 suite : VersaCoder.CallSuite` satırı ile [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.1'in `VersaCoder.Application` satırı aynı katmanı iki farklı adla anıyor. Bu dosyada iki kayıt da korunmuştur (yeniden adlandırma yapılmamıştır); nihai ad `architecture/index.md` yazıldığında tek satırda sabitlenir.
+**Ad uyarısı (DOĞRULAMA GEREKLİ):** yukarıdaki `l2 suite : VersaCoder.CallSuite` satırı ile [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.1'in `VersaCoder.Application` satırı aynı katmanı iki farklı adla anıyor. Bu dosyada iki kayıt da korunmuştur (yeniden adlandırma yapılmamıştır); nihai ad `architecture/index.md` yazıldığında tek satırda sabitlenir.
 
 ## §1.1 Proje Bazlı Derinlik — 9 Üretim Projesi
 
-Aşağıdaki dokuz alt bölüm ADR-028 §2.1 N aralıklarını ve [architecture/index](architecture/index.md) §2 sorumluluk sütununu temel alır. **Alt katman görev tanımları N adlarından türetilmiştir** — kesin şartname `architecture/catalog/` dosyaları üretilinceye kadar `DOĞRULAMA GEREKLİ` kalır; o klasörlerde bugün 0 dosya vardır (bkz. §4 R9).
+Aşağıdaki dokuz alt bölüm ADR-028 §2.1 N aralıklarını ve [architecture/index](../architecture/index.md) §2 sorumluluk sütununu temel alır. **Alt katman görev tanımları N adlarından türetilmiştir** — kesin şartname `architecture/catalog/` dosyaları üretilinceye kadar `DOĞRULAMA GEREKLİ` kalır; o klasörlerde bugün 0 dosya vardır (bkz. §4 R9).
 
 Her proje için dört soru yanıtlanır: ne yapar · hangi N kodlarını taşır · dış bağımlılığı ve test ilişkisi · bu proje olmasa ne kırılır.
 
@@ -139,7 +139,7 @@ Her proje için dört soru yanıtlanır: ne yapar · hangi N kodlarını taşır
 
 ### §1.1.3 `VersaCoder.Application` — l2 (N12–N18)
 
-**Ne yapar:** Kullanım senaryolarını (command, query, use-case) UI ve veri erişiminden ayırır. `[AD UYARISI]` Bu katman [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.1'de `VersaCoder.Application` adıyla geçer; §1 envanter tablosu aynı katmanı `VersaCoder.CallSuite` adıyla listeler — iki ad da korunmuştur, nihai karar `architecture/index.md`'de verilecektir.
+**Ne yapar:** Kullanım senaryolarını (command, query, use-case) UI ve veri erişiminden ayırır. `[AD UYARISI]` Bu katman [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.1'de `VersaCoder.Application` adıyla geçer; §1 envanter tablosu aynı katmanı `VersaCoder.CallSuite` adıyla listeler — iki ad da korunmuştur, nihai karar `architecture/index.md`'de verilecektir.
 
 | N | Alt katman | Burada ne yaşar |
 |---|---|---|
@@ -340,7 +340,7 @@ VersaCoder.sln
 `Boundary + Responsibility + Independent Change + Dependency Isolation +
 Testability + Deployment Need` — bunlar gerçekten gerekiyorsa proje/DLL açılır.
 
-**İlgili:** [CLAUDE](CLAUDE.md) §B5 (l0..l7) · [AGENTS](AGENTS.md) §7 (eşzamanlılık) · [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) §2.1 (port/adapter) · [engine](engine.md) §2.2 (blok şeması).
+**İlgili:** [CLAUDE](../claude.md) §B5 (l0..l7) · [AGENTS](agents.md) §7 (eşzamanlılık) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) §2.1 (port/adapter) · [engine](engine.md) §2.2 (blok şeması).
 ### §2.0.1 Mevcut dış bağımlılık tablosu
 
 | Grup | Paket | Sürüm | Nerede | Karar |
@@ -387,7 +387,7 @@ Tek bacakta yeşil = bitmemiştir (ADR-019); istisnalar yalnız ADR-019 matrisin
 
 **Dikkat (ad/at farkı):** §2 tablosundaki Dapper satırı ADR-019'u kaynak gösterirken bu tablo ADR-005'i göstermektedir; iki atfın hangisinin geçerli olduğu `DOĞRULAMA GEREKLİ`'dir (karar metni ADR-005'te, iki bacak uyumu ADR-019/ADR-012'dedir).
 
-**Paket politikası tek satır:** sürüm yalnız `Directory.Packages.props` içinde yaşar, `.csproj`'da `Version` satırı yoktur (ADR-014, [ADR-014](.decisions/accepted/ADR-014-slnx-and-cpm.md)).
+**Paket politikası tek satır:** sürüm yalnız `Directory.Packages.props` içinde yaşar, `.csproj`'da `Version` satırı yoktur (ADR-014, [ADR-014](../.decisions/accepted/adr-014-slnx-and-cpm.md)).
 
 ## §3 Derleme Öncesi Zorunlu Düzeltmeler (ADR-028 §C)
 
@@ -402,7 +402,7 @@ Bu 6 madde derlemeden önce kapatılmalı; aksi halde 22 hedefli çözüm başla
 | 5 | sıralı referans kuralı | Protokol projesinin `l3 → l0` atlamalı inişi — sıralı referanslarda Protocol'ü zorlamayacak şekilde düzenlenecek | NetArchTest `ProtocolOnlyAbstractions` benzeri kural |
 | 6 | `.ai/architecture/l0..l7` | Boş klasörler ilk dokümanla doldurulacak; mimari atlas üretilmeden kod derlenmeyecek (ADR-027 kapısı) | `count-components.ps1` PASS |
 
-**Kapanış sırası:** altı düzeltmenin tamamı **GATE-004a kapanışından önce** bitmelidir; [WORKFLOW](WORKFLOW.md) bu sırayı kapı adımı olarak taşır.
+**Kapanış sırası:** altı düzeltmenin tamamı **GATE-004a kapanışından önce** bitmelidir; [WORKFLOW](../governance/workflow.md) bu sırayı kapı adımı olarak taşır.
 
 ## §4 Risk Defteri (10 madde)
 
@@ -413,7 +413,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 | **R1** | **K3 kapsam dışı** — 618 kayıt / 616 benzersiz; 2 çakışma (642/662, 643/663), 4 DLL eksik; 99 kayıt (~%15) üretim ağacında karşılığı yok | yüksek (kayıt zaten var) | yanlış DLL referansı ile bozuk çözüm | birinin K3 listesinden referans taşıması | katalog satırında `DOĞRULAMA GEREKLİ` olmayan K3 kaynağı | K3'ü kapsam dışı ilan et, catalog'a taşıma yapma, eksikleri §C1 ile temizle |
 | **R2** | **CPM test paketi yok** — `Directory.Packages.props` içinde xunit/NetArchTest/Test.Sdk/NSubstitute yok | kesin (bugün eksik) | test projesi derlenemez, kapılar devre dışı | ilk `dotnet restore` | **NU1008** hatası | §C3 ile CPM'e ekle, 0 NU1008 kanıtı al |
 | **R3** | **5440 = 0 marj** — `count-components.ps1` → 5440 bileşen (min 5000); 440 payı tükendi | orta | eşik altı = gate RED | tek satır silme / yeniden adlandırma | sayı < 5000 | yeni LLM bileşeni = mimari gözden geçirme şart; l4'e yığma |
-| **R4** | **Semantik atlas bayat riski** — semantik node = S01–S07, bileşen bazlı node yok | orta | yanlış katmana dosya taşıma | kod değişir, atlas güncellenmez | "katalog = kod" denetimi tutmaz | [checklists/layer-boundary-check](checklists/layer-boundary-check.md) 13 sorusu her taşıma öncesi |
+| **R4** | **Semantik atlas bayat riski** — semantik node = S01–S07, bileşen bazlı node yok | orta | yanlış katmana dosya taşıma | kod değişir, atlas güncellenmez | "katalog = kod" denetimi tutmaz | [checklists/layer-boundary-check](../checklists/layer-boundary-check.md) 13 sorusu her taşıma öncesi |
 | **R5** | **l4 şişme riski** — Infrastructure = 231 bileşen (68/25/73/65 fa = l4 içinde en büyük); R3 ile birleşince kırılgan | yüksek | l4 her şeyi yutar, sınır kalmaz | "hangi katman?" sorusu sorulmadan yeni kod | l4 bileşen sayısında sürekli artış | yeni kod önce "hangi katman?" sorusu; l4'e sadece adaptör/fiziksel erişim, port önce `l0` |
 | **R6** | **Desktop designer TFM** — ADR-028 §2.3 düzeltme 6: designer bacağı belirlenmedi | orta | net48 kolu NetArchTest'te kalır; NU1201 riski | `.Form.Designer.cs` ile test projesinin TFM'si farklı olmak | tek bacakta açılan tasarımcı, öbür bacakta derleme hatası | designer bacağını belirle + test projeleri çift TFM yap (§C4/§C6) |
 | **R7** | **Yön / numara çelişkisi** — ADR-028 §2.3 düzeltme 2: `l2–l4` ve `l5–l4` işaretleri iki belgede farklı; `architecture/index` §4.1 hücre 4-5 `?` işaretli; ayrıca §1/§6 `l3 Protocol / l5 Crosscutting` derken §1.1 ve ADR-028 tersini yazar | yüksek (çelişki zaten kayıtlı) | NetArchTest yanlış kuralı doğrular | 8×8 matris yazılmadan test yazmak | iki belgede aynı okun farklı işareti, iki katmanın farklı numarası | 8×8 matrisi tek kaynağa sabitle, sonra `LayerRulesTests`'i ona göre yaz |
@@ -421,7 +421,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 | **R9** | **Mimari klasörler boş** — `architecture/` altında 10 klasör, **0 dosya** (2026-09-29 ölçümü) | kesin | ADR-027 kapısı açılmaz, sayım geçersiz | GATE-004a kapanışına boş klasörle girmek | `count-components.ps1` kayıt bulamaz | §C6: ilk dokümanla doldur, sonra ölç |
 | **R10** | **`Result<T>` konum çelişkisi** — N02 `result-error` l0'da, kod kuralı ise `Crosscutting` (l5) diyor (`brain` §3.1/§4.2) | orta | ortak tip iki katmanda iki kez tanımlanır | ilk `Result<T>` yazımında konum kararı verilmezse | `using` satırının hangi projeye ait olduğunun belirsizliği | kod yazılmadan önce konumu sabitle: port `l0`, yardımcı mı l5 → `DOĞRULAMA GEREKLİ` |
 
-**Okuma kuralı:** Risk satırı `DOĞRULAMA GEREKLİ` taşıyorsa o satır **kanıt değildir**, açık konudur; kapatılmadan "tamamlandı" denemez. Risk kayıtlarının vault geneli sürümü [reports/08-risk-kayit-defteri](reports/08-risk-kayit-defteri.md) dosyasındadır.
+**Okuma kuralı:** Risk satırı `DOĞRULAMA GEREKLİ` taşıyorsa o satır **kanıt değildir**, açık konudur; kapatılmadan "tamamlandı" denemez. Risk kayıtlarının vault geneli sürümü [reports/08-risk-kayit-defteri](PROJECTS.md) dosyasındadır.
 
 ### §4.1 Hata Modları — kural bozulursa ne görünür, ne zaman yakalanır
 
@@ -432,7 +432,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 | 1 | Test paketleri CPM'de yok | `NU1008` restore hatası | `dotnet restore` | Çözüm hiç kurulamaz → R2 |
 | 2 | Tek bacakta yeşil test | `net10.0-windows` geçti, `net48` atlandı | §7 komut 1-4 (iki kol) | "bitti" denemez → ADR-019 |
 | 3 | Ters referans (`l4 -> l2`) | NetArchTest `LayerRulesTests` RED | `VersaCoder.ArchitectureTests` | Kod geri alınır, yön matrisi güncellenir |
-| 4 | K3'ten DLL referansı taşındı | katalogda `DOĞRULAMA GEREKLİ` olmayan K3 kaynağı | [checklists/layer-boundary-check](checklists/layer-boundary-check.md) | Katalog kapsam dışı ihlali → R1 |
+| 4 | K3'ten DLL referansı taşındı | katalogda `DOĞRULAMA GEREKLİ` olmayan K3 kaynağı | [checklists/layer-boundary-check](../checklists/layer-boundary-check.md) | Katalog kapsam dışı ihlali → R1 |
 | 5 | Bileşen sayısı eşiğin altına düştü | `count-components` < 5000 | §7 komut 2 | Gate RED → R3 |
 | 6 | Bozuk link | `check-links.ps1` 0 dışı | §7 komut 3 | GATE-004a kapalı |
 | 7 | Designer tek bacakta açılıyor | `.Form.Designer.cs` derleme hatası / NU1201 | dual-TFM build | Ekran kodu durur → R6 |
@@ -446,7 +446,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 
 | Kapsam dışı | Neden | Karar kaynağı |
 |-------------|-------|---------------|
-| **EF Core** | Dapper + Sqlite/SqlClient yeterli; ORM ağırlığı ve sürüm kilitlenmesi istenmiyor | [ADR-005](.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) |
+| **EF Core** | Dapper + Sqlite/SqlClient yeterli; ORM ağırlığı ve sürüm kilitlenmesi istenmiyor | [ADR-005](../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) |
 | **WPF / MAUI / web** | WinForms (DevExpress v26.1) tek hedef; masaüstü + CLI yeterli | ADR-018, ADR-010 |
 | **Paketleme (NuGet)** | Ürün içi kullanım; yayımlama paketleme yok | ADR-019 akış |
 | **Yeni LLM sağlayıcısı** | Sağlayıcı sırası sabit: `openrouter-free -> ollama -> openai-compatible` | ADR-011 |
@@ -460,7 +460,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 | **K3'teki mevcut kod (99 kayıtsız dosya)** | Katalog kapsamı dışı; üretim ağacına taşınmaz | ADR-028 §C1 |
 | **`l0..l6` katmanları** | Ekran yalnız `l7`'dedir; alt katmanlarda Form/tasarım dosyası bulunmaz | ADR-028 §2.1 |
 | **Vault kök `.md` dosyaları (14 zorunlu belge)** | Bunlar ürün ekranı değil, vault belgesidir | ADR-003 |
-| **`architecture/l0..l7/` ve `catalog/` dosyaları** | Bugün 0 dosya; ekranla ilişkilendirilmeden üretilir | [architecture/index](architecture/index.md) §8 |
+| **`architecture/l0..l7/` ve `catalog/` dosyaları** | Bugün 0 dosya; ekranla ilişkilendirilmeden üretilir | [architecture/index](../architecture/index.md) §8 |
 
 ### §5.3 Süreç Dışı (yapılmayacak/görev dışı işler)
 
@@ -468,7 +468,7 @@ Sütunlar: **Olasılık** (ne sıklıkla tetiklenir), **Etki** (tetiklenirse ne 
 |-------------|-------|---------------|
 | **CI/CD pipeline** | Henüz yok; kapılar önce local (checklist + script'ler), CI sonra | depo `.git` var, workflow yok → `DOĞRULAMA GEREKLİ` (eklenme planı) |
 | **Elle bileşen sayımı** | Tek kanıt `count-components.ps1`; elle sayı rapora yazılmaz | ADR-027 |
-| **ADR'leri script ile otomatik kaydetme** | İlişki/gerekçe notu otomasyona kurban olur; yalnız doğrulama otomatiktir | [.decisions/adr-index](.decisions/adr-index.md) §3.2-C |
+| **ADR'leri script ile otomatik kaydetme** | İlişki/gerekçe notu otomasyona kurban olur; yalnız doğrulama otomatiktir | [.decisions/adr-index](../.decisions/adr-index.md) §3.2-C |
 | **3 paralel akıştan sıradışı geliştirme** | ADR-028 §4 akışı: (l0->l1->l2 seri) -> (l3 \|\| l4 \|\| l5) -> (l6 -> l7) | ADR-028 §4 |
 | **Başka vault'a / `%TEMP%` referans ağacına yazma** | Salt okunur; yalnız yapı referans alınır | ADR-023, ADR-024 |
 
@@ -522,7 +522,7 @@ Beklenen kanıt: 52 düğüm dosyası, ≥5000 kayıt (şu an 5440, marj 440 = R
 | 3 | Sayım eşiği tutuyor mu | §7 komut 2 | ≥5000 kayıt | R3 |
 | 4 | Bozuk link | §7 komut 3 | 0 | — |
 | 5 | Test iki bacakta yeşil mi | §7 komut 4 | 0 başarısız × 2 | R2 |
-| 6 | Katman sınırı 13 sorusu | [checklists/layer-boundary-check](checklists/layer-boundary-check.md) | 13/13 cevaplı | R4, R7 |
+| 6 | Katman sınırı 13 sorusu | [checklists/layer-boundary-check](../checklists/layer-boundary-check.md) | 13/13 cevaplı | R4, R7 |
 | 7 | Proje adı tekleşti mi | `grep` ile `CallSuite` / `Application` | tek ad | R8 |
 | 8 | `Result<T>` konumu sabit mi | kod yazılmadan karar | 1 konum | R10 |
 
@@ -542,16 +542,16 @@ Beklenen kanıt: 52 düğüm dosyası, ≥5000 kayıt (şu an 5440, marj 440 = R
 | 8 | `CLAUDE.md` · `WORKFLOW.md` · `MEMORY.md` · `index.md` | vault girişi ve akış |
 | 9 | Prompt kaynağı (DLL organizasyonu, boundary yasakları) | `G:/…/versacoder proje planlaması ai.08.md` §49-§51 |
 
-| ROLE | [ROLE](ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| ROLE | [ROLE](role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
 | engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| VISION | [VISION](VISION.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| VISION | [VISION](vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
 | glossary | [glossary](glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| ULTRA | [ULTRA](ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok README | [kok README](../README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok CLAUDE | [kok CLAUDE](../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok AGENTS | [kok AGENTS](../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok WORKFLOW | [kok WORKFLOW](../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| ULTRA | [ULTRA](ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok WORKFLOW | [kok WORKFLOW](../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |
 
 ## §9 Paralel Geliştirme Akışı (ADR-028 §4)
 

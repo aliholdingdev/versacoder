@@ -11,7 +11,7 @@ scope: "Agentic orkestrasyon: router, SSE, checkpoint, tool-schema, diff onay �
 
 # Engine — Bilgi Kümesi İndeksi
 
-**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Küme + Hub:** [engine index](index.md)
 
 > **Tek cümlelik sorumluluk:** Bu klasördeki **8 bilgi dosyasının** hangisini

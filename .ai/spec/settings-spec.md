@@ -11,7 +11,7 @@ scope: "Ayarlar ekranı: profil/tercih grupları, sağlayıcı-model seçimi, se
 
 # Ayarlar Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [error-handling](error-handling-spec.md) · [localization](localization-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [error-handling](error-handling-spec.md) · [localization](localization-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Hangi ayar var, nasıl doğrulanır, secret nasıl girilir ve değişiklik ne zaman kalıcı olur* sorusunun tek cevabıdır.
 > Ayarların **nerede saklandığı** [persistence](persistence-spec.md)’in; şifrelemenin anahtarı mimarinin konusudur.

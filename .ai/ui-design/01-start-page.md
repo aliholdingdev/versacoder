@@ -11,7 +11,7 @@ scope: "01-start-page ekranının wireframe'i: bölge haritası, ölçü tablosu
 
 # 01 — START PAGE
 
-**Zorunlu Bağlantılar:** [ui-design/index](README.md) · [VISION](../VISION.md) · [02-main-ide](02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [VISION](../definitions/vision.md) · [02-main-ide](02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
 
 > **Tek cümlelik sorumluluk:** Uygulama açılışta gösterdiği ilk ekranın hangi bölgelerden oluştuğu
 > ve tıklamaların nereye gittiği sorusunun tek cevabıdır.
@@ -156,6 +156,6 @@ hata metni StatusBar'da + neden (kod 401 vb.), dramatik diyalog yok.
 | 1 | Kaynak wireframe `ui-design/01-start-page.md` (eski vault) | bölge/kontrol listesi |
 | 2 | [devexpress-rules](../.rules/devexpress-rules.md) | sürüm + `Office2010` tek stil |
 | 3 | [ui-rules](../.rules/ui-rules.md) | yerleşim/erişilebilirlik tabanı |
-| 4 | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
+| 4 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
 
 > Ekran adı `01-start-page` ve `Son Gunc.` tarihleri örnektir — canlı veri servisten gelir (`DOĞRULAMA GEREKLİ`: servis arayüzü adı ilk derlemede doğrulanacak).

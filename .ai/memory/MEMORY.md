@@ -11,7 +11,7 @@ scope: "Vault'un kalici hafizasi: kanitli dersler (DERS-KANIT-GECERLILIK-ADR), t
 
 # MEMORY — Kalici Dersler, Karar Desenleri ve Kayit Defteri
 
-**Zorunlu Baglantilar:** [index.md](index.md) · [CLAUDE.md](CLAUDE.md) · [WORKFLOW.md](WORKFLOW.md) · [ROLE.md](ROLE.md) · [AGENTS.md](AGENTS.md) · [brain.md](brain.md) · [keys.md](keys.md) · [glossary.md](glossary.md) · [VISION.md](VISION.md) · [log.md](log.md)
+**Zorunlu Baglantilar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [WORKFLOW.md](../governance/workflow.md) · [ROLE.md](../definitions/role.md) · [AGENTS.md](../definitions/agents.md) · [brain.md](../.decisions/brain.md) · [keys.md](../governance/keys.md) · [glossary.md](../definitions/glossary.md) · [VISION.md](../definitions/vision.md) · [log.md](../ops/log.md)
 
 > **Tek cumlelik sorumluluk:** *"Bunu daha once denedik, ne cikti?"* sorusunun tek cevabidir — her dersin **kaniti** (dosya + o dosyada ne yazdigi), **gecerlilik siniri** ve **bagli ADR'si** satir satir yazilir; kanitsiz ders bu dosyaya girmez, `DOĞRULAMA GEREKLİ` etiketiyle disari cikar.
 
@@ -34,10 +34,10 @@ Bu dosya vault'un **kalin hafizasidir**: denenen, cikti olcusulen ve sonucu ogre
 | Bilgi türü | Burada mı? | Sahip dosya |
 |---|---|---|
 | Edinilmiş ders ("denedik, şu çıktı") | **Evet — §1** | bu dosya |
-| Kararın gerekçesi ve alternatifleri | Hayır | [brain.md](brain.md) + `.decisions/` (defter: [.decisions/adr-index.md](.decisions/adr-index.md)) |
-| Zorunlu kural (G1..G12, EF Core yasağı) | Hayır | [CLAUDE.md](CLAUDE.md); metin `.rules/index.md` altında |
-| Gate/sıra/kapı tarifesi | Hayır | [WORKFLOW.md](WORKFLOW.md) + [engine.md](engine.md) |
-| Tarihli olay ve ölçümler | Hayır | [log.md](log.md) (append-only) |
+| Kararın gerekçesi ve alternatifleri | Hayır | [brain.md](../.decisions/brain.md) + `.decisions/` (defter: [.decisions/adr-index.md](../.decisions/adr-index.md)) |
+| Zorunlu kural (G1..G12, EF Core yasağı) | Hayır | [CLAUDE.md](../claude.md); metin `.rules/index.md` altında |
+| Gate/sıra/kapı tarifesi | Hayır | [WORKFLOW.md](../governance/workflow.md) + [engine.md](../definitions/engine.md) |
+| Tarihli olay ve ölçümler | Hayır | [log.md](../ops/log.md) (append-only) |
 
 ```text
 +--------------------------------------------------+
@@ -55,7 +55,7 @@ Bu dosya vault'un **kalin hafizasidir**: denenen, cikti olcusulen ve sonucu ogre
 +--------------------------------------------------+
 ```
 
-> **KURAL:** Bu dosyaya yalnız "ikinci kez aynı hataya dusmek istemiyorsak ne bilmemiz lazim" girer. Gerekce/kural/kronoloji buraya tasinrsa tekrar olur ve silinir (SSUT, [CLAUDE.md](CLAUDE.md) G1).
+> **KURAL:** Bu dosyaya yalnız "ikinci kez aynı hataya dusmek istemiyorsak ne bilmemiz lazim" girer. Gerekce/kural/kronoloji buraya tasinrsa tekrar olur ve silinir (SSUT, [CLAUDE.md](../claude.md) G1).
 
 ---
 
@@ -67,14 +67,14 @@ Ders = **bir kez denendi, ciktisi olculdu, sonucu ogrenildi** ifadesidir. Burada
 
 | ID | DERS (ne ogrendik) | KANIT (dosya + icindeki sey) | GECERLILIK (ne zaman biter) | BAGLI KARAR |
 |---|---|---|---|---|
-| L-01 | Elle sayilan ham envanter **tekrar icerir**: 618 giristen 2'si birebir ayni, 4 DLL dosyada hic yok, 9 basliktan 2'si yanlis — sayim "nizami" gorunur ama kontrolsuzdur | `reports/k3-618-ham-envanter.md` — 618 giris / 616 benzersiz / 2 tekrar / 4 eksik DLL kaydi | Katalog ve `count-components` sayimi **yazildigi surece** (simdi PASS: 5440 kayit) | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §1 C2, §2.2 |
-| L-02 | Iki mimari kaynagi celistiginde **tek matris kazanir**: ADR-013 "l4 -> l2" derken dependency-map ayni oku "X" (yasak) olarak isaretliyor; iki kaynakli yon = iki gercek | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §1 C6 (celiski kaydi) + §2.3 madde 2 (8x8 matris tek kaynak kosulu) | NetArchTest `LayerRulesTests` matrisi yazilip gate'e baglanana kadar | ADR-028 §2.3/2 (ADR-013 dogrulandi) |
-| L-03 | Proje sayisi **Tier'a bolunmez**: 575 csproj x 2 TFM = ~1150 hedef; CPM, Visual Studio ve restore bu yuku kaldiramaz, ustune K3'in kapsami disi DLL'leri (EntityFramework, Host.Linux, Protocol.Kafka) tasinir | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §3 alternatif A3 (UNIVERSAL RED) | Yeni bir `.csproj` kapidan gectigi surece (3 kapi kurali §2.1) | ADR-028 §2.1 (9 uretim + 1-2 test) |
-| L-04 | Mojibake **bir kezlik kaza degil**, UTF-8 yazmayan her uretimde tekrar cikar: olcum 9 dosya gosterdi (8'i `.templates/`, biri `scripts/measure-vault.md`); duzeltme 8 dosyada 20 eslesme buldu | `reports/10-bilinen-eksikler.md` §1 (9 dosya listesi) + 2026-09-29 duzeltme kaydi (§5/#13) — kalan icin `scripts/find-mojibake.ps1` = 0 bekleniyor | Tarama **0 dosya** gostermeye kadar (kalan 1 dosya `DOĞRULAMA GEREKLİ`) | [CLAUDE.md](CLAUDE.md) G4 + `.rules/index.md` (ADR-020 ASCII kutu) |
-| L-05 | Bozuk link **batch'ten dogar**, tek tek yazimdan degil: 46 bozuk linkin 34'u `knowledge/`, 4'u `checklists/`, 2'si `playbooks/` — hepsi "kardes dosya henuz yazilmadi" durumundan | `reports/10-bilinen-eksikler.md` §2 (kirik link tablosu); ayrica `reports/index.md` — `reports/` kaynakli bozuk link **0** | Her batch sonrasi `scripts/check-links.ps1` = 0 ciktisina kadar | ADR-003 (vault yapisi) + [WORKFLOW.md](WORKFLOW.md) GATE-004a |
-| L-06 | Envanter **anliktir**: `knowledge/` indeksi 2026-09-29'da "kob `index.md` diskte YOK" yazarken dosya ayni gun olustu; eszamanli uretimde sayi dakikalar icinde degisir, eski satir dogru zamanda dogruydu | `knowledge/index.md` (yokluk kaydi) karsilastirmasi — 2026-09-29 dizin listesinde `index.md` VAR (15.693 B) | Bu vault eszamanli yazildigi surece; olcum **tarihli ve anlik** yapilir | [log.md](log.md) §1 (olcum birimleri) |
+| L-01 | Elle sayilan ham envanter **tekrar icerir**: 618 giristen 2'si birebir ayni, 4 DLL dosyada hic yok, 9 basliktan 2'si yanlis — sayim "nizami" gorunur ama kontrolsuzdur | `reports/k3-618-ham-envanter.md` — 618 giris / 616 benzersiz / 2 tekrar / 4 eksik DLL kaydi | Katalog ve `count-components` sayimi **yazildigi surece** (simdi PASS: 5440 kayit) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §1 C2, §2.2 |
+| L-02 | Iki mimari kaynagi celistiginde **tek matris kazanir**: ADR-013 "l4 -> l2" derken dependency-map ayni oku "X" (yasak) olarak isaretliyor; iki kaynakli yon = iki gercek | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §1 C6 (celiski kaydi) + §2.3 madde 2 (8x8 matris tek kaynak kosulu) | NetArchTest `LayerRulesTests` matrisi yazilip gate'e baglanana kadar | ADR-028 §2.3/2 (ADR-013 dogrulandi) |
+| L-03 | Proje sayisi **Tier'a bolunmez**: 575 csproj x 2 TFM = ~1150 hedef; CPM, Visual Studio ve restore bu yuku kaldiramaz, ustune K3'in kapsami disi DLL'leri (EntityFramework, Host.Linux, Protocol.Kafka) tasinir | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §3 alternatif A3 (UNIVERSAL RED) | Yeni bir `.csproj` kapidan gectigi surece (3 kapi kurali §2.1) | ADR-028 §2.1 (9 uretim + 1-2 test) |
+| L-04 | Mojibake **bir kezlik kaza degil**, UTF-8 yazmayan her uretimde tekrar cikar: olcum 9 dosya gosterdi (8'i `.templates/`, biri `scripts/measure-vault.md`); duzeltme 8 dosyada 20 eslesme buldu | `reports/10-bilinen-eksikler.md` §1 (9 dosya listesi) + 2026-09-29 duzeltme kaydi (§5/#13) — kalan icin `scripts/find-mojibake.ps1` = 0 bekleniyor | Tarama **0 dosya** gostermeye kadar (kalan 1 dosya `DOĞRULAMA GEREKLİ`) | [CLAUDE.md](../claude.md) G4 + `.rules/index.md` (ADR-020 ASCII kutu) |
+| L-05 | Bozuk link **batch'ten dogar**, tek tek yazimdan degil: 46 bozuk linkin 34'u `knowledge/`, 4'u `checklists/`, 2'si `playbooks/` — hepsi "kardes dosya henuz yazilmadi" durumundan | `reports/10-bilinen-eksikler.md` §2 (kirik link tablosu); ayrica `reports/index.md` — `reports/` kaynakli bozuk link **0** | Her batch sonrasi `scripts/check-links.ps1` = 0 ciktisina kadar | ADR-003 (vault yapisi) + [WORKFLOW.md](../governance/workflow.md) GATE-004a |
+| L-06 | Envanter **anliktir**: `knowledge/` indeksi 2026-09-29'da "kob `index.md` diskte YOK" yazarken dosya ayni gun olustu; eszamanli uretimde sayi dakikalar icinde degisir, eski satir dogru zamanda dogruydu | `knowledge/index.md` (yokluk kaydi) karsilastirmasi — 2026-09-29 dizin listesinde `index.md` VAR (15.693 B) | Bu vault eszamanli yazildigi surece; olcum **tarihli ve anlik** yapilir | [log.md](../ops/log.md) §1 (olcum birimleri) |
 | L-07 | Eski kaynaktan **surum alinmaz**: `ai.01.md` .NET 8 / EF Core 9 / DevExpress 24.2.3 yaziyordu, yeni bootstrap bunu gecersiz kildi; 24.2.x daha ilk ADR turunde "REDDEDILDI" diye kaydedildi | `.decisions/index.md` §0 + §1 (karar 4: v26.1 tek surum, 24.2.x RED) — ayrica `.rules/index.md` (16 kural dosyasi) | Yigit degismedikce (veda `net48` kalmadikca) | ADR-004 (v26.1) + ADR-001 (iki bacak) |
-| L-08 | Esik **marjsiz olursa tek satir RED eder**: katalog esigi 5440 = olculen 5440, marj 0 — bir satir silinince gate kirmiziya duser, "neredeyse gecti" diye bir durum yoktur | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §4 (eksi/risk: "marj 0") + `scripts/count-components.ps1` ciktisi 5440 kayit PASS | Esik yeniden olculup marj acilana kadar (su an acilmadi) | ADR-027 (5000+ bilesen) + ADR-028 §2.2 |
+| L-08 | Esik **marjsiz olursa tek satir RED eder**: katalog esigi 5440 = olculen 5440, marj 0 — bir satir silinince gate kirmiziya duser, "neredeyse gecti" diye bir durum yoktur | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §4 (eksi/risk: "marj 0") + `scripts/count-components.ps1` ciktisi 5440 kayit PASS | Esik yeniden olculup marj acilana kadar (su an acilmadi) | ADR-027 (5000+ bilesen) + ADR-028 §2.2 |
 
 ### §1.2 Uc ornek ders karti (derinlestirme)
 
@@ -111,7 +111,7 @@ Ders = **bir kez denendi, ciktisi olculdu, sonucu ogrenildi** ifadesidir. Burada
 |---|---|
 | Ne oldu | ADR-013 "l4 -> l2 bagimli" derken dependency-map ayni oku "X (yasak)" olarak isaretledi; iki dosya ayni ok uzerinde ayristi |
 | Dersin maliyeti | Hangisi dogru bilinmeden NetArchTest yazilsaydi test ya gercek ihlali kacirir ya da dogru bagimliligi yasaklar — ikisi de gate'de fark edilir, ama gec |
-| Kanit nasil dogrulanir | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §1 C6 acilir, celiski kaydi okunur; §2.3 madde 2'de "8x8 matris tek kaynak" kosulu aranir |
+| Kanit nasil dogrulanir | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §1 C6 acilir, celiski kaydi okunur; §2.3 madde 2'de "8x8 matris tek kaynak" kosulu aranir |
 | Kapanis kosulu | Yon/baglanti sorusu artik **tek matristen** cevaplanir; matris guncellenene kadar ikinci kaynak gecersizdir |
 
 **Kart L-04 — mojibake uretim kaynaklidir:**
@@ -182,7 +182,7 @@ Ayni sekiller tekrar tekrar ayni sonuca variyor: EF Core her seferinde reddedili
 |---|---|---|
 | 1 | Bu karar en az **iki ADR'de** ayni sekilde tekrar mi ediyor? | Desen var → §2.1 tablosuna bak, gerekceyi yeniden yazma |
 | 2 | Karara muhalefet **ayni argumanla** mi geliyor? (or. "EF Core hizlandirir") | Cevap ADR'de hazir; arguman yeniden uretilmez |
-| 3 | Karar **gate metnine** bagli mi (G1..G12 / GATE-004a)? | Kural metni `.rules/` ve [CLAUDE.md](CLAUDE.md)'de zorunludur |
+| 3 | Karar **gate metnine** bagli mi (G1..G12 / GATE-004a)? | Kural metni `.rules/` ve [CLAUDE.md](../claude.md)'de zorunludur |
 | 4 | Yanlisinin **duzeltme maliyeti** yuksek mi (geri alma gunlerce)? | Yeni ADR acma esiği duser → §4 |
 
 ### §2.3 Desen ne zaman yeniden acilir
@@ -201,23 +201,23 @@ dosyadir; "nasil teyit edilir" sutunu ise desenin hala gecerli oldugunu kanitlar
 
 | Desen | Once bakilacak dosya | Teyit yolu | Teyit sonucu ne olmali |
 |---|---|---|---|
-| P-01 (EF Core disi veri) | `.rules/index.md` + [CLAUDE.md](CLAUDE.md) G2 | Yeni `.cs` icinde `DbContext`/` DbSet` aranir | 0 eslesme; sorgular parameterized |
+| P-01 (EF Core disi veri) | `.rules/index.md` + [CLAUDE.md](../claude.md) G2 | Yeni `.cs` icinde `DbContext`/` DbSet` aranir | 0 eslesme; sorgular parameterized |
 | P-02 (sifirdan icerik) | `.templates/new-doc-contract.md` §4-§5 | Benzerlik taramasi yapilir | Yabanci blok 0; yalniz yapi referansi |
-| P-03 (tek sayim birimi) | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.2 | `count-components.ps1` calistirilir | Kayit >= 5000, hatali format 0, tek birim `N###` |
-| P-04 (surum kilidi) | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.3 madde 1 (CPM) | Paket listesi + `.csproj` TFM bakilir | v26.1 + `net48`/`net10.0-windows`; 24.2.x yok |
-| P-05 (kapi kurali) | [WORKFLOW.md](WORKFLOW.md) (gate tarifesi) | `git log` + onay kaydi aranir | Onaysiz commit 0; her commit bir gate satiri |
+| P-03 (tek sayim birimi) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.2 | `count-components.ps1` calistirilir | Kayit >= 5000, hatali format 0, tek birim `N###` |
+| P-04 (surum kilidi) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.3 madde 1 (CPM) | Paket listesi + `.csproj` TFM bakilir | v26.1 + `net48`/`net10.0-windows`; 24.2.x yok |
+| P-05 (kapi kurali) | [WORKFLOW.md](../governance/workflow.md) (gate tarifesi) | `git log` + onay kaydi aranir | Onaysiz commit 0; her commit bir gate satiri |
 
 ### §2.5 Desen disi kararlar (bunlar §2'ye girmez)
 
 Her tekrar eden goruntu desen degildir; asagidakiler **olay**dur, kayitlari
-[log.md](log.md) §2'dedir ve gerekce uretmezler. Karistirilirsa §2 ADR defteri
+[log.md](../ops/log.md) §2'dedir ve gerekce uretmezler. Karistirilirsa §2 ADR defteri
 olmaktan cikar, gunluge doner (SSUT ihlali).
 
 | Goruntu | Neden desen degil | Nereye yazar |
 |---|---|---|
-| Ayni gun 3 olcum ayni sayiyi veriyor | Sonuc ayni, karar degil; tekrar eden **dogrulama** | [log.md](log.md) satiri |
-| Bir dosya iki kez yazildi (taslak + nihai) | Surec olayi, kalici ogrenim degil | [log.md](log.md) satiri |
-| Gate 2 oturum boyunca acik kaldi | Gecici durum; kapali hale gelince olay kapanir | [log.md](log.md) + devir notu |
+| Ayni gun 3 olcum ayni sayiyi veriyor | Sonuc ayni, karar degil; tekrar eden **dogrulama** | [log.md](../ops/log.md) satiri |
+| Bir dosya iki kez yazildi (taslak + nihai) | Surec olayi, kalici ogrenim degil | [log.md](../ops/log.md) satiri |
+| Gate 2 oturum boyunca acik kaldi | Gecici durum; kapali hale gelince olay kapanir | [log.md](../ops/log.md) + devir notu |
 | Tek ajanin tercihi (arac, bicim) | Kesisim yok; en az 2 ADR kosulunu karsilamaz | §5 kayit satiri |
 
 ### §2.6 Desen ihlalinin maliyeti (neden tekrar ediyor)
@@ -243,11 +243,11 @@ Her madde **gerçek bir olayla** kanitlanmistir; sebebi bilinmeyen yasak bir son
 
 | # | YAPMA | GERCEK OLAY (neden burada) | KANIT | KARSILIGI |
 |---|---|---|---|---|
-| 1 | K3'in **9 Tier / 618 DLL** envanterini kataloga, N-ID'lere veya sayim bolumune almak | 618 giris tek tek sayildi: 2 birebir tekrar, 4 DLL dosyada yok, 9 basliktan 2'si yanlis, §15 "nihai degil" diyor | [reports/k3-618-ham-envanter.md](reports/k3-618-ham-envanter.md) | 618 listesi yalniz rapor satiri; katalogda tek birim `N###` |
-| 2 | **Tier basina ayri csproj** onermek (575 proje, 1150 hedef) | Restore, CPM ve Visual Studio bu hedef sayisinda coker; ustune K3'in kapsim disi DLL'leri tasinir | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §3 A3 (UNIVERSAL RED) | 9 uretim + 1-2 test = 22 hedef |
+| 1 | K3'in **9 Tier / 618 DLL** envanterini kataloga, N-ID'lere veya sayim bolumune almak | 618 giris tek tek sayildi: 2 birebir tekrar, 4 DLL dosyada yok, 9 basliktan 2'si yanlis, §15 "nihai degil" diyor | [reports/k3-618-ham-envanter.md](../architecture/layer-5000/index.md) | 618 listesi yalniz rapor satiri; katalogda tek birim `N###` |
+| 2 | **Tier basina ayri csproj** onermek (575 proje, 1150 hedef) | Restore, CPM ve Visual Studio bu hedef sayisinda coker; ustune K3'in kapsim disi DLL'leri tasinir | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §3 A3 (UNIVERSAL RED) | 9 uretim + 1-2 test = 22 hedef |
 | 3 | Baska vault'tan **icerik kopyalamak** (CoreMusic / yedek) | Yedek kök dosyalar 1-16 KB, ayni vault'ta brain dosyasi 80 KB ile 2 KB arasinda tutarsiz — kopya kaliteyi de bozar | ADR-002 + `.templates/new-doc-contract.md` §4/5 | Yalniz **yapi** referansi, icerik sifirdan |
-| 4 | Olcum ciktisi olmadan **"bitti/tamamlandi"** demek | "Hazir" denirken 46 bozuk link ve 9 mojibake dosya acikti; iddia ile gerceklik farki raporda goruldu | `reports/10-bilinen-eksikler.md` §0-§1 | `dotnet build` / tarama ciktisi + [log.md](log.md) satiri |
-| 5 | Dosyaya **Unicode kutu cizimi veya bozuk byte** sokmek | Mojibake taramasi 9 dosyada bozuk byte buldu; kutu cizimi `U+2500-U+257F` G4'te yasak | [CLAUDE.md](CLAUDE.md) G4 + `scripts/find-mojibake.ps1` | Diyagram yalniz `|` `-` `+`; metin UTF-8 |
+| 4 | Olcum ciktisi olmadan **"bitti/tamamlandi"** demek | "Hazir" denirken 46 bozuk link ve 9 mojibake dosya acikti; iddia ile gerceklik farki raporda goruldu | `reports/10-bilinen-eksikler.md` §0-§1 | `dotnet build` / tarama ciktisi + [log.md](../ops/log.md) satiri |
+| 5 | Dosyaya **Unicode kutu cizimi veya bozuk byte** sokmek | Mojibake taramasi 9 dosyada bozuk byte buldu; kutu cizimi `U+2500-U+257F` G4'te yasak | [CLAUDE.md](../claude.md) G4 + `scripts/find-mojibake.ps1` | Diyagram yalniz `|` `-` `+`; metin UTF-8 |
 
 ### §3.1 Etiket sozlugu (kara liste tamamlayicisi)
 
@@ -276,17 +276,17 @@ her satir kanit toplamayi bekler ve kanit gelince §1'e ders ya da §2'ye desen 
 
 ## §4 Hafiza Guncelleme Kurali (ne zaman yazilir, ne zaman ADR olur)
 
-Bilgi **oldugu anda** yola yazilir; oturum belleğine gomulmez. Ama hangi dosyaya yazilacagi **esikle** belli olur: tek kullanimlik gozlem §5 kayit satiri olur, tekrar eden ve yanlisinin pahali oldugu karar ADR olur, zorunlu hale gelen davranis `.rules/` + [CLAUDE.md](CLAUDE.md) olur.
+Bilgi **oldugu anda** yola yazilir; oturum belleğine gomulmez. Ama hangi dosyaya yazilacagi **esikle** belli olur: tek kullanimlik gozlem §5 kayit satiri olur, tekrar eden ve yanlisinin pahali oldugu karar ADR olur, zorunlu hale gelen davranis `.rules/` + [CLAUDE.md](../claude.md) olur.
 
 ### §4.1 Bes tetikleyici
 
 | # | Tetikleyici | Nereye yazilir | Ne zaman | Sahip |
 |---|---|---|---|---|
-| 1 | Olculmus bir cikti (sayi, tarama, build) | [log.md](log.md) — tek satir, ayni gun | Is biter bitmez | isin yapan ajan |
+| 1 | Olculmus bir cikti (sayi, tarama, build) | [log.md](../ops/log.md) — tek satir, ayni gun | Is biter bitmez | isin yapan ajan |
 | 2 | "Bunu denedik, su cikti" (ders) | bu dosya §1 (karti ile) | Ikinci kez gerekce aranirsa | architect |
-| 3 | Tekrar eden, yanlisinin pahali oldugu karar | ADR (defter: [.decisions/adr-index.md](.decisions/adr-index.md)) | §4.3 esik testi gecerse | architect |
-| 4 | Artik zorunlu olan davranis | [CLAUDE.md](CLAUDE.md) + `.rules/index.md` (gerekce ADR'de) | Kural ihlali gozulduyse | architect |
-| 5 | Guncel durum (part/gate/git) | bu dosyada **degil**; durum tablosu [VISION.md](VISION.md)/[PROJECTS.md](PROJECTS.md), gecmis [log.md](log.md) | Her oturum sonunda | isin yapan ajan |
+| 3 | Tekrar eden, yanlisinin pahali oldugu karar | ADR (defter: [.decisions/adr-index.md](../.decisions/adr-index.md)) | §4.3 esik testi gecerse | architect |
+| 4 | Artik zorunlu olan davranis | [CLAUDE.md](../claude.md) + `.rules/index.md` (gerekce ADR'de) | Kural ihlali gozulduyse | architect |
+| 5 | Guncel durum (part/gate/git) | bu dosyada **degil**; durum tablosu [VISION.md](../definitions/vision.md)/[PROJECTS.md](../definitions/projects.md), gecmis [log.md](../ops/log.md) | Her oturum sonunda | isin yapan ajan |
 
 ### §4.2 ADR esik testi (dort soru, hepsi EVET olmali)
 
@@ -317,20 +317,20 @@ Kural: KANIT hucresi bos satir YAZILMAZ; bilgi eksikse
 
 ## §5 Kayit Defteri (tarihli satirlar)
 
-Tek gun, tek defter: **2026-09-29**. Asagidaki 22 kayit bu gunun olcum ve isleridir; her satir kendi kanitini tasir. Gelecek kayitlar **bu tablonun dibine** eklenir, usttekiler silinmez (append-only; detayli kronoloji [log.md](log.md)'dedir).
+Tek gun, tek defter: **2026-09-29**. Asagidaki 22 kayit bu gunun olcum ve isleridir; her satir kendi kanitini tasir. Gelecek kayitlar **bu tablonun dibine** eklenir, usttekiler silinmez (append-only; detayli kronoloji [log.md](../ops/log.md)'dedir).
 
 | # | TARIH | KAYIT | KANIT | SINIF |
 |---|---|---|---|---|
-| 1 | 2026-09-29 | Katmanli mimari baz karari kilitlendi: 8 makro katman (l0..l7) + 44 alt katman = 52 dugum, 9 uretim + 1-2 test projesi, cift TFM | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) §2.1 — 9 satirlik katman/proje tablosu | KARAR |
+| 1 | 2026-09-29 | Katmanli mimari baz karari kilitlendi: 8 makro katman (l0..l7) + 44 alt katman = 52 dugum, 9 uretim + 1-2 test projesi, cift TFM | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.1 — 9 satirlik katman/proje tablosu | KARAR |
 | 2 | 2026-09-29 | Mimari tartisma 3 turda 21 ajanla kapatildi (10 senior -> 5 senior -> 3 junior + 3 ajans); son tur 6/6 sartli kabul | ADR-028 §3 — oylama sutunlari (4/10, 4/5, 6/6) | KARAR |
-| 3 | 2026-09-29 | K3'un 618 DLL envanteri kapsam disi ilan edildi; vault kataloguna girmez, yalniz rapor satiri olarak yasar | [reports/k3-618-ham-envanter.md](reports/k3-618-ham-envanter.md) + ADR-028 §2.2 | KARAR |
+| 3 | 2026-09-29 | K3'un 618 DLL envanteri kapsam disi ilan edildi; vault kataloguna girmez, yalniz rapor satiri olarak yasar | [reports/k3-618-ham-envanter.md](../architecture/layer-5000/index.md) + ADR-028 §2.2 | KARAR |
 | 4 | 2026-09-29 | Ilk build oncesi 6 zorunlu duzeltme kilitlendi (CPM paketleri, 8x8 matris, "Sekiz katman" ifadesi, N<->klasor eslesmesi, gercek tarama yolu, TFM + l0 portlari) | ADR-028 §2.3 — 6 satir, her satirda kanit kosulu | KARAR |
 | 5 | 2026-09-29 | Vault olcumu: bu iki dosya yazilmadan **177 MD**; kirilim `.templates/` 35 · `spec/` 40 · `checklists/` 31 · `.decisions/` 30 · `.rules/` 17 · `reports/` 9 | recursive dizin sayimi (bugun, ilk tur); klasor bazli sayim satirlari | OLCUM — guncel hali #22 (180) |
 | 6 | 2026-09-29 | Kok durum (ilk olcum): 13/14 — `engine.md` bugun 16:42'de olustu (35.834 B), `ULTRA-THINKING.md` o an diskte yoktu, `MEMORY.md` bu isle yazildi | dizin listesi + `get_file_info` ciktisi | OLCUM — guncel hali #22 |
 | 7 | 2026-09-29 | `.rules/` olgunlasti: 16 kural dosyasi + indeks = 17 dosya (eski rapor "4 dosya" diyordu) | dizin listesi (bugun) | OLCUM |
 | 8 | 2026-09-29 | `checklists/` 31 dosyaya cikti — gate-003/004/004a/005 dosyalari artik diskte (eski rapor 4'tu) | dizin listesi (bugun) | OLCUM |
 | 9 | 2026-09-29 | `knowledge/` · `prompts/` · `playbooks/` icinde yalnizca indeks var (icerik 0), `ui-design/` ve `.agents/` **bos** | dizin listesi (bugun) — 0 giris | UYARI |
-| 10 | 2026-09-29 | Mimari klasorleri olustu ama bos: 10 alt klasor (`00-overview`, `catalog`, `l0..l7`) + indeks, iclerinde dosya 0 | [architecture/index.md](architecture/index.md) + dizin listesi | OLCUM |
+| 10 | 2026-09-29 | Mimari klasorleri olustu ama bos: 10 alt klasor (`00-overview`, `catalog`, `l0..l7`) + indeks, iclerinde dosya 0 | [architecture/index.md](../architecture/index.md) + dizin listesi | OLCUM |
 | 11 | 2026-09-29 | ADR defteri bayat: diskte **28 ADR** varken `adr-index.md` 5 satir, `.decisions/index.md` 7 satir gosteriyor (iki defter = iki gercek) | KAPANDI 2026-10-01: `adr-index.md` = 29 satir SSOT, `.decisions/index.md` pointer'a cevruldu (log.md #28) | ✅ COZULDU |
 | 12 | 2026-09-29 | Mojibake onarimi: **8 dosya / 20 eslesme** duzeltildi; onceki olcum 9 dosyaydi, kalan 1 dosya icin tarama tekrarlanmali | 2026-09-29 duzeltme kaydi + `reports/10-bilinen-eksikler.md` §1 (onceki 9 dosya) | IS — kalan `DOĞRULAMA GEREKLİ` |
 | 13 | 2026-09-29 | Link taramasi calistirildi; onceki rapor 1516 iyi / 46 bozuk link diyor, yeni cikti rapora yazilmadi | `scripts/check-links.ps1` + `reports/index.md` (onceki sayilar) | IS — yeni sayi `DOĞRULAMA GEREKLİ` |
@@ -341,10 +341,10 @@ Tek gun, tek defter: **2026-09-29**. Asagidaki 22 kayit bu gunun olcum ve isleri
 | 18 | 2026-09-29 | En buyuk iki klasor `.templates/` (35 MD) ve `spec/` (40 MD) olmus; ikisi vault'un yarisi — sablon ve spesifikasyon uretimi ana kaynak | recursive dizin sayimi (bugun) | OLCUM |
 | 19 | 2026-09-29 | `scripts/` 5 `.ps1` tasiyor (count-components, check-links, find-mojibake, measure-vault + 1); olcum araclari vault'ta, harici degil | dizin listesi (bugun) — 5 giris | OLCUM |
 | 20 | 2026-09-29 | Navigasyon kokunde `index.md` 15.693 B ile en kucuk degil, en guncel baglayici dosya; 26 izinli link hedefinin tamami burada tanimli | dizin listesi + `get_file_info` ciktisi | OLCUM |
-| 21 | 2026-09-29 | WORKFLOW gate zinciri durumu: GATE-004a **ACIK** (`ULTRA-THINKING.md` o an diskte yoktu), 003 -> 004 -> 005 -> 006 beklemede | [WORKFLOW.md](WORKFLOW.md) §gate + dizin (o an 13/14) | UYARI |
+| 21 | 2026-09-29 | WORKFLOW gate zinciri durumu: GATE-004a **ACIK** (`ULTRA-THINKING.md` o an diskte yoktu), 003 -> 004 -> 005 -> 006 beklemede | [WORKFLOW.md](../governance/workflow.md) §gate + dizin (o an 13/14) | UYARI |
 | 22 | 2026-09-29 | **Yeniden sayim:** `ULTRA-THINKING.md` olustu (kok artik **14/14**), toplam **180 MD** (177 + bu iki dosya + yeni dosya); GATE-004a nedeni degisti: dosya var, icerigi/erisimi teyitsiz | recursive dizin sayimi (gun ici ikinci olcum) + dizin listesi | UYARI — `DOĞRULAMA GEREKLİ` (icerik okunmali) |
 
-**Defter kurali:** yeni kayit = bu tabloya 1 satir; duzeltme = **yeni satir** (eski satir durur); kanit yoksa hucre `DOĞRULAMA GEREKLİ` ile kapanir. Sutun disi bilgi (gerekce, sure) §5'e girmez — o [log.md](log.md) veya ADR isidir.
+**Defter kurali:** yeni kayit = bu tabloya 1 satir; duzeltme = **yeni satir** (eski satir durur); kanit yoksa hucre `DOĞRULAMA GEREKLİ` ile kapanir. Sutun disi bilgi (gerekce, sure) §5'e girmez — o [log.md](../ops/log.md) veya ADR isidir.
 
 ---
 
@@ -431,9 +431,9 @@ Bu dosyanin diger 18 vault dosyasina baglantilari (eksiksiz; hicbir baglanti sil
 
 | # | Dosya | Ne tasiyor |
 |---|---|---|
-| ULTRA | [ULTRA](ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok README | [kok README](../README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok CLAUDE | [kok CLAUDE](../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok AGENTS | [kok AGENTS](../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok WORKFLOW | [kok WORKFLOW](../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| ULTRA | [ULTRA](../definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok WORKFLOW | [kok WORKFLOW](../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |

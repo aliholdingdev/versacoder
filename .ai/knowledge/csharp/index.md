@@ -11,8 +11,8 @@ scope: "knowledge/csharp altindaki 29 teknik dosyanin kayit defteri: sorumluluk,
 
 # C# / .NET Knowledge Index (csharp/)
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [CLAUDE](../../CLAUDE.md) · [keys](../../keys.md) · [coding-standards](../../.rules/coding-standards.md) · [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) · [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
-**Küme + Hub:** [csharp index](index.md) · [index](../../index.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md)
+**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [CLAUDE](../../claude.md) · [keys](../../governance/keys.md) · [coding-standards](../../.rules/coding-standards.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+**Küme + Hub:** [csharp index](index.md) · [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md)
 
 > **Tek cumlelik sorumluluk:** *Bu vault'ta hangi C#/.NET ozelligi iki bacakta nasil davranir, o cevap hangi dosyada* sorusunun tek cevabidir.
 
@@ -20,7 +20,7 @@ scope: "knowledge/csharp altindaki 29 teknik dosyanin kayit defteri: sorumluluk,
 
 ## §0 Ozet (Answer First)
 
-Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tamami **iki bacak** (`net48` + `net10.0-windows`) boyunca cevap verir: hangi ozellik hangi bacakta derlenir, hangi API net48'de paket ister, `#if` neden yalniz platform farkiyla sinirlidir (G6). Oncelik sirasi: **anayasa (G1..G12) > `.rules/coding-standards.md` > bu dizindeki anlatim** — celişirse kural kazanir, dosya `DOĞRULAMA GEREKLI` ile isaretlenir. Karar (ne yapilacagi) burada degil, [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) ve [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) altindadir.
+Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tamami **iki bacak** (`net48` + `net10.0-windows`) boyunca cevap verir: hangi ozellik hangi bacakta derlenir, hangi API net48'de paket ister, `#if` neden yalniz platform farkiyla sinirlidir (G6). Oncelik sirasi: **anayasa (G1..G12) > `.rules/coding-standards.md` > bu dizindeki anlatim** — celişirse kural kazanir, dosya `DOĞRULAMA GEREKLI` ile isaretlenir. Karar (ne yapilacagi) burada degil, [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) ve [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) altindadir.
 
 ## §1 Dosya kayit defteri (29)
 
@@ -93,7 +93,7 @@ Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tam
 | Dosya yeni eklendi | bu tabloya 1 satir, sonra icerik |
 | Celiski .rules ile | `.rules` kazanir, dosya `DOĞRULAMA GEREKLI` |
 | Kanitsiz "bitti" | G5 ihlali -> RED |
-| Karar gerektiren konu | [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) / [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) |
+| Karar gerektiren konu | [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) / [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
 
 ## §9 Kanit
 

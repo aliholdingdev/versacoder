@@ -47,5 +47,5 @@ C# sözleşmesinde tanımlanır: `VersaCoder.Protocol` (l5). Araç çağrısı =
 
 ## §7 İlgili
 
-- [ADR-009-tool-execution-sandbox.md](ADR-009-tool-execution-sandbox.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-009-tool-execution-sandbox.md](adr-009-tool-execution-sandbox.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

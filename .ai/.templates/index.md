@@ -11,7 +11,7 @@ scope: "Hangi sablon var, nerede durur, kim yazar, kac KB, hangi part - sablon k
 
 # Şablon Envanteri (Template Inventory)
 
-**Zorunlu Bağlantılar:** [CLAUDE.md](../CLAUDE.md) · [../index.md](../index.md) · [../AGENTS.md](../AGENTS.md) · [../WORKFLOW.md](../WORKFLOW.md) · [../architecture/index.md](../architecture/index.md) · [../.rules/coding-standards.md](../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [CLAUDE.md](../claude.md) · [../index.md](../index.md) · [../AGENTS.md](../definitions/agents.md) · [../WORKFLOW.md](../governance/workflow.md) · [../architecture/index.md](../architecture/index.md) · [../.rules/coding-standards.md](../.rules/coding-standards.md)
 
 > **Tek cümlelik sorumluluk:** Bu dosya *hangi şablon var, nerede durur, kim yazar, kaç KB, hangi part* sorusunun tek cevabıdır.
 > Şablonun **içeriği** burada tekrarlanmaz; yalnızca **kayıdı** tutulur (SRP, G12).
@@ -42,7 +42,7 @@ scope: "Hangi sablon var, nerede durur, kim yazar, kac KB, hangi part - sablon k
 
 ### §1.1 Envanter Kuralları
 
-1. **Tek dosya, tek gerçek.** Şablon listesi yalnız burada yaşar; `AGENTS.md`, `WORKFLOW.md`, kök `index.md` tekrar **yazmaz**, yalnız [./index.md](./index.md)'e **bağlantı verir**.
+1. **Tek dosya, tek gerçek.** Şablon listesi yalnız burada yaşar; `AGENTS.md`, `WORKFLOW.md`, kök `index.md` tekrar **yazmaz**, yalnız [./index.md](index.md)'e **bağlantı verir**.
 2. **Satır = şablon.** 44 şablonun her biri tam 1 satır kaplar; 2 satır = mükerrer, 0 satır = kayıp.
 3. **Durum üç değer:** `YAZILDI` · `PLANLI` · `MEVCUT`. `WIP`/`~` yasak; iş bitince tek geçişte `YAZILDI`.
 4. **Yol kökten yazılır:** `.ai/.templates/…`. Kısaltılmış yol yasaktır.
@@ -606,4 +606,4 @@ Select-String -Path $md -Pattern '\]\((\.\.?\/[^)#]+)\)' -AllMatches | ForEach-O
 | R9 | `Sorumlu` boş satır | §6.2 R3 | 14 rolden biri zorunlu | 5 dk |
 | R10 | Mojibake / karışık dil | `\xc3\xbc`, `?` | Türkçe, UTF-8 (G5) | 20 dk |
 
-**SSUT beyanı:** Bu dosya `.templates/` envanterinin **tek** kaynağıdır. Çoğaltan her dosya yalnız [./index.md](./index.md)'e bağlanır.
+**SSUT beyanı:** Bu dosya `.templates/` envanterinin **tek** kaynağıdır. Çoğaltan her dosya yalnız [./index.md](index.md)'e bağlanır.

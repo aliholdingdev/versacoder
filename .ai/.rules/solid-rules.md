@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # SOLID Kuralları
 
@@ -32,5 +32,5 @@ Yön = aşağı (L4→L0); authority = yukarı (L0). Ters referans = NetArchTest
 
 ## İlgili
 
-- [layer-rules](layer-rules.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
-- [brain §2](../brain.md)
+- [layer-rules](layer-rules.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+- [brain §2](../.decisions/brain.md)

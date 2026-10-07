@@ -11,7 +11,7 @@ scope: "Proje/ağaç modelinin dosya sistemi görünümü - tarama, yenileme, wo
 
 # Solution Explorer Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [code-editor](code-editor-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [code-editor](code-editor-spec.md) · [search-grep](search-grep-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Açık projenin dosya ağacı nereden gelir, nasıl tazelenir ve hangi dosya işlemi hangi sınır içinde kalır* sorusunun tek cevabıdır.
 > Ağaç **gösterimdir**: diske yazar, veritabanına yazar; modeli [project-model](project-model-spec.md) taşır.

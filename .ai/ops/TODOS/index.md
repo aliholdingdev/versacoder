@@ -11,7 +11,7 @@ scope: "Tum vault task/todo/checklist kayitlarinin tek yerde toplandigi, siraya 
 
 # TODOS — Görev Fazları İndeksi
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [WORKFLOW](../WORKFLOW.md) · [AGENTS](../AGENTS.md) · [VISION](../VISION.md) · [checklist index](../checklists/index.md) · [gate-004a](../checklists/gate-004a-vault-kapanis.md) · [gate-003](../checklists/gate-003-ui-onay.md) · [adr-index](../.decisions/adr-index.md)
+**Zorunlu Bağlantılar:** [index](../../index.md) · [WORKFLOW](../../governance/workflow.md) · [AGENTS](../../definitions/agents.md) · [VISION](../../definitions/vision.md) · [checklist index](../../checklists/index.md) · [gate-004a](../../checklists/gate-004a-vault-kapanis.md) · [gate-003](../../checklists/gate-003-ui-onay.md) · [adr-index](../../.decisions/adr-index.md)
 
 > **Tek cümlelik sorumluluk:** Vault'taki hangi işin hangi faz dosyasında yaşadığı ve
 > "şu dosyayı yap" denince ne yapılacağının tek cevabıdır.
@@ -50,7 +50,7 @@ gate sırası, ADR-028 §2.3, ADR-030. Uydurma görev yok.
 
 - **Tek dosya kuralı:** tek seferde **yalnız bir** faz dosyası işlenir; çok istek
   = sıra bozulur, kapılar (gate) atlanır.
-- **Sıra neden sabit:** [WORKFLOW](../WORKFLOW.md) §2'deki gate sırası (vault →
+- **Sıra neden sabit:** [WORKFLOW](../../governance/workflow.md) §2'deki gate sırası (vault →
   onay → iskelet → kod → test) aşılmaz; ters sıra = iş iki kez yapılır.
 
 ---
@@ -78,16 +78,16 @@ eksik dizinlerin (`.rules` · `checklists` ✅ · `architecture` · `reports` ·
 
 | Kaynak dosya | Nereye aktarıldı | Ne aktarıldı |
 |---|---|---|
-| [gate-004a-vault-kapanis.md](../checklists/gate-004a-vault-kapanis.md) | faz 01 | 14 soruluk kapanış listesi |
-| [bilinen-eksikler](../reports/10-bilinen-eksikler.md) §5 | faz 01 | kapanış sırası + süre tahminleri |
+| [gate-004a-vault-kapanis.md](../../checklists/gate-004a-vault-kapanis.md) | faz 01 | 14 soruluk kapanış listesi |
+| [bilinen-eksikler](../log.md) §5 | faz 01 | kapanış sırası + süre tahminleri |
 | `measure-vault.ps1` / `check-links.ps1` / `find-mojibake.ps1` | faz 01 | sert kapı çıktıları |
 | Kullanıcı talimatı (bu oturum) | faz 02 | 4 soru taslağı |
 | ADR-028 §2.3 | faz 03 | 6 zorunlu düzeltme + 9+2 proje |
-| [gate-004-ilk-commit.md](../checklists/gate-004-ilk-commit.md) | faz 03 | commit kapısı |
-| [gate-003-ui-onay.md](../checklists/gate-003-ui-onay.md) | faz 04 | 7 ekran onay paketi |
-| [gate-005-test-kapsami.md](../checklists/gate-005-test-kapsami.md) | faz 05 | test kapsamı kapısı |
-| [layer-boundary-check](../checklists/layer-boundary-check.md) | faz 05 | 13 soru (NetArchTest) |
-| [checklist index](../checklists/index.md) | tüm fazlar | 24 listenin envanteri + referans sayacı |
+| [gate-004-ilk-commit.md](../../checklists/gate-004-ilk-commit.md) | faz 03 | commit kapısı |
+| [gate-003-ui-onay.md](../../checklists/gate-003-ui-onay.md) | faz 04 | 7 ekran onay paketi |
+| [gate-005-test-kapsami.md](../../checklists/gate-005-test-kapsami.md) | faz 05 | test kapsamı kapısı |
+| [layer-boundary-check](../../checklists/layer-boundary-check.md) | faz 05 | 13 soru (NetArchTest) |
+| [checklist index](../../checklists/index.md) | tüm fazlar | 24 listenin envanteri + referans sayacı |
 
 - Kaynakta olmayan görev **bu klasöre yazılmaz** (uydurma yasak, G5).
 - Her faz dosyasında §Kanıt, görevin hangi betik/çıktı ile doğrulanacağını yazar.
@@ -136,10 +136,10 @@ IKISI DE : kullanici onayi (G7/G8) olmadan yapilmaz
 
 | # | Kaynak | Yol | Ne için |
 |---|---|---|---|
-| 1 | Gate sırası | [WORKFLOW](../WORKFLOW.md) §2 | sıra kuralı |
-| 2 | **Checklist envanteri (24)** | [checklists index](../checklists/index.md) | hangi liste hangi kapıda |
-| 3 | Vault kapısı | [gate-004a](../checklists/gate-004a-vault-kapanis.md) | faz 01 kabul kriteri |
-| 4 | Bilinen eksikler | [bilinen-eksikler](../reports/10-bilinen-eksikler.md) | açık maddeler |
-| 5 | Mimari baz | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | faz 03 kapsamı |
-| 6 | Ajan politikası | [AGENTS](../AGENTS.md) | 3 paralel sınırı |
-| 7 | Bilgi kümesi (134) | [knowledge index](../knowledge/index.md) | teknik notlar |
+| 1 | Gate sırası | [WORKFLOW](../../governance/workflow.md) §2 | sıra kuralı |
+| 2 | **Checklist envanteri (24)** | [checklists index](../../checklists/index.md) | hangi liste hangi kapıda |
+| 3 | Vault kapısı | [gate-004a](../../checklists/gate-004a-vault-kapanis.md) | faz 01 kabul kriteri |
+| 4 | Bilinen eksikler | [bilinen-eksikler](../log.md) | açık maddeler |
+| 5 | Mimari baz | [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | faz 03 kapsamı |
+| 6 | Ajan politikası | [AGENTS](../../definitions/agents.md) | 3 paralel sınırı |
+| 7 | Bilgi kümesi (134) | [knowledge index](../../knowledge/index.md) | teknik notlar |

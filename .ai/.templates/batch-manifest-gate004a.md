@@ -11,7 +11,7 @@ scope: "GATE-004a icin uretilecek tum yeni MD dosyalarinin klasor, sayi ve tema 
 
 # GATE-004a Batch Manifestosu
 
-**Zorunlu Baglantilar:** [vault index](../index.md) · [new-doc-contract](new-doc-contract.md) · [ADR-003](../.decisions/accepted/ADR-003-vault-structure-500md-frontmatter.md) · [ADR-013](../.decisions/accepted/ADR-013-layered-architecture-52-nodes.md) · [CLAUDE.md](../CLAUDE.md)
+**Zorunlu Baglantilar:** [vault index](../index.md) · [new-doc-contract](new-doc-contract.md) · [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md) · [ADR-013](../.decisions/accepted/adr-013-layered-architecture-52-nodes.md) · [CLAUDE.md](../claude.md)
 
 > **Tek cumlelik sorumluluk:** *Hangi batch hangi klasore kac dosya, hangi temada yazar* sorusunun tek cevabidir.
 > Uretim bu dosyaya gore yapilir; sapma = link/kapsam riski.

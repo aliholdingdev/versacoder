@@ -11,7 +11,7 @@ scope: "VersaCoder ürün seviyesi gereksinimleri — 7 ekran, ana kullanıcı y
 
 # VersaCoder — Ürün Şartnamesi (`spec/versacoder-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys.md](../keys.md) · [protocol-spec.md](./protocol-spec.md) · [session-spec.md](./session-spec.md) · [tool-spec.md](./tool-spec.md) · [test-strategy.md](./test-strategy.md) · [../reports/00-kapsam-analizi.md](../reports/00-kapsam-analizi.md)
+**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [protocol-spec.md](protocol-spec.md) · [session-spec.md](session-spec.md) · [tool-spec.md](tool-spec.md) · [test-strategy.md](test-strategy.md) · [../reports/00-kapsam-analizi.md](../ops/log.md)
 
 > **Tek cümlelik sorumluluk:** *VersaCoder ne yapar, hangi ekranlar vardır, hangi gereksinimler test edilebilir* sorusunun tek cevabıdır.
 > Gereksinim kimliği biçimi: **`VC-PRD-NNN`**. Her madde **test edilebilir** yazılır; kabul kriteri olmadan gereksinim sayılmaz (G5).

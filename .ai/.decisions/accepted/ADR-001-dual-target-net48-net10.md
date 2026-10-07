@@ -51,6 +51,6 @@ legacy ekran ya modern API tarafı feda edilirdi.
 
 ## §7 İlgili
 
-- [ADR-019-dual-leg-build-test.md](ADR-019-dual-leg-build-test.md) — kanıt kuralı
-- [ADR-028-layered-baseline-9-projects.md](ADR-028-layered-baseline-9-projects.md) — proje baz
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-019-dual-leg-build-test.md](adr-019-dual-leg-build-test.md) — kanıt kuralı
+- [ADR-028-layered-baseline-9-projects.md](adr-028-layered-baseline-9-projects.md) — proje baz
+- [adr-index](../adr-index.md) · [brain](../brain.md)

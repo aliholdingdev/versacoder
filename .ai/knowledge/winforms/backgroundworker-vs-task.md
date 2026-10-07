@@ -12,7 +12,7 @@ scope: "Arka plan isi icin BackgroundWorker ile Task/async arasindaki secimi: ol
 # `BackgroundWorker` mi, `Task` mi?
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [async-ui-thread-marshalling](async-ui-thread-marshalling.md) · [cancellation-in-ui](cancellation-in-ui.md) · [testing-rules](../../.rules/testing-rules.md) · [async-rules](../../.rules/async-rules.md)
-**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (winforms 3/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *WinForms'ta arka plan isi icin hangi yapilandirma secilir, `BackgroundWorker` neyi ucuza cozer, `Task` neyi daha test edilebilir yapar* sorusunun tek cevabidir.

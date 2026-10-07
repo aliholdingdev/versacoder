@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Yapılandırma Kuralları (G8)
 
@@ -46,5 +46,5 @@ RED → BLOCKED; paket onaysız girmez (G7 paraleli: sürüm değişimi = onay).
 
 ## İlgili
 
-- [ADR-014](../.decisions/accepted/ADR-014-slnx-and-cpm.md)
+- [ADR-014](../.decisions/accepted/adr-014-slnx-and-cpm.md)
 - [layer-rules](layer-rules.md)

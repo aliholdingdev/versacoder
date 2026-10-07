@@ -11,7 +11,7 @@ scope: "Main IDE RibbonForm kabuğu: ribbon/menü, dock panel yerleşimi, durum 
 
 # UI Shell Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [theming](theming-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [theming](theming-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Ana pencere (RibbonForm) neyi barındırır, ribbon/dock/durum çubuğu nasıl yerleşir ve pencere kapanınca ne olur* sorusunun tek cevabıdır.
 > Kabuk **yalnızca yerleşim ve yönlendirme** yapar; iş mantığına, SQL'e, dosya I/O'una bakmaz (l7 izolasyonu).

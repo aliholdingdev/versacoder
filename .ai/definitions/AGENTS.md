@@ -11,7 +11,7 @@ scope: "Chat ≠ Agent ≠ LLM ayrımı, ajan dağıtım matrisi, çıktı kutus
 
 # AGENTS — Ajan Sistemi ve Orkestrasyon Protokolü
 
-**Zorunlu Bağlantılar:** [index](index.md) · [CLAUDE](CLAUDE.md) · [WORKFLOW](WORKFLOW.md) · [ROLE](ROLE.md) · [engine](engine.md) · [VISION](VISION.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [ROLE](role.md) · [engine](engine.md) · [VISION](vision.md)
 
 > **Tek cümlelik sorumluluk:** Chat/Agent/LLM ayrımını koruyan, işi doğru ajana
 > dağıtan, çıktı kutusunu ve kanıt zorunluluğunu dayatan, External Agent
@@ -44,7 +44,7 @@ scope: "Chat ≠ Agent ≠ LLM ayrımı, ajan dağıtım matrisi, çıktı kutus
 - **§9 Zero-Hallucination yasak listesi**
 - **§10 Doğrulama**
 
-Kaynak: [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) — 8 makro
+Kaynak: [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) — 8 makro
 katman, 9 üretim + 1-2 test proje.
 
 ---
@@ -126,7 +126,7 @@ Agentic sistem niyeti mühendislik görevine dönüştürür.
 | İş tipi | Ajan | Çıktı formatı | Kanıt |
 |---|---|---|---|
 | Niyet/orkestrasyon | `orchestrator` | Plan + §3 kutusu | Session config + workflow şeması |
-| Mimari / katman kararı | `architect` | Karar + §3 kutusu | [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) + [layer-boundary-check](checklists/layer-boundary-check.md) 13 soru |
+| Mimari / katman kararı | `architect` | Karar + §3 kutusu | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) + [layer-boundary-check](../checklists/layer-boundary-check.md) 13 soru |
 | Kod yazımı / refactor | `developer` | Diff + §3 kutusu | Build + test kırmızı→yeşil |
 | İnceleme / review | `reviewer` | §3 kutusu (RİSK satırı dolu) | Suçlu dosya + satır no |
 | Test / kapsam | `tester` | Test dosyası + §3 kutusu | `dotnet test` çıktısı |
@@ -140,7 +140,7 @@ Agentic sistem niyeti mühendislik görevine dönüştürür.
 **Tek satırlık kural:** istek matriste yoksa `general`; varsa atanmış ajana gider.
 
 **Zincir kuralı:** `orchestrator → architect → developer → reviewer → tester`,
-[WORKFLOW](WORKFLOW.md) akışıyla aynıdır; atlanan halkada kabul kriteri kanıtsız kalır.
+[WORKFLOW](../governance/workflow.md) akışıyla aynıdır; atlanan halkada kabul kriteri kanıtsız kalır.
 
 ### §2.1 ASCII/Unicode diyagram üretimi kuralları (kaynak: ui-uix-anayze-tomd + ai.09)
 
@@ -189,7 +189,7 @@ orchestrator
 
 ---
 
-**İlgili:** [glossary](glossary.md) §1 (terimler) · [CLAUDE](CLAUDE.md) G4 (biçim/kod) · [VISION](VISION.md) §5 (red-team) · [keys](keys.md) §3.1 (arama kalıpları).
+**İlgili:** [glossary](glossary.md) §1 (terimler) · [CLAUDE](../claude.md) G4 (biçim/kod) · [VISION](vision.md) §5 (red-team) · [keys](../governance/keys.md) §3.1 (arama kalıpları).
 ## §3 Çıktı kutusu (zorunlu format)
 
 Her ajan çıktısını şu ASCII kutuyla verir (Unicode kutu çizimleri bu dosyada
@@ -222,7 +222,7 @@ Her ajan çıktısını şu ASCII kutuyla verir (Unicode kutu çizimleri bu dosy
 **Kırmızı çizgi:** `KANIT` boşsa kutu işlenmez — kanıtsız teslim, teslim değildir.
 
 **Karıştırma yasağı:** bu 5 alanlı ajan kutusu ile gate'in 4 satırlı kanıt kutusu
-(`KANIT/DOSYA/EKSIK/SONRAKI`, [WORKFLOW](WORKFLOW.md)) aynı şey değildir.
+(`KANIT/DOSYA/EKSIK/SONRAKI`, [WORKFLOW](../governance/workflow.md)) aynı şey değildir.
 
 ### §3.1 Dil ve teknik terim politikası (kaynak: Yazımı-düzelt-promt-maker)
 
@@ -240,7 +240,7 @@ YANLIŞ : "Ön yüz yönlendiricisini kontrol et."
 DOĞRU  : "Frontend Router'ı kontrol et."
 ```
 
-**İlgili:** [glossary](glossary.md) §1.2 (kısaltmalar) · [CLAUDE](CLAUDE.md) G5 (Türkçe + mojibake) · [ROLE](ROLE.md) §1.2 (5 ölçü) · [keys](keys.md) §1 satır 87 (anayasa).
+**İlgili:** [glossary](glossary.md) §1.2 (kısaltmalar) · [CLAUDE](../claude.md) G5 (Türkçe + mojibake) · [ROLE](role.md) §1.2 (5 ölçü) · [keys](../governance/keys.md) §1 satır 87 (anayasa).
 ### §3.2 Ajan davranışının 12 mutlak kuralı (kaynak: Yazımı-düzelt-promt-maker §39)
 
 | # | Kural |
@@ -272,7 +272,7 @@ DOĞRU  : "Frontend Router'ı kontrol et."
 
 ---
 
-**İlgili:** [CLAUDE](CLAUDE.md) G1..G12 (kural metni) · [ROLE](ROLE.md) §1.2 (yanıt anatomisi) · [engine](engine.md) §1.6 (teslim kontrolü) · [glossary](glossary.md) §2.2 (RED listesi).
+**İlgili:** [CLAUDE](../claude.md) G1..G12 (kural metni) · [ROLE](role.md) §1.2 (yanıt anatomisi) · [engine](engine.md) §1.6 (teslim kontrolü) · [glossary](glossary.md) §2.2 (RED listesi).
 ## §4 Internal Agent vs External Coding Agent
 
 ### §4.1 İki execution yaklaşımı
@@ -543,7 +543,7 @@ Numaralı cevap iste (`1: 12V DC` gibi); kullanıcı "bilmiyorum" derse bilgi
 Constraints net değilse soru sormaya **devam et**; hepsi netse `DISCOVERY COMPLETE`
 durumuna geç ve kullanıcı "devam/yeterli" diyene kadar final üretme.
 
-**İlgili:** [ROLE](ROLE.md) §4 (tek soru · A/B/C · süre) · [engine](engine.md) §1.1.1 (prompt işleme hattı) · [ULTRA-THINKING](ULTRA-THINKING.md) §1.1 (tetik kriterleri) · [glossary](glossary.md) §136 (adaptif soru motoru).
+**İlgili:** [ROLE](role.md) §4 (tek soru · A/B/C · süre) · [engine](engine.md) §1.1.1 (prompt işleme hattı) · [ULTRA-THINKING](ultra-thinking.md) §1.1 (tetik kriterleri) · [glossary](glossary.md) §136 (adaptif soru motoru).
 ### §5.5 Prompt mimarisi (kaynak: ai-agentic-promt-maker §15)
 
 Prompt üretilecekse türüne göre iskelet seçilir; ilgisiz bölüm eklenmez:
@@ -562,7 +562,7 @@ Maintainability → Performance → Simplicity` — çelişki gizlenmez, açık�
 
 ---
 
-**İlgili:** [keys](keys.md) §1 satır 100 (adaptif soru) · [engine](engine.md) §1.1.1 (prompt sentezi) · [ROLE](ROLE.md) §3 (karar hiyerarşisi) · [brain](brain.md) §2 (SOLID kısıtları).
+**İlgili:** [keys](../governance/keys.md) §1 satır 100 (adaptif soru) · [engine](engine.md) §1.1.1 (prompt sentezi) · [ROLE](role.md) §3 (karar hiyerarşisi) · [brain](../.decisions/brain.md) §2 (SOLID kısıtları).
 ## §6 Orchestrator akışı
 
 ### §6.1 Orchestrator sorumlulukları
@@ -881,13 +881,13 @@ görsel üretim sağlayıcısında üretilir ve §8.3 doğrulama zincirinden ge�
 
 **Sağlayıcı entegrasyonu:** port/adapter yerleşimi, **üç sağlayıcı yolu (A/B/C)**,
 desteklenen model listesi ve açık konular
-[ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) dosyasındadır
+[ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) dosyasındadır
 (**`proposed`** — kapsam kullanıcı onaylı 2026-10-07 "hepsi"; yol A endpoint'i
 `WEB_VERIFIED`; `src/**` kodu **yok**, G12).
 
 ---
 
-**İlgili:** [ADR-031](.decisions/draft/ADR-031-visual-production-provider.md) §5.1-§5.2 (sağlayıcı doğrulaması) · [VISION](VISION.md) §0.3 (Studio/IDE kimliği) · [glossary](glossary.md) §131-§136 (görsel terimler) · [keys](keys.md) §98-§101 · [README](../README.md) §1.
+**İlgili:** [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) §5.1-§5.2 (sağlayıcı doğrulaması) · [VISION](vision.md) §0.3 (Studio/IDE kimliği) · [glossary](glossary.md) §131-§136 (görsel terimler) · [keys](../governance/keys.md) §98-§101 · [README](../../readme.md) §1.
 ## §9 System Quality Gate (50 madde)
 
 Bu sistemi tanımlarken aşağıdakileri kontrol et:
@@ -926,7 +926,7 @@ Bu sistemi tanımlarken aşağıdakileri kontrol et:
 - [ ] **Eş zaman:** ≤ 3 ajan, tek dosya sahipliği aşılmaz
 - [ ] **External Agent:** adapter sözleşmesi + validation zinciri uygulanmış
 - [ ] **Zero-Hallucination:** doğrulanmamış CLI/API bilgisi yazılmamış
-- [ ] **Report:** iş sonunda rapor biçimi [WORKFLOW](WORKFLOW.md) §5'e göre
+- [ ] **Report:** iş sonunda rapor biçimi [WORKFLOW](../governance/workflow.md) §5'e göre
 
 ### §10.1 Geniş kontrol listesi (batch kapanışında 20 madde)
 
@@ -959,10 +959,10 @@ Bu sistemi tanımlarken aşağıdakileri kontrol et:
 
 | Kalem | Sınır | Aşımında |
 |---|---|---|
-| Tek ajan çıktısı | en fazla ~8 KB | Özetle; detayı [MEMORY](MEMORY.md)'e taşı |
+| Tek ajan çıktısı | en fazla ~8 KB | Özetle; detayı [MEMORY](../memory/memory.md)'e taşı |
 | Devre paketi | en fazla ~2 KB | 4 maddeyi koru, açıklamayı kısalt |
-| Aynı anda dokunulan dosya | en fazla ~8 dosya | Bölümlere ayır; [WORKFLOW](WORKFLOW.md)'e geç |
-| Bir oturumda toplam dosya | en fazla ~3 dosya | Yeni oturuma böl, kanıtı [log.md](log.md)'e yaz |
+| Aynı anda dokunulan dosya | en fazla ~8 dosya | Bölümlere ayır; [WORKFLOW](../governance/workflow.md)'e geç |
+| Bir oturumda toplam dosya | en fazla ~3 dosya | Yeni oturuma böl, kanıtı [log.md](../ops/log.md)'e yaz |
 | Bloke raporu sorusu | en fazla 1 soru | Kalanı SECENEKLER'e taşı |
 
 - `~` ile yazılan limitler token/byte kestirimidir (`INFERRED`); kesin ölçüm gerekirse sayacla.
@@ -971,17 +971,17 @@ Bu sistemi tanımlarken aşağıdakileri kontrol et:
 
 ## §12 Referanslar
 
-- [index.md](index.md) — vault navigasyonu
-- [MEMORY.md](MEMORY.md) / [log.md](log.md) — rapor kanıtı
+- [index.md](../index.md) — vault navigasyonu
+- [MEMORY.md](../memory/memory.md) / [log.md](../ops/log.md) — rapor kanıtı
 - [engine.md](engine.md) — orkestrasyon
-- [brain.md](brain.md) — beyin yapısı
-- [VISION.md](VISION.md) / [PROJECTS.md](PROJECTS.md) — bağlam
-- [keys.md](keys.md) — anahtarlar / [glossary.md](glossary.md) — terimler
-- [ULTRA-THINKING.md](ULTRA-THINKING.md) — uzun düşünme
-- [ADR-028](.decisions/accepted/ADR-028-layered-baseline-9-projects.md) — katman temeli
-- [architecture/index.md](architecture/index.md) — mimari indeks
-- [checklists/layer-boundary-check.md](checklists/layer-boundary-check.md) — 13 soru
-- [CLAUDE.md](CLAUDE.md) / [WORKFLOW.md](WORKFLOW.md) / [ROLE.md](ROLE.md) — kardeş dosyalar
+- [brain.md](../.decisions/brain.md) — beyin yapısı
+- [VISION.md](vision.md) / [PROJECTS.md](projects.md) — bağlam
+- [keys.md](../governance/keys.md) — anahtarlar / [glossary.md](glossary.md) — terimler
+- [ULTRA-THINKING.md](ultra-thinking.md) — uzun düşünme
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) — katman temeli
+- [architecture/index.md](../architecture/index.md) — mimari indeks
+- [checklists/layer-boundary-check.md](../checklists/layer-boundary-check.md) — 13 soru
+- [CLAUDE.md](../claude.md) / [WORKFLOW.md](../governance/workflow.md) / [ROLE.md](role.md) — kardeş dosyalar
 - Prompt arşivi — VersaCoder: `G:/…/versacoder proje planlaması ai.00..09.md` ·
   `proje-ai.00.md` · `coremusic-vault-template.md`
 - Prompt arşivi — ChatGpt (ajan içeriği): `ai-agentic-promt-maker.md` (adaptif soru
@@ -992,7 +992,7 @@ Bu sistemi tanımlarken aşağıdakileri kontrol et:
   Ali Prompt Arşivi & Notlar/Versacoder/versacoder proje-ai.00.md` (13 blok / 100 part
   haritası) — **depo dışı hedef olduğu için link değil, düz metin yol** (göreli link
   `..` ile başka sürücüye ulaşılamaz)
-| kok README | [kok README](../README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok CLAUDE | [kok CLAUDE](../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok WORKFLOW | [kok WORKFLOW](../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
-| kok AGENTS | [kok AGENTS](../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok WORKFLOW | [kok WORKFLOW](../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |
+| kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

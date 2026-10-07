@@ -11,8 +11,8 @@ scope: "Wizard: niyet -> 5 adim -> kademeli onay; onay verilmeden tool cagrisi v
 
 # Wizard - Adim Adim Onay Akisi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../VISION.md) · [ADR-009](../../.decisions/accepted/ADR-009-tool-execution-sandbox.md) · [ADR-025](../../.decisions/accepted/ADR-025-gate003-ui-hard-stop.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-009](../../.decisions/accepted/adr-009-tool-execution-sandbox.md) · [ADR-025](../../.decisions/accepted/adr-025-gate003-ui-hard-stop.md)
+**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (engine · 4/8):** [agent-streaming-sse](agent-streaming-sse.md) · [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [terminal-cli-surface](terminal-cli-surface.md)
 
 > **Tek cumlelik sorumluluk:** *Kullanici niyeti hangi adimlardan gecer, hangi noktada onay zorunludur* sorusunun tek cevabidir.
@@ -91,7 +91,7 @@ Wizard, tek yuksek seviyeli istegi (niyet) **adimlara boler** ve her adimda acik
 | Diff onay blogu | [diff-approval-gate](diff-approval-gate.md) |
 | Checkpoint / gate kapanisi | [session-checkpoint-persistence](session-checkpoint-persistence.md) |
 | Arac sozlesmesi (adim 4) | [protocol-tool-schema](protocol-tool-schema.md) |
-| Ekran akisi | [VISION §2](../../VISION.md) |
+| Ekran akisi | [VISION §2](../../definitions/vision.md) |
 
 ---
 

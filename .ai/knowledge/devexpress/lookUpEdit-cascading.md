@@ -12,7 +12,7 @@ scope: "LookUpEdit kademeli (cascading) baglanti: CascadingOwner, EditValueChang
 # Kademeli lookUpEdit (Cascading)
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [data-access-rules](../../.rules/data-access-rules.md) · [grid-editing-modes](grid-editing-modes.md) · [datasource-binding-dapper](datasource-binding-dapper.md) · [grid-filtering-sorting](grid-filtering-sorting.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (devexpress 4/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Il-Ilce gibi bagli listelerde alt liste nasil filtelenir, veri ne zaman Dapper ile yeniden yuklenir* sorusunun tek cevabidir.

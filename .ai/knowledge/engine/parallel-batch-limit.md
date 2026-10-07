@@ -11,8 +11,8 @@ scope: "Paralel ajan siniri (<= 3), blok/sira karar matrisi, ezme (write conflic
 
 # Paralel Batch ve Ajan Siniri
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [ADR-007](../../.decisions/accepted/ADR-007-agent-hierarchy-session.md) · [performance-guidelines](../../.rules/performance-guidelines.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [ADR-007](../../.decisions/accepted/adr-007-agent-hierarchy-session.md) · [performance-guidelines](../../.rules/performance-guidelines.md)
+**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (engine · 1/8):** [agent-streaming-sse](agent-streaming-sse.md) · [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [protocol-tool-schema](protocol-tool-schema.md) · [session-checkpoint-persistence](session-checkpoint-persistence.md) · [terminal-cli-surface](terminal-cli-surface.md) · [wizard-approval-flow](wizard-approval-flow.md)
 
 > **Tek cumlelik sorumluluk:** *Ayni anda kac ajan calisir, ayni dosyaya iki yazici gelirse ne olur* sorusunun tek cevabidir.

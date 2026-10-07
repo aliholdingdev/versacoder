@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Performans Kuralları
 
@@ -41,5 +41,5 @@ RED — ölçüm olmadan "bitti" denemez (G5).
 
 ## İlgili
 
-- [ADR-009](../.decisions/accepted/ADR-009-tool-execution-sandbox.md)
-- [ADR-027](../.decisions/accepted/ADR-027-count-components-script.md)
+- [ADR-009](../.decisions/accepted/adr-009-tool-execution-sandbox.md)
+- [ADR-027](../.decisions/accepted/adr-027-count-components-script.md)

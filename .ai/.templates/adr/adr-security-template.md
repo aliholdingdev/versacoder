@@ -11,7 +11,7 @@ scope: "guvenlik ADR sablonu: secret yonetimi, auth, oturum, kripto ve threat mo
 
 # ADR Şablonu — Secret Yönetimi, Authentication, Oturum, Kripto ve Threat Model Varyantı
 
-**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [Karar Defteri](../../.decisions/index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../keys.md) · [ARCHITECTURE](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [Karar Defteri](../../.decisions/index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../governance/keys.md) · [ARCHITECTURE](../../architecture/index.md)
 
 ---
 
@@ -134,7 +134,7 @@ template: adr-security-template.md
 
 ```markdown
 # ADR-NNN: <İngilizce karar başlığı>
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../governance/keys.md)
 ```
 
 ### §3.3 §1 İskeleti (Amaç)
@@ -202,7 +202,7 @@ related_rules: [security-rules, coding-standards]
 template: adr-security-template.md
 ---
 # ADR-010: LLM Provider Secret Flow (`keys.md` sözlük + ortam değişkeni)
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../governance/keys.md)
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli
@@ -289,7 +289,7 @@ related_rules: [security-rules, coding-standards]
 template: adr-security-template.md
 ---
 # {{ADR_ID}}: {{INGILIZCE_KARAR_BASLIGI}}
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md) · [keys](../../governance/keys.md)
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli

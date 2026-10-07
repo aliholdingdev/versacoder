@@ -11,7 +11,7 @@ scope: "Metin/kod görüntüleme ve düzenleme, sekme yaşam döngüsü, sözdiz
 
 # Kod Editörü Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [diff-view](diff-view-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [diff-view](diff-view-spec.md) · [search-grep](search-grep-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Dosya nasıl açılır, nasıl gösterilir, nasıl kaydedilir ve sekme hangi kurallarla kapanır* sorusunun tek cevabıdır.
 > Editör **gösterim + tampon**dur; dosya I/O'nu yapan katman l4, komut yönlendirmesi l2 handler'dır.

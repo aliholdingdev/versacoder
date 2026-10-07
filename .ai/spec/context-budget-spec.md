@@ -11,7 +11,7 @@ scope: "Bağlam bütçesi limitleri, compaction (derleme) tetikleyicileri ve der
 
 # VersaCoder — Bağlam Bütçesi Şartnamesi (`spec/context-budget-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [session-spec](session-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [protocol-layer-spec](protocol-layer-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [session-spec](session-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [protocol-layer-spec](protocol-layer-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir oturumda bağlam ne kadardır, ne zaman derlenir (compaction) ve derlemeden sonra ne hayatta kalır* sorusunun tek cevabıdır.
 > Karar ADR-008'dedir (context-assembly, **planlı** — `.decisions/index.md` §planlı): bu belge **bütçe + tetikleyici** davranışını tanımlar.

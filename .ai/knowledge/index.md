@@ -11,8 +11,8 @@ scope: "Kanitli ogrenimlerin (DERS/LESSON) yazildigi yer: kabul kriteri, ornek b
 
 # Bilgi İndeksi (knowledge/)
 
-**Zorunlu Bağlantılar:** [CLAUDE](../CLAUDE.md) · [keys](../keys.md) · [adr-index](../.decisions/adr-index.md) · [Rapor indeksi](../reports/index.md)
-**Küme + Hub:** [index](../index.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [glossary](../glossary.md) · [keys](../keys.md)
+**Zorunlu Bağlantılar:** [CLAUDE](../claude.md) · [keys](../governance/keys.md) · [adr-index](../.decisions/adr-index.md) · [Rapor indeksi](../ops/log.md)
+**Küme + Hub:** [index](../index.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [glossary](../definitions/glossary.md) · [keys](../governance/keys.md)
 
 > **Tek cümlelik sorumluluk:** "Bu vault'ta kanıtlanmış ders nerede yaşar, nasıl yazılır, kabul edilir?" sorusunun tek cevabıdır.
 
@@ -124,4 +124,4 @@ scope: "Kanitli ogrenimlerin (DERS/LESSON) yazildigi yer: kabul kriteri, ornek b
 
 **Dogrulanmis (2026-10-07):** frontmatter 131/131 · mojibake 0 · boyut 2.4-7.7 KB · placeholder 0 (gercek) · 5/5 kümeyde `index.md` VAR
 
-**Vault koku:** [index](../index.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [WORKFLOW](../WORKFLOW.md) · [brain](../brain.md) · [VISION](../VISION.md) · [glossary](../glossary.md) · [keys](../keys.md)
+**Vault koku:** [index](../index.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [WORKFLOW](../governance/workflow.md) · [brain](../.decisions/brain.md) · [VISION](../definitions/vision.md) · [glossary](../definitions/glossary.md) · [keys](../governance/keys.md)

@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # General Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md)
 
 > **Tek cumlelik sorumluluk:** General; belirsiz veya karma gorevleri uclarindan kavrar, uygun ajana delege eder ve sonucu tek kutuda GENERAL'A DUSER notuyla GENERAL'a raporlar.
 
@@ -27,8 +27,8 @@ General, ilk temas ve son toplayici ajan. Profilin tamami AGENTS.md §1.1 icinde
 
 ## §1 On Kosullar
 
-- [AGENTS.md](../AGENTS.md) §1 matris ve §1.1 bloglar okunmus.
-- [WORKFLOW.md](../WORKFLOW.md) gate sirasi biliniyor.
+- [AGENTS.md](../definitions/agents.md) §1 matris ve §1.1 bloglar okunmus.
+- [WORKFLOW.md](../governance/workflow.md) gate sirasi biliniyor.
 - [index](../index.md) ruter gibi kullaniliyor.
 
 ## §2 Adimlar
@@ -36,7 +36,7 @@ General, ilk temas ve son toplayici ajan. Profilin tamami AGENTS.md §1.1 icinde
 | # | Adim | Komut | Sure | Sahip |
 |---|---|---|---|---|
 | 1 | Gorevi sinirla | oku | 2 dk | General |
-| 2 | Ajani sec | [AGENTS.md](../AGENTS.md) §1 | 1 dk | General |
+| 2 | Ajani sec | [AGENTS.md](../definitions/agents.md) §1 | 1 dk | General |
 | 3 | Delege et | alt ajana ilet | 5 dk | General |
 | 4 | Kaniti topla | dosyalari kontrol | 3 dk | General |
 | 5 | Tek kutu raporla | §2 kutusu | 2 dk | General |

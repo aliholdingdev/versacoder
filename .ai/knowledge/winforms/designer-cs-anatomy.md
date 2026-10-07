@@ -12,7 +12,7 @@ scope: "XxxForm.Designer.cs dosyasinin bolum bolum anatomisini, tek InitializeCo
 # .Designer.cs Anatomisi
 
 **Zorunlu Baglantilar:** [designer-cs-trio-rule](designer-cs-trio-rule.md) · [designer-editing-rules](designer-editing-rules.md) · [designer-hand-edit-policy](designer-hand-edit-policy.md) · [partial-class-and-file-naming](partial-class-and-file-naming.md) · [coding-standards](../../.rules/coding-standards.md)
-**Küme + Hub:** [knowledge index](../index.md) · [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [knowledge index](../index.md) · [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (winforms 5/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir `.Designer.cs` dosyasi hangi bloklari icerir, neden tek `InitializeComponent` kaynagidir ve sinir `.cs`'le tam olarak nerede biter* sorusunun tek cevabidir.

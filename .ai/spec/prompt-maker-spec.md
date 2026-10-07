@@ -11,9 +11,9 @@ scope: "Prompt Maker aracinin giris/kabul sozlesmesi (MOD A / MOD B), oturumun g
 
 # Prompt Maker ve Oturum Girdi Hattı (`spec/prompt-maker-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](index.md) · [../engine.md](../engine.md) §1.1.1 ·
-[../AGENTS.md](../AGENTS.md) §6 · [../checklists/index.md](../checklists/index.md) ·
-[../TODOS/index.md](../TODOS/index.md) · [../.rules/coding-standards.md](../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [index](index.md) · [../engine.md](../definitions/engine.md) §1.1.1 ·
+[../AGENTS.md](../definitions/agents.md) §6 · [../checklists/index.md](../checklists/index.md) ·
+[../TODOS/index.md](../ops/todos/index.md) · [../.rules/coding-standards.md](../.rules/coding-standards.md)
 
 > **Tek cümlelik sorumluluk:** prompt girildiğinde **kod yazılmadan önce** ne
 > olduğu, soruların nereden geldiği ve çıktının hangi şablonla kapandığının tek
@@ -29,7 +29,7 @@ scope: "Prompt Maker aracinin giris/kabul sozlesmesi (MOD A / MOD B), oturumun g
   `.decisions/`, `glossary.md` + proje kodu. Jenerik 8 soru **yasak**.
 - **Tavan 10 soru**; `yeter / devam` diyerek erken kapanabilir.
 - Model/provider **elle atanmaz** — seçimi OpenCode yapar (AGENTS §6).
-- Girdi hattının motor akıştaki yeri: [engine.md](../engine.md) §1.1.1.
+- Girdi hattının motor akıştaki yeri: [engine.md](../definitions/engine.md) §1.1.1.
 
 ---
 
@@ -96,7 +96,7 @@ Dil: Türkçe | Görev Sayısı: [n] | Cevap: [n]
 ## §3 Oturum girdi hattı (Exploration Gate → System Prompt)
 
 Prompt Maker **tek başına çalışmaz**; onu besleyen hat aşağıdadır. Tam akış
-[engine.md](../engine.md) §1.1.1'de yaşar; burada **sözleşme** yazılır.
+[engine.md](../definitions/engine.md) §1.1.1'de yaşar; burada **sözleşme** yazılır.
 
 ```text
  KULLANICI PROMPTU
@@ -262,9 +262,9 @@ açılmaz** (bu dosya zaten kayıtlıdır — SSP).
 
 | Konu | Yer |
 |---|---|
-| Girdi hattının tam akışı | [engine.md](../engine.md) §1.1.1 |
-| Motor üretimi (üretim hattı) | [engine.md](../engine.md) §1.1 |
-| Gate zinciri | [WORKFLOW.md](../WORKFLOW.md) §1 |
-| Kod yazım döngüsü 12 adım | [WORKFLOW.md](../WORKFLOW.md) §3.5 |
-| Ajan matrisi / 3 paralel | [AGENTS.md](../AGENTS.md) §1, §5 |
+| Girdi hattının tam akışı | [engine.md](../definitions/engine.md) §1.1.1 |
+| Motor üretimi (üretim hattı) | [engine.md](../definitions/engine.md) §1.1 |
+| Gate zinciri | [WORKFLOW.md](../governance/workflow.md) §1 |
+| Kod yazım döngüsü 12 adım | [WORKFLOW.md](../governance/workflow.md) §3.5 |
+| Ajan matrisi / 3 paralel | [AGENTS.md](../definitions/agents.md) §1, §5 |
 | Prompt Maker skill'i | `.opencode/skills/prompt-maker/SKILL.md` |

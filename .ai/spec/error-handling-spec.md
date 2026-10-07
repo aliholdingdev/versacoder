@@ -11,7 +11,7 @@ scope: "Hata sınıflandırma (VC-E-NNNN), taşıma biçimi (Result<T>), kullan�
 
 # Hata Yönetimi Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [notification](notification-spec.md) · [observability](observability-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [notification](notification-spec.md) · [observability](observability-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Hata nasıl adlandırılır, katmanlar arasında nasıl taşınır, kullanıcıya nasıl gösterilir ve nereye kaydedilir* sorusunun tek cevabıdır.
 > Hata **fırlatmak yerine taşınır**: `Result<T>` + `Error` (l0 sözleşmesi); UI'da `VC-E-NNNN` + insanca mesaj görünür.

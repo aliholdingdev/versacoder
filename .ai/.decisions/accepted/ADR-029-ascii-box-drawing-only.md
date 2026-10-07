@@ -21,7 +21,7 @@ G4 taraması vault genelinde sürekli RED verirdi.
 
 Diyagramlar **saf ASCII `+ - |`** ile çizilir. Unicode box-drawing
 `U+2500-U+257F` vault'ta **yasaktır** (G4 taraması = 0).
-**[ADR-020](ADR-020-no-mermaid-only-box-drawing.md) D1'i supersede eder.**
+**[ADR-020](adr-020-no-mermaid-only-box-drawing.md) D1'i supersede eder.**
 İstisna: CLI/headless çıktı biçimi (D22 — CLI/headless çıktısı ASCII kalır;
 vault içi diyagram tercihi 2026-10-07 kararı D22 ile Unicode'a açılmıştır:
 kullanıcı kararı "Unicode kazanır" — GATE-004a ASCII kriteri revize edilmiştir.
@@ -54,6 +54,6 @@ ortamda kutu bozulur, G4 taraması sürekli RED verirdi.
 
 ## §7 İlgili
 
-- [ADR-020-no-mermaid-only-box-drawing.md](ADR-020-no-mermaid-only-box-drawing.md) — superseded (D1)
-- [ADR-032-ai-control-plane.md](ADR-032-ai-control-plane.md) — D22 revizyonu
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-020-no-mermaid-only-box-drawing.md](adr-020-no-mermaid-only-box-drawing.md) — superseded (D1)
+- [ADR-032-ai-control-plane.md](adr-032-ai-control-plane.md) — D22 revizyonu
+- [adr-index](../adr-index.md) · [brain](../brain.md)

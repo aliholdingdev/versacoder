@@ -69,7 +69,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 | 4 | DevExpress 25.2.8 + RibbonControlStyle.Office2010 | ⚠️ VERIFICATION REQUIRED |
 | 5 | TFM: net48 + net10.0-windows | ⚠️ VERIFICATION REQUIRED |
 | 6 | hand-written Designer.cs / .resx / ResourceManager | ⚠️ VERIFICATION REQUIRED |
-| 7 | Test: xunit, %90 coverage, TreatWarningsAsErrors=true | [rules](../../.rules/) |
+| 7 | Test: xunit, %90 coverage, TreatWarningsAsErrors=true | [rules](../../.rules) |
 | 8 | Vault kök dosyaları + .ai/.rules/ 7 dosya | [index](../../index.md) |
 
 ## §2 — Bağlam (Context)

@@ -11,7 +11,7 @@ scope: "ADR-030 v2 (4 kademe, 3 ekseni, 8·12·16·20 yon grubu) uygulamasinin a
 
 # Faz 06 — 5000+ Katman Kurulumu
 
-**Zorunlu Baglantilar:** [TODOS index](index.md) · [Faz 02](02-5000-plani-sorulari.md) · [Faz 05](05-kod-ve-kalite.md) · [ADR-030](../.decisions/accepted/ADR-030-5000-layers-class-level.md) · [layering-5000-spec](../spec/layering-5000-spec.md) · [layer-rules](../.rules/layer-rules.md) · [layer-5000-check](../checklists/layer-5000-check.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Baglantilar:** [TODOS index](index.md) · [Faz 02](02-5000-plani-sorulari.md) · [Faz 05](05-kod-ve-kalite.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md) · [layering-5000-spec](../../spec/layering-5000-spec.md) · [layer-rules](../../.rules/layer-rules.md) · [layer-5000-check](../../checklists/layer-5000-check.md) · [WORKFLOW](../../governance/workflow.md)
 
 > **Tek cumlelik sorumluluk:** 3 ekseni (tip · dugum · paket) ve yon grubunu kademeli olarak hedefe tasiyan, **her adimda kapi + kanit + bagimlilik** yazili asama listesidir.
 

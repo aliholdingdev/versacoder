@@ -11,7 +11,7 @@ scope: "Test piramidi, framework/runner kararı, kapsam hedefi (%90), sahte/ger�
 
 # Test Stratejisi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [testing-rules](../.rules/testing-rules.md) · [WORKFLOW](../WORKFLOW.md) · [versacoder-spec](versacoder-spec.md) · [tool-spec](tool-spec.md) · [session-spec](session-spec.md) · [protocol-spec](protocol-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [testing-rules](../.rules/testing-rules.md) · [WORKFLOW](../governance/workflow.md) · [versacoder-spec](versacoder-spec.md) · [tool-spec](tool-spec.md) · [session-spec](session-spec.md) · [protocol-spec](protocol-spec.md)
 
 > **Tek cümlelik sorumluluk:** *"Bu davranış gerçekten çalışıyor mu, hangi katmanda, hangi kanıtla"* sorusunun tek cevabıdır.
 > **Kanıtsız "bitti" yasak** (ROLE.md §6): her DoD satırında çıktı dosyası ya da konsol kanıtı vardır.

@@ -87,7 +87,7 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 |    v                                                           |
 | [2] Kanıt        her iddia §3.5 etiketi alır (⚠️ / ✅ / ❌)      |
 |    v                                                           |
-| [3] Bağlantı     tüm ](...) hedefleri diskte var (§5.3/3)       |
+| [3] Bağlantı     tüm ](.) hedefleri diskte var (§5.3/3)       |
 |    v                                                           |
 | [4] Onay         docs-writer -> reviewer (§4.2, ≈ 18 dk)        |
 |    v                                                           |
@@ -243,7 +243,7 @@ part: C
 | # | Kural | Doğru | Yanlış |
 |---|-------|-------|--------|
 | 1 | Vault içi referans **wiki biçimi** | `[[../index]]` · `[[../.rules/coding-standards]]` | `[index](../yok.md)` |
-| 2 | Yol **dosyadan göreli**, `..` ile yüksel | `.ai/reports/x.md` → `[[../index]]` | `[x](C:\versacoder\….md)` |
+| 2 | Yol **dosyadan göreli**, `..` ile yüksel | `.ai/reports/x.md` → `[[../index]]` | `[x](../../../….md)` |
 | 3 | Bağlantı satırı **tek**, H1'den sonra | 4–6 bağlantı | her paragraf bağlantı |
 | 4 | Hedef **diskte yoksa** bağlantı yazılmaz | yalnız ad + `⚠️` | kırık `](…)` |
 | 5 | Kod içi yol **code span** | `` `.ai/.rules/security-rules.md` `` | bağlantı gibi yazmak |

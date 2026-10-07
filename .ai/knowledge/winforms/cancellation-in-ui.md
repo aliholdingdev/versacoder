@@ -12,7 +12,7 @@ scope: "WinForms'ta iptal akisini: CancellationToken zincirini, iptal butonu ve 
 # Iptal (Cancellation) UI Akisi
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [async-ui-thread-marshalling](async-ui-thread-marshalling.md) · [cancellation-token-in-ui](cancellation-token-in-ui.md) · [form-close-cancel-pattern](form-close-cancel-pattern.md) · [coding-standards](../../.rules/coding-standards.md)
-**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (winforms 4/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Kullanici "Iptal"e bastiginda calisan is nasil durur, hangi olay iptal edilir, iptal bir hata midir* sorusunun tek cevabidir.

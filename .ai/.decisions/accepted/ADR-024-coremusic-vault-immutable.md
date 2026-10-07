@@ -46,5 +46,5 @@ bozulması birlikte oluşurdu.
 
 ## §7 İlgili
 
-- [ADR-002-vault-ownership-no-copy.md](ADR-002-vault-ownership-no-copy.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-002-vault-ownership-no-copy.md](adr-002-vault-ownership-no-copy.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

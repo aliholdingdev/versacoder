@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # DevExpress Kuralları (G3)
 
@@ -43,6 +43,6 @@ CRITICAL — RED; sürüm/stil geri alınır.
 
 ## İlgili
 
-- [ADR-004](../.decisions/accepted/ADR-004-devexpress-universal-v261-office2010.md)
-- [ADR-015](../.decisions/accepted/ADR-015-winforms-form-triple-designer.md)
+- [ADR-004](../.decisions/accepted/adr-004-devexpress-universal-v261-office2010.md)
+- [ADR-015](../.decisions/accepted/adr-015-winforms-form-triple-designer.md)
 - [ui-rules](ui-rules.md)

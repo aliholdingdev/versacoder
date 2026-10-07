@@ -50,6 +50,6 @@ görünmez olurdu; migration denetlenebilir olmazdı.
 
 ## §7 İlgili
 
-- [ADR-016-dbconnection-only-l4.md](ADR-016-dbconnection-only-l4.md) — kapsam genişletmesi
-- [ADR-017-parameterized-sql-only.md](ADR-017-parameterized-sql-only.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-016-dbconnection-only-l4.md](adr-016-dbconnection-only-l4.md) — kapsam genişletmesi
+- [ADR-017-parameterized-sql-only.md](adr-017-parameterized-sql-only.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

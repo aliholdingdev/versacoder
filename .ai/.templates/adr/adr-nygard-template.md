@@ -11,7 +11,7 @@ scope: "Nygard klasik ADR sablonu: durum, baglam, karar ve sonuc bolumleri"
 
 # ADR Şablonu — Michael Nygard Klasik Biçimi (Nygard Hafif Varyantı)
 
-**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [Karar Defteri](../../.decisions/index.md) · [coding-standards](../../.rules/coding-standards.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [Karar Defteri](../../.decisions/index.md) · [coding-standards](../../.rules/coding-standards.md) · [keys](../../governance/keys.md)
 
 ---
 

@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # Developer Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
 
 > **Tek cumlelik sorumluluk:** Developer; mimariye uygun, tip guvenli, Result/Either deseniyle hata yoneten kodu uretir ve her dosya icin test biraktirir.
 
@@ -27,9 +27,9 @@ Developer, mimari karari uygulayan ajan. Profilin tamami AGENTS.md §1.1 icindek
 
 ## §1 On Kosullar
 
-- [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) katmanlari biliniyor.
-- [AGENTS.md](../AGENTS.md) cikti kutusu (§2) hatirlaniyor.
-- [WORKFLOW.md](../WORKFLOW.md) kapidaki kural okundu.
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) katmanlari biliniyor.
+- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) hatirlaniyor.
+- [WORKFLOW.md](../governance/workflow.md) kapidaki kural okundu.
 
 ## §2 Adimlar
 

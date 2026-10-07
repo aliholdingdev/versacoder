@@ -11,7 +11,7 @@ scope: "Çözüm/proje/dosya modeli ve sarmalayıcı (wrapper) katmanı - varlı
 
 # Proje Modeli Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [solution-explorer](solution-explorer-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [solution-explorer](solution-explorer-spec.md) · [search-grep](search-grep-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Çözüm/proje/dosya varlıkları nedir, birbirine nasıl bağlıdır ve diske nasıl sarmalanıp yazılır* sorusunun tek cevabıdır.
 > Model **saf C#**tır (l1) ve **EF Core kullanmaz** (G2): kalıcılık ADO.NET + Dapper ile [persistence](persistence-spec.md) katmanındadır.

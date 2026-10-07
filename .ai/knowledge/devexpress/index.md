@@ -11,7 +11,7 @@ scope: "DevExpress v26.1 kontrolleri: Grid, TreeList, Editör, Ribbon, Layout �
 
 # Devexpress — Bilgi Kümesi İndeksi
 
-**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Küme + Hub:** [devexpress index](index.md)
 
 > **Tek cümlelik sorumluluk:** Bu klasördeki **35 bilgi dosyasının** hangisini
@@ -51,7 +51,7 @@ scope: "DevExpress v26.1 kontrolleri: Grid, TreeList, Editör, Ribbon, Layout �
 | 22 | [gridcontrol-basics.md](gridcontrol-basics.md) | GridControl + GridView iskeleti, baglama sirasi, veri doldurma (Dapper -> DataTable) ve … |
 | 23 | [gridview-columns-format.md](gridview-columns-format.md) | GridView kolon baglari, tip ve bicim katmanlari, unbound kolonlar ve … |
 | 24 | [layoutcontrol-grouping.md](layoutcontrol-grouping.md) | LayoutControl ile form duzeni: gruplar, tabb grup, tablo/akis modlari, boyut kisitlari ve … |
-| 25 | [lookUpEdit-cascading.md](lookUpEdit-cascading.md) | LookUpEdit kademeli (cascading) baglanti: CascadingOwner, EditValueChanged ile Dapper … |
+| 25 | [lookUpEdit-cascading.md](lookupedit-cascading.md) | LookUpEdit kademeli (cascading) baglanti: CascadingOwner, EditValueChanged ile Dapper … |
 | 26 | [mvvm-pattern-devexpress.md](mvvm-pattern-devexpress.md) | DevExpress v26.1 MVVM deseni: ViewModelBase + DelegateCommand + Messenger, ince handler … |
 | 27 | [nuget-references-cpm.md](nuget-references-cpm.md) | DevExpress v26.1 NuGet + Central Package Management: Directory.Packages.props, TFM … |
 | 28 | [performance-grid-optimization.md](performance-grid-optimization.md) | DevExpress v26.1 GridControl performansi: veri yukleme, gorunum ayarlari, iki bacak olcum … |

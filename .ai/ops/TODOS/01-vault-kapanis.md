@@ -11,7 +11,7 @@ scope: "500 MD + 0 bozuk link + 0 mojibake + kok bant 30-88 KB icin adim adim is
 
 # Faz 01 — Vault Kapanışı (GATE-004a)
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [gate-004a](../checklists/gate-004a-vault-kapanis.md) · [bilinen-eksikler](../reports/10-bilinen-eksikler.md) · [vault-link-check](../checklists/vault-link-check.md) · [documentation-check](../checklists/documentation-check.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Bağlantılar:** [TODOS index](index.md) · [gate-004a](../../checklists/gate-004a-vault-kapanis.md) · [bilinen-eksikler](../log.md) · [vault-link-check](../../checklists/vault-link-check.md) · [documentation-check](../../checklists/documentation-check.md) · [WORKFLOW](../../governance/workflow.md)
 
 > **Tek cümlelik sorumluluk:** Vault'un 500 MD ve 3 sıfır (link/mojibake/frontmatter)
 
@@ -64,7 +64,7 @@ reports (3), catalog eksik kalan, `knowledge/*/index` (5), rezerve adlar (3).
 | 4 | `check-links.ps1` | **bozuk link 0** | çıktı: 0 | 1 dk |
 | 5 | `find-mojibake.ps1` | **0** | çıktı: 0 | 1 dk |
 | 6 | `count-components.ps1` | 5440+ kayıt PASS | PASS satırı | 1 dk |
-| 7 | gate-004a 14 soru | hepsi [x] | [gate-004a](../checklists/gate-004a-vault-kapanis.md) işaretli | 10 dk |
+| 7 | gate-004a 14 soru | hepsi [x] | [gate-004a](../../checklists/gate-004a-vault-kapanis.md) işaretli | 10 dk |
 | 8 | `log.md` kapanış kaydı | tarihli satır | log.md son satır | 2 dk |
 | 9 | Kullanıcı onayı | GATE-004a kapandı derken onay | kullanıcı yanıtı | — |
 

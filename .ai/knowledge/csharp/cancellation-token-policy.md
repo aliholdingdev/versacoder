@@ -12,7 +12,7 @@ scope: "CancellationToken nerede dogar, nereye kadar tasinir, linkli timeout nas
 # cancellation-token-policy — İptal politikası
 
 **Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [async-await-basics](async-await-basics.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp 5/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir `CancellationToken` nerede dogar, hangi imzalarla asagi iner ve iptal neden hata sayilmaz* sorusunun tek cevabidir.

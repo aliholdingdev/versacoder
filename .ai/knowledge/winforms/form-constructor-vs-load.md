@@ -12,7 +12,7 @@ scope: "Form constructor'nda ne yapilmadigini, Load / Shown / Activated ayrimini
 # Form Constructor mi, Load mi?
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [designer-cs-trio-rule](designer-cs-trio-rule.md) · [form-load-and-shown-events](form-load-and-shown-events.md) · [async-void-event-handlers](async-void-event-handlers.md) · [di-container-lifetimes](di-container-lifetimes.md)
-**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (winforms 5/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Formun ilk isi (kayit acma, veri getirme, pencere konumu) constructor'da mi yoksa `Load` / `Shown`'da mi yapilir* sorusunun tek cevabidir.

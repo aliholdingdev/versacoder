@@ -72,7 +72,7 @@ hedef oluşur, restore/IDE çökerdi.
 
 ## §7 İlgili
 
-- [ADR-013-layered-architecture-52-nodes.md](ADR-013-layered-architecture-52-nodes.md)
-- [ADR-030-5000-layers-class-level.md](ADR-030-5000-layers-class-level.md)
+- [ADR-013-layered-architecture-52-nodes.md](adr-013-layered-architecture-52-nodes.md)
+- [ADR-030-5000-layers-class-level.md](adr-030-5000-layers-class-level.md)
 - [layer-boundary-check](../../checklists/layer-boundary-check.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

@@ -11,7 +11,7 @@ scope: "09-cli-console tam ekran CLI yuzeyinin bolge/olcu/klavye sozlesmesi (VC-
 
 # 09 — CLI KONSOLU (OpenCode-Benzeri Tam Ekran CLI Yuzeyi)
 
-**Zorunlu Baglantilar:** [ui-design/README](../ui-design/README.md) · [cli-spec](cli-spec.md) · [terminal-spec](terminal-spec.md) · [ai-chat-console-spec](ai-chat-console-spec.md) · [09-terminal](../ui-design/09-terminal.md) · [01-start-page](../ui-design/01-start-page.md) · [02-main-ide](../ui-design/02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Baglantilar:** [ui-design/README](../ui-design/readme.md) · [cli-spec](cli-spec.md) · [terminal-spec](terminal-spec.md) · [ai-chat-console-spec](ai-chat-console-spec.md) · [09-terminal](../ui-design/09-terminal.md) · [01-start-page](../ui-design/01-start-page.md) · [02-main-ide](../ui-design/02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
 
 > **Tek cumlelik sorumluluk:** *CLI Konsolu ekrani OpenCode CLI gibi mi gorunur, hangi bolgelerden olusur ve klavye/komut davranisi nasildir* sorusunun tek cevabidir.
 > Gereksinim kimligi: **VC-U-0901..0912** · Ekran adi: `09-cli-console` (ui-design/README §1) · Karsilikli yuzey: [10-ai-chat-console](ai-chat-console-spec.md).

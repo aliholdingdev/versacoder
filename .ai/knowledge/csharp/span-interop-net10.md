@@ -11,8 +11,8 @@ scope: csharp
 
 # Span ve net10.0 Arasinda Entegrasyon
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../CLAUDE.md) | [ADR-001 Cift Hedef](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) | [Async Kurallari](../../.rules/async-rules.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [ADR-001 Cift Hedef](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) | [Async Kurallari](../../.rules/async-rules.md) | [C Sharp Index](index.md)
+**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
 
 > **Tek cumlelik sorumluluk:** `Span<T>`/`ReadOnlySpan<T>` stack-uzeri hiz icindir; `ref struct` oldugu icin async, generic yakalama ve boxlama katmanlarindan gecemez.
@@ -93,9 +93,9 @@ static async Task<int> ToplamAsync(Memory<int> veri)
 
 ## §8 İlgili Kaynaklar
 
-- [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) · [Async Kurallari](../../.rules/async-rules.md) · [Cok Hedefli Props](multi-targeting-props.md) · [C Sharp Index](index.md)
+- [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) · [Async Kurallari](../../.rules/async-rules.md) · [Cok Hedefli Props](multi-targeting-props.md) · [C Sharp Index](index.md)
 
 ## §9 Kanit
 
-- ref struct kisitlari dil spesifikasyonundan; cift hedef uyumu [ADR-001](../../.decisions/accepted/ADR-001-dual-target-net48-net10.md) cercevesinde. Kaynak: kabul edilmis ADR.
+- ref struct kisitlari dil spesifikasyonundan; cift hedef uyumu [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) cercevesinde. Kaynak: kabul edilmis ADR.
 - `System.Memory` paket ihtiyaci net48 tarafina ait; surum numarasi proje bazinda DOĞRULAMA GEREKLİ.

@@ -11,7 +11,7 @@ scope: "Sıradaki görevlerin sırası, öncelik kuralları, çalıştırma/paus
 
 # Görev Kuyruğu Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md) · [notification](notification-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md) · [notification](notification-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir görev ne zaman kuyruğa girer, hangi sırayla çalışır, nasıl duraklatılır/iptal edilir* sorusunun tek cevabıdır.
 > Durumun **gösterimi** [agent-panel](agent-panel-spec.md)’tedir; durumun **kaydı** [session-spec](session-spec.md)/[persistence](persistence-spec.md) üzerindedir.

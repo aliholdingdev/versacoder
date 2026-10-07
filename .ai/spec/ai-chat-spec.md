@@ -11,7 +11,7 @@ scope: "Sohbet paneli: mesaj akışı, bağlam çipleri, streaming yanıt göste
 
 # AI Chat Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [protocol-spec](protocol-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [protocol-spec](protocol-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Kullanıcı mesajı nasıl gönderilir, model yanıtı ekranda nasıl akar ve akış nasıl iptal edilir* sorusunun tek cevabıdır.
 > Panel **gösterimdir**: ağ çağrısı (l4) ve şema doğrulaması (l5) bu dosyada değildir.

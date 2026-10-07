@@ -11,7 +11,7 @@ scope: "Saf SQL migration dosyaları, `__Migrations` sürüm tablosu, checksum k
 
 # VersaCoder — Migration Şartnamesi (`spec/migration-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md) · [deployment-spec](deployment-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Şema nasıl değişir, hangi sıra ve checksum ile uygulanır, hata/geri alma durumunda ne olur* sorusunun tek cevabıdır.
 > Dosya adlandırma ve tablo kolonlarının **gözlemlenmiş kaynağı** `.ai/.sql/README.md`'dir; bu belge **davranış sözleşmesidir** (kaynakla çelişirse `NEEDS_VALIDATION` + `architect`).
@@ -32,7 +32,7 @@ scope: "Saf SQL migration dosyaları, `__Migrations` sürüm tablosu, checksum k
 | 2 | `__Migrations` sürüm tablosu + checksum kilidi | Şemanın **kullanan** kodu: [infra-layer-spec](infra-layer-spec.md) |
 | 3 | Geri alma (down) ve yedek politikası | Dağıtımda `sql/` yerleşimi: [deployment-spec](deployment-spec.md) |
 | 4 | Uygulama zamanı (açılışta) ve timeout | Açılış sırası: [host-layer-spec](host-layer-spec.md) |
-| 5 | Yıkıcı işlem onayı (DROP/ALTER genişlemesi) | Onay mercii: [WORKFLOW](../WORKFLOW.md) §3 |
+| 5 | Yıkıcı işlem onayı (DROP/ALTER genişlemesi) | Onay mercii: [WORKFLOW](../governance/workflow.md) §3 |
 
 > **YASAK:** EF Core migration · kod içinde `ALTER/CREATE/ DROP` çalıştırma (DA-07) · uygulanmış dosyayı sonradan değiştirmek · string birleştirme ile SQL · onaysız yıkıcı migration (SEC-15).
 

@@ -50,5 +50,5 @@ yerel dosya düz metin okunurdu.
 
 ## §7 İlgili
 
-- [ADR-011-llm-provider-order.md](ADR-011-llm-provider-order.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-011-llm-provider-order.md](adr-011-llm-provider-order.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

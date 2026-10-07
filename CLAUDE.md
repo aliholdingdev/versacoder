@@ -11,7 +11,7 @@ scope: "Depo kökü CLAUDE.md: rol, vault bağları, l0..l7 katman özeti, G1..G
 
 # VERSA CODER — Kök Kural Dosyası
 
-**Zorunlu Bağlantılar:** [index](.ai/index.md) · [CLAUDE](.ai/CLAUDE.md) · [templates](.ai/.templates/index.md) · [architecture](.ai/architecture/index.md) · [WORKFLOW](.ai/WORKFLOW.md) · [keys](.ai/keys.md)
+**Zorunlu Bağlantılar:** [index](.ai/index.md) · [CLAUDE](.ai/claude.md) · [templates](.ai/.templates/index.md) · [architecture](.ai/architecture/index.md) · [WORKFLOW](.ai/governance/workflow.md) · [keys](.ai/governance/keys.md)
 
 ## B2 Tek Cümlelik Sorumluluk
 
@@ -62,13 +62,13 @@ referans ihlaldir. **Test katman değildir** — ayrı projedir (9 üretim + 1-2
 | ID | Tek satır özet | Bağlantı |
 |---|---|---|
 | G1 | Harici vault'tan içerik kopyalanamaz; yalnız yapı referansı | [templates](.ai/.templates/index.md) |
-| G2 | EF Core yasak — ADO.NET + Dapper, parametreli sorgu | [ADR-005](.ai/.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) |
+| G2 | EF Core yasak — ADO.NET + Dapper, parametreli sorgu | [ADR-005](.ai/.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) |
 | G3 | Frontmatter'sız Markdown yasak (8 alan) | [templates](.ai/.templates/index.md) |
 | G4 | Üretilen dosyada yer tutucu değişken kalmaz (0 adet) | [templates](.ai/.templates/index.md) |
 | G5 | Türkçe zorunlu; mojibake yasak | [templates](.ai/.templates/index.md) |
 | G6 | < 480 satırlık şablon reddedilir (tek muaf: `.templates/CLAUDE.md`) | [templates](.ai/.templates/index.md) |
 | G7 | Bozuk bağlantı yasak; silme/overwrite kullanıcı onayı ister | [templates](.ai/.templates/index.md) |
-| G8 | `GATE-003` onaysız ekran/kod üretilmez | [WORKFLOW](.ai/WORKFLOW.md) |
+| G8 | `GATE-003` onaysız ekran/kod üretilmez | [WORKFLOW](.ai/governance/workflow.md) |
 | G9 | ADR'siz mimari karar yok; kanıtsız sayı yazılmaz | `ADR-001..030` |
 | G10 | Concat SQL yasak; `@p1..@pN` zorunlu | `Query-Template.md` |
 | G11 | `TreatWarningsAsErrors=true` + %90 coverage | `test-plan-template.md` |
@@ -173,17 +173,17 @@ Bu dosyanin diger 18 vault dosyasina baglantilari (eksiksiz; hicbir baglanti sil
 
 | # | Dosya | Ne tasiyor |
 |---|---|---|
-| AGENTS | [AGENTS](.ai/AGENTS.md) | ajan matrisi — Chat!=Agent!=LLM, cikti kutusu, 3-STRIKE, gorsel uretim hatti |
-| ROLE | [ROLE](.ai/ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](.ai/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](.ai/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| VISION | [VISION](.ai/VISION.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](.ai/PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](.ai/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| MEMORY | [MEMORY](.ai/MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](.ai/log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](.ai/ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.ai/.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| kok AGENTS | [kok AGENTS](./AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok README | [kok README](./README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
-| kok WORKFLOW | [kok WORKFLOW](./WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| AGENTS | [AGENTS](.ai/definitions/agents.md) | ajan matrisi — Chat!=Agent!=LLM, cikti kutusu, 3-STRIKE, gorsel uretim hatti |
+| ROLE | [ROLE](.ai/definitions/role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [engine](.ai/definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.ai/.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| VISION | [VISION](.ai/definitions/vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [PROJECTS](.ai/definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](.ai/definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| MEMORY | [MEMORY](.ai/memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](.ai/ops/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](.ai/definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.ai/.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok AGENTS | [kok AGENTS](agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok README | [kok README](readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok WORKFLOW | [kok WORKFLOW](workflow.md) | kok kapi ozeti (gate sirasi tek satir) |

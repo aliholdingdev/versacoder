@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # UI/UX Kuralları
 
@@ -51,5 +51,5 @@ RED — tasarım tekrarlanır; onaysız kod silinir (GATE-003).
 
 ## İlgili
 
-- [ADR-025](../.decisions/accepted/ADR-025-gate003-ui-hard-stop.md)
+- [ADR-025](../.decisions/accepted/adr-025-gate003-ui-hard-stop.md)
 - [devexpress-rules](devexpress-rules.md) · [accessibility-rules](accessibility-rules.md)

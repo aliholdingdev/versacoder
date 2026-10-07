@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Hata Yönetimi — Result<T>
 
@@ -49,5 +49,5 @@ RED — kod incelemesinde istisna gerekçelendirilmezse reddedilir (brain §3.9/
 
 ## İlgili
 
-- [ADR-019](../.decisions/accepted/ADR-019-dual-leg-build-test.md)
+- [ADR-019](../.decisions/accepted/adr-019-dual-leg-build-test.md)
 - [logging-rules](logging-rules.md) · [rules-index](index.md)

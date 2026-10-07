@@ -11,7 +11,7 @@ scope: "WinForms Form uclusu, layout, async, erisilebilirlik, Designer — 32 do
 
 # Winforms — Bilgi Kümesi İndeksi
 
-**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Küme + Hub:** [winforms index](index.md)
 
 > **Tek cümlelik sorumluluk:** Bu klasördeki **32 bilgi dosyasının** hangisini

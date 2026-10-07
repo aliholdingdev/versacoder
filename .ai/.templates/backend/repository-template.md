@@ -19,7 +19,7 @@ scope: "repository sablonu: arayuz, implementasyon ve orchestrator kalibinin isk
 - [handler-template.md](handler-template.md) — ADO.NET handler'ları ile `IReadRepository` karşılaştırması
 - [../../.rules/coding-standards.md](../../.rules/coding-standards.md) — `async`/`await`, naming, kod stili kuralları
 - [../../architecture/index.md](../../architecture/index.md) — katman diyagramı ve bağımlılık okları
-- [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) — EF Core yasağı, ADO.NET + Dapper standardı (SSUT)
+- [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) — EF Core yasağı, ADO.NET + Dapper standardı (SSUT)
 
 ## §1 Amaç
 
@@ -544,7 +544,7 @@ Beklenen: `satir` 480–660 · `bos` 480–660 · `kb` 25–34 · `bolum=7` · `
 4. [handler-template.md](handler-template.md) — CQRS/sıcak yol varyantı
 5. [../../.rules/coding-standards.md](../../.rules/coding-standards.md) — naming, `async`, stil
 6. [../../architecture/index.md](../../architecture/index.md) — katman diyagramı (T4 kaynağı)
-7. [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) — **EF yasağı** (SSUT)
+7. [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) — **EF yasağı** (SSUT)
 8. [service-template.md §5.4](service-template.md) — Quality Report format kardeşi
 
 ### §7.2 Red Team (≥10 satır)

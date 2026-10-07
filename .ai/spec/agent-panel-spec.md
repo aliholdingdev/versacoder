@@ -11,7 +11,7 @@ scope: "Görev/ajan paneli: görev listesi görünümü, durum geçişleri, tool
 
 # Agent Panel Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [tool-spec](tool-spec.md) · [task-queue](task-queue-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [tool-spec](tool-spec.md) · [task-queue](task-queue-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Görev listesi hangi sütunları gösterir, durum geçişleri nasıl yansıtılır ve log akışı nereden okunur* sorusunun tek cevabıdır.
 > Durumun **kuralı** [task-queue](task-queue-spec.md) ve [session-spec](session-spec.md)’tadır; bu dosya yalnızca **gösterimi** sahiplenir.

@@ -48,5 +48,5 @@ bunu yakalayamayabilir.
 
 ## §7 İlgili
 
-- [ADR-005-ado-net-dapper-no-ef-core.md](ADR-005-ado-net-dapper-no-ef-core.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-005-ado-net-dapper-no-ef-core.md](adr-005-ado-net-dapper-no-ef-core.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

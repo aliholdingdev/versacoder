@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-030](../../.decisions/accepted/ADR-030-5000-layers-class-level.md) · [ADR-028](../../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [layer-5000-check](../../checklists/layer-5000-check.md)
+**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-5000-check](../../checklists/layer-5000-check.md)
 
 # layer-5000 — İskelet
 
@@ -50,4 +50,4 @@ powershell -NoProfile -File ..\..\scripts\count-components.ps1 -MinRecords 5000 
 ## İlgili
 
 - [spec/layering-5000-spec](../../spec/layering-5000-spec.md) — davranış spec'i
-- [ADR-030](../../.decisions/accepted/ADR-030-5000-layers-class-level.md)
+- [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md)

@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [vault index](../index.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [ADR-030](../.decisions/accepted/ADR-030-5000-layers-class-level.md) · [layer-rules](../.rules/layer-rules.md) · [brain](../brain.md)
+**Zorunlu Bağlantılar:** [vault index](../index.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [ADR-030](../.decisions/accepted/adr-030-5000-layers-class-level.md) · [layer-rules](../.rules/layer-rules.md) · [brain](../.decisions/brain.md)
 
 # architecture — Ürün Mimari Haritası
 
@@ -25,7 +25,7 @@ supersedes: ""
 ## §0 Özet (Answer First)
 
 - **Ürün baz kararı:** ADR-028 — 8 makro katman (l0..l7) · 52 düğüm · 9 üretim +
-  1-2 test · çift TFM. Tam tablo: [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md).
+  1-2 test · çift TFM. Tam tablo: [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md).
 - **Yön:** `l7→l6→l5→l4→l2→l1→l0`; `l3` yalnız `l0`; yasak oklar `l4→l2 X` · `l5→l4 X`.
 - **5000+ modeli:** ADR-030 — sınıf/namespace düzeyi kayıt; proje sabit 9+2.
 
@@ -33,8 +33,8 @@ supersedes: ""
 
 | Dizin | İçerik | Durum |
 |---|---|---|
-| [00-overview](00-overview/) | Genel bakış + yön diyagramı | ✅ üretildi |
-| [layer-5000](layer-5000/) | 5000+ katman/katalog iskeleti (ADR-030) | ✅ iskelet |
+| [00-overview](00-overview) | Genel bakış + yön diyagramı | ✅ üretildi |
+| [layer-5000](layer-5000) | 5000+ katman/katalog iskeleti (ADR-030) | ✅ iskelet |
 | `catalog/` | Bileşen kataloğu (N01..N44 satırları) | ⏳ Faz 2+ — 5000+ katalog verisi gelince |
 | `l0/`..`l7/` | Makro katman başına detay dokümanı | ⏳ ürün kodu yazılırken (GATE-004 sonrası) |
 
@@ -52,4 +52,4 @@ supersedes: ""
 ## §3 İlgili
 
 - [vault index](../index.md) · [adr-index](../.decisions/adr-index.md)
-- [ADR-032](../.decisions/accepted/ADR-032-ai-control-plane.md) — .ai katmanları (bağımsız)
+- [ADR-032](../.decisions/accepted/adr-032-ai-control-plane.md) — .ai katmanları (bağımsız)

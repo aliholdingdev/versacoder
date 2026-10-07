@@ -59,6 +59,6 @@ da kayda yorumlanabilirdi; ilki restore/IDE çökertir (ADR-028 §3 A3).
 
 ## §7 İlgili
 
-- [ADR-028-layered-baseline-9-projects.md](ADR-028-layered-baseline-9-projects.md)
-- [ADR-013-layered-architecture-52-nodes.md](ADR-013-layered-architecture-52-nodes.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-028-layered-baseline-9-projects.md](adr-028-layered-baseline-9-projects.md)
+- [ADR-013-layered-architecture-52-nodes.md](adr-013-layered-architecture-52-nodes.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

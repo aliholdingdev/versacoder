@@ -11,7 +11,7 @@ scope: "ADR-011 + ADR-018 — DPAPI sifreli depo, keys.md yalniz harita, loga se
 
 # Secret / Anahtar Sizintisi Kontrolu
 
-**Zorunlu Baglantilar:** [checklist index](index.md) · [vault index](../index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [TODOS index](../TODOS/index.md)
+**Zorunlu Baglantilar:** [checklist index](index.md) · [vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [TODOS index](../ops/todos/index.md)
 
 > **Tek cumlelik sorumluluk:** Anahtar, token ve parolalarin kodda, repoda veya logda bulunmadigini denetler.
 
@@ -19,7 +19,7 @@ scope: "ADR-011 + ADR-018 — DPAPI sifreli depo, keys.md yalniz harita, loga se
 
 - **Kullanim:** ilgili is yapilmadan once tek tek isaretlenir; **1 madde bossa RED**.
 - **Kapatan:** kullanici (G12); bu liste yalniz kanit hazirlar.
-- **Sira:** bu liste [WORKFLOW](../WORKFLOW.md) §1 gate sirasinda ilgili kapidan **once** calistirilir; sirasiz calistirma kapiyi beklemez.
+- **Sira:** bu liste [WORKFLOW](../governance/workflow.md) §1 gate sirasinda ilgili kapidan **once** calistirilir; sirasiz calistirma kapiyi beklemez.
 - **Cikti:** isaretli liste + §4 kanit kutusu; kanitsiz "gecti" denemez (G5).
 
 ### §0.1 Calistirma zamanlamasi
@@ -27,9 +27,9 @@ scope: "ADR-011 + ADR-018 — DPAPI sifreli depo, keys.md yalniz harita, loga se
 | Alan | Deger |
 |---|---|
 | Ne zaman | ilgili is baslamadan **once** (on-kontrol) ya da kapi kapanisinda (kanit) |
-| Kim hazirlar | isin ureticisi (matristeki ajan — [AGENTS](../AGENTS.md) §2) |
+| Kim hazirlar | isin ureticisi (matristeki ajan — [AGENTS](../definitions/agents.md) §2) |
 | Kim kapatir | **yalniz kullanici** (G12) |
-| Suresi asilirsa | is durur + [log](../log.md) raporu (WORKFLOW §2, 20 dk esigi) |
+| Suresi asilirsa | is durur + [log](../ops/log.md) raporu (WORKFLOW §2, 20 dk esigi) |
 | Kanit kutusu | §4 — 4 satir, `EKSIK` bos birakilmaz |
 
 ## §1 Kabul Kriterleri (6 madde)
@@ -69,9 +69,9 @@ SONRAKI : <adim, ~ sure>
 
 ## §5 Kaynak (turetilme dayanagi)
 
-- [brain](../brain.md) §1.1 **ADR-011 + ADR-018 yakalama: `secret-leak-check`**
-- [CLAUDE](../CLAUDE.md) G8 (yigin/teknoloji) · G11 (gizli islem)
-- [AGENTS](../AGENTS.md) §4 (External Agent ortam izolasyonu)
+- [brain](../.decisions/brain.md) §1.1 **ADR-011 + ADR-018 yakalama: `secret-leak-check`**
+- [CLAUDE](../claude.md) G8 (yigin/teknoloji) · G11 (gizli islem)
+- [AGENTS](../definitions/agents.md) §4 (External Agent ortam izolasyonu)
 
 > **Not:** Icerik vault belgelerinden **turetilmistir** (G9); kaynakta olmayan madde uydurulmaz.
 
@@ -79,7 +79,7 @@ SONRAKI : <adim, ~ sure>
 
 ## §6 Iliskili Dosyalar
 
-[index](index.md) · [WORKFLOW](../WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [AGENTS](../AGENTS.md) · [brain](../brain.md) · [PROJECTS](../PROJECTS.md) · [keys](../keys.md) · [glossary](../glossary.md) · [log](../log.md) · [TODOS index](../TODOS/index.md) · [ADR-031](../.decisions/draft/ADR-031-visual-production-provider.md)
+[index](index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [PROJECTS](../definitions/projects.md) · [keys](../governance/keys.md) · [glossary](../definitions/glossary.md) · [log](../ops/log.md) · [TODOS index](../ops/todos/index.md) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)
 
 ### §6.1 Ayni gecisten gecen diger checklist'ler
 

@@ -11,8 +11,8 @@ scope: "GridView duzenleme modlari, RepositoryItem editörleri, hucre/satir dogr
 
 # Grid Duzenleme Modlari ve Dogrulama
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [data-access-rules](../../.rules/data-access-rules.md) · [gridcontrol-basics](gridcontrol-basics.md) · [lookUpEdit-cascading](lookUpEdit-cascading.md) · [grid-paging-virtual-mode](grid-paging-virtual-mode.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [data-access-rules](../../.rules/data-access-rules.md) · [gridcontrol-basics](gridcontrol-basics.md) · [lookUpEdit-cascading](lookupedit-cascading.md) · [grid-paging-virtual-mode](grid-paging-virtual-mode.md)
+**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (devexpress 6/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Hucre nasil duzenlenir, ne zaman kaydedilir ve hatali veri nerede yakalanir* sorusunun tek cevabidir.
@@ -53,7 +53,7 @@ Duzenleme uc karardir: **acik/kapali** (`OptionsBehavior.Editable`), **editör t
 |---|---|---|
 | metin | `RepositoryItemTextEdit` | `MaxLength`, `Mask` |
 | secim listesi | `RepositoryItemComboBoxEdit` | `Items` / `DataSource` |
-| ilgili kayit | `RepositoryItemLookUpEdit` | `DataSource`, `ValueMember` (bkz. [lookUpEdit-cascading](lookUpEdit-cascading.md)) |
+| ilgili kayit | `RepositoryItemLookUpEdit` | `DataSource`, `ValueMember` (bkz. [lookUpEdit-cascading](lookupedit-cascading.md)) |
 | evet/hayir | `RepositoryItemCheckEdit` | `ValueChecked` / `ValueUnchecked` |
 | sayi / tarih | `RepositoryItemSpinEdit` / `RepositoryItemDateEdit` | `MinValue`, `EditMask` |
 
@@ -133,7 +133,7 @@ gridControl1.RefreshDataSource();
 | Konu | Dosya |
 |---|---|
 | Grid iskeleti | [gridcontrol-basics](gridcontrol-basics.md) |
-| Editör baglama (kademeli) | [lookUpEdit-cascading](lookUpEdit-cascading.md) |
+| Editör baglama (kademeli) | [lookUpEdit-cascading](lookupedit-cascading.md) |
 | Kolon ve bicim | [gridview-columns-format](gridview-columns-format.md) |
 | Sayfalama + sanal mod | [grid-paging-virtual-mode](grid-paging-virtual-mode.md) |
 | Veri kaynagi (Dapper) | [datasource-binding-dapper](datasource-binding-dapper.md) |

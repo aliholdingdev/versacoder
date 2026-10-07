@@ -11,7 +11,7 @@ scope: "Toast/balon bildirim, hata merkezi (birikimli liste) ve sessizleştirme 
 
 # Bildirim Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [observability](observability-spec.md) · [agent-panel](agent-panel-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [observability](observability-spec.md) · [agent-panel](agent-panel-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Bir olay kullanıcıya nasıl bildirilir, hatalar nerede biriktirilir ve hangi bildirim susturulur* sorusunun tek cevabıdır.
 > Bildirim **gösterimdir**; hata kodu üretimi [error-handling](error-handling-spec.md), kaydı [observability](observability-spec.md) kapsamındadır.

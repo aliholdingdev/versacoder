@@ -11,7 +11,7 @@ scope: "l6 (N38–N40): bootstrap pipeline sırası, tek DI kayıt noktası, con
 
 # VersaCoder — Host Katmanı Şartnamesi (`spec/host-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [protocol-layer-spec](protocol-layer-spec.md) · [infra-layer-spec](infra-layer-spec.md) · [build-spec](build-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [protocol-layer-spec](protocol-layer-spec.md) · [infra-layer-spec](infra-layer-spec.md) · [build-spec](build-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Uygulama ne sırayla açılır, hangi servisler nerede kaydedilir ve yapılandırma hangi köprüden tipli seçeneğe dönüşür* sorusunun tek cevabıdır.
 

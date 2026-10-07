@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # UI Designer Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [general](general-agent.md)
 
 > **Tek cumlelik sorumluluk:** UI Designer; form ve ekran tasarlari, wireframe uretir, tasarim kararlarini checklist kanitiyla belgeler.
 
@@ -27,9 +27,9 @@ UI Designer, kullanicinin gordugu yuzeyin sahibi ajan. Profilin tamami AGENTS.md
 
 ## §1 On Kosullar
 
-- [AGENTS.md](../AGENTS.md) cikti kutusu (§2) biliniyor.
-- [WORKFLOW.md](../WORKFLOW.md) gate sirasi okundu.
-- [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) katman sinirlari hatirlaniyor (UI, Application'i gorer).
+- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) biliniyor.
+- [WORKFLOW.md](../governance/workflow.md) gate sirasi okundu.
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) katman sinirlari hatirlaniyor (UI, Application'i gorer).
 
 ## §2 Adimlar
 

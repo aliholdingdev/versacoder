@@ -46,6 +46,6 @@ sayıya güvenirdi.
 
 ## §7 İlgili
 
-- [ADR-013-layered-architecture-52-nodes.md](ADR-013-layered-architecture-52-nodes.md)
-- [ADR-030-5000-layers-class-level.md](ADR-030-5000-layers-class-level.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-013-layered-architecture-52-nodes.md](adr-013-layered-architecture-52-nodes.md)
+- [ADR-030-5000-layers-class-level.md](adr-030-5000-layers-class-level.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

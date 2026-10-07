@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # Tester Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
 
 > **Tek cumlelik sorumluluk:** Tester; her fonksiyon icin gecen testi yazar, coverage'i olcur ve kapiya kirmizi/yesil kanit tasinmasini saglar.
 
@@ -27,9 +27,9 @@ Tester, kanitin sahibi ajan. Profilin tamami AGENTS.md §1.1 icindeki TESTER blo
 
 ## §1 On Kosullar
 
-- [AGENTS.md](../AGENTS.md) cikti kutusu (§2) biliniyor.
-- [WORKFLOW.md](../WORKFLOW.md) gate sirasi okundu.
-- [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) katmanlari hatirlaniyor.
+- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) biliniyor.
+- [WORKFLOW.md](../governance/workflow.md) gate sirasi okundu.
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) katmanlari hatirlaniyor.
 
 ## §2 Adimlar
 

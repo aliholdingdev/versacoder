@@ -11,7 +11,7 @@ scope: "VersaCoder Studio/IDE kapsamında görsel üretim (render) sağlayıcıs
 
 # ADR-031 — Görsel Üretim Sağlayıcı Entegrasyonu (ÖNERİ)
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [VISION](../../VISION.md) · [WORKFLOW](../../WORKFLOW.md) · [ADR-028](../accepted/ADR-028-layered-baseline-9-projects.md) · [brain](../../brain.md) · [adr-index](../adr-index.md)
+**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [VISION](../../definitions/vision.md) · [WORKFLOW](../../governance/workflow.md) · [ADR-028](../accepted/adr-028-layered-baseline-9-projects.md) · [brain](../brain.md) · [adr-index](../adr-index.md)
 
 > **Tek cümlelik sorumluluk:** VersaCoder'ın görsel üretim yeteneğinin **hangi
 > katmanda, hangi port/adapter ile** yerleşeceği ve **hangi üç sağlayıcı yolunun**
@@ -38,7 +38,7 @@ scope: "VersaCoder Studio/IDE kapsamında görsel üretim (render) sağlayıcıs
   endpoint/anahtar/lisans/fiyat/rate-limit değerleri — hiçbiri kaynakta yok (§5).
   Bu yüzden durum `proposed`, `accepted` **değil**.
 - **Studio/IDE bağlamı:** VersaCoder = kod + dokümantasyon + görsel üretim
-  ([VISION](../../VISION.md) §0.3); bu ADR üçüncü yeteneğin altyapı kararını verir.
+  ([VISION](../../definitions/vision.md) §0.3); bu ADR üçüncü yeteneğin altyapı kararını verir.
 - **Kapı ilişkisi:** Bu ADR **kod üretmez**; `src/**` yazımı GATE-003 onayından
   sonra ve bu ADR `accepted` olduktan sonra başlar (G12 · G8).
 
@@ -50,8 +50,8 @@ scope: "VersaCoder Studio/IDE kapsamında görsel üretim (render) sağlayıcıs
 
 | # | Tetikleyici | Kaynak |
 |---|---|---|
-| 1 | VersaCoder Studio/IDE olarak genişletildi (kod + docs + görsel) | [VISION](../../VISION.md) §0.3 · [README](../../../README.md) §1 |
-| 2 | Görsel üretim hattı tanımlandı (8 adım) ama **sağlayıcı boş** | [AGENTS](../../AGENTS.md) §8.5 |
+| 1 | VersaCoder Studio/IDE olarak genişletildi (kod + docs + görsel) | [VISION](../../definitions/vision.md) §0.3 · [README](../../../readme.md) §1 |
+| 2 | Görsel üretim hattı tanımlandı (8 adım) ama **sağlayıcı boş** | [AGENTS](../../definitions/agents.md) §8.5 |
 | 3 | Prompt üretimi tarafı hazır (model listesi, kalite kapısı, çıktı iskeleti) | AGENTS §8.5 · ChatGpt görsel prompt arşivi |
 | 4 | Mevcut AI sağlayıcı soyutlaması zaten var | ADR-028 §2.1 (`llm-http` N31) · ADR-011 (fallback sırası) |
 
@@ -75,11 +75,11 @@ Prompt üretilebiliyor ama **prompt nereye gönderilecek** belirsiz. Bu belirsiz
 | # | Kısıt | Kaynak |
 |---|---|---|
 | K1 | Yeni `.csproj` yalnız gerçek boundary gerektiriyorsa açılır | ai.08 §51 (DLL şişirme yasağı) |
-| K2 | Port `l0`'da, adapter `l4`'te; `l2 → l4` doğrudan ok **yok** | [ADR-028](../accepted/ADR-028-layered-baseline-9-projects.md) §2.1 |
-| K3 | EF Core yok; veri erişimi ADO.NET + Dapper | [CLAUDE](../../CLAUDE.md) G2 |
-| K4 | Secret düz metin değil; DPAPI şifreli depo | ADR-018 · [CLAUDE](../../CLAUDE.md) G8 |
-| K5 | Bilinmeyen API/endpoint/sürüm **uydurulmaz** | [CLAUDE](../../CLAUDE.md) G9 |
-| K6 | Kod yalnız GATE-003 onayı sonrası | [WORKFLOW](../../WORKFLOW.md) §2.2 |
+| K2 | Port `l0`'da, adapter `l4`'te; `l2 → l4` doğrudan ok **yok** | [ADR-028](../accepted/adr-028-layered-baseline-9-projects.md) §2.1 |
+| K3 | EF Core yok; veri erişimi ADO.NET + Dapper | [CLAUDE](../../claude.md) G2 |
+| K4 | Secret düz metin değil; DPAPI şifreli depo | ADR-018 · [CLAUDE](../../claude.md) G8 |
+| K5 | Bilinmeyen API/endpoint/sürüm **uydurulmaz** | [CLAUDE](../../claude.md) G9 |
+| K6 | Kod yalnız GATE-003 onayı sonrası | [WORKFLOW](../../governance/workflow.md) §2.2 |
 
 ---
 
@@ -433,7 +433,7 @@ SD hariç) · **Midjourney kolunun kaderi** (kapsamda mı, değil mi → §8 Sor
 
 ## §8 Açık Sorular (kullanıcıya — tek tur, A/B/C)
 
-> **Tek soru kuralı** ([ROLE](../../ROLE.md) §4): her tur **1 soru**, A/B/C, süreli.
+> **Tek soru kuralı** ([ROLE](../../definitions/role.md) §4): her tur **1 soru**, A/B/C, süreli.
 
 **Soru 1 — Sağlayıcı stratejisi ✅ CEVAPLANDI (2026-10-07):**
 
@@ -559,13 +559,13 @@ Correctness → Security → Maintainability → Performance → Simplicity`
 §2.2 sözleşme alan adları = `INFERRED` (kavramsal) ·
 §5 kalan U'lar (A: U3-tutar/U4/negative; B: U2/U3/U4-BFL; C: hepsi) =
 `DOĞRULAMA GEREKLI` · §9 adr-index kaydı = `DOĞRULAMA GEREKLI` (dosya diskte yok).
-| engine | [engine](../../engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| PROJECTS | [PROJECTS](../../PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](../../glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| keys | [keys](../../keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
-| MEMORY | [MEMORY](../../MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](../../log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](../../ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| kok CLAUDE | [kok CLAUDE](../../../CLAUDE.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
-| kok AGENTS | [kok AGENTS](../../../AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
-| kok WORKFLOW | [kok WORKFLOW](../../../WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |
+| engine | [engine](../../definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| PROJECTS | [PROJECTS](../../definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](../../definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| keys | [keys](../../governance/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
+| MEMORY | [MEMORY](../../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](../../ops/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](../../definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| kok CLAUDE | [kok CLAUDE](../../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
+| kok AGENTS | [kok AGENTS](../../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok WORKFLOW | [kok WORKFLOW](../../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |

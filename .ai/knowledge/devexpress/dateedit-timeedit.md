@@ -11,8 +11,8 @@ scope: "DateEdit ve TimeEdit ile tarih/saat girisi: gosterim formati, MinValue/M
 
 # DateEdit ve TimeEdit
 
-**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [hata kurallari](../../.rules/error-handling-rules.md) · [ADR-005 ado.net dapper](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) · [dx-validation-provider](dx-validation-provider.md) · [checkedcomboedit-values](checkedcomboedit-values.md)
-**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [hata kurallari](../../.rules/error-handling-rules.md) · [ADR-005 ado.net dapper](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [dx-validation-provider](dx-validation-provider.md) · [checkedcomboedit-values](checkedcomboedit-values.md)
+**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Tarih nerede `DateEdit`, saat nerede `TimeEdit` ile girilir, gosterim formati nasil sabitlenir ve aralik nasil dogrulanir* sorusunun tek cevabidir.

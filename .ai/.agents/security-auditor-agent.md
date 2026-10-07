@@ -10,7 +10,7 @@ scope: C:\versacoder\.ai\.agents
 ---
 # Security Auditor Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../AGENTS.md) | [WORKFLOW.md](../WORKFLOW.md) | [ROLE.md](../ROLE.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [general](general-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md)
+**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [general](general-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md)
 
 > **Tek cumlelik sorumluluk:** Security-auditor; OWASP kalemleri uzerinden denetim yapar, her bulguyu severity ve dosya/satir olarak raporlar, kodu duzeltmez.
 
@@ -43,7 +43,7 @@ Uretilen kanit **bulgu listesi + severity + etkilenen dosya/satir**'dir; AGENTS.
 |---|---|---|
 | Bulgu + severity | AGENTS.md §1 matrisi (Guvenlik satiri) | etiketli satir: CRITICAL / YUKSEK / ORTA / DUSUK |
 | Tarama ciktisi | [security-review-checklist](../checklists/security-review-checklist.md) | Calistirilmis komut ciktisi, yorum degil |
-| Gate gecisi | [WORKFLOW.md](../WORKFLOW.md) §2 kanit kutusu | AGENTS.md §1.3 "Güvenlik geçişi" satiri |
+| Gate gecisi | [WORKFLOW.md](../governance/workflow.md) §2 kanit kutusu | AGENTS.md §1.3 "Güvenlik geçişi" satiri |
 
 ## §3 Iliskiler
 
@@ -51,7 +51,7 @@ Uretilen kanit **bulgu listesi + severity + etkilenen dosya/satir**'dir; AGENTS.
 |---|---|---|
 | [reviewer](reviewer-agent.md) | Seviye dusurur | Kanitsiz dusurme YASAK (checklist §0) |
 | [developer](developer-agent.md) | Bulguyu duzeltir | Duzeltme bu ajanin isi degil |
-| [security-prompt](../prompts/security-prompt.md) | Denetim is emri | Prompt, ajan tanimi degildir |
+| [security-prompt](../.rules/security-rules.md) | Denetim is emri | Prompt, ajan tanimi degildir |
 | [architect](architect-agent.md) | Katman siniri | [layer-boundary-check](../checklists/layer-boundary-check.md) ile kesisir |
 
 ## §4 Kisitlar

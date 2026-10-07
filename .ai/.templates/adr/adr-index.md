@@ -33,7 +33,7 @@ scope: "ADR kayit defteri sablonu: index.md satir bicimi, numaralandirma ve duru
 | Dizin dosyası | `.ai/.decisions/index.md` | ⚠️ VERIFICATION REQUIRED |
 | ADR dosyaları | `.ai/.decisions/accepted|draft|rejected/` | ⚠️ VERIFICATION REQUIRED |
 | Numara aralığı | ADR-001..ADR-008 planı (+ ADR-010 örneği) | ⚠️ VERIFICATION REQUIRED |
-| Slug dili | İngilizce, tireli | [rules](../../.rules/) |
+| Slug dili | İngilizce, tireli | [rules](../../.rules) |
 | Supersede kuralı | G13 zinciri zorunlu | §4.5 |
 
 > **Not:** Dizin, tüm ADR'lerin tek doğruluk kaynağıdır (SSOT); ADR dosyaları kendi durumunu yazsa bile **dizin satırı geçerlidir**.
@@ -65,9 +65,9 @@ scope: "ADR kayit defteri sablonu: index.md satir bicimi, numaralandirma ve duru
 | 2 | Klasörler: `accepted/`, `draft/`, `rejected/` | ⚠️ VERIFICATION REQUIRED |
 | 3 | ADR planı: ADR-001..ADR-008 (+ ADR-010 örneği) | plan belgesi ⚠️ |
 | 4 | GATE-000..005 kapıları ADR'lerle ilişkili | ⚠️ VERIFICATION REQUIRED |
-| 5 | Frontmatter 7 alan, `authority: SSOT` | [rules](../../.rules/) |
-| 6 | Slug'lar İngilizce, içerik Türkçe | [rules](../../.rules/) |
-| 7 | Test: xunit, %90 coverage | [rules](../../.rules/) |
+| 5 | Frontmatter 7 alan, `authority: SSOT` | [rules](../../.rules) |
+| 6 | Slug'lar İngilizce, içerik Türkçe | [rules](../../.rules) |
+| 7 | Test: xunit, %90 coverage | [rules](../../.rules) |
 | 8 | Vault kök: index.md, architecture/index.md, keys.md | [index](../../index.md) |
 
 ## §2 — Bağlam (Context)
@@ -80,7 +80,7 @@ scope: "ADR kayit defteri sablonu: index.md satir bicimi, numaralandirma ve duru
 | Klasörler | `accepted/`, `draft/`, `rejected/` | ⚠️ VERIFICATION REQUIRED |
 | Dosya adı formatı | `ADR-NNN-<english-slug>.md` | ⚠️ VERIFICATION REQUIRED |
 | Numara planı | ADR-001..008 (+010 örneği) | plan belgesi ⚠️ |
-| Frontmatter | `title,type,category,status,version,updated,authority` | [rules](../../.rules/) |
+| Frontmatter | `title,type,category,status,version,updated,authority` | [rules](../../.rules) |
 | Supersede | eski ADR `superseded` + yeni ADR linki | G13 |
 
 ### §2.2 — Kararı tetikleyen tetikleyiciler
@@ -193,7 +193,7 @@ Karar **[geri alınabilir / kısmen geri alınabilir / geri alınamaz]**. Geri a
 | KR4 | Status tutarlı | klasör=status | komut 3 |
 
 #### §3.10.5 — Kapsam
-`.ai/.decisions/index.md` + katalog dosyaları + ilgili [rules](../../.rules/) satırları.
+`.ai/.decisions/index.md` + katalog dosyaları + ilgili [rules](../../.rules) satırları.
 #### §3.10.6 — Kapsam dışı
 Kod içi ajan implementasyonları; CLI davranışları.
 #### §3.10.7 — Bağımlılıklar
@@ -463,7 +463,7 @@ Zincir kuralları:
 ## Ek A — Dizin Satırı Formatı (standart)
 
 ```markdown
-| ADR-NNN | [başlık](accepted/ADR-NNN-slug.md) | slug | status | YYYY-MM-DD | superseded-by-ADR-MMM / — |
+| ADR-NNN | [başlık](accepted/adr-nnn-slug.md) | slug | status | YYYY-MM-DD | superseded-by-ADR-MMM / — |
 ```
 
 Kurallar:

@@ -11,7 +11,7 @@ scope: "Protocol katmanı sözleşmesi — mesaj zarfı (envelope), oturum yaşa
 
 # VersaCoder — Protokol Şartnamesi (`spec/protocol-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys.md](../keys.md) · [versacoder-spec.md](./versacoder-spec.md) · [session-spec.md](./session-spec.md) · [tool-spec.md](./tool-spec.md) · [test-strategy.md](./test-strategy.md) · [../reports/00-kapsam-analizi.md](../reports/00-kapsam-analizi.md)
+**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [versacoder-spec.md](versacoder-spec.md) · [session-spec.md](session-spec.md) · [tool-spec.md](tool-spec.md) · [test-strategy.md](test-strategy.md) · [../reports/00-kapsam-analizi.md](../ops/log.md)
 
 > **Tek cümlelik sorumluluk:** *VersaCoder bileşenleri (UI ↔ Host ↔ Protocol ↔ agent çekirdeği ↔ LLM gateway) birbirine hangi mesajlarla, hangi kurallarla konuşur* sorusunun tek cevabıdır.
 > Gereksinim kimliği: **`VC-PRC-NNN`** · Hata kodu: **`VC-E-NNNN`** · Bu belge `keys.md` #16 (Protocol, mesaj şeması) karşılığıdır.

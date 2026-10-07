@@ -47,6 +47,6 @@ transaction bütünlüğü dağılırdı.
 
 ## §7 İlgili
 
-- [ADR-005-ado-net-dapper-no-ef-core.md](ADR-005-ado-net-dapper-no-ef-core.md)
-- [ADR-028-layered-baseline-9-projects.md](ADR-028-layered-baseline-9-projects.md)
-- [adr-index](../adr-index.md) · [brain](../../brain.md)
+- [ADR-005-ado-net-dapper-no-ef-core.md](adr-005-ado-net-dapper-no-ef-core.md)
+- [ADR-028-layered-baseline-9-projects.md](adr-028-layered-baseline-9-projects.md)
+- [adr-index](../adr-index.md) · [brain](../brain.md)

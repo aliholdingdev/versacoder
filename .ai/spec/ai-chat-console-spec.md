@@ -11,7 +11,7 @@ scope: "10-ai-chat-console tam ekran sohbet yuzeyinin bolge/olcu/komut sozlesmes
 
 # 10 — AI CHAT KONSOLU (Oturum Sekmeli Tam Ekran Sohbet)
 
-**Zorunlu Baglantilar:** [ui-design/README](../ui-design/README.md) · [ai-chat-spec](ai-chat-spec.md) · [cli-console-spec](cli-console-spec.md) · [05-ai-chat](../ui-design/05-ai-chat.md) · [02-main-ide](../ui-design/02-main-ide.md) · [session-spec](session-spec.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Baglantilar:** [ui-design/README](../ui-design/readme.md) · [ai-chat-spec](ai-chat-spec.md) · [cli-console-spec](cli-console-spec.md) · [05-ai-chat](../ui-design/05-ai-chat.md) · [02-main-ide](../ui-design/02-main-ide.md) · [session-spec](session-spec.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
 
 > **Tek cumlelik sorumluluk:** *AI Chat Konsolu oturum sekmeleriyle nasil calisir, sohbet nerede akar ve prompt kutusu hangi alanlari tasir* sorusunun tek cevabidir.
 > Gereksinim kimligi: **VC-U-1001..1010** · Ekran adi: `10-ai-chat-console` (ui-design/README §1) · Es yüzey: [09-cli-console](cli-console-spec.md).

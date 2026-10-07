@@ -11,8 +11,8 @@ scope: "Saglayici SSE akisi -> l5 IAgentStreamSink -> 05-ai-chat ekrani: 5 adiml
 
 # Agent Streaming (SSE) Akisi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../VISION.md) · [ADR-008](../../.decisions/accepted/ADR-008-transcript-compaction.md) · [ADR-011](../../.decisions/accepted/ADR-011-llm-provider-order.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-008](../../.decisions/accepted/adr-008-transcript-compaction.md) · [ADR-011](../../.decisions/accepted/adr-011-llm-provider-order.md)
+**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (engine · 1/8):** [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [protocol-tool-schema](protocol-tool-schema.md) · [session-checkpoint-persistence](session-checkpoint-persistence.md) · [terminal-cli-surface](terminal-cli-surface.md) · [wizard-approval-flow](wizard-approval-flow.md)
 
 > **Tek cumlelik sorumluluk:** *Saglayicidan gelen token akisi hangi katmandan gecer, ekranda ne gorunur* sorusunun tek cevabidir.

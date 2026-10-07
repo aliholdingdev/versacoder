@@ -11,7 +11,7 @@ scope: "9+2 proje iskeleti, CPM, TFM net48;net10.0-windows, NetArchTest, ilk com
 
 # Faz 03 — Faz D: Kod İskeleti (GATE-004)
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [gate-004-ilk-commit](../checklists/gate-004-ilk-commit.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [dual-tfm-build-check](../checklists/dual-tfm-build-check.md) · [layer-boundary-check](../checklists/layer-boundary-check.md) · [ADR-001](../.decisions/accepted/ADR-001-dual-target-net48-net10.md)
+**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [gate-004-ilk-commit](../../checklists/gate-004-ilk-commit.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [dual-tfm-build-check](../../checklists/dual-tfm-build-check.md) · [layer-boundary-check](../../checklists/layer-boundary-check.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md)
 
 > **Tek cümlelik sorumluluk:** `C:\versacoder` içine ADR-028'e uygun 9+2 proje
 
@@ -98,8 +98,8 @@ scope: "9+2 proje iskeleti, CPM, TFM net48;net10.0-windows, NetArchTest, ilk com
 - [ ] CPM tek noktada; paket versiyonu `.csproj` içinde tekrar yok
 - [ ] Proje referansları ADR-028 yön matrisine uygun (ters ok 0)
 - [ ] `NetArchTest` 8×8 = **0 ihlal**
-- [ ] [dual-tfm-build-check](../checklists/dual-tfm-build-check.md) tümü [x]
-- [ ] [gate-004-ilk-commit](../checklists/gate-004-ilk-commit.md) [x]
+- [ ] [dual-tfm-build-check](../../checklists/dual-tfm-build-check.md) tümü [x]
+- [ ] [gate-004-ilk-commit](../../checklists/gate-004-ilk-commit.md) [x]
 - [ ] İlk commit atıldı (hash `log.md`'de)
 
 ---

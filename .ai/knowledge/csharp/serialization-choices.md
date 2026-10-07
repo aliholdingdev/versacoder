@@ -11,8 +11,8 @@ scope: csharp
 
 # Serilestirme Secimleri
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../CLAUDE.md) | [Kodlama Standartlari](../../.rules/coding-standards.md) | [ADR-005 ADO NET Dapper](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Kodlama Standartlari](../../.rules/coding-standards.md) | [ADR-005 ADO NET Dapper](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) | [C Sharp Index](index.md)
+**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
 
 > **Tek cumlelik sorumluluk:** JSON'da iki motor var (System.Text.Json hizli, Newtonsoft esnek); veritabani serilestirmesi baska konudur - oran ORM'e degil ADO NET + Dapper.
@@ -43,7 +43,7 @@ Ilk kural: serilestirmeyi dogru yerde yap (sinirda), model icine gizleme.
 
 **Bacak 1 - Motor secimi:** Varsayilan System.Text.Json; eski musteri veya ozel converter gerekiyorsa Newtonsoft. Motoru bir kez sec, her yerde ayni ayarla kullan (kayit adlari, tarih bicimi ayni olmali).
 
-**Bacak 2 - Nerede serilestirme:** Serilestirme sinir katmaninda (API, dosya, mesaj) yapilir; domain tipi JSON ozellikleriyle kirletilmez. [ADR-005](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) cercevesinde veritabani yolunu ORM'e birakma - Dapper satiri dogrudan okur.
+**Bacak 2 - Nerede serilestirme:** Serilestirme sinir katmaninda (API, dosya, mesaj) yapilir; domain tipi JSON ozellikleriyle kirletilmez. [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) cercevesinde veritabani yolunu ORM'e birakma - Dapper satiri dogrudan okur.
 
 ## §3 Ornek
 
@@ -98,9 +98,9 @@ var satir = await conn.QuerySingleOrDefaultAsync<Musteri>(
 
 ## §8 İlgili Kaynaklar
 
-- [Kodlama Standartlari](../../.rules/coding-standards.md) · [ADR-005](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) · [Cok Hedefli Props](multi-targeting-props.md) · [C Sharp Index](index.md)
+- [Kodlama Standartlari](../../.rules/coding-standards.md) · [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [Cok Hedefli Props](multi-targeting-props.md) · [C Sharp Index](index.md)
 
 ## §9 Kanit
 
-- ORM yasagi ve Dapper secimi [ADR-005](../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md) ile sabit. Kaynak: kabul edilmis ADR.
+- ORM yasagi ve Dapper secimi [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) ile sabit. Kaynak: kabul edilmis ADR.
 - System.Text.Json / Newtonsoft karsilastirmasi kaynak vault C# setinden derlendi; surum bazli ayrintilar icin DOĞRULAMA GEREKLİ.

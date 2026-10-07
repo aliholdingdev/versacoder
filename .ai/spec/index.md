@@ -11,7 +11,7 @@ scope: "spec/ altindaki tum teknik şartnamelerin kayit ve navigasyon noktasi - 
 
 # Spec Dizini
 
-**Zorunlu Baglantilar:** [vault index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys.md](../keys.md) · [WORKFLOW.md](../WORKFLOW.md) · [test-strategy](test-strategy.md)
+**Zorunlu Baglantilar:** [vault index](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [WORKFLOW.md](../governance/workflow.md) · [test-strategy](test-strategy.md)
 
 > **Tek cumlelik sorumluluk:** *Hangi şartname nerede ve hangi soruyu cevaplar* sorusunun tek cevabidir.
 > Icerik tekrari yasak (SSP): bu dosya yalnizca kayit tutar.

@@ -11,7 +11,7 @@ scope: "11 wireframe dosyasinin navigasyonu (01..10 + 08-terminal), ekran adi so
 
 # `ui-design/` — Ekran Wireframe Klasörü
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [VISION](../VISION.md) · [reports/00-kapsam-analizi](../reports/00-kapsam-analizi.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [VISION](../definitions/vision.md) · [reports/00-kapsam-analizi](../ops/log.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
 
 > **Tek cümlelik sorumluluk:** Hangi ekranın hangi dosyada yaşadığı, ekran adlarının yazım sözleşmesi ve
 > GATE-003'ün neyi beklediği sorusunun tek cevabıdır.
@@ -111,7 +111,7 @@ Her ekran üç dosyadan oluşur; sahiplik bölünemez:
 | 4 | Onay sonrası kod izni (`src/VersaCoder.Desktop/`) | **09-terminal için HENÜZ AÇIK DEĞİL** (checklist 8/9, 2026-10-02) |
 
 **HARD STOP:** onay yoksa `net48;net10.0-windows` çift bacakta tek satır `.cs` yazılmaz;
-bu kural [WORKFLOW](../WORKFLOW.md) §2'deki gate tanımıyla aynıdır ve ihlali işi başa döndürür.
+bu kural [WORKFLOW](../governance/workflow.md) §2'deki gate tanımıyla aynıdır ve ihlali işi başa döndürür.
 
 ---
 
@@ -135,11 +135,11 @@ bu kural [WORKFLOW](../WORKFLOW.md) §2'deki gate tanımıyla aynıdır ve ihlal
 
 | # | Kaynak | Yol | Ne için |
 |---|---|---|---|
-| 1 | 9 ekranın kullanıcı akışı | [VISION](../VISION.md) §2.3–§2.9 | ne gösterir |
+| 1 | 9 ekranın kullanıcı akışı | [VISION](../definitions/vision.md) §2.3–§2.9 | ne gösterir |
 | 2 | UI kuralları | [.rules/ui-rules.md](../.rules/ui-rules.md) | yerleşim/erişilebilirlik |
 | 3 | DevExpress kuralları | [.rules/devexpress-rules.md](../.rules/devexpress-rules.md) | sürüm + stil sabitlemesi |
-| 4 | Katman bağlamı | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
-| 5 | Kapı tanımı | [WORKFLOW](../WORKFLOW.md) | GATE-003 sırası |
+| 4 | Katman bağlamı | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
+| 5 | Kapı tanımı | [WORKFLOW](../governance/workflow.md) | GATE-003 sırası |
 
 ---
 

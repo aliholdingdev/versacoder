@@ -12,7 +12,7 @@ scope: "XtraTabControl + XtraTabPage ile sekme duzeni: baslik konumu, cok satir,
 # XtraTabControl Coklu Sayfa Duzeni
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [dockmanager-panels](dockmanager-panels.md) · [layoutcontrol-grouping](layoutcontrol-grouping.md) · [ribbon-form-basics](ribbon-form-basics.md) · [designer-runtime-customization](designer-runtime-customization.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir formun icinde bircok sayfayi sekme olarak nasil gosterdiginiz ve secim olayini nereden yakaladiginiz* sorusunun tek cevabidir.

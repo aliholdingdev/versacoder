@@ -12,7 +12,7 @@ scope: "Control baz sinifinin olaylarini, parent-child olusum ve dispose sirasin
 # Control Olay Hayati
 
 **Zorunlu Baglantilar:** [vault indeks](../index.md) · [designer-cs-trio-rule](designer-cs-trio-rule.md) · [form-load-and-shown-events](form-load-and-shown-events.md) · [accessibility-tab-and-mnemonics](accessibility-tab-and-mnemonics.md) · [coding-standards](../../.rules/coding-standards.md)
-**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [AGENTS](../../AGENTS.md) · [brain](../../brain.md) · [glossary](../../glossary.md) · [keys](../../keys.md)
+**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
 **Kardeşler (winforms 4/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir `Control` hangi olaylari ne sira ile yayar, odak/vurgu sirasi nasil bozulur* sorusunun tek cevabidir.

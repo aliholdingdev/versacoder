@@ -11,7 +11,7 @@ scope: "GATE-004a icin uretilen tum yeni MD dosyalarinin frontmatter, link, boyu
 
 # Yeni Vault Dosyasi Sozlesmesi
 
-**Zorunlu Baglantilar:** [index](../index.md) · [root-md-template](documentation/root-md-template.md) · [docs-md-template](documentation/docs-md-template.md) · [ADR-003](../.decisions/accepted/ADR-003-vault-structure-500md-frontmatter.md) · [CLAUDE.md](../CLAUDE.md)
+**Zorunlu Baglantilar:** [index](../index.md) · [root-md-template](documentation/root-md-template.md) · [docs-md-template](documentation/docs-md-template.md) · [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md) · [CLAUDE.md](../claude.md)
 
 > **Tek cumlelik sorumluluk:** *Yeni uretilen her MD dosyasi hangi kurala uyar* sorusunun tek cevabidir.
 > Bu dosyayi okumayan batch uretimi RED edilir (`reviewer`).

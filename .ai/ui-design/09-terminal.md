@@ -11,7 +11,7 @@ scope: "09-terminal ekraninin wireframe'i: dock alt paneli MemoEdit (ReadOnly) +
 
 # 09 — Terminal (CLI Dock Paneli)
 
-**Zorunlu Baglantilar:** [ui-design/README](README.md) · [02-main-ide](02-main-ide.md) · [06-agent-panel](06-agent-panel.md) · [01-start-page](01-start-page.md) · [terminal-spec](../spec/terminal-spec.md) · [cli-spec](../spec/cli-spec.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../WORKFLOW.md)
+**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [02-main-ide](02-main-ide.md) · [06-agent-panel](06-agent-panel.md) · [01-start-page](01-start-page.md) · [terminal-spec](../spec/terminal-spec.md) · [cli-spec](../spec/cli-spec.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
 
 > **Tek cumlelik sorumluluk:** *CLI ciktisinin dock alt panelinde nasil goruntulendigini, komut girdisi ve gecmisin nasil calistigini, Ctrl+C/timeout durumlarinda ne oldugunu tanimlar.*
 

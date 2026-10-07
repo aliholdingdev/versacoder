@@ -31,13 +31,13 @@ scope: "Depo kökü README: künye bannerı, ne yapar, hızlı başlangıç, kat
 
 - **Studio / IDE:** VersaCoder yalnız kod IDE'si değil bir **Studio**'dur — yapay
   zekâyı daha iyi kullanmak için **kod + dokümantasyon + görsel üretim** aynı
-  çalışma ortamından yürütülür (bkz. `6.1` altı not + [VISION](./.ai/VISION.md) §0.3).
+  çalışma ortamından yürütülür (bkz. `6.1` altı not + [VISION](.ai/definitions/vision.md) §0.3).
 - **vault:** **255 Markdown dosyasıyla** (`.ai/` · ölçüm 2026-10-07) kural, şartname,
   şablon ve bilgi notu tutar; toplam depo **264 MD**.
 - **kapı:** `GATE-003` kullanıcı onayından önce tek satır `.cs` yazılmaz.
 - **kod:** 9 üretim projesi (K0..K8) + test projesi **henüz yazılmadı** — `DOĞRULAMA GEREKLİ`.
 - **görsel üretim:** `visual-director` ajanı render prompt hattını yürütür
-  ([AGENTS](./.ai/AGENTS.md) §8.5); sağlayıcı entegrasyonu **planlı**.
+  ([AGENTS](.ai/definitions/agents.md) §8.5); sağlayıcı entegrasyonu **planlı**.
 
 ## 2. Hızlı Başlangıç
 
@@ -61,19 +61,19 @@ dotnet test                                        # tests/ YOK -> "hedef buluna
 
 | Katman | Sorumluluk | Referans | Diskte (ölçüm 2026-10-07) |
 |---|---|---|---|
-| `.ai/.templates/` | şablon envanteri | [templates](./.ai/.templates/index.md) | ✅ **36 MD** (10 alt klasör + kök) |
-| `.ai/knowledge/` | bilgi notları | [index](./.ai/index.md) | ✅ **131 MD** |
-| `.ai/spec/` | şartnameler | [index](./.ai/index.md) | ✅ **45 MD** |
-| `.ai/ui-design/` | ekran wireframe | [index](./.ai/index.md) | ✅ **14 MD** |
-| `.ai/.agents/` | ajan profilleri | [index](./.ai/index.md) | ✅ **7 MD** |
-| `.ai/TODOS/` | görev fazları | [index](./.ai/index.md) | ✅ **7 MD** |
-| `.ai/scripts/` | ölçüm betikleri | [check-links.ps1](./.ai/scripts/check-links.ps1) | ✅ **14 dosya (PS1)** |
+| `.ai/.templates/` | şablon envanteri | [templates](.ai/.templates/index.md) | ✅ **36 MD** (10 alt klasör + kök) |
+| `.ai/knowledge/` | bilgi notları | [index](.ai/index.md) | ✅ **131 MD** |
+| `.ai/spec/` | şartnameler | [index](.ai/index.md) | ✅ **45 MD** |
+| `.ai/ui-design/` | ekran wireframe | [index](.ai/index.md) | ✅ **14 MD** |
+| `.ai/.agents/` | ajan profilleri | [index](.ai/index.md) | ✅ **7 MD** |
+| `.ai/TODOS/` | görev fazları | [index](.ai/index.md) | ✅ **7 MD** |
+| `.ai/scripts/` | ölçüm betikleri | [check-links.ps1](.ai/scripts/check-links.ps1) | ✅ **14 dosya (PS1)** |
 | `.ai/.decisions/` | ADR kayıt defteri | — (`adr-index.md` **YOK**) | ⚠️ **1 MD** (yalnız `draft/ADR-031`) |
 | `.ai/.rules/` | kalıcı kural metni | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
 | `.ai/architecture/` | katman spec + catalog | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
 | `.ai/checklists/` | gate listeleri | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
 | `.ai/reports/` · `playbooks/` · `prompts/` | rapor · playbook · prompt | — | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
-| `src/**` | 9 üretim projesi (K0..K8) | [CLAUDE](./CLAUDE.md) §B5 | ❌ **YOK** |
+| `src/**` | 9 üretim projesi (K0..K8) | [CLAUDE](claude.md) §B5 | ❌ **YOK** |
 | `tests/**` | unit + integration, hedef %90 | — | ❌ **YOK** |
 
 > **192 kırık link** yukarıdaki ❌ satırlarına gidiyor ve **bilinçli olarak korunmuştur**
@@ -173,21 +173,21 @@ içinde çalışan bileşenlerden biridir.
 
 | # | Kaynak | Yol |
 |---|---|---|
-| 1 | Kök kural (SSOT) | [CLAUDE.md](./CLAUDE.md) |
-| 2 | Gölge ajan dosyası | [AGENTS.md](./AGENTS.md) |
-| 3 | Kapı özeti | [WORKFLOW.md](./WORKFLOW.md) |
-| 4 | Vault navigasyonu | [.ai/index.md](./.ai/index.md) |
-| 5 | Şablon envanteri | [.ai/.templates/index.md](./.ai/.templates/index.md) |
-| 6 | Mimari indeks | [.ai/architecture/index.md](./.ai/architecture/index.md) |
-| ROLE | [ROLE](.ai/ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](.ai/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](.ai/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| PROJECTS | [PROJECTS](.ai/PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](.ai/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| keys | [keys](.ai/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
-| MEMORY | [MEMORY](.ai/MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](.ai/log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](.ai/ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.ai/.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
-| .ai CLAUDE | [.ai CLAUDE](./.ai/CLAUDE.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
-| .ai WORKFLOW | [.ai WORKFLOW](./.ai/WORKFLOW.md) | gate zinciri — GATE-004a..006, kabul kriteri, kanit kutusu |
+| 1 | Kök kural (SSOT) | [CLAUDE.md](claude.md) |
+| 2 | Gölge ajan dosyası | [AGENTS.md](agents.md) |
+| 3 | Kapı özeti | [WORKFLOW.md](workflow.md) |
+| 4 | Vault navigasyonu | [.ai/index.md](.ai/index.md) |
+| 5 | Şablon envanteri | [.ai/.templates/index.md](.ai/.templates/index.md) |
+| 6 | Mimari indeks | [.ai/architecture/index.md](.ai/architecture/index.md) |
+| ROLE | [ROLE](.ai/definitions/role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [engine](.ai/definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.ai/.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| PROJECTS | [PROJECTS](.ai/definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](.ai/definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| keys | [keys](.ai/governance/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
+| MEMORY | [MEMORY](.ai/memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](.ai/ops/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](.ai/definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.ai/.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| .ai CLAUDE | [.ai CLAUDE](.ai/claude.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| .ai WORKFLOW | [.ai WORKFLOW](.ai/governance/workflow.md) | gate zinciri — GATE-004a..006, kabul kriteri, kanit kutusu |

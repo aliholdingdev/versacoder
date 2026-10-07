@@ -11,7 +11,7 @@ scope: "README sablonu: tanitim, kurulum, kullanim ve baglanan belgeler"
 
 # Şablon — README (`readme-template.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [docs-md-template.md](./docs-md-template.md)
+**Zorunlu Bağlantılar:** [index.md](../index.md) · [docs-md-template.md](docs-md-template.md)
 
 > **Tek cümlelik sorumluluk:** Depo / klasör / katman README'sinin "aç, 30 saniyede anla" düzenini tanımlar.
 

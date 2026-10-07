@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Katman Kuralları (G12 · ADR-028)
 
@@ -47,6 +47,6 @@ RED — mimari; NetArchTest RED = 0 olmadan commit yok (GATE-005).
 
 ## İlgili
 
-- [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
-- [ADR-030](../.decisions/accepted/ADR-030-5000-layers-class-level.md)
+- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+- [ADR-030](../.decisions/accepted/adr-030-5000-layers-class-level.md)
 - [solid-rules](solid-rules.md) · [architecture/index](../architecture/index.md)

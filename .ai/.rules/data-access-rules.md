@@ -13,7 +13,7 @@ supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../CLAUDE.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../brain.md) · [WORKFLOW](../governance/WORKFLOW.md) · [VAULT-GATE](../governance/VAULT-GATE.md)
+**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
 
 # Veri Erişimi Kuralları (G2)
 
@@ -48,6 +48,6 @@ CRITICAL — build RED; kod durur, ADO.NET + Dapper'a çevrilir.
 
 ## İlgili
 
-- [ADR-005](../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md)
-- [ADR-016](../.decisions/accepted/ADR-016-dbconnection-only-l4.md)
-- [ADR-017](../.decisions/accepted/ADR-017-parameterized-sql-only.md)
+- [ADR-005](../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md)
+- [ADR-016](../.decisions/accepted/adr-016-dbconnection-only-l4.md)
+- [ADR-017](../.decisions/accepted/adr-017-parameterized-sql-only.md)

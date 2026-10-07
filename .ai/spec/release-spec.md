@@ -11,7 +11,7 @@ scope: "Sürümleme (semver + etiket), changelog üretimi ve paket/artifact çı
 
 # VersaCoder — Sürüm ve Yayın Şartnamesi (`spec/release-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../CLAUDE.md) · [keys](../keys.md) · [WORKFLOW](../WORKFLOW.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [packaging-spec](packaging-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [packaging-spec](packaging-spec.md) · [deployment-spec](deployment-spec.md)
 
 > **Tek cümlelik sorumluluk:** *Sürüm numarası ne zaman artar, changelog nereden üretilir ve hangi koşullar sağlanınca paket çıkartılır* sorusunun tek cevabıdır.
 
@@ -31,7 +31,7 @@ Sürüm **`vMAJOR.MINOR.PATCH`** ve tek kaynağı git etiketidir; changelog **gi
 | 2 | Changelog kategorileri ve üretimi | Paket sürüm kilidi (NuGet): [packaging-spec](packaging-spec.md) |
 | 3 | Artifact/çıktı listesi ve checksum | Makineye kurulum: [deployment-spec](deployment-spec.md) |
 | 4 | Rollback planı zorunluluğu | DB geri alma: [migration-spec](migration-spec.md) |
-| 5 | Release kanıtları (GATE-006) | Onay mercii: [WORKFLOW](../WORKFLOW.md) §3 |
+| 5 | Release kanıtları (GATE-006) | Onay mercii: [WORKFLOW](../governance/workflow.md) §3 |
 
 > **YASAK:** Elle yazılmış/changelog kopyası · etiketsiz artifact · geri alma plansız yayın · sürümle protocol sürümünü karıştırmak (bkz. [protocol-layer-spec](protocol-layer-spec.md) §2.3).
 

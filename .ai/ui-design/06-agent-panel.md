@@ -11,7 +11,7 @@ scope: "06-agent-panel ekranının wireframe'i: ajan listesi, görev ağacı, ol
 
 # 06 — AGENT PANEL
 
-**Zorunlu Bağlantılar:** [ui-design/index](README.md) · [02-main-ide](02-main-ide.md) · [05-ai-chat](05-ai-chat.md) · [.rules/async-rules.md](../.rules/async-rules.md) · [spec/test-strategy.md](../spec/test-strategy.md) · [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md)
+**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [02-main-ide](02-main-ide.md) · [05-ai-chat](05-ai-chat.md) · [.rules/async-rules.md](../.rules/async-rules.md) · [spec/test-strategy.md](../spec/test-strategy.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
 
 > **Tek cümlelik sorumluluk:** Çalışan ajanların, görev ağacının ve olay akışının hangi
 > panellerde yaşandığı, başlat/durdur akışının nereye gittiği sorusunun tek cevabıdır.
@@ -120,7 +120,7 @@ neden (timeout / model yanıt vermedi); iptal edilen adım → satır `[iptal]` 
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/06-agent-panel.md` (eski vault) | panel/alan listesi |
 | 2 | [.rules/async-rules.md](../.rules/async-rules.md) | akış + iptal kalıbı |
-| 3 | [ADR-028](../.decisions/accepted/ADR-028-layered-baseline-9-projects.md) | l6/l5/l0 sorumlulukları |
+| 3 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l6/l5/l0 sorumlulukları |
 | 4 | [spec/test-strategy.md](../spec/test-strategy.md) | orkestrasyon test kapsamı |
 
 > `IAgentOrchestrator` adı taslaktır — `l0` içinde kesinleşmesi `DOĞRULAMA GEREKLİ`.
