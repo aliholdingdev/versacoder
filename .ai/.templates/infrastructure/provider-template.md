@@ -11,7 +11,7 @@ scope: "LLM saglayici adaptoru sablonu: cagri sozlesmesi, hata sekli ve fallback
 
 # VersaCoder — Harici Sağlayıcı (LLM) Adaptörü Şablonu
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../../CLAUDE.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [adr-architecture-template](../adr/adr-architecture-template.md) · [session-log-template](../session-log-template.md) · [configuration-template](./configuration-template.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/CLAUDE]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-architecture-template]] · [[../session-log-template]] · [[./configuration-template]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya, VersaCoder'ın harici bir LLM/sağlayıcıya bağlandığı **her adaptörün** (`src/VersaCoder.Infrastructure/Providers/*.cs`) arayüz, secret, hata eşleme, yeniden deneme ve doğrulama sözleşmesinin tek kaynağıdır (SSOT).
 
@@ -50,7 +50,7 @@ Kanıt `2026-09-25` tarihinde `C:\versacoder` üzerinde okunarak alındı. Kanı
 | E9 | `Directory.Build.props` / `Directory.Packages.props` / `global.json` / `.gitignore` | ❌ YOK | `Test-Path = False` (4/4) |
 | E10 | `*.csproj`, `appsettings*.json`, `src/**` | ❌ YOK | Recursive sayım = 0 / 0 / 0 |
 | E11 | .NET SDK **10.0.401** kurulu | ✅ DOĞRULANDI | `dotnet --list-sdks` → tek satır `10.0.401` |
-| E12 | DevExpress **26.1** NuGet önbellekte | ❌ YOK | `~/.nuget/packages/devexpress*` = 0 girdi |
+| E12 | DevExpress **25.2.8** NuGet önbellekte | ❌ YOK | `~/.nuget/packages/devexpress*` = 0 girdi |
 | E13 | Bu dosya yazıldı | ✅ BU DOSYA | `.ai/.templates/infrastructure/provider-template.md` |
 
 **Yorum yasağı:** Var olmayan dosya için "şurada tanımlı" denmez; satır `⚠️ VERIFICATION REQUIRED` olarak kalır ve §5.3 komutlarıyla ancak dosya diske geldiğinde kalkar. Kod katmanı (`Providers/*.cs`) henüz yoktur → tüm kod iddiaları bu şablonun **sözleşmesidir**, gözlemlenmiş gerçek değil.
@@ -86,7 +86,7 @@ Tek arayüz (`ILlmProvider`), sağlayıcı başına tek adaptör sınıfı, seç
 ## §2 Kapsam
 
 **İçinde:** harici LLM/sağlayıcı adaptörünün arayüzü, factory seçimi, secret saklama, timeout/backoff/rate limit, hata eşleme, model sabitleme, maskeleme, sahte provider testi, secret taraması.
-**Dışında:** yapılandırma katmanları (→ [configuration-template](./configuration-template.md)), veri erişimi (ADO.NET + Dapper), ekran/tel kafes (GATE-003), paket sürüm politikası (→ CPM, configuration §3.3).
+**Dışında:** yapılandırma katmanları (→ [[./configuration-template]]), veri erişimi (ADO.NET + Dapper), ekran/tel kafes (GATE-003), paket sürüm politikası (→ CPM, configuration §3.3).
 
 ### §2.1 Dosya Tipi → Sorumlu Eşlemesi
 

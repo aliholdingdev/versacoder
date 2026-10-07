@@ -3,22 +3,41 @@ title: "VersaCoder — README"
 type: readme
 category: docs
 status: active
-version: 1.0.0
-updated: 2026-10-05
+version: 2.0.0
+updated: 2026-10-07
 authority: SSOT
-scope: "Depo kökü README: ne yapar, hızlı başlangıç, katmanlar, yapılandırma, testler, mimari not, referanslar"
+scope: "Depo kökü README: künye bannerı, ne yapar, hızlı başlangıç, katmanlar, yapılandırma, testler, mimari not, hedef sistem diyagramı, referanslar"
 ---
 
 # VersaCoder
+
+```text
+################################################################################
+#                                                                              #
+#                 Versa Coder AI My Coding Assistant Agentic IDE               #
+#           Visual Studio IDE / Xcode / Cursor AI IDE / Antigravity AI IDE     #
+#                                                                              #
+#                              VERSION 1.0.0                                   #
+#                                                                              #
+#                    Designed & Coding by Bayram Ali Akşit                     #
+#                                                                              #
+################################################################################
+```
 
 > **Ajan/üretim SSOT'lu `.ai/` vault'u + henüz kurulmamış VersaCoder masaüstü kod tabanı.**
 > Şu an depo **yalnızca belgedir**: `src/`, `tests/` ve `.sln` diskte **yok** (2026-10-05 ölçümü).
 
 ## 1. Ne Yapar (Answer First)
 
-- **vault:** 553 Markdown dosyasıyla kural, ADR, katman spec ve şablon tutar.
+- **Studio / IDE:** VersaCoder yalnız kod IDE'si değil bir **Studio**'dur — yapay
+  zekâyı daha iyi kullanmak için **kod + dokümantasyon + görsel üretim** aynı
+  çalışma ortamından yürütülür (bkz. `6.1` altı not + [VISION](./.ai/VISION.md) §0.3).
+- **vault:** **255 Markdown dosyasıyla** (`.ai/` · ölçüm 2026-10-07) kural, şartname,
+  şablon ve bilgi notu tutar; toplam depo **264 MD**.
 - **kapı:** `GATE-003` kullanıcı onayından önce tek satır `.cs` yazılmaz.
 - **kod:** 9 üretim projesi (K0..K8) + test projesi **henüz yazılmadı** — `DOĞRULAMA GEREKLİ`.
+- **görsel üretim:** `visual-director` ajanı render prompt hattını yürütür
+  ([AGENTS](./.ai/AGENTS.md) §8.5); sağlayıcı entegrasyonu **planlı**.
 
 ## 2. Hızlı Başlangıç
 
@@ -40,16 +59,25 @@ dotnet test                                        # tests/ YOK -> "hedef buluna
 
 ## 3. Katmanlar / Kullanım
 
-| Katman | Sorumluluk | Referans | Diskte |
+| Katman | Sorumluluk | Referans | Diskte (ölçüm 2026-10-07) |
 |---|---|---|---|
-| `.ai/.templates/` | 38 şablon, 10 alt klasör | [templates](./.ai/.templates/index.md) | ✅ 38 MD |
-| `.ai/.rules/` | kalıcı kural metni | [rules](./.ai/.rules/index.md) | ✅ 18 MD |
-| `.ai/.decisions/` | ADR-001..030 (0 boşluk) | [adr-index](./.ai/.decisions/adr-index.md) | ✅ 32 MD |
-| `.ai/architecture/` | katman spec + catalog | [architecture](./.ai/architecture/index.md) | ✅ 129 MD |
-| `.ai/checklists/` + `.ai/.agents/` | gate listesi · 7 ajan profili | [index](./.ai/index.md) | ✅ 32 MD · 7 MD |
-| `.ai/scripts/` | 14 PS1 ölçüm betiği | [check-links.ps1](./.ai/scripts/check-links.ps1) | ✅ 14 PS1 |
-| `src/**` | 9 üretim projesi (K0..K8) | `CLAUDE.md` §B5 | ❌ **YOK** |
+| `.ai/.templates/` | şablon envanteri | [templates](./.ai/.templates/index.md) | ✅ **36 MD** (10 alt klasör + kök) |
+| `.ai/knowledge/` | bilgi notları | [index](./.ai/index.md) | ✅ **131 MD** |
+| `.ai/spec/` | şartnameler | [index](./.ai/index.md) | ✅ **45 MD** |
+| `.ai/ui-design/` | ekran wireframe | [index](./.ai/index.md) | ✅ **14 MD** |
+| `.ai/.agents/` | ajan profilleri | [index](./.ai/index.md) | ✅ **7 MD** |
+| `.ai/TODOS/` | görev fazları | [index](./.ai/index.md) | ✅ **7 MD** |
+| `.ai/scripts/` | ölçüm betikleri | [check-links.ps1](./.ai/scripts/check-links.ps1) | ✅ **14 dosya (PS1)** |
+| `.ai/.decisions/` | ADR kayıt defteri | — (`adr-index.md` **YOK**) | ⚠️ **1 MD** (yalnız `draft/ADR-031`) |
+| `.ai/.rules/` | kalıcı kural metni | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
+| `.ai/architecture/` | katman spec + catalog | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
+| `.ai/checklists/` | gate listeleri | — (`index.md` **YOK**) | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
+| `.ai/reports/` · `playbooks/` · `prompts/` | rapor · playbook · prompt | — | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
+| `src/**` | 9 üretim projesi (K0..K8) | [CLAUDE](./CLAUDE.md) §B5 | ❌ **YOK** |
 | `tests/**` | unit + integration, hedef %90 | — | ❌ **YOK** |
+
+> **192 kırık link** yukarıdaki ❌ satırlarına gidiyor ve **bilinçli olarak korunmuştur**
+> (silinmedi; gelecek sürümlerde bağlanacak).
 
 ## 4. Yapılandırma
 
@@ -57,7 +85,7 @@ dotnet test                                        # tests/ YOK -> "hedef buluna
 |---|---|---|
 | `global.json` | SDK 10.0.301 | dosya **YOK** — `DOĞRULAMA GEREKLİ` |
 | `Directory.Packages.props` | CPM kilidi | dosya **YOK** — `DOĞRULAMA GEREKLİ` |
-| Frontmatter | 8 alan, UTF-8 (BOM'suz) | `.ai/**` 553/553 uyumlu |
+| Frontmatter | 8 alan, UTF-8 (BOM'suz) | `.ai/**` **255/255 uyumlu** (2026-10-07 ölçümü) |
 | Token bütçesi | 50.000 / oturum | kök dosya payı ≤ %3 |
 | DevExpress | **yalnız v26.1** (ADR) | paket henüz kurulmadı |
 | Veri erişimi | ADO.NET + Dapper | EF Core **yok** (G2 · ADR-005) |
@@ -79,7 +107,7 @@ C:\versacoder
 +-- AGENTS.md ............. golge (20 satir, "Kaynak: CLAUDE.md")
 +-- README.md ............. bu dosya
 +-- WORKFLOW.md ........... kapi/kapı ozeti
-+-- .ai/ .................. 553 MD vault
++-- .ai/ .................. 255 MD vault (2026-10-07)
      +-- .templates/ ...... 38   sablon
      +-- .rules/ .......... 18   kural
      +-- .decisions/ ...... 32   (ADR-001..030)
@@ -91,6 +119,56 @@ C:\versacoder
 
 Yön: `K6 -> K7 -> {K5, K4} -> K3 -> K2 -> K1 -> K0`; yukarı bakan referans ihlaldir.
 
+### 6.1 Hedef sistem diyagramı (prompt kaynağı: ai.04 §3)
+
+```text
+                          OPENCODE
+                              │
+                         ORCHESTRATOR
+                              │
+              ┌───────────────┼───────────────┐
+              │               │               │
+          RESEARCH      REQUIREMENTS       CONTEXT
+              │               │               │
+              └───────────────┼───────────────┘
+                              │
+                     ARCHITECTURE & .AI
+                              │
+                           PLANNER
+                              │
+                      TASK DECOMPOSER
+                              │
+                    SPECIALIZED AGENTS
+                              │
+         ┌────────────────────┼────────────────────┐
+         │                    │                    │
+       .NET                UI/UX              SECURITY
+   l0..l7 (ADR-028)    01..07 ekran            OWASP
+         │                    │                    │
+         └────────────────────┼────────────────────┘
+                              │
+                           SKILLS
+                              │
+                             MCP
+                              │
+                            TOOLS
+                              │
+                       IMPLEMENTATION
+                              │
+                         CODE TRACKER
+                              │
+                    BUILD / TEST / REVIEW
+                              │
+                         VERIFICATION
+                              │
+                          .AI BRAIN
+```
+
+**Çekirdek felsefe (ai.04):** VersaCoder'ın amacı editör + chatbot değil;
+**Agent + Session + Workflow + Tool + Memory + Model + Policy** kombinasyonunu
+kullanan Agentic Software Engineering Platform'dur. LLM sistemin kendisi değil,
+içinde çalışan bileşenlerden biridir.
+
 ## 7. Referanslar
 
 | # | Kaynak | Yol |
@@ -101,3 +179,15 @@ Yön: `K6 -> K7 -> {K5, K4} -> K3 -> K2 -> K1 -> K0`; yukarı bakan referans ihl
 | 4 | Vault navigasyonu | [.ai/index.md](./.ai/index.md) |
 | 5 | Şablon envanteri | [.ai/.templates/index.md](./.ai/.templates/index.md) |
 | 6 | Mimari indeks | [.ai/architecture/index.md](./.ai/architecture/index.md) |
+| ROLE | [ROLE](.ai/ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [engine](.ai/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.ai/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| PROJECTS | [PROJECTS](.ai/PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](.ai/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| keys | [keys](.ai/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
+| MEMORY | [MEMORY](.ai/MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](.ai/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](.ai/ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.ai/.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| .ai CLAUDE | [.ai CLAUDE](./.ai/CLAUDE.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| .ai WORKFLOW | [.ai WORKFLOW](./.ai/WORKFLOW.md) | gate zinciri — GATE-004a..006, kabul kriteri, kanit kutusu |

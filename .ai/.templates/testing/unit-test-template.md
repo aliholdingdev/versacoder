@@ -11,7 +11,7 @@ scope: "birim test sablonu: arrange-act-assert akisi, assertion ve kenar durumla
 
 # VersaCoder — Birim Test Şablonu (Unit Test)
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [repository-template](../backend/repository-template.md) · [service-template](../backend/service-template.md) · [dapper-mapping-template](../infrastructure/dapper-mapping-template.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../backend/repository-template]] · [[../backend/service-template]] · [[../infrastructure/dapper-mapping-template]] · [[../architecture/ascii-diagram-template]]
 
 ## §1 Amaç
 
@@ -48,7 +48,7 @@ Aşağıdaki iddialar disk üzerinde **doğrulanmadı**; kanıt gelene kadar **s
 | 3 | Test yığını beyanı | **xUnit + NSubstitute + NetArchTest** | `.ai/CLAUDE.md` (okundu) |
 | 4 | Coverage eşiği beyanı | **%90** + `TreatWarningsAsErrors` | `.ai/.templates/index.md` G11 |
 | 5 | Çerçeve çelişkisi | `CLAUDE.md` = **xUnit** ↔ `repository-template` örneği = **`[TestMethod]`** (MSTest) | **CONFLICT → ⚠️** |
-| 6 | Sürüm kilidi çelişkisi | şablonlar **26.1** ↔ `.ai/CLAUDE.md` **v26.1** | **CONFLICT → ⚠️** |
+| 6 | Sürüm kilidi çelişkisi | şablonlar **25.2.8** ↔ `.ai/CLAUDE.md` **v26.1** | **CONFLICT → ⚠️** |
 | 7 | ADR-001 / ADR-004 dosyaları | `.ai/.decisions/` = **0 dosya** | **YOK → ⚠️** |
 | 8 | `.ai/.templates/` envanteri | **29 MD · 9 klasör** (envanter beyanı 23) | `Get-ChildItem -Recurse` |
 

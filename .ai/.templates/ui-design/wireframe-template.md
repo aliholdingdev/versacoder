@@ -11,7 +11,7 @@ scope: "tel kafes (wireframe) sablonu: ekran kutulari, alan etiketleri ve gezinm
 
 # VersaCoder — Tel Kafes (Wireframe) Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE.md](../../CLAUDE.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · `screen-spec-template` · `flow-template` · [adr-devexpress-template](../adr/adr-devexpress-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/ascii-diagram-template]] · [[./screen-spec-template]] · [[./flow-template]] · [[../adr/adr-devexpress-template]]
 
 ---
 
@@ -37,7 +37,7 @@ Bu şablon `.ai/ui-design/` altındaki **yedi zorunlu tel kafesi** tek biçimde 
 | Düşük sadakat, yaklaşık ölçüler (`≈240 px`) | Piksel birebir tasarım çıktısı |
 | Bölge + birim gösterimi (alan, satır, sekme) | Gerçek veri / üretim içeriği |
 | Gri tonlama + sembol dolgu (`#` `░` `·`) | Hex renk, tema, font (→ reference-template) |
-| DevExpress **26.1** bileşen **adayı** | Sürüm/paket kurulumu (ADR-001) |
+| DevExpress **25.2.8** bileşen **adayı** | Sürüm/paket kurulumu (ADR-001) |
 | Akış + kapı (GATE-003) kanıtı | Kod, `*.cs`, `Designer.cs` |
 | Odak sırası + WCAG notu | Kaynak kod etiketi, betik |
 
@@ -53,7 +53,7 @@ Bu şablon `.ai/ui-design/` altındaki **yedi zorunlu tel kafesi** tek biçimde 
 | 4 | `reports/00-kapsam-analizi.md` §4.1 yedi ekran | ✅ OKUNDU | orta adlar çelişiyor → ⚠️ (§3.6) |
 | 5 | `.ai/WORKFLOW.md` — GATE kaynağı | ❌ YOK | gate bilgisi `index.md` §3.6/§4.5 G8 + rapor §4.3 |
 | 6 | `.ai/architecture/index.md` · `keys.md` · `.rules/` (7 MD) | ❌ YOK | envanter beyanı → ⚠️ VERIFICATION REQUIRED |
-| 7 | `.ai/adr/ADR-001` — DevExpress `26.1` kilidi | ❌ `.ai/adr/` YOK | brief/envanter beyanı → ⚠️ |
+| 7 | `.ai/adr/ADR-001` — DevExpress `25.2.8` kilidi | ❌ `.ai/adr/` YOK | brief/envanter beyanı → ⚠️ |
 | 8 | `src/VersaCoder.Desktop/**` (RibbonForm) | ❌ YOK | — |
 | 9 | `ascii-diagram-template.md` (biçim altın örneği) | ✅ DOĞRULANDI | 644 satır / 37,2 KB |
 | 10 | Harici vault `C:\www\…` | 🔒 ERİŞİM YASAK | yalnız **yapı** referansı, kopyalama yok |
@@ -363,7 +363,7 @@ Yer tutucular yalnız bu blokta yaşar; üretilen tel kafesde adedi **0** olmal�
 | 5 | Renk/hex/tema yok | §5.3/4 = 0 | RED (G3) |
 | 6 | Tek dosya = tek ekran | 1 dosyada 2 ekran yok | RED |
 | 7 | Odak sırası `§1 → §2` yazılı | §3.3 zorunlu satır | RED |
-| 8 | Bileşen adayı yalnız `26.1` bileşenleri | §5.3/4 | RED (G9) |
+| 8 | Bileşen adayı yalnız `25.2.8` bileşenleri | §5.3/4 | RED (G9) |
 
 ### §4.2 Sorumluluk ve Onay
 
@@ -411,7 +411,7 @@ Yer tutucular yalnız bu blokta yaşar; üretilen tel kafesde adedi **0** olmal�
 | G6 | 7 ekran eksik (§3.6) | **DUR** — GATE-003 geçemez |
 | G7 | ` ```text ` olmayan kutu bloğu | **DUR** — blok türü düzeltilir |
 | G8 | Üretilen tel kafeste `{{…}}` | **DUR** — §5.3/5 = 0 olana kadar |
-| G9 | DevExpress sürümü `26.1` dışı | **DUR** — ADR-001 (⚠️ §1.2/7) |
+| G9 | DevExpress sürümü `25.2.8` dışı | **DUR** — ADR-001 (⚠️ §1.2/7) |
 | G10 | EF Core / concat SQL geçen satır | **DUR** — ADR-004, ADO.NET + Dapper |
 | G11 | Yasaklı vault adı geçen satır | **DUR** — sil, özgün yaz |
 | G12 | Kanıtsız "hizalı/onaylı" iddiası | §5.3/1 + GATE-003 kaydı istenir |
@@ -568,7 +568,7 @@ Get-ChildItem 'C:\versacoder\.ai\.templates\ui-design\*.md' | ForEach-Object {
 | R6 | `.cs` / `Designer.cs` üretimi | **DUR** — kod ayrı part (G14) |
 | R7 | Mojibake / BOM / karışık dil | **DUR** — UTF-8 BOM'suz yeniden yaz |
 | R8 | Ölçüm çıktısı olmadan "hizalı" | **DUR** — §5.3/1 çıktısı istenir |
-| R9 | `26.1` dışı sürüm ya da EF Core | **DUR** — ADR-001 / ADR-004 |
+| R9 | `25.2.8` dışı sürüm ya da EF Core | **DUR** — ADR-001 / ADR-004 |
 
 ### §6.3 GATE-003 Geçiş Kuralları
 
@@ -603,7 +603,7 @@ Kapı yalnız ileri açılır; onay sonrası değişiklik kapı üzerinden yapı
 | K3 | Bu şablon KB aralığı (envanter: `14,0`) | 25–34 (brief) | `(Get-Item …).Length/1KB` |
 | K4 | Kutu satırları 66 karakter | 0 sapma | §5.3/1 |
 | K5 | `§3.6` adları ↔ envanter `index.md` §3.4 ucu | `01-start-page` + `…07-*` | okuma + ⚠️ notu |
-| K6 | `26.1` tek sürüm (ADR-001 beyanı) | tek değer | §5.3/4 + G9 |
+| K6 | `25.2.8` tek sürüm (ADR-001 beyanı) | tek değer | §5.3/4 + G9 |
 | K7 | Yasaklı vault adı geçen satır | 0 | G11 |
 
 ---
@@ -617,9 +617,9 @@ Kapı yalnız ileri açılır; onay sonrası değişiklik kapı üzerinden yapı
 | Şablon envanteri | `.ai/.templates/index.md` | §3.4 Part C · G8 | ✅ okundu |
 | Biçim referansı | `.templates/architecture/ascii-diagram-template.md` | alfabenin kaynağı | ✅ 644 satır / 37,2 KB |
 | Ekran/kapı envanteri | `.ai/reports/00-kapsam-analizi.md` §4.1, §4.3 | 7 ekran + GATE-003 | ✅ okundu (ad çelişkisi §3.6) |
-| Akış/kapı gerçeği | `.ai/WORKFLOW.md` | GATE-003 tanımı | ✅ Dosya var, §0 zinciri 2026-10-04 |
+| Akış/kapı gerçeği | `.ai/WORKFLOW.md` | GATE-003 tanımı | ❌ YOK → ⚠️ VERIFICATION REQUIRED |
 | Katman gerçeği | `.ai/architecture/index.md` | bileşen katmanı | ❌ YOK → ⚠️ |
-| DevExpress kilidi | `.ai/adr/ADR-001` | `26.1` | ❌ `.ai/adr/` YOK → ⚠️ |
+| DevExpress kilidi | `.ai/adr/ADR-001` | `25.2.8` | ❌ `.ai/adr/` YOK → ⚠️ |
 | Kardeş şablonlar | `./screen-spec`, `./flow`, `./reference`, `./prompt` | iş bölümü | ✅ Part C paketi |
 | Yasaklı vault'lar | `C:\www\…` (envanter G1) | yalnız **yapı** referansı | 🔒 kopyalama YASAK |
 

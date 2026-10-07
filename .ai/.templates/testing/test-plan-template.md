@@ -12,11 +12,11 @@ scope: "test plani sablonu: senaryolar, oncelikler, ortam ve kabul kriterleri"
 # Test Plan Template — Test Planı Şablonu
 
 **Zorunlu Bağlantılar:**
-- [index](../../index.md)
-- [CLAUDE](../../CLAUDE.md)
-- [glossary](../../glossary.md)
-- [keys](../../keys.md)
-- [VISION](../../VISION.md)
+- [[index]]
+- [[CLAUDE]]
+- [[glossary]]
+- [[keys]]
+- [[VISION]]
 
 ---
 
@@ -34,8 +34,8 @@ kabul kriteriyle, hangi riskle** sorularını SSOT yanıtlar.
 | Katman | Dosya | Şablon |
 |---|---|---|
 | Plan (ne, kapsam, risk) | `tests/.../TEST-PLAN.md` | **bu şablon** |
-| Senaryo (adım, assert) | `tests/.../*Tests.cs` | [unit-test-template](unit-test-template.md) |
-| Entegrasyon (DB, CLI) | `tests/.../Integration/*.cs` | `integration-test-template` |
+| Senaryo (adım, assert) | `tests/.../*Tests.cs` | [[unit-test-template]] |
+| Entegrasyon (DB, CLI) | `tests/.../Integration/*.cs` | [[integration-test-template]] |
 
 Ayrıca: bu şablon bir **release gate'i** doldurur — §6.1'deki 20 madde
 tamamlanmadan plan "tamamlandı" sayılmaz ve release adayı ilan edilemez.
@@ -75,7 +75,7 @@ sistemi **xUnit + NSubstitute + NetArchTest** der; `backend/repository-template.
 plan, iki katmanı da kapsayacak şekilde **çift sürümlü** yazılır:
 senaryo dili xUnit, eski örnekler MSTest kalır (kullanıcı çözecek).
 
-⚠️ **CONFLICT — DevExpress sürümü:** `frontend/form-template.md` **26.1**
+⚠️ **CONFLICT — DevExpress sürümü:** `frontend/form-template.md` **25.2.8**
 der, `.ai/CLAUDE.md` **v26.1** der. Plan **sürüm iddiası yapmaz**; uyumluluk
 testini §6.1 madde 16'da "sürüm sabitleme + restore" adımı olarak zorlar.
 
@@ -95,14 +95,14 @@ Kural: **plan, koddan önce yazılır.** Koddan sonra yazılan plan, kodu
 ### §1.4 Bu Şablonun Kapsam Dışı Olduğu Konular
 
 - **Tek test dosyasının iç yapısı** (fixture, assert, mock) →
-  [unit-test-template](unit-test-template.md) · **DB/CLI entegrasyon testi** → `integration-test-template`
-- **Form içi kod** (event handler, layout) → [form-template](../frontend/form-template.md) (frontend);
-  WinForms klasör/dosya standartları → `winforms-form-template` (other)
+  [[unit-test-template]] · **DB/CLI entegrasyon testi** → [[integration-test-template]]
+- **Form içi kod** (event handler, layout) → [[form-template]] (frontend);
+  WinForms klasör/dosya standartları → [[winforms-form-template]] (other)
 - **Testlerin CI'a alınması** → plan yalnızca *komutu* verir (§5.3); pipeline
   kurulumu bu şablonun dışıdır
 - **Performans/ yük testi** — bu şablon fonksiyonel kapsam içindir;
   perf hedefleri VISION'a yazılır, plana değil
-- **Kod incelemesi** → [code-review-daily](../../checklists/code-review-daily.md) şablonu; burada yalnızca §6.1'e referans
+- **Kod incelemesi** → [[code-review]] şablonu; burada yalnızca §6.1'e referans
 
 ---
 
@@ -125,9 +125,9 @@ Plan bu **yedi varlığı** birer bölüm olarak içerir; biri yoksa plan eksikt
 Aşağıdakiler **bu planda yoktur** ve plana eklenmesi talep edilirse
 "ayrı plan aç" denir (kapsam şişirmesi yasak → §4.3):
 
-- Kod kalitesi metrikleri (kalite sözleşmesi G6 → [index](../../index.md) §3.7; orası SSUT)
+- Kod kalitesi metrikleri (kalite sözleşmesi G6 → [[index]] §3.7; orası SSUT)
 - Üçüncü parti kütüphane sürüm denetimi (→ §6.1 madde 16 yalnızca restore)
-- Kod incelemesi checklist'i (→ [code-review-daily](../../checklists/code-review-daily.md))
+- Kod incelemesi checklist'i (→ [[code-review]])
 - Üretim ortamı monitoring / alerting
 - Eğitim dokümantasyonu
 - Her bir eski MSTest dosyasının tek tek yeniden yazımı (→ ayrı plan)
@@ -197,7 +197,7 @@ En az 5 satır; her satır: `Risk | Olasılık (L/M/H) | Etki (L/M/H) | Azaltma 
 |---|---|---|---|---|
 | DB yok → entegrasyon testi yazılamaz | H | H | in-memory yerine gerçek DB kopyası şartı (§5.1) | tester |
 | MSTest/xUnit çelişkisi → çift bakım | M | M | SSUT = CLAUDE.md; eski dosyalar dokunulmadan durur | user |
-| DevExpress sürüm farkı (26.1 ↔ v26.1) | M | H | sürüm sabitle + restore doğrula (§6.1 m16) | user |
+| DevExpress sürüm farkı (25.2.8 ↔ v26.1) | M | H | sürüm sabitle + restore doğrula (§6.1 m16) | user |
 | Kapsam şişirip planın bitmemesi | M | M | §2.2 explicit out-of-scope + §4.3 kesme kuralı | user |
 | Sahte veri yerine gerçek kişisel veri | L | H | gerçek veri yasağı §4.5 G3 + §5.2 hata modu 5 | tester |
 | Testlerin birbirine bağımlı olması | M | M | her test izole fixture (integration şablonu §4.1) | tester |
@@ -246,7 +246,7 @@ Release adayı yalnızca şunlar **hepsi** true ise ilan edilir:
 ```markdown
 # TEST PLAN — <MODUL ADI>
 **Durum:** taslak | onaylı | release-gate  **Tarih:** <YYYY-AA-GG>  **Sahip:** tester
-**Bağlantılar:** [index](index.md) [CLAUDE](CLAUDE.md) [glossary](glossary.md) [keys](keys.md) [VISION](VISION.md)
+**Bağlantılar:** [[index]] [[CLAUDE]] [[glossary]] [[keys]] [[VISION]]
 
 ## §1 Amaç
 <1-3 cümle: bu plan hangi modülün test kapsamını tanımlar, release gate'i nedir>
@@ -270,8 +270,8 @@ Kapsam içi: <modül listesi>   Kapsam dışı: <§2.2'den kopyalanacaklar>
 <§3.8 + imza satırı>
 ```
 
-**Zorunlu bağ iskeleti:** her plan, [unit-test-template](unit-test-template.md),
-`integration-test-template` ve [code-review-daily](../../checklists/code-review-daily.md) dosyalarına link verir;
+**Zorunlu bağ iskeleti:** her plan, [[unit-test-template]],
+[[integration-test-template]] ve [[code-review]] dosyalarına link verir;
 kesilmiş kapsam burada açıkça "ayrı plana taşındı" diye işaretlenir.
 
 ---

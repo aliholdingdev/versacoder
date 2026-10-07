@@ -11,7 +11,7 @@ scope: "veri sorgusu/rapor sablonu: SELECT yapisi, parametreler ve cikti bicimi"
 
 # VersaCoder — Veri Sorgusu / Rapor Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [adr-data-template](../adr/adr-data-template.md) · [dapper-mapping-template](../infrastructure/dapper-mapping-template.md) · [migration-template](../infrastructure/migration-template.md) · [index.md](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../adr/adr-data-template]] · [[../infrastructure/dapper-mapping-template]] · [[../infrastructure/migration-template]] · [[../../architecture/index.md]]
 
 ---
 
@@ -47,7 +47,7 @@ Bir veri sorgusu kod yazmadan önce **sözleşmedir**: hangi tablodan okuyacağ�
 | E5 | Katmanlar: `VersaCoder.Domain … .Host/.Desktop/.Cli` | `C:\versacoder\src\` klasörü yok → derlenmiş kanıt yok | ⚠️ VERIFICATION REQUIRED |
 | E6 | `versacoder.db` + `schema_version` + `db/migrations/*.sql` | `db/` ve `*.db` bulunamadı | ⚠️ VERIFICATION REQUIRED |
 | E7 | ADO.NET + Dapper (EF Core yasak, ADR-004) | `.csproj` yok → paket kanıtı yok | ⚠️ VERIFICATION REQUIRED |
-| E8 | DevExpress 26.1 · `net48;net10.0-windows` | paket/proje kanıtı yok | ⚠️ VERIFICATION REQUIRED |
+| E8 | DevExpress 25.2.8 · `net48;net10.0-windows` | paket/proje kanıtı yok | ⚠️ VERIFICATION REQUIRED |
 | E9 | `sqlite3` CLI bu makinede kurulu | `Get-Command sqlite3` → YOK | ⚠️ VERIFICATION REQUIRED |
 
 **Yorum yasağı:** `⚠️ VERIFICATION REQUIRED` satırına "aslında vardır / artık yoktur" yorumu **yazılmaz**. Satır yalnız §5.3 komutunun **çıktısı eklendiğinde** ✅'ye döner. Var olmayan dosya için "şurada" denmez; yol + komut yazılır.
@@ -297,7 +297,7 @@ authority: SSOT
 ---
 # QRY-NNN — {{SORGU_ADI}}
 
-**Zorunlu Bağlantılar:** [index](index.md) · [dapper-mapping-template](.templates/query/../infrastructure/dapper-mapping-template.md) · [migration-template](.templates/query/../infrastructure/migration-template.md) · [adr-data-template](.templates/query/../adr/adr-data-template.md) · [index.md](architecture/index.md) · [CLAUDE](CLAUDE.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../infrastructure/dapper-mapping-template]] · [[../infrastructure/migration-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]] · [[../CLAUDE]]
 
 ## §1 Amaç — {{BIR_CUMLE}}
 ## §2 Parametreler

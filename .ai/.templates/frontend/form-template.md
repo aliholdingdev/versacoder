@@ -11,7 +11,7 @@ scope: "WinForms form sablonu: XForm.cs iskeleti, kontroller ve olay baglamalari
 
 # VersaCoder — WinForms Form (XForm.cs) Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE.md](../../CLAUDE.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · `component-template` · `ribbon-template` · [adr-devexpress-template](../adr/adr-devexpress-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/ascii-diagram-template]] · [[component-template]] · [[ribbon-template]] · [[../adr/adr-devexpress-template]]
 
 ---
 
@@ -24,7 +24,7 @@ Bu şablon, VersaCoder masaüstü uygulamasındaki **her WinForms formunun tek b
 | Template Name | `form-template.md` |
 | Template Path | `.ai/.templates/frontend/form-template.md` |
 | Hedef Dosya | `src/VersaCoder.Desktop/**/XForm.cs` (+ `XForm.Designer.cs`) |
-| Hedef Kod | C# · `partial class` · WinForms · DevExpress WinForms **26.1** |
+| Hedef Kod | C# · `partial class` · WinForms · DevExpress WinForms **25.2.8** |
 | Kalıtım | `XtraForm` / `RibbonForm` (ADR-001 kilidi) |
 | Kodlama | **UTF-8 (BOM'suz)** — Latin-1/CP1254 YASAK |
 | Üretilen Uzunluk | 180–320 satır (kod) + bu şablonun 480–660 satırı |
@@ -43,7 +43,7 @@ Form kodu en kolay yerel hâle gelen koddur: her geliştirici kendi `InitializeC
 | Doğrulama katmanı karışması | `[Required]` attribute'u forma sızar | §3.6 **saf kontrol** kuralı |
 | Veri erişimi forma girer | formda `SELECT` yazımı | §4.5 G5 — form yalnız `BindingSource` görür |
 | Erişilebilirlik sona bırakılır | `TabOrder` rastgele | §3.8 zorunlu sekme haritası |
-| DPI 100%’de yazılır | %150’de taşan kontroller | §3.8 DPI + DevExpress 26.1 notları |
+| DPI 100%’de yazılır | %150’de taşan kontroller | §3.8 DPI + DevExpress 25.2.8 notları |
 
 ### §1.2 Disk Kanıtları ve Boşluk (YAGNI)
 
@@ -59,7 +59,7 @@ Form kodu en kolay yerel hâle gelen koddur: her geliştirici kendi `InitializeC
 | 6 | `.ai/ui-design/` + GATE-003 tel kafes onayı | ❌ YOK → ⚠️ | envanter G8: onaysız form üretilmez |
 | 7 | `.ai/.rules/` (7 MD) · `architecture/index.md` · `WORKFLOW.md` · `keys.md` | ❌ YOK | envanter beyanı, diske işlenmemiş |
 | 8 | `global.json` · `Directory.Packages.props` · `README.md` · `versacoder.db` | ❌ YOK | `Test-Path = False` |
-| 9 | DevExpress sürümü **26.1** (ADR-001) | ⚠️ VERIFICATION REQUIRED | `.ai/adr/` dizini diskte YOK |
+| 9 | DevExpress sürümü **25.2.8** (ADR-001) | ⚠️ VERIFICATION REQUIRED | `.ai/adr/` dizini diskte YOK |
 | 10 | Harici referans vault'ları (envanter G1) | 🔒 ERİŞİM YASAK | yalnız yapı referansı; tek kelime kopyalanmadı |
 
 **Yorum yasağı:** Var olmayan dosya için "şurada tanımlı" denmez; `⚠️ VERIFICATION REQUIRED` yazılır, satır olduğu yerde durur. §1.2'deki ❌ satırları §3.9'daki örneklerin **tasarım** olduğunu, diskte henüz form kodu bulunmadığını hatırlatır.
@@ -109,7 +109,7 @@ Form kodu en kolay yerel hâle gelen koddur: her geliştirici kendi `InitializeC
 | Bileşen ağacı + `TabIndex` haritası | Ribbon sayfa/grup/öğe tanımı (→ ribbon) |
 | Saf kontrol doy­rulama + hata mesajı | Kalıcı kural (→ `.ai/.rules/`) |
 | Olay akışı tablosu + hata durumları | Sürüm kilidi kararı (→ ADR-001) |
-| DPI + DevExpress 26.1 davranış notları | Şema/migration (→ ADR-004) |
+| DPI + DevExpress 25.2.8 davranış notları | Şema/migration (→ ADR-004) |
 
 ### §2.1 Dosya Tipi → Sorumlu Eşlemesi
 
@@ -269,9 +269,9 @@ Form doğrulaması **kontrolün kendisinde** yaşar. `[Required]`, `[Range]` vb.
 | Klavye | `Enter` → bir sonraki alan; `Esc` → İptal | §6.5 K3 |
 | Renk-körü | durumu **yazıyla** da ver (`HATALI`), yalnız renkle değil | gözlem |
 | DPI 100–200% | `Anchor`/`Dock` ile akış; sabit `Width` yasak | §5.3/4 |
-| DevExpress 26.1 | `LookAndFeel` tek noktadan; sürüm **yükseltilmez** (ADR-001) | §6.5 K4 |
+| DevExpress 25.2.8 | `LookAndFeel` tek noktadan; sürüm **yükseltilmez** (ADR-001) | §6.5 K4 |
 
-**DPI notu (26.1):** `DpiChanged`'de **kontrol boyutu elle ayarlanmaz**; `AutoScaleDimensions` tasarlandığı DPI'a sabit kalır, `AutoScaleMode.Dpi` devreye girer. `net48` tarafında DPI-işaretleme anahtarı **açılmaz**; ikili TFM'deki davranış farkı `#if NET48` ile belgelenir.
+**DPI notu (25.2.8):** `DpiChanged`'de **kontrol boyutu elle ayarlanmaz**; `AutoScaleDimensions` tasarlandığı DPI'a sabit kalır, `AutoScaleMode.Dpi` devreye girer. `net48` tarafında DPI-işaretleme anahtarı **açılmaz**; ikili TFM'deki davranış farkı `#if NET48` ile belgelenir.
 
 ### §3.9 Dolu VersaCoder Örneği ve Tam Kalıp
 
@@ -358,7 +358,7 @@ public partial class {{EkranAdi}}Form : RibbonForm
 | Kontrol sayısı | ≤ 40 | > 55 → forma böl |
 | `TabIndex` aralığı | 0..N kesintisiz | delik = RED |
 | Kodlama | UTF-8 BOM'suz | Latin-1/CP1254 otomatik RED |
-| DevExpress sürümü | 26.1 | başka iddia = RED (ADR-001) |
+| DevExpress sürümü | 25.2.8 | başka iddia = RED (ADR-001) |
 
 ### §4.4 Değişiklik Kontrolü
 
@@ -381,7 +381,7 @@ public partial class {{EkranAdi}}Form : RibbonForm
 | G6 | Olay aboneliği `+=` ikinci kez | **DUR** — çift tetiklenme |
 | G7 | DataAnnotations attribute (`[Required]`, `[Range]`) | **DUR** — saf kontrole çevrilir (§3.6) |
 | G8 | `TabOrder` deliği / odak sırası bozuk | **DUR** — §3.8 |
-| G9 | DevExpress sürümü `26.1` dışında iddia | **DUR** — ADR-001 |
+| G9 | DevExpress sürümü `25.2.8` dışında iddia | **DUR** — ADR-001 |
 | G10 | GATE-003 onayı olmadan form kodu | **DUR** — `ui-design/`'e dön |
 | G11 | Hata yolunda `catch { }` sessiz yutma | **DUR** — §3.7/6 zorunlu |
 | G12 | Mojibake / karışık dil / emoji (kutu dışında yasaklı listeler hariç) | **DUR** — UTF-8 BOM'suz yeniden yaz |
@@ -505,7 +505,7 @@ Get-ChildItem $src -Recurse -Filter '*.cs' -EA SilentlyContinue | ForEach-Object
 | K9 | Doğrulama 6 kural, DataAnnotations yasak | 6 + yasak | §3.6 |
 | K10 | Olay akışı 8 satır dolu | 8 | §3.7 |
 | K11 | Erişilebilirlik + DPI kuralları yazılı | var | §3.8 |
-| K12 | DevExpress `26.1` geçerli (ADR-001) | doğru sürüm | §3.8 |
+| K12 | DevExpress `25.2.8` geçerli (ADR-001) | doğru sürüm | §3.8 |
 | K13 | `§4.1–§4.5` dolu | 5/5 | §4 |
 | K14 | Hard Guardrails ≥ 10 madde | 12 | §4.5 |
 | K15 | `§5.1` adım tablosu + zaman bütçesi | 8 adım + toplam | §5.1 |
@@ -536,7 +536,7 @@ Get-ChildItem $src -Recurse -Filter '*.cs' -EA SilentlyContinue | ForEach-Object
 | Yalnız metin/tooltip düzeltmesi | `version` patch, `updated` değişir |
 | Kontrol eklendi/çıkarıldı | §3.4 ağacı + §6.5 K3 yeniden |
 | Olay akışı değişti | §3.7 + `version` minor + inceleme |
-| DevExpress yükseltme talebi | **RED** — ADR-001, sürüm `26.1` kilitli |
+| DevExpress yükseltme talebi | **RED** — ADR-001, sürüm `25.2.8` kilitli |
 
 ### §6.4 İlgili Dosyalar
 
@@ -584,7 +584,7 @@ Get-ChildItem $src -Recurse -Filter '*.cs' -EA SilentlyContinue | ForEach-Object
 | 6 | Hata yolunu `catch {}` ile kapatmak | kullanıcı ne olduğunu görmez | §3.7/6 `lblDurum` + kod |
 | 7 | `TabOrder`'ı sonradan atlamak | klavye kullanılamaz | §3.8 0..N kesintisiz |
 | 8 | Sabit `Width` ile DPI'a yazılmak | %150'de taşar | `Anchor`/`Dock` + `AutoScaleMode.Dpi` |
-| 9 | DevExpress sürümünü güncellemek | ADR-001 ihlali | `26.1` sabit, yükseltme YASAK |
+| 9 | DevExpress sürümünü güncellemek | ADR-001 ihlali | `25.2.8` sabit, yükseltme YASAK |
 | 10 | GATE-003'ten önce kod yazmak | onaysız ekran, 120 dk kaybı | tel kafes onayı koddan önce (G10) |
 
 **SSUT beyanı:** Bu dosya WinForms form üretiminin **tek** kaynağıdır; her form, `.ai/ui-design/` onayı ve bu şablon üzerinden üretilir. Çoğaltılan her satır ikinci gerçek kaynağı doğurur (envanter G12).

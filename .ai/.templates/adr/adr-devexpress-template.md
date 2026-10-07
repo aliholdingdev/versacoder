@@ -21,7 +21,7 @@ scope: "DevExpress masastu UI ADR sablonu: RibbonForm, Designer.cs ve tema karar
 
 VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında kullanılır:
 
-1. DevExpress sürüm sabitleme veya yükseltme (ör. 26.1).
+1. DevExpress sürüm sabitleme veya yükseltme (ör. 25.2.8).
 2. Ribbon / Grid / Dock / tema seçimi ve kişiselleştirmesi.
 3. Hand-written `Designer.cs` + `.resx` + `ResourceManager` düzeninin korunması.
 4. DevExpress bileşeninin yeni ekrana eklenmesi veya kaldırılması.
@@ -32,7 +32,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 
 | Kontrol | Beklenen | Durum |
 |---|---|---|
-| DevExpress sürümü | 26.1 (projede sabit) | ⚠️ VERIFICATION REQUIRED |
+| DevExpress sürümü | 25.2.8 (projede sabit) | ⚠️ VERIFICATION REQUIRED |
 | Ribbon stili | Office2010 | ⚠️ VERIFICATION REQUIRED |
 | TFM | net48 + net10.0-windows | ⚠️ VERIFICATION REQUIRED |
 | Tasarımcı dosyaları | hand-written Designer.cs/.resx | ⚠️ VERIFICATION REQUIRED |
@@ -45,7 +45,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 | Bölüm | Ad | DevExpress bağlamında zorunlu içerik |
 |---|---|---|
 | §1 | Kapsam ve Kullanım | DevExpress karar tipi + doğrulanacak bileşen envanteri |
-| §2 | Bağlam (Context) | DevExpress 26.1 / RibbonForm / Designer.cs gerçeği |
+| §2 | Bağlam (Context) | DevExpress 25.2.8 / RibbonForm / Designer.cs gerçeği |
 | §3 | Karar (Decision) | 11 alt bölüm; §3.10 = dolu ADR-001 örneği |
 | §4 | Korkular ve Guardrail'lar | G1–G14; DevExpress'e özgü 4 satır |
 | §5 | Uygulama ve Hata Modları | 11 adım; DevExpress hata modları; 6 PowerShell komutu |
@@ -66,7 +66,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 | 1 | Katmanlar: Abstractions → Domain → Application → Infrastructure → Protocol → Host → UI + CrossCutting + Cli | [ARCHITECTURE](../../architecture/index.md) |
 | 2 | Desktop uygulaması: VersaCoder.Desktop (WinForms RibbonForm) | ⚠️ VERIFICATION REQUIRED |
 | 3 | CLI uygulaması: VersaCoder.Cli ( DevExpress içermez ) | ⚠️ VERIFICATION REQUIRED |
-| 4 | DevExpress 26.1 + RibbonControlStyle.Office2010 | ⚠️ VERIFICATION REQUIRED |
+| 4 | DevExpress 25.2.8 + RibbonControlStyle.Office2010 | ⚠️ VERIFICATION REQUIRED |
 | 5 | TFM: net48 + net10.0-windows | ⚠️ VERIFICATION REQUIRED |
 | 6 | hand-written Designer.cs / .resx / ResourceManager | ⚠️ VERIFICATION REQUIRED |
 | 7 | Test: xunit, %90 coverage, TreatWarningsAsErrors=true | [rules](../../.rules/) |
@@ -79,7 +79,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 | Boyut | VersaCoder Gerçeği | Kaynak |
 |---|---|---|
 | UI framework | DevExpress WinForms, `RibbonForm` | ⚠️ VERIFICATION REQUIRED |
-| Sürüm | 26.1 | ⚠️ VERIFICATION REQUIRED |
+| Sürüm | 25.2.8 | ⚠️ VERIFICATION REQUIRED |
 | Ribbon stili | `RibbonControlStyle.Office2010` | ⚠️ VERIFICATION REQUIRED |
 | TFM | `net48` + `net10.0-windows` | ⚠️ VERIFICATION REQUIRED |
 | Tasarım dosyaları | hand-written `Designer.cs` / `.resx` / `ResourceManager` | ⚠️ VERIFICATION REQUIRED |
@@ -130,7 +130,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 
 | # | Alternatif | Neden elendi |
 |---|---|---|
-| A1 | En son DevExpress sürümüne geç | 26.1 dışı → net48 kırılabilir |
+| A1 | En son DevExpress sürümüne geç | 25.2.8 dışı → net48 kırılabilir |
 | A2 | Hand-written Designer.cs yerine tasarımcı çıktısı | kaynak denetimi kaybolur |
 | A3 | DevExpress'siz Standart WinForms | Ribbon/ Grid yeteneği kaybolur |
 | A4 | Mevcut karar (buraya yaz) | — |
@@ -174,14 +174,14 @@ Karar **[geri alınabilir / kısmen geri alınabilir / geri alınamaz]**. Geri a
 > Aşağıdaki blok dolu bir VersaCoder ADR örneğidir. Yeni ADR yazarken bu bloğun **yapısını** kullan; **içeriğini** kendi kararına göre yeniden yaz. Blok silinemez.
 
 #### §3.10.1 — Karar cümlesi
-**DevExpress'i 26.1'de sabitleriz; sürüm yükselmesi yalnız ADR ile yapılır.**
+**DevExpress'i 25.2.8'de sabitleriz; sürüm yükselmesi yalnız ADR ile yapılır.**
 #### §3.10.2 — Alternatifler
 | # | Alternatif | Neden elendi |
 |---|---|---|
 | A1 | Sınırsız upgrade (en son sürüm) | net48 kırılabilir, ribbon değişir |
 | A2 | DevExpress'siz Standart WinForms | Ribbon/Grid yeteneği kaybolur |
 | A3 | Sürümü csproj'da floating bırak | derleme gün içinde kırılır |
-| A4 | 26.1 sabitleme (seçildi) | — |
+| A4 | 25.2.8 sabitleme (seçildi) | — |
 
 #### §3.10.3 — Gerekçe
 Hand-written `Designer.cs` dosyaları belirli DevExpress API'lerine bağlıdır; sürüm atlaması bu dosyaları sessizce kırar. Sabit sürüm, `net48` + `net10.0-windows` ikili hedefinde bilinen iyi durumu korur.
@@ -189,7 +189,7 @@ Hand-written `Designer.cs` dosyaları belirli DevExpress API'lerine bağlıdır;
 #### §3.10.4 — Kabul kriterleri
 | # | Kriter | Ölçüt | Kanıt |
 |---|---|---|---|
-| KR1 | Sürüm sabit | 26.1, floating yok | .csproj satırı |
+| KR1 | Sürüm sabit | 25.2.8, floating yok | .csproj satırı |
 | KR2 | Derleme temiz | 0 hata/0 uyarı | dotnet build |
 | KR3 | Ribbon açılır | Office2010 stili | manuel test |
 | KR4 | Kapsam %90 | - | coverage raporu |
@@ -199,7 +199,7 @@ VersaCoder.Desktop `UI` katmanındaki tüm DevExpress paketleri ve `Designer.cs`
 #### §3.10.6 — Kapsam dışı
 VersaCoder.Cli, Application/Domain/Infrastructure katmanları, web tarafı.
 #### §3.10.7 — Bağımlılıklar
-DevExpress 26.1 paketleri; `net48` + `net10.0-windows` TFM; hand-written tasarım dosyaları.
+DevExpress 25.2.8 paketleri; `net48` + `net10.0-windows` TFM; hand-written tasarım dosyaları.
 #### §3.10.8 — Riskler
 | Risk | Olasılık | Etki | Azaltıcı |
 |---|---|---|---|
@@ -209,7 +209,7 @@ DevExpress 26.1 paketleri; `net48` + `net10.0-windows` TFM; hand-written tasarı
 | high-DPI bozuk | orta | düşük | DPI testi |
 
 #### §3.10.9 — Geri alma
-Sürümü 26.1'e döndür + `Designer.cs` diff'ini geri al; reversible.
+Sürümü 25.2.8'e döndür + `Designer.cs` diff'ini geri al; reversible.
 #### §3.10.10 — Karar veren / danışılan
 Karar veren: mimari sorumlusu · Danışılan: UI geliştirici · Uygulayan: UI geliştirici · Reviewer: kod inceleyen.
 #### §3.10.11 — İlgili G'ler
@@ -220,7 +220,7 @@ G4 (sürüm RED), G7 (Designer.cs korunur), G8 (ribbon stili), G9 (tasarımcı �
 
 | Metrik | Hedef | Sıklık | Kaynak |
 |---|---|---|---|
-| DevExpress sürüm sapması | 0 (26.1) | her build | csproj diff |
+| DevExpress sürüm sapması | 0 (25.2.8) | her build | csproj diff |
 | Designer.cs istenmeyen diff | 0 satır | her PR | git diff --stat |
 | Derleme uyarısı | 0 | her build | dotnet build |
 | Ekran açılış hatası | 0 | manuel | test kaydı |
@@ -264,7 +264,7 @@ G4 (sürüm RED), G7 (Designer.cs korunur), G8 (ribbon stili), G9 (tasarımcı �
 | G1 | Frontmatter SSOT alanları eksiksiz | Review RED |
 | G2 | İngilizce slug + Türkçe içerik | RED |
 | G3 | `keys.md` sızıntısı | kritik RED |
-| G4 | DevExpress 26.1 dışı sürüm | RED |
+| G4 | DevExpress 25.2.8 dışı sürüm | RED |
 | G5 | Kanıtsız iddia | `⚠️` zorunlu |
 | G6 | Eski vault'tan kopyalama | RED |
 | G7 | Hand-written Designer.cs/.resx ezme | RED |
@@ -312,7 +312,7 @@ G4 (sürüm RED), G7 (Designer.cs korunur), G8 (ribbon stili), G9 (tasarımcı �
 ### §5.3 — Doğrulama Komutları (yalnız-oku)
 
 ```powershell
-# 1 — DevExpress sürümünü gör (26.1 olmalı)
+# 1 — DevExpress sürümünü gör (25.2.8 olmalı)
 Select-String -Path .\src\**\*.csproj -Pattern 'DevExpress'
 # 2 — ribbon stilini gör (Office2010 olmalı)
 Select-String -Path .\src\**\*.cs -Pattern 'RibbonControlStyle'
@@ -385,7 +385,7 @@ Aynı [§5.3](#§53--doğrulama-komutları-yalnız-oku) komutları + `dotnet bui
 
 ### §6.5 — Şablona özgü ek kontroller
 
-1. **Sürüm pin:** DevExpress paketleri floating değil, 26.1 sabit. → `Select-String csproj`
+1. **Sürüm pin:** DevExpress paketleri floating değil, 25.2.8 sabit. → `Select-String csproj`
 2. **Designer bütünlüğü:** `Designer.cs`/`.resx` diff'i istenmeyen değişikliğe karşı. → `git diff --stat`
 3. **Ribbon stili:** `RibbonControlStyle.Office2010`. → `Select-String *.cs`
 4. **İki TFM:** `net48` ve `net10.0-windows` ikisi de derleniyor. → `dotnet build`
@@ -425,7 +425,7 @@ Aynı [§5.3](#§53--doğrulama-komutları-yalnız-oku) komutları + `dotnet bui
 
 | # | İtiraz | Senaryo | Savunma |
 |---|---|---|---|
-| 1 | Sürüm çok eski | 26.1 patch'siz kalır | upgrade = yeni ADR |
+| 1 | Sürüm çok eski | 25.2.8 patch'siz kalır | upgrade = yeni ADR |
 | 2 | Designer.cs el yazımı sürdürülemez | merge çakışması | dosya sahipliği |
 | 3 | İki TFM bakım maliyeti | #if çoğalır | TFM matrisi |
 | 4 | Ribbon eski görünür | Office2010 modası geçer | tema ADR'si |

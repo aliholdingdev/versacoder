@@ -11,7 +11,7 @@ scope: "ajan profil sablonu: rol, arac seti, yetki ve cikti sozlesmesi"
 
 # Agent Profil Şablonu — `.ai/.agents/<rol>.md`
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [AGENTS](../../AGENTS.md) · [WORKFLOW](../../WORKFLOW.md) · [index](../../architecture/index.md) · [glossary](../../glossary.md) · [coding-standards](../../.rules/coding-standards.md) · [solid-rules](../../.rules/solid-rules.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/solid-rules]]
 
 > Bu dosya **şablondur, içerik değil**. `## §1`..`## §7` başlıkları **silinemez, adlandırılamaz, sıralanamaz**.
 
@@ -40,7 +40,7 @@ Doğrulanmayan yapı eklenmez (YAGNI).
 
 | # | İddia | Beklenen disk kanıtı | Durum | Boşluk / Aksiyon |
 |---|---|---|---|---|
-| 1 | Vault indeksi var | `.ai/index.md` | ✅ Var: 14 kök MD (2026-10-04) | Yoksa `GATE-004a` içinde üretilir |
+| 1 | Vault indeksi var | `.ai/index.md` | ⚠️ VERIFICATION REQUIRED | Yoksa `GATE-000` içinde üretilir |
 | 2 | Katalog 14 rol | `.ai/AGENTS.md` | ⚠️ VERIFICATION REQUIRED | Tutmuyorsa `ADR-007` açılır |
 | 3 | Rol dosyaları mevcut | `.ai/.agents/*.md` | ⚠️ VERIFICATION REQUIRED | Eksik rol bu şablonla yazılır |
 | 4 | Kural seti 7 dosya | `.ai/.rules/*.md` | ⚠️ VERIFICATION REQUIRED | 7'den azsa `.rules/` tamamlanır |
@@ -76,7 +76,7 @@ profil `active` alamaz.
 | `.ai/.agents/<rol>.md` profil yazımı | `.templates/adr/adr-template.md` (ADR formatı) |
 | 14 rolün yetki, scope, devir, hata kuralları | `.ai/log.md`, `.ai/sessions/*.md` kayıt formatı |
 | Rol → dosya tipi eşlemesi (`§2.1`) | Alt-ajan görev promptu dağıtımı |
-| `Allowed` / `Forbidden` Scope ayrımı | `GATE-004a`..`GATE-006` kapı metinleri |
+| `Allowed` / `Forbidden` Scope ayrımı | `GATE-000`..`GATE-005` kapı metinleri |
 | Guardrail G1..G12 ve ihlal sonucu | `ADR-001`..`ADR-008` karar içerikleri |
 
 ### §2.1 Dosya Tipi → Sorumlu eşlemesi
@@ -138,8 +138,8 @@ tipi bozuksa **G1**, `authority` değeri değişmişse **G2** ihlali sayılır.
 ```markdown
 # <Rol Adı> — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [index](architecture/index.md)
-· [glossary](glossary.md) · [<ilgili-3-kural>](.rules/<ilgili-3-kural>) |
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]]
+· [[glossary]] · [[.rules/<ilgili-3-kural>]] |
 
 > <Tek cümlelik rol özeti — 25 kelimeyi geçmez.>
 ```
@@ -184,7 +184,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur; satır sayısı bilinçli
 ### §3.6 Tech Stack
 | Katman | Teknoloji | Sürüm / TFM | Not |
 |---|---|---|---|
-| UI | WinForms `RibbonForm` | DevExpress 26.1 | `RibbonControlStyle.Office2010` |
+| UI | WinForms `RibbonForm` | DevExpress 25.2.8 | `RibbonControlStyle.Office2010` |
 | Host / Cli | `VersaCoder.Desktop`, `VersaCoder.Cli` | `net48` + `net10.0-windows` | İkili hedef |
 | Veri | ADO.NET + Dapper | `@p1..@pN` | Sqlite + SqlClient |
 | Migration | SQL + `schema_version` | elle | **EF Core YASAK** |
@@ -228,7 +228,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur; satır sayısı bilinçli
 ```markdown
 # Developer — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [index](architecture/index.md) · [coding-standards](.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[.rules/coding-standards]]
 
 > C# üretim kodunu yazar, derler, testini geçirir; tasarım ve ADR'ye dokunmaz.
 
@@ -270,7 +270,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur; satır sayısı bilinçli
 ### §3.6 Tech Stack
 | Katman | Teknoloji | Sürüm / TFM | Not |
 |---|---|---|---|
-| UI | WinForms `RibbonForm` | DevExpress 26.1 | `RibbonControlStyle.Office2010` |
+| UI | WinForms `RibbonForm` | DevExpress 25.2.8 | `RibbonControlStyle.Office2010` |
 | Host / Cli | `VersaCoder.Desktop`, `VersaCoder.Cli` | `net48` + `net10.0-windows` | İkili hedef |
 | Veri | ADO.NET + Dapper | `@p1..@pN` | Sqlite + SqlClient |
 | Migration | SQL + `schema_version` | elle | **EF Core YASAK** |
@@ -326,7 +326,7 @@ authority: SSOT
 
 # {{DISPLAY_NAME}} — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [index](architecture/index.md) · [{{RULE_1}}](.rules/{{RULE_1}})
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[.rules/{{RULE_1}}]]
 
 > {{ROLE_TAGLINE_25_WORDS_MAX}}
 
@@ -370,7 +370,7 @@ authority: SSOT
 ### §3.6 Tech Stack
 | Katman | Teknoloji | Sürüm / TFM | Not |
 |---|---|---|---|
-| UI | WinForms `RibbonForm` | DevExpress 26.1 | `RibbonControlStyle.Office2010` |
+| UI | WinForms `RibbonForm` | DevExpress 25.2.8 | `RibbonControlStyle.Office2010` |
 | Host / Cli | `VersaCoder.Desktop`, `VersaCoder.Cli` | `net48` + `net10.0-windows` | İkili hedef |
 | Veri | ADO.NET + Dapper | `@p1..@pN` | Sqlite + SqlClient |
 | Migration | SQL + `schema_version` | elle | **EF Core YASAK** |
@@ -476,7 +476,7 @@ authority: SSOT
 | **G4** | Forbidden Scope kural dışı yazılamaz | `§3.5` | `security` taraması | İşlem durur, `security` bilinir |
 | **G5** | EF Core / `DbContext` yok | `ADR-004` | `Select-String 'DbContext'` | **Build durur**; PR reddi |
 | **G6** | Yalnız `net48` + `net10.0-windows` | `ADR-003` | `.csproj` + `§3.6` | PR reddi; hedef çevrilir |
-| **G7** | DevExpress `26.1` | `ADR-001` / `ADR-008` | Paket listesi + profil | Sürüm sabitlenir |
+| **G7** | DevExpress `25.2.8` | `ADR-001` / `ADR-008` | Paket listesi + profil | Sürüm sabitlenir |
 | **G8** | `Designer.cs`/`.resx` yalnız elle | `ADR-005` | Dosya imzası/geçmişi | Dosyalar revert, iş durur |
 | **G9** | Kanıtsız iddia yazılamaz | `§1.2` | İşaret yoksa | İddia **silinir**, satır işaretlenir |
 | **G10** | Token ≤ 50.000 / oturum | Vault bütçesi | Oturum sayacı | Oturum kapanır; handover zorunlu |

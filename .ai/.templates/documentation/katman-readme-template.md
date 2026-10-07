@@ -11,7 +11,7 @@ scope: "katman README sablonu: sorumluluk, icindekiler, yapi ve dogrulama satirl
 
 # VersaCoder — Katman README Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [architecture-template](../architecture/architecture-template.md) · [layer-spec-template](../architecture/layer-spec-template.md) · [adr-template](../adr/adr-template.md) · [api-doc-template](api-doc-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../architecture/architecture-template]] · [[../architecture/layer-spec-template]] · [[../adr/adr-template]] · [[api-doc-template]]
 
 ---
 
@@ -26,7 +26,7 @@ SRP gereği bu şablon **kural metni üretmez**: kural `.ai/.rules/`, katman tan
 | Template Name | `katman-readme-template.md` |
 | Template Path | `.ai/.templates/documentation/katman-readme-template.md` |
 | Hedef Dosya | `src/VersaCoder.<Katman>/README.md` |
-| Hedef Dizin | `src/` — 9 katman = 9 README (l0..l7) |
+| Hedef Dizin | `src/` — 9 katman = 9 README (K0..K8) |
 | Üretilen Uzunluk | `100–260 satır` · `7–15 KB` (katman başına) |
 | Kodlama | **UTF-8 (BOM'suz)** — Latin-1/CP1254 YASAK |
 | Dil | Türkçe — proje adı, tip adı, dosya adı İngilizce |
@@ -41,7 +41,7 @@ README beş kaynaktan beslenir; **katman adı ve kodu uydurulmaz**.
 
 | Sıra | Okunan | Ne verir | Tahmin Olur mu |
 |------|--------|----------|----------------|
-| 1 | `../architecture/architecture-template` §3.2 | l0..l7 kodu + sorumluluk tek satırı | Hayır — SSOT |
+| 1 | `../architecture/architecture-template` §3.2 | K0..K8 kodu + sorumluluk tek satırı | Hayır — SSOT |
 | 2 | `src/**` proje yapısı (`.csproj`, klasörler) | gerçek dosya ağacı | Hayır |
 | 3 | `../architecture/layer-spec-template` | katmanın derin spec'i | Hayır |
 | 4 | `../.rules/*.md` (6 MD) | o katmanın kaçınılmaz kuralı | Hayır |
@@ -59,7 +59,7 @@ README beş kaynaktan beslenir; **katman adı ve kodu uydurulmaz**.
 | 2 | `src/VersaCoder.Domain/README.md` | ❌ YOK | `Test-Path = False` → bu şablonla |
 | 3 | `tests/` + `.sln` + `global.json` | ❌ YOK | `Test-Path = False` |
 | 4 | `.slnf` / `Directory.Packages.props` (CPM) | ❌ YOK | kökte yalnız `.ai`, `.git` |
-| 5 | `.ai/.templates/architecture/architecture-template.md` | ✅ DOĞRULANDI | 34.059 bayt — l0..l7 tek kaynağı |
+| 5 | `.ai/.templates/architecture/architecture-template.md` | ✅ DOĞRULANDI | 34.059 bayt — K0..K8 tek kaynağı |
 | 6 | `.ai/.templates/architecture/layer-spec-template.md` | ✅ DOĞRULANDI | 34.783 bayt — derin spec |
 | 7 | `.ai/.templates/architecture/ascii-diagram-template.md` | ✅ DOĞRULANDI | 38.118 bayt — kutu biçimi |
 | 8 | `.ai/.templates/index.md` (envanter) | ✅ DOĞRULANDI | 40.440 bayt |
@@ -78,7 +78,7 @@ Aynı bilgi üç yere yazılırsa üçü de bayatlar; her şeyin **tek evi** var
 
 | Bilgi | Tek Ev | README'de | Tekrar Edilmez |
 |-------|--------|-----------|----------------|
-| Katman kodu + sorumluluk (l0..l7) | `architecture-template` §3.2 | tek satır özet | tam tablo kopyası |
+| Katman kodu + sorumluluk (K0..K8) | `architecture-template` §3.2 | tek satır özet | tam tablo kopyası |
 | Sınıf/interior tasarım | `layer-spec-template` | — | derin spec'e bağlantı |
 | Bağımlılık yönü kuralı | `architecture-template` | **ok** (README'nin özü) | kural metni |
 | Mimari karar + gerekçe | `adr/ADR-NNN` | tek satır + bağlantı | karar metni |
@@ -122,7 +122,7 @@ Aynı bilgi üç yere yazılırsa üçü de bayatlar; her şeyin **tek evi** var
 | Kapsam | Kapsam Dışı |
 |--------|-------------|
 | R1..R9 blok sırası + zorunlu tablolar | Sınıf içi tasarım (`layer-spec-template`) |
-| l0..l7 kartı (tek satır sorumluluk) | Katman listesinin **tam** kopyası (SRP) |
+| K0..K8 kartı (tek satır sorumluluk) | Katman listesinin **tam** kopyası (SRP) |
 | Bağımlılık yönü + ihlal sonucu | ADR gerekçesi |
 | Dosya ağacı (kanıtlı) + tip yüzeyi | Kod içeriği / metot gövdesi |
 | 6 salt-okunur PowerShell komutu | `src/` üretimi (developer işi) |
@@ -178,22 +178,22 @@ Aynı bilgi üç yere yazılırsa üçü de bayatlar; her şeyin **tek evi** var
 | Öğe | Kural | Doğru | Yanlış |
 |-----|-------|-------|--------|
 | Frontmatter | 7 alan, ilk 9 satır | `authority: SSOT` | alan eksik / yazım farkı |
-| H1 | tek tane | `# VersaCoder.Domain (l1)` | iki H1 · `##` |
+| H1 | tek tane | `# VersaCoder.Domain (K2)` | iki H1 · `##` |
 | Bağlantı | `**Zorunlu Bağlantılar:**` + 6 `[[…]]` | `·` ayracılı | 5 altı · markdown `](…)` |
-| Katman kodu | `l0`..`l7` birebir | `l1 Domain` | `L-2` · `katman2` · uydurma |
+| Katman kodu | `K0`..`K8` birebir | `K2 Domain` | `K-2` · `katman2` · uydurma |
 | Dil | Türkçe; tip/yol İngilizce | `IEntityRepository` | karışık dil |
 | Ürün adı | `VersaCoder` | — | **CoreMusic ASLA** (G13) |
 
-Katman kodu **yalnız** `architecture-template` §3.2'den gelir; README'de kod ile ad arasına boşluk konur (`l1 Domain`), tire kullanılmaz.
+Katman kodu **yalnız** `architecture-template` §3.2'den gelir; README'de kod ile ad arasına boşluk konur (`K2 Domain`), tire kullanılmaz.
 
 ### §3.3 R3 — K Kartı Kuralları
 
 | Alan | Kural | Yanlış |
 |------|-------|--------|
-| `Kod` | `l0`..`l7`, §3.2 ile birebir | uydurma kod |
+| `Kod` | `K0`..`K8`, §3.2 ile birebir | uydurma kod |
 | `Proje` | `src/VersaCoder.<Ad>/` gerçek adı | `Domain katmanı` (yol yok) |
 | `Sorumluluk` | `architecture-template`'ten **tek satır** aynen | 3 cümlelik paragraf |
-| `Yön` | `l7 → l6 → {l5, l4} → l2 → l1 → l0 → l3` içindeki yeri | ters yön |
+| `Yön` | `K6 → K7 → {K5, K4} → K3 → K2 → K1 → K0` içindeki yeri | ters yön |
 | `Framework` | yalnız bu katmanda izinli olanlar | her katmanda `DevExpress` |
 | `Durum` | `✅` (üretildi) · `⚠️ VERIFICATION REQUIRED` (diskte yok) | varsayılan `✅` |
 
@@ -213,7 +213,7 @@ Katman kodu **yalnız** `architecture-template` §3.2'den gelir; README'de kod i
 ```markdown
 | Tip | Ad | Ne Açar | İzinli Kullanım |
 |-----|----|---------|-----------------|
-| interface | `IOrderRepository` | sorgu/güncelleme portu | yalnız l2 |
+| interface | `IOrderRepository` | sorgu/güncelleme portu | yalnız K3 |
 | record | `OrderLine` | değişmez veri taşıyıcı | her katman |
 | enum | `OrderState` | durum makinesi | her katman |
 ```
@@ -240,7 +240,7 @@ $readme = 'C:\versacoder\src\VersaCoder.Domain\README.md'
 if (-not (Test-Path -LiteralPath $readme)) { 'README YOK -> bu sablonla uretilecek'; return }
 $n = (Get-Content -LiteralPath $readme).Count
 $kod = (Select-String -LiteralPath $readme -Pattern '^\| K[0-8] \|' -Encoding UTF8).Count
-$yon = (Select-String -LiteralPath $readme -Pattern 'l7 → l6 → \{l5, l4\} → l2 → l1 → l0 → l3' -Encoding UTF8).Count
+$yon = (Select-String -LiteralPath $readme -Pattern 'K6 → K7 → \{K5, K4\} → K3 → K2 → K1 → K0' -Encoding UTF8).Count
 'giris {0} (100-260) · K karti {1} (1) · yon satiri {2} (>=1)' -f $n, $kod, $yon
 ```
 
@@ -249,17 +249,17 @@ $yon = (Select-String -LiteralPath $readme -Pattern 'l7 → l6 → \{l5, l4\} �
 > Üst blok üretim standardı, alt blok yer tutucu taşıyan iskelettir. Yer tutucu **yalnız** alt blokta yaşar.
 
 ````markdown
-# VersaCoder.Domain (l1)
-**Zorunlu Bağlantılar:** [index](index.md) · [CLAUDE](CLAUDE.md) · [architecture-template](.templates/documentation/../architecture/architecture-template.md) · [layer-spec-template](.templates/documentation/../architecture/layer-spec-template.md) · [adr-template](.templates/documentation/../adr/adr-template.md) · [solid-rules](.templates/.rules/solid-rules.md)
+# VersaCoder.Domain (K2)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../architecture/architecture-template]] · [[../architecture/layer-spec-template]] · [[../adr/adr-template]] · [[../.rules/solid-rules]]
 
 > Bu katman iş kurallarını ve invariantları taşır; dışarıya **asla** altyapı tipi açmaz.
 
 ## R3 K Kartı
 | Alan | Değer |
 |---|---|
-| Kod · Ad | l1 · Domain |
+| Kod · Ad | K2 · Domain |
 | Sorumluluk | entity + invariant + domain event |
-| Yöne izin | yalnız aşağı: `l0`, `l3` |
+| Yöne izin | yalnız aşağı: `K1`, `K0` |
 | Durum | ⚠️ VERIFICATION REQUIRED (`src/` diskte yok) |
 
 ## R8 Test + Kanıt
@@ -279,7 +279,7 @@ updated: {{YYYY-MM-DD}}
 authority: SSOT
 ---
 # VersaCoder.{{KATMAN}} ({{K_KODU}})
-**Zorunlu Bağlantılar:** [{{BAG_1}}]({{BAG_1}}) · [{{BAG_2}}]({{BAG_2}}) · [{{BAG_3}}]({{BAG_3}}) · [{{BAG_4}}]({{BAG_4}}) · [{{BAG_5}}]({{BAG_5}}) · [{{BAG_6}}]({{BAG_6}})
+**Zorunlu Bağlantılar:** [[{{BAG_1}}]] · [[{{BAG_2}}]] · [[{{BAG_3}}]] · [[{{BAG_4}}]] · [[{{BAG_5}}]] · [[{{BAG_6}}]]
 
 > {{TEK_PARAGRAF — bu katman ne yapar, neyi asla yapmaz}}
 
@@ -347,7 +347,7 @@ authority: SSOT
 | Olay | Aksiyon | Etkilenen | Kayıt |
 |------|---------|-----------|-------|
 | Katman sorumluluğu değişti | önce `architecture-template`, sonra R3 | iki dosya | `log.md` + `version` minor |
-| Yeni katman (l9) eklendi | önce mimari, sonra README | üç dosya | `version` major |
+| Yeni katman (K9) eklendi | önce mimari, sonra README | üç dosya | `version` major |
 | Dosya ağacı değişti | R5 yeniden ölçülür | tek dosya | `version` patch |
 | Bağlanan dosya taşındı | bağlantı hedefi yeniden yazılır | tek dosya | §5.3/6 = 0 |
 
@@ -360,8 +360,8 @@ authority: SSOT
 | G3 | Frontmatter 7 alan eksik / `authority: SSOT` bozuk | **DUR** — §5.3/4 |
 | G4 | Üretilen README'de `{{…}}` (kalıp bloğu hariç) | **DUR** — §5.3/4 |
 | G5 | `src/` yokken dosya ağacı/tip listesi uydurmak | **DUR** — `⚠️ VERIFICATION REQUIRED` |
-| G6 | K kodunu uydurmak/terste yazmak (`test Domain`) | **DUR** — `architecture-template` §3.2 |
-| G7 | Bağımlılık yönüne aykırı iddia (`l1 → l7`) | **DUR** — §3.6 zinciri |
+| G6 | K kodunu uydurmak/terste yazmak (`K8 Domain`) | **DUR** — `architecture-template` §3.2 |
+| G7 | Bağımlılık yönüne aykırı iddia (`K2 → K6`) | **DUR** — §3.6 zinciri |
 | G8 | README'ye kural paragrafı taşımak | **DUR** — 2–4 satır özet + bağlantı (G12) |
 | G9 | ADR/karar gerekçesini README'ye yazmak | **DUR** — tek satır + bağlantı |
 | G10 | Kod içeriği/metot gövdesi yapıştırmak | **DUR** — tip yüzeyi yeterli |
@@ -395,8 +395,8 @@ authority: SSOT
 
 | # | Hata Modu | Belirti | Kök Neden | Düzeltme |
 |---|-----------|---------|-----------|----------|
-| 1 | Uydurma K kodu | `l9` · `l1 UI` | `architecture-template` okunmamış | §3.2 tablosu |
-| 2 | Ters yön | README'de `l1 → l7` | zincir ezberlenmiş | §3.6 |
+| 1 | Uydurma K kodu | `K9` · `K2 UI` | `architecture-template` okunmamış | §3.2 tablosu |
+| 2 | Ters yön | README'de `K2 → K6` | zincir ezberlenmiş | §3.6 |
 | 3 | Uydurma ağaç | `src/` yokken dolu ağaç | §1.2 ölçülmemiş | `⚠️ VERIFICATION REQUIRED` |
 | 4 | Kural kopyası | R7'de uzun paragraf | SRP unutulmuş | 2–4 satır + bağlantı |
 | 5 | Eksik bağlantı | 5 veya daha az `[[…]]` | hedef unutulmuş | §3.2 altı hedef |
@@ -428,7 +428,7 @@ $sizan = @(Select-String -LiteralPath $doc -Pattern '[{}]{2}[A-Z0-9_]+[}]{2}' -E
 # 3) ICERIK — K karti · yon zinciri · 6 baglanti · EF 0
 $doc = 'C:\versacoder\.ai\.templates\documentation\katman-readme-template.md'
 $katmanSatiri = @(Select-String -LiteralPath $doc -Pattern '^\| K[0-8] \| ' -Encoding UTF8).Count
-$yon  = @(Select-String -LiteralPath $doc -Pattern 'l7 → l6 → \{l5, l4\} → l2 → l1 → l0 → l3' -Encoding UTF8).Count
+$yon  = @(Select-String -LiteralPath $doc -Pattern 'K6 → K7 → \{K5, K4\} → K3 → K2 → K1 → K0' -Encoding UTF8).Count
 $bag  = [regex]::Matches([System.IO.File]::ReadAllText($doc), '\[\[([^\]]+)\]\]') |
         ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique
 $ef   = @(Select-String -LiteralPath $doc -Pattern 'EntityFrameworkCore' -Encoding UTF8).Count
@@ -541,7 +541,7 @@ $kirik | ForEach-Object { '  KIRIK -> ' + $_ }
 | Dosya | İlişki |
 |-------|--------|
 | `.ai/.templates/documentation/katman-readme-template.md` | **bu dosya** — katman README'sinin tek kaynağı |
-| `.ai/.templates/architecture/architecture-template.md` | l0..l7 tek kaynağı (R3 · §3.6) |
+| `.ai/.templates/architecture/architecture-template.md` | K0..K8 tek kaynağı (R3 · §3.6) |
 | `.ai/.templates/architecture/layer-spec-template.md` | derin spec — README'ye girmez (§1.3) |
 | `.ai/.templates/architecture/ascii-diagram-template.md` | kutu biçimi + 66 ölçer (§5.3/4) |
 | `.ai/.templates/documentation/api-doc-template.md` | katman HTTP yüzeyi bu şablondan |
@@ -567,7 +567,7 @@ $kirik | ForEach-Object { '  KIRIK -> ' + $_ }
 | Kaynak | Yol | Ne İçin | Durum (2026-09-25) |
 |--------|-----|---------|---------------------|
 | Şablon envanteri + kalite sözleşmesi | `.ai/.templates/index.md` | kayıt + §3.7 | ✅ 40.440 bayt |
-| l0..l7 tek kaynağı | `.ai/.templates/architecture/architecture-template.md` | R3 · §3.6 | ✅ 34.059 bayt |
+| K0..K8 tek kaynağı | `.ai/.templates/architecture/architecture-template.md` | R3 · §3.6 | ✅ 34.059 bayt |
 | Katman derin spec'i | `.ai/.templates/architecture/layer-spec-template.md` | §1.3 ayrım | ✅ 34.783 bayt |
 | Kutu biçimi | `.ai/.templates/architecture/ascii-diagram-template.md` | §5.3/4 · 66 | ✅ 38.118 bayt |
 | Kural metni (6 MD) | `.ai/.rules/*.md` | R7 · §5.3 | ✅ 13–17 KB/dosya |
@@ -579,7 +579,7 @@ $kirik | ForEach-Object { '  KIRIK -> ' + $_ }
 
 | # | Hata | Neden Yanlış | Doğrusu | Yakalama |
 |---|------|--------------|---------|----------|
-| 1 | K kodunu uydurmak (`l9`, `l1 UI`) | tüm vault l0..l7'e bağlanır | `architecture-template` §3.2 | §5.3/3 |
+| 1 | K kodunu uydurmak (`K9`, `K2 UI`) | tüm vault K0..K8'e bağlanır | `architecture-template` §3.2 | §5.3/3 |
 | 2 | Bağımlılık yönünü terste yazmak | README yanlış mimariyi onaylar | §3.6 zinciri | §5.3/3 |
 | 3 | `src/` yokken ağaç uydurmak | kanıtsız iddia, ajan yanlış yere gider | `⚠️ VERIFICATION REQUIRED` | §1.2 |
 | 4 | Katman listesini 9 satır kopyalamak | SRP + okuma bütçesi şişer | tek K kartı | G12 |

@@ -11,7 +11,7 @@ scope: "yapilandirma sablonu: app settings, secim siniflari ve baglama kurallari
 
 # VersaCoder — Yapılandırma Şablonu
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../../CLAUDE.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [adr-architecture-template](../adr/adr-architecture-template.md) · [provider-template](./provider-template.md) · [session-log-template](../session-log-template.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/CLAUDE]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-architecture-template]] · [[./provider-template]] · [[../session-log-template]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya, VersaCoder'da **bir değerin nerede yaşadığı, hangi sırada ezildiği ve nasıl doğrulandığı** sorusunun tek kaynağıdır (SSOT). Gömülü ayar, sürümü olmayan paket ve doğrulamasız başlatma reddedilir.
 
@@ -31,7 +31,7 @@ Yapılandırma sessizce bozulur: bir ortam değişkeni unutulur, bir `Condition`
 | 4 | Tip-güvenli options pattern (§3.6) | Eksik anahtar çalışma zamanında değil, derlemede fark edilmez |
 | 5 | Secret ≠ config (§3.7) | Repo'da açık anahtar |
 | 6 | Fail-fast doğrulama (§3.8) | Uygulama eksik ayarla açılır, sonra kaos |
-| 7 | Sürüm kilidi (§3.9) | DevExpress 26.1 dışına kayma → ADR-001 ihlali |
+| 7 | Sürüm kilidi (§3.9) | DevExpress 25.2.8 dışına kayma → ADR-001 ihlali |
 
 ### §1.2 Disk Kanıtları ve Boşluk (YAGNI)
 
@@ -46,7 +46,7 @@ Kanıt `2026-09-25` tarihinde `C:\versacoder` üzerinde okunarak alındı. Kanı
 | E5 | `global.json` (SDK 10.0.301 / latestFeature) | ❌ YOK | `Test-Path = False` — beyan, doğrulanmadı |
 | E6 | `.gitignore` | ❌ YOK | `Test-Path = False` — kurulacak |
 | E7 | `.NET SDK 10.0.401` kurulu | ✅ DOĞRULANDI | `dotnet --list-sdks` → `10.0.401` |
-| E8 | DevExpress **26.1** NuGet önbellekte | ❌ YOK | `~/.nuget/packages/devexpress*` = 0 girdi (ADR-001 kilidi beyanı) |
+| E8 | DevExpress **25.2.8** NuGet önbellekte | ❌ YOK | `~/.nuget/packages/devexpress*` = 0 girdi (ADR-001 kilidi beyanı) |
 | E9 | `*.csproj`, `appsettings*.json` | ❌ YOK | Recursive sayım = 0 / 0 |
 | E10 | `.ai/.templates/index.md` `#24 configuration-template` (Part B, `T-VER`, devops-engineer) | ✅ OKUNDU | envanter 38.816 bayt, §3.3 satır #24 |
 | E11 | `ascii-diagram-template.md` (biçim referansı) | ✅ OKUNDU | 38.121 bayt / 644 satır |
@@ -81,7 +81,7 @@ Kanıt `2026-09-25` tarihinde `C:\versacoder` üzerinde okunarak alındı. Kanı
 ## §2 Kapsam
 
 **İçinde:** değer yaşam döngüsü (katman + öncelik), MSBuild dosyaları (`Directory.Build.props`, `global.json`, `Directory.Packages.props`), koşullu özellik + ikili TFM, ortam adları, options pattern, secret + `.gitignore`, fail-fast, sürüm kilidi, salt-okunur komutlar.
-**Dışında:** sağlayıcı adaptörü (→ [provider-template](./provider-template.md)), veri erişimi/şema (ADR-004), ADR kararı (→ adr şablonları), ekran/UI (GATE-003).
+**Dışında:** sağlayıcı adaptörü (→ [[./provider-template]]), veri erişimi/şema (ADR-004), ADR kararı (→ adr şablonları), ekran/UI (GATE-003).
 
 ### §2.1 Dosya Tipi → Sorumlu Eşlemesi
 
@@ -262,7 +262,7 @@ secrets.json
 | Bağlantı yolu | `DbPath` yazılabilir dizin mi | açılışta `InvalidOperationException` |
 | Ortam adı | bilinen 3 değerden biri mi | açılışta red (§3.5) |
 | TFM bütünlüğü | iki hedef de derleniyor mu | CI kırmızı (§5.3 C5) |
-| Sürüm kilidi | DevExpress tam `26.1` mi | §3.9 → kırmızı |
+| Sürüm kilidi | DevExpress tam `25.2.8` mi | §3.9 → kırmızı |
 | Secret temizliği | açık anahtar 0 satır | §5.3 C4 → kırmızı |
 
 **Fail-fast ilkesi:** Eksik/zorunlu değer **başlangıçta** reddedilir; `null` ile sessiz devam yasak (G8).
@@ -271,7 +271,7 @@ secrets.json
 
 | Paket / Araç | Kilitlenen Sürüm | Kaynak | Yükseltme |
 |---|---|---|---|
-| DevExpress | **26.1** (tam) | ADR-001 | **YASAK** — ADR kararı olmadan |
+| DevExpress | **25.2.8** (tam) | ADR-001 | **YASAK** — ADR kararı olmadan |
 | .NET SDK | `10.0.401` (kurulu, ✅ E7) | §1.2 | `global.json` + §6.3 |
 | TFM | `net48;net10.0-windows` | §3.4 | mimari karar |
 | Veri erişimi | ADO.NET + Dapper | ADR-004 | EF Core'a geçiş yasak |
@@ -282,8 +282,8 @@ Dolu örnek — `Directory.Packages.props` iskeletinin doldurulmuş hâli:
 ```text
 Directory.Packages.props (CPM)
   ManagePackageVersionsCentrally = true
-  DevExpress.Win                    26.1   <- ADR-001, yuvarlak surum YASAK
-  DevExpress.Win.Forms              26.1
+  DevExpress.Win                    25.2.8   <- ADR-001, yuvarlak surum YASAK
+  DevExpress.Win.Forms              25.2.8
   Dapper                            <- ADR-004, versiyon kilidi (sabit)
   Microsoft.Data.SqlClient          <- sabit
   .csproj icinde <Version>          <- YASAK (G3): surum yalniz burada
@@ -343,7 +343,7 @@ Yeni yapılandırma eklerken kopyalanacak kalıp (yalnız `{{…}}` doldurulur):
 | Öncelik sırası | 6 katman (§3.1) | Yeni katman = §6.3 onayı |
 | Dosya başına MSBuild | 1 `props` + 1 `packages` + 1 `global.json` | İkinci dosya RED (rol belirsizliği) |
 | TFM | `net48;net10.0-windows` | Tek hedefe düşürme = ADR |
-| DevExpress | tam `26.1` | Herhangi bir sapma = ADR-001 ihlali |
+| DevExpress | tam `25.2.8` | Herhangi bir sapma = ADR-001 ihlali |
 | `.gitignore` zorunlu satır | ≥ 4 (§3.7) | Eksik = G7 |
 | Doğrulama | fail-fast zorunlu | G8 |
 | Bu şablon dosyası | 480–660 satır / 15–32 KB | §6.1 K13–K14 |
@@ -373,7 +373,7 @@ Yeni yapılandırma eklerken kopyalanacak kalıp (yalnız `{{…}}` doldurulur):
 | G6 | Kod içi gömülü stratejik değer (bağlantı yolu, anahtar) | **DUR** — Options'a | §6.1 K8 |
 | G7 | `.gitignore`'da §3.7 satırları eksik | **DUR** | §5.3 C7 |
 | G8 | Doğrulamasız başlatma / null ile sessiz devam | **DUR** — `ValidateOnStart` | §3.8 |
-| G9 | DevExpress sürümü `26.1` dışında | **DUR** — ADR-001 ihlali | §5.3 C3 |
+| G9 | DevExpress sürümü `25.2.8` dışında | **DUR** — ADR-001 ihlali | §5.3 C3 |
 | G10 | EF Core referansı (ADR-004) / string concat SQL | **DUR** | vault G2/G10 |
 | G11 | Öncelik sırasının kodda/BAŞKA dosyada tekrar yazılması | **DUR** — SSOT ihlali | §7.2 R5 |
 | G12 | `coremusic`/versacoder.ai içeriği kopyası; mojibake (`Ã`, `Â`) | **DUR** | §5.3 C8 |
@@ -407,7 +407,7 @@ Yeni yapılandırma eklerken kopyalanacak kalıp (yalnız `{{…}}` doldurulur):
 | 2 | Props sessiz uygulanmıyor | özellik projede yok | `.csproj` import/scope (§3.3) |
 | 3 | Koşul yanlış yazımı | TFM'e özel özellik yok | tırnak + tek eşitlik (§3.4) |
 | 4 | CPM ihlali | sürüm projede tekrar | `<Version>` sil, `PackageVersion`'a taşı (G3) |
-| 5 | Sürüm kayması | DevExpress ≠ 26.1 | CPM satırını kilitle (G9) |
+| 5 | Sürüm kayması | DevExpress ≠ 25.2.8 | CPM satırını kilitle (G9) |
 | 6 | Secret sızıntısı | C4 > 0 | anahtar iptal + §3.7 kaynağı |
 | 7 | Ortam adı yazım hatası | dosya yüklenmiyor | tek nokta kuralı (§3.5) |
 | 8 | Sessiz null devam | "boş db yolu" hatası geç krizde | `ValidateOnStart` (G8) |
@@ -442,7 +442,7 @@ Select-String -Path 'C:\versacoder\**\*.csproj' `
 ```
 
 ```powershell
-# C3) DEVEXPRESS KİLİDİ — tam 26.1 dışına çıkan satır 0 olmalı (G9)
+# C3) DEVEXPRESS KİLİDİ — tam 25.2.8 dışına çıkan satır 0 olmalı (G9)
 Select-String -Path 'C:\versacoder\Directory.Packages.props' `
   -Pattern 'DevExpress' -ErrorAction SilentlyContinue |
   Where-Object { $_.Line -notmatch '25\.2\.8' } | Select-Object LineNumber, Line
@@ -494,7 +494,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 | MSBuild 3'lüsü (props/packages/global.json) | N/3 | 3/3 | 🟢/🔴 |
 | C1 CPM anahtarı `true` | evet/hayır | evet | 🟢/🔴 |
 | C4 açık secret satırı | N | 0 | 🟢/🔴 |
-| C3 DevExpress ≠ 26.1 | N | 0 | 🟢/🔴 |
+| C3 DevExpress ≠ 25.2.8 | N | 0 | 🟢/🔴 |
 | C6/C5 ihlali (`<Version>` / EF Core) | N | 0 | 🟢/🔴 |
 | Fail-fast (`ValidateOnStart`) | var/yok | var | 🟢/🔴 |
 | §4.5 G1..G12 ihlali | N | 0 | 🟢/🔴 |
@@ -531,7 +531,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 | Sinyal | Aksiyon |
 |---|---|
 | C4 > 0 satır | **DUR** — anahtar iptal + log temizliği |
-| C3 > 0 satır | **DUR** — sürüm `26.1`'e çekilir (ADR-001) |
+| C3 > 0 satır | **DUR** — sürüm `25.2.8`'e çekilir (ADR-001) |
 | C6 > 0 satır | **DUR** — `<Version>` CPM'e taşınır |
 | C5'te `EntityFramework` | **DUR** — ADO.NET + Dapper (ADR-004) |
 | C1 = `False` | **DUR** — §4.1 adımları 1–3 tamamlanır |
@@ -562,7 +562,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 | `.ai/.templates/index.md` | envanter `#24` (Part B, `T-VER`, devops-engineer) |
 | `.ai/.templates/architecture/ascii-diagram-template.md` | biçim referansı (7 bölüm, Quality Report, Red Team) |
 | `.ai/.templates/adr/adr-architecture-template.md` | TFM/katman kararı (yapı referansı) |
-| `.ai/.templates/adr/adr-devexpress-template.md` | 26.1 kilidinin karar kaynağı |
+| `.ai/.templates/adr/adr-devexpress-template.md` | 25.2.8 kilidinin karar kaynağı |
 
 ### §6.5 Envantere Özgü Kontroller
 
@@ -570,7 +570,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 |---|---|---|---|
 | K1 | `infrastructure/` klasöründe 2 şablon | 2 | `Get-ChildItem …\infrastructure -Filter *.md` |
 | K2 | Envanter satırı `#24` hedefi | `appsettings*.json` | index.md §3.3 |
-| K3 | DevExpress yazımı `26.1` (her yerde aynı) | tutarlı | §5.3 C3 |
+| K3 | DevExpress yazımı `25.2.8` (her yerde aynı) | tutarlı | §5.3 C3 |
 | K4 | `net48;net10.0-windows` yazımı | tek biçim | gözden geçirme |
 | K5 | `coremusic` geçen satır | 0 | `Select-String -Pattern 'coremusic'` |
 | K6 | `EntityFramework` geçen satır | 0 | §5.3 C5 |
@@ -605,7 +605,7 @@ $f = 'C:\versacoder\.ai\.templates\infrastructure\configuration-template.md'
 | 5 | Öncelik sırasını kod tekrarıyla değiştirmek | İki gerçek kaynağı olan sıra | G11 | yalnız §3.1 (SSOT) |
 | 6 | Koşulsuz TFM ataması | `net48`'de sessiz yanlış davranış | C5, G4 | `Condition="'$(TargetFramework)' == 'net48'"` |
 | 7 | İki TFM'de `#if`siz farklı kod | Modernde yeşil, legacy'de kırık | G5 | `#if NET48` + iki hedef derlemesi |
-| 8 | DevExpress'i "küçük" sürümle güncellemek | ADR-001 ihlali, WinForms kırılabilir | C3, G9 | tam `26.1`, yükseltme ADR'li |
+| 8 | DevExpress'i "küçük" sürümle güncellemek | ADR-001 ihlali, WinForms kırılabilir | C3, G9 | tam `25.2.8`, yükseltme ADR'li |
 | 9 | EF Core'a dönmek | ADR-004 ihlali | C5, G10 | ADO.NET + Dapper |
 | 10 | Doğrulamasız başlangıç (null ile devam) | Boş DB yolu, geç kriz | G8 | `ValidateOnStart` + fail-fast |
 | 11 | Ortam adı yazım hatası (`Prod`) | Dosya yüklenmez, yanlış ayarla açılış | §3.5 | tek nokta + bilinen adlar |

@@ -41,9 +41,9 @@ Nygard özü üç cümledir: **bağlam değişmez, karar değişebilir, sonuç �
 | E2 | `.ai/.templates/adr/adr-template.md` (34 KB altın örnek) erişilebilir | Bu oturumda okunamadı | ⚠️ VERIFICATION REQUIRED |
 | E3 | ADR planı `ADR-001..ADR-008` | Brief'te yazılı, diske işlenmemiş | ⚠️ VERIFICATION REQUIRED |
 | E4 | `.ai/.rules/` içinde 7 kural dosyası | Dizin yok | ⚠️ VERIFICATION REQUIRED |
-| E5 | Gate planı `GATE-004a..GATE-006` | Kanıt: WORKFLOW §0 | ✅ Doğrulandı 2026-10-04 |
+| E5 | Gate planı `GATE-000..GATE-005` | Kanıt yok | ⚠️ VERIFICATION REQUIRED |
 | E6 | Bu şablon dosyası yazıldı | `.ai/.templates/adr/adr-nygard-template.md` | ✅ Doğrulandı |
-| E7 | DevExpress 26.1 + Office2010, TFM `net48`+`net10.0-windows` | Proje kararı; `.csproj` kanıtı yok | ⚠️ VERIFICATION REQUIRED |
+| E7 | DevExpress 25.2.8 + Office2010, TFM `net48`+`net10.0-windows` | Proje kararı; `.csproj` kanıtı yok | ⚠️ VERIFICATION REQUIRED |
 | E8 | CoreMusic/vs-aivault vault'u içerik kaynağı | Erişim ve kopyalama yasak | 🔒 Kopyalama YASAK |
 
 **YAGNI kararı:** Kanıtsız satır ya silinir ya `⚠️ VERIFICATION REQUIRED` kalır ve `§5.2` H7'ye bağlanır. E1–E5 boşlukları bu şablonun neden hazır **içerik** değil hazır **iskelet** olduğunu doğrular.
@@ -56,7 +56,7 @@ Nygard özü üç cümledir: **bağlam değişmez, karar değişebilir, sonuç �
 | Katman sınırı / bağımlılık akışı | `Abstractions → … → UI` | `adr-architecture-template.md` | Hayır | ADR-002 solution-tier-scope |
 | Veri yığını / migration | Dapper, `schema_version`, `@p1..@pN` | `adr-data-template.md` | Hayır | ADR-004 data-stack |
 | Secret / auth / oturum | `keys.md`, Ollama local, API anahtarları | `adr-security-template.md` | Hayır | ADR-010 (örnek) |
-| DevExpress kontrol/sürüm/stil | 26.1, Office2010, `RibbonForm` | `adr-devexpress-template.md` | Kısmen | ADR-001 devexpress-version |
+| DevExpress kontrol/sürüm/stil | 25.2.8, Office2010, `RibbonForm` | `adr-devexpress-template.md` | Kısmen | ADR-001 devexpress-version |
 | Envanter / supersede zinciri | `.decisions/index.md` kaydı | `adr-index.md` | Hayır | ADR-007 agent-catalog-reconciliation |
 | Dizin adı, dosya adı, log biçimi, geçici araç | "Bunu `brain.md`'de tutacağız" | **Bu şablon** | ✅ Evet | ADR-005 manual-designer |
 | Geri alınabilir teknik tercih | "Testler `xunit` ile" | **Bu şablon** | ✅ Evet | ADR-006 api-snippets (draft) |
@@ -65,7 +65,7 @@ Nygard özü üç cümledir: **bağlam değişmez, karar değişebilir, sonuç �
 
 Nygard *"düşündüğümüz buysu"* der; *"dünyada doğrusu buysu"* demez. İkincisini kanıtsız yazmak uydurmadır.
 
-1. **Sürüm iddiası** (DevExpress 26.1, .NET 10, Dapper) → resmi sürüm notu; yoksa `⚠️ VERIFICATION REQUIRED`.
+1. **Sürüm iddiası** (DevExpress 25.2.8, .NET 10, Dapper) → resmi sürüm notu; yoksa `⚠️ VERIFICATION REQUIRED`.
 2. **Davranış iddiası** (`net48` üzerinde `Microsoft.Data.SqlClient` sürüm uyumu) → paket/changelog kaynağı.
 3. **Yasak iddiası** (EF Core yasak) → yerel `.ai/.rules/` dosyasına bağlanır, bloga değil.
 4. **Elenen alternatif** → elenme nedenine tek kaynak; yoksa seçenek uydurulmuş sayılır.
@@ -84,7 +84,7 @@ Sonuç `§7.1`'e **URL + erişim tarihi** ile girer. Tarihsiz satır `§6.1` kut
 | Konu | Dizin/dosya adı, geçici süreç, reversible tercih | TFM, katman sınırı, migration, threat model |
 | Numaralandırma | `ADR-NNN` → `.decisions/index.md` | Numarasız yazım |
 | Kayıt yeri | `.ai/.decisions/accepted/` veya `draft/` | `.ai/.rules/` (kural ≠ karar) |
-| Onay | 4 aşama (§4.2) | Gate geçişi (GATE-004a..006 ayrı) |
+| Onay | 4 aşama (§4.2) | Gate geçişi (GATE-000..005 ayrı) |
 
 ### §2.1 Dosya Tipi → Sorumlu eşlemesi
 
@@ -214,22 +214,22 @@ template: adr-nygard-template.md
 
 ## §1 Amaç / Bağlam (Context)
 ### §1.1 Bu karar neden masada
-VersaCoder.Desktop, DevExpress 26.1 ile derlenen WinForms `RibbonForm` uygulamasıdır ve olgunlaşma
+VersaCoder.Desktop, DevExpress 25.2.8 ile derlenen WinForms `RibbonForm` uygulamasıdır ve olgunlaşma
 `net48` üzerinde olmuştur; VersaCoder.Cli tarafında ise .NET 10 SDK davranışı istenmektedir. Tek hedef
 ikisini de kırıyordu: yalnız `net48` → CLI modern SDK'dan mahrum; yalnız `net10.0-windows` →
-DevExpress 26.1 + elle yazılmış `Designer.cs`/`.resx` zinciri risk altında.
+DevExpress 25.2.8 + elle yazılmış `Designer.cs`/`.resx` zinciri risk altında.
 ### §1.2 Disk kanıtları
 | İddia | Kanıt | Durum |
 |---|---|---|
 | `<TargetFrameworks>net48;net10.0-windows</TargetFrameworks>` | `.ai/` henüz kurulmadı (2026-09-25) | ⚠️ VERIFICATION REQUIRED |
-| DevExpress 26.1, RibbonControlStyle.Office2010 | Proje brief'i | ⚠️ VERIFICATION REQUIRED |
+| DevExpress 25.2.8, RibbonControlStyle.Office2010 | Proje brief'i | ⚠️ VERIFICATION REQUIRED |
 | xunit + hedef %90 coverage + TreatWarningsAsErrors=true | Proje brief'i | ⚠️ VERIFICATION REQUIRED |
 ### §1.3 Karar türü
 TFM kararı → `adr-architecture-template.md` uzun varyantı esastır; bu dosya Nygard kısa **özet** kaydıdır.
 ### §1.4 Araştırılan kaynaklar
 | Kaynak | URL | Erişim | Kullandığı iddia |
 |---|---|---|---|
-| DevExpress 25.2 desteklenen TFM listesi | resmi sürüm notu | 2026-09-25 | 26.1 + net48 uyumu |
+| DevExpress 25.2 desteklenen TFM listesi | resmi sürüm notu | 2026-09-25 | 25.2.8 + net48 uyumu |
 | .NET 10 SDK çoklu hedef davranışı | resmi belge | 2026-09-25 | iki TFM bir arada |
 
 ## §2 Kapsam
@@ -253,7 +253,7 @@ S2: **EVET**. S3: **EVET** (2 TFM × xunit = 2 koşu). S4: **EVET** (TFM) → AD
 | Seçenek | Artı | Eksi | Elenme nedeni |
 |---|---|---|---|
 | Yalnız `net48` | Tek derleme, DevExpress uyumu | CLI modern SDK'dan mahrum | Platform kilitlenmesi |
-| Yalnız `net10.0-windows` | Modern runtime | 26.1 + `.resx` zinciri riski | Sürüm doğrulanmadı |
+| Yalnız `net10.0-windows` | Modern runtime | 25.2.8 + `.resx` zinciri riski | Sürüm doğrulanmadı |
 | `netstandard2.0` + iki uygulama | Yüksek paylaşım | WinForms API'leri sınırlı | `RibbonForm` derlenmez |
 | **Çift hedef (seçildi)** | İkisi korunur | 2× derleme + 2× test | — |
 ### §3.3 Uygulama detayı
@@ -459,7 +459,7 @@ Diğer her durum: **YENİ ADR** (`ADR-NNN+1`). Düzenlemek §6.2 RS-4 sinyalini 
 | G5 | Kanıt zorunlu | İddia → disk kanıtı yoksa `⚠️ VERIFICATION REQUIRED` | Kanıtsız satır silinir; <3 kanıt → `draft` |
 | G6 | Kopyalama yasak | CoreMusic / vs-aivault `.ai` içeriği kopyalanamaz | ADR **reddedilir**, sıfırdan yazılır |
 | G7 | TFM sabiti | Yalnız `net48`, `net10.0-windows` | `architect` derlemeyi durdurur; `draft` |
-| G8 | DevExpress kilidi | Sürüm 26.1, stil Office2010 dışı çıkılamaz | `rejected`; ADR-001 supersede edilmeden değişmez |
+| G8 | DevExpress kilidi | Sürüm 25.2.8, stil Office2010 dışı çıkılamaz | `rejected`; ADR-001 supersede edilmeden değişmez |
 | G9 | Risk ↔ varyant | H riskli karar Nygard hafifle `accepted` olamaz | Aşama 4 **DUR**; uzun varyantla yeniden yazım |
 | G10 | Coverage korunur | xunit coverage %90 altına düşemez | `testing` job'ı kırmızı; ADR `review`'a döner |
 | G11 | TreatWarningsAsErrors | Yeni kod uyarı hatasız derlenmeli | Derleme kırılırsa karar uygulanamaz; `draft` |
@@ -614,7 +614,7 @@ Blok salt-okunurdur: `Set-`, `Remove-`, `New-`, `Move-`, `Rename-` yoktur (G14).
 | Güvenlik kuralları | `.rules/security-rules.md` | G3, RS-2 denetimi |
 | Adlandırma | `.rules/naming-conventions.md` | Slug/dosya adı biçimi |
 | Anahtar sözlüğü | `keys.md` | Yalnız varlık kanıtı; içerik girmez |
-| Gate planı | `WORKFLOW.md` | `related_gates` (GATE-004a..006) |
+| Gate planı | `WORKFLOW.md` | `related_gates` (GATE-000..005) |
 | Gereksinimler | `REQUIREMENTS.md` | Karar–gereksinim çelişkisi |
 
 ### §7.2 Red Team — Sık Yapılan Hatalar tablosu

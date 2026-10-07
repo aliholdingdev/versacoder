@@ -9,7 +9,7 @@ authority: SSOT
 scope: "oturum kaydi sablonu: log.md ve sessions/*.md icin zorunlu satir bicimi ve alanlar"
 ---
 
-**Zorunlu Bağlantılar:** [Kural Dizini](../.rules/index.md) · [Token Bütçesi](../AGENTS.md) · [Kanıt ve Doğrulama](../CLAUDE.md) · [ADR Dizini](adr/adr-index.md) · [Ajan Kataloğu](../AGENTS.md) · [Kapılar](../WORKFLOW.md) · [Bu Şablon](session-log-template.md)
+**Zorunlu Bağlantılar:** [[../.rules/rules-index|Kural Dizini]] · [[../.rules/token-budget|Token Bütçesi]] · [[../.rules/evidence-and-verification|Kanıt ve Doğrulama]] · [[../adr-index|ADR Dizini]] · [[../agents-index|Ajan Kataloğu]] · [[gates-index|Kapılar]] · [[session-log-template|Bu Şablon]]
 
 # Oturum Kaydı Şablonu — `.ai/log.md` + `.ai/sessions/*.md`
 
@@ -34,7 +34,7 @@ Aşağıdaki satırlar bu şablonun dayandığı vault dosyalarıdır. Var olan 
 | `.ai/.rules/` altında 7 kural dosyası var | Dosya adları okundu | Kullanılır |
 | `.ai/log.md` ve `.ai/sessions/` ana kütük düzeni | Dizin yapısı okundu | Kullanılır |
 | 50.000 token/oturum bütçesi | Kural dosyası adından doğrulandı, içerik okunmadı | `⚠️ VERIFICATION REQUIRED` |
-| `GATE-004a..006` kapı numaraları | ADR dizininde geçiyor | Kullanılır, kapı içerikleri okunmadı |
+| `GATE-000..005` kapı numaraları | ADR dizininde geçiyor | Kullanılır, kapı içerikleri okunmadı |
 | ADR-001..008 numaraları | ADR dizini dosya adlarında görüldü | Kullanılır |
 | 14 ajanlık katalog + 8 alt-ajan disiplini | `.ai/.agents/` dizininde görüldü | Kullanılır |
 | 7 ekran `01-start-page`..`07-settings` | Ekran dizininde görüldü | Kullanılır |
@@ -54,37 +54,6 @@ Aşağıdaki satırlar bu şablonun dayandığı vault dosyalarıdır. Var olan 
 ### §1.4 Neden zorunlu
 
 Şablon **zorunludur**; `.ai/log.md` ve `.ai/sessions/*.md` bu kalıp dışında üretilemez. Gerekçe: ana kütük tek satırdır, oturum dosyası kanıt yükünü taşır; ikisini ayırmayan düzen `log.md`'yi 500 satır ölü metne çevirir, tek dosyaya sığmayan kanıt da kaybolur. Kalıbı değiştirmek `[[../.rules/rules-index|Kural Dizini]]` üzerinden `§4.4` işlemini gerektirir.
-
-### §1.5 Oturum Kaydı Alan Sözlüğü
-
-Her zorunlu alanın biçimi; tabloda olmayan alan yazılamaz. Örnekler gerçek formattır:
-
-| Alan | Tip ve biçim | Zorunlu | Doğru örnek | İhlalde |
-|---|---|---|---|---|
-| Oturum ID | `ses_YYYYMMDD_NN`, ASCII, boşluk yok | Evet | `ses_20261006_02` | Dosya yeniden adlandırılır (E1) |
-| Tarih | ISO `YYYY-MM-DD` | Evet | `2026-10-06` | Serbest tarih biçimi RED |
-| Yürüten rol | 14 ajan rolünden biri | Evet | `master-orchestrator` | Rol uydurulamaz; `architect` atar |
-| Görev | tek paragraf + kabul ölçütü | Evet | kabul: `TOKEN:` toplamı 50.000'ü aşarsa `handover` | Kabul yoksa 1/8 açılmaz |
-| İlerleme | 8 satır, `- [ ]` ya da `- [x]` | Evet | `- [x] 5/8 Doğrulama — kanıt komutu çalıştı` | 8 satırdan azsa `G4` |
-| Durum | `draft` · `active` · `checkpoint` · `handover` · `archived` | Evet | `checkpoint` | Sözlük dışı değer → `§6.3` |
-| `TOKEN:` değeri | binlik ayraçlı sayı; kümülatif ve artan | Evet | `38.750` | Azalma `G6`, geri düşürme `G11` |
-| Kümülatif | = son `TOKEN:` değeri | Evet | `38.750` | `log.md` satırı farklıysa `E7` |
-| Bütçe satırı | `Kalan:` değeri = 50.000 − Kümülatif | Evet | `Kalan: 11.250` | Negatif kalan → `G7` |
-| Karar | `K<n>` + gerekçe + dayanak; üç hücre dolu | Satır varsa | `K2` · aşım otomatik `handover` · `G10` | Boş dayanak `G8` |
-| Kanıt | `P<n>` + komut + çıktıdan satır + sonuç | ≥ 1 PASS | `P2` · `dotnet test --no-build` · `Passed! - Failed: 0` · PASS | Kanıtsız iddia `G8` |
-| İşaret | `⚠️ VERIFICATION REQUIRED` + gerekçe | Okunmamış iddialarda | sınır kuralı henüz okunmadı | Gerekçesiz kaldırma `§6.2` |
-| Öğrenilen | 1–3 madde; her madde geleceğe etkisiyle | İsteğe bağlı | log satırı kümülatifle eşitlenmeli | Aynı madde ikinci kez yazılamaz |
-| Sonraki Adım | tek eylem + süre + bloke | Evet | `reviewer` onayı — 4 dk — bloke YOK | İki eylem `G12` |
-| Dosya Değişiklikleri | yol + işlem + satır/boyut | 3/8'de ≥ 1 satır | `.ai/log.md` · değişti · `+1` satır | Boş tablo `§6.2` |
-| Ana kütük satırı | `log.md` tek satırı, `|` ile ayrılmış 5 alan | Evet | aşağıdaki blokta | Uzun özet `G10` |
-
-Gerçek format (üçü de tek satırdır):
-
-```text
-2026-10-06 | ses_20261006_02 | form-designer sablonu genişletildi | GATE-003 | 12.600/50.000
-K2 | Aşım otomatik handover'a döner | Kuralı ihlal eden oturum üretmeye devam edemez | G10
-P1 | Oturum dosyası diskte | Test-Path .ai/sessions/2026-10-06-form-designer.md | True | PASS
-```
 
 ## §2 Kapsam
 
@@ -117,21 +86,6 @@ Bu şablon **zorunludur**; 5 şartın **hepsi** true olmalı:
 4. İçerik kod/test ise → ilgili ajan şablonu, oturum dosyasına yalnızca **özet satırı** düşer.
 5. Şüphe varsa → kısa cevap: **oturum dosyasına yaz, `log.md`'yi tek satırda tut.**
 
-### §2.3 Dosya Adı, Yer ve Ömür Kuralları
-
-| Nesne | Yer / ad | Ne zaman yazılır | Ömür |
-|---|---|---|---|
-| Ana kütük | `.ai/log.md` | her oturum kapanışında (8/8) | silinmez, tek satır genişler |
-| Oturum dosyası | `.ai/sessions/YYYY-MM-DD-<konu>.md` | oturum başlar başlamaz | `archived` sonrası salt-okunur |
-| Oturum ID | `ses_YYYYMMDD_NN` | dosya oluşurken | aynı gün ikinci oturumda `_02` |
-| Checkpoint satırı | oturum dosyası `§3.5` | her `checkpoint` aşaması | geçmiş satır silinmez (`G11`) |
-| Devir notu | `.ai/log.md` + oturum dosyası | `handover` anında | devralan kapanışta günceller |
-| Düzeltme kaydı | aynı dosya, alt satıra | kanıt sonradan bulunursa | üstüne yazma, altına ekleme |
-
-Ad çatışması: aynı gün aynı konuda iki oturum açılamaz — ikinci oturum `_02` sonekiyle
-açılır ve birincinin dosyası `handover` ile kapatılır (`§5.4`). Dosya adı sonra
-değiştirilemez; konu değişirse yeni oturum açılır.
-
 ## §3 Mimari
 
 ### §3.1 Frontmatter YAML bloğu
@@ -155,7 +109,7 @@ authority: SSOT
 ```markdown
 # Oturum Kaydı — {{OTURUM_ID}} ({{TARİH}})
 
-**Zorunlu Bağlantılar:** [Ana Kütük](log.md) · [Token Bütçesi](AGENTS.md) · [Kapılar](WORKFLOW.md)
+**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
 ```
 
 ### §3.3-§3.9 Zorunlu 9 bölümün markdown iskeleti
@@ -217,7 +171,7 @@ authority: SSOT
 ```markdown
 # Oturum Kaydı — ses_20260925_01 (2026-09-25)
 
-**Zorunlu Bağlantılar:** [Ana Kütük](log.md) · [Token Bütçesi](AGENTS.md) · [Kapılar](WORKFLOW.md)
+**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
 
 ### §3.3.1 Oturum Kimliği
 | Alan | Değer |
@@ -280,7 +234,7 @@ authority: SSOT
 ```markdown
 # Oturum Kaydı — {{OTURUM_ID}} ({{TARİH}})
 
-**Zorunlu Bağlantılar:** [Ana Kütük](log.md) · [Token Bütçesi](AGENTS.md) · [Kapılar](WORKFLOW.md)
+**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
 
 ### §3.3.1 Oturum Kimliği
 | Alan | Değer |
@@ -324,91 +278,6 @@ authority: SSOT
 |---|---|---|
 | {{DOSYA}} | {{ISLEM}} | {{SAYI}} |
 ```
-
-### §3.12 `KANIT` Satırı Biçimi (kanonik)
-
-Bir iddia yalnız aşağıdaki 5 alanlı, tek satırlık biçimde kanıtlanır; alanlar `|` ile
-ayrılır, alan adı yazılmaz, sıra değişmez:
-
-| # | Alan | Kural | Doğru örnek |
-|---|---|---|---|
-| 1 | `P<n>` | oturum içinde benzersiz, artan | `P4` |
-| 2 | İddia | tek cümle, ölçülebilir ("dosya 480+ satır") | Oturum dosyası 654 satır |
-| 3 | Kanıt komutu | **salt-okunur** PowerShell; `C:\versacoder` altında çalışır | `(Get-Content $f).Count` |
-| 4 | Çıktıdan satır | çıktının birebir kopyası, yuvarlanmaz, uydurulmaz | `654` |
-| 5 | Sonuç | yalnız `PASS` ya da `FAIL` | `PASS` |
-
-```text
-P4 | Oturum dosyası G6 sınırını geçiyor | (Get-Content .ai\sessions\2026-10-02-ekran-spec.md).Count | 654 | PASS
-P5 | Mojibake yok (G9) | Select-String -Path <dosya> -Pattern '[\u00C3].|[\u00E2][\u20AC]' | 0 | PASS
-```
-
-Zorunlu bağlılar: iddia okunmadıysa kanıt satırı yerine `⚠️ VERIFICATION REQUIRED`
-yazılır (`§1.2`); `FAIL` satırı silinmez, yanına düzeltme notu ve yeni `P<n>` eklenir;
-aynı iddia ikinci kez doğrulanırsa eski satır durur, yenisine `P<n+1>` verilir (`G11`).
-Komut çıktısı **satır numarası ya da birebir metin** olarak yazılır — "başarılı",
-"tamam", "çalıştı" gibi sonuçsuz kelimeler kanıt sayılmaz (`G8`).
-
-### §3.13 Doldurulmuş Örnek Oturum Kaydı (gerçek biçim)
-
-Aşağıdaki kayıt, tek bir oturumun baştan sona doldurulmuş hâlidir. Tüm alanlar gerçek değerlerle
-doldurulmuştur; hiçbir yerinde yer tutucu yoktur. Yeni kayıt açarken bu bloğu kopyalayıp alanları
-değiştirmek, boş şablondan başlamaktan daha az hata üretir.
-
-```markdown
----
-oturum-kimligi: "k8-tasarim-sozlesmesi-on-seridi"
-baslangic: 2026-10-05T14:05:00+03:00
-bitis: 2026-10-05T14:52:00+03:00
-sure: "47 dk"
-durum: "tamamlandi"
-ilgili-dosya: "../.ai/.templates/session-log-template.md"
-sahip: "golge-ajan"
-oturum-butcesi: "model=mimo-v2.6-flash-free · kalan bütçe=%34 · ~128k"
----
-```
-
-```text
-bağlam: şablon G6 eşiğini karşılamıyor (479/480 satır · 22.7/26 KB)
-planlanan işler:
-  - [x] alan sözlüğü ekle · tamamlandı · ~10 dk
-  - [x] KANIT kanonik biçimi ekle · tamamlandı · ~8 dk
-  - [x] bütçe takibi kuralları ekle · tamamlandı · ~12 dk
-  - [x] devir (handover) kuralları ekle · tamamlandı · ~12 dk
-  - [ ] dolu örnek kayıt ekle · sürüyor · ~5 dk
-adımlar:
-  14:05 · doküman-uretici · şablon okundu, 479/480 satır ve 22.7/26 KB sapması ölçüldü
-  14:17 · kod-yazici · §1.5 alan sözlüğü 31 satır olarak eklendi (1268 B)
-  14:25 · kod-yazici · §3.12 KANIT biçimi eklendi; 6 alan zorunlu olarak sayıldı
-  14:37 · kod-yazici · §4.8 bütçe kuralları eklendi; 3 düzlem tablosu kuruldu
-  14:49 · kod-yazici · §5.9 devir kuralları eklendi; zorunlu üçlü tanımlandı
-14:47 · KANIT · kod-yazici · ekledigim satir-sayisi=64 · agirlik=orta · suresi=9s · hata=0 · kanit-dosya=".ai/.templates/session-log-template.md" · kanit-satir=398-461
-çıktılar:
-  - session-log-template.md · §1.5/§2.3/§3.12/§3.13/§4.8/§5.9 eklendi · G6 eşiği aşıldı
-  - session-log-template.md · 22.7 KB → 26 KB üzeri · BOM=YOK · mojibake=0
-karar: dolu örnek §3.13'te mi yoksa §6'da mı durmalı? → §3.13 seçildi
-  neden: örnek, biçim referansı olduğu için mimari bölümünde aranır; §6 doğrulama bölümüne
-  yalnızca çalıştırılabilir komutlar konur.
-elnotu: dosyanın doğrulama satırındaki mojibake kalıbı, kalıbın kendisi mojibake sayılmaması
-  için kod noktası biçiminde (`[\u00C3].|[\u00E2][\u20AC]`) yazılır; aksi hâlde kalıbı
-  gösteren satırın kendisi G9 sayacını 2 artırır ve yanlış FAIL üretir.
-```
-
-**Örneğin nasıl okunacağı.** Yukarıdaki kayıtta dört şey ayrıca incelenmelidir:
-
-1. **`bağlam` tek satırdır** ve ölçülebilir bir sapma taşır (479/480 · 22.7/26). Ölçülemeyen
-   bağlam maddesi, bir sonraki oturumda yeniden ölçülür.
-2. **`planlanan işler` içinde yarım iş vardır** (`sürüyor`). Yarım iş bırakmak yasak değildir;
-   yarım işi **işaretsiz** bırakmak yasaktır.
-3. **`adımlar` saatli ve eylem bildirimliidir** — `· kod-yazici ·` biçiminde yürütücü adı taşır,
-   böylece bir sonraki oturum hangi yürütücünün ne yaptığını görür.
-4. **`karar` iki satırdır:** seçenek artı neden. Tek satırda kalan karar, nedeni olmadan
-   bırakılmış karardır.
-
-**Bu örnekle şablon arasındaki fark.** Örnek, yer tutucu içermeyen dolu bir oturum kaydıdır ve
-kendi başına birkaç yüz satır tutar. Şablonun **boş** hâlinin de G6 eşiğini (≥480 satır · ≥26 KB)
-karşılaması gerekir; çünkü G6, doldurulmamış şablonu ölçer — eşik ancak şablonun kendisi
-genişletilerek geçilir, örneğin varlığıyla değil.
 
 ## §4 Kurallar
 
@@ -466,37 +335,6 @@ genişletilerek geçilir, örneğin varlığıyla değil.
 | **G11** | Geçmiş satırlar silinemez | `§4.4` | Eski `TOKEN:` değeri | Kayıt geri alınır |
 | **G12** | `Sonraki Adım` tek eylem | `§3.9.1` | Paragraf sayımı | Alan daraltılır |
 
-### §4.8 Bütçe Takibi Kuralları
-
-`oturum bütçesi` alanı tek başına yeterli değildir; bütçe üç düzlemde izlenir ve üçü de
-kayıtta görünür olmalıdır:
-
-| Düzlem | Ne izlenir | Kayıtta nerede | Aşım işareti |
-|---|---|---|---|
-| Token | model kotasının tüketimi | `oturum bütçesi` alanı | `kalan bütçe` < %20 ise `UYARI` |
-| Zaman | adım/oturum süresi | `süre` alanı + §4.4 satırları | bir adım > planlanan 2 katı ise ` sapma` |
-| İş | tamamlanan/adımlanan iş kalemi | `adımlar` + `çıktılar` | `planlanan işler` içinde yarım kalan her madde |
-
-**Bütçe güncelleme zamanlaması.** Bütçe bilgisi adım sonunda, `KANIT` satırından **hemen sonra**
-güncellenir — asla oturum sonuna bırakılmaz. Bırakılan bütçe, kesilen oturumda hiç yazılmamış
-sayılır ve bir sonraki oturuma yanlış başlangıç maliyeti taşır.
-
-**Kalan bütçe yazım kuralı.** Mutlak sayı yerine yüzde ve mutlak değer birlikte yazılır
-(`%34 · ~128k`). Yalnızca yüzde yazan kayıt, model değişince anlamsızlaşır; yalnızca mutlak
-yazan kayıt, kota büyüklüğünü yansıtmaz.
-
-**Aşım senaryosu.** Bütçe %20'nin altına indiğinde kayıt şu sırayla güncellenir:
-
-1. `durum` alanı `planlandı` dışındaki bir değerse, mevcut durum korunur.
-2. `planlanan işler` içinde tamamlanmamış kalemler öncelik sırasına göre yeniden işaretlenir.
-3. `elnotu` alanına tek cümlelik aşım nedeni yazılır (ör. *"kota daraldı, K8 ertelendi"*).
-4. Oturum kapanışı yapılıyorsa `durum` = `eldegistirdi` ve bir sonraki oturuma devreden işler
-   `planlanan işler` içinde `→` işaretiyle işaretlenir.
-
-**Aşım yasağı.** `kalan bütçe` alanı asla `0` yazılmaz; kota dolduysa kayıt `durum` = `bloke`
-olarak kapatılır ve nedeni `elnotu`'na yazılır. Sıfır bütçe, bir sonraki oturumun hesaplarını
-bozar çünkü "henüz başlamadı" ile "tamamen bitti" aynı değere düşer.
-
 ## §5 Workflow
 
 ### §5.1 Adım tablosu ve zaman bütçesi
@@ -549,47 +387,6 @@ bozar çünkü "henüz başlamadı" ile "tamamen bitti" aynı değere düşer.
 # 6 — EF Core anılmamalı (G5)
 (Select-String -Path 'C:\versacoder\.ai\sessions\{{OTURUM_ID}}.md' -Pattern 'DbContext').Count  # 0 olmalı
 ```
-
-### §5.9 Oturlar Arası Devir (Handover) Kuralları
-
-Devir, oturumun son 5 dakikasında yapılır ve üç zorunlu çıktı üretir. Devirsiz kapatılan oturum,
-bir sonraki oturumun başında yeniden keşif maliyeti doğurur.
-
-**Devir paketi (zorunlu üçlü):**
-
-| # | Çıktı | Nereye yazılır | Format |
-|---|---|---|---|
-| 1 | Kalan iş listesi | mevcut oturumun `planlanan işler` alanı | `- [ ] iş · durum · ~süre` |
-| 2 | Taşınan bağlam | bir sonraki oturumun `bağlam` alanı | en fazla 3 madde, her biri tek satır |
-| 3 | Karar borcu | bir sonraki oturumun `elnotu` alanı | `karar: <seçenek> seçilmedi · neden: <neden>` |
-
-**Devir sırası.** Bağlam önce yazılır, işler sonra. Sıranın önemi vardır: işleri yazdıktan sonra
-bağlam yazmak, işlerin gerekçesini geriye doğru uydurmaya teşvik eder.
-
-**Devredilen işin tanım kuralı.** Devredilen her iş tek satırda tamamlanabilir olmalıdır.
-"Arayüzü bitir" devredilebilir bir iş değildir; "form tasarım şablonunun §3 tablosunu doldur
-(~40 dk)" devredilebilir. Tanımı yazılamayan iş, iş değil hedeftir ve devredilmez — hedefler
-`bağlam` alanına taşınır.
-
-**Bağlam taşınma kuralı.** Bir sonraki oturuma en fazla 3 bağlam maddesi taşınır. Dördüncü
-madde, oturumun zaten fazla yük taşıdığını gösterir; bu durumda madde sayısı 3'e indirilir ve
-elenen maddeler `elnotu`'na tek cümleyle sıkıştırılır.
-
-**Karar borcu (decision debt).** Cevaplanmamış her soru, bir borçtur ve iki yerde görünür olmalıdır:
-kaynak oturumda `elnotu` olarak, hedef oturumda `bağlam` olarak. Borç yalnızca tek taraflı
-yazılmışsa (kaynak oturumda kalmışsa) hedef oturum onu göremez ve soru yeniden sorulur —
-tekrar sorulan soru, devir yapılmamış demektir.
-
-**Devir doğrulaması.** Devirden hemen sonra şu üç soruya yanıt aranır; biri "hayır" ise devir
-eksiktir:
-
-1. Bir sonraki oturum, tek başına ilk maddeyi açıp uygulayabilir mi?
-2. Taşınan bağlam 3 maddeyi aşıyor mu? (aşıyorsa eleyin)
-3. Cevapsız her soru iki oturumda da görünüyor mu? (görünmüyorsa borcu yazın)
-
-**Devir yasağı.** Kapatılan oturum, açık oturumun işlerini kendi `durum` alanına kopyalayarak
-"devretmiş" olmaz. Devir = kaynakta işaretlemek **artı** hedefte yazmak; tek başına işaretleme
-yalnızca kapanıştır, devir değildir.
 
 ## §6 Doğrulama
 
@@ -656,14 +453,14 @@ yalnızca kapanıştır, devir değildir.
 
 | Bağlantı | Ne için | Yol (`.ai` göreli) |
 |---|---|---|
-| [Ana Kütük](../log.md) | Tek satır özet | `log.md` |
-| Oturum Dizini | Dosya listesi | `sessions/` |
-| [Token Bütçesi](../AGENTS.md) | 50.000 sınırı | `.rules/token-budget` |
-| [Kanıt ve Doğrulama](../CLAUDE.md) | `claim → evidence` | `.rules/evidence-and-verification` |
-| [Kural Dizini](../.rules/index.md) | 7 kural dosyası | `.rules/` |
-| [ADR Dizini](adr/adr-index.md) | ADR-001..008 | `adr/` |
-| [Kapılar](../WORKFLOW.md) | GATE-004a..006 | `gates/` |
-| [Ajan Kataloğu](../AGENTS.md) | 14 ajan + 8 disiplin | `.agents/` |
+| [[../log\|Ana Kütük]] | Tek satır özet | `log.md` |
+| [[../sessions/index\|Oturum Dizini]] | Dosya listesi | `sessions/` |
+| [[../.rules/token-budget\|Token Bütçesi]] | 50.000 sınırı | `.rules/token-budget` |
+| [[../.rules/evidence-and-verification\|Kanıt ve Doğrulama]] | `claim → evidence` | `.rules/evidence-and-verification` |
+| [[../rules-index\|Kural Dizini]] | 7 kural dosyası | `.rules/` |
+| [[../adr-index\|ADR Dizini]] | ADR-001..008 | `adr/` |
+| [[gates-index\|Kapılar]] | GATE-000..005 | `gates/` |
+| [[../agents-index\|Ajan Kataloğu]] | 14 ajan + 8 disiplin | `.agents/` |
 
 ### §7.2 Red Team — Sık Yapılan Hatalar tablosu
 

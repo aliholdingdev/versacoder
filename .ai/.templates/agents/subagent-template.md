@@ -11,7 +11,7 @@ scope: "alt-ajan gorev sablonu: gorev tanimi, girdi/bagimlilik ve tamamlama olcu
 
 # Alt-Ajan Görev Çağrısı Şablonu — parent → child
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [AGENTS](../../AGENTS.md) · [WORKFLOW](../../WORKFLOW.md) · [index](../../architecture/index.md) · [glossary](../../glossary.md) · [coding-standards](../../.rules/coding-standards.md) · [security-rules](../../.rules/security-rules.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/security-rules]]
 
 > Bu dosya **şablondur, içerik değil**. `## §1`..`## §7` başlıkları **silinemez, adlandırılamaz, sıralanamaz**.
 
@@ -44,7 +44,7 @@ ile bekletilir. Doğrulanmayan yapı eklenmez (YAGNI).
 | 1 | Disiplin tanımları var | `.ai/AGENTS.md` | ⚠️ VERIFICATION REQUIRED | 8 disiplin tutmuyorsa `ADR-007` |
 | 2 | Görev çağrıları kayıtlı | `.ai/log.md` | ⚠️ VERIFICATION REQUIRED | Yoksa oturum şablonuyla açılır |
 | 3 | Rol dosyaları mevcut | `.ai/.agents/*.md` | ⚠️ VERIFICATION REQUIRED | Eksik rol agent şablonuyla yazılır |
-| 4 | Vault kök indeksi var | `.ai/index.md` | ✅ Var: 14 kök MD (2026-10-04) | Yoksa `GATE-004a` içinde üretilir |
+| 4 | Vault kök indeksi var | `.ai/index.md` | ⚠️ VERIFICATION REQUIRED | Yoksa `GATE-000` içinde üretilir |
 | 5 | Görev arşivi klasörü | `.ai/tasks/*.md` | **KAPSAM DIŞI** | Üretilmez; kayıt `log.md` + `sessions/` |
 | 6 | Alt-ajan kendi ADR'si | `.ai/adr/ADR-00*.md` | **KAPSAM DIŞI** | ADR yalnız `architect` |
 
@@ -144,8 +144,8 @@ tipi bozuksa **G1**, `authority` değeri değişmişse **G2** ihlali sayılır.
 ```markdown
 # <Disiplin> — Görev Çağrısı ({{TASK_ID}})
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [glossary](glossary.md)
-· [<ilgili-2-kural>](.rules/<ilgili-2-kural>) |
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]]
+· [[.rules/<ilgili-2-kural>]] |
 
 > <Tek cümlelik görev özeti — 20 kelimeyi geçmez.>
 ```
@@ -220,7 +220,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur.
 ```markdown
 # code-reviewer — Görev Çağrısı (TASK-0042)
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [glossary](glossary.md) · [coding-standards](.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]] · [[.rules/coding-standards]]
 
 > RibbonForm olay aboneliklerinin sızıntısını incele ve bulguları satır kanıtıyla ver.
 
@@ -299,7 +299,7 @@ authority: SSOT
 
 # {{DISCIPLINE}} — Görev Çağrısı ({{TASK_ID}})
 
-**Zorunlu Bağlantılar:** [index](index.md) · [AGENTS](AGENTS.md) · [WORKFLOW](WORKFLOW.md) · [glossary](glossary.md) · [{{RULE_1}}](.rules/{{RULE_1}})
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]] · [[.rules/{{RULE_1}}]]
 
 > {{TASK_TAGLINE_20_WORDS_MAX}}
 
@@ -430,7 +430,7 @@ authority: SSOT
 | **G4** | Tek promptta tek disiplin | `§2.1` | Prompt taraması | Çağrı iptal, ikiye bölünür |
 | **G5** | EF Core / `DbContext` üretimi | `ADR-004` | Çıktı taraması | **Build durur**; sonuç reddi |
 | **G6** | Yalnız `net48` + `net10.0-windows` | `ADR-003` | Çıktı diff | Sonuç reddi, yeniden çerçevele |
-| **G7** | DevExpress `26.1` sürümü | `ADR-001` / `ADR-008` | Çıktı + `.csproj` | Sonuç reddi |
+| **G7** | DevExpress `25.2.8` sürümü | `ADR-001` / `ADR-008` | Çıktı + `.csproj` | Sonuç reddi |
 | **G8** | `Designer.cs`/`.resx` child tarafından üretilmez | `ADR-005` | Dosya imzası | Dosya revert, `security` |
 | **G9** | Kanıtsız iddia yazılamaz | `§3.5` | `⚠️ VERIFICATION REQUIRED` yoksa | Satır silinir, `RED` verilir |
 | **G10** | Toplam token ≤ 50.000 / oturum | Vault bütçesi | Oturum sayacı | Oturum kapanır, handover |

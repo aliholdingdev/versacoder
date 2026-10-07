@@ -11,7 +11,7 @@ scope: "Dapper esleme sablonu: kolon-ozellik eslemesi, tipler ve sorgu ornegi"
 
 # VersaCoder — Dapper Kolon→Özellik Eşleme Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [Query-Template](../query/Query-Template.md) · [migration-template](../infrastructure/migration-template.md) · [adr-data-template](../adr/adr-data-template.md) · [index.md](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../infrastructure/migration-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]]
 
 ---
 
@@ -325,7 +325,7 @@ authority: SSOT
 ---
 # MAP-NNN — {{SLUG}}
 
-**Zorunlu Bağlantılar:** [index](index.md) · [Query-Template](.templates/infrastructure/../query/Query-Template.md) · [migration-template](.templates/infrastructure/../infrastructure/migration-template.md) · [adr-data-template](.templates/infrastructure/../adr/adr-data-template.md) · [index.md](architecture/index.md) · [CLAUDE](CLAUDE.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../query/Query-Template]] · [[../infrastructure/migration-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]] · [[../CLAUDE]]
 
 ## §1 Amaç — {{BIR_CUMLE}}
 ## §2 Eşleme Tablosu

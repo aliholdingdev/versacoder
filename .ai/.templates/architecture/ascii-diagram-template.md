@@ -11,7 +11,7 @@ scope: "ASCII kutu diyagram sablonu: kenar karakterleri, hizalama ve olcu kontro
 
 # VersaCoder — ASCII/Unicode Box Diagram Şablonu
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../../CLAUDE.md) · [index](../../index.md) · [AGENTS.md](../../../AGENTS.md) · [WORKFLOW.md](../../../WORKFLOW.md) · [index.md](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[../CLAUDE.md]] · [[../index]] · [[../../AGENTS.md]] · [[../../WORKFLOW.md]] · [[../../architecture/index.md]]
 
 ---
 
@@ -45,7 +45,7 @@ Düz metin akış (`A --> B`) yalnız iki düğümü taşır. Vault'ta anlatılm
 |------------------|-----------|------|-------|
 | Katman sınırı (içeride/dışarıda) | ✗ | ✅ | Sınır fiziksel olarak görünmeli |
 | Aynı anda birden çok şey (UI + Cli) | zayıf | ✅ | Paralellik yan yana olur |
-| Süreç/kapı sırası (GATE-004a..006) | kısmen | ✅ | Kapı nerede "dur" diyor görülmeli |
+| Süreç/kapı sırası (GATE-000..005) | kısmen | ✅ | Kapı nerede "dur" diyor görülmeli |
 | Bağımlılık yönü + ihlal tespiti | ✗ | ✅ | Yukarı bakan ok = ihlal |
 | Tablo içi özet | fazla | ⚠️ | Hücre genişliğine sığmaz → istisna |
 
@@ -282,7 +282,7 @@ dolgu = 63 - uzunluk(içerik)
 | TargetFrameworks = net48 ; net10.0-windows                     |
 +----------------------------------------------------------------+
 |    net48 (legacy kanıt)      net10.0-windows (modern)          |
-|    DevExpress 26.1         DevExpress 26.1                 |
+|    DevExpress 25.2.8         DevExpress 25.2.8                 |
 |    #if NET48 platform farkı  UseWindowsForms=true              |
 |    Designer.cs elle          Designer.cs elle                  |
 +----------------------------------------------------------------+
@@ -292,16 +292,19 @@ dolgu = 63 - uzunluk(içerik)
 
 ```text
 +----------------------------------------------------------------+
-| GATE-004a  VAULT        .ai yazimi + olcum (MD/bozuk link)     |
+| GATE-000  discovery      okuma + envanter                      |
 |    v                                                           |
-| GATE-003   UI ONAYI     7 wireframe -> KULLANICI ONAYI         |
-|              <== KAPI: onaysiz ekran ve onaysiz .cs YASAK      |
+| GATE-001  reference      opencode + coremusic (salt okunur)    |
 |    v                                                           |
-| GATE-004   ISKELET+KOD  build green + ILK COMMIT               |
+| GATE-002  requirements   spec + ADR taslağı                    |
 |    v                                                           |
-| GATE-005   TEST         xUnit + NetArchTest green              |
+| GATE-003  ui  TEL KAFES ONAYI <== KAPI: onaysiz ekran YASAK    |
 |    v                                                           |
-| GATE-006   TESLIM       teslim raporu -> kullanici             |
+| GATE-004  architecture   katman + bağımlılık                   |
+|    v                                                           |
+| GATE-005  impl-plan      görev bölme                           |
+|    v                                                           |
+| PART 6 KODLAMA   →   PART 8 DOĞRULAMA (build ×2 + test)        |
 +----------------------------------------------------------------+
 ```
 
@@ -392,7 +395,7 @@ Yerine kullanıcak MD bloğu:
 ```
 
 **Ne anlatır:** {{AÇIKLAMA}}
-**Kaynak:** [{{BAĞLANTI}}]({{BAĞLANTI}}) · **Doğrulama:** §5.3/1 — {{TARİH}}
+**Kaynak:** [[{{BAĞLANTI}}]] · **Doğrulama:** §5.3/1 — {{TARİH}}
 ````
 
 ---
@@ -608,7 +611,7 @@ Select-String -Path 'C:\versacoder\.ai\*\*.md' -Pattern '<== KAPI:'
 - [ ] D4'te `EF Core` geçmiyor (ADR-004 ihlali olur)
 - [ ] D4'te `@p1, @p2` görünür (parameterized kanıtı)
 - [ ] D5'teki roller `.ai/.agents/` kataloğu ile aynı
-- [ ] D2'de sürüm `26.1` (ADR-001 ihlali olmasın)
+- [ ] D2'de sürüm `25.2.8` (ADR-001 ihlali olmasın)
 
 ---
 

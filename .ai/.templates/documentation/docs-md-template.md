@@ -11,7 +11,7 @@ scope: "genel docs-md sablonu: amac, bolumler ve belge turu alanlari"
 
 # VersaCoder — Genel Doküman (docs-md) Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE.md](../../CLAUDE.md) · [root-md-template](./root-md-template.md) · [readme-template](./readme-template.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [adr-template](../adr/adr-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[./root-md-template]] · [[./readme-template]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-template]]
 
 ---
 
@@ -190,7 +190,7 @@ part: C
 
 # <Belge Adı>
 
-**Zorunlu Bağlantılar:** [index](index.md) · [keys.md](keys.md) · [<ilgili>](<ilgili>)
+**Zorunlu Bağlantılar:** [[../index]] · [[../keys.md]] · [[<ilgili>]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya <X> sorusunun tek cevabıdır.
 
@@ -330,7 +330,7 @@ part: C
 
 # {{BELGE_ADI}}
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [keys.md](../../keys.md) · {{ILGILI_BAGLANTI}}
+**Zorunlu Bağlantılar:** [[../index]] · [[../keys.md]] · {{ILGILI_BAGLANTI}}
 
 > **Tek cümlelik sorumluluk:** Bu dosya {{TEK_CUMLE}}.
 

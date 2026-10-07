@@ -11,7 +11,7 @@ scope: "genel ADR sablonu: baslik, durum, baglam, karar, sonuc ve kanit baglanti
 
 # VersaCoder — ADR (Karar Kaydı) Genel Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE.md](../../CLAUDE.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [adr-index](adr-index.md) · [adr-nygard-template](adr-nygard-template.md) · [AGENTS.md](../../../AGENTS.md)
+**Zorunlu Bağlantılar:** [[index]] · [[CLAUDE.md]] · [[architecture/ascii-diagram-template]] · [[adr-index]] · [[adr-nygard-template]] · [[../../AGENTS.md]]
 
 ---
 
@@ -112,7 +112,7 @@ Geçişler **tek yönlüdür**: `proposed → accepted → deprecated | supersed
 |--------|-------------|
 | Bağlam · sorun · alternatif · karar · sonuç · takip | Kararın **uygulanması** (→ `developer`) |
 | `ADR-NNN` numaralandırma + defter senkronu | `.templates/` envanteri (→ `[[index]]`) |
-| Durum yaşam döngüsü + supersede zinciri | Gate geçişleri (`GATE-004a..006` → `WORKFLOW.md`) |
+| Durum yaşam döngüsü + supersede zinciri | Gate geçişleri (`GATE-000..005` → `WORKFLOW.md`) |
 | Karar kalitesi kuralları + hard guardrails | Kuralların metni (→ `.ai/.rules/`) |
 | 7 salt-okunur doğrulama komutu | Diyagram çizimi (→ `[[architecture/ascii-diagram-template]]`) |
 | Varyant seçimi eşiği (§2.2) | 600+ satırlık mimari tez |
@@ -135,7 +135,7 @@ Geçişler **tek yönlüdür**: `proposed → accepted → deprecated | supersed
 | Katman sınırı, bağımlılık yönü, TFM, solution yapısı | ✅ EVET | geri alınması pahalı, herkesi bağlar | architecture |
 | Veri yığını, şema, migration, sorgu biçimi | ✅ EVET | veri kaybı riski, kalıcı iz | data |
 | Secret, auth, oturum, kripto, threat model | ✅ EVET | güvenlik etkisi + denetim izi | security |
-| DevExpress sürümü, ribbon stili, bileşen kilidi | ✅ EVET | 26.1 donduruldu (ADR-001) | devexpress |
+| DevExpress sürümü, ribbon stili, bileşen kilidi | ✅ EVET | 25.2.8 donduruldu (ADR-001) | devexpress |
 | Ürün/genel süreç kararı (dizin adı, ajan kataloğu, defter biçimi) | ✅ EVET | vault'un hafızası | **bu şablon** |
 | Küçük teknik tercih: yardımcı metot adı, dosya içi refactor, tek seferlik script, geçici bayrak | ❌ HAYIR | 1 günde/1 haftada tersine çevrilebilir | — (kod yorumu) |
 | Tekrarlayan, her dosyayı bağlayan kural | ❌ HAYIR | kural ≠ karar | — (`.ai/.rules/`) |
@@ -241,7 +241,7 @@ Dosyanın ilk 16 satırı frontmatter'dır; dolu örnek §3.10 kalıbındadır (
 | Öğe | Ne Yazılır | Doğru Örnek |
 |------|-----------|-------------|
 | Dosya yolu | değişen dosyalar, kökten itibaren | `src/VersaCoder.Infrastructure/**` (⚠️ diskte YOK — §1.2/8) |
-| Sürüm/sayı | sabitlenen değer | `26.1` · `net48;net10.0-windows` |
+| Sürüm/sayı | sabitlenen değer | `25.2.8` · `net48;net10.0-windows` |
 | Geri alma | nasıl tersine çevrileceği + tahmini süre | migration `V0xx` geri alınır, ~5 dk |
 | Kabul kriteri | ölçülebilir, sayısal | sahipsiz `@pN` = 0 · ters referans = 0 |
 
@@ -270,7 +270,7 @@ Bu şablonla yazılan her ADR'de aşağıdaki değerler aynen kullanılır; disk
 
 | # | Gerçek | Değer | İlgili ADR | Disk Kanıtı |
 |---|--------|-------|------------|-------------|
-| 1 | DevExpress sürümü sabit, yükseltme YASAK | `26.1` | ADR-001 | ❌ `src/` YOK |
+| 1 | DevExpress sürümü sabit, yükseltme YASAK | `25.2.8` | ADR-001 | ❌ `src/` YOK |
 | 2 | Veri erişimi EF Core → ADO.NET + Dapper | Dapper + `@p1,@p2` | ADR-004 | ❌ YOK |
 | 3 | İkili hedef (TFM) | `net48;net10.0-windows` | ADR-003 | ❌ YOK |
 | 4 | Yerel veritabanı | `versacoder.db` (SQLite) + `schema_version` | ADR-004 | ❌ YOK |
@@ -300,7 +300,7 @@ supersedes: {{ADR_NNN_Veya_NULL}}
 superseded_by: {{ADR_NNN_Veya_NULL}}
 ---
 # ADR-{{NO}}: {{INGILIZCE_KARAR_BASLIGI}}
-**Zorunlu Bağlantılar:** [adr-index](.templates/adr/adr-index.md) · [index](index.md) · [{{ILGILI_BAGLANTI}}]({{ILGILI_BAGLANTI}})
+**Zorunlu Bağlantılar:** [[adr-index]] · [[index]] · [[{{ILGILI_BAGLANTI}}]]
 ## §1 Bağlam (Context)
 {{KARARIN_MASADA_OLMA_NEDENI — tetikleyici, tarih, etkilenen katman}}
 ## §2 Sorun (Problem)
@@ -340,7 +340,7 @@ superseded_by: {{ADR_NNN_Veya_NULL}}
 ## §7 Referanslar
 | Kaynak | Bağlantı / URL | Erişim |
 |---|---|---|
-| Vault gerçeği | [{{BAGLANTI}}]({{BAGLANTI}}) | {{YYYY-MM-DD}} |
+| Vault gerçeği | [[{{BAGLANTI}}]] | {{YYYY-MM-DD}} |
 | İlgili ADR | {{ADR_NNN}} | {{YYYY-MM-DD}} |
 ```
 
@@ -408,7 +408,7 @@ superseded_by: {{ADR_NNN_Veya_NULL}}
 | G8 | `status` enum dışı (`approved`, `done`, `WIP`) | **DUR** — §5.3/6 |
 | G9 | Üretilen ADR'de yer tutucusu kalmış | **DUR** — §5.3/2 |
 | G10 | String concat SQL veya EF Core paket referansı | **DUR** — ADR-004 · envanter G2/G10 |
-| G11 | DevExpress sürümü `26.1` dışında iddia | **DUR** — ADR-001 |
+| G11 | DevExpress sürümü `25.2.8` dışında iddia | **DUR** — ADR-001 |
 | G12 | Yasaklı harici vault'tan cümle | **DUR** — envanter G1 |
 | G13 | Takip maddesi sahipsiz veya tarihsiz | **DUR** — §3.7 |
 | G14 | Mojibake (çiftlenmiş Latin-1 kodlaması) veya karışık dil | **DUR** — UTF-8 BOM'suz yeniden yaz |
@@ -537,7 +537,7 @@ Get-ChildItem 'C:\versacoder\.ai' -Recurse -Filter *.md -ErrorAction SilentlyCon
 | K12 | `status` değeri enum içinde | 4 değerden biri | §5.3/6 |
 | K13 | Defter ↔ dosya durum eşleşmesi | 0 uyuşmazlık | G6 |
 | K14 | Yer tutucu (yalnız §3.10) | 0 | G9 |
-| K15 | EF Core paket referansı / concat SQL / 26.1 dışı iddia | 0 / 0 / 0 | G10 · G11 |
+| K15 | EF Core paket referansı / concat SQL / 25.2.8 dışı iddia | 0 / 0 / 0 | G10 · G11 |
 | K16 | Mojibake + yasaklı vault adı | 0 / 0 | G12 · G14 |
 
 ### §6.2 Red Sinyalleri (Otomatik DUR)
@@ -614,7 +614,7 @@ Geri dönüş yoktur: yanlış karar **yeni ADR** ile düzeltilir, eski dosya si
 | 5 | `status: approved` / `done` yazmak | enum dışı, denetim komutu okuyamaz | `proposed·accepted·deprecated·superseded` |
 | 6 | Kararı `.ai/.rules/` içine koymak | kural ≠ karar (G7); geçmiş kaybolur | `.ai/adr/ADR-NNN-<slug>.md` |
 | 7 | Supersede edince eski dosyayı silmek | denetim izi ve gerekçe kaybolur | eski dosya kalır, `superseded` işaretlenir |
-| 8 | Sürüm/URL uydurmak (farklı DevExpress sürümü) | ADR-001 ihlali, kanıtsız iddia | `26.1` sabit; kanıtsız satır `⚠️` |
+| 8 | Sürüm/URL uydurmak (farklı DevExpress sürümü) | ADR-001 ihlali, kanıtsız iddia | `25.2.8` sabit; kanıtsız satır `⚠️` |
 | 9 | EF Core'a geri dönmek / concat SQL | ADR-004 ve envanter G2/G10 ihlali | ADO.NET + Dapper, `@p1..@pN` |
 | 10 | Yer tutucuyla yayımlamak | iskelet yayınlanıyor, içerik yok | §3.10 doldurulur, §5.3/2 = 0 |
 | 11 | Şablon §'si ile ADR §'si karıştırılır | denetim yanlış dosyayı tarar | §3.2 notu · §5.3/4 üretileni tarar |

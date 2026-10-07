@@ -55,7 +55,7 @@ Kanıt zorunludur: **tarama çıktısı = 0 secret**, **threat model satırı �
 | Kripto seçimi | Özet/şifreleme, nonce | ✅ Evet | Parametre tablosu |
 | Threat model | Varlık → tehdit → kontrol | ✅ Evet | §3.3 tablosu dolu |
 | Şema/migration | `schema_version`, saf SQL | Hayır → `adr-data-template.md` | Migration tablosu |
-| DevExpress sürümü | 26.1, Office2010 | Hayır → `adr-devexpress-template.md` | Sürüm kilidi |
+| DevExpress sürümü | 25.2.8, Office2010 | Hayır → `adr-devexpress-template.md` | Sürüm kilidi |
 | Dosya/dizin adı, log biçimi | Geçici tercih | Hayır → `adr-nygard-template.md` | 1 sayfa ADR |
 
 ### §1.4 Neden web araştırması zorunlu

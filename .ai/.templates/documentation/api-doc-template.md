@@ -11,7 +11,7 @@ scope: "API dokumantasyon sablonu: uclar, parametreler, ornekler ve hata kodlari
 
 # VersaCoder — API Dokümantasyon Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [Query-Template](../query/Query-Template.md) · [service-template](../backend/service-template.md) · [adr-template](../adr/adr-template.md) · [katman-readme-template](katman-readme-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../backend/service-template]] · [[../adr/adr-template]] · [[katman-readme-template]]
 
 ---
 
@@ -284,7 +284,7 @@ $par = (Select-String -LiteralPath $doc -Pattern '@p1\.\.@pN' -Encoding UTF8).Co
 
 ````markdown
 # VersaCoder — Session API
-**Zorunlu Bağlantılar:** [index](index.md) · [CLAUDE](CLAUDE.md) · [Query-Template](.templates/documentation/../query/Query-Template.md) · [service-template](.templates/documentation/../backend/service-template.md) · [adr-template](.templates/documentation/../adr/adr-template.md) · [architecture-template](.templates/documentation/../architecture/architecture-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../backend/service-template]] · [[../adr/adr-template]] · [[../architecture/architecture-template]]
 
 > Oturum servisinin HTTP sözleşmesini tanımlar; kod `src/`'tedir, burada yalnız yol/imza/durum yaşar.
 
@@ -314,7 +314,7 @@ updated: {{YYYY-MM-DD}}
 authority: SSOT
 ---
 # VersaCoder — {{SERVIS}} API
-**Zorunlu Bağlantılar:** [{{BAG_1}}]({{BAG_1}}) · [{{BAG_2}}]({{BAG_2}}) · [{{BAG_3}}]({{BAG_3}}) · [{{BAG_4}}]({{BAG_4}}) · [{{BAG_5}}]({{BAG_5}}) · [{{BAG_6}}]({{BAG_6}})
+**Zorunlu Bağlantılar:** [[{{BAG_1}}]] · [[{{BAG_2}}]] · [[{{BAG_3}}]] · [[{{BAG_4}}]] · [[{{BAG_5}}]] · [[{{BAG_6}}]]
 
 > {{TEK_PARAGRAF — bu API ne yapar, kim kullanir}}
 
@@ -480,7 +480,7 @@ $sizan2 = @(Select-String -LiteralPath $doc -Pattern $desen -Encoding UTF8)
 'supheli sifre satiri {0} (0 olmali)' -f $sizan2.Count
 $sizan2 | ForEach-Object { '  BULGU -> satir ' + $_.LineNumber }
 
-# 6) KODLAMA + BAGLANTI — BOM yok, mojibake 0, [...](.templates/documentation/...) hedefleri diskte
+# 6) KODLAMA + BAGLANTI — BOM yok, mojibake 0, [[...]] hedefleri diskte
 $bytes = [System.IO.File]::ReadAllBytes($doc)
 $bom = ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF)
 $text = [System.IO.File]::ReadAllText($doc, [System.Text.UTF8Encoding]::new($false))

@@ -11,7 +11,7 @@ scope: "sema migration sablonu: hedef surum, SQL adimlari ve geri alma notu"
 
 # VersaCoder — Şema Migration Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE](../../CLAUDE.md) · [Query-Template](../query/Query-Template.md) · [dapper-mapping-template](../infrastructure/dapper-mapping-template.md) · [adr-data-template](../adr/adr-data-template.md) · [index.md](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../infrastructure/dapper-mapping-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]]
 
 ---
 
@@ -323,7 +323,7 @@ authority: SSOT
 ---
 # V0XX — {{SLUG}}
 
-**Zorunlu Bağlantılar:** [index](index.md) · [Query-Template](.templates/infrastructure/../query/Query-Template.md) · [dapper-mapping-template](.templates/infrastructure/../infrastructure/dapper-mapping-template.md) · [adr-data-template](.templates/infrastructure/../adr/adr-data-template.md) · [index.md](architecture/index.md) · [CLAUDE](CLAUDE.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../query/Query-Template]] · [[../infrastructure/dapper-mapping-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]] · [[../CLAUDE]]
 
 ## §1 Amaç — {{BIR_CUMLE}}
 ## §2 Künye

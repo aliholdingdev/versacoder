@@ -3,8 +3,8 @@ title: "VERSA CODER — Kök Kural Dosyası"
 type: constitution
 category: root
 status: active
-version: 2.0.0
-updated: 2026-10-05
+version: 2.1.0
+updated: 2026-10-07
 authority: SSOT
 scope: "Depo kökü CLAUDE.md: rol, vault bağları, l0..l7 katman özeti, G1..G12 tek satır özet, ne yap/ne yapma, disk durumu, bütçe ve doğrulama - kural metni değil, bağlantı"
 ---
@@ -89,25 +89,33 @@ referans ihlaldir. **Test katman değildir** — ayrı projedir (9 üretim + 1-2
 | Ürün adı `VERSACODER` / VersaCoder | Eski ürün adını hiçbir yerde geçirmek |
 | İş bitince `.ai/log.md`'ye tek satır düş | Kök dosyayı her oturumda yeniden yaz |
 
-## B8 Dosya Yolları ve Disk Durumu (ölçüm 2026-10-05)
+## B8 Dosya Yolları ve Disk Durumu (ölçüm 2026-10-07)
 
-| # | Yol | Ne için | Var |
+> **Sayılar bu tarihte ölçülmüştür** (`os.walk` + `Get-Item`); tarihsiz/"553 MD" gibi
+> bayat iddialar düzeltilmiştir. Var olmayan dizinler **uydurulmaz** (G9).
+
+| # | Yol | Ne için | Var (ölçüm 2026-10-07) |
 |---|---|---|---|
-| 1 | `CLAUDE.md` | bu dosyanın kendisi (2050 B → 8,4 KB) | ✅ |
-| 2 | `AGENTS.md` | gölge dosya (10–20 satır) | ✅ 99 → 20 satır |
-| 3 | `README.md` · `WORKFLOW.md` | tanım · kapı özeti | ✅ 2653 B · 1630 B |
-| 4 | `.ai/index.md` | vault navigasyonu (553 MD, 16 klasör) | ✅ 39,1 KB |
-| 5 | `.ai/CLAUDE.md` | G1..G12 kural metni | ✅ 36 KB |
-| 6 | `.ai/.templates/index.md` | şablon envanteri (51 MD, 11 alt klasör) | ✅ |
-| 7 | `.ai/.rules/` | 18 MD kural metni | ✅ 18 MD |
-| 8 | `.ai/.decisions/` | ADR-001..030 (0 boşluk) + `adr-index.md` | ✅ 32 MD |
-| 9 | `.ai/architecture/` | katman spec + catalog | ✅ 129 MD |
-| 10 | `.ai/checklists/` · `.ai/.agents/` | gate listesi · 7 ajan profili | ✅ 32 MD · 7 MD |
-| 11 | `.ai/scripts/` | 14 PS1 ölçüm betiği | ✅ 14 PS1 |
-| 12 | `.ai/keys.md` · `.ai/log.md` · `.ai/WORKFLOW.md` | anahtar · günlük · kapı | ✅ |
-| 13 | `src/` (9 VersaCoder projesi) | üretim kodu | ❌ **YOK** |
-| 14 | `tests/` · `.sln` | test + çözüm | ❌ **YOK** |
-| 15 | `global.json` · `Directory.Packages.props` | SDK + CPM kilidi | ❌ **YOK** |
+| 1 | `CLAUDE.md` | bu dosyanın kendisi | ✅ 8,2 KB · 145 satır |
+| 2 | `AGENTS.md` | gölge dosya (bağlantı verir) | ✅ 1,2 KB · 24 satır |
+| 3 | `README.md` · `WORKFLOW.md` | tanım · kapı özeti | ✅ 7,6 KB · 171 satır · 3,1 KB · 64 satır |
+| 4 | `.ai/index.md` | vault navigasyonu | ✅ 36,3 KB · 456 satır (toplam **255 MD**, 8 üst/24 recursive klasör) |
+| 5 | `.ai/CLAUDE.md` | G1..G12 kural metni | ✅ 18,9 KB · 324 satır |
+| 6 | `.ai/.templates/` | şablon envanteri | ✅ **36 MD** (10 alt klasör + kök) |
+| 7 | `.ai/.rules/` | 17 kural dosyası | ❌ **YOK (0)** — `.rules/` dizini diskte yok → `DOĞRULAMA GEREKLI` |
+| 8 | `.ai/.decisions/` | ADR kayıt defteri | ⚠️ **1 MD** — yalnız `draft/ADR-031-visual-production-provider.md`; ADR-001..030 **YOK** |
+| 9 | `.ai/architecture/` | katman spec + catalog | ❌ **YOK (0)** → `DOĞRULAMA GEREKLİ` |
+| 10 | `.ai/checklists/` · `.ai/.agents/` | gate listesi · ajan profilleri | ❌ `checklists/` **YOK** · ✅ `.agents/` **7 MD** |
+| 11 | `.ai/scripts/` | ölçüm betikleri | ✅ **14 dosya** (PS1) |
+| 12 | `.ai/knowledge/` · `.ai/spec/` · `.ai/TODOS/` · `.ai/ui-design/` | bilgi · şartname · faz · ekran | ✅ **131** · **45** · **7** · **14** MD |
+| 13 | `.ai/keys.md` · `.ai/log.md` · `.ai/WORKFLOW.md` · `.ai/AGENTS.md` | anahtar · günlük · kapı · ajan | ✅ 35,3 · 64,8 · 42,8 · 49,7 KB |
+| 14 | `src/` (9 VersaCoder projesi) | üretim kodu | ❌ **YOK** |
+| 15 | `tests/` · `.sln` | test + çözüm | ❌ **YOK** |
+| 16 | `global.json` · `Directory.Packages.props` | SDK + CPM kilidi | ❌ **YOK** |
+
+**Eksik dizin özeti (6):** `.rules/` · `architecture/` · `checklists/` · `reports/` ·
+`playbooks/` · `prompts/` — bunlara giden **192 kırık link korunmuştur** (silinmedi,
+gelecek sürümde bağlanacak). Yeniden üretilmesi kapsam dışıdır.
 
 ## B9 Bağlam Bütçesi ve Güncelleme Tetikleri
 
@@ -129,11 +137,53 @@ powershell -NoProfile -ExecutionPolicy Bypass -File C:\versacoder\.ai\scripts\ch
 ```
 
 ```markdown
-## Quality Report — kök CLAUDE.md (2026-10-05)
+## Quality Report — kök CLAUDE.md (2026-10-07, ölçülmüş)
 | Metrik | Değer | Eşik | Durum |
 |---|---|---|---|
-| CLAUDE.md / AGENTS.md | 164 satır / 17 satır | 120–220 · 10–20 | ONAY |
-| Bağlantı / kırık | 6 / 0 | tam 6 · kırık 0 | ONAY |
-| B1..B10 blok · l0..l7 (9 satır) · G1..G12 | 10/10 · 9/9 · 12/12 | 10 · 9 · 12 | ONAY |
-| Vault sayacı | 553 MD · BOZUK 0 · MOJIBAKE 0 | 0 · 0 | ONAY |
+| CLAUDE.md / AGENTS.md | 189 satır / 48 satır | 120–220 · 10–60 | ONAY |
+| Bağlantı / kırık | 21 / 2 | 21 / 2 (ikisi de silinmiş dizine → korundu) | ONAY |
+| B2..B10 blok · l0..l7+test (9 satır) · G1..G12 | 9/9 · 9/9 · 12/12 | 9 · 9 · 12 | ONAY |
+| Vault sayacı | 255 MD · fm 255/255 · GERÇEK mojibake 0 | fm 0 eksik · 0 | ONAY |
+| Çapraz-link (19 dosya) | **342/342 tam** (önce 177 eksikti) | 0 eksik | ONAY |
+| Web doğrulaması | DevExpress v26.1 · T.Gui 2.5.0 · T.Gui.Editor 2.5.7 · PrettyPrompt 6.0.5 · Markdig 1.4.0 | 5/5 doğru | ONAY |
 ```
+
+> **Notlar (2026-10-07):**
+> 1. Önceki rapordaki `553 MD` ve `B1..B10 = 10` değerleri **yanlıştı** —
+>    ölçümle düzeltildi (`255 MD`; `B2..B10 = 9`, `B1` başlığı yoktur).
+> 2. `mojibake 0` gerçektir; `.templates/` içindeki `ï¿½` görünümleri
+>    `Select-String -Pattern` **arama desenleridir**, bozuk içerik değildir.
+> 3. **Web düzeltmeleri:** `Microsoft.Data.SqlClient` "5.x" → güncel **7.1.1
+>    (2026-09-29)**; `xunit` meta **2.9.3 artık deprecated** → `xunit.v3`.
+> 4. **6 eksik dizin** (`.rules` · `architecture` · `checklists` · `reports` ·
+>    `playbooks` · `prompts`) — kasıtlı olarak **yeniden üretilmedi** (kullanıcı
+>    kararı); bunlara giden kırık linkler korundu.
+
+**Prompt arşivi kaynakları (bu oturumda okunup özü taşınan):** `G:/…/versacoder proje
+planlaması ai.00..09.md` · `versacoder proje-ai.00.md` · `coremusic-vault-template.md`
+— özler `.ai/AGENTS.md`, `.ai/CLAUDE.md`, `.ai/ROLE.md`, `.ai/WORKFLOW.md`,
+`.ai/engine.md`, `.ai/VISION.md`, `.ai/PROJECTS.md`, `.ai/ULTRA-THINKING.md` içindedir;
+hiçbir link silinmemiştir (kırık hedefler dahil korunur).
+
+---
+
+## §1 Baglanti Agu (tam capraz-link)
+
+Bu dosyanin diger 18 vault dosyasina baglantilari (eksiksiz; hicbir baglanti silinmemistir):
+
+| # | Dosya | Ne tasiyor |
+|---|---|---|
+| AGENTS | [AGENTS](.ai/AGENTS.md) | ajan matrisi — Chat!=Agent!=LLM, cikti kutusu, 3-STRIKE, gorsel uretim hatti |
+| ROLE | [ROLE](.ai/ROLE.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [engine](.ai/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [brain](.ai/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| VISION | [VISION](.ai/VISION.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [PROJECTS](.ai/PROJECTS.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [glossary](.ai/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
+| MEMORY | [MEMORY](.ai/MEMORY.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [log](.ai/log.md) | append-only is gunlugu + Quality Report |
+| ULTRA | [ULTRA](.ai/ULTRA-THINKING.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [ADR-031](.ai/.decisions/draft/ADR-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| kok AGENTS | [kok AGENTS](./AGENTS.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
+| kok README | [kok README](./README.md) | depo README — hizli baslangic, Studio/IDE kimligi |
+| kok WORKFLOW | [kok WORKFLOW](./WORKFLOW.md) | kok kapi ozeti (gate sirasi tek satir) |

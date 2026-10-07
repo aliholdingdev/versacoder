@@ -11,7 +11,7 @@ scope: "application servis sablonu: islem akisi, yetki kontrolu ve Result donusl
 
 # VersaCoder — Application Servis Şablonu (Service Template)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [handler-template](handler-template.md) · [repository-template](repository-template.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [index.md](../../architecture/index.md) · [coding-standards.md](../../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
 
 ---
 
@@ -62,7 +62,7 @@ Bu şablon tek iskelet dayatır: arayüz → implementasyon → DI → test → 
 | E3 | `.ai/architecture/index.md` katman listesi | `.ai/` altında **yalnız** `.templates/` | ⚠️ VERIFICATION REQUIRED |
 | E4 | `.ai/.rules/coding-standards.md` | `.ai/.rules/` klasörü **yok** | ⚠️ VERIFICATION REQUIRED |
 | E5 | ADO.NET + Dapper; EF Core yasak (ADR-004) | kod okunamadı (`src/` yok) | ⚠️ VERIFICATION REQUIRED |
-| E6 | TFM `net48;net10.0-windows`, DevExpress 26.1 | `Directory.Build.props` / `.sln` **yok** | ⚠️ VERIFICATION REQUIRED |
+| E6 | TFM `net48;net10.0-windows`, DevExpress 25.2.8 | `Directory.Build.props` / `.sln` **yok** | ⚠️ VERIFICATION REQUIRED |
 | E7 | `ascii-diagram-template.md` biçim referansı | **38.121 byte okundu** (644 satır) | ✅ DOĞRULANDI |
 | E8 | `index.md` şablon envanteri (#17 `service-template`) | **38.816 byte okundu** (520–680 satır) | ✅ DOĞRULANDI |
 | E9 | Bu şablon yazıldı | `.ai/.templates/backend/service-template.md` | ✅ DOĞRULANDI |
@@ -161,7 +161,7 @@ authority: SSOT
 
 ````markdown
 # X — <türkçe açıklama>
-**Zorunlu Bağlantılar:** [index](.templates/index.md) · [handler-template](.templates/backend/handler-template.md) · [repository-template](.templates/backend/repository-template.md) · [ascii-diagram-template](.templates/backend/../architecture/ascii-diagram-template.md) · [index.md](architecture/index.md) · [coding-standards.md](.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
 ````
 
 Bağlantı sayısı **6'dan az olamaz** (`G4`).
@@ -185,7 +185,7 @@ Bağlantı sayısı **6'dan az olamaz** (`G4`).
 **Ne anlatır:** Servis aşağı bakar (`Domain`, `Abstractions`), yukarıdan çağrılır.
 
 **Hiçbir zaman** `Infrastructure`'a doğrudan referans vermez — repository arayüzü `Abstractions`'ta yaşadığı için bağımlılık yönü bozulmaz.
-**Kaynak:** [index.md](../../architecture/index.md) · **Doğrulama:** §5.3/3 — 2026-09-25.
+**Kaynak:** [[../../architecture/index.md]] · **Doğrulama:** §5.3/3 — 2026-09-25.
 
 ### §3.4 Arayüz Sözleşmesi İskeleti (dolu örnek)
 

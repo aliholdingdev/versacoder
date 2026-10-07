@@ -56,14 +56,14 @@ Yüksek riskli (H) ve çoğunlukla `reversible: false` olan bu kararlar 4 aşama
 | Uygulama sınırı | Desktop (UI) vs Cli ayrımı | ✅ Evet | Hangi proje hangi uygulamaya referans verir |
 | Veri yığını / şema / migration | Dapper, `schema_version` | Hayır → `adr-data-template.md` | SQL kanıtı |
 | Secret / auth / oturum | `keys.md`, API anahtarları | Hayır → `adr-security-template.md` | Threat model |
-| DevExpress sürüm/kontrol | 26.1, Office2010 | Hayır → `adr-devexpress-template.md` | Sürüm kilidi |
+| DevExpress sürüm/kontrol | 25.2.8, Office2010 | Hayır → `adr-devexpress-template.md` | Sürüm kilidi |
 | Dosya/dizin adı | Log biçimi | Hayır → `adr-nygard-template.md` | 1 sayfa ADR |
 
 ### §1.4 Neden web araştırması zorunlu
 
 Katman kararları "iyi pratik" iddiasıyla savunulur; iyi pratik iddiası kaynaqsız yazılamaz:
 
-1. **TFM uyumu** — DevExpress 26.1 + `net48`/`net10.0-windows` iddiası → resmi sürüm notu; yoksa `⚠️ VERIFICATION REQUIRED`.
+1. **TFM uyumu** — DevExpress 25.2.8 + `net48`/`net10.0-windows` iddiası → resmi sürüm notu; yoksa `⚠️ VERIFICATION REQUIRED`.
 2. **Platform davranışı** — `net48` üzerinde WinForms, `net10.0-windows` üzerinde aynı kodun davranışı → resmi belge.
 3. **Paket uyumu** — Dapper / `Microsoft.Data.SqlClient` hangi TFM'leri hedefliyor → paket sayfası.
 4. **Bağımlılık kuralı** — "UI alt katmana referans vermez" universally doğru; buna karşı çıkan istisna iddiası (varsa) kaynak ister.
@@ -222,7 +222,7 @@ Proje sınırı + bağımlılık akışı → bu varyant (`adr-architecture-temp
 ### §1.4 Araştırılan kaynaklar
 | Kaynak | URL | Erişim | İddia |
 |---|---|---|---|
-| DevExpress 26.1 sistem gereksinimleri | resmi sürüm notu | 2026-09-25 | 26.1 → `net48` dalı |
+| DevExpress 25.2.8 sistem gereksinimleri | resmi sürüm notu | 2026-09-25 | 25.2.8 → `net48` dalı |
 | .NET 10 SDK çoklu hedef | resmi belge | 2026-09-25 | `net10.0-windows` derlemesi |
 
 ## §2 Kapsam

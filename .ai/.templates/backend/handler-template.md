@@ -11,7 +11,7 @@ scope: "CQRS handler sablonu: komut/sorgu sozlesmesi, Result kullanimi ve bagiml
 
 # VersaCoder — Command/Query Handler Şablonu (CQRS İskeleti)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [service-template](service-template.md) · [repository-template](repository-template.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [index.md](../../architecture/index.md) · [coding-standards.md](../../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
 
 ---
 
@@ -148,7 +148,7 @@ authority: SSOT
 
 ````markdown
 # <KomutAdı> — <türkçe açıklama>
-**Zorunlu Bağlantılar:** [index](.templates/index.md) · [service-template](.templates/backend/service-template.md) · [repository-template](.templates/backend/repository-template.md) · [ascii-diagram-template](.templates/backend/../architecture/ascii-diagram-template.md) · [index.md](architecture/index.md) · [coding-standards.md](.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
 ````
 
 ### §3.2 Command/Query Sözleşmesi (dolu örnek)
@@ -193,7 +193,7 @@ public interface IQueryHandler<TQuery, TResult>
 ```
 
 **Ne anlatır:** Beş davranış **her zaman** bu sırayla çalışır; 2. basamak `Result.Fail` döndüğünde 3–5 hiç çalışmaz (kapı).
-**Kaynak:** [index.md](../../architecture/index.md) · **Doğrulama:** §5.3/5 — 2026-09-25.
+**Kaynak:** [[../../architecture/index.md]] · **Doğrulama:** §5.3/5 — 2026-09-25.
 
 ### §3.4 Saf Validator Katmanı (FluentValidation değil)
 

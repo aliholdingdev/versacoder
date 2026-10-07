@@ -11,7 +11,7 @@ scope: "kucuk CLAUDE.md / AGENTS.md sablonu: baglam, kurallar ve komut kisayolla
 
 # VersaCoder — Kök CLAUDE.md / AGENTS.md Şablonu
 
-**Zorunlu Bağlantılar:** [index](../../index.md) · [CLAUDE.md](../../CLAUDE.md) · [architecture-template](../architecture/architecture-template.md) · [ascii-diagram-template](../architecture/ascii-diagram-template.md) · [adr-template](../adr/adr-template.md) · [katman-readme-template](katman-readme-template.md)
+**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/architecture-template]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-template]] · [[katman-readme-template]]
 
 ---
 
@@ -59,7 +59,7 @@ Ajan zinciri tek yönlüdür: kök dosya → envanter → kural → iş. İlk ha
 | 2 | `C:\versacoder\AGENTS.md` | ❌ YOK | `Test-Path = False` |
 | 3 | `C:\versacoder\README.md` | ❌ YOK | `Test-Path = False` |
 | 4 | `src/` (9 VersaCoder projesi) | ❌ YOK | `Test-Path = False` → §3.4 **⚠️ VERIFICATION REQUIRED** |
-| 5 | `tests/` (test projeleri) · `.sln` | ❌ YOK | `Test-Path = False` |
+| 5 | `tests/` (K8 test projeleri) · `.sln` | ❌ YOK | `Test-Path = False` |
 | 6 | `global.json` (SDK 10.0.401) + `Directory.Packages.props` (CPM) | ❌ YOK | kökte yalnız `.ai`, `.git` |
 | 7 | `versacoder.db` (SQLite) | ❌ YOK | `Test-Path = False` |
 | 8 | `.ai/` kök MD'leri (`index.md`, `architecture/index.md`, `WORKFLOW.md`, `keys.md`, `log.md`) | ❌ YOK | `.ai/` altında yalnız `.templates` + `reports` |
@@ -97,7 +97,7 @@ Kök dosya her oturumda bütçeden yer kaplar; uzarsa **iş değil okuma** yemi�
 | `CLAUDE.md` payı | ≤ 1.500 token (%3) — > 2.000 → §4.3 RED |
 | Üretilen satır | 120–220 — < 100 iskelet · > 260 doküman |
 | Bağlantı | 6 zorunlu — 5 altı eksik · 8 üstü dağınık |
-| Katman satırı | 9 (l0..l7 + test) — 8 altı eksik |
+| Katman satırı | 9 (K0..K8) — 8 altı eksik |
 | Güncelleme tetiği | kural / katman / rol değişimi → `updated` + `log.md` |
 
 ```text
@@ -127,7 +127,7 @@ Kök dosya her oturumda bütçeden yer kaplar; uzarsa **iş değil okuma** yemi�
 |--------|-------------|
 | B1..B10 blok sırası + her bloğun zorunlu içeriği | Kuralın **kendisi** (yalnız bağlantısı) |
 | 6 zorunlu bağlantı + wiki dili (`[[…]]`) | ADR karar metni (→ `adr-template`) |
-| l0..l7 listesinin kök dosyadaki özeti | katman iç sınıf tasarımı (→ `layer-spec`) |
+| K0..K8 listesinin kök dosyadaki özeti | katman iç sınıf tasarımı (→ `layer-spec`) |
 | Bağlam bütçesi + uzunluk eşiği | ajan rol dosyaları (→ `agents-template`) |
 | Gölge `AGENTS.md` kuralı (tek gerçek) | `.ai/` içine ikinci kök dosya (**YASAK**) |
 | 6 salt-okunur PowerShell komutu | üretilen dosyanın iş içeriği (göreve göre) |
@@ -171,7 +171,7 @@ Kök dosya her oturumda bütçeden yer kaplar; uzarsa **iş değil okuma** yemi�
 | B2 | Tek cümlelik sorumluluk | `>` ile 1–2 cümle | 2 |
 | B3 | Rol tanımı | neyi üstlenir / üstlenmez | 6 |
 | B4 | Vault bağları | dizin + okuma sırası | 8 |
-| B5 | Katman listesi | l0..l7 + test, 9 satır | 11 |
+| B5 | Katman listesi | K0..K8, 9 satır | 11 |
 | B6 | Kurallar özeti | G1..G12 tek satır + bağlantı | 14 |
 | B7 | Ne yap / Ne yapma | iki sütun ≥ 10 satır | 12 |
 | B8 | Dosya yolları | yol + disk durumu + tarih | 12 |
@@ -202,23 +202,23 @@ Kök dosya `.ai/` dışında olduğu için bağlantı yolu `.ai/...` ile başlar
 | Kapı | "… geçmeden … üretilmez." | kapı adı uydurma |
 | Bütçe | "Oturum bütçesi 50.000 token." | farklı sayı |
 
-### §3.4 B4+B5 — Vault Bağları ve l0..l7 Katman Listesi
+### §3.4 B4+B5 — Vault Bağları ve K0..K8 Katman Listesi
 
-Katman listesi **ADR-028 §2.1** ile birebir aynıdır; kök dosyada yalnız **özet** satırı durur, sorumluluk metni katman şablonundadır (SRP). `src/…` yolları diskte yok → §1.2/4.
+Katman listesi `architecture-template` §3.2 ile **birebir** aynıdır; kök dosyada yalnız **özet** satırı durur, sorumluluk metni katman şablonundadır (SRP). `src/…` yolları diskte yok → §1.2/4.
 
-| Kod | Makro | Proje (.csproj) | Tek satır sorumluluk | Disk |
+| Kod | Katman | Proje | Tek satır sorumluluk | Disk |
 |-----|--------|-------|----------------------|------|
-| l0 | Abstractions | `VersaCoder.Abstractions` | port arayüzleri + `Result<T>` | ❌ `⚠️` |
-| l1 | Domain | `VersaCoder.Domain` | entity + invariant + domain event | ❌ `⚠️` |
-| l2 | Application | `VersaCoder.Application` | use case + CQRS handler | ❌ `⚠️` |
-| l3 | Crosscutting | `VersaCoder.Crosscutting` | logging · `IClock` · yardımcılar | ❌ `⚠️` |
-| l4 | Infrastructure | `VersaCoder.Infrastructure` | ADO.NET + Dapper, dosya, git, LLM | ❌ `⚠️` |
-| l5 | Protocol | `VersaCoder.Protocol` | mesaj şeması + tool sözleşmeleri | ❌ `⚠️` |
-| l6 | Host | `VersaCoder.Host` | composition root + DI + `appsettings*.json` | ❌ `⚠️` |
-| l7 | UI + CLI | `VersaCoder.Desktop` + `VersaCoder.Cli` | RibbonForm sunumu / CLI ayrıştırma | ❌ `⚠️` |
-| — | test | `VersaCoder.Tests` | kanıt üretir, hedef %90 coverage | ❌ `⚠️` |
+| K8 | Test | `tests/VersaCoder.Tests`, `tests/VersaCoder.IntegrationTests` | kanıt üretir, hedef %90 coverage | ❌ `⚠️` |
+| K7 | Host | `VersaCoder.Host` | composition root + DI + `appsettings*.json` | ❌ `⚠️` |
+| K6 | UI | `VersaCoder.Desktop`, `VersaCoder.Cli` | RibbonForm sunumu / CLI ayrıştırma | ❌ `⚠️` |
+| K5 | Protocol | `VersaCoder.Protocol` | mesaj şeması + tool sözleşmeleri | ❌ `⚠️` |
+| K4 | Infrastructure | `VersaCoder.Infrastructure` | ADO.NET + Dapper, dosya, git, LLM | ❌ `⚠️` |
+| K3 | Application | `VersaCoder.Application` | use case + CQRS handler | ❌ `⚠️` |
+| K2 | Domain | `VersaCoder.Domain` | entity + invariant + domain event | ❌ `⚠️` |
+| K1 | Abstractions | `VersaCoder.Abstractions` | port arayüzleri + `Result<T>` | ❌ `⚠️` |
+| K0 | CrossCutting | `VersaCoder.CrossCutting` | logging · `IClock` · yardımcılar | ❌ `⚠️` |
 
-**Yön (tek satır):** `l7 -> l6 -> l5 -> l4 -> l2 -> l1 -> l0`; `l3` yalnız `l0`'a bakar; `l2` ile `l4` arasında ok YOK. Yukarı bakan referans **ihlaldir**. Test katman değildir. Bu cümle B5'nin son satırıdır.
+**Yön (tek satır):** `K6 → K7 → {K5, K4} → K3 → K2 → K1 → K0`; yukarı bakan referans **ihlaldir**. Bu cümle B5'nin son satırıdır.
 
 ### §3.5 B6 — Kurallar Özeti (bağlantıdır, metin değil)
 
@@ -244,11 +244,11 @@ Her kural **tek satır** özetlenir; ayrıntı `.ai/.rules/` ve `index.md` §4.5
 | ✅ Yap | ❌ Yapma (ilk satırda DUR) |
 |--------|----------------------------|
 | Bağlantı ver, kuralı **okumaya** git | Kural metnini kök dosyaya kopyala |
-| Katmanı l0..l7 koduyla söyle | Katman adı uydur / numarayı kaydır |
+| Katmanı K0..K8 koduyla söyle | Katman adı uydur / numarayı kaydır |
 | Olmayana `⚠️ VERIFICATION REQUIRED` yaz | Olmayan dosyayı "şurada" diye göster |
 | 6 bağlantıyı tek satırda `·` ile tut | 8+ bağlantı · markdown `](…)` karışık |
 | Tarihi ISO yaz (`YYYY-MM-DD`) | Serbest tarih biçimi |
-| Sürümü ADR'den al (`26.1`) | "en güncel sürüm" kanıtsız iddiası |
+| Sürümü ADR'den al (`25.2.8`) | "en güncel sürüm" kanıtsız iddiası |
 | `@p1..@pN` örneğini göster | String concat SQL örneği ver |
 | Ölç, sonra "tamam" de (§5.3) | Kanıtsız "hizalı/doğru" iddiası |
 | Ürün adı `VERSACODER` / VersaCoder | **CoreMusic**'i hiçbir yerde geçirmek |
@@ -263,7 +263,7 @@ Her kural **tek satır** özetlenir; ayrıntı `.ai/.rules/` ve `index.md` §4.5
 | 3 | `.ai/.templates/index.md` | envanter + §3.7 sözleşme | ✅ 40.440 bayt |
 | 4 | `.ai/.rules/*.md` | kural metni (7 MD) | ❌ dizin yok |
 | 5 | `.ai/architecture/index.md` | katman gerçeği | ❌ YOK |
-| 6 | `.ai/WORKFLOW.md` | kapı gerçeği (`GATE-004a -> 003 -> 004 -> 005 -> 006`) | ❌ YOK |
+| 6 | `.ai/WORKFLOW.md` | kapı gerçeği (`GATE-000…005`) | ❌ YOK |
 | 7 | `.ai/keys.md` | secret sözlüğü (değer kök dosyaya girmez) | ❌ YOK |
 | 8 | `.ai/adr/ADR-NNN-*.md` | kararlar (ADR-001…008) | ❌ dizin yok |
 | 9 | `.ai/log.md` | Quality Report defteri | ❌ YOK |
@@ -289,15 +289,15 @@ $kirik | ForEach-Object { '  KIRIK -> ' + $_ }
 
 ````markdown
 # VERSA CODER — Kök Kural Dosyası
-**Zorunlu Bağlantılar:** [index](.templates/index.md) · [CLAUDE](.templates/CLAUDE.md) · [index](architecture/index.md) · [WORKFLOW](WORKFLOW.md) · [coding-standards](.rules/coding-standards.md) · [adr-index](.templates/adr/adr-index.md)
+**Zorunlu Bağlantılar:** [[.ai/.templates/index]] · [[.ai/.templates/CLAUDE]] · [[.ai/ARCHITECTURE]] · [[.ai/WORKFLOW]] · [[.ai/.rules/coding-standards]] · [[.ai/adr/adr-index]]
 
 > Bu depoda VersaCoder ürününün kodunu ve kanıtını üretirim; kuralı burada tekrarlamam, yalnız bağlantısını veririm.
 
 ## Kurallar Özeti (metin `.ai/.rules/`'tedir)
 | ID | Tek satır özet | Bağlantı |
 |----|----------------|----------|
-| G1 | Harici vault'tan içerik kopyalanamaz | [index](.templates/index.md) |
-| G10 | Concat SQL yasak — `@p1..@pN` | [Query-Template](.templates/query/Query-Template.md) |
+| G1 | Harici vault'tan içerik kopyalanamaz | [[.ai/.templates/index]] |
+| G10 | Concat SQL yasak — `@p1..@pN` | [[.ai/query/Query-Template]] |
 
 **Bağlam bütçesi:** 50.000 token/oturum · bu dosya payı ≤ %3 · güncelleme: kural/katman/rol değişince.
 ````
@@ -315,17 +315,17 @@ updated: {{YYYY-MM-DD}}
 authority: SSOT
 ---
 # VERSA CODER — Kök Kural Dosyası
-**Zorunlu Bağlantılar:** [{{BAG_1}}]({{BAG_1}}) · [{{BAG_2}}]({{BAG_2}}) · [{{BAG_3}}]({{BAG_3}}) · [{{BAG_4}}]({{BAG_4}}) · [{{BAG_5}}]({{BAG_5}}) · [{{BAG_6}}]({{BAG_6}})
+**Zorunlu Bağlantılar:** [[{{BAG_1}}]] · [[{{BAG_2}}]] · [[{{BAG_3}}]] · [[{{BAG_4}}]] · [[{{BAG_5}}]] · [[{{BAG_6}}]]
 ## B2 Sorumluluk
 {{TEK_PARAGRAF — ne yapıyorum, ne yapmıyorum}}
 ## B3 Rol Tanımı
 {{GOREV}} · {{SINIR}} · {{CIKTI}} · {{KAPI}} · {{BUTCE}}
 ## B5 Katman Listesi
-{{l0..l7 — 9 satır, architecture-template §3.2 ile birebir}}
+{{K0..K8 — 9 satır, architecture-template §3.2 ile birebir}}
 ## B6 Kurallar Özeti
 | ID | Tek satır özet | Bağlantı |
 |---|---|---|
-| {{G_ID}} | {{OZET}} | [{{BAGLANTI}}]({{BAGLANTI}}) |
+| {{G_ID}} | {{OZET}} | [[{{BAGLANTI}}]] |
 ## B7 Ne Yap / Ne Yapma
 {{IKI SUTUN — 10 satir}}
 ## B8 Dosya Yolları
@@ -356,7 +356,7 @@ authority: SSOT
 |-------|-----|-----------|------|
 | 1 | docs-writer | iskelet + frontmatter (B1..B10) | 20 dk |
 | 2 | reviewer | §6.1 20 madde | 10 dk |
-| 3 | architect | l0..l7 `architecture-template` ile birebir | 6 dk |
+| 3 | architect | K0..K8 `architecture-template` ile birebir | 6 dk |
 | 4 | master-orchestrator | §5.3 çıktıları + §6.4 Quality Report | 8 dk |
 | | **Toplam** | | **≈ 44 dk** |
 
@@ -369,7 +369,7 @@ authority: SSOT
 | Üretilen `CLAUDE.md` | 120–220 satır | < 100 iskelet · > 260 RED |
 | Üretilen `AGENTS.md` | 10–20 satır (gölge) | kopya içerirse RED (§1.3) |
 | Bağlantı | tam 6 | 5 altı / 8 üstü RED |
-| Katman satırı | 9 (l0..l7) | 8 altı RED |
+| Katman satırı | 9 (K0..K8) | 8 altı RED |
 | Kurallar özeti | 12 (G1..G12) | eksik RED |
 | Token payı | ≤ 1.500 (%3) | > 2.000 RED (§1.4) |
 | Bu şablon | 480–660 satır · 25–34 KB | dışı §5.3/2 |
@@ -414,7 +414,7 @@ authority: SSOT
 | 1 | Disk ölçümü | `Test-Path` listesi (§1.2) | güncellenmiş kanıt tablosu | docs-writer | 5 dk |
 | 2 | İskelet seç | §3.1 (B1..B10) | blok listesi | docs-writer | 3 dk |
 | 3 | Bağlantıyı yaz | 6 zorunlu hedef | H1 altı satır | docs-writer | 4 dk |
-| 4 | B5 katmanları | `architecture-template` §3.2 | 9 satır (l0..l7) | architect | 5 dk |
+| 4 | B5 katmanları | `architecture-template` §3.2 | 9 satır (K0..K8) | architect | 5 dk |
 | 5 | B6 özetleri | `index.md` §4.5 | 12 satır | security | 8 dk |
 | 6 | B7–B8 doldur | ne yap/ne yapma + yollar | 2 tablo | docs-writer | 8 dk |
 | 7 | Gölge oluştur | `CLAUDE.md` | `AGENTS.md` 10–20 satır | docs-writer | 4 dk |
@@ -431,7 +431,7 @@ authority: SSOT
 | 1 | Kural kopyası | kök dosyada uzun G paragrafı | SRP unutulmuş | bağlantıya çevir (G12) |
 | 2 | Eksik bağlantı | 5 veya daha az `[[…]]` | hedef unutulmuş | §3.2 altı hedefi tamamla |
 | 3 | Olmayan dosya iddiası | `.ai/.rules/` "mevcut" | §1.2 ölçülmemiş | `⚠️ VERIFICATION REQUIRED` |
-| 4 | Katman kayması | `l7 Host` gibi yanlış kod | başka şablondan taşıma | `architecture-template` §3.2 |
+| 4 | Katman kayması | `K8 Host` gibi yanlış kod | başka şablondan taşıma | `architecture-template` §3.2 |
 | 5 | Gölge kopyası | `AGENTS.md` 200 satır | iki gerçek kaynağı | 10–20 satıra indir (G5) |
 | 6 | Uzunluk sapması | > 260 / < 100 satır | doküman ya da iskelet | §4.3 aralığına çek |
 | 7 | Yanlış bütçe | "100K token" | varsayım | 50.000 (§1.4) |
@@ -502,7 +502,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 |--------|-------|------|-------|
 | Üretilen `CLAUDE.md` · `AGENTS.md` | n satır / n satır | 120–220 · 10–20 | 🟢/🔴 |
 | Bağlantı / kırık | 6 / 0 | tam 6 · kırık 0 | 🟢/🔴 |
-| B1..B10 blok · l0..l7 satır | 10/10 · 9/9 | 10 · 9 | 🟢/🔴 |
+| B1..B10 blok · K0..K8 satır | 10/10 · 9/9 | 10 · 9 | 🟢/🔴 |
 | Yer tutucu / mojibake / CoreMusic | n/n/n | 0/0/0 | 🟢/🔴 |
 | Guardrail G1..G14 | ihlal n | 0 | 🟢/🔴 |
 | Şablon ölçümü (§5.3/2) | <satır>/<KB> | 480–660 · 25–34 | 🟢/🔴 |
@@ -527,7 +527,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 | K7 | §1.4 bütçe 50.000 + %3 payı + kutu | var | §1.4 |
 | K8 | §2.1 + §2.2 dolu | 2/2 | §2 |
 | K9 | §3.1 B1..B10 tablosu | 10 satır | §3.1 |
-| K10 | §3.4 l0..l7 = 9 satır, `architecture-template` ile birebir | 9 = 9 | §3.4 |
+| K10 | §3.4 K0..K8 = 9 satır, `architecture-template` ile birebir | 9 = 9 | §3.4 |
 | K11 | §3.5 G1..G12 özet tablosu | 12 | §3.5 |
 | K12 | §3.6 Ne yap / Ne yapma ≥ 10 satır | ≥ 10 | §3.6 |
 | K13 | §3.7 dosya yolları + `Var` sütunu | ≥ 10 | §3.7 |
@@ -545,7 +545,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 |---|--------|---------|
 | R1 | §5.3/1'de kırık bağlantı | **DUR** — hedef üretilir ya da bağlantı silinir |
 | R2 | Üretilen kök dosyada `{{…}}` | **DUR** — doldurulur (G4) |
-| R3 | l0..l7'de eksik/yanlış kod | **DUR** — `architecture-template` §3.2 |
+| R3 | K0..K8'de eksik/yanlış kod | **DUR** — `architecture-template` §3.2 |
 | R4 | `AGENTS.md` > 20 satır | **DUR** — gölge kuralı (G5) |
 | R5 | `EntityFramework` / concat SQL geçen satır | **DUR** — G2 · G10 |
 | R6 | `.ai/` içinde ikinci kök kural dosyası | **DUR** — G7 |
@@ -570,7 +570,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 | `.ai/.templates/documentation/claude-md-template.md` | **bu dosya** — kök kural dosyasının tek kaynağı |
 | `.ai/.templates/index.md` | envanter (#35) + §3.7 kalite sözleşmesi |
 | `.ai/.templates/CLAUDE.md` | `.templates/` içi dizin kuralı — bu şablonun **hedefi değil** |
-| `.ai/.templates/architecture/architecture-template.md` | l0..l7'ın tek kaynağı (§3.4) |
+| `.ai/.templates/architecture/architecture-template.md` | K0..K8'ın tek kaynağı (§3.4) |
 | `.ai/.templates/architecture/ascii-diagram-template.md` | kutu biçimi + 66 ölçer (§5.3/4) |
 
 ### §6.5 Envantere Özgü Kontroller
@@ -581,7 +581,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 | K2 | Bu şablonun KB aralığı | 25–34 | §5.3/2 |
 | K3 | Envanter satırı #35 `Durum` | `PLANLI → YAZILDI` (bittikten) | `index.md` §3.5 |
 | K4 | Hedef dosya yolu envantere birebir | `CLAUDE.md` / `AGENTS.md` | `index.md` §3.5 #35 |
-| K5 | l0..l7 satır sayısı = `architecture-template` §3.2 | 9 = 9 | iki tablo karşılaştırması |
+| K5 | K0..K8 satır sayısı = `architecture-template` §3.2 | 9 = 9 | iki tablo karşılaştırması |
 | K6 | Kutu satırları 66 karakter | 0 uyuşmayan | §5.3/4 |
 
 ---
@@ -594,7 +594,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 |--------|-----|---------|---------------------|
 | Şablon envanteri + kalite sözleşmesi | `.ai/.templates/index.md` | §3.7 · #35 satırı | ✅ 40.440 bayt |
 | Biçim altın örneği (kutu, § yapısı) | `.ai/.templates/architecture/ascii-diagram-template.md` | §5.3/4 · kutu 66 | ✅ 38.118 bayt |
-| l0..l7 katman listesi | `.ai/.templates/architecture/architecture-template.md` | §3.4 birebir | ✅ okundu |
+| K0..K8 katman listesi | `.ai/.templates/architecture/architecture-template.md` | §3.4 birebir | ✅ okundu |
 | `.ai/` kök gerçekleri + kural metni | `Test-Path` çıktısı (§1.2/8–9) | dürüstlük kanıtı | ❌ YOK → `⚠️` |
 | Yasaklı vault'lar | `C:\www\coremusic.net\…` · `C:\www\versacoder\…` | yalnız **yapı** referansı | 🔒 kopyalama YASAK |
 
@@ -605,7 +605,7 @@ $tur = ([regex]::Matches($text, '[çğıöşüÇĞİÖŞÜ]')).Count
 | 1 | Kuralı kök dosyaya kopyalamak | iki gerçek kaynağı, biri çürür (G12) | tek satır özet + bağlantı (§3.5) | gözden geçirme |
 | 2 | `AGENTS.md`'yi ayrı yazmak | iki kök güncellenmez, tutarsızlık | gölge 10–20 satır (§1.3) | §5.3/2 + sayım |
 | 3 | Olmayan `.ai/.rules/`'u "mevcut" göstermek | kanıtsız iddia, ajan yanlış yere gider | `⚠️ VERIFICATION REQUIRED` (§1.2/9) | §1.2 tablosu |
-| 4 | Katman adı/kodu uydurmak | tüm vault l0..l7'e bağlanır, tek sapma her belgeyi çürütür | `architecture-template` §3.2 | §6.1 K10 |
+| 4 | Katman adı/kodu uydurmak | tüm vault K0..K8'e bağlanır, tek sapma her belgeyi çürütür | `architecture-template` §3.2 | §6.1 K10 |
 | 5 | 6 bağlantıyı 12'ye çıkarmak | okuma bütçesi şişer, odak kayar | tam 6, `·` ayracılı | §5.3/1 |
 | 6 | Dosyayı 400 satıra büyütmek | oturum bütçesi %3 dışına taşar | 120–220 (§4.3) | §5.3/2 |
 | 7 | EF Core / concat SQL örneği vermek | ADR-004 + G2/G10 ihlali | ADO.NET + Dapper, `@p1..@pN` | `Select-String` |
