@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Katman Şartnamesi (Layer Spec) Şablonu
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[../CLAUDE.md]] · [[architecture-template]] · [[dependency-rule-template]] · [[ascii-diagram-template]] · [[../adr/adr-architecture-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[architecture-template]] · [[dependency-rule-template]] · [[ascii-diagram-template]] · [[.templates/adr/adr-architecture-template]]
 
 ---
 

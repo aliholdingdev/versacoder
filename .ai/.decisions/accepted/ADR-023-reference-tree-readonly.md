@@ -46,5 +46,5 @@ göremez, öğrenme kaynağı kirlenirdi.
 
 ## §7 İlgili
 
-- [ADR-002-vault-ownership-no-copy.md](adr-002-vault-ownership-no-copy.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-002-vault-ownership-no-copy|ADR-002-vault-ownership-no-copy.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

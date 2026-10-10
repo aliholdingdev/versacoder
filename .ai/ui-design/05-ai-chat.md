@@ -14,7 +14,7 @@ supersedes: ""
 
 # 05 — AI CHAT
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [02-main-ide](02-main-ide.md) · [06-agent-panel](06-agent-panel.md) · [.rules/async-rules.md](../.rules/async-rules.md) · [.rules/security-rules.md](../.rules/security-rules.md) · [keys](../governance/keys.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[ui-design/02-main-ide|02-main-ide]] · [[ui-design/06-agent-panel|06-agent-panel]] · [[.rules/async-rules|.rules/async-rules.md]] · [[.rules/security-rules|.rules/security-rules.md]] · [[governance/keys|keys]]
 
 > **Tek cümlelik sorumluluk:** Sohbet ekranının hangi bölgelerden oluştuğu, akışın/iptalin
 > ve "dosyaya uygula" adımının nereye gittiği sorusunun tek cevabıdır.
@@ -87,7 +87,7 @@ hata (401/429/timeout) → mesaj alanında neden + **retry** butonu (api anahtar
 | 1 | Akış her chunk'ta | UI thread marshal (`Invoke`); UI **donmaz** |
 | 2 | Durdur | `CancellationToken` servise iletilir; UI iptal durumu gösterir |
 | 3 | "Dosyaya uygula" | **onay dialog** → `IDiffService` + `IFileWriter`; doğrudan yazma **YOK** |
-| 4 | Model seçimi + endpoint | servis katmanında; [keys](../governance/keys.md) yalnız meta harita |
+| 4 | Model seçimi + endpoint | servis katmanında; [[governance/keys|keys]] yalnız meta harita |
 | 5 | `Bağlam ekle` | seçili dosya/ağaç düğümü prompt'a bağlam olarak girer |
 | 6 | "Sekmede Aç" (2026-10-02) | sohbet `10-ai-chat-console` tam ekran sekmesinde açılır (CLI/AI konsolları ayrı yüzey, 02-main-ide dock'u referanstır) |
 
@@ -119,8 +119,8 @@ hata (401/429/timeout) → mesaj alanında neden + **retry** butonu (api anahtar
 | # | Kaynak | Ne kanıtlar |
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/05-ai-chat.md` (eski vault) | bölge/buton listesi |
-| 2 | [.rules/async-rules.md](../.rules/async-rules.md) | akış + iptal kalıbı |
-| 3 | [.rules/security-rules.md](../.rules/security-rules.md) | anahtar gizliliği |
-| 4 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.3 | `IAgentStreamSink` portu (l0) |
+| 2 | [[.rules/async-rules|.rules/async-rules.md]] | akış + iptal kalıbı |
+| 3 | [[.rules/security-rules|.rules/security-rules.md]] | anahtar gizliliği |
+| 4 | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §2.3 | `IAgentStreamSink` portu (l0) |
 
 > `IChatService` / `IDiffService` adları taslaktır — `l0` içinde kesinleşmesi `DOĞRULAMA GEREKLİ`.

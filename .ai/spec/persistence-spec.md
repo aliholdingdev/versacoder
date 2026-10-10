@@ -14,7 +14,7 @@ supersedes: ""
 
 # Kalıcılık Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [settings](settings-spec.md) · [session-spec](session-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/project-model-spec|project-model]] · [[spec/settings-spec|settings]] · [[spec/session-spec|session-spec]]
 
 > **Tek cümlelik sorumluluk:** *Hangi veri nereye, hangi biçimle ve hangi güvenle yazılır* sorusunun tek cevabıdır.
 > Veri erişimi **ADO.NET + Dapper** ve **parametreli** sorgulardır; **EF Core ve string-concat SQL yok** (G2 / ADR-005).
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Dosya yolları, biçimler (JSON/SQLite/log) | Varlık modeli (alanlar) | [project-model](project-model-spec.md) |
-| 2 | Yazma atomizmi, kilit, kurtarma | Şema/migration SQL'inin kendisi (bkz. §2.3) | [persistence](persistence-spec.md) §2.3 |
-| 3 | Secret koruma ve anahtar kullanımı | Şifreleme algoritması kararı | [error-handling](error-handling-spec.md) hata yolu |
-| 4 | Tercihlerin okunma sırası (katmanlı config) | Ayar ekranı doğrulaması | [settings](settings-spec.md) |
-| 5 | Oturum/kayıt yaşam döngüsü | Transcript/compaction | [session-spec](session-spec.md) |
+| 1 | Dosya yolları, biçimler (JSON/SQLite/log) | Varlık modeli (alanlar) | [[spec/project-model-spec|project-model]] |
+| 2 | Yazma atomizmi, kilit, kurtarma | Şema/migration SQL'inin kendisi (bkz. §2.3) | [[spec/persistence-spec|persistence]] §2.3 |
+| 3 | Secret koruma ve anahtar kullanımı | Şifreleme algoritması kararı | [[spec/error-handling-spec|error-handling]] hata yolu |
+| 4 | Tercihlerin okunma sırası (katmanlı config) | Ayar ekranı doğrulaması | [[spec/settings-spec|settings]] |
+| 5 | Oturum/kayıt yaşam döngüsü | Transcript/compaction | [[spec/session-spec|session-spec]] |
 
 ---
 

@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "ADO.NET + Dapper; EF Core yok; parametreli SQL; DbConnection yalnız l4"
-tags: [['rules', 'data', 'dapper', 'sql', 'g2']]
+tags: [rules, data, dapper, sql, g2]
 source: "Birleştirme: .ai/CLAUDE.md G2 + brain.md §3/5 + ADR-005/016/017"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Veri Erişimi Kuralları (G2)
 
@@ -48,6 +48,6 @@ CRITICAL — build RED; kod durur, ADO.NET + Dapper'a çevrilir.
 
 ## İlgili
 
-- [ADR-005](../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md)
-- [ADR-016](../.decisions/accepted/adr-016-dbconnection-only-l4.md)
-- [ADR-017](../.decisions/accepted/adr-017-parameterized-sql-only.md)
+- [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005]]
+- [[.decisions/accepted/adr-016-dbconnection-only-l4|ADR-016]]
+- [[.decisions/accepted/adr-017-parameterized-sql-only|ADR-017]]

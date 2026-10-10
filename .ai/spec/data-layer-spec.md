@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Veri Katmanı Şartnamesi (`spec/data-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [infra-layer-spec](infra-layer-spec.md) · [migration-spec](migration-spec.md) · [security-spec](security-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/infra-layer-spec|infra-layer-spec]] · [[spec/migration-spec|migration-spec]] · [[spec/security-spec|security-spec]]
 
 > **Tek cümlelik sorumluluk:** *Veritabanına kim, hangi teknolojiyle, hangi SQL biçimiyle ve hangi timeout ile ulaşır* sorusunun tek cevabıdır.
-> Kural listesi `.rules/data-access-rules.md` (DA-01..DA-16), şema değişikliği [migration-spec](migration-spec.md)'tedir — bu belge **sınır ve davranış**tır.
+> Kural listesi `.rules/data-access-rules.md` (DA-01..DA-16), şema değişikliği [[spec/migration-spec|migration-spec]]'tedir — bu belge **sınır ve davranış**tır.
 
 ---
 
@@ -31,11 +31,11 @@ Veri erişimi **yalnız l4 repository'lerinde**, **ADO.NET + Dapper** ile ve **h
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Repository arayüzü ve yerleşimi (yalnız `VersaCoder.Infrastructure`) | Katman sınırları: [infra-layer-spec](infra-layer-spec.md) |
-| 2 | Parameterized SQL, `const` sorgu gövdesi, `DynamicParameters` | Injection savunması detayı: [security-spec](security-spec.md) |
-| 3 | Bağlantı yaşam döngüsü, timeout sabitleri, transaction | Şema + versiyon tablosu: [migration-spec](migration-spec.md) |
-| 4 | Provider soyutlaması (`IDbConnectionFactory`, `ISqlDialect`) | Paket sürüm kilidi: [packaging-spec](packaging-spec.md) |
-| 5 | N+1 / sayfalama / streaming davranışı | Bütçe ve ölçüm yöntemi: [performance-spec](performance-spec.md) |
+| 1 | Repository arayüzü ve yerleşimi (yalnız `VersaCoder.Infrastructure`) | Katman sınırları: [[spec/infra-layer-spec|infra-layer-spec]] |
+| 2 | Parameterized SQL, `const` sorgu gövdesi, `DynamicParameters` | Injection savunması detayı: [[spec/security-spec|security-spec]] |
+| 3 | Bağlantı yaşam döngüsü, timeout sabitleri, transaction | Şema + versiyon tablosu: [[spec/migration-spec|migration-spec]] |
+| 4 | Provider soyutlaması (`IDbConnectionFactory`, `ISqlDialect`) | Paket sürüm kilidi: [[spec/packaging-spec|packaging-spec]] |
+| 5 | N+1 / sayfalama / streaming davranışı | Bütçe ve ölçüm yöntemi: [[spec/performance-spec|performance-spec]] |
 
 > **YASAK:** EF Core (G2) · `string` + SQL (DA-03) · `SELECT *` · `AddWithValue` ile belirsiz uzunluk · `CommandTimeout = 0` · paylaşılan statik `IDbConnection` · `Application`/`Domain` içinde SQL metni.
 

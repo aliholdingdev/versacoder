@@ -14,7 +14,7 @@ supersedes: ""
 
 # flows.md - Ekranlar Arası Geçiş Akışları
 
-**Zorunlu Baglantilar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [08-ascii-art-viewer](08-ascii-art-viewer.md) · [VISION](../definitions/vision.md) · [WORKFLOW](../governance/workflow.md) · [gate-003 checklist](../checklists/gate-003-ui-onay.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/index]] · [[ui-design/01-start-page|01-start-page]] · [[ui-design/02-main-ide|02-main-ide]] · [[ui-design/07-settings|07-settings]] · [[ui-design/08-ascii-art-viewer|08-ascii-art-viewer]] · [[definitions/vision|VISION]] · [[governance/workflow|WORKFLOW]] · [[checklists/gate-003-ui-onay|gate-003 checklist]]
 
 > **Tek cumlelik sorumluluk:** Uygulama girisinden 8 ekrana nasil ulasilip her ekrandan
 > nereye cikildigi sorusunun tek cevabidir.
@@ -154,7 +154,7 @@ Ok aciklamasi: `-->` yonlu geçiş, `+-->` dal, `[...]` tetik. Kutu cizimi yalni
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [01..08 wireframe](readme.md) §3 etkileşim kuralları | tetik -> hedef eslesmesi |
-| 2 | [VISION](../definitions/vision.md) §2.3-§2.9 | ekran akış adimlari |
-| 3 | [gate-003 checklist](../checklists/gate-003-ui-onay.md) soru 8 | giriş/çıkış zorunlulugu |
-| 4 | [WORKFLOW](../governance/workflow.md) | flows.md eslikci dosya sarti |
+| 1 | [[ui-design/readme|01..08 wireframe]] §3 etkileşim kuralları | tetik -> hedef eslesmesi |
+| 2 | [[definitions/vision|VISION]] §2.3-§2.9 | ekran akış adimlari |
+| 3 | [[checklists/gate-003-ui-onay|gate-003 checklist]] soru 8 | giriş/çıkış zorunlulugu |
+| 4 | [[governance/workflow|WORKFLOW]] | flows.md eslikci dosya sarti |

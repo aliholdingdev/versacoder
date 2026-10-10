@@ -14,9 +14,9 @@ supersedes: ""
 
 # Grid Gruplama ve Ozetleri
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [grid-filtering-sorting](grid-filtering-sorting.md) · [gridcontrol-basics](gridcontrol-basics.md) · [grid-paging-virtual-mode](grid-paging-virtual-mode.md) · [performance-grid-optimization](performance-grid-optimization.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 7/35):** [accessibility-keyboard-nav](accessibility-keyboard-nav.md) [accordion-navigation](accordion-navigation.md) [alertcontrol-notifications](alertcontrol-notifications.md) [bar-status-items](bar-status-items.md) [chartcontrol-basics](chartcontrol-basics.md) [checkedcomboedit-values](checkedcomboedit-values.md) [comboboxedit-autocomplete](comboboxedit-autocomplete.md) [datasource-binding-dapper](datasource-binding-dapper.md) [dateedit-timeedit](dateedit-timeedit.md) [designer-runtime-customization](designer-runtime-customization.md) [docking-saved-layout-xml](docking-saved-layout-xml.md) [docklayout-persistence](docklayout-persistence.md) [dockmanager-panels](dockmanager-panels.md) [dx-validation-provider](dx-validation-provider.md) [grid-editing-modes](grid-editing-modes.md) [grid-search-panel-find](grid-search-panel-find.md) [gridview-columns-format](gridview-columns-format.md) [layoutcontrol-grouping](layoutcontrol-grouping.md) [lookUpEdit-cascading](lookupedit-cascading.md) [mvvm-pattern-devexpress](mvvm-pattern-devexpress.md) [nuget-references-cpm](nuget-references-cpm.md) [ribbon-control-office2010](ribbon-control-office2010.md) [ribbon-form-basics](ribbon-form-basics.md) [ribbon-pages-groups-items](ribbon-pages-groups-items.md) [skin-customization](skin-customization.md) [splashscreen-waitform](splashscreen-waitform.md) [tabcontrol-multipage](tabcontrol-multipage.md) [theme-manager-office2010](theme-manager-office2010.md)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.rules/devexpress-rules|devexpress-rules]] · [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] · [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] · [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]] · [[knowledge/devexpress/performance-grid-optimization|performance-grid-optimization]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 7/35):** [[knowledge/devexpress/accessibility-keyboard-nav|accessibility-keyboard-nav]] [[knowledge/devexpress/accordion-navigation|accordion-navigation]] [[knowledge/devexpress/alertcontrol-notifications|alertcontrol-notifications]] [[knowledge/devexpress/bar-status-items|bar-status-items]] [[knowledge/devexpress/chartcontrol-basics|chartcontrol-basics]] [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]] [[knowledge/devexpress/docking-saved-layout-xml|docking-saved-layout-xml]] [[knowledge/devexpress/docklayout-persistence|docklayout-persistence]] [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] [[knowledge/devexpress/grid-search-panel-find|grid-search-panel-find]] [[knowledge/devexpress/gridview-columns-format|gridview-columns-format]] [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] [[knowledge/devexpress/lookupedit-cascading|lookUpEdit-cascading]] [[knowledge/devexpress/mvvm-pattern-devexpress|mvvm-pattern-devexpress]] [[knowledge/devexpress/nuget-references-cpm|nuget-references-cpm]] [[knowledge/devexpress/ribbon-control-office2010|ribbon-control-office2010]] [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] [[knowledge/devexpress/ribbon-pages-groups-items|ribbon-pages-groups-items]] [[knowledge/devexpress/skin-customization|skin-customization]] [[knowledge/devexpress/splashscreen-waitform|splashscreen-waitform]] [[knowledge/devexpress/tabcontrol-multipage|tabcontrol-multipage]] [[knowledge/devexpress/theme-manager-office2010|theme-manager-office2010]]
 
 > **Tek cumlelik sorumluluk:** *Gruplama ve ozetler nerede tanimlanir, hangi satir uzerinden hesaplanir* sorusunun tek cevabidir.
 
@@ -79,7 +79,7 @@ Toplam satiri (footer) ayni kalip `gridView1.Summary` uzerinden eklenir; `FieldN
 |---|---|---|
 | Filtre uygulanmis gorunum | yalniz gorunen satir(lar) | grid ozeti yeterli |
 | Tablonun tamaminin toplami | - | Dapper `SELECT SUM(Tutar)` + label |
-| Sayfalanmis gorunum (sayfa 1/N) | yalniz o sayfa | DB toplami zorunlu (bkz. [grid-paging-virtual-mode](grid-paging-virtual-mode.md)) |
+| Sayfalanmis gorunum (sayfa 1/N) | yalniz o sayfa | DB toplami zorunlu (bkz. [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]]) |
 | `NULL` hucreler | `Sum` atlar | `Avg`/`Count` icin `SummaryType.Custom` dusun |
 | Duzenleme sonrasi | eski deger kalir | `RefreshDataSource()` sonra `LayoutUpdated()` |
 
@@ -126,11 +126,11 @@ Toplam satiri (footer) ayni kalip `gridView1.Summary` uzerinden eklenir; `FieldN
 
 | Konu | Dosya |
 |---|---|
-| Filtre + siralama | [grid-filtering-sorting](grid-filtering-sorting.md) |
-| Sayfalama + sanal mod | [grid-paging-virtual-mode](grid-paging-virtual-mode.md) |
-| Kosullu bicimlendirme | [grid-conditional-format-rules](grid-conditional-format-rules.md) |
-| Grid iskeleti | [gridcontrol-basics](gridcontrol-basics.md) |
-| Export (ozetlerle birlikte) | [grid-export-excel-pdf](grid-export-excel-pdf.md) |
+| Filtre + siralama | [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] |
+| Sayfalama + sanal mod | [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]] |
+| Kosullu bicimlendirme | [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] |
+| Grid iskeleti | [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] |
+| Export (ozetlerle birlikte) | [[knowledge/devexpress/grid-export-excel-pdf|grid-export-excel-pdf]] |
 
 ---
 

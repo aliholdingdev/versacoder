@@ -47,4 +47,4 @@ ve geri alma pahalılaşırdı.
 
 ## §7 İlgili
 
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

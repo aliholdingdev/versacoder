@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Harici Sağlayıcı (LLM) Adaptörü Şablonu
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/CLAUDE]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-architecture-template]] · [[../session-log-template]] · [[./configuration-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/ascii-diagram-template]] · [[.templates/adr/adr-architecture-template]] · [[.templates/session-log-template]] · [[./configuration-template]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya, VersaCoder'ın harici bir LLM/sağlayıcıya bağlandığı **her adaptörün** (`src/VersaCoder.Infrastructure/Providers/*.cs`) arayüz, secret, hata eşleme, yeniden deneme ve doğrulama sözleşmesinin tek kaynağıdır (SSOT).
 

@@ -14,9 +14,9 @@ supersedes: ""
 
 # Pattern Matching
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Yapısal Kurallar](../../.rules/coding-standards.md) | [Hata Kurallari](../../.rules/error-handling-rules.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.rules/coding-standards|Yapısal Kurallar]] | [[.rules/error-handling-rules|Hata Kurallari]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 2/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** Pattern matching, tip dondurme ve dal salimini tek ifadeye indirir; switch'i eksiksiz yapmak zorunda oldugunu unutma.
 
@@ -86,13 +86,13 @@ string Etiket(object kayit) => kayit switch
 
 - Switch icin her dal + default icin test yaz; dal sayisi test sayisina yansir.
 - Eksik dal testini default dalinin yakalamasi gerekir; yakalamadiysa desen yanlis.
-- `is` deseninin olumsuz dalini da test et (desen tutmamali). Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- `is` deseninin olumsuz dalini da test et (desen tutmamali). Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Yapısal Kurallar](../../.rules/coding-standards.md) · [Hata Kurallari](../../.rules/error-handling-rules.md) · [Nullable Reference Types](nullable-reference-types.md) · [C Sharp Index](index.md)
+- [[.rules/coding-standards|Yapısal Kurallar]] · [[.rules/error-handling-rules|Hata Kurallari]] · [[knowledge/csharp/nullable-reference-types|Nullable Reference Types]] · [[knowledge/csharp/index|C Sharp Index]]
 
 ## §9 Kanit
 
 - Switch/exhaustive ve desen kurallari dil ozellikleriyle sinirli tutuldu; proje geneli kural degil. Kaynak: kaynak vault C# seti, 2026-09-25.
-- Yan etki yasagi hata ve kodlama kurallarindaki fonksiyonellik ilkesiyle uyumlu. Kaynak: [Kodlama Standartlari](../../.rules/coding-standards.md).
+- Yan etki yasagi hata ve kodlama kurallarindaki fonksiyonellik ilkesiyle uyumlu. Kaynak: [[.rules/coding-standards|Kodlama Standartlari]].

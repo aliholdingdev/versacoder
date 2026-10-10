@@ -14,7 +14,7 @@ supersedes: ""
 
 # 09 — Terminal (CLI Dock Paneli)
 
-**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [02-main-ide](02-main-ide.md) · [06-agent-panel](06-agent-panel.md) · [01-start-page](01-start-page.md) · [terminal-spec](../spec/terminal-spec.md) · [cli-spec](../spec/cli-spec.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/README]] · [[ui-design/02-main-ide|02-main-ide]] · [[ui-design/06-agent-panel|06-agent-panel]] · [[ui-design/01-start-page|01-start-page]] · [[spec/terminal-spec|terminal-spec]] · [[spec/cli-spec|cli-spec]] · [[.rules/ui-rules|ui-rules]] · [[.rules/devexpress-rules|devexpress-rules]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cumlelik sorumluluk:** *CLI ciktisinin dock alt panelinde nasil goruntulendigini, komut girdisi ve gecmisin nasil calistigini, Ctrl+C/timeout durumlarinda ne oldugunu tanimlar.*
 

@@ -48,5 +48,5 @@ devredebilir, token ve dosya yazma patlardı.
 
 ## §7 İlgili
 
-- [ADR-009-tool-execution-sandbox.md](adr-009-tool-execution-sandbox.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-009-tool-execution-sandbox|ADR-009-tool-execution-sandbox.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

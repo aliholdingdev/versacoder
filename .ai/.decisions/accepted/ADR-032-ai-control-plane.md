@@ -90,7 +90,7 @@ SSOT` etiketi kökten **kaldırılır** (D35).
 ### 2.5 Link Standardı (D50)
 
 Vault içi: `[[wikilink]]` (Obsidian rename/backlink). Dış/vault-üstü atıf:
-göreli MD `[t](../x.md)`. check-links.ps1 **iki biçimi** tarar.
+göreli MD `[[.decisions/x|t]]`. check-links.ps1 **iki biçimi** tarar.
 
 ### 2.6 Tüketici + Agent (D2/D11/D16/D30)
 
@@ -191,6 +191,6 @@ kriteri revize edilmiştir.
 
 ## §6 İlgili
 
-- [adr-index](../adr-index.md) · [brain](../brain.md)
-- [ADR-028](adr-028-layered-baseline-9-projects.md) (product katman baz)
-- [ADR-029](adr-029-ascii-box-drawing-only.md) (D22 revizyonu bu ADR'de)
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] (product katman baz)
+- [[.decisions/accepted/adr-029-ascii-box-drawing-only|ADR-029]] (D22 revizyonu bu ADR'de)

@@ -14,7 +14,7 @@ supersedes: ""
 
 # Şablon — Kök MD Belgesi (`root-md-template.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../../claude.md) · [docs-md-template.md](docs-md-template.md)
+**Zorunlu Bağlantılar:** [[.templates/index|index.md]] · [[claude|CLAUDE.md]] · [[.templates/documentation/docs-md-template|docs-md-template.md]]
 
 > **Tek cümlelik sorumluluk:** `.ai/` kökündeki 14 zorunlu belgenin **30–88 KB** bandını, ortak iskeletini ve birbirinden farkını tanımlar.
 > Şablon **kendi başına** bir kök belge değildir; kök belgeler bunu temel alır.

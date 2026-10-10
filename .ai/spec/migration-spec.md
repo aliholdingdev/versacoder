@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Migration Şartnamesi (`spec/migration-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/data-layer-spec|data-layer-spec]] · [[spec/host-layer-spec|host-layer-spec]] · [[spec/deployment-spec|deployment-spec]]
 
 > **Tek cümlelik sorumluluk:** *Şema nasıl değişir, hangi sıra ve checksum ile uygulanır, hata/geri alma durumunda ne olur* sorusunun tek cevabıdır.
 > Dosya adlandırma ve tablo kolonlarının **gözlemlenmiş kaynağı** `.ai/.sql/README.md`'dir; bu belge **davranış sözleşmesidir** (kaynakla çelişirse `NEEDS_VALIDATION` + `architect`).
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Migration dosyası davranışı, sıralama, idempotentlik | Sorgu/transaction kuralları: [data-layer-spec](data-layer-spec.md) |
-| 2 | `__Migrations` sürüm tablosu + checksum kilidi | Şemanın **kullanan** kodu: [infra-layer-spec](infra-layer-spec.md) |
-| 3 | Geri alma (down) ve yedek politikası | Dağıtımda `sql/` yerleşimi: [deployment-spec](deployment-spec.md) |
-| 4 | Uygulama zamanı (açılışta) ve timeout | Açılış sırası: [host-layer-spec](host-layer-spec.md) |
-| 5 | Yıkıcı işlem onayı (DROP/ALTER genişlemesi) | Onay mercii: [WORKFLOW](../governance/workflow.md) §3 |
+| 1 | Migration dosyası davranışı, sıralama, idempotentlik | Sorgu/transaction kuralları: [[spec/data-layer-spec|data-layer-spec]] |
+| 2 | `__Migrations` sürüm tablosu + checksum kilidi | Şemanın **kullanan** kodu: [[spec/infra-layer-spec|infra-layer-spec]] |
+| 3 | Geri alma (down) ve yedek politikası | Dağıtımda `sql/` yerleşimi: [[spec/deployment-spec|deployment-spec]] |
+| 4 | Uygulama zamanı (açılışta) ve timeout | Açılış sırası: [[spec/host-layer-spec|host-layer-spec]] |
+| 5 | Yıkıcı işlem onayı (DROP/ALTER genişlemesi) | Onay mercii: [[governance/workflow|WORKFLOW]] §3 |
 
 > **YASAK:** EF Core migration · kod içinde `ALTER/CREATE/ DROP` çalıştırma (DA-07) · uygulanmış dosyayı sonradan değiştirmek · string birleştirme ile SQL · onaysız yıkıcı migration (SEC-15).
 
@@ -91,7 +91,7 @@ supersedes: ""
 |---|---|---|
 | `net48` | ADO.NET provider ile aynı migration kodu | `#if` gerekmez |
 | `net10.0-windows` | Aynı | Davranış farkı = RED |
-| Dosyalar | `.sql` dosyaları **koda gömülmez**, çıktıya kopyalanır (`publish/sql/`) | Paketleme: [deployment-spec](deployment-spec.md) |
+| Dosyalar | `.sql` dosyaları **koda gömülmez**, çıktıya kopyalanır (`publish/sql/`) | Paketleme: [[spec/deployment-spec|deployment-spec]] |
 
 ---
 

@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Ürün Vizyonu (`VISION.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [PROJECTS](projects.md) · [brain](../.decisions/brain.md) · [keys](../governance/keys.md) · [glossary](glossary.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](../architecture/index.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[definitions/projects|PROJECTS]] · [[.decisions/brain|brain]] · [[governance/keys|keys]] · [[definitions/glossary|glossary]] · [[governance/workflow|WORKFLOW]] · [[claude|CLAUDE]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[architecture/index|architecture/index]]
 
 > **Tek cümlelik sorumluluk:** *VersaCoder ne üretir, hangi 7 ekranla sunulur, her ekranı kim kullanır ve hangi katman besler, rakiplerden 4 farkı nedir* sorusunun tek cevabıdır.
 > Bu dosya **niyet ve ürün haritası** taşır; kapsam/kayıt `PROJECTS.md`, karar gerekçesi `brain.md`, süreç `WORKFLOW.md` üzerindedir (SRP).
@@ -115,7 +115,7 @@ supersedes: ""
 | **Dokümantasyon** | `.md` (vault/spec/report) | `docs-writer` | Frontmatter 11 alan + `check-links` = 0 |
 | **Görsel üretim** | render prompt + görsel | `visual-director` | Render çıktısı ya da `[VERIFY]` parametre |
 
-**Görsel üretim hattının ayrıntısı** [AGENTS](agents.md) §8.5'tedir (8 adım:
+**Görsel üretim hattının ayrıntısı** [[definitions/agents|AGENTS]] §8.5'tedir (8 adım:
 INPUT → ANALYZE → UNDERSTAND → EXTRACT → PLAN → PROMPT → OPTIMIZE → FINAL);
 **dil/teknik terim politikası** AGENTS §3.1'dedir. Bu dosya yalnız **niyet ve
 ürün haritası** taşır (SRP).
@@ -126,7 +126,7 @@ henüz **planlıdır** → `DOĞRULAMA GEREKLI`. "Daha iyi görsel üretir" gibi
 ölçülmemiş başarı iddiası yazılmaz (G9).
 
 **Karar durumu:** Sağlayıcı entegrasyonu için taslak ADR yazıldı →
-[ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)
+[[.decisions/draft/adr-031-visual-production-provider|ADR-031]]
 (`status: draft`; U1–U8 açık konular kapatılmadan `accepted` olmaz).
 
 ---
@@ -447,7 +447,7 @@ olarak bırakılmıştır.
 | 5 | Dosya gezinme + diff onayı | `03-solution-explorer` + `04-code-editor` | Karşılığı yok (CLI dosyayı göstermez) | `DOĞRULAMA GEREKLI` |
 | 6 | UI kodu / `.Designer.cs` değişikliği | `05` → onay → `06` → `04` (F3 akışı) | **CLIden yapılmaz**; tasarım sahipliği `ui-designer`'da | `U5` (`.rules/ui-rules.md`) — `.Designer.cs` / `.resx` sahipliği |
 | 7 | Katman sınırı denetimi | Ekran değil — gate çıktısı | NetArchTest çalıştırması | `ADR-028` §2.3 şart 2 (matris = test) |
-| 8 | Vault belgesi düzenleme | Ekran değil — ajan işi | Yok | [AGENTS](agents.md) §1 matrisi |
+| 8 | Vault belgesi düzenleme | Ekran değil — ajan işi | Yok | [[definitions/agents|AGENTS]] §1 matrisi |
 
 **Ortak kural:** Aynı veri **iki yerde ayrı ayrı güncellenmez**; ekran ne
 yazarsa CLI onu okur, tersi de geçerlidir (kaynak: `VC-SES-015`). İkisi farklı
@@ -579,22 +579,22 @@ Persona listesi **tasarım girdisidir**; doğrulanması pazar araştırması ile
 
 §5 beş maddenin özetidir; bu tablo **envanterin kendisi değil**, kararın
 hangi belgede durduğunu gösteren **göstergedir** (envanter SSOT'u
-[PROJECTS](projects.md) §Kapsam dışı'dır). "Yapılmaz" sütunu kalıcı karar,
+[[definitions/projects|PROJECTS]] §Kapsam dışı'dır). "Yapılmaz" sütunu kalıcı karar,
 "Kaynak" sütunu onu veren belgedir; kaynak görülmemiş satır
 `DOĞRULAMA GEREKLI` ile işaretlenir ve yazılmadan geçer.
 
 | # | Yapılmaz | Neden yapılmaz | Kaynak |
 |---|---|---|---|
-| 1 | EF Core / herhangi bir tam ORM | `net48` bacağında taşınabilirliği yok; veri erişimi ADO.NET + Dapper, her sorgu parametreli | ADR-005 (bkz. [adr-index](../.decisions/adr-index.md)) |
-| 2 | Migration aracı (EF benzeri) | Migration = saf SQL + version tablosu; otomasyon katmanı kurulmaz | [new-doc-contract](../.templates/new-doc-contract.md) §4 |
-| 3 | WPF · WinUI · MAUI · Web UI | DevExpress WinForms yığını sabit; tek platform, tek kabuk | ADR-004 çizgisi (bkz. [adr-index](../.decisions/adr-index.md)) |
+| 1 | EF Core / herhangi bir tam ORM | `net48` bacağında taşınabilirliği yok; veri erişimi ADO.NET + Dapper, her sorgu parametreli | ADR-005 (bkz. [[.decisions/adr-index|adr-index]]) |
+| 2 | Migration aracı (EF benzeri) | Migration = saf SQL + version tablosu; otomasyon katmanı kurulmaz | [[.templates/new-doc-contract|new-doc-contract]] §4 |
+| 3 | WPF · WinUI · MAUI · Web UI | DevExpress WinForms yığını sabit; tek platform, tek kabuk | ADR-004 çizgisi (bkz. [[.decisions/adr-index|adr-index]]) |
 | 4 | Tarayıcı / SaaS IDE, VS Code eklentisi, VSIX | Kendi host'umuz var; eklenti pazarı iş kapsamı değil | Bölüm §1 "Biz DEĞİLİZ" |
 | 5 | macOS / Linux hedefi | `net10.0-windows` + WinForms Windows'a bağlı | Bölüm §1 "Biz DEĞİLİZ" |
 | 6 | CI/CD hattı | **Henüz yok** (durum, non-goal değil): repo 2026-09-29'da yalnız `.ai/` + `.git/` | Bölüm §5 madde 5 |
-| 7 | K3'un 618 DLL'lik tier envanterinin kataloga girmesi | Tek sayim birimi `N###` kayittir; türetilmiş veri rapor satırıdır | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.2 |
+| 7 | K3'un 618 DLL'lik tier envanterinin kataloga girmesi | Tek sayim birimi `N###` kayittir; türetilmiş veri rapor satırıdır | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §2.2 |
 | 8 | 8. ve üzeri ekran / 16 wireframe hedefi | 7 ekran sabittir; eski wireframe referanstır | Bölüm §7 Red Team madde 2 |
-| 9 | DevExpress sürüm karması (birden çok v sürümü) | Tek sürüm: Universal 2026 / v26.1 | [new-doc-contract](../.templates/new-doc-contract.md) §4 |
-| 10 | EF Core içeren herhangi bir "yardımcı" paket | Paket, taşıma yasağını dolaylı yoldan kırar | ADR-005 + [new-doc-contract](../.templates/new-doc-contract.md) §4 |
+| 9 | DevExpress sürüm karması (birden çok v sürümü) | Tek sürüm: Universal 2026 / v26.1 | [[.templates/new-doc-contract|new-doc-contract]] §4 |
+| 10 | EF Core içeren herhangi bir "yardımcı" paket | Paket, taşıma yasağını dolaylı yoldan kırar | ADR-005 + [[.templates/new-doc-contract|new-doc-contract]] §4 |
 | 11 | Model eğitimi / kendi LLM'imizi barındırmak | Router yalnız **çağrı** yapar; eğitim ve ağırlık saklama yok | `DOĞRULAMA GEREKLI` |
 | 12 | Eklenti / genişletilebilir eklenti pazarı | Kapalı kapsam; uzantılar vault (`.ai`) ile yapılır | `DOĞRULAMA GEREKLI` |
 
@@ -602,7 +602,7 @@ hangi belgede durduğunu gösteren **göstergedir** (envanter SSOT'u
 konusu değildir; 11-12 ise henüz yazılmamış kapsamdır ve kapıdan geçerken
 `DOĞRULAMA GEREKLI` etiketi taşır. Kapsam dışı bir iş istenirse bu dosyada
 "neden yapmayız" aranmaz — karar burada değil, **kaynak belgede** durur
-(SSOT): kapsam envanteri [PROJECTS](projects.md)'tedir.
+(SSOT): kapsam envanteri [[definitions/projects|PROJECTS]]'tedir.
 
 ---
 
@@ -657,11 +657,11 @@ konusu değildir; 11-12 ise henüz yazılmamış kapsamdır ve kapıdan geçerke
 | 8 | Katman haritası | `architecture/index.md` |
 | 9 | Prompt kaynağı (platform anatomisi, 7 problem) | `G:/…/versacoder proje planlaması ai.04.md` |
 | 10 | Prompt kaynağı (proje tanımı, "Proje nedir") | `G:/…/versacoder proje planlaması ai.02.md` |
-| ROLE | [ROLE](role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| MEMORY | [MEMORY](../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](../ops/log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ROLE | [[definitions/role|ROLE]] | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| MEMORY | [[memory/memory|MEMORY]] | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [[ops/log|log]] | append-only is gunlugu + Quality Report |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

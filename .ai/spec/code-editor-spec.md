@@ -14,7 +14,7 @@ supersedes: ""
 
 # Kod Editörü Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [diff-view](diff-view-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/solution-explorer-spec|solution-explorer]] · [[spec/diff-view-spec|diff-view]] · [[spec/search-grep-spec|search-grep]]
 
 > **Tek cümlelik sorumluluk:** *Dosya nasıl açılır, nasıl gösterilir, nasıl kaydedilir ve sekme hangi kurallarla kapanır* sorusunun tek cevabıdır.
 > Editör **gösterim + tampon**dur; dosya I/O'nu yapan katman l4, komut yönlendirmesi l2 handler'dır.
@@ -31,11 +31,11 @@ Görüntüleme yüzeyi `RichEditControl` (sözdizimi renklendirme + satır numar
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Sekme aç/kapa/odakla, kirli gösterge | Ağaçtan çift tık tetikleyicisi | [solution-explorer](solution-explorer-spec.md) |
-| 2 | Metin gösterimi, satır numarası, sözdizimi | Kaynak dosyanın modeli/DTO'su | [project-model](project-model-spec.md) |
-| 3 | Kaydet / tümünü kaydet / geri al-yinele | Yerel arama çubuğu dışında proje araması | [search-grep](search-grep-spec.md) |
-| 4 | Değişiklik kabul/geri alma görünümü çağrısı | Diff algoritması ve kabul akışı | [diff-view](diff-view-spec.md) |
-| 5 | Dosya I/O çağrısı (l4 portu) | DB/LLM/agent görevi | [task-queue](task-queue-spec.md) |
+| 1 | Sekme aç/kapa/odakla, kirli gösterge | Ağaçtan çift tık tetikleyicisi | [[spec/solution-explorer-spec|solution-explorer]] |
+| 2 | Metin gösterimi, satır numarası, sözdizimi | Kaynak dosyanın modeli/DTO'su | [[spec/project-model-spec|project-model]] |
+| 3 | Kaydet / tümünü kaydet / geri al-yinele | Yerel arama çubuğu dışında proje araması | [[spec/search-grep-spec|search-grep]] |
+| 4 | Değişiklik kabul/geri alma görünümü çağrısı | Diff algoritması ve kabul akışı | [[spec/diff-view-spec|diff-view]] |
+| 5 | Dosya I/O çağrısı (l4 portu) | DB/LLM/agent görevi | [[spec/task-queue-spec|task-queue]] |
 
 ---
 
@@ -64,7 +64,7 @@ Görüntüleme yüzeyi `RichEditControl` (sözdizimi renklendirme + satır numar
 | T2 | Kirli sekme başlıkta `*` ile işaretlenir | kaydetme sonrası `*` kalkar |
 | T3 | Kapanışta kirli: Kaydet / Vazgeç / İptal | İptal = sekme açık kalır |
 | T4 | Otomatik yedek **yalnız** bellek içi (crash recovery) | diske gölge dosya yazılmaz |
-| T5 | Yeniden açılışta önceki sekme kümesi geri gelir | [persistence](persistence-spec.md) oturum kaydı |
+| T5 | Yeniden açılışta önceki sekme kümesi geri gelir | [[spec/persistence-spec|persistence]] oturum kaydı |
 
 ### §2.3 Görüntüleme ve dil
 
@@ -73,7 +73,7 @@ Görüntüleme yüzeyi `RichEditControl` (sözdizimi renklendirme + satır numar
 | G1 | Satır numarası | sol marj; kaydırma ile senkron; gizlenebilir |
 | G2 | Sözdizimi | dosya uzantısına göre kural seti (`.cs/.py/.sql/.md/.json`) |
 | G3 | Kelime/dizi sarma | `#region` **yok** (coding-standards); katlama yalnız görsel |
-| G4 | Kodlaması bozuk dosya | okunamazsa Türkçe hata + "hex/ham aç" seçeneği yok → [error-handling](error-handling-spec.md) |
+| G4 | Kodlaması bozuk dosya | okunamazsa Türkçe hata + "hex/ham aç" seçeneği yok → [[spec/error-handling-spec|error-handling]] |
 | G5 | Büyük dosya (≥ 2 MB) | salt-okunur uyarı + ikinci parça yükleme (`NEEDS_VALIDATION`) |
 
 ---

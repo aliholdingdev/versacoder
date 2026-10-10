@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Performans Ölçüm Şartnamesi (`spec/performance-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/test-strategy|test-strategy]] · [[spec/release-spec|release-spec]]
 
 > **Tek cümlelik sorumluluk:** *Bütçe ihlalini **kim, hangi araçla, kaç örnekle** kanıtlar ya da temizler* sorusunun tek cevabıdır.
 > Bütçe **değerleri** `.rules/performance-guidelines.md` §1 (B1..B10) dosyasındadır — burada **tekrar edilmez** (SSOT); bu belge yalnız **ölçüm yöntemi + kabul kanıtı**dır.
@@ -32,9 +32,9 @@ supersedes: ""
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
 | 1 | Ölçüm yöntemi, araç, örnek sayısı, ortam | Bütçe **değerleri**: `.rules/performance-guidelines.md` §1 |
-| 2 | p95 hesabı ve rapor satırı biçimi | Test framework/kapsamı: [test-strategy](test-strategy.md) |
-| 3 | Regresyon eşiği (ne zaman RED) | Kod inceleme seviyeleri: [review-spec](review-spec.md) |
-| 4 | Performans kanıtının release'e girişi | Sürüm/not akışı: [release-spec](release-spec.md) |
+| 2 | p95 hesabı ve rapor satırı biçimi | Test framework/kapsamı: [[spec/test-strategy|test-strategy]] |
+| 3 | Regresyon eşiği (ne zaman RED) | Kod inceleme seviyeleri: [[spec/review-spec|review-spec]] |
+| 4 | Performans kanıtının release'e girişi | Sürüm/not akışı: [[spec/release-spec|release-spec]] |
 | 5 | Yavaşlık durumunda kök neden adımı | Teknik destek/tekrar: `.ai` içinde ilgili playbook |
 
 > **YASAK:** Kanıtsız "optimized" iddiası (G5) · benchmark'ı tek çalıştırmak · Debug derlemesiyle Release sonucu ölçmek · ölçüm kodunu koda gömüp yayınlamak.

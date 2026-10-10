@@ -13,7 +13,7 @@ supersedes: ""
 ---
 # Tester Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [[index|index]] | [[definitions/agents|AGENTS.md]] | [[governance/workflow|WORKFLOW.md]] | [[definitions/role|ROLE.md]] | [[.decisions/adr-index|ADR index]] | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | [[checklists/layer-boundary-check|layer-boundary-check]] | [[.agents/architect-agent|architect]] | [[.agents/developer-agent|developer]] | [[.agents/reviewer-agent|reviewer]] | [[.agents/ui-designer-agent|ui-designer]] | [[.agents/general-agent|general]]
 
 > **Tek cumlelik sorumluluk:** Tester; her fonksiyon icin gecen testi yazar, coverage'i olcur ve kapiya kirmizi/yesil kanit tasinmasini saglar.
 
@@ -30,9 +30,9 @@ Tester, kanitin sahibi ajan. Profilin tamami AGENTS.md §1.1 icindeki TESTER blo
 
 ## §1 On Kosullar
 
-- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) biliniyor.
-- [WORKFLOW.md](../governance/workflow.md) gate sirasi okundu.
-- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) katmanlari hatirlaniyor.
+- [[definitions/agents|AGENTS.md]] cikti kutusu (§2) biliniyor.
+- [[governance/workflow|WORKFLOW.md]] gate sirasi okundu.
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] katmanlari hatirlaniyor.
 
 ## §2 Adimlar
 
@@ -51,13 +51,13 @@ Tester, kanitin sahibi ajan. Profilin tamami AGENTS.md §1.1 icindeki TESTER blo
 | Kirilgan test | Sık calisirsa duser | Bağımsız yap |
 | Coverage dusuk | < %80 | Kritik dallari ekle |
 | Bos test | Assert yok | Assertion ekle |
-| Kopuk link | Yeni test linklenmis | [index](../index.md) kontrol |
+| Kopuk link | Yeni test linklenmis | [[index|index]] kontrol |
 
 ## §4 Geri Alma
 
 1. Testi geri al: `git checkout -- tests/`
 2. Eski coverage degerini not et.
-3. [index](../index.md) gate notunu guncelle.
+3. [[index|index]] gate notunu guncelle.
 
 ## §5 Kabul Kriteri
 
@@ -85,13 +85,13 @@ Tester, kanitin sahibi ajan. Profilin tamami AGENTS.md §1.1 icindeki TESTER blo
 |---|---|---|
 | Test suresi | 15 dk | Sayi |
 | Coverage | >= %80 | Rapor |
-| Kanit | [index](../index.md) | Gate |
+| Kanit | [[index|index]] | Gate |
 
 ## §8 Kapsam Disi
 
-- Kodu duzeltmek (bkz. [developer](developer-agent.md)).
-- Kod incelemesi (bkz. [reviewer](reviewer-agent.md)).
-- UI tasarimi (bkz. [ui-designer](ui-designer-agent.md)).
+- Kodu duzeltmek (bkz. [[.agents/developer-agent|developer]]).
+- Kod incelemesi (bkz. [[.agents/reviewer-agent|reviewer]]).
+- UI tasarimi (bkz. [[.agents/ui-designer-agent|ui-designer]]).
 
 ## §9 Kanit
 

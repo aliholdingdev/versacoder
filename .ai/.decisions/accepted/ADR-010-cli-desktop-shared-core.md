@@ -49,5 +49,5 @@ edilir, davranış sapması ve 2x iş oluşurdu.
 
 ## §7 İlgili
 
-- [ADR-028-layered-baseline-9-projects.md](adr-028-layered-baseline-9-projects.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028-layered-baseline-9-projects.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

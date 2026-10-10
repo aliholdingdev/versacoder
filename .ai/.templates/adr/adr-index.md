@@ -14,7 +14,7 @@ supersedes: ""
 
 # ADR Dizin Şablonu — ADR Kayıt Defteri
 
-**Zorunlu Bağlantılar:** [Vault Ana Sayfa](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [ADR Dizini](../../.decisions/index.md) · [Genel ADR Şablonu](adr-template.md) · [Nygard Şablonu](adr-nygard-template.md)
+**Zorunlu Bağlantılar:** [[index|Vault Ana Sayfa]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|ADR Dizini]] · [[.templates/adr/adr-template|Genel ADR Şablonu]] · [[.templates/adr/adr-nygard-template|Nygard Şablonu]]
 
 ---
 
@@ -36,7 +36,7 @@ supersedes: ""
 | Dizin dosyası | `.ai/.decisions/index.md` | ⚠️ VERIFICATION REQUIRED |
 | ADR dosyaları | `.ai/.decisions/accepted|draft|rejected/` | ⚠️ VERIFICATION REQUIRED |
 | Numara aralığı | ADR-001..ADR-008 planı (+ ADR-010 örneği) | ⚠️ VERIFICATION REQUIRED |
-| Slug dili | İngilizce, tireli | [rules](../../.rules) |
+| Slug dili | İngilizce, tireli | [[.rules|rules]] |
 | Supersede kuralı | G13 zinciri zorunlu | §4.5 |
 
 > **Not:** Dizin, tüm ADR'lerin tek doğruluk kaynağıdır (SSOT); ADR dosyaları kendi durumunu yazsa bile **dizin satırı geçerlidir**.
@@ -68,10 +68,10 @@ supersedes: ""
 | 2 | Klasörler: `accepted/`, `draft/`, `rejected/` | ⚠️ VERIFICATION REQUIRED |
 | 3 | ADR planı: ADR-001..ADR-008 (+ ADR-010 örneği) | plan belgesi ⚠️ |
 | 4 | GATE-000..005 kapıları ADR'lerle ilişkili | ⚠️ VERIFICATION REQUIRED |
-| 5 | Frontmatter 7 alan, `authority: primary` | [rules](../../.rules) |
-| 6 | Slug'lar İngilizce, içerik Türkçe | [rules](../../.rules) |
-| 7 | Test: xunit, %90 coverage | [rules](../../.rules) |
-| 8 | Vault kök: index.md, architecture/index.md, keys.md | [index](../../index.md) |
+| 5 | Frontmatter 7 alan, `authority: primary` | [[.rules|rules]] |
+| 6 | Slug'lar İngilizce, içerik Türkçe | [[.rules|rules]] |
+| 7 | Test: xunit, %90 coverage | [[.rules|rules]] |
+| 8 | Vault kök: index.md, architecture/index.md, keys.md | [[index|index]] |
 
 ## §2 — Bağlam (Context)
 
@@ -83,7 +83,7 @@ supersedes: ""
 | Klasörler | `accepted/`, `draft/`, `rejected/` | ⚠️ VERIFICATION REQUIRED |
 | Dosya adı formatı | `ADR-NNN-<english-slug>.md` | ⚠️ VERIFICATION REQUIRED |
 | Numara planı | ADR-001..008 (+010 örneği) | plan belgesi ⚠️ |
-| Frontmatter | `title,type,category,status,version,updated,authority` | [rules](../../.rules) |
+| Frontmatter | `title,type,category,status,version,updated,authority` | [[.rules|rules]] |
 | Supersede | eski ADR `superseded` + yeni ADR linki | G13 |
 
 ### §2.2 — Kararı tetikleyen tetikleyiciler
@@ -115,9 +115,9 @@ supersedes: ""
 
 ### §2.4 — Kapsam dışı açıkça şunlardır
 
-1. ADR'lerin içeriği (bak: [ADR Şablonu](adr-template.md)).
+1. ADR'lerin içeriği (bak: [[.templates/adr/adr-template|ADR Şablonu]]).
 2. `.ai/.rules/` kural dosyaları (ayrı SSOT).
-3. [ARCHITECTURE](../../architecture/index.md) mimari anlatımı.
+3. [[architecture/index|ARCHITECTURE]] mimari anlatımı.
 4. Kod içi karar yorumları (ADR'ye link verir, defter değildir).
 
 ## §3 — Karar (Decision)
@@ -151,7 +151,7 @@ supersedes: ""
 | Kapsam | Kapsam dışı |
 |---|---|
 | `.ai/.decisions/` altındaki tüm ADR'ler | ADR içeriği şablonları (ayrı dosyalar) |
-| `index.md` defteri | [ARCHITECTURE](../../architecture/index.md) |
+| `index.md` defteri | [[architecture/index|ARCHITECTURE]] |
 | Durum/supersede kuralları | Kod içi yorumlar |
 
 ### §3.6 — Bağımlılıklar ve ön koşullar
@@ -186,7 +186,7 @@ Karar **[geri alınabilir / kısmen geri alınabilir / geri alınamaz]**. Geri a
 | A4 | ADR kabulü + katalog reconcile (seçildi) | — |
 
 #### §3.10.3 — Gerekçe
-[ADR Dizini](../../.decisions/index.md) SSOT'tur; katalog ise ADR'lerin etkilediği envanterin (ajanlar, ekranlar, kurallar) yansımasıdır. ADR kabul edildiğinde yansıma güncellenmezse vault içinde iki farklı gerçek oluşur.
+[[.decisions/index|ADR Dizini]] SSOT'tur; katalog ise ADR'lerin etkilediği envanterin (ajanlar, ekranlar, kurallar) yansımasıdır. ADR kabul edildiğinde yansıma güncellenmezse vault içinde iki farklı gerçek oluşur.
 #### §3.10.4 — Kabul kriterleri
 | # | Kriter | Ölçüt | Kanıt |
 |---|---|---|---|
@@ -196,7 +196,7 @@ Karar **[geri alınabilir / kısmen geri alınabilir / geri alınamaz]**. Geri a
 | KR4 | Status tutarlı | klasör=status | komut 3 |
 
 #### §3.10.5 — Kapsam
-`.ai/.decisions/index.md` + katalog dosyaları + ilgili [rules](../../.rules) satırları.
+`.ai/.decisions/index.md` + katalog dosyaları + ilgili [[.rules|rules]] satırları.
 #### §3.10.6 — Kapsam dışı
 Kod içi ajan implementasyonları; CLI davranışları.
 #### §3.10.7 — Bağımlılıklar
@@ -271,7 +271,7 @@ G1 (frontmatter), G12 (dizin), G13 (supersede), G14 (doğrulama).
 | G9 | Supersede zinciri kopuk | RED |
 | G10 | Kapsam %90 altı | RED |
 | G11 | Uyarı varlığı | `TreatWarningsAsErrors` → RED |
-| G12 | [.decisions/index.md](../../.decisions/index.md) güncellenmedi | RED |
+| G12 | [[.decisions/index|.decisions/index.md]] güncellenmedi | RED |
 | G13 | Supersede zinciri koptu | RED |
 | G14 | PowerShell yalnız-oku ihlali | RED |
 
@@ -284,7 +284,7 @@ G1 (frontmatter), G12 (dizin), G13 (supersede), G14 (doğrulama).
 | # | Adım | Çıktı |
 |---|---|---|
 | 1 | Diskteki ADR dosyalarını listele | dosya listesi |
-| 2 | Mevcut [dizini](../../.decisions/index.md) oku | mevcut satırlar |
+| 2 | Mevcut [[.decisions/index|dizini]] oku | mevcut satırlar |
 | 3 | Yeni/en büyük ADR-NNN numarasını bul | numara |
 | 4 | Slug'u İngilizce+tireli yaz, tekrarı denetle | slug |
 | 5 | Dizin satırını hazırla (status, tarih, supersede) | satır |
@@ -466,7 +466,7 @@ Zincir kuralları:
 ## Ek A — Dizin Satırı Formatı (standart)
 
 ```markdown
-| ADR-NNN | [başlık](accepted/adr-nnn-slug.md) | slug | status | YYYY-MM-DD | superseded-by-ADR-MMM / — |
+| ADR-NNN | [[.templates/adr/accepted/adr-nnn-slug|başlık]] | slug | status | YYYY-MM-DD | superseded-by-ADR-MMM / — |
 ```
 
 Kurallar:
@@ -503,6 +503,6 @@ Geçiş kuralları:
 2. §3.10 bloğunu örnek kabul et; içeriği kendine göre yaz.
 3. §5.3 komutlarıyla doğrula (1–6 hepsi "olmalı" yorumlarını karşılasın).
 4. §6.1 18 maddeyi işaretle; §6.5 ek kontrolleri çalıştır.
-5. [ADR Dizini](../../.decisions/index.md) → [ADR Şablonu](adr-template.md) → [Vault Ana Sayfa](../../index.md).
+5. [[.decisions/index|ADR Dizini]] → [[.templates/adr/adr-template|ADR Şablonu]] → [[index|Vault Ana Sayfa]].
 
-**Zorunlu Bağlantılar (tekrar):** [Vault Ana Sayfa](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [ADR Dizini](../../.decisions/index.md) · [ADR Şablonu](adr-template.md) · [Nygard Şablonu](adr-nygard-template.md)
+**Zorunlu Bağlantılar (tekrar):** [[index|Vault Ana Sayfa]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|ADR Dizini]] · [[.templates/adr/adr-template|ADR Şablonu]] · [[.templates/adr/adr-nygard-template|Nygard Şablonu]]

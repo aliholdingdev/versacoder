@@ -14,9 +14,9 @@ supersedes: ""
 
 # Diff Onay Blogu ve Gate
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-025](../../.decisions/accepted/adr-025-gate003-ui-hard-stop.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 5/8):** [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [terminal-cli-surface](terminal-cli-surface.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[definitions/vision|VISION]] · [[.decisions/accepted/adr-025-gate003-ui-hard-stop|ADR-025]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (engine · 5/8):** [[knowledge/engine/free-model-router|free-model-router]] · [[knowledge/engine/parallel-batch-limit|parallel-batch-limit]] · [[knowledge/engine/terminal-cli-surface|terminal-cli-surface]]
 
 > **Tek cumlelik sorumluluk:** *Bir dosya degisikligi ne zaman yazilir, onay kimin elindedir* sorusunun tek cevabidir.
 
@@ -94,10 +94,10 @@ Degisiklik onerisi **diff blogu** olarak acilir; kullanici **Onayla / Reddet** d
 
 | Konu | Dosya |
 |---|---|
-| Wizard onay adimlari | [wizard-approval-flow](wizard-approval-flow.md) |
-| Streaming + diff satiri | [agent-streaming-sse](agent-streaming-sse.md) |
-| Checkpoint / kanit kutusu | [session-checkpoint-persistence](session-checkpoint-persistence.md) |
-| Arac sozlesmesi | [protocol-tool-schema](protocol-tool-schema.md) |
+| Wizard onay adimlari | [[knowledge/engine/wizard-approval-flow|wizard-approval-flow]] |
+| Streaming + diff satiri | [[knowledge/engine/agent-streaming-sse|agent-streaming-sse]] |
+| Checkpoint / kanit kutusu | [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] |
+| Arac sozlesmesi | [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] |
 
 ---
 

@@ -14,9 +14,9 @@ supersedes: ""
 
 # connection-string-secrets - Baglanti Metni ve Sirlar
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) · [keys](../../governance/keys.md) · [coding-standards](../../.rules/coding-standards.md) · [ado-net-connection](ado-net-connection.md)
-**Küme + Hub:** [data index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md)
-**Kardeşler (data · 6/25):** [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [concurrency-optimistic](concurrency-optimistic.md) · [dapper-async-patterns](dapper-async-patterns.md) · [dapper-multi-map](dapper-multi-map.md) · [dapper-procedures-stored](dapper-procedures-stored.md) · [dapper-query-mapping](dapper-query-mapping.md) · [migration-rollback](migration-rollback.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [pagination-offset-keyset](pagination-offset-keyset.md) · [parameterized-queries](parameterized-queries.md) · [repository-pattern-thin](repository-pattern-thin.md) · [sql-injection-defense](sql-injection-defense.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md) · [transaction-scope-local](transaction-scope-local.md) · [unit-of-work-pattern](unit-of-work-pattern.md)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005]] · [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] · [[governance/keys|keys]] · [[.rules/coding-standards|coding-standards]] · [[knowledge/data/ado-net-connection|ado-net-connection]]
+**Küme + Hub:** [[knowledge/data/index|data index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]]
+**Kardeşler (data · 6/25):** [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/migration-rollback|migration-rollback]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]] · [[knowledge/data/transaction-scope-local|transaction-scope-local]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]]
 
 > **Tek cumlelik sorumluluk:** *Baglanti metni - ozellikle parola - nerede, nasil, kim icin sifrelenerek saklanir* sorusunun tek cevabidir.
 
@@ -92,7 +92,7 @@ File.WriteAllText(secretPath, Convert.ToBase64String(protectedBytes));  // duz m
 
 ## §5 Kardesler
 
-[ado-net-connection](ado-net-connection.md) · [connection-pooling-notes](connection-pooling-notes.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md) · [ado-net-command](ado-net-command.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md)
+[[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]] · [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]]
 
 ---
 

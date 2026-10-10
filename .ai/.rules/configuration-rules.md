@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "CPM kilidi, appsettings l6, çift TFM ayarları"
-tags: [['rules', 'configuration', 'cpx', 'g8', 'packages']]
+tags: [rules, configuration, cpx, g8, packages]
 source: "Birleştirme: .ai/CLAUDE.md G8 + ADR-014 + brain.md §1/014"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Yapılandırma Kuralları (G8)
 
@@ -46,5 +46,5 @@ RED → BLOCKED; paket onaysız girmez (G7 paraleli: sürüm değişimi = onay).
 
 ## İlgili
 
-- [ADR-014](../.decisions/accepted/adr-014-slnx-and-cpm.md)
-- [layer-rules](layer-rules.md)
+- [[.decisions/accepted/adr-014-slnx-and-cpm|ADR-014]]
+- [[.rules/layer-rules|layer-rules]]

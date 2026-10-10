@@ -14,9 +14,9 @@ supersedes: ""
 
 # Wizard - Adim Adim Onay Akisi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-009](../../.decisions/accepted/adr-009-tool-execution-sandbox.md) · [ADR-025](../../.decisions/accepted/adr-025-gate003-ui-hard-stop.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 4/8):** [agent-streaming-sse](agent-streaming-sse.md) · [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [terminal-cli-surface](terminal-cli-surface.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[definitions/vision|VISION]] · [[.decisions/accepted/adr-009-tool-execution-sandbox|ADR-009]] · [[.decisions/accepted/adr-025-gate003-ui-hard-stop|ADR-025]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (engine · 4/8):** [[knowledge/engine/agent-streaming-sse|agent-streaming-sse]] · [[knowledge/engine/free-model-router|free-model-router]] · [[knowledge/engine/parallel-batch-limit|parallel-batch-limit]] · [[knowledge/engine/terminal-cli-surface|terminal-cli-surface]]
 
 > **Tek cumlelik sorumluluk:** *Kullanici niyeti hangi adimlardan gecer, hangi noktada onay zorunludur* sorusunun tek cevabidir.
 
@@ -91,10 +91,10 @@ Wizard, tek yuksek seviyeli istegi (niyet) **adimlara boler** ve her adimda acik
 
 | Konu | Dosya |
 |---|---|
-| Diff onay blogu | [diff-approval-gate](diff-approval-gate.md) |
-| Checkpoint / gate kapanisi | [session-checkpoint-persistence](session-checkpoint-persistence.md) |
-| Arac sozlesmesi (adim 4) | [protocol-tool-schema](protocol-tool-schema.md) |
-| Ekran akisi | [VISION §2](../../definitions/vision.md) |
+| Diff onay blogu | [[knowledge/engine/diff-approval-gate|diff-approval-gate]] |
+| Checkpoint / gate kapanisi | [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] |
+| Arac sozlesmesi (adim 4) | [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] |
+| Ekran akisi | [[definitions/vision|VISION §2]] |
 
 ---
 

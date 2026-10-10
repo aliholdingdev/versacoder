@@ -14,7 +14,7 @@ supersedes: ""
 
 # LOG — Islem Gunlugu (append-only kanit defteri)
 
-**Zorunlu Baglantilar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [WORKFLOW.md](../governance/workflow.md) · [ROLE.md](../definitions/role.md) · [AGENTS.md](../definitions/agents.md) · [brain.md](../.decisions/brain.md) · [keys.md](../governance/keys.md) · [glossary.md](../definitions/glossary.md) · [VISION.md](../definitions/vision.md) · [MEMORY.md](../memory/memory.md)
+**Zorunlu Baglantilar:** [[index|index.md]] · [[claude|CLAUDE.md]] · [[governance/workflow|WORKFLOW.md]] · [[definitions/role|ROLE.md]] · [[definitions/agents|AGENTS.md]] · [[.decisions/brain|brain.md]] · [[governance/keys|keys.md]] · [[definitions/glossary|glossary.md]] · [[definitions/vision|VISION.md]] · [[memory/memory|MEMORY.md]]
 
 > **Tek cumlelik sorumluluk:** *"Bugun ne yaptik, kaniti ne, siradaki adim ne?"* sorusunun tek cevabidir — her satir **TARIH + IS + DOSYA + KANIT + SONRAKI** tasinir; kanit hucresi bos satir yazilmaz, `DOĞRULAMA GEREKLİ` ile kapanir ve devir notuna (§4) dusurulur.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 Bu dosya **2026-09-29** gununun is gunlugudur ve **append-only**dir: satirlar silinmez,
 duzeltme yeni satir olur. Bugunun iki ana omurgasi var: (1) **mimari tartisma 3 turda
-21 ajanla kapatildi** ve [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+21 ajanla kapatildi** ve [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
 olarak kilitlendi; (2) **vault kurulumu + olcum/temizlik turu** — 177 MD recursive sayildi,
 mojibake 8 dosyada 20 eslesme duzeltildi, link taramasi calistirildi. Kaniti olmayan tek
 is **port islemleri**; o da `DOĞRULAMA GEREKLİ` ile §2'de duruyor.
@@ -62,8 +62,8 @@ ama icerigi okunup dogrulanmadi; zincir kirmizi kalmaya devam ediyor.
 ```
 
 > **KURAL:** Bu dosyaya yalnız **olmus is + kanit + sonraki adim** girer. Gerekce
-> [brain.md](../.decisions/brain.md)'de, ders [MEMORY.md](../memory/memory.md)'de, kural [CLAUDE.md](../claude.md)'de,
-> surec [WORKFLOW.md](../governance/workflow.md)'dedir — buraya tasinan bilgi tekrar olur ve silinir (SSUT).
+> [[.decisions/brain|brain.md]]'de, ders [[memory/memory|MEMORY.md]]'de, kural [[claude|CLAUDE.md]]'de,
+> surec [[governance/workflow|WORKFLOW.md]]'dedir — buraya tasinan bilgi tekrar olur ve silinir (SSUT).
 
 ---
 
@@ -109,15 +109,15 @@ kanitlandigini** yazar. Asagidaki sutun tanimi tek bescidir; sutun disi bilgi
 | `OLCUM` | sayac/tarama/dizin ciktisi | §2/6 recursive 177 MD |
 | `KARAR` | kilitlenmis mimari/kural degisikligi | §2/1 ADR-028 |
 | `UYARI` | kanit var ama sonuc olumsuz / tutarsiz | §2/9 bayat ADR defteri |
-| `DERS` | ogrenim [MEMORY.md](../memory/memory.md) §1'e duser | §2/10 envanter anliktir |
+| `DERS` | ogrenim [[memory/memory|MEMORY.md]] §1'e duser | §2/10 envanter anliktir |
 
 ### §1.4 Ne girmez (4 yasak)
 
 | Yasak | Neden | Nereye gider |
 |---|---|---|
-| Gerekce / alternatif tartismasi | tekrar olur, ADR'de yeri var | [brain.md](../.decisions/brain.md) + `.decisions/` |
-| Kalici ders ("bunu bir daha yapmayalim") | gunluk okunmaz, aranir | [MEMORY.md](../memory/memory.md) §1 |
-| Zorunlu kural metni | kural ihlali gerekcesiyle yazilir | [CLAUDE.md](../claude.md) + `.rules/` |
+| Gerekce / alternatif tartismasi | tekrar olur, ADR'de yeri var | [[.decisions/brain|brain.md]] + `.decisions/` |
+| Kalici ders ("bunu bir daha yapmayalim") | gunluk okunmaz, aranir | [[memory/memory|MEMORY.md]] §1 |
+| Zorunlu kural metni | kural ihlali gerekcesiyle yazilir | [[claude|CLAUDE.md]] + `.rules/` |
 | Tahmin edilmis sayi | bayat/yanlis sayi yalanci is listesi olur | `DOĞRULAMA GEREKLİ` etiketi |
 
 ### §1.5 Tarih, saat ve sure yazimi (kaynakli)
@@ -148,7 +148,7 @@ Yeni is = tablonun **dibine** 1 satir; duzeltme = eski satirin altina **yeni** s
 
 | # | TARIH | IS | DOSYA | KANIT | SONRAKI |
 |---|---|---|---|---|---|
-| 1 | 2026-09-29 | Mimari tartisma 3 turda 21 ajanla kapatildi (10 senior -> 5 senior -> 3 junior + 3 ajans), son tur 6/6 sartli kabul | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §3 | oy sutunlari 4/10 · 4/5 · 6/6 | ilk build oncesi 6 duzeltme (§2/4) |
+| 1 | 2026-09-29 | Mimari tartisma 3 turda 21 ajanla kapatildi (10 senior -> 5 senior -> 3 junior + 3 ajans), son tur 6/6 sartli kabul | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §3 | oy sutunlari 4/10 · 4/5 · 6/6 | ilk build oncesi 6 duzeltme (§2/4) |
 | 2 | 2026-09-29 | Katmanli baz karari kilitlendi: 8 makro katman (l0..l7) + 44 alt katman = 52 dugum, 9 uretim + 1-2 test projesi, cift TFM | ADR-028 §2.1 | 9 satirlik katman/proje tablosu | katman siniri kontrolu `checklists/layer-boundary-check.md` |
 | 3 | 2026-09-29 | Vault kurulumu tamamlandi: klasor iskeleti, indeksler ve sablon seti yerlestirildi | `index.md`, `.templates/index.md`, `spec/index.md` | kokte 13/14 MD, toplam 177 MD (ilk olcum) | eksik dosya `ULTRA-THINKING.md` gun icinde olustu → icerik teyidi §2/17 |
 | 4 | 2026-09-29 | Ilk build oncesi 6 zorunlu duzeltme kilitlendi (CPM paketleri, 8x8 matris, "Sekiz katman" ifadesi, N<->klasor eslesmesi, gercek tarama yolu, TFM + l0 portlari) | ADR-028 §2.3 | 6 satir, her satirda kanit kosulu | duzeltmeler kod basinda uygulanacak |
@@ -157,7 +157,7 @@ Yeni is = tablonun **dibine** 1 satir; duzeltme = eski satirin altina **yeni** s
 | 7 | 2026-09-29 | Mojibake onarim turu: **8 dosyada 20 eslesme** duzeltildi; onceki olcum 9 dosyaydi | `.templates/` (8 dosya), `scripts/measure-vault.md` (onceki liste) | 8 dosya / 20 eslesme; onceki 9 dosya = `reports/10-bilinen-eksikler.md` §1 | `find-mojibake.ps1` = 0 → kalan 1 dosya teyidi |
 | 8 | 2026-09-29 | Link taramasi calistirildi; onceki rapor **1516 iyi / 46 bozuk** link diyor, yeni cikti rapora yazilmadi | `scripts/check-links.ps1`, `reports/index.md` | onceki sayilar rapor satirinda; yeni cikti `DOĞRULAMA GEREKLİ` | yeni ciktiyi rapora yaz; bozuk = 0 hedefi |
 | 9 | 2026-09-29 | ADR defterleri bayat: diskte **28 ADR** varken `adr-index.md` 5 satir, `.decisions/index.md` 7 satir gosteriyor | `.decisions/adr-index.md`, `.decisions/index.md` | iki defter de disk sayimiyla celisiyor (UYARI) | hangisi SSOT → `DOĞRULAMA GEREKLİ` |
-| 10 | 2026-09-29 | Envanter anlikti: `knowledge/index.md` "kob `index.md` diskte YOK" derken dosya ayni gun olustu (15.693 B) | `knowledge/index.md`, `index.md` | dizin listesinde `index.md` VAR | sayilar tarihli yazilacak (ders [MEMORY.md](../memory/memory.md) L-06) |
+| 10 | 2026-09-29 | Envanter anlikti: `knowledge/index.md` "kob `index.md` diskte YOK" derken dosya ayni gun olustu (15.693 B) | `knowledge/index.md`, `index.md` | dizin listesinde `index.md` VAR | sayilar tarihli yazilacak (ders [[memory/memory|MEMORY.md]] L-06) |
 | 11 | 2026-09-29 | Katalog sayimi 5440 kayit PASS (esik >= 5000, hatali format 0) — 2026-09-25 olcumu, bugun yeniden sayilmadi | `scripts/count-components.ps1` | 5440 kayit / 0 hatali format / PASS | marj 0 → her katalog degisiminde yeniden say |
 | 12 | 2026-09-29 | Klasor olgunlasmayi olcumu: `.rules/` 17 dosya (16 kural + indeks), `checklists/` 31 dosya, `reports/` 9 dosya | `.rules/index.md`, `reports/index.md` | dizin listesi (bugun) | eski rapor satirlari guncellenecek |
 | 13 | 2026-09-29 | Bos/tekil alanlar tespiti: `knowledge/` `prompts/` `playbooks/` = yalniz indeks; `ui-design/` `.agents/` `.sql/` = 0 dosya; `architecture/` 10 alt klasor + 0 alt dosya | `architecture/index.md` + dizin listesi | 0 girisli klasorler | icerik batch'i beklemede (§4/4) |
@@ -191,7 +191,7 @@ Yeni is = tablonun **dibine** 1 satir; duzeltme = eski satirin altina **yeni** s
 |---|---|
 | Ne yapildi | 3 tur delegasyon: 10 senior -> 5 senior -> 3 junior + 3 ajans (toplam 21 ajan); her tur kendi oyuyla kaldi |
 | Cikti | 8 makro katman + 44 alt katman = 52 dugum; 9 uretim + 1-2 test projesi; cift TFM `net48` / `net10.0-windows` |
-| Kanit | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.1 (tablo), §3 (oy 4/10, 4/5, 6/6) |
+| Kanit | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §2.1 (tablo), §3 (oy 4/10, 4/5, 6/6) |
 | Sonraki | 6 zorunlu duzeltme kod basinda; katman siniri `checklists/layer-boundary-check.md` 13 sorusu |
 
 **Kart 2 — mojibake onarimi (§2/7):**
@@ -201,7 +201,7 @@ Yeni is = tablonun **dibine** 1 satir; duzeltme = eski satirin altina **yeni** s
 | Ne yapildi | UTF-8 disi byte iceren 8 dosyada toplam 20 eslesme duzeltildi |
 | Onceki durum | `reports/10-bilinen-eksikler.md` §1 — 9 dosya listeliyordu (8'i `.templates/`, biri `scripts/measure-vault.md`) |
 | Kanit | 8 dosya / 20 eslesme (duzeltme kaydi); kalan 1 dosya icin tarama tekrari = `DOĞRULAMA GEREKLİ` |
-| Sonraki | `scripts/find-mojibake.ps1` hedefi **0 dosya**; 0 olana kadar L-04 ([MEMORY.md](../memory/memory.md)) kapanmaz |
+| Sonraki | `scripts/find-mojibake.ps1` hedefi **0 dosya**; 0 olana kadar L-04 ([[memory/memory|MEMORY.md]]) kapanmaz |
 
 **Kart 3 — link taramasi (§2/8):**
 
@@ -218,7 +218,7 @@ Yeni is = tablonun **dibine** 1 satir; duzeltme = eski satirin altina **yeni** s
 |---|---|
 | Ne yapildi | port uzerinden ortam/erisim hazirlik islemi yapildigi bilgisi var |
 | Kanit | **yok** — port listesi, tarih/saat ve komut ciktisi bu oturumda okunmadi |
-| Etiket | `DOĞRULAMA GEREKLİ` — tahminle doldurulmaz ([MEMORY.md](../memory/memory.md) §3.1) |
+| Etiket | `DOĞRULAMA GEREKLİ` — tahminle doldurulmaz ([[memory/memory|MEMORY.md]] §3.1) |
 | Sonraki | kanit gelince yeni satir acilir; o ana kadar hicbir gate bu satira dayanmaz |
 
 ### §2.2 Kapanan ve acik kalan isler
@@ -327,7 +327,7 @@ eski satir uzerine yazma (append-only).
 ## §3 Kanit Kutusu (WORKFLOW §2 — 4 satir, zorunlu)
 
 Her is **kapandigi anda** asagidaki 4 satirlik kutuyla raporlanir. Kutu ile
-[AGENTS.md](../definitions/agents.md)'deki 5 alanli ajan kutusu **ayni sey degildir** (SSUT): biri
+[[definitions/agents|AGENTS.md]]'deki 5 alanli ajan kutusu **ayni sey degildir** (SSUT): biri
 kapi kaniti, digeri ajan ciktisidir; biri digerinin yerine kullanilamaz.
 
 ```text
@@ -416,7 +416,7 @@ RED NEDENI : DOSYA eksik ("bitti" iddiasi kanitsiz)|
 
 ## §4 Devir Notu (sonraki oturuma 4 madde)
 
-Devir **4 madde zorunludur** ([AGENTS.md](../definitions/agents.md) §3); eksik devir is emri degil,
+Devir **4 madde zorunludur** ([[definitions/agents|AGENTS.md]] §3); eksik devir is emri degil,
 taslaktir ve alici geri cevirebilir. Asagidaki paket bu oturumun kapanisidir.
 
 ```text
@@ -447,8 +447,8 @@ taslaktir ve alici geri cevirebilir. Asagidaki paket bu oturumun kapanisidir.
 
 | Sinir | Kaynak | Asiminda |
 |---|---|---|
-| 8 makro katman / 9 proje disina cikma | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §2.1 | mimari RED, is durur |
-| 618 DLL envanterini kataloga alma | [MEMORY.md](../memory/memory.md) §3/1 + `reports/k3-618-ham-envanter.md` | sayim iki birime bolunur |
+| 8 makro katman / 9 proje disina cikma | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §2.1 | mimari RED, is durur |
+| 618 DLL envanterini kataloga alma | [[memory/memory|MEMORY.md]] §3/1 + `reports/k3-618-ham-envanter.md` | sayim iki birime bolunur |
 | Ikinci sayim birimi (Tier-DLL sutunu) uretme | ADR-028 §2.2 | marj 0'dan negatife |
 | Onaysiz `.cs` yazimi / commit | G7 + ADR-025 | G12 RED, geri alinir |
 | Baska vault'tan icerik kopyasi | ADR-002 + `.templates/new-doc-contract.md` §4/5 | G1 RED, benzerlik taramasi |
@@ -552,11 +552,11 @@ olmayan bilgi §2'de `DOĞRULAMA GEREKLİ` olarak yazar.
 |---|---|---|---|
 | `C:\www\versacoder\versacoder\.ai\MEMORY.md` | kalin hafiza yapisi + derslerin bicimi | 31 KB, govde bicimi referans alindi | Hayir — icerik kopyalanmadi (ADR-002) |
 | `C:\www\versacoder\versacoder\.ai\log.md` | gunluk satir bicimi + olaylar | 33,4 KB, satir bicimi referans alindi | Hayir |
-| [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | 8 katman / 52 dugum / 9 proje, 3 tur 21 ajan, 6 duzeltme | §2.1 tablo, §2.3 (6 satir), §3 (oylar) | Hayir |
+| [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | 8 katman / 52 dugum / 9 proje, 3 tur 21 ajan, 6 duzeltme | §2.1 tablo, §2.3 (6 satir), §3 (oylar) | Hayir |
 | `.templates/new-doc-contract.md` | boyut bandi, link yasagi, kopya yasagi | 30-88 KB + 26 hedef + SSUT | Hayir |
 | `.templates/documentation/root-md-template.md` | kok dosya iskeleti | H1 + Zorunlu Baglantilar + §0 | Hayir |
-| [WORKFLOW.md](../governance/workflow.md) | gate zinciri + 4 satirli kanit kutusu | GATE-004a acik; `KANIT/DOSYA/EKSIK/SONRAKI` | Hayir |
-| [AGENTS.md](../definitions/agents.md) | ajan kutusu (5 alan) + devir 4 madde | iki kutunun farki (SSUT) | Hayir |
+| [[governance/workflow|WORKFLOW.md]] | gate zinciri + 4 satirli kanit kutusu | GATE-004a acik; `KANIT/DOSYA/EKSIK/SONRAKI` | Hayir |
+| [[definitions/agents|AGENTS.md]] | ajan kutusu (5 alan) + devir 4 madde | iki kutunun farki (SSUT) | Hayir |
 | `reports/10-bilinen-eksikler.md` | 46 bozuk link + 9 mojibake dosya | §1 (9 dosya), §2 (dagilim) | Hayir |
 | `reports/index.md` | rapor seti durumu + eski tarama sayilari | 9 dosya; 1516 iyi / 46 bozuk | Hayir |
 | `.decisions/adr-index.md` + `.decisions/index.md` | defter satir sayilari | 5 satir ve 7 satir — diskte 28 ADR | Hayir (bayat, §2/9) |
@@ -632,10 +632,10 @@ Bu dosyanin diger 18 vault dosyasina baglantilari (eksiksiz; hicbir baglanti sil
 
 | # | Dosya | Ne tasiyor |
 |---|---|---|
-| engine | [engine](../definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| PROJECTS | [PROJECTS](../definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| ULTRA | [ULTRA](../definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

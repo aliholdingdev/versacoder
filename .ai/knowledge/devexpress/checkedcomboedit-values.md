@@ -14,9 +14,9 @@ supersedes: ""
 
 # CheckedComboBoxEdit Degerleri
 
-**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [hata kurallari](../../.rules/error-handling-rules.md) · [ADR-005 ado.net dapper](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [comboboxedit-autocomplete](comboboxedit-autocomplete.md) · [dx-validation-provider](dx-validation-provider.md)
-**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|bilgi indeksi]] · [[index|vault index]] · [[.rules/error-handling-rules|hata kurallari]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005 ado.net dapper]] · [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] · [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 5/35):** tam liste → [[knowledge/devexpress/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *CheckedComboBoxEdit'e eleman nasil eklenir, secilen degerler nasil okunur/yazilir ve dogrulanir* sorusunun tek cevabidir.
 
@@ -145,10 +145,10 @@ this.dxErrorProvider1.SetError(this.checkedComboBoxEditModules,
 
 | Konu | Dosya |
 |---|---|
-| Tek secimli kisa liste | [comboboxedit-autocomplete](comboboxedit-autocomplete.md) |
-| Hata ikonu | [dx-validation-provider](dx-validation-provider.md) |
-| Veri kaynagi | [datasource-binding-dapper](datasource-binding-dapper.md) |
-| Tarih/saat editoru | [dateedit-timeedit](dateedit-timeedit.md) |
+| Tek secimli kisa liste | [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] |
+| Hata ikonu | [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] |
+| Veri kaynagi | [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
+| Tarih/saat editoru | [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] |
 
 ## §9 Kanit
 

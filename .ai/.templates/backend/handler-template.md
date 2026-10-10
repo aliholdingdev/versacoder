@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Command/Query Handler Şablonu (CQRS İskeleti)
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[.templates/architecture/ascii-diagram-template]] · [[architecture/index]] · [[.rules/coding-standards]]
 
 ---
 
@@ -151,7 +151,7 @@ authority: primary
 
 ````markdown
 # <KomutAdı> — <türkçe açıklama>
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/service-template]] · [[backend/repository-template]] · [[.templates/architecture/ascii-diagram-template]] · [[architecture/index]] · [[.rules/coding-standards]]
 ````
 
 ### §3.2 Command/Query Sözleşmesi (dolu örnek)
@@ -196,7 +196,7 @@ public interface IQueryHandler<TQuery, TResult>
 ```
 
 **Ne anlatır:** Beş davranış **her zaman** bu sırayla çalışır; 2. basamak `Result.Fail` döndüğünde 3–5 hiç çalışmaz (kapı).
-**Kaynak:** [[../../architecture/index.md]] · **Doğrulama:** §5.3/5 — 2026-09-25.
+**Kaynak:** [[architecture/index]] · **Doğrulama:** §5.3/5 — 2026-09-25.
 
 ### §3.4 Saf Validator Katmanı (FluentValidation değil)
 

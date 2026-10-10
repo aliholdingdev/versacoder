@@ -14,8 +14,8 @@ supersedes: ""
 
 # Engine — Bilgi Kümesi İndeksi
 
-**Zorunlu Bağlantılar:** [knowledge index](../index.md) · [vault index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Küme + Hub:** [engine index](index.md)
+**Zorunlu Bağlantılar:** [[knowledge/index|knowledge index]] · [[index|vault index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]]
 
 > **Tek cümlelik sorumluluk:** Bu klasördeki **8 bilgi dosyasının** hangisini
 > ne zaman açacağını tek tabloda söyler; cevabın kendisi o dosyadadır.
@@ -30,13 +30,13 @@ supersedes: ""
 
 | # | Dosya | Tek satır (frontmatter scope) |
 |---|---|---|
-| 1 | [agent-streaming-sse.md](agent-streaming-sse.md) | Saglayici SSE akisi -> l5 IAgentStreamSink -> 05-ai-chat ekrani: 5 adimli kullanici akisi, … |
-| 2 | [diff-approval-gate.md](diff-approval-gate.md) | Diff onay blogu: l2 durum makinesi, 05 -> onay -> 06 -> 04 akisi, red edilirse dosya etkisi … |
-| 3 | [free-model-router.md](free-model-router.md) | Ucretsiz model router: saglayici sirasi (OpenRouter /free -> Ollama -> OpenAI-uyumlu uc), … |
-| 4 | [parallel-batch-limit.md](parallel-batch-limit.md) | Paralel ajan siniri (<= 3), blok/sira karar matrisi, ezme (write conflict) cozumu ve … |
-| 5 | [protocol-tool-schema.md](protocol-tool-schema.md) | l5 Protocol arac sozlesmesi: ITool/ToolCall/ToolResult, JSON sema + tool_schema_version, … |
-| 6 | [session-checkpoint-persistence.md](session-checkpoint-persistence.md) | Checkpoint (gate karsilastirmasi), teslim kutusu, hibrit bellek (oturum ici + vault) ve … |
-| 7 | [terminal-cli-surface.md](terminal-cli-surface.md) | VersaCoder.Cli konsol yuzeyi: l0..l6 ortek cekirdek (ADR-010), ekran karsiliklari, … |
-| 8 | [wizard-approval-flow.md](wizard-approval-flow.md) | Wizard: niyet -> 5 adim -> kademeli onay; onay verilmeden tool cagrisi ve dosya yazimi yok … |
+| 1 | [[knowledge/engine/agent-streaming-sse|agent-streaming-sse.md]] | Saglayici SSE akisi -> l5 IAgentStreamSink -> 05-ai-chat ekrani: 5 adimli kullanici akisi, … |
+| 2 | [[knowledge/engine/diff-approval-gate|diff-approval-gate.md]] | Diff onay blogu: l2 durum makinesi, 05 -> onay -> 06 -> 04 akisi, red edilirse dosya etkisi … |
+| 3 | [[knowledge/engine/free-model-router|free-model-router.md]] | Ucretsiz model router: saglayici sirasi (OpenRouter /free -> Ollama -> OpenAI-uyumlu uc), … |
+| 4 | [[knowledge/engine/parallel-batch-limit|parallel-batch-limit.md]] | Paralel ajan siniri (<= 3), blok/sira karar matrisi, ezme (write conflict) cozumu ve … |
+| 5 | [[knowledge/engine/protocol-tool-schema|protocol-tool-schema.md]] | l5 Protocol arac sozlesmesi: ITool/ToolCall/ToolResult, JSON sema + tool_schema_version, … |
+| 6 | [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence.md]] | Checkpoint (gate karsilastirmasi), teslim kutusu, hibrit bellek (oturum ici + vault) ve … |
+| 7 | [[knowledge/engine/terminal-cli-surface|terminal-cli-surface.md]] | VersaCoder.Cli konsol yuzeyi: l0..l6 ortek cekirdek (ADR-010), ekran karsiliklari, … |
+| 8 | [[knowledge/engine/wizard-approval-flow|wizard-approval-flow.md]] | Wizard: niyet -> 5 adim -> kademeli onay; onay verilmeden tool cagrisi ve dosya yazimi yok … |
 
-> **Hub:** [knowledge index](../index.md) diğer 4 kümeye (csharp · data · engine · winforms · devexpress) açılır.
+> **Hub:** [[knowledge/index|knowledge index]] diğer 4 kümeye (csharp · data · engine · winforms · devexpress) açılır.

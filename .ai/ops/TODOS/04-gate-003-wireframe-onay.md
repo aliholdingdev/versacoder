@@ -14,7 +14,7 @@ supersedes: ""
 
 # Faz 04 — GATE-003: 7 Wireframe Onayı
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [ui-design README](../../ui-design/readme.md) · [gate-003-ui-onay](../../checklists/gate-003-ui-onay.md) · [Faz 03](03-faz-d-iskelet.md) · [VISION](../../definitions/vision.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [WORKFLOW](../../governance/workflow.md)
+**Zorunlu Bağlantılar:** [[ops/TODOS/index|TODOS index]] · [[ui-design/readme|ui-design README]] · [[checklists/gate-003-ui-onay|gate-003-ui-onay]] · [[ops/TODOS/03-faz-d-iskelet|Faz 03]] · [[definitions/vision|VISION]] · [[.rules/devexpress-rules|devexpress-rules]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cümlelik sorumluluk:** 7 ekranın hangi sırayla sunulup neyin onaylanacağının ve
 
@@ -44,18 +44,18 @@ supersedes: ""
 
 Onay paketi **hazır**: `ui-design/` 8/8 (README + 7 wireframe, 5,1-6,4 KB).
 Eksik olan **yalnız kullanıcı onayı**. Onay yoksa `VersaCoder.Desktop` içinde tek
-satır bile yazılmaz — bu kural [WORKFLOW](../../governance/workflow.md) §2 ile aynı ve
+satır bile yazılmaz — bu kural [[governance/workflow|WORKFLOW]] §2 ile aynı ve
 ihlali tüm kodu başa döndürür (2x iş).
 
 | # | Dosya | Ekran | Onay |
 |---|---|---|---|
-| 1 | [01-start-page](../../ui-design/01-start-page.md) | karşılama + son projeler | ⏳ |
-| 2 | [02-main-ide](../../ui-design/02-main-ide.md) | ana pencere kabuğu | ⏳ |
-| 3 | [03-solution-explorer](../../ui-design/03-solution-explorer.md) | çözüm ağacı | ⏳ |
-| 4 | [04-code-editor](../../ui-design/04-code-editor.md) | kod editörü | ⏳ |
-| 5 | [05-ai-chat](../../ui-design/05-ai-chat.md) | ajan sohbeti | ⏳ |
-| 6 | [06-agent-panel](../../ui-design/06-agent-panel.md) | görev paneli | ⏳ |
-| 7 | [07-settings](../../ui-design/07-settings.md) | ayarlar diyaloğu | ⏳ |
+| 1 | [[ui-design/01-start-page|01-start-page]] | karşılama + son projeler | ⏳ |
+| 2 | [[ui-design/02-main-ide|02-main-ide]] | ana pencere kabuğu | ⏳ |
+| 3 | [[ui-design/03-solution-explorer|03-solution-explorer]] | çözüm ağacı | ⏳ |
+| 4 | [[ui-design/04-code-editor|04-code-editor]] | kod editörü | ⏳ |
+| 5 | [[ui-design/05-ai-chat|05-ai-chat]] | ajan sohbeti | ⏳ |
+| 6 | [[ui-design/06-agent-panel|06-agent-panel]] | görev paneli | ⏳ |
+| 7 | [[ui-design/07-settings|07-settings]] | ayarlar diyaloğu | ⏳ |
 
 ---
 
@@ -91,7 +91,7 @@ ihlali tüm kodu başa döndürür (2x iş).
 ## §3 Kabul Kriterleri
 
 - [ ] 7/7 ekran satır satır onaylanmış
-- [ ] [gate-003-ui-onay](../../checklists/gate-003-ui-onay.md) tümü [x]
+- [ ] [[checklists/gate-003-ui-onay|gate-003-ui-onay]] tümü [x]
 - [ ] Reddedilen/ düzeltme gelen varsa yeniden çizim + tekrar onay
 - [ ] `log.md`'de tarihli onay kaydı
 - [ ] Onaydan **önce** yazılmış `.cs` yok (tarama: `src/VersaCoder.Desktop/*.cs` = yalnız iskelet)

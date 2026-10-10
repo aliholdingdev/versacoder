@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Genel Mimari Şablonu (K0..K8 Katman Yığını)
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[../CLAUDE.md]] · [[../adr/adr-architecture-template]] · [[ascii-diagram-template]] · [[layer-spec-template]] · [[dependency-rule-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/adr/adr-architecture-template]] · [[ascii-diagram-template]] · [[layer-spec-template]] · [[dependency-rule-template]]
 
 ---
 
@@ -131,7 +131,7 @@ template: architecture-template.md
 
 ```markdown
 # Mimari — <konu>
-**Zorunlu Bağlantılar:** [[../ARCHITECTURE]] · [[../WORKFLOW]] · [[../adr/index]] · [[layer-<ad>]] · [[dependency-rule]] · [[../.templates/index]]
+**Zorunlu Bağlantılar:** [[.templates/ARCHITECTURE]] · [[.templates/WORKFLOW]] · [[.templates/adr/index]] · [[layer-<ad>]] · [[dependency-rule]] · [[.templates/.templates/index]]
 ```
 
 Üretilen dosyanın 7 bölümü bu şablonun §1..§7'siyle **aynı adları** taşır (tutarsız bölüm adı = §6.2 R3).

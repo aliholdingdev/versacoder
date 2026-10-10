@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Kod İnceleme Şartnamesi (`spec/review-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [test-strategy](test-strategy.md) · [docs-spec](docs-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/test-strategy|test-strategy]] · [[spec/docs-spec|docs-spec]]
 
 > **Tek cümlelik sorumluluk:** *İnceleme hangi ölçütlerle yapılır, bulgu nasıl yazılır ve PASS/RED neye kanıtlanır* sorusunun tek cevabıdır.
-> Rol/SLA/devre akışı `.ai/AGENTS.md` §2.3 ve [WORKFLOW](../governance/workflow.md) §3'tedir (tekrar yok); bu belge **ölçüt + karar kanıtı**dır.
+> Rol/SLA/devre akışı `.ai/AGENTS.md` §2.3 ve [[governance/workflow|WORKFLOW]] §3'tedir (tekrar yok); bu belge **ölçüt + karar kanıtı**dır.
 
 ---
 
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | İnceleme ölçütleri (statik + mimari + iki bacak) | Test **üretimi**: [test-strategy](test-strategy.md) |
+| 1 | İnceleme ölçütleri (statik + mimari + iki bacak) | Test **üretimi**: [[spec/test-strategy|test-strategy]] |
 | 2 | Bulgu biçimi, seviye tanımı, RED dönüş yolu | Rol yetkisi/SLA: `.ai/AGENTS.md` §2.3 |
-| 3 | GREEN için zorunlu kanıt seti | Gate çıkış kontrolü: [WORKFLOW](../governance/workflow.md) §3 |
-| 4 | Vault/MD inceleme ölçütları | Belge kuralları: [docs-spec](docs-spec.md) |
-| 5 | Performans ölçümünün incelemeye girişi | Ölçüm yöntemi: [performance-spec](performance-spec.md) |
+| 3 | GREEN için zorunlu kanıt seti | Gate çıkış kontrolü: [[governance/workflow|WORKFLOW]] §3 |
+| 4 | Vault/MD inceleme ölçütları | Belge kuralları: [[spec/docs-spec|docs-spec]] |
+| 5 | Performans ölçümünün incelemeye girişi | Ölçüm yöntemi: [[spec/performance-spec|performance-spec]] |
 
 > **YASAK:** Kanıtsız PASS (G5) · incelemede kod düzeltmek (RED → `developer`) · seviyesiz bulgu · "bence temiz" gerekçesi · iki bacaktan yalnız birini incelemek (G6).
 
@@ -48,12 +48,12 @@ supersedes: ""
 | # | Ölçüt | Kontrol | Bağlı spec |
 |---|---|---|---|
 | 1 | Anayasa | G1..G12 tek tek | `CLAUDE.md` (link) |
-| 2 | SQL/veri | EF Core 0 · concat 0 · parameterized · timeout | [data-layer-spec](data-layer-spec.md) |
-| 3 | İki bacak | net48 **ve** net10 build/test yeşil | [build-spec](build-spec.md) |
-| 4 | Katman yönü | NetArchTest 0 ihlal · `#if` yalnız platform | [protocol-layer-spec](protocol-layer-spec.md) |
-| 5 | Güvenlik | Secret/izin/rolmelenme (SEC-01..16) | [security-spec](security-spec.md) |
-| 6 | Vault/MD | Frontmatter 11 alan · link 0 bozuk · mojibake 0 | [docs-spec](docs-spec.md) |
-| 7 | Performans | Bütçe ölçümü var mı (p95) | [performance-spec](performance-spec.md) |
+| 2 | SQL/veri | EF Core 0 · concat 0 · parameterized · timeout | [[spec/data-layer-spec|data-layer-spec]] |
+| 3 | İki bacak | net48 **ve** net10 build/test yeşil | [[spec/build-spec|build-spec]] |
+| 4 | Katman yönü | NetArchTest 0 ihlal · `#if` yalnız platform | [[spec/protocol-layer-spec|protocol-layer-spec]] |
+| 5 | Güvenlik | Secret/izin/rolmelenme (SEC-01..16) | [[spec/security-spec|security-spec]] |
+| 6 | Vault/MD | Frontmatter 11 alan · link 0 bozuk · mojibake 0 | [[spec/docs-spec|docs-spec]] |
+| 7 | Performans | Bütçe ölçümü var mı (p95) | [[spec/performance-spec|performance-spec]] |
 
 ### §2.2 Bulgu biçimi ve seviyeler
 

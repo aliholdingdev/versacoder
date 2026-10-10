@@ -14,10 +14,10 @@ supersedes: ""
 
 # Görev Kuyruğu Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md) · [notification](notification-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/session-spec|session-spec]] · [[spec/agent-panel-spec|agent-panel]] · [[spec/notification-spec|notification]]
 
 > **Tek cümlelik sorumluluk:** *Bir görev ne zaman kuyruğa girer, hangi sırayla çalışır, nasıl duraklatılır/iptal edilir* sorusunun tek cevabıdır.
-> Durumun **gösterimi** [agent-panel](agent-panel-spec.md)’tedir; durumun **kaydı** [session-spec](session-spec.md)/[persistence](persistence-spec.md) üzerindedir.
+> Durumun **gösterimi** [[spec/agent-panel-spec|agent-panel]]’tedir; durumun **kaydı** [[spec/session-spec|session-spec]]/[[spec/persistence-spec|persistence]] üzerindedir.
 
 ---
 
@@ -31,11 +31,11 @@ Kuyruk **tek çalıştırıcıdır**: aynı anda en fazla **1** `running` görev
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Sıralama, öncelik, çalıştırma politikası | Paneldeki sütun/filtre görünümü | [agent-panel](agent-panel-spec.md) |
-| 2 | Durum makinesi + geçersiz geçiş reddi | Oturum/transcript içeriği | [session-spec](session-spec.md) |
-| 3 | Pause/Resume/Cancel gecikme sözleşmesi | Tool şeması ve izin onayı | [tool-spec](tool-spec.md) |
-| 4 | Kuyruğun kalıcı olması ve kurtarma | Kayıt yolu/formatı | [persistence](persistence-spec.md) |
-| 5 | "Görev bitti/başarısız" bildirimi tetiği | Toast/bildirim biçimi | [notification](notification-spec.md) |
+| 1 | Sıralama, öncelik, çalıştırma politikası | Paneldeki sütun/filtre görünümü | [[spec/agent-panel-spec|agent-panel]] |
+| 2 | Durum makinesi + geçersiz geçiş reddi | Oturum/transcript içeriği | [[spec/session-spec|session-spec]] |
+| 3 | Pause/Resume/Cancel gecikme sözleşmesi | Tool şeması ve izin onayı | [[spec/tool-spec|tool-spec]] |
+| 4 | Kuyruğun kalıcı olması ve kurtarma | Kayıt yolu/formatı | [[spec/persistence-spec|persistence]] |
+| 5 | "Görev bitti/başarısız" bildirimi tetiği | Toast/bildirim biçimi | [[spec/notification-spec|notification]] |
 
 ---
 

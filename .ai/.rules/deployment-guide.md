@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Desktop + CLI dağıtımı; packaging spec'e köprü"
-tags: [['rules', 'deployment', 'packaging', 'release']]
+tags: [rules, deployment, packaging, release]
 source: "Birleştirme: spec/deployment-spec.md + spec/packaging-spec.md + spec/release-spec.md (requirement SSOT D33)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Dağıtım Kılavuzu
 
@@ -34,11 +34,11 @@ supersedes: ""
 
 ## Spec köprüleri
 
-- [deployment-spec](../spec/deployment-spec.md) — hedef ortam/kurulum
-- [packaging-spec](../spec/packaging-spec.md) — paket/kilit sürümler
-- [release-spec](../spec/release-spec.md) — sürüm/not akışı
+- [[spec/deployment-spec|deployment-spec]] — hedef ortam/kurulum
+- [[spec/packaging-spec|packaging-spec]] — paket/kilit sürümler
+- [[spec/release-spec|release-spec]] — sürüm/not akışı
 
 ## İlgili
 
-- [ADR-010](../.decisions/accepted/adr-010-cli-desktop-shared-core.md)
-- [configuration-rules](configuration-rules.md)
+- [[.decisions/accepted/adr-010-cli-desktop-shared-core|ADR-010]]
+- [[.rules/configuration-rules|configuration-rules]]

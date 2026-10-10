@@ -14,10 +14,10 @@ supersedes: ""
 
 # Agent Panel Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [session-spec](session-spec.md) · [tool-spec](tool-spec.md) · [task-queue](task-queue-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/session-spec|session-spec]] · [[spec/tool-spec|tool-spec]] · [[spec/task-queue-spec|task-queue]]
 
 > **Tek cümlelik sorumluluk:** *Görev listesi hangi sütunları gösterir, durum geçişleri nasıl yansıtılır ve log akışı nereden okunur* sorusunun tek cevabıdır.
-> Durumun **kuralı** [task-queue](task-queue-spec.md) ve [session-spec](session-spec.md)’tadır; bu dosya yalnızca **gösterimi** sahiplenir.
+> Durumun **kuralı** [[spec/task-queue-spec|task-queue]] ve [[spec/session-spec|session-spec]]’tadır; bu dosya yalnızca **gösterimi** sahiplenir.
 
 ---
 
@@ -31,11 +31,11 @@ Panel `GridControl` (durum/filtre sütunlu) + detay bölümü (tool çağrılar�
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Görev listesi sütunları, filtre, sıralama, detay açma | Kuyruk sırası, öncelik, iptal kuralı | [task-queue](task-queue-spec.md) |
-| 2 | Durum rozetlerinin **gösterimi** | Durum makinesi doğrulaması | [session-spec](session-spec.md) |
-| 3 | Tool çağrısı satırı (ad, özet, süre, sonuç) | Tool şeması ve izin modeli | [tool-spec](tool-spec.md) |
-| 4 | Log akışı (satır bazlı, kaydırma, filtre) | Log sink'i ve dosya biçimi | [observability](observability-spec.md) |
-| 5 | Hata satırı gösterimi | Hata kodu üretimi | [error-handling](error-handling-spec.md) |
+| 1 | Görev listesi sütunları, filtre, sıralama, detay açma | Kuyruk sırası, öncelik, iptal kuralı | [[spec/task-queue-spec|task-queue]] |
+| 2 | Durum rozetlerinin **gösterimi** | Durum makinesi doğrulaması | [[spec/session-spec|session-spec]] |
+| 3 | Tool çağrısı satırı (ad, özet, süre, sonuç) | Tool şeması ve izin modeli | [[spec/tool-spec|tool-spec]] |
+| 4 | Log akışı (satır bazlı, kaydırma, filtre) | Log sink'i ve dosya biçimi | [[spec/observability-spec|observability]] |
+| 5 | Hata satırı gösterimi | Hata kodu üretimi | [[spec/error-handling-spec|error-handling]] |
 
 ---
 

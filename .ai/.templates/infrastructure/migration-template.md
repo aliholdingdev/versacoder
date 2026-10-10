@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Şema Migration Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../infrastructure/dapper-mapping-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/query/Query-Template]] · [[.templates/infrastructure/dapper-mapping-template]] · [[.templates/adr/adr-data-template]] · [[architecture/index]]
 
 ---
 
@@ -326,7 +326,7 @@ authority: primary
 ---
 # V0XX — {{SLUG}}
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../query/Query-Template]] · [[../infrastructure/dapper-mapping-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]] · [[../CLAUDE]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/query/Query-Template]] · [[.templates/infrastructure/dapper-mapping-template]] · [[.templates/adr/adr-data-template]] · [[architecture/index]] · [[.templates/index]]
 
 ## §1 Amaç — {{BIR_CUMLE}}
 ## §2 Künye

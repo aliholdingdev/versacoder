@@ -14,9 +14,9 @@ supersedes: ""
 
 # Global Tema ve Office2010
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [ADR-004](../../.decisions/accepted/adr-004-devexpress-universal-v261-office2010.md) · [ribbon-control-office2010](ribbon-control-office2010.md) · [nuget-references-cpm](nuget-references-cpm.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress · 5/35):** [accessibility-keyboard-nav](accessibility-keyboard-nav.md) · [accordion-navigation](accordion-navigation.md) · [alertcontrol-notifications](alertcontrol-notifications.md) · [bar-status-items](bar-status-items.md) · [chartcontrol-basics](chartcontrol-basics.md) · [checkedcomboedit-values](checkedcomboedit-values.md) · [comboboxedit-autocomplete](comboboxedit-autocomplete.md) · [datasource-binding-dapper](datasource-binding-dapper.md) · [dateedit-timeedit](dateedit-timeedit.md) · [docking-saved-layout-xml](docking-saved-layout-xml.md) · [docklayout-persistence](docklayout-persistence.md) · [dockmanager-panels](dockmanager-panels.md) · [dx-validation-provider](dx-validation-provider.md) · [grid-conditional-format-rules](grid-conditional-format-rules.md) · [grid-editing-modes](grid-editing-modes.md) · [grid-export-excel-pdf](grid-export-excel-pdf.md) · [grid-filtering-sorting](grid-filtering-sorting.md) · [grid-grouping-summaries](grid-grouping-summaries.md) · [grid-paging-virtual-mode](grid-paging-virtual-mode.md) · [grid-search-panel-find](grid-search-panel-find.md) · [gridcontrol-basics](gridcontrol-basics.md) · [gridview-columns-format](gridview-columns-format.md) · [layoutcontrol-grouping](layoutcontrol-grouping.md) · [lookUpEdit-cascading](lookupedit-cascading.md) · [mvvm-pattern-devexpress](mvvm-pattern-devexpress.md) · [performance-grid-optimization](performance-grid-optimization.md) · [ribbon-pages-groups-items](ribbon-pages-groups-items.md) · [skin-customization](skin-customization.md) · [splashscreen-waitform](splashscreen-waitform.md) · [tabcontrol-multipage](tabcontrol-multipage.md)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.rules/devexpress-rules|devexpress-rules]] · [[.decisions/accepted/adr-004-devexpress-universal-v261-office2010|ADR-004]] · [[knowledge/devexpress/ribbon-control-office2010|ribbon-control-office2010]] · [[knowledge/devexpress/nuget-references-cpm|nuget-references-cpm]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress · 5/35):** [[knowledge/devexpress/accessibility-keyboard-nav|accessibility-keyboard-nav]] · [[knowledge/devexpress/accordion-navigation|accordion-navigation]] · [[knowledge/devexpress/alertcontrol-notifications|alertcontrol-notifications]] · [[knowledge/devexpress/bar-status-items|bar-status-items]] · [[knowledge/devexpress/chartcontrol-basics|chartcontrol-basics]] · [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] · [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] · [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] · [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] · [[knowledge/devexpress/docking-saved-layout-xml|docking-saved-layout-xml]] · [[knowledge/devexpress/docklayout-persistence|docklayout-persistence]] · [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] · [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] · [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] · [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] · [[knowledge/devexpress/grid-export-excel-pdf|grid-export-excel-pdf]] · [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] · [[knowledge/devexpress/grid-grouping-summaries|grid-grouping-summaries]] · [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]] · [[knowledge/devexpress/grid-search-panel-find|grid-search-panel-find]] · [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] · [[knowledge/devexpress/gridview-columns-format|gridview-columns-format]] · [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] · [[knowledge/devexpress/lookupedit-cascading|lookUpEdit-cascading]] · [[knowledge/devexpress/mvvm-pattern-devexpress|mvvm-pattern-devexpress]] · [[knowledge/devexpress/performance-grid-optimization|performance-grid-optimization]] · [[knowledge/devexpress/ribbon-pages-groups-items|ribbon-pages-groups-items]] · [[knowledge/devexpress/skin-customization|skin-customization]] · [[knowledge/devexpress/splashscreen-waitform|splashscreen-waitform]] · [[knowledge/devexpress/tabcontrol-multipage|tabcontrol-multipage]]
 
 > **Tek cumlelik sorumluluk:** *Tema (skin) nereden tek noktada yonetilir ve ribbon stili neden temadan bagimsizdir* sorusunun tek cevabidir.
 
@@ -78,8 +78,8 @@ Kural: ayar **bir kez**, uygulama baslangicinda yapilir; her formda tekrarlayan 
 
 | Soru | Karar sahibi | Kaynak |
 |---|---|---|
-| Ribbon hangi stil? | sabit: `Office2010` — pazarlik yok | [ADR-004](../../.decisions/accepted/adr-004-devexpress-universal-v261-office2010.md) |
-| Skin hangi ad? | `ui-designer` | [devexpress-rules](../../.rules/devexpress-rules.md) |
+| Ribbon hangi stil? | sabit: `Office2010` — pazarlik yok | [[.decisions/accepted/adr-004-devexpress-universal-v261-office2010|ADR-004]] |
+| Skin hangi ad? | `ui-designer` | [[.rules/devexpress-rules|devexpress-rules]] |
 | Global mi, forma ozel mi? | `developer` | SRP — global varsayilan |
 | Surum? | v26.1 tek surum | G3 / DX-01 |
 
@@ -114,10 +114,10 @@ Kural: ayar **bir kez**, uygulama baslangicinda yapilir; her formda tekrarlayan 
 
 | Konu | Dosya |
 |---|---|
-| Ribbon stili kurali | [ribbon-control-office2010](ribbon-control-office2010.md) |
-| Ribbon form kurulumu | [ribbon-form-basics](ribbon-form-basics.md) |
-| Paket/CPM referansi | [nuget-references-cpm](nuget-references-cpm.md) |
-| Designer edit kurallari | [designer-runtime-customization](designer-runtime-customization.md) |
+| Ribbon stili kurali | [[knowledge/devexpress/ribbon-control-office2010|ribbon-control-office2010]] |
+| Ribbon form kurulumu | [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] |
+| Paket/CPM referansi | [[knowledge/devexpress/nuget-references-cpm|nuget-references-cpm]] |
+| Designer edit kurallari | [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]] |
 
 ---
 

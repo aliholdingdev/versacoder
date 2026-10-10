@@ -14,7 +14,7 @@ supersedes: ""
 
 # `ui-design/` — Ekran Wireframe Klasörü
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [VISION](../definitions/vision.md) · [reports/00-kapsam-analizi](../ops/log.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[definitions/vision|VISION]] · [[ops/log|reports/00-kapsam-analizi]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[.rules/ui-rules|ui-rules]] · [[.rules/devexpress-rules|devexpress-rules]]
 
 > **Tek cümlelik sorumluluk:** Hangi ekranın hangi dosyada yaşadığı, ekran adlarının yazım sözleşmesi ve
 > GATE-003'ün neyi beklediği sorusunun tek cevabıdır.
@@ -38,8 +38,8 @@ Bu klasörde **11 wireframe** tanımlıdır (01..07 · 08-ascii-art-viewer · 08
 | 7 | `07-settings.md` | Ayarlar | `GridControl`, `ToggleSwitch` | l7 + l4 |
 | 8 | `08-ascii-art-viewer.md` | ASCII/Unicode Art Viewer | `RibbonControl`, `PictureEdit`, `TreeList` | l7 |
 | 9 | `09-terminal.md` | **Terminal (CLI dock, alt panel)** | `MemoEdit`, `TextEdit`, `StatusBarControl` | l7 + l6 |
-| 10 | `09-cli-console.md` + [spec](../spec/cli-console-spec.md) | **CLI Konsolu (CLI sekmesi, kendi penceresi)** | `XtraTabControl`, `MarqueeProgressBarControl`, `LayoutControl` | l7 + l6 |
-| 11 | `10-ai-chat-console.md` + [spec](../spec/ai-chat-console-spec.md) | **AI Chat Konsolu (oturum sekmesi, kendi penceresi)** | `XtraTabControl`, `RichEditControl`, `LayoutControl` | l7 + l5 |
+| 10 | `09-cli-console.md` + [[spec/cli-console-spec|spec]] | **CLI Konsolu (CLI sekmesi, kendi penceresi)** | `XtraTabControl`, `MarqueeProgressBarControl`, `LayoutControl` | l7 + l6 |
+| 11 | `10-ai-chat-console.md` + [[spec/ai-chat-console-spec|spec]] | **AI Chat Konsolu (oturum sekmesi, kendi penceresi)** | `XtraTabControl`, `RichEditControl`, `LayoutControl` | l7 + l5 |
 
 > **Kaynak çelişkisi (stale README):** eski vault README'si ekran listesini
 > `02-project-new / 03-editor / 04-agent-chat / 05-tasks / 06-terminal` olarak veriyordu; diskteki
@@ -60,7 +60,7 @@ Bu klasörde **11 wireframe** tanımlıdır (01..07 · 08-ascii-art-viewer · 08
 
 **Erişilebilirlik tabanı (her ekran dosyasında tekrar eder):** klavye ile gezinme, `Tab` sırası
 boşluk sırasıyla aynı, kontrast ≥ 4.5:1, `AutoScaleMode.Dpi` (yüksek DPI), durum yalnız renkle
-**anlatılmaz** (ikon + metin). Ayrıntı [ui-rules](../.rules/ui-rules.md).
+**anlatılmaz** (ikon + metin). Ayrıntı [[.rules/ui-rules|ui-rules]].
 
 ---
 
@@ -114,7 +114,7 @@ Her ekran üç dosyadan oluşur; sahiplik bölünemez:
 | 4 | Onay sonrası kod izni (`src/VersaCoder.Desktop/`) | **09-terminal için HENÜZ AÇIK DEĞİL** (checklist 8/9, 2026-10-02) |
 
 **HARD STOP:** onay yoksa `net48;net10.0-windows` çift bacakta tek satır `.cs` yazılmaz;
-bu kural [WORKFLOW](../governance/workflow.md) §2'deki gate tanımıyla aynıdır ve ihlali işi başa döndürür.
+bu kural [[governance/workflow|WORKFLOW]] §2'deki gate tanımıyla aynıdır ve ihlali işi başa döndürür.
 
 ---
 
@@ -138,11 +138,11 @@ bu kural [WORKFLOW](../governance/workflow.md) §2'deki gate tanımıyla aynıd�
 
 | # | Kaynak | Yol | Ne için |
 |---|---|---|---|
-| 1 | 9 ekranın kullanıcı akışı | [VISION](../definitions/vision.md) §2.3–§2.9 | ne gösterir |
-| 2 | UI kuralları | [.rules/ui-rules.md](../.rules/ui-rules.md) | yerleşim/erişilebilirlik |
-| 3 | DevExpress kuralları | [.rules/devexpress-rules.md](../.rules/devexpress-rules.md) | sürüm + stil sabitlemesi |
-| 4 | Katman bağlamı | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
-| 5 | Kapı tanımı | [WORKFLOW](../governance/workflow.md) | GATE-003 sırası |
+| 1 | 9 ekranın kullanıcı akışı | [[definitions/vision|VISION]] §2.3–§2.9 | ne gösterir |
+| 2 | UI kuralları | [[.rules/ui-rules|.rules/ui-rules.md]] | yerleşim/erişilebilirlik |
+| 3 | DevExpress kuralları | [[.rules/devexpress-rules|.rules/devexpress-rules.md]] | sürüm + stil sabitlemesi |
+| 4 | Katman bağlamı | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | l7 sorumluluğu |
+| 5 | Kapı tanımı | [[governance/workflow|WORKFLOW]] | GATE-003 sırası |
 
 ---
 
@@ -157,17 +157,17 @@ bu kural [WORKFLOW](../governance/workflow.md) §2'deki gate tanımıyla aynıd�
 
 | # | Ekran | Wireframe | Durum | Revizyon isteği (sen yaz) | Tarih |
 |---|---|---|---|---|---|
-| 1 | `01-start-page` | [oku](01-start-page.md) | `ONAYLI` | yok | 2026-10-01 |
-| 2 | `02-main-ide` | [oku](02-main-ide.md) | `ONAYLI` | yok | 2026-10-01 |
-| 3 | `03-solution-explorer` | [oku](03-solution-explorer.md) | `ONAYLI` | yok | 2026-10-01 |
-| 4 | `04-code-editor` | [oku](04-code-editor.md) | `ONAYLI` | yok | 2026-10-01 |
-| 5 | `05-ai-chat` | [oku](05-ai-chat.md) | `ONAYLI` | yok | 2026-10-01 |
-| 6 | `06-agent-panel` | [oku](06-agent-panel.md) | `ONAYLI` | yok | 2026-10-01 |
-| 7 | `07-settings` | [oku](07-settings.md) | `ONAYLI` | yok | 2026-10-01 |
-| 8 | `08-ascii-art-viewer` (kapsam değişikliği, §0) | [oku](08-ascii-art-viewer.md) | `ONAYLI` | yok | 2026-10-01 |
-| 9 | `08-terminal` (dock alt paneli) | [oku](09-terminal.md) | `BEKLEMEDE` | — | 2026-10-02 |
-| 10 | `09-cli-console` (kapsam değişikliği, §0) | [oku](09-cli-console.md) | `BEKLEMEDE` | — | 2026-10-02 |
-| 11 | `10-ai-chat-console` (kapsam değişikliği, §0) | [oku](10-ai-chat-console.md) | `BEKLEMEDE` | — | 2026-10-02 |
+| 1 | `01-start-page` | [[ui-design/01-start-page|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 2 | `02-main-ide` | [[ui-design/02-main-ide|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 3 | `03-solution-explorer` | [[ui-design/03-solution-explorer|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 4 | `04-code-editor` | [[ui-design/04-code-editor|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 5 | `05-ai-chat` | [[ui-design/05-ai-chat|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 6 | `06-agent-panel` | [[ui-design/06-agent-panel|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 7 | `07-settings` | [[ui-design/07-settings|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 8 | `08-ascii-art-viewer` (kapsam değişikliği, §0) | [[ui-design/08-ascii-art-viewer|oku]] | `ONAYLI` | yok | 2026-10-01 |
+| 9 | `08-terminal` (dock alt paneli) | [[ui-design/09-terminal|oku]] | `BEKLEMEDE` | — | 2026-10-02 |
+| 10 | `09-cli-console` (kapsam değişikliği, §0) | [[ui-design/09-cli-console|oku]] | `BEKLEMEDE` | — | 2026-10-02 |
+| 11 | `10-ai-chat-console` (kapsam değişikliği, §0) | [[ui-design/10-ai-chat-console|oku]] | `BEKLEMEDE` | — | 2026-10-02 |
 
 **Geçerli `Durum` değerleri:** `BEKLEMEDE` → `ONAYLI` · `RED` · `REVIZE`
 (`REVIZE` = değişiklik uygulandı, tekrar inceleme bekliyor; `REVIZE` tek başına
@@ -189,7 +189,7 @@ kod izni vermez, `ONAYLI` olmalıdır).
 | `Durum` hücresi dolu olmayan ekran | **onaysız** → o ekranın `.cs` kodu yasak (G12) |
 | Ekran `RED` ise | yalnızca **o** ekran durur; kalan6 ekran ilerleyebilir |
 | `REVIZE` yazıldıysa | kod izni **yok**; tekrar `ONAYLI` gerekir |
-| 7/7 `ONAYLI` + [checklist](../checklists/gate-003-ui-onay.md) 13 madde | GATE-003 açılır → `.cs` yazımına izin |
+| 7/7 `ONAYLI` + [[checklists/gate-003-ui-onay|checklist]] 13 madde | GATE-003 açılır → `.cs` yazımına izin |
 | Revizyon maddesi `developer`'a iletilirse | U5/ADR-025 zinciri kopar — tasarım `ui-designer`'da kalır |
 
 ### §7.4 İmza (zorunlu — metinsiz onay sayılmaz, soru 12)
@@ -202,5 +202,5 @@ kod izni vermez, `ONAYLI` olmalıdır).
 | Ek kapsam / istisna | 8. `08-ascii-art-viewer` + 9. `08-terminal` + 10. `09-cli-console` + 11. `10-ai-chat-console` dahil: her biri için ayrı onay cümlesi yazılır |
 
 > Onay metni bu cümledeki **kelimelerle** yazılmalıdır; "ok / tamam" gibi kısa
-> onaylar [checklist](../checklists/gate-003-ui-onay.md) soru 12'de **RED**
+> onaylar [[checklists/gate-003-ui-onay|checklist]] soru 12'de **RED**
 > gerekçesidir. Onay `log.md`'ye tarihli satır olarak da kopyalanır.

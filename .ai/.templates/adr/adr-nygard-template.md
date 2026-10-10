@@ -14,7 +14,7 @@ supersedes: ""
 
 # ADR Şablonu — Michael Nygard Klasik Biçimi (Nygard Hafif Varyantı)
 
-**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [Karar Defteri](../../.decisions/index.md) · [coding-standards](../../.rules/coding-standards.md) · [keys](../../governance/keys.md)
+**Zorunlu Bağlantılar:** [[.templates/adr/adr-template|adr-template]] · [[.templates/adr/adr-index|adr-index]] · [[index|Vault]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|Karar Defteri]] · [[.rules/coding-standards|coding-standards]] · [[governance/keys|keys]]
 
 ---
 
@@ -142,7 +142,7 @@ template: adr-nygard-template.md
 
 ```markdown
 # ADR-NNN: <İngilizce karar başlığı (slug ile aynı)>
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]]
 ```
 
 ### §3.3 §1 İskeleti (Nygard: Context)
@@ -213,7 +213,7 @@ related_rules: [coding-standards, deployment-guide]
 template: adr-nygard-template.md
 ---
 # ADR-003: Dual Target (`net48` + `net10.0-windows`)
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [deployment-guide](../../.rules/deployment-guide.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[.rules/deployment-guide|deployment-guide]]
 
 ## §1 Amaç / Bağlam (Context)
 ### §1.1 Bu karar neden masada
@@ -295,7 +295,7 @@ related_rules: [{{kural}}]
 template: adr-nygard-template.md
 ---
 # {{ADR_ID}}: {{INGILIZCE_KARAR_BASLIGI}}
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md) · [{{kural}}](../../.rules/{{kural}}.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]] · [[.rules/{{kural}}|{{kural}}]]
 
 ## §1 Amaç / Bağlam (Context)
 ### §1.1 Bu karar neden masada

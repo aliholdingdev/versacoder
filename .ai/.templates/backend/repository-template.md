@@ -16,13 +16,13 @@ supersedes: ""
 
 **Zorunlu Bağlantılar:**
 
-- [ascii-diagram-template.md](../architecture/ascii-diagram-template.md) — kutu-diyagram ve §5.3/§5.4/§7.2 kalıpları (buradaki kutu dahil)
-- [dapper-mapping-template.md](../infrastructure/dapper-mapping-template.md) — Dapper iç eşleme SSUT'u (sorgu çalıştırma/donanım tarafı)
-- [service-template.md](service-template.md) — iş akışı sahipliği; repository'yi çağıran katman
-- [handler-template.md](handler-template.md) — ADO.NET handler'ları ile `IReadRepository` karşılaştırması
-- [../../.rules/coding-standards.md](../../.rules/coding-standards.md) — `async`/`await`, naming, kod stili kuralları
-- [../../architecture/index.md](../../architecture/index.md) — katman diyagramı ve bağımlılık okları
-- [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) — EF Core yasağı, ADO.NET + Dapper standardı (SSUT)
+- [[.templates/architecture/ascii-diagram-template|ascii-diagram-template.md]] — kutu-diyagram ve §5.3/§5.4/§7.2 kalıpları (buradaki kutu dahil)
+- [[.templates/infrastructure/dapper-mapping-template|dapper-mapping-template.md]] — Dapper iç eşleme SSUT'u (sorgu çalıştırma/donanım tarafı)
+- [[.templates/backend/service-template|service-template.md]] — iş akışı sahipliği; repository'yi çağıran katman
+- [[.templates/backend/handler-template|handler-template.md]] — ADO.NET handler'ları ile `IReadRepository` karşılaştırması
+- [[.rules/coding-standards|../../.rules/coding-standards.md]] — `async`/`await`, naming, kod stili kuralları
+- [[architecture/index|../../architecture/index.md]] — katman diyagramı ve bağımlılık okları
+- [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md]] — EF Core yasağı, ADO.NET + Dapper standardı (SSUT)
 
 ## §1 Amaç
 
@@ -541,14 +541,14 @@ Beklenen: `satir` 480–660 · `bos` 480–660 · `kb` 25–34 · `bolum=7` · `
 
 ### §7.1 Bağlantılar (≥6)
 
-1. [ascii-diagram-template.md](../architecture/ascii-diagram-template.md) — §1.3/§3.2/§5.3/§5.4 kalıpları
-2. [dapper-mapping-template.md](../infrastructure/dapper-mapping-template.md) — mapping SSUT'u (sınır)
-3. [service-template.md](service-template.md) — servis; repository'yi çağırır
-4. [handler-template.md](handler-template.md) — CQRS/sıcak yol varyantı
-5. [../../.rules/coding-standards.md](../../.rules/coding-standards.md) — naming, `async`, stil
-6. [../../architecture/index.md](../../architecture/index.md) — katman diyagramı (T4 kaynağı)
-7. [../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) — **EF yasağı** (SSUT)
-8. [service-template.md §5.4](service-template.md) — Quality Report format kardeşi
+1. [[.templates/architecture/ascii-diagram-template|ascii-diagram-template.md]] — §1.3/§3.2/§5.3/§5.4 kalıpları
+2. [[.templates/infrastructure/dapper-mapping-template|dapper-mapping-template.md]] — mapping SSUT'u (sınır)
+3. [[.templates/backend/service-template|service-template.md]] — servis; repository'yi çağırır
+4. [[.templates/backend/handler-template|handler-template.md]] — CQRS/sıcak yol varyantı
+5. [[.rules/coding-standards|../../.rules/coding-standards.md]] — naming, `async`, stil
+6. [[architecture/index|../../architecture/index.md]] — katman diyagramı (T4 kaynağı)
+7. [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|../../.decisions/accepted/ADR-005-ado-net-dapper-no-ef-core.md]] — **EF yasağı** (SSUT)
+8. [[.templates/backend/service-template|service-template.md §5.4]] — Quality Report format kardeşi
 
 ### §7.2 Red Team (≥10 satır)
 

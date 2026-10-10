@@ -14,9 +14,9 @@ supersedes: ""
 
 # async-await-basics — Asenkron yazım temeli
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [cancellation-token-policy](cancellation-token-policy.md) · [task-vs-value-task](task-vs-value-task.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp 6/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[knowledge/csharp/index|csharp-index]] · [[.rules/coding-standards|coding-standards]] · [[.rules/async-rules|async-rules]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp 6/28):** tam liste → [[knowledge/csharp/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir is asenkron nasil yazilir, `ConfigureAwait` nerede kirma yapar ve asenkron zincir hangi uc noktada kirilir* sorusunun tek cevabidir.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 ## §0 Ozet (Answer First)
 
-Tek kural **async all the way**: asenkron bir metodu cagiriyorsan cagiran da `async Task` olur; `async void` yalnizca WinForms olay baglayicisinda serbesttir (`CS-06`). Bekleme `await` ile olur; `.Result` / `.Wait()` / `.GetAwaiter().GetResult()` bu vault'ta **yasaktir** (`CS-03`) cunku net48 senkron-baglam deadlock'u uretir. Baglam ikiye ayrilir: **UI katmaninda varsayilan context korunur**, **kutuphane katmaninda `ConfigureAwait(false)` ile kasitli kirilir** (`async-rules` A1/A2). Iki bacak farki kucuktur ama taahhuttur: `await foreach`, `await using`, `Task.WaitAsync` ve `PeriodicTimer` net48'de yoktur — ortak kod en kucuk ortak paydada kalir ([language-versions-net48-net10](language-versions-net48-net10.md)).
+Tek kural **async all the way**: asenkron bir metodu cagiriyorsan cagiran da `async Task` olur; `async void` yalnizca WinForms olay baglayicisinda serbesttir (`CS-06`). Bekleme `await` ile olur; `.Result` / `.Wait()` / `.GetAwaiter().GetResult()` bu vault'ta **yasaktir** (`CS-03`) cunku net48 senkron-baglam deadlock'u uretir. Baglam ikiye ayrilir: **UI katmaninda varsayilan context korunur**, **kutuphane katmaninda `ConfigureAwait(false)` ile kasitli kirilir** (`async-rules` A1/A2). Iki bacak farki kucuktur ama taahhuttur: `await foreach`, `await using`, `Task.WaitAsync` ve `PeriodicTimer` net48'de yoktur — ortak kod en kucuk ortak paydada kalir ([[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]]).
 
 ```text
 +---------------------------------------------------------+
@@ -49,7 +49,7 @@ Tek kural **async all the way**: asenkron bir metodu cagiriyorsan cagiran da `as
 | Baglam (kutuphane, l0-l4) | `ConfigureAwait(false)` | gereksiz context yakalama yok |
 | Baglam (l7 UI) | varsayilan (`true`) | kontrol yazimlari Invoke gerektirmez |
 | Paralel is | `Task.WhenAll` | sira zorunlu degilse sure kazanci |
-| Is degil, bekleyen yapilanma | [channel-queue-patterns](channel-queue-patterns.md) | kilit + await yok |
+| Is degil, bekleyen yapilanma | [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] | kilit + await yok |
 
 ## §2 Iki bacakta asenkron API
 
@@ -64,7 +64,7 @@ Tek kural **async all the way**: asenkron bir metodu cagiriyorsan cagiran da `as
 | `PeriodicTimer` | Yok — .NET 6+ | Var |
 | CA2007 (ConfigureAwait dogrulama) | analiz eklentisiyle | SDK analizleriyle yerlesik |
 
-> **TAHHUT:** `net48`'de `await foreach` acmak uc parcali karardir: paket referansi + `LangVersion` + test. Tek bacaga yazilan asenkron kod diger bacagi kiratmadan once deney degil, karardir — [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) baglaminda `architect` onayi gerekir.
+> **TAHHUT:** `net48`'de `await foreach` acmak uc parcali karardir: paket referansi + `LangVersion` + test. Tek bacaga yazilan asenkron kod diger bacagi kiratmadan once deney degil, karardir — [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] baglaminda `architect` onayi gerekir.
 
 ## §3 Ornek: iki katman, iki yazim
 
@@ -98,7 +98,7 @@ Sorgu metni **parameterized** yazilir (`@Id`); string-concat SQL yasaktir (`ADR-
 | Belirti | Kok neden | Duzeltme |
 |---|---|---|
 | UI donuyor ama CPU calisiyor | `.Result` / `.Wait()` | tum yol `async Task` + `await` |
-| Iptal butonu calismiyor | token gecirilmemis | zincir boyunca `ct` ([cancellation-token-policy](cancellation-token-policy.md)) |
+| Iptal butonu calismiyor | token gecirilmemis | zincir boyunca `ct` ([[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]]) |
 | UI'a yazim hatasi | `ConfigureAwait(false)` sonrasi context yok | context gerektiren kodu UI katmaninda ayir |
 | Cift tiklaninca iki is | onceki is iptal edilmiyor | `CancellationTokenSource` iptal + yenile |
 | `async void` hata patlatiyor | handler disi `async void` | `async Task` + cagiran `await` |
@@ -135,10 +135,10 @@ Sorgu metni **parameterized** yazilir (`@Id`); string-concat SQL yasaktir (`ADR-
 
 | Konu | Dosya |
 |---|---|
-| Iptal imzasi ve zinciri | [cancellation-token-policy](cancellation-token-policy.md) |
-| `Task` mi `ValueTask` mi | [task-vs-value-task](task-vs-value-task.md) |
-| Kilit yerine kuyruk | [channel-queue-patterns](channel-queue-patterns.md) |
-| UI busy durumu ve fire-and-forget | [async-ui-state-flows](async-ui-state-flows.md) |
+| Iptal imzasi ve zinciri | [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] |
+| `Task` mi `ValueTask` mi | [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] |
+| Kilit yerine kuyruk | [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] |
+| UI busy durumu ve fire-and-forget | [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] |
 
 ## §9 Kanit
 

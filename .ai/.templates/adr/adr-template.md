@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — ADR (Karar Kaydı) Genel Şablonu
 
-**Zorunlu Bağlantılar:** [[index]] · [[CLAUDE.md]] · [[architecture/ascii-diagram-template]] · [[adr-index]] · [[adr-nygard-template]] · [[../../AGENTS.md]]
+**Zorunlu Bağlantılar:** [[index]] · [[CLAUDE.md]] · [[architecture/ascii-diagram-template]] · [[adr-index]] · [[adr-nygard-template]] · [[AGENTS]]
 
 ---
 

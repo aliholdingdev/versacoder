@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Yapılandırma Şablonu
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/CLAUDE]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-architecture-template]] · [[./provider-template]] · [[../session-log-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/ascii-diagram-template]] · [[.templates/adr/adr-architecture-template]] · [[./provider-template]] · [[.templates/session-log-template]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya, VersaCoder'da **bir değerin nerede yaşadığı, hangi sırada ezildiği ve nasıl doğrulandığı** sorusunun tek kaynağıdır (SSOT). Gömülü ayar, sürümü olmayan paket ve doğrulamasız başlatma reddedilir.
 

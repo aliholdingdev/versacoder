@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Her dönüş Result<T>; exception yalnız beklenmeyen çökme; mesaj kodları"
-tags: [['rules', 'error-handling', 'result', 'hata']]
+tags: [rules, error-handling, result, hata]
 source: "Birleştirme: brain.md §3 kural 1 + §3.7/1 + ADR-019"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Hata Yönetimi — Result<T>
 
@@ -49,5 +49,5 @@ RED — kod incelemesinde istisna gerekçelendirilmezse reddedilir (brain §3.9/
 
 ## İlgili
 
-- [ADR-019](../.decisions/accepted/adr-019-dual-leg-build-test.md)
-- [logging-rules](logging-rules.md) · [rules-index](index.md)
+- [[.decisions/accepted/adr-019-dual-leg-build-test|ADR-019]]
+- [[.rules/logging-rules|logging-rules]] · [[.rules/index|rules-index]]

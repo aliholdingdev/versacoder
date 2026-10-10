@@ -14,9 +14,9 @@ supersedes: ""
 
 # Free-Model Router - Saglayici Sirasi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-011](../../.decisions/accepted/adr-011-llm-provider-order.md) · [security-rules](../../.rules/security-rules.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 1/8):** [agent-streaming-sse](agent-streaming-sse.md) · [diff-approval-gate](diff-approval-gate.md) · [parallel-batch-limit](parallel-batch-limit.md) · [protocol-tool-schema](protocol-tool-schema.md) · [session-checkpoint-persistence](session-checkpoint-persistence.md) · [terminal-cli-surface](terminal-cli-surface.md) · [wizard-approval-flow](wizard-approval-flow.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[definitions/vision|VISION]] · [[.decisions/accepted/adr-011-llm-provider-order|ADR-011]] · [[.rules/security-rules|security-rules]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (engine · 1/8):** [[knowledge/engine/agent-streaming-sse|agent-streaming-sse]] · [[knowledge/engine/diff-approval-gate|diff-approval-gate]] · [[knowledge/engine/parallel-batch-limit|parallel-batch-limit]] · [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] · [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] · [[knowledge/engine/terminal-cli-surface|terminal-cli-surface]] · [[knowledge/engine/wizard-approval-flow|wizard-approval-flow]]
 
 > **Tek cumlelik sorumluluk:** *Istek hangi sirayla saglayicilara gider, ag kesilince ne olur* sorusunun tek cevabidir.
 

@@ -7,12 +7,12 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "vault-wide + dosya frontmatter + ADR status/date (D14)"
-tags: [['versioning', 'policy', 'd14']]
+tags: [versioning, policy, d14]
 source: "D14 kararı (2026-10-07 onaylı plan) + kök CLAUDE.md B9 (mevcut tetikleyici)"
 supersedes: ""
 ---
 
-**Zorunlu Bağlantılar:** [VAULT-GATE](VAULT-GATE.md) · [adr-index](../.decisions/adr-index.md) · [CLAUDE](../CLAUDE.md)
+**Zorunlu Bağlantılar:** [[governance/VAULT-GATE|VAULT-GATE]] · [[.decisions/adr-index|adr-index]] · [[CLAUDE|CLAUDE]]
 
 # versioning — 3 Seviye (D14)
 
@@ -28,4 +28,4 @@ tetikleyicisi (D25).
 
 ## İlgili
 
-- [ADR-032](../.decisions/accepted/ADR-032-ai-control-plane.md) §2.9
+- [[.decisions/accepted/ADR-032-ai-control-plane|ADR-032]] §2.9

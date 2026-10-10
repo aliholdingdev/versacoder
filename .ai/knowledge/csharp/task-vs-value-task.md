@@ -14,9 +14,9 @@ supersedes: ""
 
 # Task ve ValueTask Secimi
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Async Kurallari](../../.rules/async-rules.md) | [Kodlama Standartlari](../../.rules/coding-standards.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.rules/async-rules|Async Kurallari]] | [[.rules/coding-standards|Kodlama Standartlari]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 2/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** `ValueTask` tahsissiz hiz icindir ve **bir kez** beklenebilir; emniyetli varsayilan hala `Task`.
 
@@ -76,7 +76,7 @@ var liste = await vt.AsTask();          // simdi Task olarak rahat
 - Varsayilan imza `Task`/`Task<T>` olsun; `ValueTask` bilincli kazanim olsun.
 - `ValueTask``i tek sefer beklemeyi imza yorumuyla soyle.
 - Cagri tarafinda iki kez beklenecekse `AsTask()`.
-- Async cagrilarda `ConfigureAwait(false)` kurallari gecerli - bekleyen kimse nezdinde. Detay: [Async Kurallari](../../.rules/async-rules.md).
+- Async cagrilarda `ConfigureAwait(false)` kurallari gecerli - bekleyen kimse nezdinde. Detay: [[.rules/async-rules|Async Kurallari]].
 - Yarim async kod yazma: ya tam async, ya tam senkron.
 
 ## §6 Yasaklar
@@ -90,13 +90,13 @@ var liste = await vt.AsTask();          // simdi Task olarak rahat
 
 - Cache hit ve miss'i ayri test et: ikisi de ayni degeri dondurur, `Assert.AreEqual`.
 - Async testlerde `await` zorunlu; senkron testte kalan async yol kacagidir.
-- Cift-bekleme testi yazma (tanimsiz davranis); bunun yerine `AsTask()` kullanimini test et. Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- Cift-bekleme testi yazma (tanimsiz davranis); bunun yerine `AsTask()` kullanimini test et. Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Async Kurallari](../../.rules/async-rules.md) · [Kodlama Standartlari](../../.rules/coding-standards.md) · [Iptal Tokeni](cancellation-token-policy.md) · [C Sharp Index](index.md)
+- [[.rules/async-rules|Async Kurallari]] · [[.rules/coding-standards|Kodlama Standartlari]] · [[knowledge/csharp/cancellation-token-policy|Iptal Tokeni]] · [[knowledge/csharp/index|C Sharp Index]]
 
 ## §9 Kanit
 
 - Tek-bekleme kisiti dil seviyesinde (struct hafiza modeli); kaynak vault C# seti, 2026-09-25.
-- `ConfigureAwait` ve iptal kurallari [Async Kurallari](../../.rules/async-rules.md) ile baglantili; proje geneli varsayilan icin DOĞRULAMA GEREKLİ.
+- `ConfigureAwait` ve iptal kurallari [[.rules/async-rules|Async Kurallari]] ile baglantili; proje geneli varsayilan icin DOĞRULAMA GEREKLİ.

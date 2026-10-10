@@ -14,7 +14,7 @@ supersedes: ""
 
 # 02 — MAIN IDE
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [03-solution-explorer](03-solution-explorer.md) · [04-code-editor](04-code-editor.md) · [05-ai-chat](05-ai-chat.md) · [06-agent-panel](06-agent-panel.md) · [07-settings](07-settings.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[ui-design/01-start-page|01-start-page]] · [[ui-design/03-solution-explorer|03-solution-explorer]] · [[ui-design/04-code-editor|04-code-editor]] · [[ui-design/05-ai-chat|05-ai-chat]] · [[ui-design/06-agent-panel|06-agent-panel]] · [[ui-design/07-settings|07-settings]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
 
 > **Tek cümlelik sorumluluk:** Ana pencerenin hangi bölgelerden oluştuğu ve her bölgenin hangi
 > ekran dosyasına karşılık geldiği sorusunun tek cevabıdır.
@@ -120,9 +120,9 @@ derleme akarken StatusBar "Derleniyor..."; hata varsa StatusBar kırmızı + say
 | # | Kaynak | Ne kanıtlar |
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/02-main-ide.md` (eski vault) | bölge/panel haritası |
-| 2 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l7 + 9 proje düzeni |
-| 3 | [devexpress-rules](../.rules/devexpress-rules.md) | v26.1 + `Office2010` |
-| 4 | [.rules/data-access-rules.md](../.rules/data-access-rules.md) DA-01 | formda SQL yok |
+| 2 | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | l7 + 9 proje düzeni |
+| 3 | [[.rules/devexpress-rules|devexpress-rules]] | v26.1 + `Office2010` |
+| 4 | [[.rules/data-access-rules|.rules/data-access-rules.md]] DA-01 | formda SQL yok |
 
 > `IDockStateService` / `IProjectSession` / `IFileWriter` arayüz adları **taslak**tır —
 > l0 (`VersaCoder.Abstractions`) içinde kesinleşmesi `DOĞRULAMA GEREKLİ`.

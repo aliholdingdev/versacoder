@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Birim Test Şablonu (Unit Test)
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../backend/repository-template]] · [[../backend/service-template]] · [[../infrastructure/dapper-mapping-template]] · [[../architecture/ascii-diagram-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/backend/repository-template]] · [[.templates/backend/service-template]] · [[.templates/infrastructure/dapper-mapping-template]] · [[.templates/architecture/ascii-diagram-template]]
 
 ## §1 Amaç
 

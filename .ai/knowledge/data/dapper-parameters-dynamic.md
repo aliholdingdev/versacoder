@@ -14,9 +14,9 @@ supersedes: ""
 
 # dapper-parameters-dynamic - Dapper Parametre Yazimi
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [coding-standards](../../.rules/coding-standards.md) · [error-handling-rules](../../.rules/error-handling-rules.md) · [ado-net-command](ado-net-command.md) · [dapper-query-mapping](dapper-query-mapping.md)
-**Küme + Hub:** [data index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (data · 6/25):** [ado-net-connection](ado-net-connection.md) · [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [concurrency-optimistic](concurrency-optimistic.md) · [connection-pooling-notes](connection-pooling-notes.md) · [connection-string-secrets](connection-string-secrets.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md) · [migration-rollback](migration-rollback.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [pagination-offset-keyset](pagination-offset-keyset.md) · [parameterized-queries](parameterized-queries.md) · [repository-pattern-thin](repository-pattern-thin.md) · [sql-injection-defense](sql-injection-defense.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md) · [transaction-scope-local](transaction-scope-local.md) · [unit-of-work-pattern](unit-of-work-pattern.md)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005]] · [[.rules/coding-standards|coding-standards]] · [[.rules/error-handling-rules|error-handling-rules]] · [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]]
+**Küme + Hub:** [[knowledge/data/index|data index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (data · 6/25):** [[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/connection-string-secrets|connection-string-secrets]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]] · [[knowledge/data/migration-rollback|migration-rollback]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]] · [[knowledge/data/transaction-scope-local|transaction-scope-local]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]]
 
 > **Tek cumlelik sorumluluk:** *Deger hangi nesneyle, hangi kuralla parametrelenir; cikti parametresi ve `null` nasil yazilir* sorusunun tek cevabidir.
 
@@ -98,13 +98,13 @@ SQL govdesi sabit metin olur; degerler yalnizca `@ad` uzerinden girer. Boylece p
 
 ## §5 Kardesler
 
-[ado-net-command](ado-net-command.md) · [dapper-query-mapping](dapper-query-mapping.md) · [dapper-multi-map](dapper-multi-map.md) · [dapper-async-patterns](dapper-async-patterns.md) · [dapper-procedures-stored](dapper-procedures-stored.md)
+[[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]]
 
 ---
 
 ## §6 Kisa karar
 
-Kucuk ve sabit set -> anonim nesne; kosullu ya da cikti icin -> `DynamicParameters`. `@` adlarda, govde sabit, deger parametre. `dynamic` satir tipi bu dosyanin disinda, [dapper-query-mapping](dapper-query-mapping.md) konusudur.
+Kucuk ve sabit set -> anonim nesne; kosullu ya da cikti icin -> `DynamicParameters`. `@` adlarda, govde sabit, deger parametre. `dynamic` satir tipi bu dosyanin disinda, [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] konusudur.
 
 ---
 

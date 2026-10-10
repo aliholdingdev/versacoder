@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Application Servis Şablonu (Service Template)
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[.templates/architecture/ascii-diagram-template]] · [[architecture/index]] · [[.rules/coding-standards]]
 
 ---
 
@@ -164,7 +164,7 @@ authority: primary
 
 ````markdown
 # X — <türkçe açıklama>
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[../architecture/ascii-diagram-template]] · [[../../architecture/index.md]] · [[../../.rules/coding-standards.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[backend/handler-template]] · [[backend/repository-template]] · [[.templates/architecture/ascii-diagram-template]] · [[architecture/index]] · [[.rules/coding-standards]]
 ````
 
 Bağlantı sayısı **6'dan az olamaz** (`G4`).
@@ -188,7 +188,7 @@ Bağlantı sayısı **6'dan az olamaz** (`G4`).
 **Ne anlatır:** Servis aşağı bakar (`Domain`, `Abstractions`), yukarıdan çağrılır.
 
 **Hiçbir zaman** `Infrastructure`'a doğrudan referans vermez — repository arayüzü `Abstractions`'ta yaşadığı için bağımlılık yönü bozulmaz.
-**Kaynak:** [[../../architecture/index.md]] · **Doğrulama:** §5.3/3 — 2026-09-25.
+**Kaynak:** [[architecture/index]] · **Doğrulama:** §5.3/3 — 2026-09-25.
 
 ### §3.4 Arayüz Sözleşmesi İskeleti (dolu örnek)
 
@@ -416,7 +416,7 @@ public sealed class WorkspaceService : IWorkspaceService
 
 | # | Adım | Girdi | Çıktı | Yapan | Süre | Kapı |
 |---|------|-------|-------|-------|------|------|
-| 1 | Use case'i listele | gereksinim + `[[../index]]` | ≥2 alt adım | developer | 5 dk | — |
+| 1 | Use case'i listele | gereksinim + `[[.templates/index]]` | ≥2 alt adım | developer | 5 dk | — |
 | 2 | Sınır testini koş | §2.2 S1–S5 | 5× EVET/HAYIR | developer | 3 dk | S3–S5 `HAYIR` ise dur |
 | 3 | Arayüzü yaz | §3.4 kalıp | `IXService.cs` | developer | 10 dk | — |
 | 4 | Implementasyonu yaz | §3.5 kalıp | `XService.cs` | developer | 25 dk | — |

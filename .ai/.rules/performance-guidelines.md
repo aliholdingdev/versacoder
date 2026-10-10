@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Timeout'lar (ADR-009), ölçüm tek kaynaktan (ADR-027), bütçe disiplini"
-tags: [['rules', 'performance', 'budget', 'timeout']]
+tags: [rules, performance, budget, timeout]
 source: "Birleştirme: brain.md ADR-009/027 + spec/performance-spec.md bağlamı"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Performans Kuralları
 
@@ -41,5 +41,5 @@ RED — ölçüm olmadan "bitti" denemez (G5).
 
 ## İlgili
 
-- [ADR-009](../.decisions/accepted/adr-009-tool-execution-sandbox.md)
-- [ADR-027](../.decisions/accepted/adr-027-count-components-script.md)
+- [[.decisions/accepted/adr-009-tool-execution-sandbox|ADR-009]]
+- [[.decisions/accepted/adr-027-count-components-script|ADR-027]]

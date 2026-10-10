@@ -14,7 +14,7 @@ supersedes: ""
 
 # Diff Görünümü Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [code-editor](code-editor-spec.md) · [error-handling](error-handling-spec.md) · [persistence](persistence-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/code-editor-spec|code-editor]] · [[spec/error-handling-spec|error-handling]] · [[spec/persistence-spec|persistence]]
 
 > **Tek cümlelik sorumluluk:** *İki metin arasındaki fark nasıl gösterilir ve bir değişiklik ne zaman kabul edilir/geri alınır* sorusunun tek cevabıdır.
 > Diff **salt okunur bir görüntüdür**; dosyaya yalnız kabul/geri alma eylemi yazar.
@@ -31,11 +31,11 @@ Görünüm iki sütunlu (`+`/`−` satır vurgulu) ya da birleşik (unified) mod
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Satır farkı hesaplama + görselleştirme | Kod editörü sekmesi/dirty | [code-editor](code-editor-spec.md) |
-| 2 | Kabul/geri alma eylemi ve onayı | Kayıt/oturum saklama biçimi | [persistence](persistence-spec.md) |
-| 3 | Hata durumu (dosya değişmiş/kilitli) | Hata kodu sınıflandırma | [error-handling](error-handling-spec.md) |
-| 4 | Agent çıktısı diff'inin açılması | Görev kuyruğu/durumu | [task-queue](task-queue-spec.md) |
-| 5 | Ağaçtaki "değişti" rozetinin kaynağı | Ağaç gösterimi | [solution-explorer](solution-explorer-spec.md) |
+| 1 | Satır farkı hesaplama + görselleştirme | Kod editörü sekmesi/dirty | [[spec/code-editor-spec|code-editor]] |
+| 2 | Kabul/geri alma eylemi ve onayı | Kayıt/oturum saklama biçimi | [[spec/persistence-spec|persistence]] |
+| 3 | Hata durumu (dosya değişmiş/kilitli) | Hata kodu sınıflandırma | [[spec/error-handling-spec|error-handling]] |
+| 4 | Agent çıktısı diff'inin açılması | Görev kuyruğu/durumu | [[spec/task-queue-spec|task-queue]] |
+| 5 | Ağaçtaki "değişti" rozetinin kaynağı | Ağaç gösterimi | [[spec/solution-explorer-spec|solution-explorer]] |
 
 ---
 
@@ -74,7 +74,7 @@ Görünüm iki sütunlu (`+`/`−` satır vurgulu) ya da birleşik (unified) mod
 | H2 | Eşzamanlı tek diff hesabı; yeni istek eskisini iptal eder | öksüz hesap = 0 |
 | H3 | Yazma **tek seferde** (atomik); kısmi yazım yok | yarım dosya üretemezsin |
 | H4 | Eylem sonrası satır sayısı gösterilir (`+3/−1`) | sayılar dosyayla eşleşir |
-| H5 | Eylemler günlüğe yazılır (hangi dosya, ne zaman) | [observability](observability-spec.md) kaydı |
+| H5 | Eylemler günlüğe yazılır (hangi dosya, ne zaman) | [[spec/observability-spec|observability]] kaydı |
 
 ---
 

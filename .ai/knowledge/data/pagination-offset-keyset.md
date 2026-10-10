@@ -14,9 +14,9 @@ supersedes: ""
 
 # pagination-offset-keyset — Sayfalama Stratejileri
 
-**Zorunlu Baglantilar:** [vault index](../../index.md) · [knowledge index](../index.md) · [rules index](../../.rules/index.md) · [parameterized-queries](parameterized-queries.md) · [dapper-multi-map](dapper-multi-map.md) · [repository-pattern-thin](repository-pattern-thin.md)
-**Küme + Hub:** [data index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (data · 6/25):** [ado-net-command](ado-net-command.md) · [ado-net-connection](ado-net-connection.md) · [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [connection-pooling-notes](connection-pooling-notes.md) · [connection-string-secrets](connection-string-secrets.md) · [dapper-async-patterns](dapper-async-patterns.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md) · [dapper-procedures-stored](dapper-procedures-stored.md) · [dapper-query-mapping](dapper-query-mapping.md) · [migration-rollback](migration-rollback.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [sql-injection-defense](sql-injection-defense.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md) · [transaction-scope-local](transaction-scope-local.md) · [unit-of-work-pattern](unit-of-work-pattern.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[knowledge/index|knowledge index]] · [[.rules/index|rules index]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]]
+**Küme + Hub:** [[knowledge/data/index|data index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (data · 6/25):** [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/connection-string-secrets|connection-string-secrets]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/migration-rollback|migration-rollback]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]] · [[knowledge/data/transaction-scope-local|transaction-scope-local]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]]
 
 > **Tek cumlelik sorumluluk:** *OFFSET mi keyset (cursor) mi, hangi durumda hangisi, iki sağlayıcıda nasıl yazılır* sorusunun tek cevabıdır.
 
@@ -74,7 +74,7 @@ const string keysetSql = @"
 | Değer `LIMIT` | Dapper 2.1.x | aynı |
 | Akış dönüşü | yok → `IReadOnlyList` | `IAsyncEnumerable` yalnız net10 kodu |
 
-Sayfa parçası değişse de gövde sabit kalır; farklılık tek yerdedir (bkz. [parameterized-queries](parameterized-queries.md)).
+Sayfa parçası değişse de gövde sabit kalır; farklılık tek yerdedir (bkz. [[knowledge/data/parameterized-queries|parameterized-queries]]).
 
 ## §5 Kayip ve satir kaymasi
 
@@ -99,7 +99,7 @@ Cursor değerinin serileştirme biçimi (ISO-8601 metin mi, ikili mi) ve imzalam
 
 ## §8 Kardesler
 
-[dapper-multi-map](dapper-multi-map.md) · [parameterized-queries](parameterized-queries.md) · [concurrency-optimistic](concurrency-optimistic.md) · [repository-pattern-thin](repository-pattern-thin.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md)
+[[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]]
 
 ## §9 Kanit
 

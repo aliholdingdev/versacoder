@@ -14,9 +14,9 @@ supersedes: ""
 
 # Sabitler ve Sihirli Degerler
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Kodlama Standartlari](../../.rules/coding-standards.md) | [Result Turu](result-type-design.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 3/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.rules/coding-standards|Kodlama Standartlari]] | [[knowledge/csharp/result-type-design|Result Turu]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 3/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** Degisecek deger kodda gomulu kalmaz; sabit / enum / yapilandirma icine alinir, dosya yolu ve timeout literal yazilmaz.
 
@@ -91,13 +91,13 @@ public interface IAppPaths
 
 - Sabit degeri assert'te ayni sabitten oku; kopyalanmis beklenti yazma (ikisi de degisirse test gecmez).
 - Yapilandirma degeri testte sabitlenir; ortama bagli test kararsiz olur.
-- Enum kodlarini dogrudan karsila; string ile degil. Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- Enum kodlarini dogrudan karsila; string ile degil. Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Kodlama Standartlari](../../.rules/coding-standards.md) · [Result Turu](result-type-design.md) · [Isimlendirme ve Yorum](naming-and-comments.md) · [C Sharp Index](index.md)
+- [[.rules/coding-standards|Kodlama Standartlari]] · [[knowledge/csharp/result-type-design|Result Turu]] · [[knowledge/csharp/naming-and-comments|Isimlendirme ve Yorum]] · [[knowledge/csharp/index|C Sharp Index]]
 
 ## §9 Kanit
 
-- Yasaklar (tekrar literal, yol, mesajdan kod) kodlama standartlarinin magic deger maddesinde. Kaynak: [Kodlama Standartlari](../../.rules/coding-standards.md).
+- Yasaklar (tekrar literal, yol, mesajdan kod) kodlama standartlarinin magic deger maddesinde. Kaynak: [[.rules/coding-standards|Kodlama Standartlari]].
 - `IAppPaths` ornegi ayni dosyada gecen duzeltme yolu; proje gerceklilesmesi DOĞRULAMA GEREKLİ.

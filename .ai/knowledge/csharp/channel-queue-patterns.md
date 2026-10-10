@@ -14,9 +14,9 @@ supersedes: ""
 
 # channel-queue-patterns — Kuyruk ile sıra ve izolasyon
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [threading-locking](threading-locking.md) · [cancellation-token-policy](cancellation-token-policy.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp 5/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[knowledge/csharp/index|csharp-index]] · [[.rules/coding-standards|coding-standards]] · [[.rules/async-rules|async-rules]] · [[knowledge/csharp/threading-locking|threading-locking]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp 5/28):** tam liste → [[knowledge/csharp/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Birden fazla kaynaktan gelen is tek tuketicide sirayla nasil yurutulur ve kuyruk nasil saglam kapatilir* sorusunun tek cevabidir.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 ## §0 Ozet (Answer First)
 
-`Channel<T>`, tip guvenli kuyruktur ve **kilit olmadan** sirayi garanti eder: cok uretici, **tek tuketici** (`SingleReader = true`). Bu vault'ta UI arka plan isleri `Bounded(500) + SingleReader` ile kurulur; kapasite dolunca uretici `await WriteAsync` ile bekler, uygulama **sessizce veri kaybetmez**. Kuyruk uctur biter: `Complete()` + bosaltma, tuketicide hata, iptal ([cancellation-token-policy](cancellation-token-policy.md)). `lock` + `await` ayni blokta yasak oldugu icin (`async-rules` A6) kilitsiz sira arayan her yerin dogal cevabi budur.
+`Channel<T>`, tip guvenli kuyruktur ve **kilit olmadan** sirayi garanti eder: cok uretici, **tek tuketici** (`SingleReader = true`). Bu vault'ta UI arka plan isleri `Bounded(500) + SingleReader` ile kurulur; kapasite dolunca uretici `await WriteAsync` ile bekler, uygulama **sessizce veri kaybetmez**. Kuyruk uctur biter: `Complete()` + bosaltma, tuketicide hata, iptal ([[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]]). `lock` + `await` ayni blokta yasak oldugu icin (`async-rules` A6) kilitsiz sira arayan her yerin dogal cevabi budur.
 
 ```text
   uretici A (UI event) --> \
@@ -146,10 +146,10 @@ public sealed class WorkQueue : IAsyncDisposable
 
 | Konu | Dosya |
 |---|---|
-| kilit secimi | [threading-locking](threading-locking.md) |
-| iptal | [cancellation-token-policy](cancellation-token-policy.md) |
-| async temeli | [async-await-basics](async-await-basics.md) |
-| eszamanli koleksiyon | [collections-choice](collections-choice.md) |
+| kilit secimi | [[knowledge/csharp/threading-locking|threading-locking]] |
+| iptal | [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] |
+| async temeli | [[knowledge/csharp/async-await-basics|async-await-basics]] |
+| eszamanli koleksiyon | [[knowledge/csharp/collections-choice|collections-choice]] |
 
 ## §9 Kanit
 

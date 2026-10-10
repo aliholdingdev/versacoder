@@ -14,7 +14,7 @@ supersedes: ""
 
 # Yeni Vault Dosyasi Sozlesmesi
 
-**Zorunlu Baglantilar:** [index](../index.md) · [root-md-template](documentation/root-md-template.md) · [docs-md-template](documentation/docs-md-template.md) · [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md) · [CLAUDE.md](../claude.md)
+**Zorunlu Baglantilar:** [[index|index]] · [[.templates/documentation/root-md-template|root-md-template]] · [[.templates/documentation/docs-md-template|docs-md-template]] · [[.decisions/accepted/adr-003-vault-structure-500md-frontmatter|ADR-003]] · [[claude|CLAUDE.md]]
 
 > **Tek cumlelik sorumluluk:** *Yeni uretilen her MD dosyasi hangi kurala uyar* sorusunun tek cevabidir.
 > Bu dosyayi okumayan batch uretimi RED edilir (`reviewer`).
@@ -49,7 +49,7 @@ scope: "<1 satir kapsam - ne cevaplar>"
 ```markdown
 # <H1 - frontmatter title ile ayni anlama>
 
-**Zorunlu Baglantilar:** [index](<goreli yol>) · [<ilgili>](<goreli yol>)
+**Zorunlu Baglantilar:** [[.templates/<goreli yol>|index]] · [[.templates/<goreli yol>|<ilgili>]]
 
 > **Tek cumlelik sorumluluk:** <bu dosyanin tek cevabi>
 

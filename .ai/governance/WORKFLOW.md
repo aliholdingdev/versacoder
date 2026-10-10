@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Süreç ve GATE Sistemi (`WORKFLOW.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../claude.md) · [ROLE](../definitions/role.md) · [AGENTS](../definitions/agents.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](../architecture/index.md) · [layer-boundary-check](../checklists/layer-boundary-check.md) · [log](../ops/log.md) · [keys](keys.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/role|ROLE]] · [[definitions/agents|AGENTS]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[architecture/index|architecture/index]] · [[checklists/layer-boundary-check|layer-boundary-check]] · [[ops/log|log]] · [[governance/keys|keys]]
 
 > **Tek cümlelik sorumluluk:** *Hangi iş hangi gate'ten geçer, gate'i kim kapatır, kanıt nasıl sunulur, ne zaman durulur* sorusunun tek cevabıdır.
-> Bu dosya **gate kimliğinin ve sıranın SSOT**'udur; ajan tanımı [AGENTS.md](../definitions/agents.md)dadır, rol/ses kuralları [ROLE.md](../definitions/role.md)dadır.
+> Bu dosya **gate kimliğinin ve sıranın SSOT**'udur; ajan tanımı [[definitions/agents|AGENTS.md]]dadır, rol/ses kuralları [[definitions/role|ROLE.md]]dadır.
 
 ---
 
@@ -57,7 +57,7 @@ supersedes: ""
 
 ---
 
-**İlgili:** [AGENTS](../definitions/agents.md) §1.4 (prompt işleme hattı) · [engine](../definitions/engine.md) §1.1.2 (hedef sistem) · [VISION](../definitions/vision.md) §2 (7 ekran akışları) · [CLAUDE](../claude.md) §B5 (katman listesi).
+**İlgili:** [[definitions/agents|AGENTS]] §1.4 (prompt işleme hattı) · [[definitions/engine|engine]] §1.1.2 (hedef sistem) · [[definitions/vision|VISION]] §2 (7 ekran akışları) · [[claude|CLAUDE]] §B5 (katman listesi).
 ## §1 Gate Zinciri
 
 ### §1.1 ASCII görünüm
@@ -105,7 +105,7 @@ supersedes: ""
 ## §2 Gate Ayrıntıları
 
 > Her gate için 4 alan zorunludur: **Sahip · Kabul kriteri · Kanıt kutusu · Süre tahmini**. Süreler bütçedir; tahminin **20 dk** üzerinde aşım olursa iş durur ve raporlanır.
-> **Kanıt kutusu** burada 4 satırlıdır (`KANIT/DOSYA/EKSIK/SONRAKI`); ajanların 5 alanlı çıktı kutusu [AGENTS.md](../definitions/agents.md) §2'dedir — ikisi karıştırılmaz (SSOT).
+> **Kanıt kutusu** burada 4 satırlıdır (`KANIT/DOSYA/EKSIK/SONRAKI`); ajanların 5 alanlı çıktı kutusu [[definitions/agents|AGENTS.md]] §2'dedir — ikisi karıştırılmaz (SSOT).
 
 ### §2.1 GATE-004a — Vault Green (vault ölçümü)
 
@@ -124,7 +124,7 @@ EKSIK   : YOK   (varsa: DOĞRULAMA GEREKLI maddesi yazilir)
 SONRAKI : ui-design/01-start-page.md yaz (~7 dk)
 ```
 
-**Ne test eder:** Bu gate, GATE-003'ten GATE-006'ya kadar dayanılan **bilgi zeminini** ölçer: dosya diskte var mı, frontmatter sekiz alanlı mı, verilen link hedefe gidiyor mu, kayıt UTF-8 mi, diyagram saf ASCII mi. "Vault hazır" cümlesi tek başına **geçersizdir**; kapıdan geçen tek şey sayacın sayısal çıktısıdır (CLAUDE G5). Adım adım soru listesi [gate-004a-vault-kapanis](../checklists/gate-004a-vault-kapanis.md) 14 maddesidir; kutu sonucu, liste yolu verir.
+**Ne test eder:** Bu gate, GATE-003'ten GATE-006'ya kadar dayanılan **bilgi zeminini** ölçer: dosya diskte var mı, frontmatter sekiz alanlı mı, verilen link hedefe gidiyor mu, kayıt UTF-8 mi, diyagram saf ASCII mi. "Vault hazır" cümlesi tek başına **geçersizdir**; kapıdan geçen tek şey sayacın sayısal çıktısıdır (CLAUDE G5). Adım adım soru listesi [[checklists/gate-004a-vault-kapanis|gate-004a-vault-kapanis]] 14 maddesidir; kutu sonucu, liste yolu verir.
 
 **Kabul kriterleri (madde madde):**
 
@@ -181,7 +181,7 @@ GATE-003 - UI onayi bekleniyor (HARD STOP)
 
 > **HARD STOP:** Bu gate kapalıyken kod yazımı **yasak** (CLAUDE G12). Onay alınmadan yazılan her `.cs` geri alınır; wireframe değişirse kod çöp olur ve iş başa döner.
 
-**Ne test eder:** Ekranların daha kod yazılmadan **sözleşmeye** bağlanıp bağlanmadığını: 7 wireframe diskte mi, ikisi de saf ASCII mi, kontrol seti yalnız DevExpress v26.1 mi, ana pencere `RibbonForm` ve ribbon stili `RibbonControlStyle.Office2010` mı, kullanıcının **yazılı onayı** var mı. Bu gate aynı zamanda tek **ürün kararı** kapısıdır: kapsam ve ekran adı tartışması buradan öteye taşınmaz. Onaya giden 13 adım [gate-003-ui-onay](../checklists/gate-003-ui-onay.md) listesindedir.
+**Ne test eder:** Ekranların daha kod yazılmadan **sözleşmeye** bağlanıp bağlanmadığını: 7 wireframe diskte mi, ikisi de saf ASCII mi, kontrol seti yalnız DevExpress v26.1 mi, ana pencere `RibbonForm` ve ribbon stili `RibbonControlStyle.Office2010` mı, kullanıcının **yazılı onayı** var mı. Bu gate aynı zamanda tek **ürün kararı** kapısıdır: kapsam ve ekran adı tartışması buradan öteye taşınmaz. Onaya giden 13 adım [[checklists/gate-003-ui-onay|gate-003-ui-onay]] listesindedir.
 
 **7 wireframe — dosya ve durum tablosu:**
 
@@ -261,7 +261,7 @@ iskelet: 9 uretim + 2 test projesi, cift TFM kuruldu
 KANIT : dotnet build -> 0 hata (net48 + net10.0-windows)
 ```
 
-**Ne test eder:** İskeletin gerçekten **iki bacakta** da derlendiğini, yasaklı içeriğin sıfır olduğunu ve ilk commit'in kurallara uygun atıldığını. Bu gate aynı anda **depo tarihinin başlangıcıdır**: öncesi commit yoktur, sonrası vardır. Commit öncesi 13 adım [gate-004-ilk-commit](../checklists/gate-004-ilk-commit.md) listesindedir.
+**Ne test eder:** İskeletin gerçekten **iki bacakta** da derlendiğini, yasaklı içeriğin sıfır olduğunu ve ilk commit'in kurallara uygun atıldığını. Bu gate aynı anda **depo tarihinin başlangıcıdır**: öncesi commit yoktur, sonrası vardır. Commit öncesi 13 adım [[checklists/gate-004-ilk-commit|gate-004-ilk-commit]] listesindedir.
 
 **Kabul kriterleri (madde madde):**
 
@@ -309,21 +309,21 @@ SONRAKI : kabul kriteri <-> test eslesme tablosunu yaz (GATE-005, ~120 dk)
 | Alan | Değer |
 |---|---|
 | **Sahip** | Test üretimi: `tester` · PASS/RED: `reviewer` · Kapatan: **kullanıcı** |
-| **Kabul kriteri** | `dotnet test` **tümü yeşil** · **iki bacakta** da çalışıyor · **NetArchTest 0 ihlal** (yön + circular) · kapsam kontrolü [layer-boundary-check](../checklists/layer-boundary-check.md) 13 sorusu **0 yanlis negatif** · coverage kanıtı ya da kapsam dışı gerekçesi yazılı |
+| **Kabul kriteri** | `dotnet test` **tümü yeşil** · **iki bacakta** da çalışıyor · **NetArchTest 0 ihlal** (yön + circular) · kapsam kontrolü [[checklists/layer-boundary-check|layer-boundary-check]] 13 sorusu **0 yanlis negatif** · coverage kanıtı ya da kapsam dışı gerekçesi yazılı |
 | **Kanıt kutusu** | `KANIT: dotnet test -> X gecti / 0 basarisiz / Y sn` · `DOSYA: tests/**` · `EKSIK: <atlanan test varsa gerekce>` · `SONRAKI: <adım>` |
 | **Süre tahmini** | **≈120 dk** (kabul kriteri eşlemesi ≈10 dk · birim ≈40 dk · entegrasyon ≈35 dk · mimari ≈15 dk · hata yolu ≈15 dk · coverage ≈5 dk) |
 | **Red nedenleri** | Atlanan test · NetArchTest > 0 ihlal · tek bacakta test · kanıtsız coverage |
 
-> NetArchTest matrisi = ADR-028 §2.3 madde 2'deki **8x8 matris** (`l4 -> l2 X`, `l5 -> l4 X`, `l3` yalnız `l0`). Ayrıntı [layer-boundary-check](../checklists/layer-boundary-check.md).
+> NetArchTest matrisi = ADR-028 §2.3 madde 2'deki **8x8 matris** (`l4 -> l2 X`, `l5 -> l4 X`, `l3` yalnız `l0`). Ayrıntı [[checklists/layer-boundary-check|layer-boundary-check]].
 
-**Ne test eder:** Davranışın **kanıtını** ister: yeşil `dotnet test`, iki bacakta da aynı sonuç, mimari ok yasaklarının ihlalsizliği ve kapsamın yazılı gerekçesi. "Testler geçiyor" cümlesi bu gate'te tek başına yeterli değildir (CLAUDE G5); sayı verilmeyen rapor işlenmez. Kriter karşılığı 14 adım [gate-005-test-kapsami](../checklists/gate-005-test-kapsami.md) listesindedir.
+**Ne test eder:** Davranışın **kanıtını** ister: yeşil `dotnet test`, iki bacakta da aynı sonuç, mimari ok yasaklarının ihlalsizliği ve kapsamın yazılı gerekçesi. "Testler geçiyor" cümlesi bu gate'te tek başına yeterli değildir (CLAUDE G5); sayı verilmeyen rapor işlenmez. Kriter karşılığı 14 adım [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] listesindedir.
 
 **Kabul kriterleri (madde madde):**
 
 1. `dotnet test` — **0 başarısız**; iki bacakta da çalışır ve test sayıları eşittir
 2. NetArchTest — yön + circular **0 ihlal**; matris ADR-028 §2.3 ile **aynı kaynaktan** gelir
-3. [layer-boundary-check](../checklists/layer-boundary-check.md) 13 sorusu — **0 yanlış negatif**
-4. Coverage hedefi [spec/test-strategy](../spec/test-strategy.md) bandıdır; altındaysa **yazılı gerekçe** zorunlu
+3. [[checklists/layer-boundary-check|layer-boundary-check]] 13 sorusu — **0 yanlış negatif**
+4. Coverage hedefi [[spec/test-strategy|spec/test-strategy]] bandıdır; altındaysa **yazılı gerekçe** zorunlu
 5. Atlama (`Skip` / `Assert.Ignore`) **0**; atlanan bir test varsa gerekçesi `EKSIK` satırında yazılıdır
 
 **Kanıt kutusu — dolu örnek:**
@@ -400,10 +400,10 @@ SONRAKI : kullanici onayi -> teslim
 
 | Gate | Ne kapatır | Sahip (üretim) | Kapatan | Süre | Kontrol listesi (soru) |
 |---|---|---|---|---|---|
-| GATE-004a | Vault 500 MD · 0 bozuk link · 0 mojibake | `architect` | kullanıcı | ≈45 dk | [gate-004a-vault-kapanis](../checklists/gate-004a-vault-kapanis.md) · 14 |
-| **GATE-003** | 7 wireframe + kullanıcı onayı | `ui-designer` | **yalnız kullanıcı** | ≈60 dk + onay | [gate-003-ui-onay](../checklists/gate-003-ui-onay.md) · 13 |
-| GATE-004 | İskelet + 2 bacak build + ilk commit | `architect` + `developer` | kullanıcı | ≈90 dk | [gate-004-ilk-commit](../checklists/gate-004-ilk-commit.md) · 13 |
-| GATE-005 | Test + NetArchTest 0 ihlal | `tester` | kullanıcı | ≈120 dk | [gate-005-test-kapsami](../checklists/gate-005-test-kapsami.md) · 14 |
+| GATE-004a | Vault 500 MD · 0 bozuk link · 0 mojibake | `architect` | kullanıcı | ≈45 dk | [[checklists/gate-004a-vault-kapanis|gate-004a-vault-kapanis]] · 14 |
+| **GATE-003** | 7 wireframe + kullanıcı onayı | `ui-designer` | **yalnız kullanıcı** | ≈60 dk + onay | [[checklists/gate-003-ui-onay|gate-003-ui-onay]] · 13 |
+| GATE-004 | İskelet + 2 bacak build + ilk commit | `architect` + `developer` | kullanıcı | ≈90 dk | [[checklists/gate-004-ilk-commit|gate-004-ilk-commit]] · 13 |
+| GATE-005 | Test + NetArchTest 0 ihlal | `tester` | kullanıcı | ≈120 dk | [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] · 14 |
 | GATE-006 | Teslim | inline | kullanıcı | ≈40 dk | — (bu bandda tanımlı liste yok) |
 | — | **Toplam** | — | — | **≈5 sa 55 dk** | 4 liste · 54 soru |
 
@@ -421,7 +421,7 @@ Bu iki kutu **karıştırılamaz**; biri diğerinin yerine kullanılamaz (AGENTS
 |---|---|---|
 | Sorusu | "Bu kapı kapanabilir mi?" | "Bu ajan ne yaptı, güvenilir mi?" |
 | Alanlar | `KANIT` · `DOSYA` · `EKSIK` · `SONRAKI` | `BAŞLIK` · `KAPSAM` · `KARAR` · `RİSK` · `KANIT` |
-| Sahibi | [WORKFLOW.md](workflow.md) §2 (bu dosya) | [AGENTS.md](../definitions/agents.md) §2 |
+| Sahibi | [[governance/workflow|WORKFLOW.md]] §2 (bu dosya) | [[definitions/agents|AGENTS.md]] §2 |
 | Ne zaman yazılır | Gate **kapanışında** tek sefer | Her ajan çıktısının **sonunda** zorunlu |
 | Kim doldurur | Kanıt toplayan rol, **kapatır kullanıcı** | Üretimi yapan ajan |
 | Kapsamı | Tek gate, tek kapı | Tek iş birimi (dosya, diff, bulgu) |
@@ -463,7 +463,7 @@ Bu iki kutu **karıştırılamaz**; biri diğerinin yerine kullanılamaz (AGENTS
 | **B (l3 \|\| l4 \|\| l5)** | **Paralel** — üçü birbirine **doğrudan bağlanmaz**; ortak girdi ADR-028 + katman sözleşmesidir | `l4 -> l2 X`, `l5 -> l4 X` doğrudan ok yasağı |
 | **C (l6 → l7)** | l6 **tek başına** yazılır (composition root); sonra **Desktop \|\| Cli paralel** | DI kaydı iki kez değişmesin |
 | Tümü | Aynı `.cs` dosyasına **eş zamanlı iki yazıcı yok** (dosya bazlı yetki) | Çakışma kesindir |
-| Tümü | Paralel blokta ajan sayısı **en fazla 3** ([AGENTS.md](../definitions/agents.md) §5) | Rate limit |
+| Tümü | Paralel blokta ajan sayısı **en fazla 3** ([[definitions/agents|AGENTS.md]] §5) | Rate limit |
 
 ### §3.3 Bağımlılık yönü (tek çizgi)
 
@@ -476,7 +476,7 @@ Bu iki kutu **karıştırılamaz**; biri diğerinin yerine kullanılamaz (AGENTS
 | `l2` ile `l4` arası | **Doğrudan ok YOK** |
 | İçeriye bağımlılık | Yalnız `interface` üzerinden |
 
-> Tam 8x8 matris ve denetimi: ADR-028 §2.3 madde 2 + [layer-boundary-check](../checklists/layer-boundary-check.md). Matris **NetArchTest `LayerRulesTests`** ile aynı kaynaktan gelir; elle çizilen matris kanıt değildir.
+> Tam 8x8 matris ve denetimi: ADR-028 §2.3 madde 2 + [[checklists/layer-boundary-check|layer-boundary-check]]. Matris **NetArchTest `LayerRulesTests`** ile aynı kaynaktan gelir; elle çizilen matris kanıt değildir.
 
 ### §3.4 Zamandasır (timeline) tablosu — ADR-028 §4
 
@@ -510,7 +510,7 @@ Blok sırası **zaman ekseni** gibi okunur: soldan sağa ilerler, aynı satırda
 **Zaman kuralı (5 madde):**
 
 1. Satır 4-6'ya **yalnız** 1-3 kapandıktan sonra girilir; `l4`, `l2`'ye doğrudan bakamaz
-2. Aynı satırda ajan sayısı en fazla **3** ([AGENTS.md](../definitions/agents.md) §5) — rate limit budur
+2. Aynı satırda ajan sayısı en fazla **3** ([[definitions/agents|AGENTS.md]] §5) — rate limit budur
 3. Aynı `.cs` dosyasına eş zamanlı **iki yazıcı yok**; çakışan iş seriley alınır
 4. `l6` yazılmadan `l7` başlamaz; DI kaydı iki kez değişmesin diye
 5. Blok içinde bir gate RED olursa **o blok** döner, önceki bloklar yapılmış sayılır
@@ -591,10 +591,10 @@ END
 | Tetikleyici | Etiket | Yanıt |
 |---|---|---|
 | GATE-003 kapalı, kod isteniyor | `GATE-OPEN` | Kod yazılmaz; onay istemi gönderilir |
-| Aynı hata 3 düzeltmede çözülmedi | `3-STRIKE` | Durdur + şüpheli varsayımı adlandır + A/B/C ([AGENTS.md](../definitions/agents.md) §4) |
+| Aynı hata 3 düzeltmede çözülmedi | `3-STRIKE` | Durdur + şüpheli varsayımı adlandır + A/B/C ([[definitions/agents|AGENTS.md]] §4) |
 | Yıkıcı işlem | `G7 ONAYI` | Onay gelmeden komut çalışmaz |
 | Yeni paket / sürüm / ORM | `G8` | Kullanıcı onayı; "geçici" eklenemez |
-| Kaynak çelişti | `CONFLICT DETECTED` → `DECISION BLOCKED` | Hiyerarşi denenir, çözülmezse tek soru ([ROLE.md](../definitions/role.md) §3) |
+| Kaynak çelişti | `CONFLICT DETECTED` → `DECISION BLOCKED` | Hiyerarşi denenir, çözülmezse tek soru ([[definitions/role|ROLE.md]] §3) |
 | Kanıt yok | `UNKNOWN` / `DOĞRULAMA GEREKLI` | Madde yazılmaz, iş durur |
 
 ### §4.1 Hata modları tablosu (belirti -> müdahale)
@@ -603,24 +603,24 @@ Sekiz klasik hata modu; her satırda **önce belirti**, sonra tek elden müdahal
 
 | # | Hata modu | Belirti | İlk müdahale | Etiket / kapı etkisi |
 |---|---|---|---|---|
-| 1 | Rate limit (paralel ajan taşması) | Ajan yanıtları kesiliyor, iş sıraya giriyor | Paralel ajan sayısını **3'ün altına** indir; bloğu serile al ([AGENTS.md](../definitions/agents.md) §5) | Kapı etkisi yok; süre bütçesi aşarsa raporlanır |
+| 1 | Rate limit (paralel ajan taşması) | Ajan yanıtları kesiliyor, iş sıraya giriyor | Paralel ajan sayısını **3'ün altına** indir; bloğu serile al ([[definitions/agents|AGENTS.md]] §5) | Kapı etkisi yok; süre bütçesi aşarsa raporlanır |
 | 2 | Model unavailable / ajan düşüşü | İş yarım çıktı, kutu eksik | Aynı işi **tek ajana** devret; yarım çıktıyı kanıt sayma | Kanıtsız çıktı işlenmez (G5) |
 | 3 | Bozuk link | `check-links.ps1` 0'dan büyük sayı veriyor | Hedefi düzelt ya da linki kaldır; sonra taramayı yeniden koş | **G4** · GATE-004a kapalı kalır |
 | 4 | NU1008 (paket sürümü tanımsız) | `dotnet restore` paket adını çözemedi | Test paketlerinin `PackageVersion` satırlarını ekle; restore tekrar | GATE-004 kapalı; commit atılmaz |
 | 5 | NetArchTest ihlali | Mimari testte yön ya da circular failure | Kodu katman sözleşmesine çek; **matrisi elle düzeltme** | Mimari RED · ADR-028 §2.3'e dön |
 | 6 | Mojibake | İki bytelik ASCII artıkları (`\xC3\xBC` benzeri) | Dosyayı UTF-8 ile yeniden yaz; kaynağı kopyalama (G1) | **G4** · GATE-004a kapalı kalır |
 | 7 | `NoWarn` ile gizlenen hata | Derleme "0 hata" ama uyarı satırları paketlenmiş | `NoWarn` satırını sil, hatayı geri aç | GATE-004 RED · G6 |
-| 8 | Aynı dosyaya iki yazıcı | `git status` ya da diff'te beklenmedik çakışma | Bloğu serile al; kanıtı olan kazanır, kanıt yoksa [AGENTS.md](../definitions/agents.md) §3 devri | Blok durur · 3-STRIKE sayılabilir |
+| 8 | Aynı dosyaya iki yazıcı | `git status` ya da diff'te beklenmedik çakışma | Bloğu serile al; kanıtı olan kazanır, kanıt yoksa [[definitions/agents|AGENTS.md]] §3 devri | Blok durur · 3-STRIKE sayılabilir |
 
 > Müdahale sonunda **etiket** ve **kapı etkisi** birlikte raporlanır; yalnız "çözüldü" yazmak kanıt değildir (CLAUDE G5).
 
-> Bloke raporunun biçimi (`ETIKET · KONUM · NEDEN · VARSAYIM · SECENEKLER · SORU`) [AGENTS.md](../definitions/agents.md) §4 şablonundadır; burada tekrarlanmaz (SSOT).
+> Bloke raporunun biçimi (`ETIKET · KONUM · NEDEN · VARSAYIM · SECENEKLER · SORU`) [[definitions/agents|AGENTS.md]] §4 şablonundadır; burada tekrarlanmaz (SSOT).
 
 ---
 
 ## §5 Rapor Formatı
 
-Gate raporunun biçimi (ilk satır · ≤ 5 madde · somut süre · kanıt çıktısı · tek sonraki adım) **SSOT olarak [ROLE.md](../definitions/role.md) §2'dedir**; bu dosyada tekrarlanmaz. Kapı kapanışında eklenen tek alan **kanıt kutusudur**: `KANIT / DOSYA / EKSIK / SONRAKI` (§2).
+Gate raporunun biçimi (ilk satır · ≤ 5 madde · somut süre · kanıt çıktısı · tek sonraki adım) **SSOT olarak [[definitions/role|ROLE.md]] §2'dedir**; bu dosyada tekrarlanmaz. Kapı kapanışında eklenen tek alan **kanıt kutusudur**: `KANIT / DOSYA / EKSIK / SONRAKI` (§2).
 
 ### §5.1 Kapı kapanışının 5 adımı
 
@@ -682,14 +682,14 @@ SONRAKI : hedefi olustur ya da linki kaldir, sonra olcumu tekrar kos (~5 dk)
 | 5 | Kapanış kayıtları · navigasyon | `log.md` · `index.md` |
 | 6 | Prompt kaynağı (yaşam döngüsü, wizard) | `G:/…/versacoder proje planlaması ai.05.md` · `ai.06.md` |
 | 7 | Prompt kaynağı (21 adımlık ön plan) | `G:/…/versacoder proje planlaması ai.08.md` §60 |
-| engine | [engine](../definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](../.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| VISION | [VISION](../definitions/vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](../definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](../definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| MEMORY | [MEMORY](../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| ULTRA | [ULTRA](../definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [[.decisions/brain|brain]] | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| VISION | [[definitions/vision|VISION]] | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [[definitions/glossary|glossary]] | terim sozlugu (136 terim) TR / EN / ELI10 |
+| MEMORY | [[memory/memory|MEMORY]] | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

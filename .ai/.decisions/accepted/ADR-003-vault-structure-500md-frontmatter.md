@@ -54,4 +54,4 @@ frontmatter düşerse link ve ölçüme kapısı da düşerdi.
 
 ## §7 İlgili
 
-- [adr-index](../adr-index.md) · [brain](../brain.md) · [checklists/vault-link-check](../../checklists/vault-link-check.md)
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]] · [[checklists/vault-link-check|checklists/vault-link-check]]

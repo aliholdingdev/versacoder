@@ -14,9 +14,9 @@ supersedes: ""
 
 # transaction-scope-local — Yerel Transaction Politikası
 
-**Zorunlu Baglantilar:** [vault index](../../index.md) · [knowledge index](../index.md) · [error handling](../../.rules/error-handling-rules.md) · [unit-of-work-pattern](unit-of-work-pattern.md) · [dapper-async-patterns](dapper-async-patterns.md) · [sqlite-provider-setup](sqlite-provider-setup.md)
-**Küme + Hub:** [data index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (data · 6/25):** [ado-net-command](ado-net-command.md) · [ado-net-connection](ado-net-connection.md) · [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [connection-pooling-notes](connection-pooling-notes.md) · [connection-string-secrets](connection-string-secrets.md) · [dapper-multi-map](dapper-multi-map.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md) · [dapper-procedures-stored](dapper-procedures-stored.md) · [dapper-query-mapping](dapper-query-mapping.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [pagination-offset-keyset](pagination-offset-keyset.md) · [parameterized-queries](parameterized-queries.md) · [repository-pattern-thin](repository-pattern-thin.md) · [sql-injection-defense](sql-injection-defense.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[knowledge/index|knowledge index]] · [[.rules/error-handling-rules|error handling]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]]
+**Küme + Hub:** [[knowledge/data/index|data index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (data · 6/25):** [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/connection-string-secrets|connection-string-secrets]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]]
 
 > **Tek cumlelik sorumluluk:** *Atomik bir iş nasıl tek transaction'a alınır, rollback nerede çağrılır, neden `TransactionScope` kullanılmaz* sorusunun tek cevabıdır.
 
@@ -109,7 +109,7 @@ using (var connection = _connectionFactory.Create())
 
 ## §8 Kardesler
 
-[unit-of-work-pattern](unit-of-work-pattern.md) · [dapper-async-patterns](dapper-async-patterns.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [concurrency-optimistic](concurrency-optimistic.md) · [migration-rollback](migration-rollback.md)
+[[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]] · [[knowledge/data/migration-rollback|migration-rollback]]
 
 ## §9 Kanit
 

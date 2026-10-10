@@ -14,9 +14,9 @@ supersedes: ""
 
 # Terminal / CLI Yuzeyi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [glossary](../../definitions/glossary.md) · [ADR-010](../../.decisions/accepted/adr-010-cli-desktop-shared-core.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 4/8):** [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [protocol-tool-schema](protocol-tool-schema.md) · [wizard-approval-flow](wizard-approval-flow.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[definitions/vision|VISION]] · [[definitions/glossary|glossary]] · [[.decisions/accepted/adr-010-cli-desktop-shared-core|ADR-010]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[governance/keys|keys]]
+**Kardeşler (engine · 4/8):** [[knowledge/engine/diff-approval-gate|diff-approval-gate]] · [[knowledge/engine/free-model-router|free-model-router]] · [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] · [[knowledge/engine/wizard-approval-flow|wizard-approval-flow]]
 
 > **Tek cumlelik sorumluluk:** *Bir is ekrandan mi CLIden mi yapilir, cekirdek nerede ortaktir* sorusunun tek cevabidir.
 
@@ -94,10 +94,10 @@ supersedes: ""
 
 | Konu | Dosya |
 |---|---|
-| Streaming ciktisi (05) | [agent-streaming-sse](agent-streaming-sse.md) |
-| Oturum / kanit kapanisi | [session-checkpoint-persistence](session-checkpoint-persistence.md) |
-| Paralel sinir (CI'da da gecerli) | [parallel-batch-limit](parallel-batch-limit.md) |
-| Terimler | [glossary](../../definitions/glossary.md) |
+| Streaming ciktisi (05) | [[knowledge/engine/agent-streaming-sse|agent-streaming-sse]] |
+| Oturum / kanit kapanisi | [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] |
+| Paralel sinir (CI'da da gecerli) | [[knowledge/engine/parallel-batch-limit|parallel-batch-limit]] |
+| Terimler | [[definitions/glossary|glossary]] |
 
 ---
 

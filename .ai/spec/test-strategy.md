@@ -14,7 +14,7 @@ supersedes: ""
 
 # Test Stratejisi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [testing-rules](../.rules/testing-rules.md) · [WORKFLOW](../governance/workflow.md) · [versacoder-spec](versacoder-spec.md) · [tool-spec](tool-spec.md) · [session-spec](session-spec.md) · [protocol-spec](protocol-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[.rules/testing-rules|testing-rules]] · [[governance/workflow|WORKFLOW]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/tool-spec|tool-spec]] · [[spec/session-spec|session-spec]] · [[spec/protocol-spec|protocol-spec]]
 
 > **Tek cümlelik sorumluluk:** *"Bu davranış gerçekten çalışıyor mu, hangi katmanda, hangi kanıtla"* sorusunun tek cevabıdır.
 > **Kanıtsız "bitti" yasak** (ROLE.md §6): her DoD satırında çıktı dosyası ya da konsol kanıtı vardır.
@@ -97,7 +97,7 @@ VersaCoder.Tests/
 +- Cli/           CommandTests.cs         (l7 CLI)
 ```
 
-- Dosya: `<SınıfUnderTest>Tests.cs`; metot: `Yap_ŞartBeklenen` (bkz. [naming-conventions](../.rules/naming-conventions.md)).
+- Dosya: `<SınıfUnderTest>Tests.cs`; metot: `Yap_ŞartBeklenen` (bkz. [[.rules/naming-conventions|naming-conventions]]).
 - Her test tek davranışı sınar; `Assert` en az 1 (test-anti-patterns yasağı).
 
 ---
@@ -129,6 +129,6 @@ VersaCoder.Tests/
 
 1. Gerçek ücretli LLM çağrısı (yalnız sahte + ayrı manuel smoke).
 2. DevExpress görsel regresyon/fark testi (elle `ui-designer` onayı).
-3. Performans yük testi — [.rules/performance-guidelines](../.rules/performance-guidelines.md) kural seti ayrı; ölçüm PART 8.
+3. Performans yük testi — [[.rules/performance-guidelines|.rules/performance-guidelines]] kural seti ayrı; ölçüm PART 8.
 
 **Değişiklik günlüğü:** 2026-09-25 — ilk yazım (tester + architect).

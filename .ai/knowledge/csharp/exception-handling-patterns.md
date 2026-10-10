@@ -14,9 +14,9 @@ supersedes: ""
 
 # exception-handling-patterns — İstisna kalıpları
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [error-handling-rules](../../.rules/error-handling-rules.md) · [coding-standards](../../.rules/coding-standards.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 5/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [generics-constraints](generics-constraints.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[knowledge/csharp/index|csharp-index]] · [[.rules/error-handling-rules|error-handling-rules]] · [[.rules/coding-standards|coding-standards]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 5/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** *Istisna nerede yakalanir, nerede yeniden atilir ve hangi hata `Result`'a, hangisi istisnaya gider* sorusunun tek cevabidir.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 ## §0 Ozet (Answer First)
 
-Istisna **programlama hatasi ve beklenmeyen durum** icindir; dogrulanmis is hatasi `Result`/`ErrorCode` ile doner ([result-type-design](result-type-design.md), `SOL-07`). Yakalama uctur: **en ozelden genise** siralanir, `catch` dar tip + `when` filtresi ile yazilir, yeniden atis **`throw;`** ile olur — `throw ex;` stack trace'i siler ve **yasaktir**. Yutma yasaktir: bos `catch` bu vault'ta `reviewer` tarafindan HIGH olarak RED edilir (`error-handling-rules` E4, `CS-05`). Log **bir kez**, en dis katmanda alinir; mesajlar kullaniciya Turkce ve guvenli olur — baglanti dizesi, SQL, sifre gibi detay yalniz loga gider.
+Istisna **programlama hatasi ve beklenmeyen durum** icindir; dogrulanmis is hatasi `Result`/`ErrorCode` ile doner ([[knowledge/csharp/result-type-design|result-type-design]], `SOL-07`). Yakalama uctur: **en ozelden genise** siralanir, `catch` dar tip + `when` filtresi ile yazilir, yeniden atis **`throw;`** ile olur — `throw ex;` stack trace'i siler ve **yasaktir**. Yutma yasaktir: bos `catch` bu vault'ta `reviewer` tarafindan HIGH olarak RED edilir (`error-handling-rules` E4, `CS-05`). Log **bir kez**, en dis katmanda alinir; mesajlar kullaniciya Turkce ve guvenli olur — baglanti dizesi, SQL, sifre gibi detay yalniz loga gider.
 
 ## §1 Catch sirasi ve filtre
 
@@ -98,7 +98,7 @@ internal Result<Kayit> Kaydet(Kayit kayit)
 
 1. `catch` yalniz kendi sorumlulugunu sarar; gerisi **yukari tasınir** (E1).
 2. Yeniden atis `throw;` ile olur; `throw ex;` kod taramasinda **0** satir.
-3. Yeniden deneme gecici + idempotent hata icindir, ustel geri cekilme ile ([retry-and-timeout-policy](retry-and-timeout-policy.md)).
+3. Yeniden deneme gecici + idempotent hata icindir, ustel geri cekilme ile ([[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]]).
 4. Kullaniciya `ex.Message`/stack **asla** gitmez; `Message` guvenli, `Detail` log.
 5. 3 basarisiz duzeltmeden sonra kod yazmak yasaktir — bloke raporu yazilir.
 
@@ -116,10 +116,10 @@ internal Result<Kayit> Kaydet(Kayit kayit)
 
 | Konu | Dosya |
 |---|---|
-| hata sozlesmesi | [result-type-design](result-type-design.md) |
-| yeniden deneme + timeout | [retry-and-timeout-policy](retry-and-timeout-policy.md) |
-| iptal hukmu | [cancellation-token-policy](cancellation-token-policy.md) |
-| guard clause yazimi | [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) |
+| hata sozlesmesi | [[knowledge/csharp/result-type-design|result-type-design]] |
+| yeniden deneme + timeout | [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] |
+| iptal hukmu | [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] |
+| guard clause yazimi | [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] |
 
 ## §9 Kanit
 

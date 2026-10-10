@@ -14,10 +14,10 @@ supersedes: ""
 
 # Ayarlar Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [error-handling](error-handling-spec.md) · [localization](localization-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/persistence-spec|persistence]] · [[spec/error-handling-spec|error-handling]] · [[spec/localization-spec|localization]]
 
 > **Tek cümlelik sorumluluk:** *Hangi ayar var, nasıl doğrulanır, secret nasıl girilir ve değişiklik ne zaman kalıcı olur* sorusunun tek cevabıdır.
-> Ayarların **nerede saklandığı** [persistence](persistence-spec.md)’in; şifrelemenin anahtarı mimarinin konusudur.
+> Ayarların **nerede saklandığı** [[spec/persistence-spec|persistence]]’in; şifrelemenin anahtarı mimarinin konusudur.
 
 ---
 
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Ayar alanları, grupları, varsayılanları | Kalıcılık yolu/formatı | [persistence](persistence-spec.md) |
-| 2 | Secret girişi UI'ı (maskeli, kopyala/sıfırla) | Şifreleme algoritması/anahtarı | [error-handling](error-handling-spec.md) notu + mimari |
-| 3 | Doğrulama mesajları ve kaydet engeli | Hata kodu üretimi | [error-handling](error-handling-spec.md) |
-| 4 | Tema/dil tercihi **gösterimi** | Tema uygulaması / çeviri kaynakları | [theming](theming-spec.md) · [localization](localization-spec.md) |
-| 5 | Ayar değişikliğinin etkili olma zamanı | Sağlayıcı çağrısı (l4) | [ai-chat](ai-chat-spec.md) |
+| 1 | Ayar alanları, grupları, varsayılanları | Kalıcılık yolu/formatı | [[spec/persistence-spec|persistence]] |
+| 2 | Secret girişi UI'ı (maskeli, kopyala/sıfırla) | Şifreleme algoritması/anahtarı | [[spec/error-handling-spec|error-handling]] notu + mimari |
+| 3 | Doğrulama mesajları ve kaydet engeli | Hata kodu üretimi | [[spec/error-handling-spec|error-handling]] |
+| 4 | Tema/dil tercihi **gösterimi** | Tema uygulaması / çeviri kaynakları | [[spec/theming-spec|theming]] · [[spec/localization-spec|localization]] |
+| 5 | Ayar değişikliğinin etkili olma zamanı | Sağlayıcı çağrısı (l4) | [[spec/ai-chat-spec|ai-chat]] |
 
 ---
 

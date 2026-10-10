@@ -14,8 +14,8 @@ supersedes: ""
 
 # C# / .NET Knowledge Index (csharp/)
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [CLAUDE](../../claude.md) · [keys](../../governance/keys.md) · [coding-standards](../../.rules/coding-standards.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
-**Küme + Hub:** [csharp index](index.md) · [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[claude|CLAUDE]] · [[governance/keys|keys]] · [[.rules/coding-standards|coding-standards]] · [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
+**Küme + Hub:** [[knowledge/csharp/index|csharp index]] · [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]]
 
 > **Tek cumlelik sorumluluk:** *Bu vault'ta hangi C#/.NET ozelligi iki bacakta nasil davranir, o cevap hangi dosyada* sorusunun tek cevabidir.
 
@@ -23,41 +23,41 @@ supersedes: ""
 
 ## §0 Ozet (Answer First)
 
-Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tamami **iki bacak** (`net48` + `net10.0-windows`) boyunca cevap verir: hangi ozellik hangi bacakta derlenir, hangi API net48'de paket ister, `#if` neden yalniz platform farkiyla sinirlidir (G6). Oncelik sirasi: **anayasa (G1..G12) > `.rules/coding-standards.md` > bu dizindeki anlatim** — celişirse kural kazanir, dosya `DOĞRULAMA GEREKLI` ile isaretlenir. Karar (ne yapilacagi) burada degil, [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) ve [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) altindadir.
+Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tamami **iki bacak** (`net48` + `net10.0-windows`) boyunca cevap verir: hangi ozellik hangi bacakta derlenir, hangi API net48'de paket ister, `#if` neden yalniz platform farkiyla sinirlidir (G6). Oncelik sirasi: **anayasa (G1..G12) > `.rules/coding-standards.md` > bu dizindeki anlatim** — celişirse kural kazanir, dosya `DOĞRULAMA GEREKLI` ile isaretlenir. Karar (ne yapilacagi) burada degil, [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] ve [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] altindadir.
 
 ## §1 Dosya kayit defteri (29)
 
 | # | Dosya | Sorumluluk | Kaynak turu |
 |---|---|---|---|
-| 1 | [`async-await-basics.md`](async-await-basics.md) | async tum yol, `ConfigureAwait` secimi | csharp vault'u |
-| 2 | [`cancellation-token-policy.md`](cancellation-token-policy.md) | token imzasi, iptal zinciri, linkli timeout | csharp vault'u |
-| 3 | [`channel-queue-patterns.md`](channel-queue-patterns.md) | `Channel<T>` kuyruk, Complete/Completion | csharp vault'u |
-| 4 | [`collections-choice.md`](collections-choice.md) | topluluk secimi, kapasite, disari gorunurluk | csharp vault'u |
-| 5 | [`exception-handling-patterns.md`](exception-handling-patterns.md) | catch sirasi, `when`, `throw;`, katman siniri | csharp vault'u |
-| 6 | [`generics-constraints.md`](generics-constraints.md) | `where` kisitlari ve bacak dagilimi | csharp vault'u |
+| 1 | [[knowledge/csharp/async-await-basics|`async-await-basics.md`]] | async tum yol, `ConfigureAwait` secimi | csharp vault'u |
+| 2 | [[knowledge/csharp/cancellation-token-policy|`cancellation-token-policy.md`]] | token imzasi, iptal zinciri, linkli timeout | csharp vault'u |
+| 3 | [[knowledge/csharp/channel-queue-patterns|`channel-queue-patterns.md`]] | `Channel<T>` kuyruk, Complete/Completion | csharp vault'u |
+| 4 | [[knowledge/csharp/collections-choice|`collections-choice.md`]] | topluluk secimi, kapasite, disari gorunurluk | csharp vault'u |
+| 5 | [[knowledge/csharp/exception-handling-patterns|`exception-handling-patterns.md`]] | catch sirasi, `when`, `throw;`, katman siniri | csharp vault'u |
+| 6 | [[knowledge/csharp/generics-constraints|`generics-constraints.md`]] | `where` kisitlari ve bacak dagilimi | csharp vault'u |
 | 7 | `index.md` | bu kayit defteri | csharp vault'u |
-| 8 | [`interfaces-vs-abstract.md`](interfaces-vs-abstract.md) | arayuz mu soyut sinif mi, DIM yasagi | csharp vault'u |
-| 9 | [`language-versions-net48-net10.md`](language-versions-net48-net10.md) | C# 7.3 vs C# 14, ozellik tablosu | csharp vault'u |
-| 10 | [`linq-performance-pitfalls.md`](linq-performance-pitfalls.md) | erteleme, cift sayim, kapali ifade | csharp vault'u |
-| 11 | [`multi-targeting-props.md`](multi-targeting-props.md) | `Directory.Build.props/.targets`, TFM kosulu, CPM | csharp vault'u |
-| 12 | [`nullable-reference-types.md`](nullable-reference-types.md) | NRT gecisi dosya bazli mi, `#nullable` | csharp vault'u |
-| 13 | [`pattern-matching.md`](pattern-matching.md) | kalip turleri ve surum haritasi | csharp vault'u |
-| 14 | [`records-and-immutability.md`](records-and-immutability.md) | `record`, value-equality, `with` | csharp vault'u |
-| 15 | [`result-type-design.md`](result-type-design.md) | `Result`/`ErrorCode` sozlesmesi onizlemesi | csharp vault'u |
-| 16 | [`serialization-choices.md`](serialization-choices.md) | JSON/XML secimi, `BinaryFormatter` yasagi | csharp vault'u |
-| 17 | [`span-interop-net10.md`](span-interop-net10.md) | `Span`/`Memory`, P/Invoke marshalling | csharp vault'u |
-| 18 | [`task-vs-value-task.md`](task-vs-value-task.md) | `Task` vs `ValueTask`, tekrar await yasagi | csharp vault'u |
-| 19 | [`threading-locking.md`](threading-locking.md) | kilit secimi, olu kilit, kilit sirasi | csharp vault'u |
-| 20 | [`solid-principles-applications.md`](solid-principles-applications.md) | SOL-01..SOL-08'in kod karsiligi | `.rules/solid-rules.md` |
-| 21 | [`retry-and-timeout-policy.md`](retry-and-timeout-policy.md) | ustel geri cekilme, timeout butcesi | `.rules/error-handling-rules.md` |
-| 22 | [`testing-determinism.md`](testing-determinism.md) | saat/rastgele/sebeke determinizmi (TS-04..06) | `.rules/testing-rules.md` |
-| 23 | [`assertion-quality.md`](assertion-quality.md) | iddia cesitliligi ve hata yolu testleri (TS-07/09) | `.rules/testing-rules.md` |
-| 24 | [`guard-clauses-and-method-shape.md`](guard-clauses-and-method-shape.md) | guard clause, metot/sinif boyutu (CS-08/09) | `.rules/coding-standards.md` |
-| 25 | [`naming-and-comments.md`](naming-and-comments.md) | isimlendirme, yorum politikasi (CS-01/07/10/16) | `.rules/coding-standards.md` |
-| 26 | [`resource-disposal-patterns.md`](resource-disposal-patterns.md) | `using`/`await using`, kaynak sahipligi (CS-15) | `.rules/coding-standards.md` |
-| 27 | [`constants-and-magic-values.md`](constants-and-magic-values.md) | sabit, enum, yapilandirma (CS-14) | `.rules/coding-standards.md` |
-| 28 | [`layer-dependency-direction.md`](layer-dependency-direction.md) | katman yonu ve NetArchTest denetimi (SOL-06) | `.rules/solid-rules.md` + ADR-028 |
-| 29 | [`async-ui-state-flows.md`](async-ui-state-flows.md) | busy durum, fire-and-forget, UI akisi (A7/A8) | `.rules/async-rules.md` |
+| 8 | [[knowledge/csharp/interfaces-vs-abstract|`interfaces-vs-abstract.md`]] | arayuz mu soyut sinif mi, DIM yasagi | csharp vault'u |
+| 9 | [[knowledge/csharp/language-versions-net48-net10|`language-versions-net48-net10.md`]] | C# 7.3 vs C# 14, ozellik tablosu | csharp vault'u |
+| 10 | [[knowledge/csharp/linq-performance-pitfalls|`linq-performance-pitfalls.md`]] | erteleme, cift sayim, kapali ifade | csharp vault'u |
+| 11 | [[knowledge/csharp/multi-targeting-props|`multi-targeting-props.md`]] | `Directory.Build.props/.targets`, TFM kosulu, CPM | csharp vault'u |
+| 12 | [[knowledge/csharp/nullable-reference-types|`nullable-reference-types.md`]] | NRT gecisi dosya bazli mi, `#nullable` | csharp vault'u |
+| 13 | [[knowledge/csharp/pattern-matching|`pattern-matching.md`]] | kalip turleri ve surum haritasi | csharp vault'u |
+| 14 | [[knowledge/csharp/records-and-immutability|`records-and-immutability.md`]] | `record`, value-equality, `with` | csharp vault'u |
+| 15 | [[knowledge/csharp/result-type-design|`result-type-design.md`]] | `Result`/`ErrorCode` sozlesmesi onizlemesi | csharp vault'u |
+| 16 | [[knowledge/csharp/serialization-choices|`serialization-choices.md`]] | JSON/XML secimi, `BinaryFormatter` yasagi | csharp vault'u |
+| 17 | [[knowledge/csharp/span-interop-net10|`span-interop-net10.md`]] | `Span`/`Memory`, P/Invoke marshalling | csharp vault'u |
+| 18 | [[knowledge/csharp/task-vs-value-task|`task-vs-value-task.md`]] | `Task` vs `ValueTask`, tekrar await yasagi | csharp vault'u |
+| 19 | [[knowledge/csharp/threading-locking|`threading-locking.md`]] | kilit secimi, olu kilit, kilit sirasi | csharp vault'u |
+| 20 | [[knowledge/csharp/solid-principles-applications|`solid-principles-applications.md`]] | SOL-01..SOL-08'in kod karsiligi | `.rules/solid-rules.md` |
+| 21 | [[knowledge/csharp/retry-and-timeout-policy|`retry-and-timeout-policy.md`]] | ustel geri cekilme, timeout butcesi | `.rules/error-handling-rules.md` |
+| 22 | [[knowledge/csharp/testing-determinism|`testing-determinism.md`]] | saat/rastgele/sebeke determinizmi (TS-04..06) | `.rules/testing-rules.md` |
+| 23 | [[knowledge/csharp/assertion-quality|`assertion-quality.md`]] | iddia cesitliligi ve hata yolu testleri (TS-07/09) | `.rules/testing-rules.md` |
+| 24 | [[knowledge/csharp/guard-clauses-and-method-shape|`guard-clauses-and-method-shape.md`]] | guard clause, metot/sinif boyutu (CS-08/09) | `.rules/coding-standards.md` |
+| 25 | [[knowledge/csharp/naming-and-comments|`naming-and-comments.md`]] | isimlendirme, yorum politikasi (CS-01/07/10/16) | `.rules/coding-standards.md` |
+| 26 | [[knowledge/csharp/resource-disposal-patterns|`resource-disposal-patterns.md`]] | `using`/`await using`, kaynak sahipligi (CS-15) | `.rules/coding-standards.md` |
+| 27 | [[knowledge/csharp/constants-and-magic-values|`constants-and-magic-values.md`]] | sabit, enum, yapilandirma (CS-14) | `.rules/coding-standards.md` |
+| 28 | [[knowledge/csharp/layer-dependency-direction|`layer-dependency-direction.md`]] | katman yonu ve NetArchTest denetimi (SOL-06) | `.rules/solid-rules.md` + ADR-028 |
+| 29 | [[knowledge/csharp/async-ui-state-flows|`async-ui-state-flows.md`]] | busy durum, fire-and-forget, UI akisi (A7/A8) | `.rules/async-rules.md` |
 
 ## §2 Konuya gore yonlendirme
 
@@ -96,7 +96,7 @@ Bu dizin `.ai/knowledge/csharp/` altindaki **29 dosyanin** kayit defteridir. Tam
 | Dosya yeni eklendi | bu tabloya 1 satir, sonra icerik |
 | Celiski .rules ile | `.rules` kazanir, dosya `DOĞRULAMA GEREKLI` |
 | Kanitsiz "bitti" | G5 ihlali -> RED |
-| Karar gerektiren konu | [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) / [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
+| Karar gerektiren konu | [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] / [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] |
 
 ## §9 Kanit
 

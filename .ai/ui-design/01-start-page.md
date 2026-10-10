@@ -14,7 +14,7 @@ supersedes: ""
 
 # 01 — START PAGE
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [VISION](../definitions/vision.md) · [02-main-ide](02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[definitions/vision|VISION]] · [[ui-design/02-main-ide|02-main-ide]] · [[.rules/ui-rules|ui-rules]] · [[.rules/devexpress-rules|devexpress-rules]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cümlelik sorumluluk:** Uygulama açılışta gösterdiği ilk ekranın hangi bölgelerden oluştuğu
 > ve tıklamaların nereye gittiği sorusunun tek cevabıdır.
@@ -157,8 +157,8 @@ hata metni StatusBar'da + neden (kod 401 vb.), dramatik diyalog yok.
 | # | Kaynak | Ne kanıtlar |
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/01-start-page.md` (eski vault) | bölge/kontrol listesi |
-| 2 | [devexpress-rules](../.rules/devexpress-rules.md) | sürüm + `Office2010` tek stil |
-| 3 | [ui-rules](../.rules/ui-rules.md) | yerleşim/erişilebilirlik tabanı |
-| 4 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | l7 sorumluluğu |
+| 2 | [[.rules/devexpress-rules|devexpress-rules]] | sürüm + `Office2010` tek stil |
+| 3 | [[.rules/ui-rules|ui-rules]] | yerleşim/erişilebilirlik tabanı |
+| 4 | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | l7 sorumluluğu |
 
 > Ekran adı `01-start-page` ve `Son Gunc.` tarihleri örnektir — canlı veri servisten gelir (`DOĞRULAMA GEREKLİ`: servis arayüzü adı ilk derlemede doğrulanacak).

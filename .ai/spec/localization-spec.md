@@ -14,7 +14,7 @@ supersedes: ""
 
 # Yerelleştirme Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [error-handling](error-handling-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/settings-spec|settings]] · [[spec/error-handling-spec|error-handling]]
 
 > **Tek cümlelik sorumluluk:** *UI metinleri nerede yaşar, nasıl okunur ve dil değiştirme ne zaman (kapsam dışı) sayılır* sorusunun tek cevabıdır.
 > **Kapsam notu:** çok dilli arayüz **açık kapsam dışıdır** (`versacoder-spec.md` §6); bu şartname yalnız kaynak **düzenini** şart koşar.
@@ -32,10 +32,10 @@ Tüm kullanıcıya görünen sabit metin `.Form.resx` içinde yaşar ve `Resourc
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
 | 1 | `.resx` + `ResourceManager` kullanımı ve adlandırma | Gerçek çeviri metinleri / dil paketleri | kapsam dışı (versacoder-spec §6) |
-| 2 | Anahtar/adlandırma kuralları (NC-18) | Ayar ekranındaki dil seçimi davranışı | [settings](settings-spec.md) |
-| 3 | Dinamik mesaj şablonları (hata, görev) | Hata kodu üretimi/seviyesi | [error-handling](error-handling-spec.md) |
-| 4 | Designer üçlüsü ile senkron (`Form.cs/.Designer.cs/.resx`) | Form yerleşimi | [ui-shell](ui-shell-spec.md) |
-| 5 | Eksik anahtar denetimi (build/test) | Ölçüm/monitoring | [observability](observability-spec.md) |
+| 2 | Anahtar/adlandırma kuralları (NC-18) | Ayar ekranındaki dil seçimi davranışı | [[spec/settings-spec|settings]] |
+| 3 | Dinamik mesaj şablonları (hata, görev) | Hata kodu üretimi/seviyesi | [[spec/error-handling-spec|error-handling]] |
+| 4 | Designer üçlüsü ile senkron (`Form.cs/.Designer.cs/.resx`) | Form yerleşimi | [[spec/ui-shell-spec|ui-shell]] |
+| 5 | Eksik anahtar denetimi (build/test) | Ölçüm/monitoring | [[spec/observability-spec|observability]] |
 
 ---
 

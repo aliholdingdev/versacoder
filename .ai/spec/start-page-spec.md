@@ -14,16 +14,16 @@ supersedes: ""
 
 # Start Page Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [project-model](project-model-spec.md) · [ui-shell](ui-shell-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/persistence-spec|persistence]] · [[spec/project-model-spec|project-model]] · [[spec/ui-shell-spec|ui-shell]]
 
 > **Tek cümlelik sorumluluk:** *Uygulama açıldığında kullanıcı ne görür, son proje listesi nereden gelir ve hızlı aksiyonlar hangi komuta gider* sorusunun tek cevabıdır.
-> Start Page bir **karşılama görünümüdür**; proje açma işleminin kendisi [project-model](project-model-spec.md) kapsamındadır.
+> Start Page bir **karşılama görünümüdür**; proje açma işleminin kendisi [[spec/project-model-spec|project-model]] kapsamındadır.
 
 ---
 
 ## §0 Özet (Answer First)
 
-Açılış ekranı `TileControl` (hızlı aksiyonlar) + son projeler listesi + `SearchControl` (listede filtre) + `MarqueeProgressBarControl` (yükleniyor) katmanlarından oluşur. Son projeler **kayıtlı oturumdan** (kalıcı liste) okunur, en son üste olmak üzere 10 kalem gösterilir. "New Project" ve "Open" akışları Main IDE'yi ([ui-shell](ui-shell-spec.md)) başlatır. Hedef: Start Page görünür olana kadar **≤ 5 sn** (soğuk açılış, VC-PRD-080).
+Açılış ekranı `TileControl` (hızlı aksiyonlar) + son projeler listesi + `SearchControl` (listede filtre) + `MarqueeProgressBarControl` (yükleniyor) katmanlarından oluşur. Son projeler **kayıtlı oturumdan** (kalıcı liste) okunur, en son üste olmak üzere 10 kalem gösterilir. "New Project" ve "Open" akışları Main IDE'yi ([[spec/ui-shell-spec|ui-shell]]) başlatır. Hedef: Start Page görünür olana kadar **≤ 5 sn** (soğuk açılış, VC-PRD-080).
 
 ---
 
@@ -31,11 +31,11 @@ Açılış ekranı `TileControl` (hızlı aksiyonlar) + son projeler listesi + `
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Son projeler listesi (sıra, tıklama, kaldırma) | Proje kaydının şeması | [persistence](persistence-spec.md) |
-| 2 | Hızlı aksiyon karoları (New/Open/Import/Docs) | Proje oluşturma doğrulaması | [project-model](project-model-spec.md) |
-| 3 | Listede arama/filtre (yerel) | Proje içi grep | [search-grep](search-grep-spec.md) |
-| 4 | Açılış yükleme durumu ve süresi | Kabuk yerleşimi/pencere | [ui-shell](ui-shell-spec.md) |
-| 5 | Son proje tıklanamaz hale gelmesi (dizin yok) | Hata kodu sınıflandırma | [error-handling](error-handling-spec.md) |
+| 1 | Son projeler listesi (sıra, tıklama, kaldırma) | Proje kaydının şeması | [[spec/persistence-spec|persistence]] |
+| 2 | Hızlı aksiyon karoları (New/Open/Import/Docs) | Proje oluşturma doğrulaması | [[spec/project-model-spec|project-model]] |
+| 3 | Listede arama/filtre (yerel) | Proje içi grep | [[spec/search-grep-spec|search-grep]] |
+| 4 | Açılış yükleme durumu ve süresi | Kabuk yerleşimi/pencere | [[spec/ui-shell-spec|ui-shell]] |
+| 5 | Son proje tıklanamaz hale gelmesi (dizin yok) | Hata kodu sınıflandırma | [[spec/error-handling-spec|error-handling]] |
 
 ---
 

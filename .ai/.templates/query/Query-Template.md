@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Veri Sorgusu / Rapor Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../adr/adr-data-template]] · [[../infrastructure/dapper-mapping-template]] · [[../infrastructure/migration-template]] · [[../../architecture/index.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/adr/adr-data-template]] · [[.templates/infrastructure/dapper-mapping-template]] · [[.templates/infrastructure/migration-template]] · [[architecture/index]]
 
 ---
 
@@ -300,7 +300,7 @@ authority: primary
 ---
 # QRY-NNN — {{SORGU_ADI}}
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../infrastructure/dapper-mapping-template]] · [[../infrastructure/migration-template]] · [[../adr/adr-data-template]] · [[../../architecture/index.md]] · [[../CLAUDE]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/infrastructure/dapper-mapping-template]] · [[.templates/infrastructure/migration-template]] · [[.templates/adr/adr-data-template]] · [[architecture/index]] · [[.templates/index]]
 
 ## §1 Amaç — {{BIR_CUMLE}}
 ## §2 Parametreler

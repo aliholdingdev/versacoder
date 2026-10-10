@@ -78,7 +78,7 @@ Her ADR için iki ek satır: **tersi yapılsaydı ne olurdu** ve **bu hatayı ha
 | 010 | İki ayrı çekirdek yazılsaydı her özellik iki kez implemente edilir, davranış sapması ve 2x iş oluşurdu | ortak çekirdek testi: "aynı iş, Desktop ve Cli'de aynı sonuç" |
 | 011 | Sıra değişseydi ücretsiz sağlayıcı çağrılmaz ya da tek sağlayıcı kesilince ürün susardı; anahtar koda girerdi | `secret-leak-check` + l4 llm-http sıra testi |
 | 012 | Bacaklar farklı major kullansaydı NU1201 benzeri uyumsuzluk ve sessiz davranış farkı çıkardı | `dependency-update-check` + iki bacak matrisi (`PROJECTS.md` §2.1) |
-| 013 | Katman/ölçü belirsiz kalsaydı herkes kendi sayısını uydurur, "5000+" iddiası kanıtsız kalırdı | `count-components.ps1` + [layer-boundary-check](../checklists/layer-boundary-check.md) |
+| 013 | Katman/ölçü belirsiz kalsaydı herkes kendi sayısını uydurur, "5000+" iddiası kanıtsız kalırdı | `count-components.ps1` + [[checklists/layer-boundary-check|layer-boundary-check]] |
 | 014 | `.csproj` başına `Version` satırı olsaydı 8 paket × 11 proje sürüm sapması restore'u kırardı | `dependency-update-check` + `.csproj` içinde `Version` = 0 araması |
 | 015 | Designer elle yazılsayda kaynak ürün bozulur, ekran tasarımcıda açılmaz ve geri alınamazdı | `winforms-designer-check` |
 | 016 | Bağlantı üst katmanda tutulsaydı katman testi izole edilemez, transaction bütünlüğü dağılırdı | `data-access-check` + NetArchTest "bağlantı yalnız l4" kuralı |
@@ -93,7 +93,7 @@ Her ADR için iki ek satır: **tersi yapılsaydı ne olurdu** ve **bu hatayı ha
 | 025 | Onaysız Form kodu yazılsaydı tasarım değişince kod iki kez yazılır, onay zinciri koparıdı | `gate-003-ui-onay` |
 | 026 | Serbest metin log kalsaydı iki bacakta alan adları ayrışır, hata günlükten çözülemezdi | `logging-observability-check` + §4.1 log satırı |
 | 027 | Elle sayıma izin verilseydi "5000+" iddiası her raporda farklı çıkardı; kapı sayıya güvenirdi | `gate-004a-vault-kapanis` (Q5) + §4.1 elle yazılmış sayı satırı |
-| 028 | K3'ün 9 Tier / 575 csproj senaryosu kabul edilseydi ~1150 hedef oluşur, restore/IDE çökerdi | [layer-boundary-check](../checklists/layer-boundary-check.md) + `PROJECTS.md` §3 altı düzeltme |
+| 028 | K3'ün 9 Tier / 575 csproj senaryosu kabul edilseydi ~1150 hedef oluşur, restore/IDE çökerdi | [[checklists/layer-boundary-check|layer-boundary-check]] + `PROJECTS.md` §3 altı düzeltme |
 | 029 | Unicode box-drawing kalsaydı her terminal/monospace olmayan ortamda kutu bozulur, G4 taraması vault genelinde sürekli RED verirdi | kutu taraması `U+2500-U+257F` = 0 + `documentation-check` |
 
 **Okuma kuralı:** bir kod değişikliği bu tabloda bir satırı ihlal ediyorsa, o satırın "Yakalama noktası" sütunundaki komut **değişiklikten önce** çalıştırılır; komut çıkışı olmayan düzeltme tamamlanmış sayılmaz.
@@ -144,7 +144,7 @@ Her ADR için iki ek satır: **tersi yapılsaydı ne olurdu** ve **bu hatayı ha
 | **D** — Bağımlılık tersine | Katmanlar yalnız altına referans verir (`l7→…→l0`, `l3→l0`); üst katman `DbConnection`'ı tanımaz, `ISqlConnectionFactory`/`IDbExecutor`'a bağımlıdır | ADR-005, ADR-016, ADR-028 |
 | **I** — Niyet gizleme (ek) | Çağırılan, ne yaptığını değil, neyi başlattığını söyler; ödeme/oturum gibi niyetler arayüz adında kalır | ADR-006, ADR-011 |
 
-Ek kural: **yön = yukarıdan aşağıya**, ters referans NetArchTest ile kanıtlanır ([layer-boundary-check](../checklists/layer-boundary-check.md)).
+Ek kural: **yön = yukarıdan aşağıya**, ters referans NetArchTest ile kanıtlanır ([[checklists/layer-boundary-check|layer-boundary-check]]).
 
 ### §2.1 S — Tek Sorumluluk (SRP)
 
@@ -484,7 +484,7 @@ if (r.IsFail) { Console.Error.WriteLine(r.Code); return 1; }   // kod uydurulmaz
 2. **`Result<T>` tipinin kesin konumu:** l0 `result-error` (N02) ile l5 Crosscutting ifadesi çelişir; kod yazılırken sabitlenecek.
 3. **CI/CD yok:** kapılar local (script + checklist); CI'ya taşınma tarihi belirsiz (`PROJECTS.md` §5).
 4. **K3 99 kayıtsız dosya:** katalog kapsamı dışı; üretim ağacına taşınmayacak, kaydı ADR-028 §C1'de.
-5. **Semantik atlas güncellemesi:** S01–S07 bayatlarsa [layer-boundary-check](../checklists/layer-boundary-check.md) tek kurtarıcı (risk R4).
+5. **Semantik atlas güncellemesi:** S01–S07 bayatlarsa [[checklists/layer-boundary-check|layer-boundary-check]] tek kurtarıcı (risk R4).
 
 ### §4.4 Red Team — En Sık Yapılan 8 Hata
 
@@ -517,20 +517,20 @@ if (r.IsFail) { Console.Error.WriteLine(r.Code); return 1; }   // kod uydurulmaz
 | 8 | `.ai/.rules/solid-rules.md` | SOLID kurallarının ayrıntılı metni |
 | 9 | `.ai/CLAUDE.md` · `.ai/WORKFLOW.md` · `.ai/MEMORY.md` · `.ai/index.md` | anayasa ve akış |
 | 10 | Prompt kaynağı (mimari karar felsefesi, boundary) | `G:/…/versacoder proje planlaması ai.08.md` |
-| index | [index](../index.md) | vault navigasyonu — harita, hizli yol tarifleri, kalite sayaclari |
-| CLAUDE | [CLAUDE](../claude.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
-| AGENTS | [AGENTS](../definitions/agents.md) | ajan matrisi — Chat!=Agent!=LLM, cikti kutusu, 3-STRIKE, gorsel uretim hatti |
-| WORKFLOW | [WORKFLOW](../governance/workflow.md) | gate zinciri — GATE-004a..006, kabul kriteri, kanit kutusu |
-| ROLE | [ROLE](../definitions/role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](../definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| VISION | [VISION](../definitions/vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](../definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](../definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| keys | [keys](../governance/keys.md) | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
-| MEMORY | [MEMORY](../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](../ops/log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](../definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| index | [[index|index]] | vault navigasyonu — harita, hizli yol tarifleri, kalite sayaclari |
+| CLAUDE | [[claude|CLAUDE]] | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| AGENTS | [[definitions/agents|AGENTS]] | ajan matrisi — Chat!=Agent!=LLM, cikti kutusu, 3-STRIKE, gorsel uretim hatti |
+| WORKFLOW | [[governance/workflow|WORKFLOW]] | gate zinciri — GATE-004a..006, kabul kriteri, kanit kutusu |
+| ROLE | [[definitions/role|ROLE]] | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| VISION | [[definitions/vision|VISION]] | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [[definitions/glossary|glossary]] | terim sozlugu (136 terim) TR / EN / ELI10 |
+| keys | [[governance/keys|keys]] | anahtar kelime -> hedef dosya hiz haritasi (101 satir) |
+| MEMORY | [[memory/memory|MEMORY]] | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [[ops/log|log]] | append-only is gunlugu + Quality Report |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |
 | kok WORKFLOW | [kok WORKFLOW](../../workflow.md) | kok kapi ozeti (gate sirasi tek satir) |

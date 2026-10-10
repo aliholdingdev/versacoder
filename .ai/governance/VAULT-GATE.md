@@ -7,12 +7,12 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Zincirin başı: 10 kontrol + oturum protokolü; commit öncesi yeşil"
-tags: [['gate', 'vault-gate', 'validation', 'd13', 'd24']]
+tags: [gate, vault-gate, validation, d13, d24]
 source: "D13 + D21 + D24 kararları (2026-10-07 onaylı plan, ADR-032 §2.7-2.8)"
 supersedes: ""
 ---
 
-**Zorunlu Bağlantılar:** [WORKFLOW](WORKFLOW.md) · [CLAUDE](../CLAUDE.md) · [ADR-032](../.decisions/accepted/ADR-032-ai-control-plane.md) · [audit](audit.md) · [vault-link-check](../checklists/vault-link-check.md)
+**Zorunlu Bağlantılar:** [[governance/WORKFLOW|WORKFLOW]] · [[CLAUDE|CLAUDE]] · [[.decisions/accepted/ADR-032-ai-control-plane|ADR-032]] · [[governance/audit|audit]] · [[checklists/vault-link-check|vault-link-check]]
 
 # VAULT-GATE — `.ai` Değişiklik Kapısı
 
@@ -64,5 +64,5 @@ Durum: **betikler Faz 4'te üretilecek** — bu dosya şimdiden hedefi ve
 
 ## §5 İlgili
 
-- [audit](audit.md) · [versioning](versioning.md) · [WORKFLOW](WORKFLOW.md)
-- [ADR-032](../.decisions/accepted/ADR-032-ai-control-plane.md)
+- [[governance/audit|audit]] · [[governance/versioning|versioning]] · [[governance/WORKFLOW|WORKFLOW]]
+- [[.decisions/accepted/ADR-032-ai-control-plane|ADR-032]]

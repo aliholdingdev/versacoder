@@ -14,7 +14,7 @@ supersedes: ""
 
 # Tema Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [settings](settings-spec.md) · [ui-shell](ui-shell-spec.md) · [localization](localization-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/settings-spec|settings]] · [[spec/ui-shell-spec|ui-shell]] · [[spec/localization-spec|localization]]
 
 > **Tek cümlelik sorumluluk:** *Hangi görünüm (skin) ve ribbon stili kullanılır, koyu/açık tercihi nasıl uygulanır, neler bilinçli kapsam dışıdır* sorusunun tek cevabıdır.
 > **Değiştirilemez:** `RibbonControlStyle.Office2010` (ADR-004 / G3). Bu satırı kıran kod RED'dir.
@@ -31,10 +31,10 @@ Ribbon stili **her koşulda** `RibbonControlStyle.Office2010`'dur; kullanıcıya
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Ribbon stili kilidi (`Office2010`) | Panel yerleşimi/kabuk | [ui-shell](ui-shell-spec.md) |
-| 2 | Skin seçimi (açık/koyu) ve uygulama anı | Ayarın kaydedilmesi | [settings](settings-spec.md) · [persistence](persistence-spec.md) |
+| 1 | Ribbon stili kilidi (`Office2010`) | Panel yerleşimi/kabuk | [[spec/ui-shell-spec|ui-shell]] |
+| 2 | Skin seçimi (açık/koyu) ve uygulama anı | Ayarın kaydedilmesi | [[spec/settings-spec|settings]] · [[spec/persistence-spec|persistence]] |
 | 3 | Yeni form/bağlantının mevcut görünümü alması | Her ekranın özel renk kodu | kardeş şartnameler |
-| 4 | Erişilebilirlik kontrast gerekliliği (DX-14) | Kontrast ölçümü/metriği | [observability](observability-spec.md) |
+| 4 | Erişilebilirlik kontrast gerekliliği (DX-14) | Kontrast ölçümü/metriği | [[spec/observability-spec|observability]] |
 | 5 | Kapsam dışı: özel skin/derleme, palet editörü | — | karar = kullanıcı + ADR (G8) |
 
 ---
@@ -67,7 +67,7 @@ Ribbon stili **her koşulda** `RibbonControlStyle.Office2010`'dur; kullanıcıya
 | # | Kural | Kabul |
 |---|---|---|
 | T1 | Skin değiştirme **anında** uygulanır; yeniden başlatma gerekmez | form yeniden çizimi 1 geçiş |
-| T2 | Skin tercihi kalıcıdır ([persistence](persistence-spec.md)) | yeniden açılışta aynı görünüm |
+| T2 | Skin tercihi kalıcıdır ([[spec/persistence-spec|persistence]]) | yeniden açılışta aynı görünüm |
 | T3 | Bilinmeyen skin adı → varsayana düşer + uyarı | kilitli açılış yok |
 | T4 | Tüm formlar `UserLookAndFeel.Default`'tan miras alır | forma özel skin = 0 |
 | T5 | Ribbon stili hiçbir yerde **kodla değiştirilemez** | `RibbonControlStyle.` yalnız `Office2010` |

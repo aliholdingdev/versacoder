@@ -14,7 +14,7 @@ supersedes: ""
 
 # GATE-005 — Test + Kapsam
 
-**Zorunlu Baglantilar:** [checklist index](index.md) · [vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [TODOS index](../ops/todos/index.md)
+**Zorunlu Baglantilar:** [[checklists/index|checklist index]] · [[index|vault index]] · [[governance/workflow|WORKFLOW]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[ops/todos/index|TODOS index]]
 
 > **Tek cumlelik sorumluluk:** Testlerin yesil oldugunu, mimari denetimin ihlalsiz oldugunu ve kapsamin kanitini denetler.
 
@@ -22,17 +22,17 @@ supersedes: ""
 
 - **Kullanim:** bu gecisten once yukaridan asagi tek tek isaretlenir; **1 madde bile bossa RED**.
 - **Kapatan:** kullanici — bu liste yalniz kanit hazirlar (G12).
-- **Kanit bicimi:** [WORKFLOW](../governance/workflow.md) §2 4 satir (`KANIT/DOSYA/EKSIK/SONRAKI`).
-- **Sira:** [WORKFLOW](../governance/workflow.md) §1 gate sirasinda ilgili kapidan **once** calistirilir.
+- **Kanit bicimi:** [[governance/workflow|WORKFLOW]] §2 4 satir (`KANIT/DOSYA/EKSIK/SONRAKI`).
+- **Sira:** [[governance/workflow|WORKFLOW]] §1 gate sirasinda ilgili kapidan **once** calistirilir.
 
 ### §0.1 Calistirma zamanlamasi
 
 | Alan | Deger |
 |---|---|
 | Ne zaman | ilgili is baslamadan **once** (on-kontrol) ya da kapi kapanisinda (kanit) |
-| Kim hazirlar | isin ureticisi (matristeki ajan — [AGENTS](../definitions/agents.md) §2) |
+| Kim hazirlar | isin ureticisi (matristeki ajan — [[definitions/agents|AGENTS]] §2) |
 | Kim kapatir | **yalniz kullanici** (G12) |
-| Suresi asilirsa | is durur + [log](../ops/log.md) raporu (WORKFLOW §2, 20 dk esigi) |
+| Suresi asilirsa | is durur + [[ops/log|log]] raporu (WORKFLOW §2, 20 dk esigi) |
 | Kanit kutusu | §4 — 4 satir, `EKSIK` bos birakilmaz |
 
 ## §1 Kabul Kriterleri (7 madde)
@@ -76,9 +76,9 @@ SONRAKI : <adim, ~ sure>
 
 ## §5 Kaynak (bu liste nereden turetilmistir)
 
-- [WORKFLOW](../governance/workflow.md) §2.4 (5 kabul kriteri + 6 kirmizi neden + NetArchTest sarti)
-- [CLAUDE](../claude.md) G2 · G5 · §2 (tespit komutlari)
-- [brain](../.decisions/brain.md) §1.1 ADR-005/017/019 yakalama satirlari · §4.1
+- [[governance/workflow|WORKFLOW]] §2.4 (5 kabul kriteri + 6 kirmizi neden + NetArchTest sarti)
+- [[claude|CLAUDE]] G2 · G5 · §2 (tespit komutlari)
+- [[.decisions/brain|brain]] §1.1 ADR-005/017/019 yakalama satirlari · §4.1
 - **Turetme notu:** WORKFLOW "14 adim" der; adimlar yazilmamis -> kabul kriterlerinden 7 madde turetildi, fark `DOĞRULAMA GEREKLI`
 
 > **Not:** Bu liste vault belgelerinden **turetilmistir**; kaynakta olmayan madde uydurulmaz (G9). Turetilmis sayi ile kaynak arasindaki fark varsa `DOĞRULAMA GEREKLI` isaretlenir.
@@ -87,16 +87,16 @@ SONRAKI : <adim, ~ sure>
 
 ## §6 Iliskili Dosyalar
 
-[index](index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [PROJECTS](../definitions/projects.md) · [VISION](../definitions/vision.md) · [keys](../governance/keys.md) · [glossary](../definitions/glossary.md) · [log](../ops/log.md) · [TODOS index](../ops/todos/index.md) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)
+[[checklists/index|index]] · [[governance/workflow|WORKFLOW]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/projects|PROJECTS]] · [[definitions/vision|VISION]] · [[governance/keys|keys]] · [[definitions/glossary|glossary]] · [[ops/log|log]] · [[ops/todos/index|TODOS index]] · [[.decisions/draft/adr-031-visual-production-provider|ADR-031]]
 
 ### §6.1 Ayni gecisten gecen diger checklist'ler
 
 Sert kapi on kontrolleri (hepsi kapi kapanisindan **once** calisir; birinde RED varsa siradaki kapi acilmaz):
 
-- [gate-004a-vault-kapanis](gate-004a-vault-kapanis.md) — vault olcumu (GATE-004a)
-- [gate-003-ui-onay](gate-003-ui-onay.md) — 7 wireframe + kullanici onayi (GATE-003, HARD STOP)
-- [gate-004-ilk-commit](gate-004-ilk-commit.md) — cift bacak build + ilk commit (GATE-004)
-- [gate-005-test-kapsami](gate-005-test-kapsami.md) — test + NetArchTest (GATE-005)
-- [layer-boundary-check](layer-boundary-check.md) — katman siniri 13 soru
+- [[checklists/gate-004a-vault-kapanis|gate-004a-vault-kapanis]] — vault olcumu (GATE-004a)
+- [[checklists/gate-003-ui-onay|gate-003-ui-onay]] — 7 wireframe + kullanici onayi (GATE-003, HARD STOP)
+- [[checklists/gate-004-ilk-commit|gate-004-ilk-commit]] — cift bacak build + ilk commit (GATE-004)
+- [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] — test + NetArchTest (GATE-005)
+- [[checklists/layer-boundary-check|layer-boundary-check]] — katman siniri 13 soru
 
 **Ortak kural:** bu checklist'teki bir madde digerinde de RED uretiyorsa **once en alttaki kok neden** kapatilir; yuzey duzeltmesi kapiyi acmaz (CLAUDE G5 — kanitsiz gecis yok).

@@ -50,5 +50,5 @@ olurdu; iki vault çelişince hangisinin doğru olduğu bilinmezdi.
 
 ## §7 İlgili
 
-- [ADR-024-coremusic-vault-immutable.md](adr-024-coremusic-vault-immutable.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-024-coremusic-vault-immutable|ADR-024-coremusic-vault-immutable.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

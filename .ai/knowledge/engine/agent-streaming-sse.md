@@ -14,9 +14,9 @@ supersedes: ""
 
 # Agent Streaming (SSE) Akisi
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [VISION](../../definitions/vision.md) · [ADR-008](../../.decisions/accepted/adr-008-transcript-compaction.md) · [ADR-011](../../.decisions/accepted/adr-011-llm-provider-order.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 1/8):** [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [parallel-batch-limit](parallel-batch-limit.md) · [protocol-tool-schema](protocol-tool-schema.md) · [session-checkpoint-persistence](session-checkpoint-persistence.md) · [terminal-cli-surface](terminal-cli-surface.md) · [wizard-approval-flow](wizard-approval-flow.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[definitions/vision|VISION]] · [[.decisions/accepted/adr-008-transcript-compaction|ADR-008]] · [[.decisions/accepted/adr-011-llm-provider-order|ADR-011]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (engine · 1/8):** [[knowledge/engine/diff-approval-gate|diff-approval-gate]] · [[knowledge/engine/free-model-router|free-model-router]] · [[knowledge/engine/parallel-batch-limit|parallel-batch-limit]] · [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] · [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] · [[knowledge/engine/terminal-cli-surface|terminal-cli-surface]] · [[knowledge/engine/wizard-approval-flow|wizard-approval-flow]]
 
 > **Tek cumlelik sorumluluk:** *Saglayicidan gelen token akisi hangi katmandan gecer, ekranda ne gorunur* sorusunun tek cevabidir.
 

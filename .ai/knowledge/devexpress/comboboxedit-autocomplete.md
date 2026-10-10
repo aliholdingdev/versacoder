@@ -14,9 +14,9 @@ supersedes: ""
 
 # ComboBoxEdit AutoComplete
 
-**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [kodlama standartlari](../../.rules/coding-standards.md) · [ADR-005 ado.net dapper](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [checkedcomboedit-values](checkedcomboedit-values.md) · [dx-validation-provider](dx-validation-provider.md)
-**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|bilgi indeksi]] · [[index|vault index]] · [[.rules/coding-standards|kodlama standartlari]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005 ado.net dapper]] · [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] · [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 5/35):** tam liste → [[knowledge/devexpress/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Kisa ve sabit bir listede ComboBoxEdit autocomplete'in nerede acilacagi, hangi ozelliklerle ayarlanacagi ve degerin nasil dogrulanacagi* sorusunun tek cevabidir.
 
@@ -30,7 +30,7 @@ supersedes: ""
 |---|---|---|
 | <= 20 sabit deger, tek secim | **`ComboBoxEdit`** | hafif, dropdown + tamamlama |
 | 20+ kayit / sorgudan gelen liste | `LookUpEdit` | arama kolonu, kaynak baglama |
-| Birden fazla deger secilecek | `CheckedComboBoxEdit` | bkz. [checkedcomboedit-values](checkedcomboedit-values.md) |
+| Birden fazla deger secilecek | `CheckedComboBoxEdit` | bkz. [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] |
 | Serbest + onayli etiket girdisi | `TokenEdit` | ayiracli metin |
 | Agac yapisi secimi | `TreeListLookUpEdit` | hiyerarseci secim |
 
@@ -144,10 +144,10 @@ this.dxErrorProvider1.SetError(this.comboBoxEditLocale,
 
 | Konu | Dosya |
 |---|---|
-| Cok secim | [checkedcomboedit-values](checkedcomboedit-values.md) |
-| Tarih/saat editoru | [dateedit-timeedit](dateedit-timeedit.md) |
-| Hata ikonu | [dx-validation-provider](dx-validation-provider.md) |
-| Grid veri kaynagi | [datasource-binding-dapper](datasource-binding-dapper.md) |
+| Cok secim | [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] |
+| Tarih/saat editoru | [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] |
+| Hata ikonu | [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] |
+| Grid veri kaynagi | [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
 
 ## §9 Kanit
 

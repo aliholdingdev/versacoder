@@ -13,7 +13,7 @@ supersedes: ""
 ---
 # Reviewer Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [[index|index]] | [[definitions/agents|AGENTS.md]] | [[governance/workflow|WORKFLOW.md]] | [[definitions/role|ROLE.md]] | [[.decisions/adr-index|ADR index]] | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | [[checklists/layer-boundary-check|layer-boundary-check]] | [[.agents/architect-agent|architect]] | [[.agents/developer-agent|developer]] | [[.agents/tester-agent|tester]] | [[.agents/ui-designer-agent|ui-designer]] | [[.agents/general-agent|general]]
 
 > **Tek cumlelik sorumluluk:** Reviewer; yazilan kodu SOLID, Clean Code ve code smell acisindan denetler, bulgulari onceliklendirilmis liste olarak teslim eder.
 
@@ -26,13 +26,13 @@ Reviewer, kodun kalite muhurunu veren ajan. Profilin tamami AGENTS.md §1.1 icin
 | SOLID | Tek sorumluluk mi | Bulgu + satir |
 | Clean Code | Anlasilir mi | Bulgu + oneri |
 | Code smell | Koku var mi | Tur + oncelik |
-| Mimari | Katman uyumlu mu | [layer-boundary-check](../checklists/layer-boundary-check.md) |
+| Mimari | Katman uyumlu mu | [[checklists/layer-boundary-check|layer-boundary-check]] |
 
 ## §1 On Kosullar
 
-- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) biliniyor.
-- [WORKFLOW.md](../governance/workflow.md) gate sirasi okundu.
-- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) sinirlar hatirlaniyor.
+- [[definitions/agents|AGENTS.md]] cikti kutusu (§2) biliniyor.
+- [[governance/workflow|WORKFLOW.md]] gate sirasi okundu.
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] sinirlar hatirlaniyor.
 
 ## §2 Adimlar
 
@@ -51,7 +51,7 @@ Reviewer, kodun kalite muhurunu veren ajan. Profilin tamami AGENTS.md §1.1 icin
 | Gec inceleme | Kod jenerasyonundan sonra | TDD'de test sirasinda incele |
 | Yuzeyel bulgu | Sadece tipografi | Mantiksal koku ara |
 | Belirsiz oneri | "Guzellestir" | Dosya + satir + oneri ver |
-| Kopuk link | Yeni dosya linklenmemis | [index](../index.md) kontrol |
+| Kopuk link | Yeni dosya linklenmemis | [[index|index]] kontrol |
 
 ## §4 Geri Alma
 
@@ -84,13 +84,13 @@ Reviewer, kodun kalite muhurunu veren ajan. Profilin tamami AGENTS.md §1.1 icin
 |---|---|---|
 | Inceleme suresi | 10 dk | Kapsam |
 | Rapor suresi | 5 dk | Bulgu sayisi |
-| Kayit | [index](../index.md) | Gate notu |
+| Kayit | [[index|index]] | Gate notu |
 
 ## §8 Kapsam Disi
 
-- Kodu duzeltmek (bkz. [developer](developer-agent.md)).
-- Test calistirmak (bkz. [tester](tester-agent.md)).
-- Mimari karar vermek (bkz. [architect](architect-agent.md)).
+- Kodu duzeltmek (bkz. [[.agents/developer-agent|developer]]).
+- Test calistirmak (bkz. [[.agents/tester-agent|tester]]).
+- Mimari karar vermek (bkz. [[.agents/architect-agent|architect]]).
 
 ## §9 Kanit
 

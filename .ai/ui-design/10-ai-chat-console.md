@@ -14,7 +14,7 @@ supersedes: ""
 
 # 10-ai-chat-console (wireframe gecis notu)
 
-**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [spec dosyasi](../spec/ai-chat-console-spec.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/README]] · [[spec/ai-chat-console-spec|spec dosyasi]]
 
 > **Tek cumlelik sorumluluk:** ui-design/10-ai-chat-console.md icinde yasar; tam wireframe ../spec/ai-chat-console-spec.md (SSUT) sorusunun tek cevabidir.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 Bu dosya 10-ai-chat-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe (bolge/olcu/davranis/GATE-003 alani) asagidaki spec dosyasinda yasar (SSUT - tekrar yazilmadi):
 
-- [spec/ai-chat-console-spec.md](../spec/ai-chat-console-spec.md)
+- [[spec/ai-chat-console-spec|spec/ai-chat-console-spec.md]]
 
 **Durum: GATE-003 ONAY BEKLIYOR** - README §7.1'de `BEKLEMEDE`.
 
@@ -34,5 +34,5 @@ Bu dosya 10-ai-chat-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [ui-design/README](readme.md) §0 + §7.1 | ekran adi + onay satiri |
-| 2 | [ai-chat-console-spec](../spec/ai-chat-console-spec.md) | tam wireframe + davranis |
+| 1 | [[ui-design/readme|ui-design/README]] §0 + §7.1 | ekran adi + onay satiri |
+| 2 | [[spec/ai-chat-console-spec|ai-chat-console-spec]] | tam wireframe + davranis |

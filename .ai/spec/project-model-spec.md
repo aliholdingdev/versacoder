@@ -14,10 +14,10 @@ supersedes: ""
 
 # Proje Modeli Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [persistence](persistence-spec.md) · [solution-explorer](solution-explorer-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/persistence-spec|persistence]] · [[spec/solution-explorer-spec|solution-explorer]] · [[spec/search-grep-spec|search-grep]]
 
 > **Tek cümlelik sorumluluk:** *Çözüm/proje/dosya varlıkları nedir, birbirine nasıl bağlıdır ve diske nasıl sarmalanıp yazılır* sorusunun tek cevabıdır.
-> Model **saf C#**tır (l1) ve **EF Core kullanmaz** (G2): kalıcılık ADO.NET + Dapper ile [persistence](persistence-spec.md) katmanındadır.
+> Model **saf C#**tır (l1) ve **EF Core kullanmaz** (G2): kalıcılık ADO.NET + Dapper ile [[spec/persistence-spec|persistence]] katmanındadır.
 
 ---
 
@@ -31,11 +31,11 @@ Model üç seviyelidir: `Solution` → `ProjectNode` → `FileNode`. Kök (works
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Varlık tanımları ve ilişkileri (id, ad, yol, durum) | DB şeması/migration SQL'i | [persistence](persistence-spec.md) |
-| 2 | Workspace sınırı ve yol çözümleme | Ağaç render'ı/düğüm olayları | [solution-explorer](solution-explorer-spec.md) |
-| 3 | Sarmalayıcı (`ProjectModel`) API'si | Arama tarama motoru | [search-grep](search-grep-spec.md) |
-| 4 | Model olayları (`ProjectOpened`, `NodeChanged`) | Görev tetiklemeleri | [task-queue](task-queue-spec.md) |
-| 5 | Model seviyesi doğrulama (ad, çakışma) | Kullanıcıya hata metni | [error-handling](error-handling-spec.md) |
+| 1 | Varlık tanımları ve ilişkileri (id, ad, yol, durum) | DB şeması/migration SQL'i | [[spec/persistence-spec|persistence]] |
+| 2 | Workspace sınırı ve yol çözümleme | Ağaç render'ı/düğüm olayları | [[spec/solution-explorer-spec|solution-explorer]] |
+| 3 | Sarmalayıcı (`ProjectModel`) API'si | Arama tarama motoru | [[spec/search-grep-spec|search-grep]] |
+| 4 | Model olayları (`ProjectOpened`, `NodeChanged`) | Görev tetiklemeleri | [[spec/task-queue-spec|task-queue]] |
+| 5 | Model seviyesi doğrulama (ad, çakışma) | Kullanıcıya hata metni | [[spec/error-handling-spec|error-handling]] |
 
 ---
 
@@ -64,7 +64,7 @@ Model üç seviyelidir: `Solution` → `ProjectNode` → `FileNode`. Kök (works
 | M1 | `Solution` | `Id`, `Name`, `RootPath`, `LastOpenedUtc` | kök dizin **var olmalı** ve yazılabilir |
 | M2 | `ProjectNode` | `Id`, `Name`, `ParentId`, `Kind` | kökün dışında düğüm **oluşamaz** |
 | M3 | `FileNode` | `Id`, `Path`, `SizeBytes`, `IsDirty` | yol daima köke göre çözülür |
-| M4 | `TaskRef` | `TaskId`, `NodeId?` | görev kimliği [task-queue](task-queue-spec.md) ile aynıdır |
+| M4 | `TaskRef` | `TaskId`, `NodeId?` | görev kimliği [[spec/task-queue-spec|task-queue]] ile aynıdır |
 | M5 | Sarmalayıcı | `IReadOnlyList<Node> Snapshot()` | anlık görüntü **değiştirilemez**; UI kopyasıdır |
 
 ### §2.3 Sarmalayıcı (wrapper) sorumlulukları

@@ -14,7 +14,7 @@ supersedes: ""
 
 # Alt-Ajan Görev Çağrısı Şablonu — parent → child
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/security-rules]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/security-rules]]
 
 > Bu dosya **şablondur, içerik değil**. `## §1`..`## §7` başlıkları **silinemez, adlandırılamaz, sıralanamaz**.
 
@@ -147,7 +147,7 @@ tipi bozuksa **G1**, `authority` değeri değişmişse **G2** ihlali sayılır.
 ```markdown
 # <Disiplin> — Görev Çağrısı ({{TASK_ID}})
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[glossary]]
 · [[.rules/<ilgili-2-kural>]] |
 
 > <Tek cümlelik görev özeti — 20 kelimeyi geçmez.>
@@ -223,7 +223,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur.
 ```markdown
 # code-reviewer — Görev Çağrısı (TASK-0042)
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]] · [[.rules/coding-standards]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[glossary]] · [[.rules/coding-standards]]
 
 > RibbonForm olay aboneliklerinin sızıntısını incele ve bulguları satır kanıtıyla ver.
 
@@ -302,7 +302,7 @@ authority: primary
 
 # {{DISCIPLINE}} — Görev Çağrısı ({{TASK_ID}})
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[glossary]] · [[.rules/{{RULE_1}}]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[glossary]] · [[.rules/{{RULE_1}}]]
 
 > {{TASK_TAGLINE_20_WORDS_MAX}}
 

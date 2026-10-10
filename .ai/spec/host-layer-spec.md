@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Host Katmanı Şartnamesi (`spec/host-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [protocol-layer-spec](protocol-layer-spec.md) · [infra-layer-spec](infra-layer-spec.md) · [build-spec](build-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/protocol-layer-spec|protocol-layer-spec]] · [[spec/infra-layer-spec|infra-layer-spec]] · [[spec/build-spec|build-spec]]
 
 > **Tek cümlelik sorumluluk:** *Uygulama ne sırayla açılır, hangi servisler nerede kaydedilir ve yapılandırma hangi köprüden tipli seçeneğe dönüşür* sorusunun tek cevabıdır.
 
@@ -31,10 +31,10 @@ l6 = **tek giriş ve tek DI kapısı**: bootstrap pipeline (config → DB migrat
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
 | 1 | N38 bootstrap-pipeline · N39 di-registration · N40 config-bridges | Servis **davranışı** (l4/l5 spec'leri) |
-| 2 | Açılış sırası, hata durumunda durma kuralı, açılış ölçümü | Runtime mesaj döngüsü: [protocol-layer-spec](protocol-layer-spec.md) |
-| 3 | DI yaşam süresi seçimi (`singleton`/`scoped`/`transient`) | Somut sağlayıcı kurulumu: [infra-layer-spec](infra-layer-spec.md) |
-| 4 | Secret'ın açılışta çözülmesi (DPAPI/AES akışı) | Saklama biçimi: [security-spec](security-spec.md) |
-| 5 | `#if` kullanımına izin verilen tek makro katman | `#if` kuralının kendisi: [build-spec](build-spec.md) |
+| 2 | Açılış sırası, hata durumunda durma kuralı, açılış ölçümü | Runtime mesaj döngüsü: [[spec/protocol-layer-spec|protocol-layer-spec]] |
+| 3 | DI yaşam süresi seçimi (`singleton`/`scoped`/`transient`) | Somut sağlayıcı kurulumu: [[spec/infra-layer-spec|infra-layer-spec]] |
+| 4 | Secret'ın açılışta çözülmesi (DPAPI/AES akışı) | Saklama biçimi: [[spec/security-spec|security-spec]] |
+| 5 | `#if` kullanımına izin verilen tek makro katman | `#if` kuralının kendisi: [[spec/build-spec|build-spec]] |
 
 > **YASAK:** DI kaydını forma/sınıfa dağıtmak; config'i kodda `Environment.GetEnvironmentVariable` ile dağınık okumak; açılışta kullanıcıya düşmeden devam eden **sessiz hata**; GATE-003 kapalıyken uygulama kodu çalıştırmak (G12).
 

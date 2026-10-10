@@ -14,9 +14,9 @@ supersedes: ""
 
 # repository-pattern-thin — İnce Repository Kalıbı
 
-**Zorunlu Baglantilar:** [vault index](../../index.md) · [knowledge index](../index.md) · [solid rules](../../.rules/solid-rules.md) · [ADR-005](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [dapper-query-mapping](dapper-query-mapping.md) · [unit-of-work-pattern](unit-of-work-pattern.md)
-**Küme + Hub:** [data index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (data · 6/25):** [ado-net-command](ado-net-command.md) · [ado-net-connection](ado-net-connection.md) · [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [connection-pooling-notes](connection-pooling-notes.md) · [connection-string-secrets](connection-string-secrets.md) · [dapper-async-patterns](dapper-async-patterns.md) · [dapper-multi-map](dapper-multi-map.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md) · [dapper-procedures-stored](dapper-procedures-stored.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md) · [migration-rollback](migration-rollback.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [parameterized-queries](parameterized-queries.md) · [sql-injection-defense](sql-injection-defense.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md) · [transaction-scope-local](transaction-scope-local.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[knowledge/index|knowledge index]] · [[.rules/solid-rules|solid rules]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]]
+**Küme + Hub:** [[knowledge/data/index|data index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (data · 6/25):** [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/connection-string-secrets|connection-string-secrets]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]] · [[knowledge/data/migration-rollback|migration-rollback]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/parameterized-queries|parameterized-queries]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]] · [[knowledge/data/transaction-scope-local|transaction-scope-local]]
 
 > **Tek cumlelik sorumluluk:** *Repository'nin sınırı nerededir, içinde ne olur ne olmaz, arayüz kime aittir* sorusunun tek cevabıdır.
 
@@ -85,7 +85,7 @@ Aynı arayüz, iki bacakta tek `VersaCoder.Data` projesinden gelir; TFM başına
 | Metot içinde döngüyle sorgu | N+1 (DA-16) | tek `IN`/JOIN sorgusuna çevir |
 | `GetAll()` / `Search(filter)` | sızan sorgu dili | somut sorgu metotları |
 | Repository'de `if (user.IsAdmin)` | yetki katmanı karıştı | servise taşı |
-| Metot gövdesinde `try/catch` + log | hata politikası karıştı | [error-handling-rules](../../.rules/error-handling-rules.md) |
+| Metot gövdesinde `try/catch` + log | hata politikası karıştı | [[.rules/error-handling-rules|error-handling-rules]] |
 | 100+ satırlık SQL metni | okumaz hale geldi | parçalı `const` alanlar |
 
 ## §6 Sik hatalar
@@ -102,7 +102,7 @@ Aynı arayüz, iki bacakta tek `VersaCoder.Data` projesinden gelir; TFM başına
 
 ## §8 Kardesler
 
-[unit-of-work-pattern](unit-of-work-pattern.md) · [dapper-query-mapping](dapper-query-mapping.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [pagination-offset-keyset](pagination-offset-keyset.md) · [concurrency-optimistic](concurrency-optimistic.md)
+[[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]]
 
 ## §9 Kanit
 

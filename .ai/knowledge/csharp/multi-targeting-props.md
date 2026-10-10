@@ -14,9 +14,9 @@ supersedes: ""
 
 # Cok Hedefli Proje Ozellikleri (Multi-Targeting Props)
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [ADR-001 Cift Hedef](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) | [Kodlama Standartlari](../../.rules/coding-standards.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001 Cift Hedef]] | [[.rules/coding-standards|Kodlama Standartlari]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 2/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** Cift hedef `net48;net10.0` derlemesinde farklilasan ozellikleri props iceriginde kosullu tanimla, kaynak kodu `#if` cennetine cevirme.
 
@@ -91,13 +91,13 @@ Props uc bolgede yonetilir: **TargetFrameworks**, **kosullu PackageReference** v
 
 - Her iki hedefte de ayri derleme ve test kosusu zorunlu; tek hedefte gecen test kafi degil.
 - `#if` dallari icin karsilikli test yaz: biri digerinin yoklugunu dogrular.
-- Farkli davranislar icin ayri test metodu tercih et; kosullu assert'ten kacin. Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- Farkli davranislar icin ayri test metodu tercih et; kosullu assert'ten kacin. Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Kodlama Standartlari](../../.rules/coding-standards.md) · [Dil Surumleri](language-versions-net48-net10.md) · [C Sharp Index](index.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md)
+- [[.rules/coding-standards|Kodlama Standartlari]] · [[knowledge/csharp/language-versions-net48-net10|Dil Surumleri]] · [[knowledge/csharp/index|C Sharp Index]] · [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]]
 
 ## §9 Kanit
 
-- Cift hedef karari [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) ile sabit. Kaynak: kabul edilmis ADR.
-- Props ornegi SDK-style proje varsayimiyla yazildi; eski csproj duzeni kullanilmiyor. Kaynak: [Kodlama Standartlari](../../.rules/coding-standards.md); DOĞRULAMA GEREKLİ - proje bazli farklilik olabilir.
+- Cift hedef karari [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]] ile sabit. Kaynak: kabul edilmis ADR.
+- Props ornegi SDK-style proje varsayimiyla yazildi; eski csproj duzeni kullanilmiyor. Kaynak: [[.rules/coding-standards|Kodlama Standartlari]]; DOĞRULAMA GEREKLİ - proje bazli farklilik olabilir.

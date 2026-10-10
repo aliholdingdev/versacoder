@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Vault + kod yazım standartları; sıfırdan yazım, kanıt, Türkçe, yer tutucu"
-tags: [['rules', 'coding', 'standards', 'g1', 'g4', 'g5', 'g9', 'g13']]
+tags: [rules, coding, standards, g1, g4, g5, g9, g13]
 source: "Birleştirme: .ai/CLAUDE.md §1 (G1/G4/G5/G9/G10/G11) + kök CLAUDE.md (G5 Türkçe, G4 placeholder, G12 SRP) + brain.md §3"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Kodlama Standartları
 
@@ -74,11 +74,11 @@ duplicate taraması.
 ## Genel kod stili (vault içi)
 
 - Kod örnekleri BAD → GOOD çiftiyle verilir (brain §3.7 deseni).
-- `Result<T>` dönüşleri [error-handling-rules](error-handling-rules.md) kapsamında.
+- `Result<T>` dönüşleri [[.rules/error-handling-rules|error-handling-rules]] kapsamında.
 - `nullable` açık; `!` savsaklama olarak kullanılmaz (brain §3/4).
 - Kod içindeki yorumlar gerekiyorsa Türkçe.
 
 ## İlgili
 
-- [rules-index](index.md) · [ADR-002](../.decisions/accepted/adr-002-vault-ownership-no-copy.md)
-- [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md)
+- [[.rules/index|rules-index]] · [[.decisions/accepted/adr-002-vault-ownership-no-copy|ADR-002]]
+- [[.decisions/accepted/adr-003-vault-structure-500md-frontmatter|ADR-003]]

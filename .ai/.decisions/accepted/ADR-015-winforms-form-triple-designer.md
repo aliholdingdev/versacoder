@@ -48,5 +48,5 @@ açılmaz ve geri alınamazdı.
 
 ## §7 İlgili
 
-- [ADR-025-gate003-ui-hard-stop.md](adr-025-gate003-ui-hard-stop.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-025-gate003-ui-hard-stop|ADR-025-gate003-ui-hard-stop.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

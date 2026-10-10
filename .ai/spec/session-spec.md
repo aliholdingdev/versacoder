@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Oturum Şartnamesi (`spec/session-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [versacoder-spec.md](versacoder-spec.md) · [protocol-spec.md](protocol-spec.md) · [tool-spec.md](tool-spec.md) · [test-strategy.md](test-strategy.md) · [../.rules/data-access-rules.md](../.rules/data-access-rules.md)
+**Zorunlu Bağlantılar:** [[index|index.md]] · [[claude|CLAUDE.md]] · [[governance/keys|keys.md]] · [[spec/versacoder-spec|versacoder-spec.md]] · [[spec/protocol-spec|protocol-spec.md]] · [[spec/tool-spec|tool-spec.md]] · [[spec/test-strategy|test-strategy.md]] · [[.rules/data-access-rules|../.rules/data-access-rules.md]]
 
 > **Tek cümlelik sorumluluk:** *Bir oturum (agent görevi) nedir, hangi durumlarda bulunur, nerede saklanır, nasıl devam ettirilir/kurtarılır, kim yazabilir* sorusunun tek cevabıdır.
 > Gereksinim kimliği: **`VC-SES-NNN`**. Bu belge `keys.md` #20 (agent, session, orkestrasyon, streaming) karşılığıdır.

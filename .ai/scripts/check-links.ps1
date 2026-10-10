@@ -34,6 +34,7 @@ function Get-LinkTargets {
     $work = [regex]::Replace($Text, '(?ms)^```.*?^```', ' ')
     $work = [regex]::Replace($work, '`[^`\r\n]*`', ' ')
 
+    # 2) goreli markdown linkleri: ](hedef) -> "M|hedef" (dosya dizinine goreli)
     foreach ($m in [regex]::Matches($work, '\]\(([^)\s]+)\)')) {
         $target = $m.Groups[1].Value.Trim()
         if ($target -match '^(https?:|mailto:|ftp:|file:|vscode:|#)') { continue }
@@ -42,7 +43,17 @@ function Get-LinkTargets {
         $target = [Uri]::UnescapeDataString($target)
         $target = $target.Trim('"', "'")
         if ([string]::IsNullOrWhiteSpace($target)) { continue }
-        $target          # PowerShell: cikan degerler toplanir (yield yerine)
+        "M|$target"      # PowerShell: cikan degerler toplanir (yield yerine)
+    }
+
+    # 3) Obsidian wikilinkleri: [[yol]] / [[yol|metin]] / [[yol#anchor]]
+    #    -> "W|yol" (vault ROOT'una goreli; Uzanti yoksa .md eklenir) - D50
+    foreach ($m in [regex]::Matches($work, '\[\[([^\[\]|]+)(?:#[^\[\]|]*)?(?:\|[^\[\]]*)?\]\]')) {
+        $target = $m.Groups[1].Value.Trim()
+        if ([string]::IsNullOrWhiteSpace($target)) { continue }
+        $target = [Uri]::UnescapeDataString($target)
+        if ($target -match '^(https?:|mailto:)') { continue }
+        "W|$target"
     }
 }
 
@@ -58,9 +69,47 @@ foreach ($f in $files) {
     $dir = Split-Path -Parent $f.FullName
     $relFile = $f.FullName.Substring($rootFull.Length + 1)
 
-    foreach ($target in Get-LinkTargets -Text $text) {
-        $isAbs = [regex]::IsMatch($target, '^[a-zA-Z]:[\\/]')
-        $resolved = if ($isAbs) { $target } else { Join-Path $dir $target }
+    foreach ($raw in Get-LinkTargets -Text $text) {
+        $kind   = $raw.Substring(0, 1)
+        $target = $raw.Substring(2)
+
+        if ($kind -eq 'W') {
+            # yer tutuculu ornek (sablon govdesi, G4 istisnasi) -> sayilmaz
+            if ($target -match '<[^>]+>') { continue }
+            # wikilink: vault ROOT'una goreli (uzanti YOKSA .md ekle; dizin SONU / aynen) - D50
+            $wt = $target
+            if (($wt -notmatch '\.\w+$') -and ($wt -notmatch '/$')) { $wt = "$wt.md" }
+            $resolved = Join-Path $rootFull $wt
+            if (-not (Test-Path -LiteralPath $resolved)) {
+                # uzantisiz aday (dizin veya uzantisiz dosya)
+                if (Test-Path -LiteralPath (Join-Path $rootFull $target)) {
+                    $resolved = Join-Path $rootFull $target
+                } else {
+                    # Obsidian shortest-path: tek eslesme kabul (kisa ad VEYA path suffix) - D50
+                    $base = [IO.Path]::GetFileNameWithoutExtension(($target -replace '\\','/').TrimEnd('/'))
+                    if ($base) {
+                        $hits = @(Get-ChildItem -LiteralPath $rootFull -Recurse -Filter "$base.md" -File -ErrorAction SilentlyContinue |
+                                  Where-Object { $_.FullName -notmatch '\\\.obsidian\\' })
+                        if ($hits.Count -eq 1) { $resolved = $hits[0].FullName }
+                    }
+                }
+            }
+        } else {
+            $isAbs = [regex]::IsMatch($target, '^[a-zA-Z]:[\\/]')
+            $resolved = if ($isAbs) { $target } else { Join-Path $dir $target }
+            if ((-not $isAbs) -and (-not (Test-Path -LiteralPath $resolved))) {
+                # uzantisi kalmis markdown hedefi: .md aday + shortest-path (D50 karma gecis)
+                if ((Test-Path -LiteralPath "$resolved.md")) { $resolved = "$resolved.md" }
+                elseif ($target -notmatch '\.\w+$') {
+                    $base = [IO.Path]::GetFileNameWithoutExtension(($target -replace '\\','/').TrimEnd('/'))
+                    if ($base) {
+                        $hits = @(Get-ChildItem -LiteralPath $rootFull -Recurse -Filter "$base.md" -File -ErrorAction SilentlyContinue |
+                                  Where-Object { $_.FullName -notmatch '\\\.obsidian\\' })
+                        if ($hits.Count -eq 1) { $resolved = $hits[0].FullName }
+                    }
+                }
+            }
+        }
 
         if (Test-Path -LiteralPath $resolved) {
             $ok++

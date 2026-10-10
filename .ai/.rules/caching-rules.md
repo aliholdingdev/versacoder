@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Minyal: önbellek vault'ta yeni; ilke = geçici veri ≠ kalıcı truth"
-tags: [['rules', 'caching', 'memory']]
+tags: [rules, caching, memory]
 source: "Türetme: D9 (memory ≠ knowledge ayrımı) + genel önbellek ilkeleri; vault kaynağı sınırlı (G9)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Önbellek Kuralları
 
@@ -32,4 +32,4 @@ supersedes: ""
 
 ## İlgili
 
-- [rules-index](index.md) · [ADR-032](../.decisions/accepted/adr-032-ai-control-plane.md) §2.10
+- [[.rules/index|rules-index]] · [[.decisions/accepted/adr-032-ai-control-plane|ADR-032]] §2.10

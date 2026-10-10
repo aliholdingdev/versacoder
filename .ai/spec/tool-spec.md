@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Tool Şartnamesi (`spec/tool-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [versacoder-spec.md](versacoder-spec.md) · [protocol-spec.md](protocol-spec.md) · [session-spec.md](session-spec.md) · [test-strategy.md](test-strategy.md) · [../.rules/security-rules.md](../.rules/security-rules.md)
+**Zorunlu Bağlantılar:** [[index|index.md]] · [[claude|CLAUDE.md]] · [[governance/keys|keys.md]] · [[spec/versacoder-spec|versacoder-spec.md]] · [[spec/protocol-spec|protocol-spec.md]] · [[spec/session-spec|session-spec.md]] · [[spec/test-strategy|test-strategy.md]] · [[.rules/security-rules|../.rules/security-rules.md]]
 
 > **Tek cümlelik sorumluluk:** *Bir tool nedir, nasıl tanımlanır/kaydedilir/doğrulanır, kim izin verir, sandbox nereye kadar izin verir* sorusunun tek cevabıdır.
 > Gereksinim kimliği: **`VC-TLS-NNN`** · Hata kodları `VC-E-02xx` (`protocol-spec.md` §5). Bu belge `keys.md` #19 (opencode, tool, read/write/edit/bash/grep) karşılığıdır.

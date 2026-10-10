@@ -14,7 +14,7 @@ supersedes: ""
 
 # UI Shell Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [theming](theming-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/solution-explorer-spec|solution-explorer]] · [[spec/code-editor-spec|code-editor]] · [[spec/theming-spec|theming]]
 
 > **Tek cümlelik sorumluluk:** *Ana pencere (RibbonForm) neyi barındırır, ribbon/dock/durum çubuğu nasıl yerleşir ve pencere kapanınca ne olur* sorusunun tek cevabıdır.
 > Kabuk **yalnızca yerleşim ve yönlendirme** yapar; iş mantığına, SQL'e, dosya I/O'una bakmaz (l7 izolasyonu).
@@ -31,11 +31,11 @@ Tek ana pencere `MainForm` bir **`RibbonForm`**'dur; ribbon stili **yalnız** `R
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | `MainForm` (`RibbonForm`) + `RibbonControl` yerleşimi | Ribbon **görünüm kararı** (skin/koyu-açık) | [theming](theming-spec.md) |
+| 1 | `MainForm` (`RibbonForm`) + `RibbonControl` yerleşimi | Ribbon **görünüm kararı** (skin/koyu-açık) | [[spec/theming-spec|theming]] |
 | 2 | `DockManager` panel yerleşimi, göster/gizle, hizalama | Panel içeriği davranışı | ilgili kardeş şartnameler |
-| 3 | `StatusBarControl` mesaj bölgeleri + kısayollar | Hata sınıflandırma ve gösterimi | [error-handling](error-handling-spec.md) |
-| 4 | Pencere durumu (aç/kapa/min/max), çıkış onayı, kurtarma | Kalıcılık biçimi (nerede saklanır) | [persistence](persistence-spec.md) |
-| 5 | Ribbon butonu → komut yönlendirmesi | Komutun kendisi (görev kuyruğu) | [task-queue](task-queue-spec.md) |
+| 3 | `StatusBarControl` mesaj bölgeleri + kısayollar | Hata sınıflandırma ve gösterimi | [[spec/error-handling-spec|error-handling]] |
+| 4 | Pencere durumu (aç/kapa/min/max), çıkış onayı, kurtarma | Kalıcılık biçimi (nerede saklanır) | [[spec/persistence-spec|persistence]] |
+| 5 | Ribbon butonu → komut yönlendirmesi | Komutun kendisi (görev kuyruğu) | [[spec/task-queue-spec|task-queue]] |
 
 ---
 
@@ -65,10 +65,10 @@ Tek ana pencere `MainForm` bir **`RibbonForm`**'dur; ribbon stili **yalnız** `R
 |---|---|---|---|---|
 | 1 | Home | Project | New, Open, Save All, Close | `project.*` handler (l2) |
 | 2 | Home | Edit | Undo, Redo, Find, Replace | `editor.*` handler |
-| 3 | Agent | Run | Run Task, Pause, Cancel, Resume | `task.*` ([task-queue](task-queue-spec.md)) |
-| 4 | Agent | Chat | New Chat, Clear Context, Stop | `chat.*` ([ai-chat](ai-chat-spec.md)) |
+| 3 | Agent | Run | Run Task, Pause, Cancel, Resume | `task.*` ([[spec/task-queue-spec|task-queue]]) |
+| 4 | Agent | Chat | New Chat, Clear Context, Stop | `chat.*` ([[spec/ai-chat-spec|ai-chat]]) |
 | 5 | View | Layout | Explorer, Chat, Agent Panel, Terminal (toggle) | dock görünürlüğü |
-| 6 | Help | Info | Docs, About, Diagnostics | [observability](observability-spec.md) ekranı |
+| 6 | Help | Info | Docs, About, Diagnostics | [[spec/observability-spec|observability]] ekranı |
 
 ### §2.3 Kabuk kuralları
 

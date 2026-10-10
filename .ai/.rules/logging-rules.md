@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Structured log, 5 seviye, tek şablon (ADR-026)"
-tags: [['rules', 'logging', 'observability', 'structured']]
+tags: [rules, logging, observability, structured]
 source: "Birleştirme: brain.md §3 kural 2 + §3.7/3 + ADR-026"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Loglama Kuralları (ADR-026)
 
@@ -38,5 +38,5 @@ RED (format) — kod incelemesi; iki bacakta alan adları ayrışması = çözü
 
 ## İlgili
 
-- [ADR-026](../.decisions/accepted/adr-026-structured-log-5-levels.md)
-- [error-handling-rules](error-handling-rules.md)
+- [[.decisions/accepted/adr-026-structured-log-5-levels|ADR-026]]
+- [[.rules/error-handling-rules|error-handling-rules]]

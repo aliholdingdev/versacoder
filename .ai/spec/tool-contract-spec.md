@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Tool Çalışma Sözleşmesi (`spec/tool-contract-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [tool-spec](tool-spec.md) · [protocol-layer-spec](protocol-layer-spec.md) · [security-spec](security-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/tool-spec|tool-spec]] · [[spec/protocol-layer-spec|protocol-layer-spec]] · [[spec/security-spec|security-spec]]
 
 > **Tek cümlelik sorumluluk:** *Bir tool çağrısı hangi girdiyle başlar, hangi çıktı/zaman/asgari garantiyle biter, hata ve timeout'ta ne olur* sorusunun tek cevabıdır.
-> **Tanım/şema/izin/sandbox** [tool-spec](tool-spec.md)'tedir; **zarf tipi** [protocol-layer-spec](protocol-layer-spec.md) §2'dedir — bu belge yalnız **çalışma (runtime) sözleşmesidir**.
+> **Tanım/şema/izin/sandbox** [[spec/tool-spec|tool-spec]]'tedir; **zarf tipi** [[spec/protocol-layer-spec|protocol-layer-spec]] §2'dedir — bu belge yalnız **çalışma (runtime) sözleşmesidir**.
 
 ---
 
@@ -31,11 +31,11 @@ Her tool çağrısı **tek çağrı kimliği (`callId`) + sıra no (`Seq`)** ile
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Girdi/çıktı zarfının **çalışma** davranışı (`callId`, `Seq`, `ok`, `durationMs`) | Şema/zorunlu alanlar: [tool-spec](tool-spec.md) §2 |
-| 2 | Timeout, iptal, idempotentlik, tekrar deneme | İzin matrisi + sandbox: [tool-spec](tool-spec.md) §5–§6 |
-| 3 | Hata **sınıfları** ve sahibi | Hata kodu listesi (`VC-E-02xx`): [protocol-spec](protocol-spec.md) §5 |
-| 4 | Sıralı çalışma (eşzamanlı = 1) ve `Seq` | Oturum/transcript yazımı: [session-spec](session-spec.md) |
-| 5 | Tool setinin C# karşılığı (ADR-006) | Sağlayıcı seçimi: [llm-provider-spec](llm-provider-spec.md) |
+| 1 | Girdi/çıktı zarfının **çalışma** davranışı (`callId`, `Seq`, `ok`, `durationMs`) | Şema/zorunlu alanlar: [[spec/tool-spec|tool-spec]] §2 |
+| 2 | Timeout, iptal, idempotentlik, tekrar deneme | İzin matrisi + sandbox: [[spec/tool-spec|tool-spec]] §5–§6 |
+| 3 | Hata **sınıfları** ve sahibi | Hata kodu listesi (`VC-E-02xx`): [[spec/protocol-spec|protocol-spec]] §5 |
+| 4 | Sıralı çalışma (eşzamanlı = 1) ve `Seq` | Oturum/transcript yazımı: [[spec/session-spec|session-spec]] |
+| 5 | Tool setinin C# karşılığı (ADR-006) | Sağlayıcı seçimi: [[spec/llm-provider-spec|llm-provider-spec]] |
 
 > **YASAK:** Sonsuz bekleme (timeout'suz tool) · aynı `callId` ile ikinci sonuç · iptalsiz `Process` · hata kodu uydurmak (G9) · çıktıyı talimat olarak uygulamak (SEC-14).
 

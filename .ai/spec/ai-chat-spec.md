@@ -14,7 +14,7 @@ supersedes: ""
 
 # AI Chat Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [protocol-spec](protocol-spec.md) · [session-spec](session-spec.md) · [agent-panel](agent-panel-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/protocol-spec|protocol-spec]] · [[spec/session-spec|session-spec]] · [[spec/agent-panel-spec|agent-panel]]
 
 > **Tek cümlelik sorumluluk:** *Kullanıcı mesajı nasıl gönderilir, model yanıtı ekranda nasıl akar ve akış nasıl iptal edilir* sorusunun tek cevabıdır.
 > Panel **gösterimdir**: ağ çağrısı (l4) ve şema doğrulaması (l5) bu dosyada değildir.
@@ -31,11 +31,11 @@ Sohbet yüzeyi: geçmiş `ListBoxControl` (mesaj balonları), girdi `MemoEdit` (
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Mesaj listesi, girdi, gönderme, otomatik kaydırma | Sağlayıcı/model seçimi | [settings](settings-spec.md) |
-| 2 | Streaming parçalarının birleştirilmesi + iptali | HTTP/stream şeması, retry/timeout | [protocol-spec](protocol-spec.md) |
-| 3 | Bağlam çipleri (proje/dosya ekle-çıkar) | Dosya okuma (I/O) | [solution-explorer](solution-explorer-spec.md) |
-| 4 | Hata/hosgeldin durumlarının görünümü | Hata kodu sınıflandırma | [error-handling](error-handling-spec.md) |
-| 5 | Transcript'e yazım tetikleyicisi | Oturum/compaction modeli | [session-spec](session-spec.md) |
+| 1 | Mesaj listesi, girdi, gönderme, otomatik kaydırma | Sağlayıcı/model seçimi | [[spec/settings-spec|settings]] |
+| 2 | Streaming parçalarının birleştirilmesi + iptali | HTTP/stream şeması, retry/timeout | [[spec/protocol-spec|protocol-spec]] |
+| 3 | Bağlam çipleri (proje/dosya ekle-çıkar) | Dosya okuma (I/O) | [[spec/solution-explorer-spec|solution-explorer]] |
+| 4 | Hata/hosgeldin durumlarının görünümü | Hata kodu sınıflandırma | [[spec/error-handling-spec|error-handling]] |
+| 5 | Transcript'e yazım tetikleyicisi | Oturum/compaction modeli | [[spec/session-spec|session-spec]] |
 
 ---
 
@@ -79,8 +79,8 @@ Sohbet yüzeyi: geçmiş `ListBoxControl` (mesaj balonları), girdi `MemoEdit` (
 |---|---|---|
 | C1 | Bağlam açık | çip: proje adı + dosya adı, her biri `✕` ile çıkarılabilir |
 | C2 | Bağlam kapalı | "bağlam yok" rozeti; model yalnız mesajı görür |
-| C3 | Beklemede (tool onayı) | panel kilitli + [agent-panel](agent-panel-spec.md) onay satırına yönlendirme |
-| C4 | Sağlayıcı yok | ayar yönlendirmeli hata kartı ([settings](settings-spec.md)) |
+| C3 | Beklemede (tool onayı) | panel kilitli + [[spec/agent-panel-spec|agent-panel]] onay satırına yönlendirme |
+| C4 | Sağlayıcı yok | ayar yönlendirmeli hata kartı ([[spec/settings-spec|settings]]) |
 
 ---
 

@@ -14,7 +14,7 @@ supersedes: ""
 
 # Faz 05 — Kod Uygulaması ve Kalite (GATE-005)
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 03](03-faz-d-iskelet.md) · [Faz 04](04-gate-003-wireframe-onay.md) · [gate-005-test-kapsami](../../checklists/gate-005-test-kapsami.md) · [layer-boundary-check](../../checklists/layer-boundary-check.md) · [coverage-gate-check](../../checklists/coverage-gate-check.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
+**Zorunlu Bağlantılar:** [[ops/TODOS/index|TODOS index]] · [[ops/TODOS/03-faz-d-iskelet|Faz 03]] · [[ops/TODOS/04-gate-003-wireframe-onay|Faz 04]] · [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] · [[checklists/layer-boundary-check|layer-boundary-check]] · [[checklists/coverage-gate-check|coverage-gate-check]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
 
 > **Tek cümlelik sorumluluk:** Onaylı 7 ekran ve iskeletten sonra kodun **hangi
 
@@ -62,7 +62,7 @@ Kod sırası **katman sırası = alttan yukarı** (l0 → l7); ters sıralamak N
 
 | # | Adım | Kanıt (zorunlu üçlü) | Süre |
 |---|---|---|---|
-| 1 | l0 portları yaz | `dotnet build` 0 hata + [layer-boundary-check](../../checklists/layer-boundary-check.md) 13 soru | 1 gün |
+| 1 | l0 portları yaz | `dotnet build` 0 hata + [[checklists/layer-boundary-check|layer-boundary-check]] 13 soru | 1 gün |
 | 2 | l1 domain | `dotnet test` yeşil + invariant testi | 1 gün |
 | 3 | l2 handler | test kırmızı→yeşil (TDD) | 2 gün |
 | 4 | l3 crosscutting | log/cache birim testi | 1 gün |
@@ -83,11 +83,11 @@ Kod sırası **katman sırası = alttan yukarı** (l0 → l7); ters sıralamak N
 | Build | `dotnet build -m` | 0 olmayan hata |
 | Test | `dotnet test` | herhangi bir kırmızı |
 | NetArchTest | 8×8 yön matrisi | ihlal > 0 |
-| [layer-boundary-check](../../checklists/layer-boundary-check.md) | 13 soru | cevapsız soru |
-| [data-access-check](../../checklists/data-access-check.md) | DA-01..16 | string-concat SQL / EF Core |
-| [coverage-gate-check](../../checklists/coverage-gate-check.md) | kapsam %90 | < %90 |
-| [secret-leak-check](../../checklists/secret-leak-check.md) | açık anahtar | > 0 |
-| [gate-005-test-kapsami](../../checklists/gate-005-test-kapsami.md) | test paketi | [ ] madde |
+| [[checklists/layer-boundary-check|layer-boundary-check]] | 13 soru | cevapsız soru |
+| [[checklists/data-access-check|data-access-check]] | DA-01..16 | string-concat SQL / EF Core |
+| [[checklists/coverage-gate-check|coverage-gate-check]] | kapsam %90 | < %90 |
+| [[checklists/secret-leak-check|secret-leak-check]] | açık anahtar | > 0 |
+| [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] | test paketi | [ ] madde |
 
 - **3-STRIKE** (AGENTS §4): aynı iş 3 kez düşerse DUR + bloke raporu (`ETIKET · KONUM · ...`).
 - **Yasak:** EF Core · v26.1 dışı DevExpress · `l7→l1/l4` · kod içi secret · string-concat SQL.
@@ -109,11 +109,11 @@ Kod sırası **katman sırası = alttan yukarı** (l0 → l7); ters sıralamak N
 
 ## §4 Kabul Kriterleri (GATE-005)
 
-- [ ] [gate-005-test-kapsami](../../checklists/gate-005-test-kapsami.md) tümü [x]
-- [ ] Kapsam ≥ %90 ([coverage-gate-check](../../checklists/coverage-gate-check.md))
+- [ ] [[checklists/gate-005-test-kapsami|gate-005-test-kapsami]] tümü [x]
+- [ ] Kapsam ≥ %90 ([[checklists/coverage-gate-check|coverage-gate-check]])
 - [ ] NetArchTest 0 ihlal
 - [ ] `data-access-check` + `secret-leak-check` 0 bulgu
-- [ ] [documentation-check](../../checklists/documentation-check.md) [x] (README/vault güncel)
+- [ ] [[checklists/documentation-check|documentation-check]] [x] (README/vault güncel)
 
 ---
 

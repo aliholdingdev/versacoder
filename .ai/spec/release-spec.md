@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Sürüm ve Yayın Şartnamesi (`spec/release-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [packaging-spec](packaging-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/build-spec|build-spec]] · [[spec/packaging-spec|packaging-spec]] · [[spec/deployment-spec|deployment-spec]]
 
 > **Tek cümlelik sorumluluk:** *Sürüm numarası ne zaman artar, changelog nereden üretilir ve hangi koşullar sağlanınca paket çıkartılır* sorusunun tek cevabıdır.
 
@@ -30,13 +30,13 @@ Sürüm **`vMAJOR.MINOR.PATCH`** ve tek kaynağı git etiketidir; changelog **gi
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Semver kuralı ve etiketleme | Derleme komutları: [build-spec](build-spec.md) |
-| 2 | Changelog kategorileri ve üretimi | Paket sürüm kilidi (NuGet): [packaging-spec](packaging-spec.md) |
-| 3 | Artifact/çıktı listesi ve checksum | Makineye kurulum: [deployment-spec](deployment-spec.md) |
-| 4 | Rollback planı zorunluluğu | DB geri alma: [migration-spec](migration-spec.md) |
-| 5 | Release kanıtları (GATE-006) | Onay mercii: [WORKFLOW](../governance/workflow.md) §3 |
+| 1 | Semver kuralı ve etiketleme | Derleme komutları: [[spec/build-spec|build-spec]] |
+| 2 | Changelog kategorileri ve üretimi | Paket sürüm kilidi (NuGet): [[spec/packaging-spec|packaging-spec]] |
+| 3 | Artifact/çıktı listesi ve checksum | Makineye kurulum: [[spec/deployment-spec|deployment-spec]] |
+| 4 | Rollback planı zorunluluğu | DB geri alma: [[spec/migration-spec|migration-spec]] |
+| 5 | Release kanıtları (GATE-006) | Onay mercii: [[governance/workflow|WORKFLOW]] §3 |
 
-> **YASAK:** Elle yazılmış/changelog kopyası · etiketsiz artifact · geri alma plansız yayın · sürümle protocol sürümünü karıştırmak (bkz. [protocol-layer-spec](protocol-layer-spec.md) §2.3).
+> **YASAK:** Elle yazılmış/changelog kopyası · etiketsiz artifact · geri alma plansız yayın · sürümle protocol sürümünü karıştırmak (bkz. [[spec/protocol-layer-spec|protocol-layer-spec]] §2.3).
 
 ---
 

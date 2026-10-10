@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Tel Kafes (Wireframe) Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/ascii-diagram-template]] · [[./screen-spec-template]] · [[./flow-template]] · [[../adr/adr-devexpress-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/ascii-diagram-template]] · [[./screen-spec-template]] · [[./flow-template]] · [[.templates/adr/adr-devexpress-template]]
 
 ---
 
@@ -121,7 +121,7 @@ Kural: `GATE-003` kaydı yoksa `src/VersaCoder.Desktop/**` üzerinde tek satır 
 
 ## §3 Mimari
 
-Çizim alfabesi `[[../architecture/ascii-diagram-template]]` ile aynıdır; **tek fark genişliktir: diyagram 64, tel kafes 66 karakter.**
+Çizim alfabesi `[[.templates/architecture/ascii-diagram-template]]` ile aynıdır; **tek fark genişliktir: diyagram 64, tel kafes 66 karakter.**
 
 ### §3.1 Çizim Alfabesi (tek karakter seti)
 

@@ -13,7 +13,7 @@ supersedes: ""
 ---
 # Security Auditor Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [developer](developer-agent.md) | [general](general-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md)
+**Zorunlu Baglantilar:** [[index|index]] | [[definitions/agents|AGENTS.md]] | [[governance/workflow|WORKFLOW.md]] | [[definitions/role|ROLE.md]] | [[.decisions/adr-index|ADR index]] | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | [[checklists/layer-boundary-check|layer-boundary-check]] | [[.agents/architect-agent|architect]] | [[.agents/developer-agent|developer]] | [[.agents/general-agent|general]] | [[.agents/reviewer-agent|reviewer]] | [[.agents/tester-agent|tester]] | [[.agents/ui-designer-agent|ui-designer]]
 
 > **Tek cumlelik sorumluluk:** Security-auditor; OWASP kalemleri uzerinden denetim yapar, her bulguyu severity ve dosya/satir olarak raporlar, kodu duzeltmez.
 
@@ -34,9 +34,9 @@ AGENTS.md §1.1 SECURITY-AUDITOR blogundaki uc gorev: (1) OWASP kalemleri uzerin
 
 | # | Gorev | Kullanilan liste | Cikti |
 |---|---|---|---|
-| 1 | OWASP denetimi | [security-review-checklist](../checklists/security-review-checklist.md) 14 soru | Bulgu listesi + severity |
-| 2 | Secret / anahtar kasasi | [secret-leak-check](../checklists/secret-leak-check.md) 12 soru | "0 satir" kanit satiri |
-| 3 | SQL / parametrelastirme | [sql-injection-review](../checklists/sql-injection-review.md) | Dosya:satir + OWASP kalemi |
+| 1 | OWASP denetimi | [[checklists/security-review-checklist|security-review-checklist]] 14 soru | Bulgu listesi + severity |
+| 2 | Secret / anahtar kasasi | [[checklists/secret-leak-check|secret-leak-check]] 12 soru | "0 satir" kanit satiri |
+| 3 | SQL / parametrelastirme | [[checklists/sql-injection-review|sql-injection-review]] | Dosya:satir + OWASP kalemi |
 
 ## §2 Kanit
 
@@ -45,17 +45,17 @@ Uretilen kanit **bulgu listesi + severity + etkilenen dosya/satir**'dir; AGENTS.
 | Kanit | Kaynak | Sekil |
 |---|---|---|
 | Bulgu + severity | AGENTS.md §1 matrisi (Guvenlik satiri) | etiketli satir: CRITICAL / YUKSEK / ORTA / DUSUK |
-| Tarama ciktisi | [security-review-checklist](../checklists/security-review-checklist.md) | Calistirilmis komut ciktisi, yorum degil |
-| Gate gecisi | [WORKFLOW.md](../governance/workflow.md) §2 kanit kutusu | AGENTS.md §1.3 "Güvenlik geçişi" satiri |
+| Tarama ciktisi | [[checklists/security-review-checklist|security-review-checklist]] | Calistirilmis komut ciktisi, yorum degil |
+| Gate gecisi | [[governance/workflow|WORKFLOW.md]] §2 kanit kutusu | AGENTS.md §1.3 "Güvenlik geçişi" satiri |
 
 ## §3 Iliskiler
 
 | Iliski | Rol | Sinir |
 |---|---|---|
-| [reviewer](reviewer-agent.md) | Seviye dusurur | Kanitsiz dusurme YASAK (checklist §0) |
-| [developer](developer-agent.md) | Bulguyu duzeltir | Duzeltme bu ajanin isi degil |
-| [security-prompt](../.rules/security-rules.md) | Denetim is emri | Prompt, ajan tanimi degildir |
-| [architect](architect-agent.md) | Katman siniri | [layer-boundary-check](../checklists/layer-boundary-check.md) ile kesisir |
+| [[.agents/reviewer-agent|reviewer]] | Seviye dusurur | Kanitsiz dusurme YASAK (checklist §0) |
+| [[.agents/developer-agent|developer]] | Bulguyu duzeltir | Duzeltme bu ajanin isi degil |
+| [[.rules/security-rules|security-prompt]] | Denetim is emri | Prompt, ajan tanimi degildir |
+| [[.agents/architect-agent|architect]] | Katman siniri | [[checklists/layer-boundary-check|layer-boundary-check]] ile kesisir |
 
 ## §4 Kisitlar
 

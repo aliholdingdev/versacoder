@@ -14,7 +14,7 @@ supersedes: ""
 
 # Hata Yönetimi Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [notification](notification-spec.md) · [observability](observability-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/notification-spec|notification]] · [[spec/observability-spec|observability]]
 
 > **Tek cümlelik sorumluluk:** *Hata nasıl adlandırılır, katmanlar arasında nasıl taşınır, kullanıcıya nasıl gösterilir ve nereye kaydedilir* sorusunun tek cevabıdır.
 > Hata **fırlatmak yerine taşınır**: `Result<T>` + `Error` (l0 sözleşmesi); UI'da `VC-E-NNNN` + insanca mesaj görünür.
@@ -23,7 +23,7 @@ supersedes: ""
 
 ## §0 Özet (Answer First)
 
-Her hata **kod** (`VC-E-NNNN`), **kategori** ve **insanca mesaj** taşır. Katmanlar arasında `Result<T>` ile yürür; **istisna yalnız beklenmeyen çökme** düzeyindedir ve UI katmanında yakalanıp günlüğe düşer. Gösterim [notification](notification-spec.md) kanallarıyla, kayıt l3 `ILogSink` ile olur; kullanıcıya **ham stack trace** gösterilmez (yalnız teşhis kimliği görünür).
+Her hata **kod** (`VC-E-NNNN`), **kategori** ve **insanca mesaj** taşır. Katmanlar arasında `Result<T>` ile yürür; **istisna yalnız beklenmeyen çökme** düzeyindedir ve UI katmanında yakalanıp günlüğe düşer. Gösterim [[spec/notification-spec|notification]] kanallarıyla, kayıt l3 `ILogSink` ile olur; kullanıcıya **ham stack trace** gösterilmez (yalnız teşhis kimliği görünür).
 
 ---
 
@@ -31,11 +31,11 @@ Her hata **kod** (`VC-E-NNNN`), **kategori** ve **insanca mesaj** taşır. Katma
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Kod tablosu, kategoriler, seviye eşlemesi | Bildirim/toast gösterim kanalları | [notification](notification-spec.md) |
-| 2 | Taşıma biçimi (`Result<T>` / `Error`) | `Result<T>` tipinin tanımı (l0) | [architecture](../architecture/index.md) |
-| 3 | UI'da gösterim dili ve gizleme kuralları | Metin/şablon kaynakları | [localization](localization-spec.md) |
-| 4 | Günlüğe yazım (seviye + alanlar) | Log sink'i / dosya biçimi | [observability](observability-spec.md) |
-| 5 | Yeniden deneme kararı (transient/non-transient) | Retry'ın uygulanması (l3) | [protocol-spec](protocol-spec.md) |
+| 1 | Kod tablosu, kategoriler, seviye eşlemesi | Bildirim/toast gösterim kanalları | [[spec/notification-spec|notification]] |
+| 2 | Taşıma biçimi (`Result<T>` / `Error`) | `Result<T>` tipinin tanımı (l0) | [[architecture/index|architecture]] |
+| 3 | UI'da gösterim dili ve gizleme kuralları | Metin/şablon kaynakları | [[spec/localization-spec|localization]] |
+| 4 | Günlüğe yazım (seviye + alanlar) | Log sink'i / dosya biçimi | [[spec/observability-spec|observability]] |
+| 5 | Yeniden deneme kararı (transient/non-transient) | Retry'ın uygulanması (l3) | [[spec/protocol-spec|protocol-spec]] |
 
 ---
 

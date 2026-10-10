@@ -14,9 +14,9 @@ supersedes: ""
 
 # interfaces-vs-abstract — Arayüz mü, soyut sınıf mı
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [solid-rules](../../.rules/solid-rules.md) · [generics-constraints](generics-constraints.md) · [layer-dependency-direction](layer-dependency-direction.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 5/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[knowledge/csharp/index|csharp-index]] · [[.rules/coding-standards|coding-standards]] · [[.rules/solid-rules|solid-rules]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 5/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** *Bir davranis arayuzde mi, soyut sinifta yasar; default interface metodu neden kullanilmaz* sorusunun tek cevabidir.
 
@@ -50,7 +50,7 @@ Bu vault'ta secim kurali net: **sozlesme = `interface`**, paylasilan **durum + v
 | `default`/`notnull` NRT arayuz konulari | dil 7.3'te annotation yok | Var |
 | Arayuz icinde `private` yardimci (C# 8) | **Yok** | Var |
 | C# 14 `extension` uye bloklari | **Yok** | Var |
-| `record` ile immutable soyut veri (C# 9) | **Yok** (bkt. [records-and-immutability](records-and-immutability.md)) | Var |
+| `record` ile immutable soyut veri (C# 9) | **Yok** (bkt. [[knowledge/csharp/records-and-immutability|records-and-immutability]]) | Var |
 
 > DIM'i ortak koda yazmak en pahali hatadir: derleyici kabul etmeyebilir ya da `net48` calisma zamaninda sessizce farkli davranir.
 
@@ -114,10 +114,10 @@ internal sealed class SqliteStore : StoreBase
 
 | Konu | Dosya |
 |---|---|
-| kisitlar | [generics-constraints](generics-constraints.md) |
-| katman yonu | [layer-dependency-direction](layer-dependency-direction.md) |
-| degismez tip | [records-and-immutability](records-and-immutability.md) |
-| SOZLESME | [result-type-design](result-type-design.md) |
+| kisitlar | [[knowledge/csharp/generics-constraints|generics-constraints]] |
+| katman yonu | [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] |
+| degismez tip | [[knowledge/csharp/records-and-immutability|records-and-immutability]] |
+| SOZLESME | [[knowledge/csharp/result-type-design|result-type-design]] |
 
 ## §9 Kanit
 

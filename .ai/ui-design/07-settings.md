@@ -14,7 +14,7 @@ supersedes: ""
 
 # 07 — SETTINGS
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [.rules/configuration-rules.md](../.rules/configuration-rules.md) · [.rules/security-rules.md](../.rules/security-rules.md) · [keys](../governance/keys.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[ui-design/01-start-page|01-start-page]] · [[ui-design/02-main-ide|02-main-ide]] · [[.rules/configuration-rules|.rules/configuration-rules.md]] · [[.rules/security-rules|.rules/security-rules.md]] · [[governance/keys|keys]]
 
 > **Tek cümlelik sorumluluk:** Ayar penceresinin hangi kategorilerden oluştuğu, değerlerin
 > nereye yazıldığı ve gizli alanların nasıl korunduğu sorusunun tek cevabıdır.
@@ -116,9 +116,9 @@ gizli alan → gözcü maskeleme + göster/gizle ikonu; kaydetmeden kapatış �
 | # | Kaynak | Ne kanıtlar |
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/07-settings.md` (eski vault) | kategori/ızgara düzeni |
-| 2 | [.rules/configuration-rules.md](../.rules/configuration-rules.md) | ayar saklama hiyerarşisi |
-| 3 | [.rules/security-rules.md](../.rules/security-rules.md) SEC-02 | gizli alan kuralı |
-| 4 | [keys.md](../governance/keys.md) | anahtar meta haritası (değer değil) |
+| 2 | [[.rules/configuration-rules|.rules/configuration-rules.md]] | ayar saklama hiyerarşisi |
+| 3 | [[.rules/security-rules|.rules/security-rules.md]] SEC-02 | gizli alan kuralı |
+| 4 | [[governance/keys|keys.md]] | anahtar meta haritası (değer değil) |
 
 > `ISettingsService` adı taslaktır — `l0` içinde kesinleşmesi `DOĞRULAMA GEREKLİ`.
 > `VC_DB_PATH` yalnız **ad** örneğidir; gerçek değer/secret hiçbir `.md`/`.resx` dosyasında tutulmaz.

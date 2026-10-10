@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Build Şartnamesi (`spec/build-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [packaging-spec](packaging-spec.md) · [test-strategy](test-strategy.md) · [release-spec](release-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/packaging-spec|packaging-spec]] · [[spec/test-strategy|test-strategy]] · [[spec/release-spec|release-spec]]
 
 > **Tek cümlelik sorumluluk:** *Hangi komutla, hangi sırayla, hangi koşullu derleme kuralıyla derlenir ve yeşil build kanıtı nedir* sorusunun tek cevabıdır.
 
@@ -30,11 +30,11 @@ Build = **restore → build (2×TFM) → test (2×TFM) → vault kontrolleri** s
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Yerel build sırası + iki bacak komutları | Paket sürüm kilidi: [packaging-spec](packaging-spec.md) |
-| 2 | `#if` / koşullu derleme kuralı | Katman yönü denetimi: [protocol-layer-spec](protocol-layer-spec.md) |
-| 3 | CI adımları (4 hücre) ve kanıt dosyaları | Yayın adımları/artifact: [release-spec](release-spec.md) |
-| 4 | Vault ön kontrolleri (link/frontmatter) | Vault kuralı: [docs-spec](docs-spec.md) |
-| 5 | Build hata modları ve sahipliği | Test yorumu/RED seviyesi: [review-spec](review-spec.md) |
+| 1 | Yerel build sırası + iki bacak komutları | Paket sürüm kilidi: [[spec/packaging-spec|packaging-spec]] |
+| 2 | `#if` / koşullu derleme kuralı | Katman yönü denetimi: [[spec/protocol-layer-spec|protocol-layer-spec]] |
+| 3 | CI adımları (4 hücre) ve kanıt dosyaları | Yayın adımları/artifact: [[spec/release-spec|release-spec]] |
+| 4 | Vault ön kontrolleri (link/frontmatter) | Vault kuralı: [[spec/docs-spec|docs-spec]] |
+| 5 | Build hata modları ve sahipliği | Test yorumu/RED seviyesi: [[spec/review-spec|review-spec]] |
 
 > **YASAK:** Tek bacaklı build ile "yeşil" demek (G6) · uyarıyı gizlemek (CS-11) · `#if` içinde iş mantığı (CS-12) · kanıtsız "bitti" (G5).
 

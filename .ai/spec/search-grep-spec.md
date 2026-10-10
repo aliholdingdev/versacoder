@@ -14,7 +14,7 @@ supersedes: ""
 
 # Arama (grep/glob) Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [solution-explorer](solution-explorer-spec.md) · [code-editor](code-editor-spec.md) · [task-queue](task-queue-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/solution-explorer-spec|solution-explorer]] · [[spec/code-editor-spec|code-editor]] · [[spec/task-queue-spec|task-queue]]
 
 > **Tek cümlelik sorumluluk:** *Bir kalıp proje genelinde nasıl taranır, sonuçlar nasıl listelenir ve tıklayınca editör nasıl açılır* sorusunun tek cevabıdır.
 > Arama **salt okunurdur**; dosyaya hiç yazmaz, hedefi workspace kökü dışında olamaz.
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | İçerik araması (regex dahil) ve dosya adı araması | Dosya ağacı yükleme | [solution-explorer](solution-explorer-spec.md) |
-| 2 | Sonuç listesi, filtre, sayfalama, atlanan dizinler | Editör sekmesi davranışı | [code-editor](code-editor-spec.md) |
-| 3 | Tarama görevinin kuyruğa/iptale girmesi | Öncelik ve iptal kuralı | [task-queue](task-queue-spec.md) |
-| 4 | Sonuç içinden değiştirme **niyetinin** tetiklenmesi | Değiştirme onayı ve diff | [diff-view](diff-view-spec.md) |
-| 5 | Arama süresi/ölçümü | Log/metrik yazımı | [observability](observability-spec.md) |
+| 1 | İçerik araması (regex dahil) ve dosya adı araması | Dosya ağacı yükleme | [[spec/solution-explorer-spec|solution-explorer]] |
+| 2 | Sonuç listesi, filtre, sayfalama, atlanan dizinler | Editör sekmesi davranışı | [[spec/code-editor-spec|code-editor]] |
+| 3 | Tarama görevinin kuyruğa/iptale girmesi | Öncelik ve iptal kuralı | [[spec/task-queue-spec|task-queue]] |
+| 4 | Sonuç içinden değiştirme **niyetinin** tetiklenmesi | Değiştirme onayı ve diff | [[spec/diff-view-spec|diff-view]] |
+| 5 | Arama süresi/ölçümü | Log/metrik yazımı | [[spec/observability-spec|observability]] |
 
 ---
 

@@ -14,9 +14,9 @@ supersedes: ""
 
 # parameterized-queries — Parametreli Sorgu Kalıpları
 
-**Zorunlu Baglantilar:** [vault index](../../index.md) · [CLAUDE.md (G2)](../../claude.md) · [coding standards](../../.rules/coding-standards.md) · [sql-injection-defense](sql-injection-defense.md) · [ado-net-command](ado-net-command.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md)
-**Küme + Hub:** [knowledge index](../index.md) · [data index](index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (data · 6/25):** [ado-net-connection](ado-net-connection.md) · [audit-columns-convention](audit-columns-convention.md) · [command-timeout-policy](command-timeout-policy.md) · [concurrency-optimistic](concurrency-optimistic.md) · [connection-pooling-notes](connection-pooling-notes.md) · [connection-string-secrets](connection-string-secrets.md) · [dapper-async-patterns](dapper-async-patterns.md) · [dapper-multi-map](dapper-multi-map.md) · [dapper-procedures-stored](dapper-procedures-stored.md) · [dual-tfm-provider-choice](dual-tfm-provider-choice.md) · [migration-rollback](migration-rollback.md) · [migration-script-writing](migration-script-writing.md) · [migration-version-table](migration-version-table.md) · [null-handling-db-mapping](null-handling-db-mapping.md) · [repository-pattern-thin](repository-pattern-thin.md) · [sqlite-provider-setup](sqlite-provider-setup.md) · [sqlserver-provider-setup](sqlserver-provider-setup.md) · [transaction-scope-local](transaction-scope-local.md) · [unit-of-work-pattern](unit-of-work-pattern.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[claude|CLAUDE.md (G2)]] · [[.rules/coding-standards|coding standards]] · [[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]]
+**Küme + Hub:** [[knowledge/index|knowledge index]] · [[knowledge/data/index|data index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (data · 6/25):** [[knowledge/data/ado-net-connection|ado-net-connection]] · [[knowledge/data/audit-columns-convention|audit-columns-convention]] · [[knowledge/data/command-timeout-policy|command-timeout-policy]] · [[knowledge/data/concurrency-optimistic|concurrency-optimistic]] · [[knowledge/data/connection-pooling-notes|connection-pooling-notes]] · [[knowledge/data/connection-string-secrets|connection-string-secrets]] · [[knowledge/data/dapper-async-patterns|dapper-async-patterns]] · [[knowledge/data/dapper-multi-map|dapper-multi-map]] · [[knowledge/data/dapper-procedures-stored|dapper-procedures-stored]] · [[knowledge/data/dual-tfm-provider-choice|dual-tfm-provider-choice]] · [[knowledge/data/migration-rollback|migration-rollback]] · [[knowledge/data/migration-script-writing|migration-script-writing]] · [[knowledge/data/migration-version-table|migration-version-table]] · [[knowledge/data/null-handling-db-mapping|null-handling-db-mapping]] · [[knowledge/data/repository-pattern-thin|repository-pattern-thin]] · [[knowledge/data/sqlite-provider-setup|sqlite-provider-setup]] · [[knowledge/data/sqlserver-provider-setup|sqlserver-provider-setup]] · [[knowledge/data/transaction-scope-local|transaction-scope-local]] · [[knowledge/data/unit-of-work-pattern|unit-of-work-pattern]]
 
 > **Tek cumlelik sorumluluk:** *Değer sorgu metnine nasıl hiç girmeden yazılır; IN, LIKE, ORDER BY gibi dinamik parçalar parametrelenemezse ne yapılır* sorusunun tek cevabıdır.
 
@@ -73,7 +73,7 @@ var rows = await connection.QueryAsync<SessionRow>(sql,
 | Dapper liste genişletme | 2.1.x | 2.1.x — aynı davranış |
 | Sonuç | **aynı SQL, aynı plan** | aynı |
 
-Fark yalnız sayfa parçasındadır (bkz. [pagination-offset-keyset](pagination-offset-keyset.md)); gövde iki bacakta değişmez.
+Fark yalnız sayfa parçasındadır (bkz. [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]]); gövde iki bacakta değişmez.
 
 ## §5 Parametrelenemez parca
 
@@ -98,7 +98,7 @@ Allowlist'in ortak bir `ISqlDialect` yardımıyla mı, yoksarepository içinde s
 
 ## §8 Kardesler
 
-[sql-injection-defense](sql-injection-defense.md) · [dapper-parameters-dynamic](dapper-parameters-dynamic.md) · [ado-net-command](ado-net-command.md) · [dapper-query-mapping](dapper-query-mapping.md) · [pagination-offset-keyset](pagination-offset-keyset.md)
+[[knowledge/data/sql-injection-defense|sql-injection-defense]] · [[knowledge/data/dapper-parameters-dynamic|dapper-parameters-dynamic]] · [[knowledge/data/ado-net-command|ado-net-command]] · [[knowledge/data/dapper-query-mapping|dapper-query-mapping]] · [[knowledge/data/pagination-offset-keyset|pagination-offset-keyset]]
 
 ## §9 Kanit
 

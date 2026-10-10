@@ -14,9 +14,9 @@ supersedes: ""
 
 # XtraTabControl Coklu Sayfa Duzeni
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [dockmanager-panels](dockmanager-panels.md) · [layoutcontrol-grouping](layoutcontrol-grouping.md) · [ribbon-form-basics](ribbon-form-basics.md) · [designer-runtime-customization](designer-runtime-customization.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.rules/devexpress-rules|devexpress-rules]] · [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] · [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] · [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] · [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 5/35):** tam liste → [[knowledge/devexpress/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir formun icinde bircok sayfayi sekme olarak nasil gosterdiginiz ve secim olayini nereden yakaladiginiz* sorusunun tek cevabidir.
 
@@ -136,10 +136,10 @@ xtraTabControl1.SelectedTabPage = xtraTabControl1.TabPages["Editor"];
 
 | Konu | Dosya |
 |---|---|
-| Panel tabanli duzen | [dockmanager-panels](dockmanager-panels.md) |
-| Gruplu alan duzeni | [layoutcontrol-grouping](layoutcontrol-grouping.md) |
-| Form + ribbon host | [ribbon-form-basics](ribbon-form-basics.md) |
-| Designer/runtime siniri | [designer-runtime-customization](designer-runtime-customization.md) |
+| Panel tabanli duzen | [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] |
+| Gruplu alan duzeni | [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] |
+| Form + ribbon host | [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] |
+| Designer/runtime siniri | [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]] |
 
 ---
 

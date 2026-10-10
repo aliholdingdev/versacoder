@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — AI Anayasası (`CLAUDE.md`)
 
-**Zorunlu Bağlantılar:** [index](index.md) · [WORKFLOW](governance/workflow.md) · [ROLE](definitions/role.md) · [AGENTS](definitions/agents.md) · [ADR-028](.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md) · [MEMORY](memory/memory.md) · [log](ops/log.md) · [keys](governance/keys.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[governance/workflow|WORKFLOW]] · [[definitions/role|ROLE]] · [[definitions/agents|AGENTS]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[architecture/index|architecture/index]] · [[checklists/layer-boundary-check|layer-boundary-check]] · [[memory/memory|MEMORY]] · [[ops/log|log]] · [[governance/keys|keys]]
 
 > **Tek cümlelik sorumluluk:** *Hangi davranış kesinlikle yasak, bilgi yoksa ne yazılır,
 > kanıt nasıl sunulur, ne zaman durulur* sorusunun tek cevabıdır.
@@ -130,7 +130,7 @@ G12 KOTU : GATE-003 kapalıyken Program.cs'e satır eklemek
 ```
 
 **Karıştırma belirtisi:** kutuda `BASLIK` ya da `RİSK` satırı görürsen bu ajan
-kutusudur ([AGENTS.md](definitions/agents.md) §3); gate kanıtı geçersiz sayılır.
+kutusudur ([[definitions/agents|AGENTS.md]] §3); gate kanıtı geçersiz sayılır.
 
 ### §3.3 Hata raporu biçimi
 
@@ -185,7 +185,7 @@ kutusudur ([AGENTS.md](definitions/agents.md) §3); gate kanıtı geçersiz say�
 
 ## §5 Katman Yasakları (ADR-028 bağlayıcı)
 
-**Bağlayıcı:** [ADR-028](.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [architecture/index](architecture/index.md) · [layer-boundary-check](checklists/layer-boundary-check.md)
+**Bağlayıcı:** [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[architecture/index|architecture/index]] · [[checklists/layer-boundary-check|layer-boundary-check]]
 
 ### §5.1 İzinli yön (saf ASCII)
 
@@ -248,7 +248,7 @@ kutusudur ([AGENTS.md](definitions/agents.md) §3); gate kanıtı geçersiz say�
 
 **Yeni tip nereye:** arayüz→`l0`, iş kuralı→`l1`, senaryo→`l2`, kesit→`l3`,
 somut dış dünya→`l4`, araç sözleşmesi→`l5`, kurulum→`l6`, ekran/komut→`l7`.
-Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index](architecture/index.md).
+Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [[architecture/index|architecture/index]].
 
 ---
 
@@ -260,7 +260,7 @@ Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index
 | 2 | **9 üretim + 1-2 test projesi** | en fazla 11 `.csproj` × 2 TFM | ADR-028 §2.1 |
 | 3 | **5440 katalog kaydı** | `count-components` = PASS | ADR-028 §4 |
 | 4 | **500 MD** | GATE-004a eşiği | vault gate eşiği |
-| 5 | **7 ekran** | `01-start-page` … `07-settings` | [VISION](definitions/vision.md) |
+| 5 | **7 ekran** | `01-start-page` … `07-settings` | [[definitions/vision|VISION]] |
 
 > Kaynaksız hücreye **`DOĞRULAMA GEREKLI`** yazılır; tahmin sayı girmez (G9).
 
@@ -325,13 +325,13 @@ Kararsız kaldığında tahmin yazma: `DOĞRULAMA GEREKLI` + [architecture/index
 | 6 | Navigasyon · karar defteri · oturum durumu | `index.md` · `brain.md` · `MEMORY.md` |
 | 7 | Prompt kaynağı (mimari) | `G:/…/versacoder proje planlaması ai.08.md` |
 | 8 | Prompt kaynağı (proje tanımı) | `G:/…/versacoder proje planlaması ai.04.md` |
-| CLAUDE | [CLAUDE](claude.md) | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
-| engine | [engine](definitions/engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| PROJECTS | [PROJECTS](definitions/projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](definitions/glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| ULTRA | [ULTRA](definitions/ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| CLAUDE | [[claude|CLAUDE]] | AI anayasa — G1..G12 hard guardrail, kanit formati, dur/bekle |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [[.decisions/brain|brain]] | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [[definitions/glossary|glossary]] | terim sozlugu (136 terim) TR / EN / ELI10 |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok CLAUDE | [kok CLAUDE](../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok README | [kok README](../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok AGENTS | [kok AGENTS](../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

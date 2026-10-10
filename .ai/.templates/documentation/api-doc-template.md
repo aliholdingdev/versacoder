@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — API Dokümantasyon Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../backend/service-template]] · [[../adr/adr-template]] · [[katman-readme-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/query/Query-Template]] · [[.templates/backend/service-template]] · [[.templates/adr/adr-template]] · [[katman-readme-template]]
 
 ---
 
@@ -287,7 +287,7 @@ $par = (Select-String -LiteralPath $doc -Pattern '@p1\.\.@pN' -Encoding UTF8).Co
 
 ````markdown
 # VersaCoder — Session API
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../query/Query-Template]] · [[../backend/service-template]] · [[../adr/adr-template]] · [[../architecture/architecture-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/query/Query-Template]] · [[.templates/backend/service-template]] · [[.templates/adr/adr-template]] · [[.templates/architecture/architecture-template]]
 
 > Oturum servisinin HTTP sözleşmesini tanımlar; kod `src/`'tedir, burada yalnız yol/imza/durum yaşar.
 
@@ -483,7 +483,7 @@ $sizan2 = @(Select-String -LiteralPath $doc -Pattern $desen -Encoding UTF8)
 'supheli sifre satiri {0} (0 olmali)' -f $sizan2.Count
 $sizan2 | ForEach-Object { '  BULGU -> satir ' + $_.LineNumber }
 
-# 6) KODLAMA + BAGLANTI — BOM yok, mojibake 0, [[...]] hedefleri diskte
+# 6) KODLAMA + BAGLANTI — BOM yok, mojibake 0, [[.templates/documentation/]] hedefleri diskte
 $bytes = [System.IO.File]::ReadAllBytes($doc)
 $bom = ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF)
 $text = [System.IO.File]::ReadAllText($doc, [System.Text.UTF8Encoding]::new($false))

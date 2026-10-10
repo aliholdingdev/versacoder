@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "ADR-028 §2.1 yön diyagramı (D22: Unicode izinli); vault'un tek yön haritası"
-tags: [['architecture', 'overview', 'layers', 'direction', 'd22']]
+tags: [architecture, overview, layers, direction, d22]
 source: "ADR-028 §2.1 + .ai/CLAUDE.md §5.1 (çapraz kontrol); D22 Unicode politikası"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-rules](../../.rules/layer-rules.md)
+**Zorunlu Bağlantılar:** [[architecture/index|architecture index]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[.rules/layer-rules|layer-rules]]
 
 # Katman Yönü (tek kaynak)
 
@@ -39,4 +39,4 @@ değildir (ADR-028 §2.3).
 
 ## İlgili
 
-- [layer-rules](../../.rules/layer-rules.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md)
+- [[.rules/layer-rules|layer-rules]] · [[.decisions/accepted/adr-030-5000-layers-class-level|ADR-030]]

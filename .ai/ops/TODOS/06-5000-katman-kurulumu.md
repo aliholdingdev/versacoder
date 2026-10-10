@@ -14,7 +14,7 @@ supersedes: ""
 
 # Faz 06 — 5000+ Katman Kurulumu
 
-**Zorunlu Baglantilar:** [TODOS index](index.md) · [Faz 02](02-5000-plani-sorulari.md) · [Faz 05](05-kod-ve-kalite.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md) · [layering-5000-spec](../../spec/layering-5000-spec.md) · [layer-rules](../../.rules/layer-rules.md) · [layer-5000-check](../../checklists/layer-5000-check.md) · [WORKFLOW](../../governance/workflow.md)
+**Zorunlu Baglantilar:** [[ops/TODOS/index|TODOS index]] · [[ops/TODOS/02-5000-plani-sorulari|Faz 02]] · [[ops/TODOS/05-kod-ve-kalite|Faz 05]] · [[.decisions/accepted/adr-030-5000-layers-class-level|ADR-030]] · [[spec/layering-5000-spec|layering-5000-spec]] · [[.rules/layer-rules|layer-rules]] · [[checklists/layer-5000-check|layer-5000-check]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cumlelik sorumluluk:** 3 ekseni (tip · dugum · paket) ve yon grubunu kademeli olarak hedefe tasiyan, **her adimda kapi + kanit + bagimlilik** yazili asama listesidir.
 

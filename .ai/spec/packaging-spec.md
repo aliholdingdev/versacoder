@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Paketleme Şartnamesi (`spec/packaging-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [release-spec](release-spec.md) · [deployment-spec](deployment-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/build-spec|build-spec]] · [[spec/release-spec|release-spec]] · [[spec/deployment-spec|deployment-spec]]
 
 > **Tek cümlelik sorumluluk:** *Bir NuGet paketi nereye, hangi sürümle ve kimin onayıyla girer; proje dosyaları hangi ortak ayarları paylaşır* sorusunun tek cevabıdır.
 
@@ -30,11 +30,11 @@ Tüm paket sürümleri **tek yerde** (`Directory.Packages.props`, CPM açık) ya
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | `Directory.Packages.props` (sürümler) + `Directory.Build.props` (ortak MSBuild) | Paketlerin **derlenmesi**: [build-spec](build-spec.md) |
-| 2 | Sürüm kilidi ve floating yasağı (SEC-09) | Yayın/paket çıkarma: [release-spec](release-spec.md) |
-| 3 | Yeni paket ekleme akışı (ADR + G8) | Dağıtım artifact'i: [deployment-spec](deployment-spec.md) |
+| 1 | `Directory.Packages.props` (sürümler) + `Directory.Build.props` (ortak MSBuild) | Paketlerin **derlenmesi**: [[spec/build-spec|build-spec]] |
+| 2 | Sürüm kilidi ve floating yasağı (SEC-09) | Yayın/paket çıkarma: [[spec/release-spec|release-spec]] |
+| 3 | Yeni paket ekleme akışı (ADR + G8) | Dağıtım artifact'i: [[spec/deployment-spec|deployment-spec]] |
 | 4 | DevExpress v26.1 ve SqlClient 5.2.x kilidi | Kullanım kuralları: `.rules/devexpress-rules.md` |
-| 5 | NuGet kaynakları ve restore davranışı | CI adımları: [build-spec](build-spec.md) |
+| 5 | NuGet kaynakları ve restore davranışı | CI adımları: [[spec/build-spec|build-spec]] |
 
 > **YASAK:** `.csproj`'te elle `Version=` · floating (`*`, `1.*`, version range) · CPM dışı ikinci sürüm kaynağı · DevExpress v26.1 dışı sürüm · EF Core paketi (G2).
 

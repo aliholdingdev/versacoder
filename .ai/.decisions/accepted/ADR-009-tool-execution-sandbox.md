@@ -47,5 +47,5 @@ tutar; çalışma klasörü sabitlenmezse betik yanlış dizine yazar.
 
 ## §7 İlgili
 
-- [ADR-006-opencode-tool-contract.md](adr-006-opencode-tool-contract.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-006-opencode-tool-contract|ADR-006-opencode-tool-contract.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

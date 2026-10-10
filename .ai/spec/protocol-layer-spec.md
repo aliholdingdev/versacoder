@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Protokol Katmanı Şartnamesi (`spec/protocol-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [protocol-spec](protocol-spec.md) · [tool-contract-spec](tool-contract-spec.md) · [session-spec](session-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/protocol-spec|protocol-spec]] · [[spec/tool-contract-spec|tool-contract-spec]] · [[spec/session-spec|session-spec]]
 
 > **Tek cümlelik sorumluluk:** *l5 hangi mesajları/şemaları taşır, hangi katmanlara bakmaz ve sürüm uyuşmazlığında nasıl davranır* sorusunun tek cevabıdır.
-> Mesaj zarfının **içeriği** (tip adları, alanlar) [protocol-spec](protocol-spec.md)'tadır; bu belge **katman sınırı + sürüm kuralı** ile sınırlıdır (SSOT).
+> Mesaj zarfının **içeriği** (tip adları, alanlar) [[spec/protocol-spec|protocol-spec]]'tadır; bu belge **katman sınırı + sürüm kuralı** ile sınırlıdır (SSOT).
 
 ---
 
@@ -31,11 +31,11 @@ l5, **saf veri + doğrulama** katmanıdır: şema, mesaj, transcript kaydı, dö
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | l5'in 5 alt katmanı: N33 tool-schema · N34 messages · N35 session-transcript · N36 loop-policy · N37 versioning-errors | Mesaj alanlarının **dizimi**: [protocol-spec](protocol-spec.md) §4 |
-| 2 | Sürüm el sıkışması (`protocol.hello`) ve uyumsuzluk davranışı | Tool şeması/izin/sandbox: [tool-contract-spec](tool-contract-spec.md) |
-| 3 | Fail-closed hata fırlatma kuralı ve hata kodu **sahipliği** | Hata kodu listesi (`VC-E-*`): [protocol-spec](protocol-spec.md) §5 |
-| 4 | Döngü politikası (step limit) ve compaction **tetikleyici** girdisi | Bütçe değerleri ve compaction akışı: [context-budget-spec](context-budget-spec.md) |
-| 5 | Transcript girdisinin **biçimi** (Seq, Kind) | Oturum durumu/kalıcılığı: [session-spec](session-spec.md) |
+| 1 | l5'in 5 alt katmanı: N33 tool-schema · N34 messages · N35 session-transcript · N36 loop-policy · N37 versioning-errors | Mesaj alanlarının **dizimi**: [[spec/protocol-spec|protocol-spec]] §4 |
+| 2 | Sürüm el sıkışması (`protocol.hello`) ve uyumsuzluk davranışı | Tool şeması/izin/sandbox: [[spec/tool-contract-spec|tool-contract-spec]] |
+| 3 | Fail-closed hata fırlatma kuralı ve hata kodu **sahipliği** | Hata kodu listesi (`VC-E-*`): [[spec/protocol-spec|protocol-spec]] §5 |
+| 4 | Döngü politikası (step limit) ve compaction **tetikleyici** girdisi | Bütçe değerleri ve compaction akışı: [[spec/context-budget-spec|context-budget-spec]] |
+| 5 | Transcript girdisinin **biçimi** (Seq, Kind) | Oturum durumu/kalıcılığı: [[spec/session-spec|session-spec]] |
 
 > **YASAK:** l5 içinde `DbConnection`, `HttpClient`, `Process`, `Form` kullanmak; şemayı kod içinde string ile kurup doğrulamamak; bilinmeyen sürümü sessizce kabul etmek.
 

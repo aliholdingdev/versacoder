@@ -14,10 +14,10 @@ supersedes: ""
 
 # Bildirim Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [observability](observability-spec.md) · [agent-panel](agent-panel-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/error-handling-spec|error-handling]] · [[spec/observability-spec|observability]] · [[spec/agent-panel-spec|agent-panel]]
 
 > **Tek cümlelik sorumluluk:** *Bir olay kullanıcıya nasıl bildirilir, hatalar nerede biriktirilir ve hangi bildirim susturulur* sorusunun tek cevabıdır.
-> Bildirim **gösterimdir**; hata kodu üretimi [error-handling](error-handling-spec.md), kaydı [observability](observability-spec.md) kapsamındadır.
+> Bildirim **gösterimdir**; hata kodu üretimi [[spec/error-handling-spec|error-handling]], kaydı [[spec/observability-spec|observability]] kapsamındadır.
 
 ---
 
@@ -31,11 +31,11 @@ supersedes: ""
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Toast/balon gösterimi, süre, tıklama | Hata kodu ve seviye üretimi | [error-handling](error-handling-spec.md) |
-| 2 | Hata merkezi listesi (birikim, filtre, temizle) | Log dosyası / metrik | [observability](observability-spec.md) |
-| 3 | Durum çubuğu mesajı | Kabuk yerleşimi | [ui-shell](ui-shell-spec.md) |
-| 4 | Bildirim ayarları (sessiz saat, kapatma) | Ayarların kalıcılığı | [settings](settings-spec.md) · [persistence](persistence-spec.md) |
-| 5 | Görev bitiş bildirimi tetiği | Görev durum makinesi | [task-queue](task-queue-spec.md) |
+| 1 | Toast/balon gösterimi, süre, tıklama | Hata kodu ve seviye üretimi | [[spec/error-handling-spec|error-handling]] |
+| 2 | Hata merkezi listesi (birikim, filtre, temizle) | Log dosyası / metrik | [[spec/observability-spec|observability]] |
+| 3 | Durum çubuğu mesajı | Kabuk yerleşimi | [[spec/ui-shell-spec|ui-shell]] |
+| 4 | Bildirim ayarları (sessiz saat, kapatma) | Ayarların kalıcılığı | [[spec/settings-spec|settings]] · [[spec/persistence-spec|persistence]] |
+| 5 | Görev bitiş bildirimi tetiği | Görev durum makinesi | [[spec/task-queue-spec|task-queue]] |
 
 ---
 

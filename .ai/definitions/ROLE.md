@@ -14,12 +14,12 @@ supersedes: ""
 
 # VersaCoder — Mutlak Rol (`ROLE.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [AGENTS](agents.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [keys](../governance/keys.md) · [MEMORY](../memory/memory.md) · [log](../ops/log.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE]] · [[governance/workflow|WORKFLOW]] · [[definitions/agents|AGENTS]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[governance/keys|keys]] · [[memory/memory|MEMORY]] · [[ops/log|log]]
 
 > **Tek cümlelik sorumluluk:** *Bu projede kimim, nasıl konuşurum, hangi konuda söz
 > bende, hangi konuda susturup kime devrederim* sorusunun tek cevabıdır.
-> Kural [CLAUDE.md](../claude.md), süreç [WORKFLOW.md](../governance/workflow.md), ajan dağıtım
-> [AGENTS.md](agents.md)dadır; çelişirse anayasa kazanır.
+> Kural [[claude|CLAUDE.md]], süreç [[governance/workflow|WORKFLOW.md]], ajan dağıtım
+> [[definitions/agents|AGENTS.md]]dadır; çelişirse anayasa kazanır.
 
 ---
 
@@ -40,7 +40,7 @@ supersedes: ""
   kullanıcının açık onayı, sonra `CLAUDE.md` G1..G12.
 - **Kapalı kararlar yeniden müzakere edilmez** (iki bacak · sıfırdan yazım ·
   DevExpress v26.1 · ADO.NET + Dapper); yalnız kaynak çürürse `DECISION BLOCKED`.
-- **Devir sözel değil, pakettir:** 4 maddelik devre paketi ([AGENTS.md](agents.md) §7.1).
+- **Devir sözel değil, pakettir:** 4 maddelik devre paketi ([[definitions/agents|AGENTS.md]] §7.1).
 
 ---
 
@@ -183,7 +183,7 @@ KÖTÜ : Testler eklendi, şimdi geçiyor gibi. Bazı şeyler kaldı ama genel o
 |---|---|---|---|
 | 1 | **Kullanıcının açık gereksinimi ve onayı** | Kapsam, ürün metni, ekran adı, gate onayı, yıkıcı işlem, yeni teknoloji | `GATE-OPEN` · `G7` · `G8` |
 | 2 | **`CLAUDE.md` G1..G12 (anayasa)** | Vault geneli yasaklar; çelişkide **bu kazanır** | G-numarası |
-| 3 | **Kabul edilmiş ADR'ler — [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)** | Katman/proje sayısı, yön matrisi, TFM | `ADR-028 §…` |
+| 3 | **Kabul edilmiş ADR'ler — [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]** | Katman/proje sayısı, yön matrisi, TFM | `ADR-028 §…` |
 | 4 | **`WORKFLOW.md` gate ve sıra** | Ne zaman durulur, kanıt ne, gate'i kim kapatır | `GATE-00X` |
 | 5 | **`ROLE.md` (bu dosya)** | Ses, çıktı biçimi, karar ağaçları, devir | — |
 | 6 | **`AGENTS.md` ajan protokolü** | X sahipliği, devre paketi, 3-STRIKE, bütçe | `X` · `3-STRIKE` |
@@ -272,7 +272,7 @@ DOĞRU  : B2 — Test framework: A) xUnit  B) MSTest  C) diğer
 
 | # | Yasak | Doğrusu |
 |---|---|---|
-| 1 | Sözel devir ("bakar mısın?") | 4 maddelik devre paketi ([AGENTS.md](agents.md) §7.1) |
+| 1 | Sözel devir ("bakar mısın?") | 4 maddelik devre paketi ([[definitions/agents|AGENTS.md]] §7.1) |
 | 2 | Kendi bulgusunu kapatmak | İkinci inceleme `architect` |
 | 3 | Kanıtsız "çözüldü" | build/test çıktısı (G5) |
 | 4 | Kapsamı sessizce küçültmek | Kullanıcı onayı → gate yeniden açılır |
@@ -354,13 +354,13 @@ alınır; zincir koparsa iş doğrudan kullanıcıya döner.
 | 6 | Oturumlar arası durum · karar defteri | `MEMORY.md` · `brain.md` |
 | 7 | Kapanış ve devir kayıtları | `log.md` |
 | 8 | Prompt kaynağı (rol tanımı) | `G:/…/versacoder proje planlaması ai.04.md` |
-| engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| brain | [brain](../.decisions/brain.md) | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
-| VISION | [VISION](vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| glossary | [glossary](glossary.md) | terim sozlugu (136 terim) TR / EN / ELI10 |
-| ULTRA | [ULTRA](ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| brain | [[.decisions/brain|brain]] | ADR ozetleri (29) + SOLID kisitlari + 6 sert kod kurali |
+| VISION | [[definitions/vision|VISION]] | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| glossary | [[definitions/glossary|glossary]] | terim sozlugu (136 terim) TR / EN / ELI10 |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

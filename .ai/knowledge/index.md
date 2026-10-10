@@ -14,8 +14,8 @@ supersedes: ""
 
 # Bilgi İndeksi (knowledge/)
 
-**Zorunlu Bağlantılar:** [CLAUDE](../claude.md) · [keys](../governance/keys.md) · [adr-index](../.decisions/adr-index.md) · [Rapor indeksi](../ops/log.md)
-**Küme + Hub:** [index](../index.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [glossary](../definitions/glossary.md) · [keys](../governance/keys.md)
+**Zorunlu Bağlantılar:** [[claude|CLAUDE]] · [[governance/keys|keys]] · [[.decisions/adr-index|adr-index]] · [[ops/log|Rapor indeksi]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
 
 > **Tek cümlelik sorumluluk:** "Bu vault'ta kanıtlanmış ders nerede yaşar, nasıl yazılır, kabul edilir?" sorusunun tek cevabıdır.
 
@@ -23,7 +23,7 @@ supersedes: ""
 
 ## §0 Özet (Answer First)
 
-`knowledge/` yalnız **kanıtlanmış öğrenimler** (DERS / LESSON) yazar: bir şey denendi, çıktısı ölçüldü, sonra tek satır ders olarak buraya konur. **Kanıt yoksa ders yazılmaz** — `DOĞRULAMA GEREKLİ` etiketiyle `reports/10-bilinen-eksikler.md`'ye düşer. Karar (ne yapılacağı) burada değil, [adr-index](../.decisions/adr-index.md) altındaki ADR'lerde yaşar; kural (ne yapılacağı zorunlu) `.rules/` içinde yaşar — bu dosya yalnız "ne öğrendik"i anlatır. Klasör durumu (2026-09-29): `knowledge/` = 0 dosya, bu indeks ilk kayıttır.
+`knowledge/` yalnız **kanıtlanmış öğrenimler** (DERS / LESSON) yazar: bir şey denendi, çıktısı ölçüldü, sonra tek satır ders olarak buraya konur. **Kanıt yoksa ders yazılmaz** — `DOĞRULAMA GEREKLİ` etiketiyle `reports/10-bilinen-eksikler.md`'ye düşer. Karar (ne yapılacağı) burada değil, [[.decisions/adr-index|adr-index]] altındaki ADR'lerde yaşar; kural (ne yapılacağı zorunlu) `.rules/` içinde yaşar — bu dosya yalnız "ne öğrendik"i anlatır. Klasör durumu (2026-09-29): `knowledge/` = 0 dosya, bu indeks ilk kayıttır.
 
 ---
 
@@ -34,7 +34,7 @@ supersedes: ""
 | 1 | Ölçülmüş ders: "X denendi, Y çıktısı alındı, Z dersi çıkarıldı" | denemeden çıkarılmış tahmin | `NEEDS_VALIDATION` → `reports/10-bilinen-eksikler.md` |
 | 2 | Tekrar eden hata ve kesin düzeltmesi (belge + satır + komut çıktısı) | tek seferlik ufak typo | ilgili dosyada yerinde düzeltme |
 | 3 | Araç/komut beklenen vs gerçek çıktı farkı | "genellikle çalışır" cümlesi | `scripts/*.md` + bu klasör |
-| 4 | Mimari/teknoloji dersi (ADR'yi **gerekçelendiren** kanıt) | ADR'nin kendisi (tekrar olur) | karar → [adr-index](../.decisions/adr-index.md) |
+| 4 | Mimari/teknoloji dersi (ADR'yi **gerekçelendiren** kanıt) | ADR'nin kendisi (tekrar olur) | karar → [[.decisions/adr-index|adr-index]] |
 | 5 | Ders özeti tek satır; detay kanıt tablosunda | kanıtsız "bitti/tamam" | G5 ihlali → RED |
 
 **Sınır testi (ilk EVET yeter):** "Bu cümlede ölçüm/komut çıktısı/dosya+satır var mı?" → EVET = knowledge; "Karar vermem mi gerekiyor?" → EVET = ADR; "Bunu bundan sonra zorunlu yapmam mı gerekiyor?" → EVET = `.rules/`.
@@ -116,15 +116,15 @@ supersedes: ""
 
 | # | Küme | Sorumluluk | Dosya | Index |
 |---|---|---|---|---|
-| 1 | [`csharp/`](csharp/index.md) | C# / .NET dil kurallari, SOLID, async, nullable, performans | **29** | [index](csharp/index.md) |
-| 2 | [`data/`](data/index.md) | ADO.NET + Dapper veri erisimi, migration, transaction, index | **26** | [index](data/index.md) |
-| 3 | [`devexpress/`](devexpress/index.md) | DevExpress v26.1 kontrolleri: Grid, TreeList, Editor, Ribbon | **36** | [index](devexpress/index.md) |
-| 4 | [`engine/`](engine/index.md) | Agentic orkestrasyon: router, SSE, checkpoint, diff onay | **9** | [index](engine/index.md) |
-| 5 | [`winforms/`](winforms/index.md) | WinForms form uclusu, layout, async, erisilebilirlik, Designer | **33** | [index](winforms/index.md) |
-| — | [`knowledge/index.md`](index.md) (bu dosya) | hub — kümeler arasi gecis | 1 | — |
+| 1 | [[knowledge/csharp/index|`csharp/`]] | C# / .NET dil kurallari, SOLID, async, nullable, performans | **29** | [[knowledge/csharp/index|index]] |
+| 2 | [[knowledge/data/index|`data/`]] | ADO.NET + Dapper veri erisimi, migration, transaction, index | **26** | [[knowledge/data/index|index]] |
+| 3 | [[knowledge/devexpress/index|`devexpress/`]] | DevExpress v26.1 kontrolleri: Grid, TreeList, Editor, Ribbon | **36** | [[knowledge/devexpress/index|index]] |
+| 4 | [[knowledge/engine/index|`engine/`]] | Agentic orkestrasyon: router, SSE, checkpoint, diff onay | **9** | [[knowledge/engine/index|index]] |
+| 5 | [[knowledge/winforms/index|`winforms/`]] | WinForms form uclusu, layout, async, erisilebilirlik, Designer | **33** | [[knowledge/winforms/index|index]] |
+| — | [[knowledge/index|`knowledge/index.md`]] (bu dosya) | hub — kümeler arasi gecis | 1 | — |
 
 **Toplam: 5 küme + 1 hub = 131 MD** — csharp 29 · data 26 · devexpress 35 · engine 8 · winforms 32 · hub 1
 
 **Dogrulanmis (2026-10-07):** frontmatter 131/131 · mojibake 0 · boyut 2.4-7.7 KB · placeholder 0 (gercek) · 5/5 kümeyde `index.md` VAR
 
-**Vault koku:** [index](../index.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [WORKFLOW](../governance/workflow.md) · [brain](../.decisions/brain.md) · [VISION](../definitions/vision.md) · [glossary](../definitions/glossary.md) · [keys](../governance/keys.md)
+**Vault koku:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[governance/workflow|WORKFLOW]] · [[.decisions/brain|brain]] · [[definitions/vision|VISION]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]

@@ -14,7 +14,7 @@ supersedes: ""
 
 # LLM Provider Spec — OpenRouter + NVIDIA NIM
 
-**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [tool-spec](tool-spec.md) · [protocol-spec](protocol-spec.md) · [cli-spec](cli-spec.md) · [session-spec](session-spec.md) · [security-rules](../.rules/security-rules.md) · [data-access-rules](../.rules/data-access-rules.md)
+**Zorunlu Baglantilar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[spec/tool-spec|tool-spec]] · [[spec/protocol-spec|protocol-spec]] · [[spec/cli-spec|cli-spec]] · [[spec/session-spec|session-spec]] · [[.rules/security-rules|security-rules]] · [[.rules/data-access-rules|data-access-rules]]
 
 > **Tek cümlelik sorumluluk:** *OpenRouter ve NVIDIA NIM sağlayıcıları nasıl bağlanır, port (l0) nasıl tanımlanır, anahtarlar nerede tutulur, hangi hata kodu ne anlama gelir* sorusunun tek cevabı.
 > Gereksinim kimliği: **`VC-LLM-NNN`** · Hata kodları **`VC-E-0601..0615`** · Port: `IAgentProvider` (l0) · Uygulama: `VersaCoder.AI.Engine` (K0400-K0449).
@@ -38,11 +38,11 @@ supersedes: ""
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | `IAgentProvider` port sözleşmesi (l0) | Provider **uygulaması** (l4, AI.Engine) | [versacoder-spec](versacoder-spec.md) |
+| 1 | `IAgentProvider` port sözleşmesi (l0) | Provider **uygulaması** (l4, AI.Engine) | [[spec/versacoder-spec|versacoder-spec]] |
 | 2 | OpenRouter + NIM endpoint, model listesi, hata kodları | Diğer sağlayıcılar (OpenAI, Anthropic doğrudan) — **eklenebilir** | bu spec §7 |
-| 3 | Anahtar yönetimi (config + env) | Anahtar **üretimi** / rotation | [security-rules](../.rules/security-rules.md) |
-| 4 | Retry, rate limit, timeout | Rate limit **sayacı** (telemetri) | [performance-guidelines](../.rules/performance-guidelines.md) |
-| 5 | Streaming (SSE) + tool çağrısı | Agent **planlama** / görev kuyruğu | [session-spec](session-spec.md) |
+| 3 | Anahtar yönetimi (config + env) | Anahtar **üretimi** / rotation | [[.rules/security-rules|security-rules]] |
+| 4 | Retry, rate limit, timeout | Rate limit **sayacı** (telemetri) | [[.rules/performance-guidelines|performance-guidelines]] |
+| 5 | Streaming (SSE) + tool çağrısı | Agent **planlama** / görev kuyruğu | [[spec/session-spec|session-spec]] |
 
 > **YASAK:** HTTP isteği **doğrudan UI'dan** atılmaz (l7 izolasyon); EF Core **yasak** (G2, ADO.NET+Dapper); anahtar log'a yazılmaz (SEC-05).
 

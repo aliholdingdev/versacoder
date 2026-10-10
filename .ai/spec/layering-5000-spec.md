@@ -14,7 +14,7 @@ supersedes: ""
 
 # Spec — 5000+ Katman (`spec/layering-5000-spec.md`)
 
-**Zorunlu Baglantilar:** [index](index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [test-strategy](test-strategy.md) · [architecture/index](../architecture/index.md) · [build-spec](build-spec.md) · [ADR-030](../.decisions/accepted/adr-030-5000-layers-class-level.md) · [ADR-014](../.decisions/accepted/adr-014-slnx-and-cpm.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-rules](../.rules/layer-rules.md)
+**Zorunlu Baglantilar:** [[spec/index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[spec/test-strategy|test-strategy]] · [[architecture/index|architecture/index]] · [[spec/build-spec|build-spec]] · [[.decisions/accepted/adr-030-5000-layers-class-level|ADR-030]] · [[.decisions/accepted/adr-014-slnx-and-cpm|ADR-014]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[.rules/layer-rules|layer-rules]]
 
 > **Tek cumlelik sorumluluk:** *5000+ katman (tip **ve** dugum) hangi kuralla uretilir, kademe nasil olculur, yon grubu nasil buyur ve hangi gate'e baglanir* sorusunun tek cevabi.
 > Gereksinim kimligi bicimi: **`VC-LAY-NNN`**. Her madde test edilebilir yazilir (G5).
@@ -47,8 +47,8 @@ supersedes: ""
 | 1 | Tip + dugum kaydi uretimi, adlandirma, ID disiplini | Hangi tipin hangi isi yaptigi: ilgili katman spec'i |
 | 2 | **Tek hedef** + uc ekseni olcumu (tip/dugum/yon grubu) | Sayacin kendisi/kodu: `scripts/count-components.ps1` |
 | 3 | Yon grubu tanimi (1 grup = 1 uretim `.dll`) + bolme kurali | Paket ici baglilik detayi: `dependency-map.md` |
-| 4 | Topoloji (uretim `.csproj` = yon grubu) + `.sln`/`.slnx` + CPM | Build sirasi + `#if`: [build-spec](build-spec.md) |
-| 5 | Yon matrisi + NetArchTest beklentisi | Test piramidi/kapsam: [test-strategy](test-strategy.md) |
+| 4 | Topoloji (uretim `.csproj` = yon grubu) + `.sln`/`.slnx` + CPM | Build sirasi + `#if`: [[spec/build-spec|build-spec]] |
+| 5 | Yon matrisi + NetArchTest beklentisi | Test piramidi/kapsam: [[spec/test-strategy|test-strategy]] |
 
 > **YASAK:** **kapi gecmeden** `.csproj` acmak (ADR-030 §2.4 + LAY-06 — 5000+ `.csproj` hedefi **karar**, ama her tekil acim GATE-004 + onay **ister**) · `yon-gruplari.md` satiri olmadan proje acmak · ad uydurmak (G9) · tek sayacla "5000+" demek (G5) · `l4 -> l2` dogrudan ok · katalog satirini elle uydurmak (G9) · dugum eksigini yogunluk bahanesiyle yok saymak · **ara kademe iddiasi** (G7 iptali) · **EF Core** (G2/ADR-005 — bu spec kapsam disi ama her yerde baglayici).
 
@@ -151,7 +151,7 @@ dugum lazim olur
 - **build:** VC-LAY-005 · 014
 - **surec denetimi (log kaydi):** VC-LAY-006 · 009 · 013
 
-Detay: [test-strategy](test-strategy.md).
+Detay: [[spec/test-strategy|test-strategy]].
 
 ---
 

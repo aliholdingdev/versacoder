@@ -7,12 +7,12 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Öğrenilen kalıplar (new patterns/); D9 tam ayrımın parçası"
-tags: [['patterns', 'l2', 'd9']]
+tags: [patterns, l2, d9]
 source: "D9 kararı (tam ayrım: memory/knowledge/rules/decisions/patterns ayrı)"
 supersedes: ""
 ---
 
-**Zorunlu Bağlantılar:** [vault index](../index.md) · [memory index](../memory/index.md) · [rules index](../.rules/index.md)
+**Zorunlu Bağlantılar:** [[index|vault index]] · [[memory/index|memory index]] · [[.rules/index|rules index]]
 
 # patterns — L2 Kalıplar
 
@@ -27,4 +27,4 @@ supersedes: ""
 
 ## İlgili
 
-- [memory](../memory/index.md) · [knowledge hub](../knowledge/index.md)
+- [[memory/index|memory]] · [[knowledge/index|knowledge hub]]

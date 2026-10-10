@@ -14,10 +14,10 @@ supersedes: ""
 
 # Terminal Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [tool-spec](tool-spec.md) · [error-handling](error-handling-spec.md) · [notification](notification-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/tool-spec|tool-spec]] · [[spec/error-handling-spec|error-handling]] · [[spec/notification-spec|notification]]
 
 > **Tek cümlelik sorumluluk:** *Komut nasıl çalıştırılır, çıktısı satır satır nasıl yakalanır ve süreç ne zaman sonlandırılır* sorusunun tek cevabıdır.
-> Terminal bir **dock görünümdür** (ayrı ekran değil — `versacoder-spec.md` §2 OQ-1); süreç başlatma l4'ün, komut güvenliği [tool-spec](tool-spec.md)'indir.
+> Terminal bir **dock görünümdür** (ayrı ekran değil — `versacoder-spec.md` §2 OQ-1); süreç başlatma l4'ün, komut güvenliği [[spec/tool-spec|tool-spec]]'indir.
 
 ---
 
@@ -31,11 +31,11 @@ Görünüm: `DockManager` alt paneli içinde çıktı `MemoEdit` (**ReadOnly**) 
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Komut satırı girdisi, geçmiş (↑/↓), çıktının gösterimi | Komutun güvenlik/izin sözleşmesi | [tool-spec](tool-spec.md) |
-| 2 | Süreç durumu (çalışıyor/bitti/timeout) rozeti | Hata kodu sınıflandırma | [error-handling](error-handling-spec.md) |
-| 3 | Iptal/timeout eylemi ve kullanıcıya bildirimi | Toast/bildirim biçimi | [notification](notification-spec.md) |
-| 4 | Görünümün dock olarak yerleşimi ve temizlenmesi | Kabuk/pencere yönetimi | [ui-shell](ui-shell-spec.md) |
-| 5 | Görev çıktısının Agent Panel'e taşınması | Görev kuyruğu | [task-queue](task-queue-spec.md) |
+| 1 | Komut satırı girdisi, geçmiş (↑/↓), çıktının gösterimi | Komutun güvenlik/izin sözleşmesi | [[spec/tool-spec|tool-spec]] |
+| 2 | Süreç durumu (çalışıyor/bitti/timeout) rozeti | Hata kodu sınıflandırma | [[spec/error-handling-spec|error-handling]] |
+| 3 | Iptal/timeout eylemi ve kullanıcıya bildirimi | Toast/bildirim biçimi | [[spec/notification-spec|notification]] |
+| 4 | Görünümün dock olarak yerleşimi ve temizlenmesi | Kabuk/pencere yönetimi | [[spec/ui-shell-spec|ui-shell]] |
+| 5 | Görev çıktısının Agent Panel'e taşınması | Görev kuyruğu | [[spec/task-queue-spec|task-queue]] |
 
 ---
 

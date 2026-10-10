@@ -14,10 +14,10 @@ supersedes: ""
 
 # ULTRA-THINKING — Uzun Düşünme Protokolü
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [AGENTS](agents.md) · [ROLE](role.md) · [engine](engine.md) · [brain](../.decisions/brain.md) · [MEMORY](../memory/memory.md) · [log](../ops/log.md) · [.decisions/adr-index](../.decisions/adr-index.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE]] · [[governance/workflow|WORKFLOW]] · [[definitions/agents|AGENTS]] · [[definitions/role|ROLE]] · [[definitions/engine|engine]] · [[.decisions/brain|brain]] · [[memory/memory|MEMORY]] · [[ops/log|log]] · [[.decisions/adr-index|.decisions/adr-index]]
 
 > **Tek cümlelik sorumluluk:** *Bu karar gerçekten zor mu, hangi kanıt hangi ağırlıkta, ne zaman durulur, karar yanlışsa ne kırılır ve sonuç nereye yazılır* sorusunun tek cevabıdır.
-> Bu dosya **süreç değil, düşünme yöntemidir**: gate tanımı [WORKFLOW.md](../governance/workflow.md)'tedir, hard kural metni [CLAUDE.md](../claude.md)'dedir, ajan/kutu kuralları [AGENTS.md](agents.md)'tedir (SRP — tekrar yok).
+> Bu dosya **süreç değil, düşünme yöntemidir**: gate tanımı [[governance/workflow|WORKFLOW.md]]'tedir, hard kural metni [[claude|CLAUDE.md]]'dedir, ajan/kutu kuralları [[definitions/agents|AGENTS.md]]'tedir (SRP — tekrar yok).
 
 ---
 
@@ -33,7 +33,7 @@ Uzun düşünme **5 adımlık kapalı bir protokoldür**: **Kaynak oku -> Altern
 | 4 | **Karar** | Tek karar + neden bu + neden diğerleri değil | Karar kutusu (§3) | Geri alma maliyeti gün sınıfındaysa |
 | 5 | **Risk** | İkinci derece dalgalar + red-team `KALAN` | Risk satırı + doğrulama adımı | `KALAN` alanı boş kalamaz |
 
-> **KURAL:** Adımlar **atlanamaz**; 1'siz 2 (kaynaksız alternatif) ve 3'süz 4 (kanıtsız karar) protokol ihlalidir. Doğrulama çalıştırılmadan sonuç `NEEDS_VALIDATION`'dır ve [engine.md](engine.md) §1.5 checkpoint'inden geçemez.
+> **KURAL:** Adımlar **atlanamaz**; 1'siz 2 (kaynaksız alternatif) ve 3'süz 4 (kanıtsız karar) protokol ihlalidir. Doğrulama çalıştırılmadan sonuç `NEEDS_VALIDATION`'dır ve [[definitions/engine|engine.md]] §1.5 checkpoint'inden geçemez.
 
 ### §0.1 Prompt kaynağındaki ön-sıra (ai.08 §71 — MUTLAK KURAL)
 
@@ -63,18 +63,18 @@ GATE-003/004) sonrasındaki `IMPLEMENT` adımında başlar.
 
 ---
 
-**İlgili:** [AGENTS](agents.md) §3.2 (12 mutlak kural) · [ROLE](role.md) §4 (tek soru · A/B/C) · [CLAUDE](../claude.md) G12 (gate disiplini) · [brain](../.decisions/brain.md) §3 (kod kuralları).
+**İlgili:** [[definitions/agents|AGENTS]] §3.2 (12 mutlak kural) · [[definitions/role|ROLE]] §4 (tek soru · A/B/C) · [[claude|CLAUDE]] G12 (gate disiplini) · [[.decisions/brain|brain]] §3 (kod kuralları).
 ## §1 Ne Zaman Kullanılır
 
 ### §1.1 Beş tetik kriteri
 
-Protokol **yalnız** aşağıdaki 5 durumdan biri görüldüğünde ateşlenir; tetiklenmediyse iş normal akışta ([engine.md](engine.md) §1) yürür.
+Protokol **yalnız** aşağıdaki 5 durumdan biri görüldüğünde ateşlenir; tetiklenmediyse iş normal akışta ([[definitions/engine|engine.md]] §1) yürür.
 
 | # | Kriter | Belirti | Etiket | İlk hareket |
 |---|---|---|---|---|
 | 1 | **Çelişen kaynak** | İki kaynak aynı konuda farklı diyor | `CONFLICT DETECTED` | Hangi basamak kazanır — onu işaretle, sonra adım 1 |
 | 2 | **3. başarısız düzeltme** | Aynı hata 3 düzeltmede de kırmızı | `3-STRIKE` | Kod yazmayı bırak, **varsayımı adlandır** |
-| 3 | **Geri alınması pahalı karar** | Katman/proje sayısı, teknoloji, gate kapsamı, proje sırası | — (sonuçta ADR) | Adım 1'den başla; karar [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) sınıfındaysa ADR'ye çevir |
+| 3 | **Geri alınması pahalı karar** | Katman/proje sayısı, teknoloji, gate kapsamı, proje sırası | — (sonuçta ADR) | Adım 1'den başla; karar [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] sınıfındaysa ADR'ye çevir |
 | 4 | **Kanıtsız iddia / belirsizlik** | "Bitti" diyecek çıktı yok, sayı kaynağı yok | `UNKNOWN` · `NEEDS_VALIDATION` | Maddeyi yazma; komutu çalıştır ya da işi durdur |
 | 5 | **Yıkıcı / iki bacak riski** | Silme, migration, git reset; `net48` + `net10.0-windows` uyumluluk sorusu | `G7 ONAYI` | Tek soruluk onay hazırla; protokol kararı hazırlar, onayı **kullanıcı** verir |
 
@@ -83,7 +83,7 @@ Protokol **yalnız** aşağıdaki 5 durumdan biri görüldüğünde ateşlenir; 
 | Kriter | Protokol adımında aranan kanıt | Yetersizse |
 |---|---|---|
 | 1 Çelişen kaynak | Kaynak hiyerarşisinde üst basamağın yazılı olması | `DECISION BLOCKED` + tek soru |
-| 2 3. düzeltme | Yeni hipotez + farklı yöntem (aynı yöntem tekrarı yasak) | Bloke raporu ([AGENTS.md](agents.md) §4) |
+| 2 3. düzeltme | Yeni hipotez + farklı yöntem (aynı yöntem tekrarı yasak) | Bloke raporu ([[definitions/agents|AGENTS.md]] §4) |
 | 3 Pahalı karar | En az 3 alternatif + geri alma maliyeti | Karar `NEEDS_VALIDATION` |
 | 4 Kanıtsız iddia | Çalıştırılmış komutun çıktısı | Madde silinir (G5) |
 | 5 Yıkıcı işlem | Onay istemi + kurtarma yolu | Komut çalışmaz (G7) |
@@ -92,12 +92,12 @@ Protokol **yalnız** aşağıdaki 5 durumdan biri görüldüğünde ateşlenir; 
 
 | Durum | Yapılacak | Neden protokol yok |
 |---|---|---|
-| Açık kural, tek doğru cevap ([CLAUDE.md](../claude.md) G3: tek ribbon stili `RibbonControlStyle.Office2010`) | Uygula | Seçenek üretmek kuralı sorgulamak olur |
+| Açık kural, tek doğru cevap ([[claude|CLAUDE.md]] G3: tek ribbon stili `RibbonControlStyle.Office2010`) | Uygula | Seçenek üretmek kuralı sorgulamak olur |
 | Biçim düzeltmesi (frontmatter, link, UTF-8) | Düzelt + tara | Ölmek isteyen karar değil |
-| ADR'de çoktan kararlaştırılmış konu | ADR'yi uygula | Karar zaten kayıtlı ([brain.md](../.decisions/brain.md)) |
+| ADR'de çoktan kararlaştırılmış konu | ADR'yi uygula | Karar zaten kayıtlı ([[.decisions/brain|brain.md]]) |
 | Mekanik refactor (rename, format) | `dotnet build` + `dotnet test` kanıtı yeter | Karar yok, işlem var |
 
-> **UYARI:** Protokol **her işe** uygulanırsa karar yorgunluğu doğar ve G5'ten kaçış aracına döner ([AGENTS.md](agents.md) §6 bütçesiyle çakışır).
+> **UYARI:** Protokol **her işe** uygulanırsa karar yorgunluğu doğar ve G5'ten kaçış aracına döner ([[definitions/agents|AGENTS.md]] §6 bütçesiyle çakışır).
 
 ### §1.3 Giriş bütçesi (zaman kutusu)
 
@@ -170,7 +170,7 @@ Protokolün girişine "sonra bakarım" diye beklenen iş, kaynak çelişkisine d
   ADR'ye CEVIR (§3)  ->  .decisions/  veya  "ADR GEREKMEZ" gerekcesi
        |
        v
-  GATE'E KANIT OLARAK SUN  ->  KAPATAN KULLANICI ([WORKFLOW.md](../governance/workflow.md))
+  GATE'E KANIT OLARAK SUN  ->  KAPATAN KULLANICI ([[governance/workflow|WORKFLOW.md]])
 ```
 
 ### §2.2 Adım kartları
@@ -187,12 +187,12 @@ Protokolün girişine "sonra bakarım" diye beklenen iş, kaynak çelişkisine d
 
 | # | Okunan | Ne verir | Etiketi |
 |---|---|---|---|
-| 1 | [CLAUDE.md](../claude.md) | G1..G12, kanıt formatı, dur/bekle | `REPOSITORY_VERIFIED` |
-| 2 | [WORKFLOW.md](../governance/workflow.md) | Gate kriteri + sırası + kanıt kutusu | `REPOSITORY_VERIFIED` |
-| 3 | [AGENTS.md](agents.md) · [ROLE.md](role.md) | Kim yapar, kimin son sözü, bütçe | `REPOSITORY_VERIFIED` |
-| 4 | İlgili ADR ([.decisions/adr-index.md](../.decisions/adr-index.md)) | Bağlayıcı karar + şartlar | `SOURCE_VERIFIED — ADR-NNN §X` |
-| 5 | [engine.md](engine.md) | Yürütme/katman gerçeği (l0..l7, 9 üretim + 1-2 test proje) | `REPOSITORY_VERIFIED` |
-| 6 | [reports/index.md](../ops/log.md) · [reports/k3-618-ham-envanter.md](../architecture/layer-5000/index.md) | Ham veri, `needs-validation` işaretli | `SOURCE_VERIFIED` ya da `NEEDS_VALIDATION` |
+| 1 | [[claude|CLAUDE.md]] | G1..G12, kanıt formatı, dur/bekle | `REPOSITORY_VERIFIED` |
+| 2 | [[governance/workflow|WORKFLOW.md]] | Gate kriteri + sırası + kanıt kutusu | `REPOSITORY_VERIFIED` |
+| 3 | [[definitions/agents|AGENTS.md]] · [[definitions/role|ROLE.md]] | Kim yapar, kimin son sözü, bütçe | `REPOSITORY_VERIFIED` |
+| 4 | İlgili ADR ([[.decisions/adr-index|.decisions/adr-index.md]]) | Bağlayıcı karar + şartlar | `SOURCE_VERIFIED — ADR-NNN §X` |
+| 5 | [[definitions/engine|engine.md]] | Yürütme/katman gerçeği (l0..l7, 9 üretim + 1-2 test proje) | `REPOSITORY_VERIFIED` |
+| 6 | [[ops/log|reports/index.md]] · [[architecture/layer-5000/index|reports/k3-618-ham-envanter.md]] | Ham veri, `needs-validation` işaretli | `SOURCE_VERIFIED` ya da `NEEDS_VALIDATION` |
 
 **Çıktı şablonu:**
 
@@ -202,7 +202,7 @@ KISIT   : G5 (kanit zorunlu) · G6 (iki bacak) · ADR-028 s2.3 (6 sart)
 CELIŞKI : <varsa hangi ikisi, hangi basamak kazaniyor>
 ```
 
-> **UYARI:** Etiketsiz teknik iddia **uydurmadır** ve madde silinir ([CLAUDE.md](../claude.md) §3.1). "Kaynakta öyle yazıyordu" değil; `SOURCE_VERIFIED — ADR-028 §3`.
+> **UYARI:** Etiketsiz teknik iddia **uydurmadır** ve madde silinir ([[claude|CLAUDE.md]] §3.1). "Kaynakta öyle yazıyordu" değil; `SOURCE_VERIFIED — ADR-028 §3`.
 
 ### §2.4 Adım 2 — Alternatif üret
 
@@ -243,8 +243,8 @@ Karşılaştırma iki ölçütle yapılır: **kaynak ağırlığı** (§4 hiyera
 | 8 | İki bacak | Yeni paket **her iki TFM'de** restore ediliyor mu? | `NU1202` riski |
 | 9 | Veri erişimi | Kodda `Microsoft.EntityFrameworkCore*` / `DbContext` geçiyor mu? | G2 CRITICAL — elenir |
 | 10 | Veri erişimi | Her sorgu `@parametre` ile mi (`$"...{x}"` = 0)? | Injection — elenir |
-| 11 | Mimari | Seçenek `l4 -> l2` gibi **yasaklı ok** üretiyor mu? | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) 8x8 matris — elenir |
-| 12 | Mimari | [layer-boundary-check](../checklists/layer-boundary-check.md) 13 sorusundan geçer mi? | Mimari RED |
+| 11 | Mimari | Seçenek `l4 -> l2` gibi **yasaklı ok** üretiyor mu? | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] 8x8 matris — elenir |
+| 12 | Mimari | [[checklists/layer-boundary-check|layer-boundary-check]] 13 sorusundan geçer mi? | Mimari RED |
 | 13 | UI | Yıkıcı kontrol/ekran değişikliği **GATE-003** öncesi mi? | G12 — ertele |
 | 14 | UI | Sürüm yalnız `v26.1`, stil yalnız `Office2010` mu? | G3 — elenir |
 | 15 | Gate | İlgili gate kriteri bu kanıtla karşılanıyor mu? | Geçersiz kanıt |
@@ -258,7 +258,7 @@ Karşılaştırma iki ölçütle yapılır: **kaynak ağırlığı** (§4 hiyera
 | 3/3 "evet" ve kanıt ekli | 4'e geç |
 | 1–2 madde `NEEDS_VALIDATION` | Etiketle 4'e geç; doğrulama adımı 5'te yazılı olmalı |
 | Herhangi bir G2/G3/G6 ihlali | Seçenek **elenir**, 2'ye dön |
-| Kanıt üretilemiyor | **Dur** — `NEEDS_VALIDATION`, işi [engine.md](engine.md) §4.2'ye göre durdur |
+| Kanıt üretilemiyor | **Dur** — `NEEDS_VALIDATION`, işi [[definitions/engine|engine.md]] §4.2'ye göre durdur |
 | 3. başarısız deneme | **Dur** — `3-STRIKE` bloke raporu |
 
 ### §2.6 Adım 4 — Karar
@@ -281,9 +281,9 @@ Karar **yalnız** dokunduğu dosyayı değiştirmez; 6 dalga hesaplanır. Dalga 
 |---|---|---|---|
 | D1 | **Katman** | Hangi makro katmanlar değişir (`l0..l7`)? | Yeni sağlayıcı = `l4` + `l6`; `l2` değişmez |
 | D2 | **Test** | Hangi test kırılır, hangisi eklenmeli? | NetArchTest + kontrat testi |
-| D3 | **Doküman** | Hangi vault dosyası güncellenmeli? | [engine.md](engine.md), [.rules/index.md](../.rules/index.md) altındaki kural |
+| D3 | **Doküman** | Hangi vault dosyası güncellenmeli? | [[definitions/engine|engine.md]], [[.rules/index|.rules/index.md]] altındaki kural |
 | D4 | **Gate** | Hangi gate kanıtı tazelenmeli? | GATE-004 kanıt kutusu yeniden üretilir |
-| D5 | **Risk** | Hangi risk kaydı güncellenmeli? | [reports/index.md](../ops/log.md) altındaki kayıt |
+| D5 | **Risk** | Hangi risk kaydı güncellenmeli? | [[ops/log|reports/index.md]] altındaki kayıt |
 | D6 | **Geri alma** | Nasıl geri alınır? | ADR `superseded` + yeni ADR |
 
 **Red-team zorunlu üçlüsü:**
@@ -300,10 +300,10 @@ KALAN  : cevabin zayif kismi -> NEEDS_VALIDATION + dogrulama adimi
 
 | # | Durma nedeni | Etiket | Yapılacak |
 |---|---|---|---|
-| 1 | Çelişki çözülmedi | `DECISION BLOCKED` | Kullanıcıya **tek** soru ([ROLE.md](role.md) §4) |
+| 1 | Çelişki çözülmedi | `DECISION BLOCKED` | Kullanıcıya **tek** soru ([[definitions/role|ROLE.md]] §4) |
 | 2 | Kanıt üretilemiyor | `NEEDS_VALIDATION` | Madde yazılmaz; komutu çalıştırma planı yazılır |
 | 3 | Bilgi hiç yok | `UNKNOWN` | İş durur, tahmin yazılmaz |
-| 4 | Aynı hata 3. kez | `3-STRIKE` | Bloke raporu + `dur/bekle` ([engine.md](engine.md) §4) |
+| 4 | Aynı hata 3. kez | `3-STRIKE` | Bloke raporu + `dur/bekle` ([[definitions/engine|engine.md]] §4) |
 | 5 | Yıkıcı işlem gerekiyor | `G7 ONAYI` | Onay gelmeden komut çalışmaz |
 | 6 | Gate kriteri konuşuluyor | `BEKLEMEDE` | Kanıt hazırlanır, **kapatma kullanıcıya** aittir |
 
@@ -355,7 +355,7 @@ KALAN  : cevabin zayif kismi -> NEEDS_VALIDATION + dogrulama adimi
 | Adım | Kural |
 |---|---|
 | Dosya adı | `ADR-NNN-<kebab-case-konu>.md` (ASCII, Türkçe karakter yok) |
-| Numara | [brain.md](../.decisions/brain.md) + [.decisions/adr-index.md](../.decisions/adr-index.md) ile eş, tekrarsız |
+| Numara | [[.decisions/brain|brain.md]] + [[.decisions/adr-index|.decisions/adr-index.md]] ile eş, tekrarsız |
 | Durum | `proposed` -> `accepted` (yalnız kullanıcı onayıyla) -> `superseded` |
 | Minimum içerik | Bağlam · Karar · Alternatifler (oy kaydıyla) · Sonuçlar |
 | Kayıt yeri | Karar `accepted` ise tek yaşam yeri ADR'dir; başka dosyaya **kopyalanmaz** |
@@ -386,7 +386,7 @@ GATE     : GATE-004a (vault) kaniti | DURUM: BEKLEMEDE
 |---|---|---|---|---|
 | **S1 — Build / test çıktısı** | Çalıştırılmış komutun metni | **En ağır** — tek başına yeter | `dotnet build -> 0 hata (net48, net10.0-windows)` | "Bitti" ancak bu seviyeyle söylenir (G5) |
 | **S2 — Dosya satırı / script çıktısı** | Diskte okunan gerçek ya da salt-okunur tarama | Ağır | `ADR-028 §3` · `AGENTS.md §5` · `count-components -> PASS` | Kısıt ve karar gerekçesi |
-| **S3 — Kayıtlı karar (ADR) / gate kriteri** | Bağlayıcı, değişmesi onay isteyen | Bağlayıcı | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) 6 şart | Seçenek **eler** (kural ihlali) |
+| **S3 — Kayıtlı karar (ADR) / gate kriteri** | Bağlayıcı, değişmesi onay isteyen | Bağlayıcı | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] 6 şart | Seçenek **eler** (kural ihlali) |
 | **S4 — Ajan sözü / tahmin / his** | Çıktısı olmayan ifade | **En hafif — tek başına asla yetmez** | "Muhtemelen geçer", "testler geçer" | Yalnız S1-S3'e giden **yol gösterir**, karar yapamaz |
 
 **Ağırlık kuralı:**
@@ -407,7 +407,7 @@ GATE     : GATE-004a (vault) kaniti | DURUM: BEKLEMEDE
 | S2 ile S1 çelişiyor | **S1 kazanır** (yazılı olan değil, çalışan kazanır) |
 | S1 ile S3 çelişiyor | **S3 kazanır + çelişki `CONFLICT DETECTED`** — kural ihlali testle "geçilemez" |
 | İkisi de S1 | Daha **yenisini** al, tarih/saat yaz |
-| Hiçbiri yok | `UNKNOWN` + dur ([CLAUDE.md](../claude.md) §7 S2) |
+| Hiçbiri yok | `UNKNOWN` + dur ([[claude|CLAUDE.md]] §7 S2) |
 
 ### §4.2 Kaynak ve doğrulama etiketleri (7)
 
@@ -488,7 +488,7 @@ DUZELTME  : <yapilacak is, ≈ sure>
 KANIT     : <komut -> sayilar>  |  NEEDS_VALIDATION
 ```
 
-> **UYARI:** Bu kutu [engine.md](engine.md) §1.5'teki **gate kanıt kutusuyla** ve §3.1'deki **karar kutusuyla** aynı şey değildir — karıştırma SSOT ihlalidir ([AGENTS.md](agents.md) §2 "Karıştırma yasağı").
+> **UYARI:** Bu kutu [[definitions/engine|engine.md]] §1.5'teki **gate kanıt kutusuyla** ve §3.1'deki **karar kutusuyla** aynı şey değildir — karıştırma SSOT ihlalidir ([[definitions/agents|AGENTS.md]] §2 "Karıştırma yasağı").
 
 ### §5.4 Red-team sual seti (en güçlü karşı argümanı kurmak)
 
@@ -519,14 +519,14 @@ Karşı argüman **zayıf kurulursa** test işe yaramaz. Her karar için 8 sua s
 
 ## §6 Örnek: ADR-028 Nasıl Üretildi (gerçek kayıt)
 
-> Bu bölüm **gerçek bir olaydır**: 3 tur, 21 ajan oyu ve bir arbitraj sonucu ADR-028 kabul edildi. Kanıt dosyası: [.decisions/accepted/ADR-028-layered-baseline-9-projects.md](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §3.
+> Bu bölüm **gerçek bir olaydır**: 3 tur, 21 ajan oyu ve bir arbitraj sonucu ADR-028 kabul edildi. Kanıt dosyası: [[.decisions/accepted/adr-028-layered-baseline-9-projects|.decisions/accepted/ADR-028-layered-baseline-9-projects.md]] §3.
 
 ### §6.1 Bağlam (adım 1 çıktısı)
 
 | # | Gerçek | Kanıt |
 |---|---|---|
 | C1 | İki rakip mimari taslak vardı: vault ADR-013 (8 makro / 52 düğüm / 9 proje) vs K3 `versacoder.mimari-02.md` (9 Tier / 500+ DLL / 5000+ bileşen) | ADR-028 §1 |
-| C2 | K3'ün elle sayım envanteri **618 giriş / 616 benzersiz**; 2 birebir tekrar, 9 başlıktan 2'si yanlış, 4 DLL dosyada yok | [reports/k3-618-ham-envanter.md](../architecture/layer-5000/index.md) |
+| C2 | K3'ün elle sayım envanteri **618 giriş / 616 benzersiz**; 2 birebir tekrar, 9 başlıktan 2'si yanlış, 4 DLL dosyada yok | [[architecture/layer-5000/index|reports/k3-618-ham-envanter.md]] |
 | C3 | `count-components.ps1` **52 dosya / 5440 kayıt / 0 bozuk format / PASS** | ADR-028 C4 |
 | C4 | 3 tur, **21 ajan** (10 senior → 5 senior → 3 junior + 3 ajans) | ADR-028 §3 |
 | C5 | Yön çelişkisi: bir belge `l4 -> l2` derken dependency-map `l4 -> l2 = X` der | ADR-028 C6 |
@@ -569,10 +569,10 @@ Karşı argüman **zayıf kurulursa** test işe yaramaz. Her karar için 8 sua s
 | Alan | Değer |
 |---|---|
 | Kabul edilen | **A = ADR-013 birebir + 6 şart** |
-| Kayıt dosyası | [.decisions/accepted/ADR-028-layered-baseline-9-projects.md](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
+| Kayıt dosyası | [[.decisions/accepted/adr-028-layered-baseline-9-projects|.decisions/accepted/ADR-028-layered-baseline-9-projects.md]] |
 | Toplam oy | **3 tur · 21 ajan** (10 + 5 + 6) |
 | Red edilen | C (ikinci sayım birimi) · B (evrensel red, ~1150 hedef) |
-| Kapanış | 6 şart GATE-004a kapanışından önce; takip eden kapı [WORKFLOW.md](../governance/workflow.md) GATE-004a → 003 → 004 |
+| Kapanış | 6 şart GATE-004a kapanışından önce; takip eden kapı [[governance/workflow|WORKFLOW.md]] GATE-004a → 003 → 004 |
 
 ### §6.5 Tur 3 itirazlarının 6 şarta dönüşümü (arbitraj kanıtı)
 
@@ -583,7 +583,7 @@ Tur 3'te **hiçbir** katılımcı A'ya karşı çıkmadı; 6 itirazın tamamı *
 | 1 | junior #1 | K ↔ l eşlemesi yok · designer çift TFM · `TreatWarningsAsErrors` × `.Designer.cs` | Şart 4 · Şart 6 |
 | 2 | junior #2 | "Yeni tip nereye yazılır" belirsiz · sahte PASS · test/Desktop TFM uyuşmazlığı (`NU1201`) | Şart 4 · Şart 5 · Şart 6 |
 | 3 | junior #3 | `l4` şişmesi · `l6`'ya yığılma · Desktop/Cli ortak sözleşmesi | Şart 6 (+ ADR-028 §4 risk satırı) |
-| 4 | ajans #1 | Termin (3 paralel akış) + GATE-004a/003/004 takılmaları | [WORKFLOW.md](../governance/workflow.md) §2 süre bütçesi + §2.7 |
+| 4 | ajans #1 | Termin (3 paralel akış) + GATE-004a/003/004 takılmaları | [[governance/workflow|WORKFLOW.md]] §2 süre bütçesi + §2.7 |
 | 5 | ajans #2 | Ekranlar 2 sözleşme olmadan açılmaz | GATE-003 paketi (ekran + kontrol envanteri) |
 | 6 | ajans #3 | Gate takılmaları + **5440 eşiği 0 marj** | Şart 5 (semantik denetim) + ADR-028 §4 "Eksi" |
 
@@ -620,23 +620,23 @@ Tur 3'te **hiçbir** katılımcı A'ya karşı çıkmadı; 6 itirazın tamamı *
 
 | # | Kaynak | Ne alındı | Yol |
 |---|---|---|---|
-| 1 | G1..G12 · kanıt formatı · 7 etiket · dur/bekle | §1 · §4 | [CLAUDE.md](../claude.md) |
-| 2 | Gate zinciri · kanıt kutusu · kapatma yetkisi | §2.8 · §3.3 | [WORKFLOW.md](../governance/workflow.md) |
-| 3 | Ajan matrisi · kutu · 3-STRIKE · bütçe | §3.1 · §5.3 | [AGENTS.md](agents.md) |
-| 4 | Karar hiyerarşisi · tek soru kuralı | §2.8 · §3.1 | [ROLE.md](role.md) |
-| 5 | ADR-028 (bağlayıcı karar, 6 şart, oy kaydı) | §6 | [.decisions/accepted/ADR-028-layered-baseline-9-projects.md](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
-| 6 | ADR navigasyonu | §3.2 | [.decisions/adr-index.md](../.decisions/adr-index.md) |
-| 7 | Orkestrasyon · checkpoint · hata modları | §2.1 · §5.3 | [engine.md](engine.md) |
-| 8 | ADR özetleri · mühendislik kısıtları | §3.2 | [brain.md](../.decisions/brain.md) |
-| 9 | Ham envanter (618/616) | §6.1 | [reports/k3-618-ham-envanter.md](../architecture/layer-5000/index.md) · [reports/index.md](../ops/log.md) |
-| 10 | Yeni dosya sözleşmesi | §7 | [.templates/new-doc-contract.md](../.templates/new-doc-contract.md) · [.templates/index.md](../.templates/index.md) |
-| 11 | Oturumlar arası durum · tarihli kayıt | §2.8 · §3.3 | [MEMORY.md](../memory/memory.md) · [log.md](../ops/log.md) |
-| 12 | Navigasyon · terimler | §0 | [index.md](../index.md) · [glossary.md](glossary.md) · [keys.md](../governance/keys.md) |
+| 1 | G1..G12 · kanıt formatı · 7 etiket · dur/bekle | §1 · §4 | [[claude|CLAUDE.md]] |
+| 2 | Gate zinciri · kanıt kutusu · kapatma yetkisi | §2.8 · §3.3 | [[governance/workflow|WORKFLOW.md]] |
+| 3 | Ajan matrisi · kutu · 3-STRIKE · bütçe | §3.1 · §5.3 | [[definitions/agents|AGENTS.md]] |
+| 4 | Karar hiyerarşisi · tek soru kuralı | §2.8 · §3.1 | [[definitions/role|ROLE.md]] |
+| 5 | ADR-028 (bağlayıcı karar, 6 şart, oy kaydı) | §6 | [[.decisions/accepted/adr-028-layered-baseline-9-projects|.decisions/accepted/ADR-028-layered-baseline-9-projects.md]] |
+| 6 | ADR navigasyonu | §3.2 | [[.decisions/adr-index|.decisions/adr-index.md]] |
+| 7 | Orkestrasyon · checkpoint · hata modları | §2.1 · §5.3 | [[definitions/engine|engine.md]] |
+| 8 | ADR özetleri · mühendislik kısıtları | §3.2 | [[.decisions/brain|brain.md]] |
+| 9 | Ham envanter (618/616) | §6.1 | [[architecture/layer-5000/index|reports/k3-618-ham-envanter.md]] · [[ops/log|reports/index.md]] |
+| 10 | Yeni dosya sözleşmesi | §7 | [[.templates/new-doc-contract|.templates/new-doc-contract.md]] · [[.templates/index|.templates/index.md]] |
+| 11 | Oturumlar arası durum · tarihli kayıt | §2.8 · §3.3 | [[memory/memory|MEMORY.md]] · [[ops/log|log.md]] |
+| 12 | Navigasyon · terimler | §0 | [[index|index.md]] · [[definitions/glossary|glossary.md]] · [[governance/keys|keys.md]] |
 
-**Doğrulama etiketleri (bu dosya için):** ADR-028 olay kaydı ve oy sayıları → `SOURCE_VERIFIED` ([.decisions/accepted/ADR-028-layered-baseline-9-projects.md](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §1, §3) · kanıt etiketleri → `SOURCE_VERIFIED` ([CLAUDE.md](../claude.md) §3.1) · adım bütçeleri (≤ 65 dk dahil) → `INFERRED` (tasarım eşiği, ölçülmüş süre değil) · protokol adımları ve soru seti → `INFERRED` (ilk gerçek kullanımda ADR ile sabitlenecek).
-| VISION | [VISION](vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+**Doğrulama etiketleri (bu dosya için):** ADR-028 olay kaydı ve oy sayıları → `SOURCE_VERIFIED` ([[.decisions/accepted/adr-028-layered-baseline-9-projects|.decisions/accepted/ADR-028-layered-baseline-9-projects.md]] §1, §3) · kanıt etiketleri → `SOURCE_VERIFIED` ([[claude|CLAUDE.md]] §3.1) · adım bütçeleri (≤ 65 dk dahil) → `INFERRED` (tasarım eşiği, ölçülmüş süre değil) · protokol adımları ve soru seti → `INFERRED` (ilk gerçek kullanımda ADR ile sabitlenecek).
+| VISION | [[definitions/vision|VISION]] | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

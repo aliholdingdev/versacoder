@@ -14,26 +14,26 @@ supersedes: ""
 
 # VersaCoder CLI — Komut Satırı Arayüzü Spec
 
-**Zorunlu Baglantilar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [terminal-spec](terminal-spec.md) · [tool-spec](tool-spec.md) · [versacoder-spec](versacoder-spec.md) · [ui-shell-spec](ui-shell-spec.md) · [testing-rules](../.rules/testing-rules.md) · [security-rules](../.rules/security-rules.md)
+**Zorunlu Baglantilar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[spec/terminal-spec|terminal-spec]] · [[spec/tool-spec|tool-spec]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/ui-shell-spec|ui-shell-spec]] · [[.rules/testing-rules|testing-rules]] · [[.rules/security-rules|security-rules]]
 
 > **Tek cümlelik sorumluluk:** *CLI hangi komutları alır, nasıl çözümlenir, ne döner ve terminal UI'ya nasıl bağlanır* sorusunun tek cevabı.
-> Gereksinim kimliği: **`VC-CLI-NNN`** · Hata kodları `VC-E-05xx` · Bağımlılık: [terminal-spec](terminal-spec.md) (görüntüleme) + [tool-spec](tool-spec.md) (izin).
+> Gereksinim kimliği: **`VC-CLI-NNN`** · Hata kodları `VC-E-05xx` · Bağımlılık: [[spec/terminal-spec|terminal-spec]] (görüntüleme) + [[spec/tool-spec|tool-spec]] (izin).
 
 ---
 
 ## §0 Özet (Answer First)
 
-`VersaCoder.CLI` (K0750-K0799, Exe) = **tek giriş noktası**; 6 ana komut (`new`, `build`, `run`, `layer`, `agent`, `vault`) + `--help`/`--version` global bayraklar. Çıktı **3 biçimde** (human / json / quiet), exit code **0-5**. CLI, **terminal UI**dan bağımsız çalışır ama [terminal-spec](terminal-spec.md) onu dock paneline gömer.
+`VersaCoder.CLI` (K0750-K0799, Exe) = **tek giriş noktası**; 6 ana komut (`new`, `build`, `run`, `layer`, `agent`, `vault`) + `--help`/`--version` global bayraklar. Çıktı **3 biçimde** (human / json / quiet), exit code **0-5**. CLI, **terminal UI**dan bağımsız çalışır ama [[spec/terminal-spec|terminal-spec]] onu dock paneline gömer.
 
 | Alan | Değer | Kaynak |
 |---|---|---|
-| Proje | `VersaCoder.CLI` · K bandı `K0750-K0799` | [k5000-dll-list](../architecture/layer-5000/index.md) §2.4 |
+| Proje | `VersaCoder.CLI` · K bandı `K0750-K0799` | [[architecture/layer-5000/index|k5000-dll-list]] §2.4 |
 | TFM | `net48;net10.0-windows` (çift bacak, G6) | ADR-001 |
 | Gereksinim | `VC-CLI-001..016` (16 madde) | bu dosya §2 |
 | Hata kodu | `VC-E-0500..0599` | bu dosya §4 |
 | Exit code | 0=OK, 1=usage, 2=runtime, 3=notfound, 4=perm, 5=cancelled | bu dosya §4.1 |
-| Terminal bağlantısı | `run` → çıktı satırı → `MemoEdit` (terminal-spec §2.1) | [terminal-spec](terminal-spec.md) |
-| Güvenlik | izin kapısı [tool-spec](tool-spec.md) `allow/ask/deny` | SEC-06 |
+| Terminal bağlantısı | `run` → çıktı satırı → `MemoEdit` (terminal-spec §2.1) | [[spec/terminal-spec|terminal-spec]] |
+| Güvenlik | izin kapısı [[spec/tool-spec|tool-spec]] `allow/ask/deny` | SEC-06 |
 
 ---
 
@@ -42,10 +42,10 @@ supersedes: ""
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
 | 1 | Komut ağacı, arguman çözümleme, exit code | Komutların **iş mantığı** (build/run/agent) | ilgili spec (`versacoder-spec`, `session-spec`) |
-| 2 | `--format human/json/quiet` çıktı biçimlendirme | Terminal **görüntüleme** (dock, scroll, renk) | [terminal-spec](terminal-spec.md) |
-| 3 | `run` komutunun terminal UI'ya bağlanması | Terminal **izin** matrisi (hangi komut çalıştırılabilir) | [tool-spec](tool-spec.md) |
+| 2 | `--format human/json/quiet` çıktı biçimlendirme | Terminal **görüntüleme** (dock, scroll, renk) | [[spec/terminal-spec|terminal-spec]] |
+| 3 | `run` komutunun terminal UI'ya bağlanması | Terminal **izin** matrisi (hangi komut çalıştırılabilir) | [[spec/tool-spec|tool-spec]] |
 | 4 | `~/.versacoder/config.json` + proje `.versacoder/` okuma | Config **yazma** (ayarlar ekranı) | `07-settings` |
-| 5 | `layer` komutu (katalog sorgu) | Layer **oluşturma** (LAY-06, gate) | [layer-rules](../.rules/layer-rules.md) |
+| 5 | `layer` komutu (katalog sorgu) | Layer **oluşturma** (LAY-06, gate) | [[.rules/layer-rules|layer-rules]] |
 
 > **YASAK:** CLI doğrudan dosya/DB/LLM erişimi yapmaz — hep **port** (l0) üzerinden; izin **tool-spec**'ten geçer (SEC-06).
 
@@ -82,7 +82,7 @@ supersedes: ""
 | `VC-CLI-013` | Config | `~/.versacoder/config.json` (global) + `<proje>/.versacoder/config.json` (proje, globalı ezer) | config okunur, eksik alan default |
 | `VC-CLI-014` | Geçmiş | `run` komutu geçmişe yazılır (`history.txt`, 1000 satır, FIFO) | `history` = 1000 satır |
 | `VC-CLI-015` | Terminal entegrasyonu | `run` çıktısı **satır bazlı** terminal `MemoEdit`'e akar; Ctrl+C = cancel (exit 5) | terminal-spec §2.2 + §2.4 |
-| `VC-CLI-016` | İzin kapısı | `run`/`agent` komutları [tool-spec](tool-spec.md) `ask`/`allow`/`deny` geçer; `deny` = exit 4 | izin reddi = exit 4, terminal "permission denied" |
+| `VC-CLI-016` | İzin kapısı | `run`/`agent` komutları [[spec/tool-spec|tool-spec]] `ask`/`allow`/`deny` geçer; `deny` = exit 4 | izin reddi = exit 4, terminal "permission denied" |
 
 ---
 

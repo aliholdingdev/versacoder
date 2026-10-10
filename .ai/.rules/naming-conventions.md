@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "C#/vault adlandırma; DOĞRULAMA GEREKLİ bölümü var"
-tags: [['rules', 'naming', 'conventions']]
+tags: [rules, naming, conventions]
 source: "Türetme: genel C# konvansiyonları + vault desenleri; vault'ta ayrı kaynak YOK (G9)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Adlandırma Kuralları
 
@@ -44,4 +44,4 @@ RED — yeniden adlandırılır; linkler güncellenir (SRP/ADR-021).
 
 ## İlgili
 
-- [rules-index](index.md) · [coding-standards](coding-standards.md)
+- [[.rules/index|rules-index]] · [[.rules/coding-standards|coding-standards]]

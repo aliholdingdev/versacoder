@@ -14,7 +14,7 @@ supersedes: ""
 
 # 09-cli-console (wireframe gecis notu)
 
-**Zorunlu Baglantilar:** [ui-design/README](readme.md) · [spec dosyasi](../spec/cli-console-spec.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/README]] · [[spec/cli-console-spec|spec dosyasi]]
 
 > **Tek cumlelik sorumluluk:** ui-design/09-cli-console.md icinde yasar; tam wireframe ../spec/cli-console-spec.md (SSUT) sorusunun tek cevabidir.
 
@@ -24,7 +24,7 @@ supersedes: ""
 
 Bu dosya 09-cli-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe (bolge/olcu/davranis/GATE-003 alani) asagidaki spec dosyasinda yasar (SSUT - tekrar yazilmadi):
 
-- [spec/cli-console-spec.md](../spec/cli-console-spec.md)
+- [[spec/cli-console-spec|spec/cli-console-spec.md]]
 
 **Durum: GATE-003 ONAY BEKLIYOR** - README §7.1'de `BEKLEMEDE`.
 
@@ -34,5 +34,5 @@ Bu dosya 09-cli-console ekraninin **dosya adi sozlesmesi**dir; tam wireframe (bo
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [ui-design/README](readme.md) §0 + §7.1 | ekran adi + onay satiri |
-| 2 | [cli-console-spec](../spec/cli-console-spec.md) | tam wireframe + davranis |
+| 1 | [[ui-design/readme|ui-design/README]] §0 + §7.1 | ekran adi + onay satiri |
+| 2 | [[spec/cli-console-spec|cli-console-spec]] | tam wireframe + davranis |

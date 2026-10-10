@@ -14,9 +14,9 @@ supersedes: ""
 
 # Paralel Batch ve Ajan Siniri
 
-**Zorunlu Baglantilar:** [vault indeks](../../index.md) · [knowledge indeks](../index.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [ADR-007](../../.decisions/accepted/adr-007-agent-hierarchy-session.md) · [performance-guidelines](../../.rules/performance-guidelines.md)
-**Küme + Hub:** [engine index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (engine · 1/8):** [agent-streaming-sse](agent-streaming-sse.md) · [diff-approval-gate](diff-approval-gate.md) · [free-model-router](free-model-router.md) · [protocol-tool-schema](protocol-tool-schema.md) · [session-checkpoint-persistence](session-checkpoint-persistence.md) · [terminal-cli-surface](terminal-cli-surface.md) · [wizard-approval-flow](wizard-approval-flow.md)
+**Zorunlu Baglantilar:** [[index|vault indeks]] · [[knowledge/index|knowledge indeks]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[.decisions/accepted/adr-007-agent-hierarchy-session|ADR-007]] · [[.rules/performance-guidelines|performance-guidelines]]
+**Küme + Hub:** [[knowledge/engine/index|engine index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (engine · 1/8):** [[knowledge/engine/agent-streaming-sse|agent-streaming-sse]] · [[knowledge/engine/diff-approval-gate|diff-approval-gate]] · [[knowledge/engine/free-model-router|free-model-router]] · [[knowledge/engine/protocol-tool-schema|protocol-tool-schema]] · [[knowledge/engine/session-checkpoint-persistence|session-checkpoint-persistence]] · [[knowledge/engine/terminal-cli-surface|terminal-cli-surface]] · [[knowledge/engine/wizard-approval-flow|wizard-approval-flow]]
 
 > **Tek cumlelik sorumluluk:** *Ayni anda kac ajan calisir, ayni dosyaya iki yazici gelirse ne olur* sorusunun tek cevabidir.
 

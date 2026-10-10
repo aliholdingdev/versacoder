@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Belge (Vault/MD) Şartnamesi (`spec/docs-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [test-strategy](test-strategy.md) · [review-spec](review-spec.md) · [build-spec](build-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[spec/test-strategy|test-strategy]] · [[spec/review-spec|review-spec]] · [[spec/build-spec|build-spec]]
 
 > **Tek cümlelik sorumluluk:** *Vault'a yazılan her `.md` dosyası hangi yapıya uyar, hangi hedeflere link verir ve neyle kanıtlanır* sorusunun tek cevabıdır.
 > Üretim şablonu `.ai/.templates/new-doc-contract.md` (batch kuralları); bu belge **şartnamedir** — ihlalini `review-spec` §2.1.6 üzerinden `reviewer` RED eder.
@@ -130,9 +130,9 @@ edit / revize  ---->  link taramasi ------>  check-links = 0  ---->  review-spec
 
 | Belge | Ne verir |
 |---|---|
-| [test-strategy](test-strategy.md) | kanıtın test tarafı (coverage, gate testleri) |
-| [review-spec](review-spec.md) | bu şartnamenin RED/PINK karar biçimi |
-| [build-spec](build-spec.md) | vault ön kontrollerinin build'e girişi |
+| [[spec/test-strategy|test-strategy]] | kanıtın test tarafı (coverage, gate testleri) |
+| [[spec/review-spec|review-spec]] | bu şartnamenin RED/PINK karar biçimi |
+| [[spec/build-spec|build-spec]] | vault ön kontrollerinin build'e girişi |
 | `.ai/.templates/new-doc-contract.md` | batch üretim kuralları (şablon) |
 | `.ai/.decisions/accepted/ADR-003-vault-structure-500md-frontmatter.md` | 500 MD + bozuk link = 0 hedefi |
 

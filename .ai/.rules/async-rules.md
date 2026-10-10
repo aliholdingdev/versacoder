@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "async akış + CancellationToken; iptal ADR-009 sandbox ile uyumlu"
-tags: [['rules', 'async', 'cancellation', 'threads']]
+tags: [rules, async, cancellation, threads]
 source: "Birleştirme: brain.md ADR-009 (iptal token) + ADR-007 (oturum) bağlamı; vault'ta ayrı async kural metni YOK"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Async/Await Kuralları
 
@@ -38,5 +38,5 @@ RED — kod incelemesinde; iptal edilemeyen uzun işlem G11 ihlali sayılır.
 
 ## İlgili
 
-- [ADR-009](../.decisions/accepted/adr-009-tool-execution-sandbox.md)
-- [ADR-007](../.decisions/accepted/adr-007-agent-hierarchy-session.md)
+- [[.decisions/accepted/adr-009-tool-execution-sandbox|ADR-009]]
+- [[.decisions/accepted/adr-007-agent-hierarchy-session|ADR-007]]

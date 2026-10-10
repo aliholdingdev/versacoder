@@ -14,9 +14,9 @@ supersedes: ""
 
 # Docking ve Panel Kalibi
 
-**Zorunlu Baglantilar:** [layout-table-panel](layout-table-panel.md) · [splitcontainer-and-sizing](splitcontainer-and-sizing.md) · [settings-user-config](settings-user-config.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [anchor-dock-layout-rules](anchor-dock-layout-rules.md)
-**Küme + Hub:** [knowledge index](../index.md) · [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (winforms · 5/32):** [accessibility-tab-and-mnemonics](accessibility-tab-and-mnemonics.md) · [async-await-ui-thread](async-await-ui-thread.md) · [async-loading-patterns](async-loading-patterns.md) · [async-ui-thread-marshalling](async-ui-thread-marshalling.md) · [async-void-event-handlers](async-void-event-handlers.md) · [backgroundworker-vs-task](backgroundworker-vs-task.md) · [cancellation-in-ui](cancellation-in-ui.md) · [cancellation-token-in-ui](cancellation-token-in-ui.md) · [composition-root-host-startup](composition-root-host-startup.md) · [control-disposal-and-memory](control-disposal-and-memory.md) · [controls-lifecycle-events](controls-lifecycle-events.md) · [data-binding-basics](data-binding-basics.md) · [designer-cs-anatomy](designer-cs-anatomy.md) · [designer-cs-trio-rule](designer-cs-trio-rule.md) · [designer-editing-rules](designer-editing-rules.md) · [designer-hand-edit-policy](designer-hand-edit-policy.md) · [di-container-lifetimes](di-container-lifetimes.md) · [errorprovider-validation-flow](errorprovider-validation-flow.md) · [exception-boundary-ui](exception-boundary-ui.md) · [form-close-and-dispose](form-close-and-dispose.md) · [form-close-cancel-pattern](form-close-cancel-pattern.md) · [form-constructor-vs-load](form-constructor-vs-load.md) · [form-load-and-shown-events](form-load-and-shown-events.md) · [logging-integration](logging-integration.md) · [partial-class-and-file-naming](partial-class-and-file-naming.md) · [validation-form-level](validation-form-level.md) · [winforms-rendering-performance](winforms-rendering-performance.md)
+**Zorunlu Baglantilar:** [[knowledge/winforms/layout-table-panel|layout-table-panel]] · [[knowledge/winforms/splitcontainer-and-sizing|splitcontainer-and-sizing]] · [[knowledge/winforms/settings-user-config|settings-user-config]] · [[.rules/devexpress-rules|devexpress-rules]] · [[knowledge/winforms/anchor-dock-layout-rules|anchor-dock-layout-rules]]
+**Küme + Hub:** [[knowledge/index|knowledge index]] · [[knowledge/winforms/index|winforms index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (winforms · 5/32):** [[knowledge/winforms/accessibility-tab-and-mnemonics|accessibility-tab-and-mnemonics]] · [[knowledge/winforms/async-await-ui-thread|async-await-ui-thread]] · [[knowledge/winforms/async-loading-patterns|async-loading-patterns]] · [[knowledge/winforms/async-ui-thread-marshalling|async-ui-thread-marshalling]] · [[knowledge/winforms/async-void-event-handlers|async-void-event-handlers]] · [[knowledge/winforms/backgroundworker-vs-task|backgroundworker-vs-task]] · [[knowledge/winforms/cancellation-in-ui|cancellation-in-ui]] · [[knowledge/winforms/cancellation-token-in-ui|cancellation-token-in-ui]] · [[knowledge/winforms/composition-root-host-startup|composition-root-host-startup]] · [[knowledge/winforms/control-disposal-and-memory|control-disposal-and-memory]] · [[knowledge/winforms/controls-lifecycle-events|controls-lifecycle-events]] · [[knowledge/winforms/data-binding-basics|data-binding-basics]] · [[knowledge/winforms/designer-cs-anatomy|designer-cs-anatomy]] · [[knowledge/winforms/designer-cs-trio-rule|designer-cs-trio-rule]] · [[knowledge/winforms/designer-editing-rules|designer-editing-rules]] · [[knowledge/winforms/designer-hand-edit-policy|designer-hand-edit-policy]] · [[knowledge/winforms/di-container-lifetimes|di-container-lifetimes]] · [[knowledge/winforms/errorprovider-validation-flow|errorprovider-validation-flow]] · [[knowledge/winforms/exception-boundary-ui|exception-boundary-ui]] · [[knowledge/winforms/form-close-and-dispose|form-close-and-dispose]] · [[knowledge/winforms/form-close-cancel-pattern|form-close-cancel-pattern]] · [[knowledge/winforms/form-constructor-vs-load|form-constructor-vs-load]] · [[knowledge/winforms/form-load-and-shown-events|form-load-and-shown-events]] · [[knowledge/winforms/logging-integration|logging-integration]] · [[knowledge/winforms/partial-class-and-file-naming|partial-class-and-file-naming]] · [[knowledge/winforms/validation-form-level|validation-form-level]] · [[knowledge/winforms/winforms-rendering-performance|winforms-rendering-performance]]
 
 > **Tek cumlelik sorumluluk:** *Yan panel/sekreter/arac penceresi hangi docking kalibiyla yerlestirilir, durumu nasil kaydedilir, `Dock` sirasi nasil bozulmaz* sorusunun tek cevabidir.
 
@@ -59,7 +59,7 @@ private void BuildDock(Form host)
 }
 ```
 
-> **KURAL:** `Dock` sirasi ile `Anchor` ayni hucrede kullanilmaz; `Fill` + `AutoSize` birlikte olcum dongusu uretir (bkz. [layout-table-panel](layout-table-panel.md)).
+> **KURAL:** `Dock` sirasi ile `Anchor` ayni hucrede kullanilmaz; `Fill` + `AutoSize` birlikte olcum dongusu uretir (bkz. [[knowledge/winforms/layout-table-panel|layout-table-panel]]).
 
 ---
 
@@ -85,7 +85,7 @@ private void BuildDock(Form host)
 | DevExpress docking | v26.1 (her iki bacak) | v26.1 (ADR-004) |
 | DPI | panel genisligi sabit piksel -> DPI'da daralir | `ApplicationHighDpiMode` + `AutoScaleMode.Dpi` |
 
-> **Not:** `ConfigurationManager` farki `#if` degil `.csproj` farkidir - iki bacakta da ayni `<PackageReference>` (CPM tek noktada) kullanilir (bkz. [settings-user-config](settings-user-config.md)).
+> **Not:** `ConfigurationManager` farki `#if` degil `.csproj` farkidir - iki bacakta da ayni `<PackageReference>` (CPM tek noktada) kullanilir (bkz. [[knowledge/winforms/settings-user-config|settings-user-config]]).
 
 ---
 

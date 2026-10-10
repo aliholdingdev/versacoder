@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Katman README Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../architecture/architecture-template]] · [[../architecture/layer-spec-template]] · [[../adr/adr-template]] · [[api-doc-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/architecture-template]] · [[.templates/architecture/layer-spec-template]] · [[.templates/adr/adr-template]] · [[api-doc-template]]
 
 ---
 
@@ -227,10 +227,10 @@ Katman kodu **yalnız** `architecture-template` §3.2'den gelir; README'de kod i
 
 | Kural | Katmanda özeti | Ayrıntı |
 |-------|----------------|---------|
-| G2 | EF Core **yok** — ADO.NET + Dapper | `[[../.rules/data-access-rules]]` |
-| G11 | `TreatWarningsAsErrors` + %90 coverage | `[[../.rules/testing-rules]]` |
-| G10 | SQL yalnız `@p1..@pN` | `[[../query/Query-Template]]` |
-| — | Katman yönü + `#if` yalnız platform farkı | `[[../architecture/architecture-template]]` |
+| G2 | EF Core **yok** — ADO.NET + Dapper | `[[.templates/.rules/data-access-rules]]` |
+| G11 | `TreatWarningsAsErrors` + %90 coverage | `[[.templates/.rules/testing-rules]]` |
+| G10 | SQL yalnız `@p1..@pN` | `[[.templates/query/Query-Template]]` |
+| — | Katman yönü + `#if` yalnız platform farkı | `[[.templates/architecture/architecture-template]]` |
 
 Özet **2–4 maddeyi geçmez**; katmanla ilgisi olmayan madde README'ye girmez.
 
@@ -253,7 +253,7 @@ $yon = (Select-String -LiteralPath $readme -Pattern 'K6 → K7 → \{K5, K4\} �
 
 ````markdown
 # VersaCoder.Domain (K2)
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE]] · [[../architecture/architecture-template]] · [[../architecture/layer-spec-template]] · [[../adr/adr-template]] · [[../.rules/solid-rules]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/architecture-template]] · [[.templates/architecture/layer-spec-template]] · [[.templates/adr/adr-template]] · [[.templates/.rules/solid-rules]]
 
 > Bu katman iş kurallarını ve invariantları taşır; dışarıya **asla** altyapı tipi açmaz.
 

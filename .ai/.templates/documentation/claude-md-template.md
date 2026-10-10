@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Kök CLAUDE.md / AGENTS.md Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/architecture-template]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-template]] · [[katman-readme-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/architecture-template]] · [[.templates/architecture/ascii-diagram-template]] · [[.templates/adr/adr-template]] · [[katman-readme-template]]
 
 ---
 
@@ -124,7 +124,7 @@ Kök dosya her oturumda bütçeden yer kaplar; uzarsa **iş değil okuma** yemi�
 ## §2 Kapsam
 
 **İçinde:** kök `CLAUDE.md` iskeleti, gölge `AGENTS.md`, blok sırası, bağlantı dili, bağlam bütçesi, kök dosyaya özgü doğrulama.
-**Dışında:** kural metni (→ `.ai/.rules/`), karar (→ `.ai/adr/`), envanter (→ `[[../index]]`), katman spec'i (→ `[[../architecture/architecture-template]]`), kod.
+**Dışında:** kural metni (→ `.ai/.rules/`), karar (→ `.ai/adr/`), envanter (→ `[[.templates/index]]`), katman spec'i (→ `[[.templates/architecture/architecture-template]]`), kod.
 
 | Kapsam | Kapsam Dışı |
 |--------|-------------|
@@ -229,18 +229,18 @@ Her kural **tek satır** özetlenir; ayrıntı `.ai/.rules/` ve `index.md` §4.5
 
 | ID | Tek satır özet | Ayrıntı Bağlantısı |
 |----|----------------|--------------------|
-| G1 | Harici vault'tan içerik kopyalanamaz; yalnız yapı referans | `[[../index]]` §4.5 |
-| G2 | **EF Core yasak** — ADO.NET + Dapper | `[[../adr/adr-template]]` ADR-004 |
-| G3 | Frontmatter'sız Markdown yasak (7 alan) | `[[../index]]` §3.7 |
-| G4 | Üretilen dosyada `{{…}}` = 0 | `[[../index]]` §3.9 |
-| G5 | Türkçe zorunlu; mojibake yasak | `[[../index]]` §4.5 |
-| G6 | < 480 satırlık şablon reddedilir | `[[../index]]` §6.1 K14 |
-| G7 | Bozuk bağlantı yasak; `.ai/` içine ikinci kök yok | `[[../index]]` §5.3 K6 |
-| G8 | `GATE-003` onaysız ekran/kod üretilmez | `[[../CLAUDE]]` |
-| G9 | ADR'siz mimari karar yok | `[[../adr/adr-template]]` |
-| G10 | SQL'de concat yasak; `@p1..@pN` zorunlu | `[[../query/Query-Template]]` |
-| G11 | `TreatWarningsAsErrors=true` + %90 coverage | `[[../index]]` §4.5 |
-| G12 | Envantere içerik kopyalanamaz (SRP) | `[[../index]]` §1.1 |
+| G1 | Harici vault'tan içerik kopyalanamaz; yalnız yapı referans | `[[.templates/index]]` §4.5 |
+| G2 | **EF Core yasak** — ADO.NET + Dapper | `[[.templates/adr/adr-template]]` ADR-004 |
+| G3 | Frontmatter'sız Markdown yasak (7 alan) | `[[.templates/index]]` §3.7 |
+| G4 | Üretilen dosyada `{{…}}` = 0 | `[[.templates/index]]` §3.9 |
+| G5 | Türkçe zorunlu; mojibake yasak | `[[.templates/index]]` §4.5 |
+| G6 | < 480 satırlık şablon reddedilir | `[[.templates/index]]` §6.1 K14 |
+| G7 | Bozuk bağlantı yasak; `.ai/` içine ikinci kök yok | `[[.templates/index]]` §5.3 K6 |
+| G8 | `GATE-003` onaysız ekran/kod üretilmez | `[[.templates/index]]` |
+| G9 | ADR'siz mimari karar yok | `[[.templates/adr/adr-template]]` |
+| G10 | SQL'de concat yasak; `@p1..@pN` zorunlu | `[[.templates/query/Query-Template]]` |
+| G11 | `TreatWarningsAsErrors=true` + %90 coverage | `[[.templates/index]]` §4.5 |
+| G12 | Envantere içerik kopyalanamaz (SRP) | `[[.templates/index]]` §1.1 |
 
 ### §3.6 B7 — Ne Yap / Ne Yapma
 

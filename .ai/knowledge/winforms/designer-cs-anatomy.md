@@ -14,9 +14,9 @@ supersedes: ""
 
 # .Designer.cs Anatomisi
 
-**Zorunlu Baglantilar:** [designer-cs-trio-rule](designer-cs-trio-rule.md) · [designer-editing-rules](designer-editing-rules.md) · [designer-hand-edit-policy](designer-hand-edit-policy.md) · [partial-class-and-file-naming](partial-class-and-file-naming.md) · [coding-standards](../../.rules/coding-standards.md)
-**Küme + Hub:** [knowledge index](../index.md) · [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (winforms 5/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/winforms/designer-cs-trio-rule|designer-cs-trio-rule]] · [[knowledge/winforms/designer-editing-rules|designer-editing-rules]] · [[knowledge/winforms/designer-hand-edit-policy|designer-hand-edit-policy]] · [[knowledge/winforms/partial-class-and-file-naming|partial-class-and-file-naming]] · [[.rules/coding-standards|coding-standards]]
+**Küme + Hub:** [[knowledge/index|knowledge index]] · [[knowledge/winforms/index|winforms index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (winforms 5/32):** tam liste → [[knowledge/winforms/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir `.Designer.cs` dosyasi hangi bloklari icerir, neden tek `InitializeComponent` kaynagidir ve sinir `.cs`'le tam olarak nerede biter* sorusunun tek cevabidir.
 
@@ -109,8 +109,8 @@ private void InitializeComponent()
 |---|---|---|---|
 | `ui-designer` | kontrol ekleme/kaldirma, konum, boyut, olay `+=` bagi | VS tasarimcisi | Ctrl+S ile `.Designer.cs` + `.resx` birlikte yazilir |
 | `developer` | olay govdesi, servis, veri | `.Form.cs` | build + inceleme |
-| `developer` (gecici) | git merge cakismasi | tek taraf butun alinir | tasarimcida ac + kaydet (bkz. [designer-editing-rules](designer-editing-rules.md)) |
-| kimse | `InitializeComponent` govdesini elle yazmak | - | elle mudahale geri alinir (bkz. [designer-hand-edit-policy](designer-hand-edit-policy.md)) |
+| `developer` (gecici) | git merge cakismasi | tek taraf butun alinir | tasarimcida ac + kaydet (bkz. [[knowledge/winforms/designer-editing-rules|designer-editing-rules]]) |
+| kimse | `InitializeComponent` govdesini elle yazmak | - | elle mudahale geri alinir (bkz. [[knowledge/winforms/designer-hand-edit-policy|designer-hand-edit-policy]]) |
 
 ---
 
@@ -135,6 +135,6 @@ Ihlal belirtisi: `CS0102`/`CS0111` (iki tanim), tasarimcinin acilmamasi, kod der
 |---|---|
 | `knowledge\winforms\designer-cs-anatomy.md` (kaynak vault) | uc dosya siniri, bolum tablosu, `InitializeComponent` parcasi, iki bacak tablosu, tarama satirlari |
 | `.rules\coding-standards.md` | dosya/uye yazim kurali |
-| `.rules\ui-rules.md` | kod-behind'ta tasarim kodu yasagi (bkz. [designer-cs-trio-rule](designer-cs-trio-rule.md)) |
+| `.rules\ui-rules.md` | kod-behind'ta tasarim kodu yasagi (bkz. [[knowledge/winforms/designer-cs-trio-rule|designer-cs-trio-rule]]) |
 
 > Kanitsiz iddia icin DOĞRULAMA GEREKLI yazilir; bu dosyada kaynak disi bilgi yoktur.

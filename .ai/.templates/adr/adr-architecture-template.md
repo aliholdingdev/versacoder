@@ -14,7 +14,7 @@ supersedes: ""
 
 # ADR Şablonu — Mimari / Katman Sınırı, Bağımlılık Akışı ve TFM Varyantı
 
-**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-nygard](adr-nygard-template.md) · [Vault](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [Karar Defteri](../../.decisions/index.md) · [solid-rules](../../.rules/solid-rules.md) · [coding-standards](../../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[.templates/adr/adr-template|adr-template]] · [[.templates/adr/adr-nygard-template|adr-nygard]] · [[index|Vault]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|Karar Defteri]] · [[.rules/solid-rules|solid-rules]] · [[.rules/coding-standards|coding-standards]]
 
 ---
 
@@ -138,7 +138,7 @@ template: adr-architecture-template.md
 
 ```markdown
 # ADR-NNN: <İngilizce karar başlığı (slug ile aynı)>
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md) · [solid-rules](../../.rules/solid-rules.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]] · [[.rules/solid-rules|solid-rules]]
 ```
 
 ### §3.3 §1 İskeleti (Amaç)
@@ -206,7 +206,7 @@ related_rules: [solid-rules, coding-standards]
 template: adr-architecture-template.md
 ---
 # ADR-002: Solution Tier Scope (`VersaCoder.sln` — 9 proje, tek yön referans)
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]]
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli
@@ -296,7 +296,7 @@ related_rules: [solid-rules, coding-standards]
 template: adr-architecture-template.md
 ---
 # {{ADR_ID}}: {{INGILIZCE_KARAR_BASLIGI}}
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md) · [solid-rules](../../.rules/solid-rules.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]] · [[.rules/solid-rules|solid-rules]]
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli

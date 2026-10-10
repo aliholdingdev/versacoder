@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Tek sürüm v26.1; ribbon Office2010; tasarımcı sözleşmesi"
-tags: [['rules', 'devexpress', 'ui', 'g3']]
+tags: [rules, devexpress, ui, g3]
 source: "Birleştirme: .ai/CLAUDE.md G3 + brain.md §4.2/3 + ADR-004/015"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # DevExpress Kuralları (G3)
 
@@ -43,6 +43,6 @@ CRITICAL — RED; sürüm/stil geri alınır.
 
 ## İlgili
 
-- [ADR-004](../.decisions/accepted/adr-004-devexpress-universal-v261-office2010.md)
-- [ADR-015](../.decisions/accepted/adr-015-winforms-form-triple-designer.md)
-- [ui-rules](ui-rules.md)
+- [[.decisions/accepted/adr-004-devexpress-universal-v261-office2010|ADR-004]]
+- [[.decisions/accepted/adr-015-winforms-form-triple-designer|ADR-015]]
+- [[.rules/ui-rules|ui-rules]]

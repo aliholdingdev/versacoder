@@ -14,7 +14,7 @@ supersedes: ""
 
 # Faz 02 — 5000+ Katmanlı Plan Soruları
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [VISION](../../definitions/vision.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [spec index](../../spec/index.md) · [WORKFLOW](../../governance/workflow.md)
+**Zorunlu Bağlantılar:** [[ops/TODOS/index|TODOS index]] · [[ops/TODOS/01-vault-kapanis|Faz 01]] · [[definitions/vision|VISION]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[spec/index|spec index]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cümlelik sorumluluk:** 5000+ maddelik katmanlı mimari planın hangi birimde,
 

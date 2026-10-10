@@ -14,9 +14,9 @@ supersedes: ""
 
 # cancellation-token-policy — İptal politikası
 
-**Zorunlu Baglantilar:** [knowledge-index](../index.md) · [csharp-index](index.md) · [coding-standards](../../.rules/coding-standards.md) · [async-rules](../../.rules/async-rules.md) · [async-await-basics](async-await-basics.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md)
-**Küme + Hub:** [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp 5/28):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|knowledge-index]] · [[knowledge/csharp/index|csharp-index]] · [[.rules/coding-standards|coding-standards]] · [[.rules/async-rules|async-rules]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]]
+**Küme + Hub:** [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp 5/28):** tam liste → [[knowledge/csharp/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Bir `CancellationToken` nerede dogar, hangi imzalarla asagi iner ve iptal neden hata sayilmaz* sorusunun tek cevabidir.
 
@@ -127,10 +127,10 @@ private async Task TaraAsync()
 
 | Konu | Dosya |
 |---|---|
-| async temeli | [async-await-basics](async-await-basics.md) |
-| timeout + yeniden deneme | [retry-and-timeout-policy](retry-and-timeout-policy.md) |
-| kuyruk uzerinden iptal | [channel-queue-patterns](channel-queue-patterns.md) |
-| hata bicimi | [result-type-design](result-type-design.md) |
+| async temeli | [[knowledge/csharp/async-await-basics|async-await-basics]] |
+| timeout + yeniden deneme | [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] |
+| kuyruk uzerinden iptal | [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] |
+| hata bicimi | [[knowledge/csharp/result-type-design|result-type-design]] |
 
 ## §9 Kanit
 

@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "5 ilke + niyet gizleme; vault'a çakılmış hali (brain §2)"
-tags: [['rules', 'solid', 'design']]
+tags: [rules, solid, design]
 source: "Birleştirme: brain.md §2 (SOLID vault'a çakılmış hâli) + ADR-005/006/011/016/019/021/028"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # SOLID Kuralları
 
@@ -32,5 +32,5 @@ Yön = aşağı (L4→L0); authority = yukarı (L0). Ters referans = NetArchTest
 
 ## İlgili
 
-- [layer-rules](layer-rules.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)
-- [brain §2](../.decisions/brain.md)
+- [[.rules/layer-rules|layer-rules]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]
+- [[.decisions/brain|brain §2]]

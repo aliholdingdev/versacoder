@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — ASCII/Unicode Box Diagram Şablonu
 
-**Zorunlu Bağlantılar:** [[.templates/index]] · [[../CLAUDE.md]] · [[../index]] · [[../../AGENTS.md]] · [[../../WORKFLOW.md]] · [[../../architecture/index.md]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]]
 
 ---
 
@@ -92,7 +92,7 @@ Box diyagram üretimi ve denetimi. Kapsam dışı: içerik kararları, kod üret
 | Kapsam | Kapsam Dışı |
 |--------|-------------|
 | ASCII kutu alfabesi (`|` `-` `+`) + genişlik standardı (64) | Diyagramın **ne** anlatacağı (→ ilgili şablon/ADR) |
-| Hizalama kuralı + otomatik ölçüm komutu | İçerik doğruluğu (→ `[[../adr/adr-architecture-template]]`) |
+| Hizalama kuralı + otomatik ölçüm komutu | İçerik doğruluğu (→ `[[.templates/adr/adr-architecture-template]]`) |
 | 8 diyagram türü (T1–T8) | Renk/emoji/GIF/mermaid-only (→ §4.5 G5) |
 | D1–D6 dolu VersaCoder örnekleri | PNG/şematik resim (→ `ui-design/`) |
 | Tam kalıp (`{{PLACEHOLDER}}`) | Kod dosyaları içindeki diyagram |
@@ -105,7 +105,7 @@ Box diyagram üretimi ve denetimi. Kapsam dışı: içerik kararları, kod üret
 |------------|---------|-------------------|
 | `.ai/architecture/*.md` | architect | ✅ |
 | `.ai/adr/*` §3 diyagramları | architect | ✅ (yalnız çizim bloğu) |
-| `.ai/ui-design/*.md` | ui-designer | ✅ (tel kafesi ayrı → `[[../ui-design/wireframe-template]]`) |
+| `.ai/ui-design/*.md` | ui-designer | ✅ (tel kafesi ayrı → `[[.templates/ui-design/wireframe-template]]`) |
 | `.ai/gates/*.md` akışları | master-orchestrator | ✅ |
 | `.ai/.agents/*.md` | docs-writer | ✅ |
 | `.ai/reports/*.md` | yazan rol | ✅ |

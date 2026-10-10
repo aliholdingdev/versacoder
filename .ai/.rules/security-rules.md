@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Onay zinciri, secret yok (ADR-018), parametreli SQL köprüsü, DPAPI"
-tags: [['rules', 'security', 'secrets', 'g7', 'approval']]
+tags: [rules, security, secrets, g7, approval]
 source: "Birleştirme: .ai/CLAUDE.md G7 + ADR-017/018 + D17 (vault salt referans)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Güvenlik Kuralları (G7)
 
@@ -34,7 +34,7 @@ olarak düşer (D12 audit).
 ## SQL enjeksiyon köprüsü
 
 Parametreli SQL zorunlu (G2/ADR-017); bu dosyada tekrarlanmaz —
-[data-access-rules](data-access-rules.md) tek kaynaktır (SRP).
+[[.rules/data-access-rules|data-access-rules]] tek kaynaktır (SRP).
 
 ## İhlalde
 
@@ -47,5 +47,5 @@ G7: CRITICAL — işlem durdurulur. Secret: RED — anahtar rotasyonu önerilir.
 
 ## İlgili
 
-- [ADR-018](../.decisions/accepted/adr-018-secret-dpapi-keys-map.md)
-- [data-access-rules](data-access-rules.md)
+- [[.decisions/accepted/adr-018-secret-dpapi-keys-map|ADR-018]]
+- [[.rules/data-access-rules|data-access-rules]]

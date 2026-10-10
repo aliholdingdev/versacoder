@@ -12,7 +12,7 @@ source: "mevcut vault (baseline 4fc84f9, 2026-10-07; buyuk harfli linkler oncesi
 supersedes: ""
 ---
 
-**Zorunlu Bağlantılar:** [[../.rules/rules-index|Kural Dizini]] · [[../.rules/token-budget|Token Bütçesi]] · [[../.rules/evidence-and-verification|Kanıt ve Doğrulama]] · [[../adr-index|ADR Dizini]] · [[../agents-index|Ajan Kataloğu]] · [[gates-index|Kapılar]] · [[session-log-template|Bu Şablon]]
+**Zorunlu Bağlantılar:** [[.rules/index|Kural Dizini]] · [[.rules/performance-guidelines|Token Bütçesi]] · [[.rules/coding-standards|Kanıt ve Doğrulama]] · [[adr-index|ADR Dizini]] · [[definitions/AGENTS|Ajan Kataloğu]] · [[governance/WORKFLOW|Kapılar]] · [[session-log-template|Bu Şablon]]
 
 # Oturum Kaydı Şablonu — `.ai/log.md` + `.ai/sessions/*.md`
 
@@ -23,8 +23,8 @@ supersedes: ""
 VersaCoder'da her oturum iki yerde iz bırakır: **ana kütük** `.ai/log.md` (tek satır özet, hep güncel) ve **oturum dosyası** `.ai/sessions/<oturum-id>.md` (kanıtlar, token, öğrenilenler). İkisi ayrı yazılmazsa üç şey bozulur:
 
 1. **Süreklilik kopar** — sonraki oturum "neyi bitirmiştim?" sorusuna cevap bulamaz; iş iki kez yapılır.
-2. **Token bütçesi görünmez olur** — 50.000 token/oturum sınırı (`[[../.rules/token-budget|Token Bütçesi]]`) ancak `TOKEN:` satırları toplanarak denetlenebilir; sayaç yoksa sınır ihlal edilir ve kimse fark etmez.
-3. **Kanıt zinciri kırılır** — `claim → evidence` kuralı (`[[../.rules/evidence-and-verification|Kanıt ve Doğrulama]]`) yalnızca "hangi komut, hangi çıktı, hangi satır" kaydedildiğinde denetlenebilir; sonuçsuz iddia yazılamaz.
+2. **Token bütçesi görünmez olur** — 50.000 token/oturum sınırı (`[[.rules/performance-guidelines|Token Bütçesi]]`) ancak `TOKEN:` satırları toplanarak denetlenebilir; sayaç yoksa sınır ihlal edilir ve kimse fark etmez.
+3. **Kanıt zinciri kırılır** — `claim → evidence` kuralı (`[[.rules/coding-standards|Kanıt ve Doğrulama]]`) yalnızca "hangi komut, hangi çıktı, hangi satır" kaydedildiğinde denetlenebilir; sonuçsuz iddia yazılamaz.
 
 Şablon, bu üç denetim noktasını **zorunlu alan** haline getirir: `İlerleme (n/8)`, `Kullanılan Token`, `Kanıtlar`.
 
@@ -56,14 +56,14 @@ Aşağıdaki satırlar bu şablonun dayandığı vault dosyalarıdır. Var olan 
 
 ### §1.4 Neden zorunlu
 
-Şablon **zorunludur**; `.ai/log.md` ve `.ai/sessions/*.md` bu kalıp dışında üretilemez. Gerekçe: ana kütük tek satırdır, oturum dosyası kanıt yükünü taşır; ikisini ayırmayan düzen `log.md`'yi 500 satır ölü metne çevirir, tek dosyaya sığmayan kanıt da kaybolur. Kalıbı değiştirmek `[[../.rules/rules-index|Kural Dizini]]` üzerinden `§4.4` işlemini gerektirir.
+Şablon **zorunludur**; `.ai/log.md` ve `.ai/sessions/*.md` bu kalıp dışında üretilemez. Gerekçe: ana kütük tek satırdır, oturum dosyası kanıt yükünü taşır; ikisini ayırmayan düzen `log.md`'yi 500 satır ölü metne çevirir, tek dosyaya sığmayan kanıt da kaybolur. Kalıbı değiştirmek `[[.rules/index|Kural Dizini]]` üzerinden `§4.4` işlemini gerektirir.
 
 ## §2 Kapsam
 
 | Kapsam | Kapsam Dışı |
 |---|---|
 | `.ai/log.md` tek satır kütük düzeni | Kod içi loglama (`ILogger`, konsol çıktısı) |
-| `.ai/sessions/<id>.md` oturum dosyası | ADR, PRD, mimari doküman (`[[../adr-index|ADR Dizini]]`) |
+| `.ai/sessions/<id>.md` oturum dosyası | ADR, PRD, mimari doküman (`[[adr-index|ADR Dizini]]`) |
 | `İlerleme (n/8)` ve `TOKEN:` sayaçları | Test raporu, coverage çıktısı |
 | Checkpoint / handover / düzeltme kaydı | Ekran dokümantasyonu (`.ai/screens/`) |
 | Kanıt satırları (komut → çıktı → dosya) | Git commit mesajları (commit ayrı kurallara bağlı) |
@@ -84,8 +84,8 @@ Aşağıdaki satırlar bu şablonun dayandığı vault dosyalarıdır. Var olan 
 Bu şablon **zorunludur**; 5 şartın **hepsi** true olmalı:
 
 1. İş `.ai/log.md` veya `.ai/sessions/` dışında bir dosyaya yazılıyorsa → bu şablon değil.
-2. İçerik karar/ADR ise → `[[../adr-index|ADR Dizini]]`.
-3. İçerik kural/yasak ise → `[[../.rules/rules-index|Kural Dizini]]`.
+2. İçerik karar/ADR ise → `[[adr-index|ADR Dizini]]`.
+3. İçerik kural/yasak ise → `[[.rules/index|Kural Dizini]]`.
 4. İçerik kod/test ise → ilgili ajan şablonu, oturum dosyasına yalnızca **özet satırı** düşer.
 5. Şüphe varsa → kısa cevap: **oturum dosyasına yaz, `log.md`'yi tek satırda tut.**
 
@@ -112,7 +112,7 @@ authority: primary
 ```markdown
 # Oturum Kaydı — {{OTURUM_ID}} ({{TARİH}})
 
-**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
+**Zorunlu Bağlantılar:** [[log|Ana Kütük]] · [[.rules/performance-guidelines|Token Bütçesi]] · [[governance/WORKFLOW|Kapılar]]
 ```
 
 ### §3.3-§3.9 Zorunlu 9 bölümün markdown iskeleti
@@ -174,7 +174,7 @@ authority: primary
 ```markdown
 # Oturum Kaydı — ses_20260925_01 (2026-09-25)
 
-**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
+**Zorunlu Bağlantılar:** [[log|Ana Kütük]] · [[.rules/performance-guidelines|Token Bütçesi]] · [[governance/WORKFLOW|Kapılar]]
 
 ### §3.3.1 Oturum Kimliği
 | Alan | Değer |
@@ -237,7 +237,7 @@ authority: primary
 ```markdown
 # Oturum Kaydı — {{OTURUM_ID}} ({{TARİH}})
 
-**Zorunlu Bağlantılar:** [[../log|Ana Kütük]] · [[../.rules/token-budget|Token Bütçesi]] · [[gates-index|Kapılar]]
+**Zorunlu Bağlantılar:** [[log|Ana Kütük]] · [[.rules/performance-guidelines|Token Bütçesi]] · [[governance/WORKFLOW|Kapılar]]
 
 ### §3.3.1 Oturum Kimliği
 | Alan | Değer |
@@ -456,14 +456,14 @@ authority: primary
 
 | Bağlantı | Ne için | Yol (`.ai` göreli) |
 |---|---|---|
-| [[../log\|Ana Kütük]] | Tek satır özet | `log.md` |
-| [[../sessions/index\|Oturum Dizini]] | Dosya listesi | `sessions/` |
-| [[../.rules/token-budget\|Token Bütçesi]] | 50.000 sınırı | `.rules/token-budget` |
-| [[../.rules/evidence-and-verification\|Kanıt ve Doğrulama]] | `claim → evidence` | `.rules/evidence-and-verification` |
-| [[../rules-index\|Kural Dizini]] | 7 kural dosyası | `.rules/` |
-| [[../adr-index\|ADR Dizini]] | ADR-001..008 | `adr/` |
-| [[gates-index\|Kapılar]] | GATE-000..005 | `gates/` |
-| [[../agents-index\|Ajan Kataloğu]] | 14 ajan + 8 disiplin | `.agents/` |
+| [[log|Ana Kütük]] | Tek satır özet | `log.md` |
+| [[ops/index|Oturum Dizini]] | Dosya listesi | `sessions/` |
+| [[.rules/performance-guidelines|Token Bütçesi]] | 50.000 sınırı | `.rules/token-budget` |
+| [[.rules/coding-standards|Kanıt ve Doğrulama]] | `claim → evidence` | `.rules/evidence-and-verification` |
+| [[.rules/index|Kural Dizini]] | 7 kural dosyası | `.rules/` |
+| [[adr-index|ADR Dizini]] | ADR-001..008 | `adr/` |
+| [[governance/WORKFLOW|Kapılar]] | GATE-000..005 | `gates/` |
+| [[definitions/AGENTS|Ajan Kataloğu]] | 14 ajan + 8 disiplin | `.agents/` |
 
 ### §7.2 Red Team — Sık Yapılan Hatalar tablosu
 

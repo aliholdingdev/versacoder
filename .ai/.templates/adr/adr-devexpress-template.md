@@ -14,7 +14,7 @@ supersedes: ""
 
 # ADR Şablonu — DevExpress / Masaüstü UI Kararları
 
-**Zorunlu Bağlantılar:** [Vault Ana Sayfa](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [ADR Dizini](../../.decisions/index.md) · [Genel ADR Şablonu](adr-template.md) · [ADR Dizin Şablonu](adr-index.md)
+**Zorunlu Bağlantılar:** [[index|Vault Ana Sayfa]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|ADR Dizini]] · [[.templates/adr/adr-template|Genel ADR Şablonu]] · [[.templates/adr/adr-index|ADR Dizin Şablonu]]
 
 ---
 
@@ -66,14 +66,14 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 
 | # | Gerçek | Kaynak |
 |---|---|---|
-| 1 | Katmanlar: Abstractions → Domain → Application → Infrastructure → Protocol → Host → UI + CrossCutting + Cli | [ARCHITECTURE](../../architecture/index.md) |
+| 1 | Katmanlar: Abstractions → Domain → Application → Infrastructure → Protocol → Host → UI + CrossCutting + Cli | [[architecture/index|ARCHITECTURE]] |
 | 2 | Desktop uygulaması: VersaCoder.Desktop (WinForms RibbonForm) | ⚠️ VERIFICATION REQUIRED |
 | 3 | CLI uygulaması: VersaCoder.Cli ( DevExpress içermez ) | ⚠️ VERIFICATION REQUIRED |
 | 4 | DevExpress 25.2.8 + RibbonControlStyle.Office2010 | ⚠️ VERIFICATION REQUIRED |
 | 5 | TFM: net48 + net10.0-windows | ⚠️ VERIFICATION REQUIRED |
 | 6 | hand-written Designer.cs / .resx / ResourceManager | ⚠️ VERIFICATION REQUIRED |
-| 7 | Test: xunit, %90 coverage, TreatWarningsAsErrors=true | [rules](../../.rules) |
-| 8 | Vault kök dosyaları + .ai/.rules/ 7 dosya | [index](../../index.md) |
+| 7 | Test: xunit, %90 coverage, TreatWarningsAsErrors=true | [[.rules|rules]] |
+| 8 | Vault kök dosyaları + .ai/.rules/ 7 dosya | [[index|index]] |
 
 ## §2 — Bağlam (Context)
 
@@ -87,7 +87,7 @@ VersaCoder.Desktop (WinForms `RibbonForm`) tarafındaki DevExpress kararlarında
 | TFM | `net48` + `net10.0-windows` | ⚠️ VERIFICATION REQUIRED |
 | Tasarım dosyaları | hand-written `Designer.cs` / `.resx` / `ResourceManager` | ⚠️ VERIFICATION REQUIRED |
 | Ekranlar | 7 ekran (Roles, Catalog, Chat, ...) | ⚠️ VERIFICATION REQUIRED |
-| Katman konumu | yalnızca `UI` katmanı + `Host` | [ARCHITECTURE](../../architecture/index.md) |
+| Katman konumu | yalnızca `UI` katmanı + `Host` | [[architecture/index|ARCHITECTURE]] |
 
 ### §2.2 — Kararı tetikleyen tetikleyiciler
 
@@ -275,7 +275,7 @@ G4 (sürüm RED), G7 (Designer.cs korunur), G8 (ribbon stili), G9 (tasarımcı �
 | G9 | Tasarımcı otomatik kod üretimi | RED |
 | G10 | Kapsam %90 altı | RED |
 | G11 | Uyarı varlığı | `TreatWarningsAsErrors` → RED |
-| G12 | [.decisions/index.md](../../.decisions/index.md) güncellenmedi | RED |
+| G12 | [[.decisions/index|.decisions/index.md]] güncellenmedi | RED |
 | G13 | Supersede zinciri koptu | RED |
 | G14 | PowerShell yalnız-oku ihlali | RED |
 
@@ -292,7 +292,7 @@ G4 (sürüm RED), G7 (Designer.cs korunur), G8 (ribbon stili), G9 (tasarımcı �
 | 3 | Designer.cs/.resx dosyalarını listele | dosya listesi |
 | 4 | Alternatifleri yaz ve el | §3.2 |
 | 5 | Kabul kriterlerini yaz | §3.4 |
-| 6 | Kararı [ADR Dizini](../../.decisions/index.md)'ne işle | index satırı |
+| 6 | Kararı [[.decisions/index|ADR Dizini]]'ne işle | index satırı |
 | 7 | Değişikliği uygula | diff |
 | 8 | `dotnet build` çalıştır (TreatWarningsAsErrors) | build çıktısı |
 | 9 | Ekranı/Ribbon'u manuel doğrula | test notu |
@@ -363,7 +363,7 @@ Select-String -Path .\src\**\*.cs -Pattern 'ResourceManager'
 - [ ] 6 yalnız-oku PowerShell komutu + "olmalı" yorumu (§5.3)
 - [ ] 18 madde işaretli (§6.1)
 - [ ] Kanıtsız iddia `⚠️` li (§1.2/§6.3)
-- [ ] [ADR Dizini](../../.decisions/index.md)'ne işlendi
+- [ ] [[.decisions/index|ADR Dizini]]'ne işlendi
 - [ ] Supersede zinciri güncellendi (G13)
 - [ ] Mojibake yok (Türkçe diacritikler doğru)
 
@@ -522,6 +522,6 @@ Aynı [§5.3](#§53--doğrulama-komutları-yalnız-oku) komutları + `dotnet bui
 2. §2.1/§2.2 gerçek envanterle doldur.
 3. §3.1–§3.9 ve §3.11'i kararına göre doldur; **§3.10'u değiştirme**.
 4. §4.5 G4/G7/G8/G9 satırlarını kararına göre oku; ihlal sonucu RED kalır.
-5. §5.1–§5.3, §6, §7'yi uygula → [ADR Dizini](../../.decisions/index.md) → [ADR Şablonu](adr-template.md) → [ADR Dizin Şablonu](adr-index.md).
+5. §5.1–§5.3, §6, §7'yi uygula → [[.decisions/index|ADR Dizini]] → [[.templates/adr/adr-template|ADR Şablonu]] → [[.templates/adr/adr-index|ADR Dizin Şablonu]].
 
-**Zorunlu Bağlantılar (tekrar):** [Vault Ana Sayfa](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [ADR Dizini](../../.decisions/index.md) · [ADR Şablonu](adr-template.md) · [ADR Dizin Şablonu](adr-index.md)
+**Zorunlu Bağlantılar (tekrar):** [[index|Vault Ana Sayfa]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|ADR Dizini]] · [[.templates/adr/adr-template|ADR Şablonu]] · [[.templates/adr/adr-index|ADR Dizin Şablonu]]

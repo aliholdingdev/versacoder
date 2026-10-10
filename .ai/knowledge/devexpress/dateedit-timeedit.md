@@ -14,9 +14,9 @@ supersedes: ""
 
 # DateEdit ve TimeEdit
 
-**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [hata kurallari](../../.rules/error-handling-rules.md) · [ADR-005 ado.net dapper](../../.decisions/accepted/adr-005-ado-net-dapper-no-ef-core.md) · [dx-validation-provider](dx-validation-provider.md) · [checkedcomboedit-values](checkedcomboedit-values.md)
-**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 5/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|bilgi indeksi]] · [[index|vault index]] · [[.rules/error-handling-rules|hata kurallari]] · [[.decisions/accepted/adr-005-ado-net-dapper-no-ef-core|ADR-005 ado.net dapper]] · [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] · [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 5/35):** tam liste → [[knowledge/devexpress/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Tarih nerede `DateEdit`, saat nerede `TimeEdit` ile girilir, gosterim formati nasil sabitlenir ve aralik nasil dogrulanir* sorusunun tek cevabidir.
 
@@ -154,10 +154,10 @@ this.dxErrorProvider1.SetError(this.dateEditDueDate,
 
 | Konu | Dosya |
 |---|---|
-| Hata ikonu akisi | [dx-validation-provider](dx-validation-provider.md) |
-| Cok secimli liste | [checkedcomboedit-values](checkedcomboedit-values.md) |
-| Kisa liste + tamamlama | [comboboxedit-autocomplete](comboboxedit-autocomplete.md) |
-| Veri yazma (Dapper) | [datasource-binding-dapper](datasource-binding-dapper.md) |
+| Hata ikonu akisi | [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] |
+| Cok secimli liste | [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] |
+| Kisa liste + tamamlama | [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] |
+| Veri yazma (Dapper) | [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
 
 ## §9 Kanit
 

@@ -22,7 +22,7 @@ diyagramı göremezdi.
 Bu ADR iki karar taşır:
 
 - **D1 — Diyagram çizim karakterleri:** UTF-8 box-drawing (Orijinal karar).
-  **DURUM: SUPERSEDED by [ADR-029-ascii-box-drawing-only.md](adr-029-ascii-box-drawing-only.md)**
+  **DURUM: SUPERSEDED by [[.decisions/accepted/adr-029-ascii-box-drawing-only|ADR-029-ascii-box-drawing-only.md]]**
   (2026-10-01): ASCII `+ - |` kararı kazandı; U+2500-U+257F vault'ta yasak.
 - **D3 — Mermaid kuralı:** Mermaid diyagramı varsa **yanında düz metin
   karşılığı da zorunludur.** **DURUM: yürürlükte.**
@@ -52,5 +52,5 @@ uç okuyucu diyagramı göremezdi.
 
 ## §7 İlgili
 
-- [ADR-029-ascii-box-drawing-only.md](adr-029-ascii-box-drawing-only.md) — superseder
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-029-ascii-box-drawing-only|ADR-029-ascii-box-drawing-only.md]] — superseder
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

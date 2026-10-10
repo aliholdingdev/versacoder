@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Dağıtım Şartnamesi (`spec/deployment-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [release-spec](release-spec.md) · [packaging-spec](packaging-spec.md) · [migration-spec](migration-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/release-spec|release-spec]] · [[spec/packaging-spec|packaging-spec]] · [[spec/migration-spec|migration-spec]]
 
 > **Tek cümlelik sorumluluk:** *Masaüstü uygulaması ile CLI hangi araçla, hangi makineye ve nasıl geri alınarak dağıtılır* sorusunun tek cevabıdır.
 > CI matrisi/rollback adımları `.rules/deployment-guide.md` §2–§4'tedir (tekrar yok); bu belge **dağıtım kanalı seçimi ve kurulum davranışı**dır.
@@ -31,9 +31,9 @@ Masaüstü için **üç kanal** değerlendirilir ve **tek biri** seçilir: **MSI
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Masaüstü kanal seçimi (MSI / ClickOnce / taşınabilir) | Artifact üretimi: [release-spec](release-spec.md) |
-| 2 | CLI dağıtımı ve ilk çalıştırma | Paket kilitleri: [packaging-spec](packaging-spec.md) |
-| 3 | Kurulum sonrası ilk açılış (secret + migration) | Migration davranışı: [migration-spec](migration-spec.md) |
+| 1 | Masaüstü kanal seçimi (MSI / ClickOnce / taşınabilir) | Artifact üretimi: [[spec/release-spec|release-spec]] |
+| 2 | CLI dağıtımı ve ilk çalıştırma | Paket kilitleri: [[spec/packaging-spec|packaging-spec]] |
+| 3 | Kurulum sonrası ilk açılış (secret + migration) | Migration davranışı: [[spec/migration-spec|migration-spec]] |
 | 4 | Güncelleme ve geri alma | CI adımları: `.rules/deployment-guide.md` §2 |
 | 5 | Runtime ön koşulları (.NET Framework 4.8 / .NET 10) | Açılsın mı sorusu değil, **nasıl** sorusu |
 

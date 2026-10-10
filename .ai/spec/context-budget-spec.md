@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Bağlam Bütçesi Şartnamesi (`spec/context-budget-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [session-spec](session-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [protocol-layer-spec](protocol-layer-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/session-spec|session-spec]] · [[spec/llm-provider-spec|llm-provider-spec]] · [[spec/protocol-layer-spec|protocol-layer-spec]]
 
 > **Tek cümlelik sorumluluk:** *Bir oturumda bağlam ne kadardır, ne zaman derlenir (compaction) ve derlemeden sonra ne hayatta kalır* sorusunun tek cevabıdır.
 > Karar ADR-008'dedir (context-assembly, **planlı** — `.decisions/index.md` §planlı): bu belge **bütçe + tetikleyici** davranışını tanımlar.
@@ -31,10 +31,10 @@ Bağlam üç katmanlı bütçeyle yönetilir: **transcript ≤ 8 MB / %80 derlem
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Bütçe limitleri ve ölçüm birimi | Transcript **biçimi**/durum makinesi: [session-spec](session-spec.md) |
-| 2 | Compaction tetikleyicileri + sırası | Sağlayıcı çağrısı/streaming: [llm-provider-spec](llm-provider-spec.md) |
-| 3 | Derlemede korunan/silinen içerik | Mesaj zarfı: [protocol-layer-spec](protocol-layer-spec.md) |
-| 4 | Tool çağrı sonuçlarının kırpılma kuralı | Tool şeması/boyut sınırı: [tool-spec](tool-spec.md) |
+| 1 | Bütçe limitleri ve ölçüm birimi | Transcript **biçimi**/durum makinesi: [[spec/session-spec|session-spec]] |
+| 2 | Compaction tetikleyicileri + sırası | Sağlayıcı çağrısı/streaming: [[spec/llm-provider-spec|llm-provider-spec]] |
+| 3 | Derlemede korunan/silinen içerik | Mesaj zarfı: [[spec/protocol-layer-spec|protocol-layer-spec]] |
+| 4 | Tool çağrı sonuçlarının kırpılma kuralı | Tool şeması/boyut sınırı: [[spec/tool-spec|tool-spec]] |
 | 5 | Ajan çalışma zamanı okuma limitleri (`AGENTS.md` §6) | Ajan/protokol kuralları: `.ai/AGENTS.md` (tekrar yok) |
 
 > **YASAK:** Eşiği aşınca **sessizce** eski mesaj silmek (arşiv yoksa veri kaybı) · derlemeyi token tahminiyle **ölçmeden** yapmak · derleme sonrası karar etiketlerini (`CONFLICT DETECTED`, `UNKNOWN`, `NEEDS_VALIDATION`) kaybetmek.

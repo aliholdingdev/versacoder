@@ -14,7 +14,7 @@ supersedes: ""
 
 # component-inventory.md - Kontrol Envanteri
 
-**Zorunlu Baglantilar:** [ui-design/index](readme.md) · [flows](flows.md) · [02-main-ide](02-main-ide.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [ui-rules](../.rules/ui-rules.md) · [gate-003 checklist](../checklists/gate-003-ui-onay.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/index]] · [[ui-design/flows|flows]] · [[ui-design/02-main-ide|02-main-ide]] · [[.rules/devexpress-rules|devexpress-rules]] · [[.rules/ui-rules|ui-rules]] · [[checklists/gate-003-ui-onay|gate-003 checklist]]
 
 > **Tek cumlelik sorumluluk:** Sekiz wireframe'de cizilen her kontrolün DevExpress
 > Universal **v26.1** karşılığı hangisi sorusunun tek cevabidir.
@@ -231,8 +231,8 @@ kaynaklidir (DX-04 · VISION §2.4 · N41) - §4/1.
 
 | # | Kaynak | Ne kanitlar |
 |---|---|---|
-| 1 | [01..08 wireframe](readme.md) bölge/kontrol tablolari | kontrol adlari |
-| 2 | [devexpress-rules](../.rules/devexpress-rules.md) DX-01..DX-09 | surum + stil + DX-09 karşılaştırması |
-| 3 | [architecture catalog](../architecture/index.md) N41 | `MainForm : RibbonForm` kaydi |
-| 4 | [VISION](../definitions/vision.md) §2.4 | `RibbonForm` + `Office2010` (02-main-ide) |
-| 5 | [flows](flows.md) | ekran gecisleri (soru 8 esligi) |
+| 1 | [[ui-design/readme|01..08 wireframe]] bölge/kontrol tablolari | kontrol adlari |
+| 2 | [[.rules/devexpress-rules|devexpress-rules]] DX-01..DX-09 | surum + stil + DX-09 karşılaştırması |
+| 3 | [[architecture/index|architecture catalog]] N41 | `MainForm : RibbonForm` kaydi |
+| 4 | [[definitions/vision|VISION]] §2.4 | `RibbonForm` + `Office2010` (02-main-ide) |
+| 5 | [[ui-design/flows|flows]] | ekran gecisleri (soru 8 esligi) |

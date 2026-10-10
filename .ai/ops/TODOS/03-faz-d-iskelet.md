@@ -14,7 +14,7 @@ supersedes: ""
 
 # Faz 03 — Faz D: Kod İskeleti (GATE-004)
 
-**Zorunlu Bağlantılar:** [TODOS index](index.md) · [Faz 01](01-vault-kapanis.md) · [gate-004-ilk-commit](../../checklists/gate-004-ilk-commit.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [dual-tfm-build-check](../../checklists/dual-tfm-build-check.md) · [layer-boundary-check](../../checklists/layer-boundary-check.md) · [ADR-001](../../.decisions/accepted/adr-001-dual-target-net48-net10.md)
+**Zorunlu Bağlantılar:** [[ops/TODOS/index|TODOS index]] · [[ops/TODOS/01-vault-kapanis|Faz 01]] · [[checklists/gate-004-ilk-commit|gate-004-ilk-commit]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[checklists/dual-tfm-build-check|dual-tfm-build-check]] · [[checklists/layer-boundary-check|layer-boundary-check]] · [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]]
 
 > **Tek cümlelik sorumluluk:** `C:\versacoder` içine ADR-028'e uygun 9+2 proje
 
@@ -101,8 +101,8 @@ supersedes: ""
 - [ ] CPM tek noktada; paket versiyonu `.csproj` içinde tekrar yok
 - [ ] Proje referansları ADR-028 yön matrisine uygun (ters ok 0)
 - [ ] `NetArchTest` 8×8 = **0 ihlal**
-- [ ] [dual-tfm-build-check](../../checklists/dual-tfm-build-check.md) tümü [x]
-- [ ] [gate-004-ilk-commit](../../checklists/gate-004-ilk-commit.md) [x]
+- [ ] [[checklists/dual-tfm-build-check|dual-tfm-build-check]] tümü [x]
+- [ ] [[checklists/gate-004-ilk-commit|gate-004-ilk-commit]] [x]
 - [ ] İlk commit atıldı (hash `log.md`'de)
 
 ---
@@ -111,8 +111,8 @@ supersedes: ""
 
 | # | Bağımlılık | Nereden |
 |---|---|---|
-| 1 | GATE-004a onayı | [Faz 01](01-vault-kapanis.md) |
-| 2 | 4 cevap (özellikle birim/yer) | [Faz 02](02-5000-plani-sorulari.md) |
+| 1 | GATE-004a onayı | [[ops/TODOS/01-vault-kapanis|Faz 01]] |
+| 2 | 4 cevap (özellikle birim/yer) | [[ops/TODOS/02-5000-plani-sorulari|Faz 02]] |
 | 3 | ADR-028 §2.3 6 düzeltme | vault (kabul edildi) |
 | 4 | Paket sürüm teyidi (`Microsoft.Data.Sqlite` net48?) | `reports/10-bilinen-eksikler` NEEDS_VALIDATION 1 |
 

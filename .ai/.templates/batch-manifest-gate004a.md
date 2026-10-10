@@ -14,7 +14,7 @@ supersedes: ""
 
 # GATE-004a Batch Manifestosu
 
-**Zorunlu Baglantilar:** [vault index](../index.md) · [new-doc-contract](new-doc-contract.md) · [ADR-003](../.decisions/accepted/adr-003-vault-structure-500md-frontmatter.md) · [ADR-013](../.decisions/accepted/adr-013-layered-architecture-52-nodes.md) · [CLAUDE.md](../claude.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[.templates/new-doc-contract|new-doc-contract]] · [[.decisions/accepted/adr-003-vault-structure-500md-frontmatter|ADR-003]] · [[.decisions/accepted/adr-013-layered-architecture-52-nodes|ADR-013]] · [[claude|CLAUDE.md]]
 
 > **Tek cumlelik sorumluluk:** *Hangi batch hangi klasore kac dosya, hangi temada yazar* sorusunun tek cevabidir.
 > Uretim bu dosyaya gore yapilir; sapma = link/kapsam riski.

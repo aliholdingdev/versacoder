@@ -14,7 +14,7 @@ supersedes: ""
 
 # glossary.md — Terimler Sözlüğü
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [keys](../governance/keys.md) · [brain](../.decisions/brain.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [VISION](vision.md) · [PROJECTS](projects.md) · [AGENTS](agents.md) · [spec/index](../spec/index.md) · [.rules/index](../.rules/index.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[governance/keys|keys]] · [[.decisions/brain|brain]] · [[claude|CLAUDE]] · [[governance/workflow|WORKFLOW]] · [[definitions/vision|VISION]] · [[definitions/projects|PROJECTS]] · [[definitions/agents|AGENTS]] · [[spec/index|spec/index]] · [[.rules/index|.rules/index]]
 
 > **Tek cümlelik sorumluluk:** Vault'ta geçen her terimi Türkçe karşılığı ve "10 yaşındaki çocuğa anlatır gibi" tek cümlele tanımlayıp hangi dosyaya bağlandığını yazmak.
 
@@ -175,7 +175,7 @@ Sütunlar: TR karşılığı · EN karşılığı · ELI10 tek cümle · terimin
 | 135 | Görsel doğrulanmış kaynak | Visual source of truth | Referans görsel, ondan çıkarılan her bilginin birincil kaynağıdır. | `AGENTS.md` §8.5 |
 | 136 | Adaptif soru motoru | Adaptive question engine | Cevaba göre bir sonraki soruyu belirleyen, aynı soruyu tekrarlamayan sorma döngüsüdür. | `AGENTS.md` §5.4 |
 
-**İlgili (bu tablodaki terimlerin evleri):** [AGENTS](agents.md) · [CLAUDE](../claude.md) · [WORKFLOW](../governance/workflow.md) · [ROLE](role.md) · [brain](../.decisions/brain.md) · [VISION](vision.md) · [PROJECTS](projects.md) · [keys](../governance/keys.md) · [engine](engine.md) · [MEMORY](../memory/memory.md) · [index](../index.md).
+**İlgili (bu tablodaki terimlerin evleri):** [[definitions/agents|AGENTS]] · [[claude|CLAUDE]] · [[governance/workflow|WORKFLOW]] · [[definitions/role|ROLE]] · [[.decisions/brain|brain]] · [[definitions/vision|VISION]] · [[definitions/projects|PROJECTS]] · [[governance/keys|keys]] · [[definitions/engine|engine]] · [[memory/memory|MEMORY]] · [[index|index]].
 ### §1.1 Terim kümeleri (hangi küme nerede kullanılır)
 
 | # | Küme | Terim aralığı | Kullanıldığı dosya | Ne zaman okunur |
@@ -323,12 +323,12 @@ Soru kelimeyle değil, dosyayla başlıyorsa ters arama yapılır: dosya açıl�
 
 ---
 
-| ROLE | [ROLE](role.md) | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
-| engine | [engine](engine.md) | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
-| MEMORY | [MEMORY](../memory/memory.md) | kalici dersler, karar desenleri, kara liste, kayit defteri |
-| log | [log](../ops/log.md) | append-only is gunlugu + Quality Report |
-| ULTRA | [ULTRA](ultra-thinking.md) | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+| ROLE | [[definitions/role|ROLE]] | rol — 18->5, karar hiyerarshisi (7 basamak), devir zinciri |
+| engine | [[definitions/engine|engine]] | orkestrasyon motoru — giris -> hazirlik -> dagitim -> kontrol -> teslim |
+| MEMORY | [[memory/memory|MEMORY]] | kalici dersler, karar desenleri, kara liste, kayit defteri |
+| log | [[ops/log|log]] | append-only is gunlugu + Quality Report |
+| ULTRA | [[definitions/ultra-thinking|ULTRA]] | uzun dusunme protokolu — 5 adim, kanit hiyerarsisi, red-team |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

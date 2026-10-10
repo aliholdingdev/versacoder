@@ -14,16 +14,16 @@ supersedes: ""
 
 # 09 — CLI KONSOLU (OpenCode-Benzeri Tam Ekran CLI Yuzeyi)
 
-**Zorunlu Baglantilar:** [ui-design/README](../ui-design/readme.md) · [cli-spec](cli-spec.md) · [terminal-spec](terminal-spec.md) · [ai-chat-console-spec](ai-chat-console-spec.md) · [09-terminal](../ui-design/09-terminal.md) · [01-start-page](../ui-design/01-start-page.md) · [02-main-ide](../ui-design/02-main-ide.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Baglantilar:** [[ui-design/readme|ui-design/README]] · [[spec/cli-spec|cli-spec]] · [[spec/terminal-spec|terminal-spec]] · [[spec/ai-chat-console-spec|ai-chat-console-spec]] · [[ui-design/09-terminal|09-terminal]] · [[ui-design/01-start-page|01-start-page]] · [[ui-design/02-main-ide|02-main-ide]] · [[.rules/ui-rules|ui-rules]] · [[.rules/devexpress-rules|devexpress-rules]]
 
 > **Tek cumlelik sorumluluk:** *CLI Konsolu ekrani OpenCode CLI gibi mi gorunur, hangi bolgelerden olusur ve klavye/komut davranisi nasildir* sorusunun tek cevabidir.
-> Gereksinim kimligi: **VC-U-0901..0912** · Ekran adi: `09-cli-console` (ui-design/README §1) · Karsilikli yuzey: [10-ai-chat-console](ai-chat-console-spec.md).
+> Gereksinim kimligi: **VC-U-0901..0912** · Ekran adi: `09-cli-console` (ui-design/README §1) · Karsilikli yuzey: [[spec/ai-chat-console-spec|10-ai-chat-console]].
 
 ---
 
 ## §0 Ozet (Answer First)
 
-`09-cli-console` = **tam ekran CLI yuzeyi** (OpenCode TUI benzeri): ustte **sekme seridi** (oturum sekmeleri + yeni sekme), ortada **ASCII logo + prompt kutusu** (metin + `Build / model / tools` satiri + yol:branch), altta **ipucu satiri** ve en altta **durum cubugu**. Komut girisi `TextEdit` benzeri tek satir; cikti `MemoEdit` (ReadOnly) akisi. Bu ekran `02-main-ide` dock paneli **degildir**; dock paneli [09-terminal](../ui-design/09-terminal.md) olarak ayrica yasar.
+`09-cli-console` = **tam ekran CLI yuzeyi** (OpenCode TUI benzeri): ustte **sekme seridi** (oturum sekmeleri + yeni sekme), ortada **ASCII logo + prompt kutusu** (metin + `Build / model / tools` satiri + yol:branch), altta **ipucu satiri** ve en altta **durum cubugu**. Komut girisi `TextEdit` benzeri tek satir; cikti `MemoEdit` (ReadOnly) akisi. Bu ekran `02-main-ide` dock paneli **degildir**; dock paneli [[ui-design/09-terminal|09-terminal]] olarak ayrica yasar.
 
 **Durum: GATE-003 ONAY BEKLIYOR** - bu sozlesme kod izni icin **girdidir** (G12).
 

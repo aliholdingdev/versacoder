@@ -14,10 +14,10 @@ supersedes: ""
 
 # engine — Orkestrasyon Motoru
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [AGENTS](agents.md) · [WORKFLOW](../governance/workflow.md) · [ROLE](role.md) · [CLAUDE](../claude.md) · [ULTRA-THINKING](ultra-thinking.md) · [MEMORY](../memory/memory.md) · [log](../ops/log.md) · [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-boundary-check](../checklists/layer-boundary-check.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[definitions/agents|AGENTS]] · [[governance/workflow|WORKFLOW]] · [[definitions/role|ROLE]] · [[claude|CLAUDE]] · [[definitions/ultra-thinking|ULTRA-THINKING]] · [[memory/memory|MEMORY]] · [[ops/log|log]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[checklists/layer-boundary-check|layer-boundary-check]]
 
 > **Tek cümlelik sorumluluk:** *Bir istek prompt'un geldiği andan teslim kutusuna kadar çok-ajan iş akışının hangi sırayla, hangi limitlerle ve hangi durdurucularla yürüdüğü* sorusunun tek cevabıdır.
-> Bu dosya **orkestrasyonun (yürütmenin) SSOT**'udur: ajanın kendisi [AGENTS.md](agents.md)'tedir, gate'in tanımı [WORKFLOW.md](../governance/workflow.md)'tedir, rolün sesi ve karar hiyerarşisi [ROLE.md](role.md)'dedir — burada yalnız *motorun nasıl aktığı* yazılır (SRP, tekrar yok).
+> Bu dosya **orkestrasyonun (yürütmenin) SSOT**'udur: ajanın kendisi [[definitions/agents|AGENTS.md]]'tedir, gate'in tanımı [[governance/workflow|WORKFLOW.md]]'tedir, rolün sesi ve karar hiyerarşisi [[definitions/role|ROLE.md]]'dedir — burada yalnız *motorun nasıl aktığı* yazılır (SRP, tekrar yok).
 
 ---
 
@@ -37,11 +37,11 @@ Motor **tek yönü olan 5 bileşenden** oluşur: **Giriş (prompt) -> Hazırlık
 
 | Kural | Kaynak | İhlalde |
 |---|---|---|
-| Aynı anda **≤ 3 ajan**; aynı dosyada **tek yazıcı** | [AGENTS.md](agents.md) §5 · [WORKFLOW.md](../governance/workflow.md) §3.2 | İş durur, çakışan yazım geri alınır |
-| **Kanıtsız çıktı işlenmez** (kutu + komut çıktısı zorunlu) | [CLAUDE.md](../claude.md) G5 · [AGENTS.md](agents.md) §2 | Aynı kutuyla tekrar istenir |
-| **3. strike'tan sonra deneme yok**; `dur/bekle` + bloke raporu | [AGENTS.md](agents.md) §4 · [ROLE.md](role.md) §5 | Sayaç asla sıfırlanmaz, tahmin israftır |
+| Aynı anda **≤ 3 ajan**; aynı dosyada **tek yazıcı** | [[definitions/agents|AGENTS.md]] §5 · [[governance/workflow|WORKFLOW.md]] §3.2 | İş durur, çakışan yazım geri alınır |
+| **Kanıtsız çıktı işlenmez** (kutu + komut çıktısı zorunlu) | [[claude|CLAUDE.md]] G5 · [[definitions/agents|AGENTS.md]] §2 | Aynı kutuyla tekrar istenir |
+| **3. strike'tan sonra deneme yok**; `dur/bekle` + bloke raporu | [[definitions/agents|AGENTS.md]] §4 · [[definitions/role|ROLE.md]] §5 | Sayaç asla sıfırlanmaz, tahmin israftır |
 
-> **UYARI:** Bu dosyadaki hiçbir madde tek başına "bitti" kanıtı değildir. Kanıt = çalıştırılmış komutun çıktısı (`dotnet build`, `dotnet test`, link taraması) ve [CLAUDE.md](../claude.md) §3.2'deki kanıt satırıdır.
+> **UYARI:** Bu dosyadaki hiçbir madde tek başına "bitti" kanıtı değildir. Kanıt = çalıştırılmış komutun çıktısı (`dotnet build`, `dotnet test`, link taraması) ve [[claude|CLAUDE.md]] §3.2'deki kanıt satırıdır.
 
 ---
 
@@ -83,7 +83,7 @@ Motor **tek yönü olan 5 bileşenden** oluşur: **Giriş (prompt) -> Hazırlık
                                              log.md + MEMORY.md kaydi
 ```
 
-> **KURAL:** Akış **tek yönlüdür**; geri dönüş yalnız **kanıtlı RED raporu** ile olur ([WORKFLOW.md](../governance/workflow.md) §1.2 madde 4). Sessiz geri sarım yasaktır.
+> **KURAL:** Akış **tek yönlüdür**; geri dönüş yalnız **kanıtlı RED raporu** ile olur ([[governance/workflow|WORKFLOW.md]] §1.2 madde 4). Sessiz geri sarım yasaktır.
 
 ### §1.1.1 Prompt işleme hattı (girdi hattı)
 
@@ -194,7 +194,7 @@ Nihai hedef; VersaCoder kendi kütlesini bu sırayla besler.
 ```
 
 > **Düzeltme (G10):** özgün şablonda `SPECIALIZED AGENTS` 5'e bölünüyordu
-> (.NET / Backend / Frontend / UI-UX / Security). [AGENTS.md](agents.md) §5
+> (.NET / Backend / Frontend / UI-UX / Security). [[definitions/agents|AGENTS.md]] §5
 > **en fazla 3 paralel** der; `Backend` + `Frontend` bu projede **kapsam dışı**
 > (G8: WinForms masaüstü; G6: `net48 + net10.0-windows`). 3'e indirildi.
 
@@ -233,11 +233,11 @@ Bağımsız işler için paralel; bağımlı işler **seri** zincirdedir (§2.1)
                  +-------------+-------------+
                                |
                                v
-                             GATE  -> [WORKFLOW.md](../governance/workflow.md) §1
+                             GATE  -> [[governance/workflow|WORKFLOW.md]] §1
 ```
 
 > **Düzeltme (3 madde):** (1) `RESEARCHER` ajanı **yok** → `general`
-> ([AGENTS.md](agents.md) §1, matris dışı); (2) `VERIFY` ajanı **yok** →
+> ([[definitions/agents|AGENTS.md]] §1, matris dışı); (2) `VERIFY` ajanı **yok** →
 > **`GATE`** (WORKFLOW §1 — kapı işi ajan işi değildir); (3) zincir
 > `architect -> developer -> reviewer -> tester` atlanamaz (AGENTS §1
 > "Zincir kuralı"); `REVIEWER` ile `TESTER` paralel koşabilir, ikisi de
@@ -247,7 +247,7 @@ Bağımsız işler için paralel; bağımlı işler **seri** zincirdedir (§2.1)
 
 Nihai çalışma modeli — VersaCoder'ın Chat'ten kullanıcıya dönüşüne kadar
 tek yönlü akışı. Bu şema §1.1'in motor akışını **harici ajan boyutuyla**
-tamamlar (Internal/External ayrımı [AGENTS.md](agents.md) §4).
+tamamlar (Internal/External ayrımı [[definitions/agents|AGENTS.md]] §4).
 
 ```text
 ┌─────────────────────────────┐
@@ -323,7 +323,7 @@ Giriş, motorun **sınıflandırma** kapısıdır: gelen istek önce *ne olduğu
 | 4 | Kapsam | İstek yeni dosya/paket/sürüm içeriyor mu? | Yeni paket/sürüm/ORM = `G8` + kullanıcı onayı |
 | 5 | Kanıt ihtiyacı | "bitti/tamam" iddiası var mı? | Çıktı yoksa madde yazılmaz (G5) |
 | 6 | Bütçe | Aynı oturumda kaç dosyaya dokunuldu? | ≤ 3 dosya sınırı → yeni oturuma böl (§5) |
-| 7 | Kaynak | Birden fazla kaynak mı konuşuyor? | Çelişki varsa `CONFLICT DETECTED` → [ULTRA-THINKING.md](ultra-thinking.md) |
+| 7 | Kaynak | Birden fazla kaynak mı konuşuyor? | Çelişki varsa `CONFLICT DETECTED` → [[definitions/ultra-thinking|ULTRA-THINKING.md]] |
 
 **Giriş etiketleri (tek kelime, tek anlam):**
 
@@ -341,16 +341,16 @@ Hazırlık, üretimin **girdi**sidir: motor kodu ya da raporu yazmadan önce ilg
 
 | # | Okunacak hedef | Ne verir | Okunmazsa |
 |---|---|---|---|
-| 1 | [index.md](../index.md) | Vault navigasyonu, güncel dosya listesi | Var olmayan hedefe link yazılır (bozuk link) |
-| 2 | [CLAUDE.md](../claude.md) | G1..G12 guardrail, kanıt formatı, dur/bekle | Yasak iş (EF Core, string-concat SQL) fark edilmez |
-| 3 | [WORKFLOW.md](../governance/workflow.md) | Gate zinciri, kabul kriteri, kanıt kutusu | Sıra atlanır, kanıt eksik gate kapanır |
-| 4 | [AGENTS.md](agents.md) | Dağıtım matrisi, kutu, 3-STRIKE, eşzamanlılık | Yanlış ajana iş gider (§2, §4) |
-| 5 | [ROLE.md](role.md) | Karar hiyerarşisi, tek soru kuralı, devir zinciri | Karar çelişkesi çözümsüz kalır |
-| 6 | [keys.md](../governance/keys.md) · [glossary.md](glossary.md) | Anahtar kelime haritası, TR/EN terim | Aynı konu iki adla iki yerde açılır |
-| 7 | [brain.md](../.decisions/brain.md) · [.decisions/adr-index.md](../.decisions/adr-index.md) | Karar özeti, ADR listesi | Karar tekrar tartışılır (kayıt dışı iş) |
-| 8 | İlgili ADR (örn. [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md)) | Bağlayıcı karar + şartlar | Katman/proje sayısı yeniden "tahmin" edilir |
-| 9 | [checklists/layer-boundary-check.md](../checklists/layer-boundary-check.md) | Katman sınırı 13 sorusu | Mimari ihlal gate dışında kalır |
-| 10 | [MEMORY.md](../memory/memory.md) · [log.md](../ops/log.md) | Oturumlar arası durum, tarihli kapanış | Aynı hata ikinci kez denenir |
+| 1 | [[index|index.md]] | Vault navigasyonu, güncel dosya listesi | Var olmayan hedefe link yazılır (bozuk link) |
+| 2 | [[claude|CLAUDE.md]] | G1..G12 guardrail, kanıt formatı, dur/bekle | Yasak iş (EF Core, string-concat SQL) fark edilmez |
+| 3 | [[governance/workflow|WORKFLOW.md]] | Gate zinciri, kabul kriteri, kanıt kutusu | Sıra atlanır, kanıt eksik gate kapanır |
+| 4 | [[definitions/agents|AGENTS.md]] | Dağıtım matrisi, kutu, 3-STRIKE, eşzamanlılık | Yanlış ajana iş gider (§2, §4) |
+| 5 | [[definitions/role|ROLE.md]] | Karar hiyerarşisi, tek soru kuralı, devir zinciri | Karar çelişkesi çözümsüz kalır |
+| 6 | [[governance/keys|keys.md]] · [[definitions/glossary|glossary.md]] | Anahtar kelime haritası, TR/EN terim | Aynı konu iki adla iki yerde açılır |
+| 7 | [[.decisions/brain|brain.md]] · [[.decisions/adr-index|.decisions/adr-index.md]] | Karar özeti, ADR listesi | Karar tekrar tartışılır (kayıt dışı iş) |
+| 8 | İlgili ADR (örn. [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]]) | Bağlayıcı karar + şartlar | Katman/proje sayısı yeniden "tahmin" edilir |
+| 9 | [[checklists/layer-boundary-check|checklists/layer-boundary-check.md]] | Katman sınırı 13 sorusu | Mimari ihlal gate dışında kalır |
+| 10 | [[memory/memory|MEMORY.md]] · [[ops/log|log.md]] | Oturumlar arası durum, tarihli kapanış | Aynı hata ikinci kez denenir |
 
 **Hazırlık çıktı kalitesi:**
 
@@ -363,16 +363,16 @@ Hazırlık, üretimin **girdi**sidir: motor kodu ya da raporu yazmadan önce ilg
 
 ### §1.4 Bileşen 3 — Dağıtım (AGENTS matrisi)
 
-Dağıtım, işi **tek doğru ajana** vermektir; matris dışındaki iş `general`'a düşer. Yanlış ajan = yanlış kanıt = gate RED ve iş iki kez yapılır; bu, 3-STRIKE'dan daha pahalıdır çünkü dağıtım hatası gate'e kadar gizlenir. Dağıtım ayrıca **sırayı** da kurar: `architect -> developer -> reviewer -> tester` halkası [WORKFLOW.md](../governance/workflow.md) §4'teki A→B→C akışıyla aynıdır.
+Dağıtım, işi **tek doğru ajana** vermektir; matris dışındaki iş `general`'a düşer. Yanlış ajan = yanlış kanıt = gate RED ve iş iki kez yapılır; bu, 3-STRIKE'dan daha pahalıdır çünkü dağıtım hatası gate'e kadar gizlenir. Dağıtım ayrıca **sırayı** da kurar: `architect -> developer -> reviewer -> tester` halkası [[governance/workflow|WORKFLOW.md]] §4'teki A→B→C akışıyla aynıdır.
 
 | İş tipi | Ajan | Çıktı formatı | Kanıt |
 |---|---|---|---|
-| Mimari / katman kararı | `architect` | Karar + 5 alanlı kutu | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) + [layer-boundary-check](../checklists/layer-boundary-check.md) 13 soru |
+| Mimari / katman kararı | `architect` | Karar + 5 alanlı kutu | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] + [[checklists/layer-boundary-check|layer-boundary-check]] 13 soru |
 | Kod yazımı / refactor | `developer` | Diff + 5 alanlı kutu | Build + test kırmızı→yeşil |
 | İnceleme / review | `reviewer` | Kutu, **RİSK satırı dolu** | Suçlu dosya + satır no |
 | Test / kapsam | `tester` | Test dosyası + kutu | `dotnet test` çıktısı |
 | Güvenlik | `security-auditor` | Bulgu listesi + kutu | OWASP kalemi + severity |
-| UI / ekran | `ui-designer` | [glossary.md](glossary.md) terimli tasarım | 7 ekrandan birinin adı (`01-start-page` .. `07-settings`) |
+| UI / ekran | `ui-designer` | [[definitions/glossary|glossary.md]] terimli tasarım | 7 ekrandan birinin adı (`01-start-page` .. `07-settings`) |
 | Tanım dışı | `general` | Serbest + kutu | Kendi sözü değil, kanıta dayalı |
 
 **Dağıtım karar ağacı (tek satır kural):**
@@ -411,7 +411,7 @@ Checkpoint, **kanıtın gate kriteriyle birebir karşılaştırıldığı** dura
 | 3 | İlgili **bacaklar** da mı yeşil (`net48` + `net10.0-windows`)? | Tek bacak kanıt değildir (G6) |
 | 4 | Bağlantılı dosyalar (**frontmatter**, izinli link) temiz mi? | Bozuk link / eksik frontmatter → vault RED |
 
-**Kanıt kutusu — gate kapanışı (4 satır, [WORKFLOW.md](../governance/workflow.md) §2):**
+**Kanıt kutusu — gate kapanışı (4 satır, [[governance/workflow|WORKFLOW.md]] §2):**
 
 ```text
 KANIT   : <komut> -> <sayilar>      (CIKTI EKI zorunlu)
@@ -420,11 +420,11 @@ EKSIK   : YOK   (varsa: DOĞRULAMA GEREKLI maddesi)
 SONRAKI : <adim, ≈ sure>
 ```
 
-> **UYARI:** Bu 4 satır, ajanın 5 alanlı çıktı kutusuyla ([AGENTS.md](agents.md) §2) **aynı şey değildir**; biri diğerinin yerine kullanılamaz (SSOT). Hata raporu biçimi ise [CLAUDE.md](../claude.md) §3.3'tedir — üçü ayrı kutulardır.
+> **UYARI:** Bu 4 satır, ajanın 5 alanlı çıktı kutusuyla ([[definitions/agents|AGENTS.md]] §2) **aynı şey değildir**; biri diğerinin yerine kullanılamaz (SSOT). Hata raporu biçimi ise [[claude|CLAUDE.md]] §3.3'tedir — üçü ayrı kutulardır.
 
 ### §1.6 Bileşen 5 — Teslim (kutu)
 
-Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR / RİSK / KANIT`. Kutu yoksa ya da `KANIT` satırı boşsa çıktı **kaba metindir** ve aynı kutuyla tekrar istenir; iş tamamlanmış sayılmaz. Kutudan sonra iki kayıt açılır: [log.md](../ops/log.md)'e tarihli kapanış, [MEMORY.md](../memory/memory.md)'e oturumlar arası durum.
+Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR / RİSK / KANIT`. Kutu yoksa ya da `KANIT` satırı boşsa çıktı **kaba metindir** ve aynı kutuyla tekrar istenir; iş tamamlanmış sayılmaz. Kutudan sonra iki kayıt açılır: [[ops/log|log.md]]'e tarihli kapanış, [[memory/memory|MEMORY.md]]'e oturumlar arası durum.
 
 ```text
 +--------------------------------------------------+
@@ -438,11 +438,11 @@ Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR 
 
 | # | Teslim öncesi kontrol | Beklenen | Kaynak |
 |---|---|---|---|
-| 1 | Ajan kutusu dolu | 5/5 alan, `KANIT` boş değil | [AGENTS.md](agents.md) §2 |
-| 2 | Gate kanıt kutusu dolu | 4/4 satır | [WORKFLOW.md](../governance/workflow.md) §2 |
+| 1 | Ajan kutusu dolu | 5/5 alan, `KANIT` boş değil | [[definitions/agents|AGENTS.md]] §2 |
+| 2 | Gate kanıt kutusu dolu | 4/4 satır | [[governance/workflow|WORKFLOW.md]] §2 |
 | 3 | Bütçe aşılmadı | ≤ 8 KB çıktı, ≤ 3 dosya/oturum | §5 bu dosya |
-| 4 | Yasaklı tarama temiz | EF Core 0 · v26.1 dışı 0 · string-concat 0 | [CLAUDE.md](../claude.md) §2 |
-| 5 | Kayıt yazıldı | `log.md` kapanış satırı + [MEMORY.md](../memory/memory.md) durumu | GATE-006 |
+| 4 | Yasaklı tarama temiz | EF Core 0 · v26.1 dışı 0 · string-concat 0 | [[claude|CLAUDE.md]] §2 |
+| 5 | Kayıt yazıldı | `log.md` kapanış satırı + [[memory/memory|MEMORY.md]] durumu | GATE-006 |
 
 ---
 
@@ -452,11 +452,11 @@ Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR 
 
 | # | Kural | Limit | Kaynak | İhlalde |
 |---|---|---|---|---|
-| 1 | Aynı anda çalışan ajan | **≤ 3** | [AGENTS.md](agents.md) §5 | Rate limit → iş durur (§6.1) |
-| 2 | Aynı dosyaya eş zamanlı yazan | **1** (tek yazıcı) | [WORKFLOW.md](../governance/workflow.md) §3.2 | Ezilme varsa seriley al |
-| 3 | Aynı oturumda dokunulan dosya | **≤ 3** | [AGENTS.md](agents.md) §6 | Yeni oturuma böl |
-| 4 | Aynı anda dokunulan dosya (blok içi) | **≤ 8** | [AGENTS.md](agents.md) §6 | Bölümlere ayır |
-| 5 | Paralel bloktaki bağımlılık | **0** (birbirine bağlanmayan iş) | [WORKFLOW.md](../governance/workflow.md) §3.2 | Bağımlıysa sırala |
+| 1 | Aynı anda çalışan ajan | **≤ 3** | [[definitions/agents|AGENTS.md]] §5 | Rate limit → iş durur (§6.1) |
+| 2 | Aynı dosyaya eş zamanlı yazan | **1** (tek yazıcı) | [[governance/workflow|WORKFLOW.md]] §3.2 | Ezilme varsa seriley al |
+| 3 | Aynı oturumda dokunulan dosya | **≤ 3** | [[definitions/agents|AGENTS.md]] §6 | Yeni oturuma böl |
+| 4 | Aynı anda dokunulan dosya (blok içi) | **≤ 8** | [[definitions/agents|AGENTS.md]] §6 | Bölümlere ayır |
+| 5 | Paralel bloktaki bağımlılık | **0** (birbirine bağlanmayan iş) | [[governance/workflow|WORKFLOW.md]] §3.2 | Bağımlıysa sırala |
 
 **Kayıt — 2026-09-29 rate limit olayı (gerçek):**
 
@@ -467,7 +467,7 @@ Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR 
 | **Belirti** | Ajanların tamamına yakın `Rate limit exceeded` — işler tamamlanmadan düştü |
 | **Neden** | Sağlayıcı hız sınırı; eşzamanlı istek limiti aşıldı |
 | **Müdahale** | Paralel ajan sayısı **3'e** düşürüldü; kalan iş seriye alındı |
-| **Kurala dönüş** | [AGENTS.md](agents.md) §5 = "en fazla 3 paralel ajan"; [WORKFLOW.md](../governance/workflow.md) §3.2 blok kuralı aynı sayıyı tekrarlar |
+| **Kurala dönüş** | [[definitions/agents|AGENTS.md]] §5 = "en fazla 3 paralel ajan"; [[governance/workflow|WORKFLOW.md]] §3.2 blok kuralı aynı sayıyı tekrarlar |
 | **Kalan belirsizlik** | Hangi model/sağlayıcının limiti döktüğü ve ajan ID listesi `DOĞRULAMA GEREKLI` (AGENTS §0 kaynak satırı) |
 
 > **KURAL:** 3 sayısı **kestirim değil, ölçülmüş sonuçtur** (2026-09-29 olayı). Yeni bir eşzamanlılık denemesi ancak `log.md`'ye tarihli kayıtla ve kullanıcı onayıyla yapılır.
@@ -507,7 +507,7 @@ Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR 
                        (7a) l7 Desktop            (7b) l7 Cli
 ```
 
-> Kaynak: [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) §4 + [WORKFLOW.md](../governance/workflow.md) §3.1. Makro katmanlar `l0..l7` = Abstractions, Domain, Application, Crosscutting, Infrastructure, Protocol, Host, UI+CLI.
+> Kaynak: [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] §4 + [[governance/workflow|WORKFLOW.md]] §3.1. Makro katmanlar `l0..l7` = Abstractions, Domain, Application, Crosscutting, Infrastructure, Protocol, Host, UI+CLI.
 
 ### §2.3 Ezme (write conflict) çözümü
 
@@ -515,9 +515,9 @@ Teslim, işin **5 alanlı kutuyla** geri verilmesidir: `BASLIK / KAPSAM / KARAR 
 |---|---|---|
 | 1 | **Tespit** | İki ajan aynı dosyayı istiyorsa fark edilir; eşzamanlı yazım kaybı `KAPSAM` satırından görünür |
 | 2 | **Kanıt yarışı** | Kimin işinin kanıtı varsa (build/test çıktısı) o kazanır |
-| 3 | **Seriye alma** | Kanıt yoksa [WORKFLOW.md](../governance/workflow.md) §3.2 kuralı devreye girer: tek yazıcı |
-| 4 | **Devir** | İkinci ajan [ROLE.md](role.md) §5 zincirine ve §3'teki 4 maddelik pakete geçer |
-| 5 | **Sahiplik** | Tek dosya = tek sahip; sahip dışındaki ajan okur, yazar değil ([AGENTS.md](agents.md) §7) |
+| 3 | **Seriye alma** | Kanıt yoksa [[governance/workflow|WORKFLOW.md]] §3.2 kuralı devreye girer: tek yazıcı |
+| 4 | **Devir** | İkinci ajan [[definitions/role|ROLE.md]] §5 zincirine ve §3'teki 4 maddelik pakete geçer |
+| 5 | **Sahiplik** | Tek dosya = tek sahip; sahip dışındaki ajan okur, yazar değil ([[definitions/agents|AGENTS.md]] §7) |
 
 **Ezme önleme iş akışı:**
 
@@ -582,8 +582,8 @@ ALICI        : tester   |  IADE HAKKI: 4 madde eksikse devir geri cevrilir
 |---|---|---|
 | 1 | Sözel devir ("bakar mısın?") | 4 maddelik yazılı paket (§3.1) |
 | 2 | Kanıtsız devir (`KANIT` satırı boş) | Çıktıyı çalıştır, sonra devret |
-| 3 | SINIR'sız devir (katman sınırı yazılmadan) | ADR-028 + [layer-boundary-check](../checklists/layer-boundary-check.md) satırı |
-| 4 | Devirden sonra işi takip etmeye devam | Dosya sahibi devredilir ([AGENTS.md](agents.md) §7) |
+| 3 | SINIR'sız devir (katman sınırı yazılmadan) | ADR-028 + [[checklists/layer-boundary-check|layer-boundary-check]] satırı |
+| 4 | Devirden sonra işi takip etmeye devam | Dosya sahibi devredilir ([[definitions/agents|AGENTS.md]] §7) |
 | 5 | Eksik devri alıp devam etmek | Alıcı hakkı: geri çevir + `bekle` + tamamlat |
 
 ---
@@ -611,7 +611,7 @@ Strike 3 -> DUR - baska ajana devret veya kullaniciya sor
 | Aynı iş içinde art arda düzeltme | **Evet** | Strike sayacı iş içindedir |
 | Yeni işe geçildi | Hayır — **yeni sayaç** | İş değişti, yöntem değişti |
 | Kullanıcı yeni veri/koşul getirdi | Hayır | Yeni bilgi = yeni girdi |
-| Bütçe aşımı | Hayır | Bütçe işi küçültür, işi ajan değiştirmez ([AGENTS.md](agents.md) §4) |
+| Bütçe aşımı | Hayır | Bütçe işi küçültür, işi ajan değiştirmez ([[definitions/agents|AGENTS.md]] §4) |
 | 3. strike sonrası "bir daha deneyeyim" | **Yasak** | Tahmin artık israfın işaretidir |
 
 ### §4.2 Dur / bekle etiketleri
@@ -627,7 +627,7 @@ Strike 3 -> DUR - baska ajana devret veya kullaniciya sor
 
 ### §4.3 Bloke raporu (şablon + dolu örnek)
 
-**Şablon (biçim yalnız burada; [WORKFLOW.md](../governance/workflow.md) §4 bunu referans verir):**
+**Şablon (biçim yalnız burada; [[governance/workflow|WORKFLOW.md]] §4 bunu referans verir):**
 
 ```text
 ETIKET     : 3-STRIKE | GATE-OPEN | G7 ONAYI | UNKNOWN | CONFLICT DETECTED
@@ -658,7 +658,7 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | Konum | Dosya + satır **ya da** gate adı | Tahmini konum yazılmaz |
 | Durma noktası | 3. strike = protokol zorunlu | Kod yazımı durur, varsayım sorgulanır |
 
-> **UYARI:** 3. strike'tan sonra çözüm aramak yasaktır. Sorulacak soru tek: *"Hangi varsayım yanlış olabilir?"* — cevap [ULTRA-THINKING.md](ultra-thinking.md) protokolünün girişidir.
+> **UYARI:** 3. strike'tan sonra çözüm aramak yasaktır. Sorulacak soru tek: *"Hangi varsayım yanlış olabilir?"* — cevap [[definitions/ultra-thinking|ULTRA-THINKING.md]] protokolünün girişidir.
 
 ---
 
@@ -666,14 +666,14 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 
 | Kalem | Sınır | Aşım belirtisi | Aşımda ne yapılır |
 |---|---|---|---|
-| Tek ajan çıktısı | **≤ ~8 KB** | Yanıt taşması, özet kaybı | Özetle; detayı [MEMORY.md](../memory/memory.md)'e taşı |
+| Tek ajan çıktısı | **≤ ~8 KB** | Yanıt taşması, özet kaybı | Özetle; detayı [[memory/memory|MEMORY.md]]'e taşı |
 | Devre paketi (§3) | **≤ ~2 KB** | Kutu içinde açıklama şişmesi | 4 maddeyi koru, açıklamayı kısalt |
-| Aynı anda dokunulan dosya | **≤ ~8 dosya** | Kapsam belirsizleşiyor | Bölümlere ayır, [WORKFLOW.md](../governance/workflow.md) §4'e geç |
-| Bir oturumda toplam dosya | **≤ ~3 dosya** | Sahiplik dağılıyor | Yeni oturuma böl, kanıtı [log.md](../ops/log.md)'e yaz |
+| Aynı anda dokunulan dosya | **≤ ~8 dosya** | Kapsam belirsizleşiyor | Bölümlere ayır, [[governance/workflow|WORKFLOW.md]] §4'e geç |
+| Bir oturumda toplam dosya | **≤ ~3 dosya** | Sahiplik dağılıyor | Yeni oturuma böl, kanıtı [[ops/log|log.md]]'e yaz |
 | RİSK maddesi | **≤ 5 madde** | Liste uzuyor | En yüksek severity + arşiv |
 | Bloke raporu sorusu | **≤ 1 soru** | Karar verilmemiş görünüyor | Kalanı SECENEKLER'e taşı |
 | Paralel ajan | **≤ 3** | Rate limit (§6.1) | 3'e düşür + seriley al |
-| Gate süresi aşımı | tahminin **20 dk** üzerinde | Kapı uzuyor | İş durur, raporlanır ([WORKFLOW.md](../governance/workflow.md) §2) |
+| Gate süresi aşımı | tahminin **20 dk** üzerinde | Kapı uzuyor | İş durur, raporlanır ([[governance/workflow|WORKFLOW.md]] §2) |
 
 **Bütçe ölçüm notu:**
 
@@ -697,8 +697,8 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | Alan | Belirti | Neden | Müdahale |
 |---|---|---|---|
 | 1 | `Rate limit exceeded` — ajanlar tamamlanmadan düşüyor | Eşzamanlı istek sayısının sağlayıcı limitini aşması | Paralel ajanı **3'e indir**; kalan işi seriye al (§2.1) |
-| 2 | Aynı anda 8 ajan çalıştırıldı | Limit bilinmeden fan-out | Kayıt: 2026-09-29 olayı → kural [AGENTS.md](agents.md) §5 |
-| 3 | Seriye alınan işte de tekrar limit | Kalan isteklerin birikmesi | İşleri [MEMORY.md](../memory/memory.md)'e böl, oturumu kapat/aç |
+| 2 | Aynı anda 8 ajan çalıştırıldı | Limit bilinmeden fan-out | Kayıt: 2026-09-29 olayı → kural [[definitions/agents|AGENTS.md]] §5 |
+| 3 | Seriye alınan işte de tekrar limit | Kalan isteklerin birikmesi | İşleri [[memory/memory|MEMORY.md]]'e böl, oturumu kapat/aç |
 | 4 | Hangi modelin limiti döktüğü bilinmiyor | Model/sağlayıcı listesi kayıtlı değil | `DOĞRULAMA GEREKLI` — tahmin yazılmaz (G9) |
 
 **Rate limit sonrası normal akış:**
@@ -733,7 +733,7 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | 1 | Link taraması `BROKEN > 0` | Hedef dosya yok / ad yanlış / yol yanlış | Hedefi düzelt ya da dosyayı oluştur; sonra **yeniden tara** |
 | 2 | Gate kırmızı (GATE-004a/006) | 0 bozuk link kabul kriteri | Kriter sağlanmadan gate kapanmaz |
 | 3 | `../` ile izinli olmayan hedef | Link kuralı ihlali | Sadece izinli hedeflere göreli link yaz |
-| 4 | Var ama okunmamış dosyaya link | Navigasyon kırık | [index.md](../index.md) güncellenir |
+| 4 | Var ama okunmamış dosyaya link | Navigasyon kırık | [[index|index.md]] güncellenir |
 
 ### §6.4 Tam hata modu tablosu
 
@@ -753,7 +753,7 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | 12 | Gate tahminin 20 dk üzerinde | Süre bütçesi aşıldı | İş durur, raporlanır | gate RED |
 | 13 | Aynı iş 2. kez yapılıyor | Devir paketi eksik/kanıtsız | 4 maddeyi tamamlat, geri çevir | iade |
 | 14 | "Muhtemelen geçer" raporu | Çıktısız tamamlama (G5) | Komutu çalıştır, çıktıyı yapıştır | RED |
-| 15 | Kapsam isteği büyüdü | Kapsam kayması | İlgili gate yeniden açılır | [WORKFLOW.md](../governance/workflow.md) §1.2 |
+| 15 | Kapsam isteği büyüdü | Kapsam kayması | İlgili gate yeniden açılır | [[governance/workflow|WORKFLOW.md]] §1.2 |
 
 **Müdahale sırası (her hata için tek yol):**
 
@@ -782,7 +782,7 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | 2 | Bu dosyanın tüm linkleri izinli hedefe | Bozuk link **0** | link taraması |
 | 3 | Diyagramlar saf ASCII | `\| - +` dışında kutu çizim **0** | `U+2500-U+257F` taraması = 0 |
 | 4 | 5 bileşen tek tek tanımlı | Giriş · Hazırlık · Dağıtım · Kontrol · Teslim | §1 |
-| 5 | Paralel limiti yazılı | **≤ 3 ajan** | §2.1 + [AGENTS.md](agents.md) §5 |
+| 5 | Paralel limiti yazılı | **≤ 3 ajan** | §2.1 + [[definitions/agents|AGENTS.md]] §5 |
 | 6 | Rate limit olayı kayıtlı | 2026-09-29 · 8 ajan → 3 | §2.1 olay tablosu |
 | 7 | Paylaşılan dosya = seri | Karar matrisi var | §2.2 |
 | 8 | Devir paketi 4 madde | KALAN İŞ · DOSYA · KANIT · SINIR | §3.1 + dolu örnek |
@@ -791,9 +791,9 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 | 11 | Bütçe tablosu | 8 kalem, `~` = kestirim notu | §5 |
 | 12 | Hata modları 3 sütunlu | belirti → neden → müdahale | §6 |
 | 13 | Kutu ayrımı net | ajan kutusu (5) ≠ gate kutusu (4) ≠ hata raporu | §1.5 · §1.6 |
-| 14 | Gate'lerde kapatan = kullanıcı | 5 gate de öyle | §1.5 + [WORKFLOW.md](../governance/workflow.md) §2 |
-| 15 | Katman adları tutarlı | l0..l7 = ADR-028 ile aynı | §2.2 + [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
-| 16 | Kanıtsız "bitti" yok | Her iddia komut çıktılı | [CLAUDE.md](../claude.md) G5 |
+| 14 | Gate'lerde kapatan = kullanıcı | 5 gate de öyle | §1.5 + [[governance/workflow|WORKFLOW.md]] §2 |
+| 15 | Katman adları tutarlı | l0..l7 = ADR-028 ile aynı | §2.2 + [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] |
+| 16 | Kanıtsız "bitti" yok | Her iddia komut çıktılı | [[claude|CLAUDE.md]] G5 |
 | 17 | Uydurma sayı yok | Bilinmeyen = `DOĞRULAMA GEREKLI` | §2.1 kalan belirsizlik satırı |
 | 18 | Boyut bandı | **30–88 KB** | dosya ölçümü |
 
@@ -803,25 +803,25 @@ SORU       : Beklenen kaynak saati UTC mi, yerel saat mi?
 
 | # | Kaynak | Ne alındı | Yol |
 |---|---|---|---|
-| 1 | Ajan matrisi · kutu · devir · 3-STRIKE · eşzamanlılık · bütçe | §2–§5 | [AGENTS.md](agents.md) |
-| 2 | Gate zinciri · kanıt kutusu · paralel bloklar · süreler | §1.5 · §2.2 | [WORKFLOW.md](../governance/workflow.md) |
-| 3 | Karar hiyerarşisi · tek soru · devir zinciri (3 hamle) | §3.2 · §4.3 | [ROLE.md](role.md) |
-| 4 | G1..G12 · kanıt formatı · dur/bekle · yasaklı tarama | §0 · §1.5 · §4.2 | [CLAUDE.md](../claude.md) |
-| 5 | Katman/proje/blok kararı (bağlayıcı) | §2.2 | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) |
-| 6 | Katman sınırı 13 sorusu | §1.4 · §3.1 | [checklists/layer-boundary-check.md](../checklists/layer-boundary-check.md) |
-| 7 | Derin düşünme protokolü (karar, kanıt, tuzak) | §4.3 | [ULTRA-THINKING.md](ultra-thinking.md) |
-| 8 | Oturumlar arası durum · tarihli kapanış | §1.6 · §5 | [MEMORY.md](../memory/memory.md) · [log.md](../ops/log.md) |
-| 9 | Navigasyon · anahtar kelimeler · terimler | §1.3 | [index.md](../index.md) · [keys.md](../governance/keys.md) · [glossary.md](glossary.md) |
-| 10 | Yeni dosya sözleşmesi (frontmatter/link/boyut) | §7 | [.templates/new-doc-contract.md](../.templates/new-doc-contract.md) · [.templates/index.md](../.templates/index.md) |
-| 11 | Mimari indeks · rapor indeksi | §1.3 | [architecture/index.md](../architecture/index.md) · [reports/index.md](../ops/log.md) |
-| 12 | ADR navigasyonu | §1.3 | [.decisions/adr-index.md](../.decisions/adr-index.md) |
+| 1 | Ajan matrisi · kutu · devir · 3-STRIKE · eşzamanlılık · bütçe | §2–§5 | [[definitions/agents|AGENTS.md]] |
+| 2 | Gate zinciri · kanıt kutusu · paralel bloklar · süreler | §1.5 · §2.2 | [[governance/workflow|WORKFLOW.md]] |
+| 3 | Karar hiyerarşisi · tek soru · devir zinciri (3 hamle) | §3.2 · §4.3 | [[definitions/role|ROLE.md]] |
+| 4 | G1..G12 · kanıt formatı · dur/bekle · yasaklı tarama | §0 · §1.5 · §4.2 | [[claude|CLAUDE.md]] |
+| 5 | Katman/proje/blok kararı (bağlayıcı) | §2.2 | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] |
+| 6 | Katman sınırı 13 sorusu | §1.4 · §3.1 | [[checklists/layer-boundary-check|checklists/layer-boundary-check.md]] |
+| 7 | Derin düşünme protokolü (karar, kanıt, tuzak) | §4.3 | [[definitions/ultra-thinking|ULTRA-THINKING.md]] |
+| 8 | Oturumlar arası durum · tarihli kapanış | §1.6 · §5 | [[memory/memory|MEMORY.md]] · [[ops/log|log.md]] |
+| 9 | Navigasyon · anahtar kelimeler · terimler | §1.3 | [[index|index.md]] · [[governance/keys|keys.md]] · [[definitions/glossary|glossary.md]] |
+| 10 | Yeni dosya sözleşmesi (frontmatter/link/boyut) | §7 | [[.templates/new-doc-contract|.templates/new-doc-contract.md]] · [[.templates/index|.templates/index.md]] |
+| 11 | Mimari indeks · rapor indeksi | §1.3 | [[architecture/index|architecture/index.md]] · [[ops/log|reports/index.md]] |
+| 12 | ADR navigasyonu | §1.3 | [[.decisions/adr-index|.decisions/adr-index.md]] |
 | 13 | Prompt kaynağı (end-to-end model, öncelik sırası) | §1.1.4 | `G:/…/versacoder proje planlaması ai.05.md` §47-§51 |
 | 14 | Prompt kaynağı (wizard, MCP sandbox, hibrit bellek) | §1.1 | `G:/…/versacoder proje planlaması ai.06.md` §5.3-§5.6 |
 
-**Doğrulama etiketleri (bu dosya için):** eşzamanlılık limiti + rate limit olayı (2026-09-29, 8 ajan → 3) → `SOURCE_VERIFIED` ([AGENTS.md](agents.md) §7.3, [WORKFLOW.md](../governance/workflow.md) §3.2) · gate süreleri ve kabul kriterleri → `SOURCE_VERIFIED` ([WORKFLOW.md](../governance/workflow.md) §2) · bütçe eşikleri → `INFERRED` (§5'te `~` ile işaretli, ölçülmemiş kestirim) · rate limit olayının model/sağlayıcı ayrıntısı → `DOĞRULAMA GEREKLI` · §1.1.4 end-to-end model → `SOURCE_VERIFIED` (ai.05 §47, 2026-10-07).
-| VISION | [VISION](vision.md) | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
-| PROJECTS | [PROJECTS](projects.md) | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
-| ADR-031 | [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md) | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
+**Doğrulama etiketleri (bu dosya için):** eşzamanlılık limiti + rate limit olayı (2026-09-29, 8 ajan → 3) → `SOURCE_VERIFIED` ([[definitions/agents|AGENTS.md]] §7.3, [[governance/workflow|WORKFLOW.md]] §3.2) · gate süreleri ve kabul kriterleri → `SOURCE_VERIFIED` ([[governance/workflow|WORKFLOW.md]] §2) · bütçe eşikleri → `INFERRED` (§5'te `~` ile işaretli, ölçülmemiş kestirim) · rate limit olayının model/sağlayıcı ayrıntısı → `DOĞRULAMA GEREKLI` · §1.1.4 end-to-end model → `SOURCE_VERIFIED` (ai.05 §47, 2026-10-07).
+| VISION | [[definitions/vision|VISION]] | urun vizyonu — 7 ekran, Studio/IDE kimligi, 4 farklilastirici |
+| PROJECTS | [[definitions/projects|PROJECTS]] | proje envanteri — 9+1-2 proje, dis bagimliliklar, risk defteri |
+| ADR-031 | [[.decisions/draft/adr-031-visual-production-provider|ADR-031]] | gorsel uretim saglayicisi ADR (status: proposed, kapsam A+B+C) |
 | kok README | [kok README](../../readme.md) | depo README — hizli baslangic, Studio/IDE kimligi |
 | kok CLAUDE | [kok CLAUDE](../../claude.md) | kok kural dosyasi (golge — kural metni degil, baglanti) |
 | kok AGENTS | [kok AGENTS](../../agents.md) | kok ajan golgesi (Chat!=Agent!=LLM baglantisi) |

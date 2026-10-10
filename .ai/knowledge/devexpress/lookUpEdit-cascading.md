@@ -14,9 +14,9 @@ supersedes: ""
 
 # Kademeli lookUpEdit (Cascading)
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [data-access-rules](../../.rules/data-access-rules.md) · [grid-editing-modes](grid-editing-modes.md) · [datasource-binding-dapper](datasource-binding-dapper.md) · [grid-filtering-sorting](grid-filtering-sorting.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 4/35):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.rules/devexpress-rules|devexpress-rules]] · [[.rules/data-access-rules|data-access-rules]] · [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] · [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] · [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 4/35):** tam liste → [[knowledge/devexpress/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Il-Ilce gibi bagli listelerde alt liste nasil filtelenir, veri ne zaman Dapper ile yeniden yuklenir* sorusunun tek cevabidir.
 
@@ -114,8 +114,8 @@ private void grid_ShownEditor(object sender, EventArgs e)
 | Ust kolon editörü | `RepositoryItemLookUpEdit` | Designer (DX-10) |
 | Alt kolon kaynagi | `ShownEditor` + `ActiveEditor` | yalniz odaklaninca yuklenir |
 | DB sorgusu | repository (`@p1`) | string-concat **yok** (G2) |
-| Dogrulama | `ValidateRow` (bkz. [grid-editing-modes](grid-editing-modes.md)) | ust/alt tutarliligi |
-| Kaydetme | tek `Execute` + transaction | bkz. [datasource-binding-dapper](datasource-binding-dapper.md) |
+| Dogrulama | `ValidateRow` (bkz. [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]]) | ust/alt tutarliligi |
+| Kaydetme | tek `Execute` + transaction | bkz. [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
 
 ---
 
@@ -149,10 +149,10 @@ private void grid_ShownEditor(object sender, EventArgs e)
 
 | Konu | Dosya |
 |---|---|
-| Grid duzenleme | [grid-editing-modes](grid-editing-modes.md) |
-| Veri kaynagi (Dapper) | [datasource-binding-dapper](datasource-binding-dapper.md) |
+| Grid duzenleme | [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] |
+| Veri kaynagi (Dapper) | [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
 | TreeList duzenleme | `treelist-hierarchical-data` (kardes dosya yok - G7) |
-| Arama/filtre kavrami | [grid-filtering-sorting](grid-filtering-sorting.md) |
+| Arama/filtre kavrami | [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] |
 
 ---
 

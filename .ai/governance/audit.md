@@ -7,12 +7,12 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Her onaylı .ai yazımı için tek satır: kim/tarih/ne/etki/onay ID (D12)"
-tags: [['audit', 'approval', 'd12', 'append-only']]
+tags: [audit, approval, d12, append-only]
 source: "D12 + D18 kararları (2026-10-07 onaylı plan)"
 supersedes: ""
 ---
 
-**Zorunlu Bağlantılar:** [VAULT-GATE](VAULT-GATE.md) · [log](../ops/log.md) · [WORKFLOW](WORKFLOW.md)
+**Zorunlu Bağlantılar:** [[governance/VAULT-GATE|VAULT-GATE]] · [[ops/log|log]] · [[governance/WORKFLOW|WORKFLOW]]
 
 # audit — Onay Kayıtları
 
@@ -44,5 +44,5 @@ supersedes: ""
 
 ## §3 İlgili
 
-- [ops/log](../ops/log.md) — ayrı append-only iş günlüğü
-- [VAULT-GATE](VAULT-GATE.md)
+- [[ops/log|ops/log]] — ayrı append-only iş günlüğü
+- [[governance/VAULT-GATE|VAULT-GATE]]

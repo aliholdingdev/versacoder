@@ -50,5 +50,5 @@ kırılır, kanıt sahte olurdu.
 
 ## §7 İlgili
 
-- [ADR-001-dual-target-net48-net10.md](adr-001-dual-target-net48-net10.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001-dual-target-net48-net10.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Ribbon, ekran üçlüsü, çizim politikası (D22 Unicode kazandı), erişilebilirlik köprüsü"
-tags: [['rules', 'ui', 'ux', 'ribbon', 'd22', 'd46']]
+tags: [rules, ui, ux, ribbon, d22, d46]
 source: "D46 kararı + ADR-015/025 + D22 (Unicode politikası revizyonu → ADR-032 §2.16)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # UI/UX Kuralları
 
@@ -38,7 +38,7 @@ Mermaid diyagramı varsa yanında düz metin karşılığı zorunludur (ADR-020 
 
 ## Erişilebilirlik
 
-- Tam kural metni vault'ta **sınırlı** → [accessibility-rules](accessibility-rules.md)
+- Tam kural metni vault'ta **sınırlı** → [[.rules/accessibility-rules|accessibility-rules]]
   dosyasındaki `DOĞRULAMA GEREKLİ` bölümünü doldurmak şartıyla uygulanır (G9).
 
 ## İhlalde
@@ -51,5 +51,5 @@ RED — tasarım tekrarlanır; onaysız kod silinir (GATE-003).
 
 ## İlgili
 
-- [ADR-025](../.decisions/accepted/adr-025-gate003-ui-hard-stop.md)
-- [devexpress-rules](devexpress-rules.md) · [accessibility-rules](accessibility-rules.md)
+- [[.decisions/accepted/adr-025-gate003-ui-hard-stop|ADR-025]]
+- [[.rules/devexpress-rules|devexpress-rules]] · [[.rules/accessibility-rules|accessibility-rules]]

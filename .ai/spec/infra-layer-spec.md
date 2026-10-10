@@ -14,10 +14,10 @@ supersedes: ""
 
 # VersaCoder — Altyapı Katmanı Şartnamesi (`spec/infra-layer-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [data-layer-spec](data-layer-spec.md) · [security-spec](security-spec.md) · [llm-provider-spec](llm-provider-spec.md) · [tool-contract-spec](tool-contract-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/data-layer-spec|data-layer-spec]] · [[spec/security-spec|security-spec]] · [[spec/llm-provider-spec|llm-provider-spec]] · [[spec/tool-contract-spec|tool-contract-spec]]
 
 > **Tek cümlelik sorumluluk:** *l4'ün sekiz alt katmanı hangi somut teknolojiyi kullanır, hangi arayüzle yukarı döner ve nerede durur* sorusunun tek cevabıdır.
-> Veri erişim **kuralları** [data-layer-spec](data-layer-spec.md)'te, migration akışı [migration-spec](migration-spec.md)'tadır (tekrar yok).
+> Veri erişim **kuralları** [[spec/data-layer-spec|data-layer-spec]]'te, migration akışı [[spec/migration-spec|migration-spec]]'tadır (tekrar yok).
 
 ---
 
@@ -31,11 +31,11 @@ l4 = **tek I/O katmanıdır**: veritabanı (ADO.NET + Dapper), dosya sistemi, gi
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | N25 ado-dapper · N26 sqlite-provider · N27 sqlserver-provider · N28 migrations · N29 fs-tools · N30 git-adapter · N31 llm-http · N32 tool-runner | SQL kuralları (`@p1..@pN`, timeout): [data-layer-spec](data-layer-spec.md) |
-| 2 | Somut teknoloji: `Microsoft.Data.Sqlite` / `SqlClient 5.2.x`, Dapper, `Process`, `HttpClient` | Paket/sürüm kilidi: [packaging-spec](packaging-spec.md) |
-| 3 | Provider soyutlaması (`IDbConnectionFactory`, `ISqlDialect`) | Secret saklama biçimi: [security-spec](security-spec.md) |
-| 4 | LLM HTTP taşıması + streaming okuma | Provider önceliği/sağlayıcılar: [llm-provider-spec](llm-provider-spec.md) |
-| 5 | tool-runner = çağrıyı sandbox + timeout ile çalıştırma | İzin/sandbox şeması: [tool-contract-spec](tool-contract-spec.md) |
+| 1 | N25 ado-dapper · N26 sqlite-provider · N27 sqlserver-provider · N28 migrations · N29 fs-tools · N30 git-adapter · N31 llm-http · N32 tool-runner | SQL kuralları (`@p1..@pN`, timeout): [[spec/data-layer-spec|data-layer-spec]] |
+| 2 | Somut teknoloji: `Microsoft.Data.Sqlite` / `SqlClient 5.2.x`, Dapper, `Process`, `HttpClient` | Paket/sürüm kilidi: [[spec/packaging-spec|packaging-spec]] |
+| 3 | Provider soyutlaması (`IDbConnectionFactory`, `ISqlDialect`) | Secret saklama biçimi: [[spec/security-spec|security-spec]] |
+| 4 | LLM HTTP taşıması + streaming okuma | Provider önceliği/sağlayıcılar: [[spec/llm-provider-spec|llm-provider-spec]] |
+| 5 | tool-runner = çağrıyı sandbox + timeout ile çalıştırma | İzin/sandbox şeması: [[spec/tool-contract-spec|tool-contract-spec]] |
 
 > **YASAK:** EF Core (G2) · string-concat SQL (DA-03) · somut bağlantı tipini `Application`/`Domain`'e açmak (DA-04) · l4 dışına `HttpClient`/`Process` sızdırmak.
 

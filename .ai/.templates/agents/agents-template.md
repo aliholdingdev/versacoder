@@ -14,7 +14,7 @@ supersedes: ""
 
 # Agent Profil Şablonu — `.ai/.agents/<rol>.md`
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/solid-rules]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]] · [[glossary]] · [[.rules/coding-standards]] · [[.rules/solid-rules]]
 
 > Bu dosya **şablondur, içerik değil**. `## §1`..`## §7` başlıkları **silinemez, adlandırılamaz, sıralanamaz**.
 
@@ -141,7 +141,7 @@ tipi bozuksa **G1**, `authority` değeri değişmişse **G2** ihlali sayılır.
 ```markdown
 # <Rol Adı> — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]]
 · [[glossary]] · [[.rules/<ilgili-3-kural>]] |
 
 > <Tek cümlelik rol özeti — 25 kelimeyi geçmez.>
@@ -231,7 +231,7 @@ Tek çit içinde, sırayla. Başlıklar aynen korunur; satır sayısı bilinçli
 ```markdown
 # Developer — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[.rules/coding-standards]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]] · [[.rules/coding-standards]]
 
 > C# üretim kodunu yazar, derler, testini geçirir; tasarım ve ADR'ye dokunmaz.
 
@@ -329,7 +329,7 @@ authority: primary
 
 # {{DISPLAY_NAME}} — VersaCoder Agent Profili
 
-**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[WORKFLOW]] · [[ARCHITECTURE]] · [[.rules/{{RULE_1}}]]
+**Zorunlu Bağlantılar:** [[index|index]] · [[AGENTS]] · [[governance/WORKFLOW]] · [[architecture/index]] · [[.rules/{{RULE_1}}]]
 
 > {{ROLE_TAGLINE_25_WORDS_MAX}}
 

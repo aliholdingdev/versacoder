@@ -14,13 +14,13 @@ supersedes: ""
 
 # VersaCoder — Genel Doküman (docs-md) Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[./root-md-template]] · [[./readme-template]] · [[../architecture/ascii-diagram-template]] · [[../adr/adr-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[./root-md-template]] · [[./readme-template]] · [[.templates/architecture/ascii-diagram-template]] · [[.templates/adr/adr-template]]
 
 ---
 
 ## §1 Amaç
 
-Bu şablon, `.ai/` altında **içerik ağırlıklı her belgeyi** (`documentation/`, `reports/`, `.rules/`, `spec/`, `learning/`) tek biçimde yazdırır: frontmatter'lı, 7 bölümlü, çapraz bağlı, kanıt etiketli, bozuk linksiz. `T-DOK`'un genel belge ayağıdır; kök belge `[[root-md-template]]`, README `[[readme-template]]`, ADR `[[../adr/adr-template]]` kapsamındadır.
+Bu şablon, `.ai/` altında **içerik ağırlıklı her belgeyi** (`documentation/`, `reports/`, `.rules/`, `spec/`, `learning/`) tek biçimde yazdırır: frontmatter'lı, 7 bölümlü, çapraz bağlı, kanıt etiketli, bozuk linksiz. `T-DOK`'un genel belge ayağıdır; kök belge `[[root-md-template]]`, README `[[readme-template]]`, ADR `[[.templates/adr/adr-template]]` kapsamındadır.
 
 | Alan | Değer |
 |------|-------|
@@ -76,9 +76,9 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 | Bu Şablon (docs-md) | Değil → Doğru Şablon |
 |---------------------|----------------------|
 | `.ai/documentation/<konu>.md` genel anlatım | `.ai/` kök omurgası → `[[root-md-template]]` |
-| `.ai/reports/*-analizi.md` bulgu/rapor | Karar → `[[../adr/adr-template]]` |
+| `.ai/reports/*-analizi.md` bulgu/rapor | Karar → `[[.templates/adr/adr-template]]` |
 | `.ai/.rules/*.md` kural metni | Depo/katman README → `[[readme-template]]` |
-| `.ai/spec/*.md` şartname | Tel kafes → `[[../ui-design/wireframe-template]]` |
+| `.ai/spec/*.md` şartname | Tel kafes → `[[.templates/ui-design/wireframe-template]]` |
 | `.ai/learning/**` rehber/öğrenme notu | API referansı → `api-doc-template` (Part D, planlı ⚠️) |
 | `type: index` belge indeksi | Wiki sayfası → `WikiPage-Template` (Part D, planlı ⚠️) |
 
@@ -108,7 +108,7 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 ## §2 Kapsam
 
 **İçinde:** genel belge frontmatter'i, 7 bölüm iskeleti, bağlantı dili, kanıt etiketleri, yazım biçimi, ASCII diyagram kullanımı, belgeye özgü doğrulama.
-**Dışında:** kök MD iskeleti (`[[root-md-template]]`), README (`[[readme-template]]`), ADR (`[[../adr/adr-template]]`), API doc / Wiki / katman README / güvenlik denetimi (Part D, planlı), tel kafes, kod.
+**Dışında:** kök MD iskeleti (`[[root-md-template]]`), README (`[[readme-template]]`), ADR (`[[.templates/adr/adr-template]]`), API doc / Wiki / katman README / güvenlik denetimi (Part D, planlı), tel kafes, kod.
 
 | Kapsam | Kapsam Dışı |
 |--------|-------------|
@@ -128,7 +128,7 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 | 4 | `.ai/spec/*.md` (şartname) | `spec` | **bu dosya** | C |
 | 5 | `.ai/{index,AGENTS,CLAUDE,WORKFLOW,…}.md` kök omurga | `index`/`registry` | `[[root-md-template]]` | C |
 | 6 | `README.md` (depo/katman/klasör) | `readme` | `[[readme-template]]` | C |
-| 7 | `.ai/adr/ADR-NNN-*.md` mimari/veri/güvenlik kararı | `adr` | `[[../adr/adr-template]]` (+5 varyant) | A |
+| 7 | `.ai/adr/ADR-NNN-*.md` mimari/veri/güvenlik kararı | `adr` | `[[.templates/adr/adr-template]]` (+5 varyant) | A |
 | 8 | `.ai/documentation/api/*.md` · `wiki/*.md` · güvenlik raporu | `api`/`wiki`/`security` | Part D şablonları ⚠️ PLANLI | D |
 
 ### §2.2 Kapsam Sınırı Testi
@@ -137,8 +137,8 @@ Belge en kolay "boş sayfadan" yazılır: kimse iskeleti bilmez, herkes farklı 
 
 1. **`.ai/` kökünde mi, 14 omurga dosyasından biri mi?** → `[[root-md-template]]`.
 2. **`README.md` adını mı taşıyor?** → `[[readme-template]]`.
-3. **`ADR-` ile mi başlıyor / geri alınabilir karar mı?** → `[[../adr/adr-template]]`.
-4. **`.ai/ui-design/` altındaki ekran/tel kafes mi?** → `[[../ui-design/wireframe-template]]`.
+3. **`ADR-` ile mi başlıyor / geri alınabilir karar mı?** → `[[.templates/adr/adr-template]]`.
+4. **`.ai/ui-design/` altındaki ekran/tel kafes mi?** → `[[.templates/ui-design/wireframe-template]]`.
 5. **`.cs` / `.sql` üretiyor mu?** → backend/infrastructure şablonları.
 6. **Yukarıdakilerin hiçbiri değilse ve içerik `.ai/**` içindeyse** → **bu şablon**.
 
@@ -193,7 +193,7 @@ part: C
 
 # <Belge Adı>
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../keys.md]] · [[<ilgili>]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[governance/keys]] · [[<ilgili>]]
 
 > **Tek cümlelik sorumluluk:** Bu dosya <X> sorusunun tek cevabıdır.
 
@@ -245,12 +245,12 @@ part: C
 
 | # | Kural | Doğru | Yanlış |
 |---|-------|-------|--------|
-| 1 | Vault içi referans **wiki biçimi** | `[[../index]]` · `[[../.rules/coding-standards]]` | `[index](../yok.md)` |
-| 2 | Yol **dosyadan göreli**, `..` ile yüksel | `.ai/reports/x.md` → `[[../index]]` | `[x](../../../….md)` |
+| 1 | Vault içi referans **wiki biçimi** | `[[.templates/index]]` · `[[.templates/.rules/coding-standards]]` | `[[.templates/yok|index]]` |
+| 2 | Yol **dosyadan göreli**, `..` ile yüksel | `.ai/reports/x.md` → `[[.templates/index]]` | `[x](../../../….md)` |
 | 3 | Bağlantı satırı **tek**, H1'den sonra | 4–6 bağlantı | her paragraf bağlantı |
 | 4 | Hedef **diskte yoksa** bağlantı yazılmaz | yalnız ad + `⚠️` | kırık `](…)` |
 | 5 | Kod içi yol **code span** | `` `.ai/.rules/security-rules.md` `` | bağlantı gibi yazmak |
-| 6 | Bağlantı **açıklamalı** | `[[../keys]]` (dosya zaten biliniyor) | `[buraya tıklayın](…)` |
+| 6 | Bağlantı **açıklamalı** | `[[governance/keys]]` (dosya zaten biliniyor) | `[[.templates/documentation/…|buraya tıklayın]]` |
 
 ### §3.5 Kanıt ve Etiket Sistemi
 
@@ -283,7 +283,7 @@ Her iddia bir etiket taşır; etiketsiz iddia **RED**'dir (G5 benzeri).
 
 ### §3.7 ASCII Diyagram Kuralı
 
-Belge bir **akış / hiyerarşi / döngü** anlatıyorsa `[[../architecture/ascii-diagram-template]]` kuralıyla tek kutu çizilir:
+Belge bir **akış / hiyerarşi / döngü** anlatıyorsa `[[.templates/architecture/ascii-diagram-template]]` kuralıyla tek kutu çizilir:
 
 | Kural | Değer | Denetim |
 |-------|-------|---------|
@@ -333,7 +333,7 @@ part: C
 
 # {{BELGE_ADI}}
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../keys.md]] · {{ILGILI_BAGLANTI}}
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[governance/keys]] · {{ILGILI_BAGLANTI}}
 
 > **Tek cümlelik sorumluluk:** Bu dosya {{TEK_CUMLE}}.
 

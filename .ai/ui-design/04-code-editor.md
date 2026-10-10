@@ -14,7 +14,7 @@ supersedes: ""
 
 # 04 — CODE EDITOR
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [02-main-ide](02-main-ide.md) · [03-solution-explorer](03-solution-explorer.md) · [.rules/data-access-rules.md](../.rules/data-access-rules.md) · [spec/test-strategy.md](../spec/test-strategy.md) · [devexpress-rules](../.rules/devexpress-rules.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[ui-design/02-main-ide|02-main-ide]] · [[ui-design/03-solution-explorer|03-solution-explorer]] · [[.rules/data-access-rules|.rules/data-access-rules.md]] · [[spec/test-strategy|spec/test-strategy.md]] · [[.rules/devexpress-rules|devexpress-rules]]
 
 > **Tek cümlelik sorumluluk:** Kod editörünün hangi panellerden oluştuğu, kaydetme/analiz
 > akışının nereye gittiği sorusunun tek cevabıdır.
@@ -114,8 +114,8 @@ analiz yok → Problems "tarama yapılmadı" satırı; derleme hatası → ilgil
 | # | Kaynak | Ne kanıtlar |
 |---|---|---|
 | 1 | Kaynak wireframe `ui-design/04-code-editor.md` (eski vault) | panel/yerleşim listesi |
-| 2 | [spec/test-strategy.md](../spec/test-strategy.md) | editör yollarının test kapsamı |
-| 3 | [devexpress-rules](../.rules/devexpress-rules.md) | sürüm + `#if` kuralı |
-| 4 | [.rules/data-access-rules.md](../.rules/data-access-rules.md) DA-01 | dosya I/O serviste |
+| 2 | [[spec/test-strategy|spec/test-strategy.md]] | editör yollarının test kapsamı |
+| 3 | [[.rules/devexpress-rules|devexpress-rules]] | sürüm + `#if` kuralı |
+| 4 | [[.rules/data-access-rules|.rules/data-access-rules.md]] DA-01 | dosya I/O serviste |
 
 > `ICodeAnalysisService` adı taslaktır — `l0` içinde kesinleşmesi `DOĞRULAMA GEREKLİ`.

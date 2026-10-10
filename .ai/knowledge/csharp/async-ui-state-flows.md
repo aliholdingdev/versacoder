@@ -14,9 +14,9 @@ supersedes: ""
 
 # Async UI Durum Akislari
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Async Kurallari](../../.rules/async-rules.md) | [Iptal Tokeni](cancellation-token-policy.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 3/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [channel-queue-patterns](channel-queue-patterns.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [testing-determinism](testing-determinism.md) · [threading-locking](threading-locking.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.rules/async-rules|Async Kurallari]] | [[knowledge/csharp/cancellation-token-policy|Iptal Tokeni]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 3/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/channel-queue-patterns|channel-queue-patterns]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/testing-determinism|testing-determinism]] · [[knowledge/csharp/threading-locking|threading-locking]]
 
 > **Tek cumlelik sorumluluk:** UI'da await senkron baglami korur; busy durum `finally`'de geri alinir, iptal hata degildir.
 
@@ -99,12 +99,12 @@ public async Task<Kayit?> BulAsync(int id, CancellationToken ct)
 
 - Iptal yolu testi zorunlu; yalniz mutlu yol bu dosyanin kaniti sayilmaz.
 - Busy geri alma, hata senaryosunda ayri test edilir (buton tekrar acik mi).
-- Bloklayici kalip taramasi: `.Result|.Wait()|async void` gecen satirlar incelenir. Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- Bloklayici kalip taramasi: `.Result|.Wait()|async void` gecen satirlar incelenir. Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Async Kurallari](../../.rules/async-rules.md) · [Iptal Tokeni](cancellation-token-policy.md) · [Task vs ValueTask](task-vs-value-task.md) · [C Sharp Index](index.md)
+- [[.rules/async-rules|Async Kurallari]] · [[knowledge/csharp/cancellation-token-policy|Iptal Tokeni]] · [[knowledge/csharp/task-vs-value-task|Task vs ValueTask]] · [[knowledge/csharp/index|C Sharp Index]]
 
 ## §9 Kanit
-- Kurallar (A1..A10) ve istisna tablosu async kural dosyasindan derlendi. Kaynak: [Async Kurallari](../../.rules/async-rules.md), 2026-09-25.
-- Temel yasaklar kodlama standartlarinda (CS-03/04/06); cakisma yok, derinlik async dosyada. Kaynak: [Kodlama Standartlari](../../.rules/coding-standards.md).
+- Kurallar (A1..A10) ve istisna tablosu async kural dosyasindan derlendi. Kaynak: [[.rules/async-rules|Async Kurallari]], 2026-09-25.
+- Temel yasaklar kodlama standartlarinda (CS-03/04/06); cakisma yok, derinlik async dosyada. Kaynak: [[.rules/coding-standards|Kodlama Standartlari]].

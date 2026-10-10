@@ -14,9 +14,9 @@ supersedes: ""
 
 # Form Constructor mi, Load mi?
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [designer-cs-trio-rule](designer-cs-trio-rule.md) · [form-load-and-shown-events](form-load-and-shown-events.md) · [async-void-event-handlers](async-void-event-handlers.md) · [di-container-lifetimes](di-container-lifetimes.md)
-**Küme + Hub:** [winforms index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (winforms 5/32):** tam liste → [index](index.md) (kompakt kip — dosya 8 KB bandını korumak için)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[knowledge/winforms/designer-cs-trio-rule|designer-cs-trio-rule]] · [[knowledge/winforms/form-load-and-shown-events|form-load-and-shown-events]] · [[knowledge/winforms/async-void-event-handlers|async-void-event-handlers]] · [[knowledge/winforms/di-container-lifetimes|di-container-lifetimes]]
+**Küme + Hub:** [[knowledge/winforms/index|winforms index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (winforms 5/32):** tam liste → [[knowledge/winforms/index|index]] (kompakt kip — dosya 8 KB bandını korumak için)
 
 > **Tek cumlelik sorumluluk:** *Formun ilk isi (kayit acma, veri getirme, pencere konumu) constructor'da mi yoksa `Load` / `Shown`'da mi yapilir* sorusunun tek cevabidir.
 

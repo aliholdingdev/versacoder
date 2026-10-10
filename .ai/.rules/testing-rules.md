@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "Çift TFM, TDD, coverage %90, TreatWarningsAsErrors, NetArchTest"
-tags: [['rules', 'testing', 'tdd', 'g6', 'g16', 'coverage']]
+tags: [rules, testing, tdd, g6, g16, coverage]
 source: "Birleştirme: .ai/CLAUDE.md G6 + kök CLAUDE.md G11 + brain.md §3/3 + ADR-019"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [rules-index](index.md) · [CLAUDE](../claude.md) · [ADR defteri](../.decisions/adr-index.md) · [brain](../.decisions/brain.md) · [WORKFLOW](../governance/workflow.md) · [VAULT-GATE](../governance/vault-gate.md)
+**Zorunlu Bağlantılar:** [[.rules/index|rules-index]] · [[claude|CLAUDE]] · [[.decisions/adr-index|ADR defteri]] · [[.decisions/brain|brain]] · [[governance/workflow|WORKFLOW]] · [[governance/vault-gate|VAULT-GATE]]
 
 # Test Kuralları (G6 G16)
 
@@ -35,7 +35,7 @@ Kanıt: iki ayrı derleme, 0 hata.
 ## Sonuç taşıma
 
 Testlerde beklenen sonuç `Result<T>` üzerinden assert edilir; exception testi
-yalnız beklenmeyen çökme içindir ([error-handling-rules](error-handling-rules.md)).
+yalnız beklenmeyen çökme içindir ([[.rules/error-handling-rules|error-handling-rules]]).
 
 ## İhlalde
 
@@ -48,5 +48,5 @@ HIGH — "bitti" denemez (G5); iş tamamlanmadı sayılır.
 
 ## İlgili
 
-- [ADR-001](../.decisions/accepted/adr-001-dual-target-net48-net10.md)
-- [ADR-019](../.decisions/accepted/adr-019-dual-leg-build-test.md)
+- [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001]]
+- [[.decisions/accepted/adr-019-dual-leg-build-test|ADR-019]]

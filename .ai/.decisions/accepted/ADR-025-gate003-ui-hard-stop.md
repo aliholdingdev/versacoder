@@ -47,5 +47,5 @@ yazılır, onay zinciri koparıdı.
 
 ## §7 İlgili
 
-- [ADR-015-winforms-form-triple-designer.md](adr-015-winforms-form-triple-designer.md)
-- [adr-index](../adr-index.md) · [brain](../brain.md)
+- [[.decisions/accepted/adr-015-winforms-form-triple-designer|ADR-015-winforms-form-triple-designer.md]]
+- [[.decisions/adr-index|adr-index]] · [[.decisions/brain|brain]]

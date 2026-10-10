@@ -14,7 +14,7 @@ supersedes: ""
 
 # ASCII Box-Drawing Yeniden Yazma Promptu
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [keys](../governance/keys.md) · [CLAUDE](../claude.md) · [templates index](index.md) · [coding-standards](../.rules/coding-standards.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[governance/keys|keys]] · [[claude|CLAUDE]] · [[.templates/index|templates index]] · [[.rules/coding-standards|coding-standards]]
 
 > **Tek cümlelik sorumluluk:** Bir belgedeki tüm diyagramları/şemaları, izinli
 > **ASCII `+ - |` alfabesiyle** hizalı, kesişimi doğru, doğrulanmış biçimde
@@ -25,7 +25,7 @@ supersedes: ""
 
 > **ADR-029 (2026-10-01):** Unicode box-drawing (`U+2500-U+257F`) yasaktır;
 > bu dosyanın eski sürümü (v1.0.0, `unicode-box-drawing-prompt.md`) emekliye
-> ayrılmıştır. Kural kaynağı: [ADR-029](../.decisions/accepted/adr-029-ascii-box-drawing-only.md) · `CLAUDE.md` G4.
+> ayrılmıştır. Kural kaynağı: [[.decisions/accepted/adr-029-ascii-box-drawing-only|ADR-029]] · `CLAUDE.md` G4.
 
 ---
 
@@ -120,6 +120,6 @@ SIMDI BASLA: <HEDEF DOSYA YOLU>
 | C4 | BOM/LF | Vault dosyaları UTF-8 **BOM'suz** (ADR-003) |
 | C5 | Düzeltilemeyeni işaretle | Uydurma kutu = sahte kanıt; etiketle + sebeple |
 
-**İlgili:** [ADR-029](../.decisions/accepted/adr-029-ascii-box-drawing-only.md) (ASCII-only kararı) · [ADR-020](../.decisions/accepted/adr-020-no-mermaid-only-box-drawing.md) (`superseded`; D3 mermaid kuralı yürürlükte) · [ADR-013](../.decisions/accepted/adr-013-layered-architecture-52-nodes.md) · [ascii-diagram-template](architecture/ascii-diagram-template.md) (64 kolon standardı)
+**İlgili:** [[.decisions/accepted/adr-029-ascii-box-drawing-only|ADR-029]] (ASCII-only kararı) · [[.decisions/accepted/adr-020-no-mermaid-only-box-drawing|ADR-020]] (`superseded`; D3 mermaid kuralı yürürlükte) · [[.decisions/accepted/adr-013-layered-architecture-52-nodes|ADR-013]] · [[.templates/architecture/ascii-diagram-template|ascii-diagram-template]] (64 kolon standardı)
 
 **Değişiklik günlüğü:** 2026-09-25 — ilk yazım (Unicode box-drawing). · 2026-10-01 — ADR-029 ile ASCII'ye çevrildi, dosya `unicode-box-drawing-prompt.md` → bu dosya (v2.0.0).

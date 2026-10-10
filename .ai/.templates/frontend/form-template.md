@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — WinForms Form (XForm.cs) Şablonu
 
-**Zorunlu Bağlantılar:** [[../index]] · [[../CLAUDE.md]] · [[../architecture/ascii-diagram-template]] · [[component-template]] · [[ribbon-template]] · [[../adr/adr-devexpress-template]]
+**Zorunlu Bağlantılar:** [[.templates/index]] · [[.templates/index]] · [[.templates/architecture/ascii-diagram-template]] · [[component-template]] · [[ribbon-template]] · [[.templates/adr/adr-devexpress-template]]
 
 ---
 

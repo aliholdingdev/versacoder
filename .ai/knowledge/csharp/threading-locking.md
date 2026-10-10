@@ -14,9 +14,9 @@ supersedes: ""
 
 # Thread ve Kilit (Locking) Desenleri
 
-**Zorunlu Baglantilar:** [Knowledge Index](../index.md) | [CLAUDE](../../claude.md) | [Async Kurallari](../../.rules/async-rules.md) · [Kodlama Standartlari](../../.rules/coding-standards.md) | [C Sharp Index](index.md)
-**Küme + Hub:** [index](../../index.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (csharp · 2/28):** [assertion-quality](assertion-quality.md) · [async-await-basics](async-await-basics.md) · [async-ui-state-flows](async-ui-state-flows.md) · [cancellation-token-policy](cancellation-token-policy.md) · [collections-choice](collections-choice.md) · [constants-and-magic-values](constants-and-magic-values.md) · [exception-handling-patterns](exception-handling-patterns.md) · [generics-constraints](generics-constraints.md) · [guard-clauses-and-method-shape](guard-clauses-and-method-shape.md) · [interfaces-vs-abstract](interfaces-vs-abstract.md) · [language-versions-net48-net10](language-versions-net48-net10.md) · [layer-dependency-direction](layer-dependency-direction.md) · [linq-performance-pitfalls](linq-performance-pitfalls.md) · [multi-targeting-props](multi-targeting-props.md) · [naming-and-comments](naming-and-comments.md) · [nullable-reference-types](nullable-reference-types.md) · [pattern-matching](pattern-matching.md) · [records-and-immutability](records-and-immutability.md) · [resource-disposal-patterns](resource-disposal-patterns.md) · [result-type-design](result-type-design.md) · [retry-and-timeout-policy](retry-and-timeout-policy.md) · [serialization-choices](serialization-choices.md) · [solid-principles-applications](solid-principles-applications.md) · [span-interop-net10](span-interop-net10.md) · [task-vs-value-task](task-vs-value-task.md) · [testing-determinism](testing-determinism.md)
+**Zorunlu Baglantilar:** [[knowledge/index|Knowledge Index]] | [[claude|CLAUDE]] | [[.rules/async-rules|Async Kurallari]] · [[.rules/coding-standards|Kodlama Standartlari]] | [[knowledge/csharp/index|C Sharp Index]]
+**Küme + Hub:** [[index|index]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (csharp · 2/28):** [[knowledge/csharp/assertion-quality|assertion-quality]] · [[knowledge/csharp/async-await-basics|async-await-basics]] · [[knowledge/csharp/async-ui-state-flows|async-ui-state-flows]] · [[knowledge/csharp/cancellation-token-policy|cancellation-token-policy]] · [[knowledge/csharp/collections-choice|collections-choice]] · [[knowledge/csharp/constants-and-magic-values|constants-and-magic-values]] · [[knowledge/csharp/exception-handling-patterns|exception-handling-patterns]] · [[knowledge/csharp/generics-constraints|generics-constraints]] · [[knowledge/csharp/guard-clauses-and-method-shape|guard-clauses-and-method-shape]] · [[knowledge/csharp/interfaces-vs-abstract|interfaces-vs-abstract]] · [[knowledge/csharp/language-versions-net48-net10|language-versions-net48-net10]] · [[knowledge/csharp/layer-dependency-direction|layer-dependency-direction]] · [[knowledge/csharp/linq-performance-pitfalls|linq-performance-pitfalls]] · [[knowledge/csharp/multi-targeting-props|multi-targeting-props]] · [[knowledge/csharp/naming-and-comments|naming-and-comments]] · [[knowledge/csharp/nullable-reference-types|nullable-reference-types]] · [[knowledge/csharp/pattern-matching|pattern-matching]] · [[knowledge/csharp/records-and-immutability|records-and-immutability]] · [[knowledge/csharp/resource-disposal-patterns|resource-disposal-patterns]] · [[knowledge/csharp/result-type-design|result-type-design]] · [[knowledge/csharp/retry-and-timeout-policy|retry-and-timeout-policy]] · [[knowledge/csharp/serialization-choices|serialization-choices]] · [[knowledge/csharp/solid-principles-applications|solid-principles-applications]] · [[knowledge/csharp/span-interop-net10|span-interop-net10]] · [[knowledge/csharp/task-vs-value-task|task-vs-value-task]] · [[knowledge/csharp/testing-determinism|testing-determinism]]
 
 > **Tek cumlelik sorumluluk:** Kilitleme kucuk ve disari acilamayan olsun; kilit nesnesi disindan erisilebiliyorsa emniyet yoktur.
 
@@ -88,13 +88,13 @@ public int Artir() => Interlocked.Increment(ref _sayac);  // kilit yok
 
 - Eyni anda cagri testi: paralel cagirida beklenen sayiyi `Assert.AreEqual` ile kilitle.
 - Deadlock testi icin zaman siniri koy; kilitlenen test suite'i durdurur.
-- Kilit mantigi testte dogrulanamazsa kod kucult - buyuk kritik bolge test edilemez. Detay: [Test Kurallari](../../.rules/testing-rules.md).
+- Kilit mantigi testte dogrulanamazsa kod kucult - buyuk kritik bolge test edilemez. Detay: [[.rules/testing-rules|Test Kurallari]].
 
 ## §8 İlgili Kaynaklar
 
-- [Async Kurallari](../../.rules/async-rules.md) · [Kodlama Standartlari](../../.rules/coding-standards.md) · [Kanal ve Kuyruk](channel-queue-patterns.md) · [C Sharp Index](index.md)
+- [[.rules/async-rules|Async Kurallari]] · [[.rules/coding-standards|Kodlama Standartlari]] · [[knowledge/csharp/channel-queue-patterns|Kanal ve Kuyruk]] · [[knowledge/csharp/index|C Sharp Index]]
 
 ## §9 Kanit
 
-- Kilit disari acilamaz + await'li bolge Semaphore'a gecer kurallari async kural setiyle uyumlu. Kaynak: [Async Kurallari](../../.rules/async-rules.md).
+- Kilit disari acilamaz + await'li bolge Semaphore'a gecer kurallari async kural setiyle uyumlu. Kaynak: [[.rules/async-rules|Async Kurallari]].
 - Ornekler `Interlocked` ve `lock` sinirlariyla sinirli tutuldu; `Monitor`/`ReaderWriterLockSlim` detaylari kaynak vault'ta, surum notlari icin DOĞRULAMA GEREKLİ.

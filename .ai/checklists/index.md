@@ -14,7 +14,7 @@ supersedes: ""
 
 # checklists — Kapi ve Denetim Listeleri Indeksi
 
-**Zorunlu Baglantilar:** [vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [TODOS index](../ops/todos/index.md)
+**Zorunlu Baglantilar:** [[index|vault index]] · [[governance/workflow|WORKFLOW]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[ops/todos/index|TODOS index]]
 
 > **Tek cumlelik sorumluluk:** Bir isin hangi denetim listesinden gectigini, o listeyi
 > ne zaman ve kimin calistiracagini ve RED uretirse ne olacagini tek tabloda soyler.
@@ -34,41 +34,41 @@ GATE-004a (vault olcumu)  -->  GATE-003 (wireframe + onay)  -->
 GATE-004 (iskelet + build + ilk commit)  -->  GATE-005 (test + kapsam)  -->  GATE-006 (teslim)
 ```
 
-> Kapilar [WORKFLOW](../governance/workflow.md) §1 ile ayni siradadir; **atlanan kapi geri gelir**.
+> Kapilar [[governance/workflow|WORKFLOW]] §1 ile ayni siradadir; **atlanan kapi geri gelir**.
 > Her kapida once bu dizindeki ilgili liste calistirilir, sonra kanit kutusu doldurulur.
 
 ## §1 Sert Kapi Listeleri (5 — WORKFLOW §2 kaynakli)
 
 | # | Liste | Kapi | Referans | Ne denetler |
 |---|---|---|---|---|
-| 1 | [gate-003-ui-onay.md](gate-003-ui-onay.md) | GATE-003 | 17 | 7 wireframe + DevExpress v26.1 + RibbonForm + kullanici onayi (HARD STOP) |
-| 2 | [gate-004-ilk-commit.md](gate-004-ilk-commit.md) | GATE-004 | 5 | cift bacak build 0 hata + NoWarn 0 + ilk commit kurallari |
-| 3 | [gate-004a-vault-kapanis.md](gate-004a-vault-kapanis.md) | GATE-004a | 9 | vault olcumu: 500 MD · 0 bozuk link · 0 mojibake · frontmatter 8 alan |
-| 4 | [gate-005-test-kapsami.md](gate-005-test-kapsami.md) | GATE-005 | 6 | dotnet test 0 basarisiz + NetArchTest 0 ihlal + coverage gerekcesi |
-| 5 | [layer-boundary-check.md](layer-boundary-check.md) | GATE-005 (madde 3) | 76 | katman siniri 13 soru — ADR-028 8x8 matris |
+| 1 | [[checklists/gate-003-ui-onay|gate-003-ui-onay.md]] | GATE-003 | 17 | 7 wireframe + DevExpress v26.1 + RibbonForm + kullanici onayi (HARD STOP) |
+| 2 | [[checklists/gate-004-ilk-commit|gate-004-ilk-commit.md]] | GATE-004 | 5 | cift bacak build 0 hata + NoWarn 0 + ilk commit kurallari |
+| 3 | [[checklists/gate-004a-vault-kapanis|gate-004a-vault-kapanis.md]] | GATE-004a | 9 | vault olcumu: 500 MD · 0 bozuk link · 0 mojibake · frontmatter 8 alan |
+| 4 | [[checklists/gate-005-test-kapsami|gate-005-test-kapsami.md]] | GATE-005 | 6 | dotnet test 0 basarisiz + NetArchTest 0 ihlal + coverage gerekcesi |
+| 5 | [[checklists/layer-boundary-check|layer-boundary-check.md]] | GATE-005 (madde 3) | 76 | katman siniri 13 soru — ADR-028 8x8 matris |
 
 ## §2 ADR Esmeli Denetimler (18 — brain.md §1.1 kaynakli)
 
 | # | Liste | Bagli ADR | Referans | Ne denetler |
 |---|---|---|---|---|
-| 1 | [accessibility-check.md](accessibility-check.md) | — | 0 | klavye, odak, AccessibleName, kontrast |
-| 2 | [coverage-gate-check.md](coverage-gate-check.md) | 019 (gate-005) | 3 | coverage bani + atlanan test 0 |
-| 3 | [data-access-check.md](data-access-check.md) | 005 · 016 | 1 | EF 0 · DbConnection yalniz l4 |
-| 4 | [dependency-update-check.md](dependency-update-check.md) | 012 · 014 | 0 | CPM tek yer, .csproj Version=0 |
-| 5 | [devexpress-control-check.md](devexpress-control-check.md) | 004 | 0 | yalniz DevExpress v26.1, l7 disi sismiyor |
-| 6 | [documentation-check.md](documentation-check.md) | 002 · 024 · 029 | 2 | sifirdan yazim, kopya yok, ASCII kutu 0 |
-| 7 | [dual-tfm-build-check.md](dual-tfm-build-check.md) | 001 · 019 | 2 | cift TFM build/test; #if yalniz platform |
-| 8 | [layer-5000-check.md](layer-5000-check.md) | 030 | 4 | 5000+ tip katmani, 4 kademe, 3 eksen |
-| 9 | [logging-observability-check.md](logging-observability-check.md) | 026 | 0 | structured log, 5 seviye disi 0 |
-| 10 | [migration-check.md](migration-check.md) | 005 | 0 | saf SQL + schema_version, ORM migration yok |
-| 11 | [performance-budget-check.md](performance-budget-check.md) | — | 1 | olculmus butce; kanitsiz performans iddiasi 0 |
-| 12 | [ribbon-style-check.md](ribbon-style-check.md) | 004 | 0 | yalniz RibbonControlStyle.Office2010 |
-| 13 | [secret-leak-check.md](secret-leak-check.md) | 011 · 018 | 3 | kod/repoda secret 0, DPAPI |
-| 14 | [security-review-checklist.md](security-review-checklist.md) | 018 | 3 | OWASP kalemleri + yetkilendirme |
-| 15 | [session-handoff-check.md](session-handoff-check.md) | 007 | 0 | devir paketi 4 madde + derinlik <= 2 |
-| 16 | [sql-injection-review.md](sql-injection-review.md) | 017 | 2 | concat SQL 0, parametreli sorgu |
-| 17 | [vault-link-check.md](vault-link-check.md) | 003 · 021 | 1 | bozuk link 0, her dizinde tek indeks |
-| 18 | [winforms-designer-check.md](winforms-designer-check.md) | 015 | 2 | .Form.cs + .Designer.cs + .resx uclusu |
+| 1 | [[checklists/accessibility-check|accessibility-check.md]] | — | 0 | klavye, odak, AccessibleName, kontrast |
+| 2 | [[checklists/coverage-gate-check|coverage-gate-check.md]] | 019 (gate-005) | 3 | coverage bani + atlanan test 0 |
+| 3 | [[checklists/data-access-check|data-access-check.md]] | 005 · 016 | 1 | EF 0 · DbConnection yalniz l4 |
+| 4 | [[checklists/dependency-update-check|dependency-update-check.md]] | 012 · 014 | 0 | CPM tek yer, .csproj Version=0 |
+| 5 | [[checklists/devexpress-control-check|devexpress-control-check.md]] | 004 | 0 | yalniz DevExpress v26.1, l7 disi sismiyor |
+| 6 | [[checklists/documentation-check|documentation-check.md]] | 002 · 024 · 029 | 2 | sifirdan yazim, kopya yok, ASCII kutu 0 |
+| 7 | [[checklists/dual-tfm-build-check|dual-tfm-build-check.md]] | 001 · 019 | 2 | cift TFM build/test; #if yalniz platform |
+| 8 | [[checklists/layer-5000-check|layer-5000-check.md]] | 030 | 4 | 5000+ tip katmani, 4 kademe, 3 eksen |
+| 9 | [[checklists/logging-observability-check|logging-observability-check.md]] | 026 | 0 | structured log, 5 seviye disi 0 |
+| 10 | [[checklists/migration-check|migration-check.md]] | 005 | 0 | saf SQL + schema_version, ORM migration yok |
+| 11 | [[checklists/performance-budget-check|performance-budget-check.md]] | — | 1 | olculmus butce; kanitsiz performans iddiasi 0 |
+| 12 | [[checklists/ribbon-style-check|ribbon-style-check.md]] | 004 | 0 | yalniz RibbonControlStyle.Office2010 |
+| 13 | [[checklists/secret-leak-check|secret-leak-check.md]] | 011 · 018 | 3 | kod/repoda secret 0, DPAPI |
+| 14 | [[checklists/security-review-checklist|security-review-checklist.md]] | 018 | 3 | OWASP kalemleri + yetkilendirme |
+| 15 | [[checklists/session-handoff-check|session-handoff-check.md]] | 007 | 0 | devir paketi 4 madde + derinlik <= 2 |
+| 16 | [[checklists/sql-injection-review|sql-injection-review.md]] | 017 | 2 | concat SQL 0, parametreli sorgu |
+| 17 | [[checklists/vault-link-check|vault-link-check.md]] | 003 · 021 | 1 | bozuk link 0, her dizinde tek indeks |
+| 18 | [[checklists/winforms-designer-check|winforms-designer-check.md]] | 015 | 2 | .Form.cs + .Designer.cs + .resx uclusu |
 
 ## §3 Referans Sayaci (hangisi en cok kullaniliyor)
 
@@ -118,4 +118,4 @@ GATE-004 (iskelet + build + ilk commit)  -->  GATE-005 (test + kapsam)  -->  GAT
 
 ## §5 Iliskili Dosyalar
 
-[vault index](../index.md) · [WORKFLOW](../governance/workflow.md) · [CLAUDE](../claude.md) · [AGENTS](../definitions/agents.md) · [brain](../.decisions/brain.md) · [PROJECTS](../definitions/projects.md) · [VISION](../definitions/vision.md) · [keys](../governance/keys.md) · [glossary](../definitions/glossary.md) · [log](../ops/log.md) · [TODOS index](../ops/todos/index.md) · [ADR-031](../.decisions/draft/adr-031-visual-production-provider.md)
+[[index|vault index]] · [[governance/workflow|WORKFLOW]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/projects|PROJECTS]] · [[definitions/vision|VISION]] · [[governance/keys|keys]] · [[definitions/glossary|glossary]] · [[ops/log|log]] · [[ops/todos/index|TODOS index]] · [[.decisions/draft/adr-031-visual-production-provider|ADR-031]]

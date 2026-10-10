@@ -13,7 +13,7 @@ supersedes: ""
 ---
 # Architect Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [developer](developer-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [[index|index]] | [[definitions/agents|AGENTS.md]] | [[governance/workflow|WORKFLOW.md]] | [[definitions/role|ROLE.md]] | [[.decisions/adr-index|ADR index]] | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | [[checklists/layer-boundary-check|layer-boundary-check]] | [[.agents/developer-agent|developer]] | [[.agents/reviewer-agent|reviewer]] | [[.agents/tester-agent|tester]] | [[.agents/ui-designer-agent|ui-designer]] | [[.agents/general-agent|general]]
 
 > **Tek cumlelik sorumluluk:** Architect; katman sinirlarini, proje referanslarini ve ADR uyumunu tasarlar, kod yazmaz, kaniti gate dosyasina yazar.
 
@@ -30,9 +30,9 @@ Architect, kod tabaninin iskeletini koruyan ajan. Mimari karari veren degil; ver
 
 ## §1 On Kosullar
 
-- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) okunmus olmali.
-- [layer-boundary-check](../checklists/layer-boundary-check.md) elinde olmali.
-- [WORKFLOW.md](../governance/workflow.md) gate sirasi biliniyor olmali.
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] okunmus olmali.
+- [[checklists/layer-boundary-check|layer-boundary-check]] elinde olmali.
+- [[governance/workflow|WORKFLOW.md]] gate sirasi biliniyor olmali.
 
 ## §2 Adimlar
 
@@ -57,7 +57,7 @@ Architect, kod tabaninin iskeletini koruyan ajan. Mimari karari veren degil; ver
 
 1. Degisikligi geri al: `git checkout -- *.csproj`
 2. Build'i tekrarla: `dotnet build`
-3. [layer-boundary-check](../checklists/layer-boundary-check.md) sonucunu not et.
+3. [[checklists/layer-boundary-check|layer-boundary-check]] sonucunu not et.
 
 ## §5 Kabul Kriteri
 
@@ -84,14 +84,14 @@ Architect, kod tabaninin iskeletini koruyan ajan. Mimari karari veren degil; ver
 |---|---|---|
 | Tarama suresi | 5 dk | checklist dolduruldu mu |
 | Build suresi | 3 dk | hata sayisi 0 |
-| Rapor | gate dosyasi | [index](../index.md) |
+| Rapor | gate dosyasi | [[index|index]] |
 
 ## §8 Kapsam Disi
 
 - Kod yazmak.
-- Test uretmek (bkz. [tester](tester-agent.md)).
-- UI tasarimi (bkz. [ui-designer](ui-designer-agent.md)).
-- Mimari karar vermek; karar [ADR](../.decisions/adr-index.md)'dir.
+- Test uretmek (bkz. [[.agents/tester-agent|tester]]).
+- UI tasarimi (bkz. [[.agents/ui-designer-agent|ui-designer]]).
+- Mimari karar vermek; karar [[.decisions/adr-index|ADR]]'dir.
 
 ## §9 Kanit
 

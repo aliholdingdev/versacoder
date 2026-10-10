@@ -14,9 +14,9 @@ supersedes: ""
 
 # Erisilebilirlik ve Klavye Navigasyonu (v26.1)
 
-**Zorunlu Baglantilar:** [bilgi indeksi](../index.md) · [vault index](../../index.md) · [kodlama standartlari](../../.rules/coding-standards.md) · [ADR-001 dual target](../../.decisions/accepted/adr-001-dual-target-net48-net10.md) · [bar-status-items](bar-status-items.md) · [dx-validation-provider](dx-validation-provider.md)
-**Küme + Hub:** [devexpress index](index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress · 5/35):** [accordion-navigation](accordion-navigation.md) · [alertcontrol-notifications](alertcontrol-notifications.md) · [chartcontrol-basics](chartcontrol-basics.md) · [checkedcomboedit-values](checkedcomboedit-values.md) · [comboboxedit-autocomplete](comboboxedit-autocomplete.md) · [datasource-binding-dapper](datasource-binding-dapper.md) · [dateedit-timeedit](dateedit-timeedit.md) · [docking-saved-layout-xml](docking-saved-layout-xml.md) · [docklayout-persistence](docklayout-persistence.md) · [dockmanager-panels](dockmanager-panels.md) · [grid-editing-modes](grid-editing-modes.md) · [grid-export-excel-pdf](grid-export-excel-pdf.md) · [grid-filtering-sorting](grid-filtering-sorting.md) · [grid-grouping-summaries](grid-grouping-summaries.md) · [grid-paging-virtual-mode](grid-paging-virtual-mode.md) · [grid-search-panel-find](grid-search-panel-find.md) · [gridcontrol-basics](gridcontrol-basics.md) · [gridview-columns-format](gridview-columns-format.md) · [layoutcontrol-grouping](layoutcontrol-grouping.md) · [lookUpEdit-cascading](lookupedit-cascading.md) · [mvvm-pattern-devexpress](mvvm-pattern-devexpress.md) · [nuget-references-cpm](nuget-references-cpm.md) · [performance-grid-optimization](performance-grid-optimization.md) · [ribbon-control-office2010](ribbon-control-office2010.md) · [ribbon-form-basics](ribbon-form-basics.md) · [ribbon-pages-groups-items](ribbon-pages-groups-items.md) · [skin-customization](skin-customization.md) · [splashscreen-waitform](splashscreen-waitform.md) · [tabcontrol-multipage](tabcontrol-multipage.md) · [theme-manager-office2010](theme-manager-office2010.md)
+**Zorunlu Baglantilar:** [[knowledge/index|bilgi indeksi]] · [[index|vault index]] · [[.rules/coding-standards|kodlama standartlari]] · [[.decisions/accepted/adr-001-dual-target-net48-net10|ADR-001 dual target]] · [[knowledge/devexpress/bar-status-items|bar-status-items]] · [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress · 5/35):** [[knowledge/devexpress/accordion-navigation|accordion-navigation]] · [[knowledge/devexpress/alertcontrol-notifications|alertcontrol-notifications]] · [[knowledge/devexpress/chartcontrol-basics|chartcontrol-basics]] · [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] · [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] · [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] · [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] · [[knowledge/devexpress/docking-saved-layout-xml|docking-saved-layout-xml]] · [[knowledge/devexpress/docklayout-persistence|docklayout-persistence]] · [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] · [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] · [[knowledge/devexpress/grid-export-excel-pdf|grid-export-excel-pdf]] · [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] · [[knowledge/devexpress/grid-grouping-summaries|grid-grouping-summaries]] · [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]] · [[knowledge/devexpress/grid-search-panel-find|grid-search-panel-find]] · [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] · [[knowledge/devexpress/gridview-columns-format|gridview-columns-format]] · [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] · [[knowledge/devexpress/lookupedit-cascading|lookUpEdit-cascading]] · [[knowledge/devexpress/mvvm-pattern-devexpress|mvvm-pattern-devexpress]] · [[knowledge/devexpress/nuget-references-cpm|nuget-references-cpm]] · [[knowledge/devexpress/performance-grid-optimization|performance-grid-optimization]] · [[knowledge/devexpress/ribbon-control-office2010|ribbon-control-office2010]] · [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] · [[knowledge/devexpress/ribbon-pages-groups-items|ribbon-pages-groups-items]] · [[knowledge/devexpress/skin-customization|skin-customization]] · [[knowledge/devexpress/splashscreen-waitform|splashscreen-waitform]] · [[knowledge/devexpress/tabcontrol-multipage|tabcontrol-multipage]] · [[knowledge/devexpress/theme-manager-office2010|theme-manager-office2010]]
 
 > **Tek cumlelik sorumluluk:** *Ekran klavye ve ekran okuyucu ile uygulama kullanilabilir mi, etkilesimli noktalar nerede* sorusunun tek cevabidir.
 
@@ -96,8 +96,8 @@ btnRun.TabStop = true;                      // odaklanabilir
 
 | Kural | Yeri | Not |
 |---|---|---|
-| Anlik geri bildirim (hata ikonu) | `DXErrorProvider` + `Validating` | bkz. [dx-validation-provider](dx-validation-provider.md) |
-| Durum metni (sayac/ad) | status bar ogeleri | bkz. [bar-status-items](bar-status-items.md) |
+| Anlik geri bildirim (hata ikonu) | `DXErrorProvider` + `Validating` | bkz. [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] |
+| Durum metni (sayac/ad) | status bar ogeleri | bkz. [[knowledge/devexpress/bar-status-items|bar-status-items]] |
 | Isleme kurali | ViewModel / servis | View'a gomulmez |
 | Kalici veri | ADO.NET + Dapper, `@p1` parametreli | EF Core onerilmez (ADR-005) |
 
@@ -115,10 +115,10 @@ btnRun.TabStop = true;                      // odaklanabilir
 
 | Konu | Dosya |
 |---|---|
-| Durum cubugu ogeleri | [bar-status-items](bar-status-items.md) |
-| Alan dogrulama + ikon | [dx-validation-provider](dx-validation-provider.md) |
-| Ribbon formu ve stil siniri | [designer-runtime-customization](designer-runtime-customization.md) |
-| Kosullu bicim ile geri bildirim | [grid-conditional-format-rules](grid-conditional-format-rules.md) |
+| Durum cubugu ogeleri | [[knowledge/devexpress/bar-status-items|bar-status-items]] |
+| Alan dogrulama + ikon | [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] |
+| Ribbon formu ve stil siniri | [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]] |
+| Kosullu bicim ile geri bildirim | [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] |
 
 ## §9 Kanit
 

@@ -14,7 +14,7 @@ supersedes: ""
 
 # 08 — ASCII/UNICODE ART VIEWER
 
-**Zorunlu Bağlantılar:** [ui-design/index](readme.md) · [01-start-page](01-start-page.md) · [02-main-ide](02-main-ide.md) · [07-settings](07-settings.md) · [ui-rules](../.rules/ui-rules.md) · [devexpress-rules](../.rules/devexpress-rules.md) · [WORKFLOW](../governance/workflow.md)
+**Zorunlu Bağlantılar:** [[ui-design/readme|ui-design/index]] · [[ui-design/01-start-page|01-start-page]] · [[ui-design/02-main-ide|02-main-ide]] · [[ui-design/07-settings|07-settings]] · [[.rules/ui-rules|ui-rules]] · [[.rules/devexpress-rules|devexpress-rules]] · [[governance/workflow|WORKFLOW]]
 
 > **Tek cümlelik sorumluluk:** ASCII **ve Unicode** sanat dosyalarını Windows penceresi
 > kabuğu içinde gösteren izleyicinin pencere düğmelerini, bölgelerini ve tıklama akışını tanımlar.
@@ -32,7 +32,7 @@ tuvalde göster -> kodek/karakter seti -> dışa aktar.
 doğrudan gösterilir; ASCII modu ikincildir.
 
 **Durum: GATE-003 onayı alındı (2026-10-01, 7+1 ekran ONAYLI)** — kod izni
-[checklist](../checklists/gate-003-ui-onay.md) 13/13 tamamlandığında açılır (G12).
+[[checklists/gate-003-ui-onay|checklist]] 13/13 tamamlandığında açılır (G12).
 
 | Bölge | Kontrol (teklif) | Yerleşim |
 |---|---|---|
@@ -44,7 +44,7 @@ doğrudan gösterilir; ASCII modu ikincildir.
 
 **Karakter seti (G4 uyumu):** kutu çizimi `|` `-` `+` (ASCII) · dolum `█` `░` (U+2588 /
 U+2591 — *dolgu, kutu çizimi değildir*) · harf `ü ö ç ş ğ ı` · ok `->`. **Yasak kalan:**
-`U+2500-U+257F` box-drawing — bkz. [wireframe-template](../.templates/ui-design/wireframe-template.md)
+`U+2500-U+257F` box-drawing — bkz. [[.templates/ui-design/wireframe-template|wireframe-template]]
 karakter seti tablosu.
 
 **Künye:** `net48 + net10.0-windows` · DevExpress Universal **v26.1** · dosya adı sözleşmesi
@@ -178,4 +178,4 @@ karakter seti tablosu.
 | `Durum` `BEKLEMEDE` | kod yasak (G12) |
 | `Durum` `RED` | yalnız bu ekran durur; 01..07 etkilenmez |
 | `Durum` `REVİZE` | değişiklik uygulanır, tekrar `ONAYLI` gerekir |
-| `Durum` `ONAYLI` + [checklist](../checklists/gate-003-ui-onay.md) 13 madde | GATE-003 açılır |
+| `Durum` `ONAYLI` + [[checklists/gate-003-ui-onay|checklist]] 13 madde | GATE-003 açılır |

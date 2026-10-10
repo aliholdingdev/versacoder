@@ -14,10 +14,10 @@ supersedes: ""
 
 # Solution Explorer Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [project-model](project-model-spec.md) · [code-editor](code-editor-spec.md) · [search-grep](search-grep-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/project-model-spec|project-model]] · [[spec/code-editor-spec|code-editor]] · [[spec/search-grep-spec|search-grep]]
 
 > **Tek cümlelik sorumluluk:** *Açık projenin dosya ağacı nereden gelir, nasıl tazelenir ve hangi dosya işlemi hangi sınır içinde kalır* sorusunun tek cevabıdır.
-> Ağaç **gösterimdir**: diske yazar, veritabanına yazar; modeli [project-model](project-model-spec.md) taşır.
+> Ağaç **gösterimdir**: diske yazar, veritabanına yazar; modeli [[spec/project-model-spec|project-model]] taşır.
 
 ---
 
@@ -31,11 +31,11 @@ Ağaç `TreeList` üzerinde yaşar; düğümler **proje → klasör → dosya** 
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Ağaç yükleme, tarama, filtre, yenileme | Proje kaydının veritabanı modeli | [project-model](project-model-spec.md) |
-| 2 | Dosya/dizin oluşturma, taşıma, yeniden adlandırma | Editör sekmesi/dirty davranışı | [code-editor](code-editor-spec.md) |
-| 3 | Silme **onayı** + sonucun gösterimi | Bildirim/toast biçimi | [notification](notification-spec.md) |
-| 4 | Çift tık → `open.file` komutu (l2 handler) | Komutun çalıştırılması (kuyruk) | [task-queue](task-queue-spec.md) |
-| 5 | Dosya adı filtresi (yerel) | Proje geneli grep/glob araması | [search-grep](search-grep-spec.md) |
+| 1 | Ağaç yükleme, tarama, filtre, yenileme | Proje kaydının veritabanı modeli | [[spec/project-model-spec|project-model]] |
+| 2 | Dosya/dizin oluşturma, taşıma, yeniden adlandırma | Editör sekmesi/dirty davranışı | [[spec/code-editor-spec|code-editor]] |
+| 3 | Silme **onayı** + sonucun gösterimi | Bildirim/toast biçimi | [[spec/notification-spec|notification]] |
+| 4 | Çift tık → `open.file` komutu (l2 handler) | Komutun çalıştırılması (kuyruk) | [[spec/task-queue-spec|task-queue]] |
+| 5 | Dosya adı filtresi (yerel) | Proje geneli grep/glob araması | [[spec/search-grep-spec|search-grep]] |
 
 ---
 
@@ -88,7 +88,7 @@ Ağaç `TreeList` üzerinde yaşar; düğümler **proje → klasör → dosya** 
 | Dosya izni | `UnauthorizedAccessException` yakalama | aynı | fark yok |
 | Uzun yol (`\\?\`) | sınırlı | `longPathAware` varsayılan | `#if` yalnız gerekirse |
 
-> Kod taraması `System.IO` üzerinden yürür; **EF Core yok**, dosya listesi DB'ye kopyalanmaz (yalnız son proje kaydı DB'dedir — [persistence](persistence-spec.md)).
+> Kod taraması `System.IO` üzerinden yürür; **EF Core yok**, dosya listesi DB'ye kopyalanmaz (yalnız son proje kaydı DB'dedir — [[spec/persistence-spec|persistence]]).
 
 ---
 

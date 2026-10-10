@@ -14,7 +14,7 @@ supersedes: ""
 
 # ADR Şablonu — Veri Yığını, Şema, SQL Migration ve `schema_version` Varyantı
 
-**Zorunlu Bağlantılar:** [adr-template](adr-template.md) · [adr-index](adr-index.md) · [Vault](../../index.md) · [ARCHITECTURE](../../architecture/index.md) · [Karar Defteri](../../.decisions/index.md) · [security-rules](../../.rules/security-rules.md) · [performance-guidelines](../../.rules/performance-guidelines.md)
+**Zorunlu Bağlantılar:** [[.templates/adr/adr-template|adr-template]] · [[.templates/adr/adr-index|adr-index]] · [[index|Vault]] · [[architecture/index|ARCHITECTURE]] · [[.decisions/index|Karar Defteri]] · [[.rules/security-rules|security-rules]] · [[.rules/performance-guidelines|performance-guidelines]]
 
 ---
 
@@ -136,7 +136,7 @@ template: adr-data-template.md
 
 ```markdown
 # ADR-NNN: <İngilizce karar başlığı>
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md) · [security-rules](../../.rules/security-rules.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]] · [[.rules/security-rules|security-rules]]
 ```
 
 ### §3.3 §1 İskeleti (Amaç)
@@ -204,7 +204,7 @@ related_rules: [coding-standards, security-rules]
 template: adr-data-template.md
 ---
 # ADR-004: Data Stack (ADO.NET + Dapper, `@p1..@pN`, `schema_version`)
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [security-rules](../../.rules/security-rules.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[.rules/security-rules|security-rules]]
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli
@@ -295,7 +295,7 @@ related_rules: [coding-standards, security-rules]
 template: adr-data-template.md
 ---
 # {{ADR_ID}}: {{INGILIZCE_KARAR_BASLIGI}}
-**Zorunlu Bağlantılar:** [.decisions/index](../index.md) · [ARCHITECTURE](../../architecture/index.md) · [security-rules](../../.rules/security-rules.md)
+**Zorunlu Bağlantılar:** [[.templates/index|.decisions/index]] · [[architecture/index|ARCHITECTURE]] · [[.rules/security-rules|security-rules]]
 
 ## §1 Amaç
 ### §1.1 Neden bu varyant gerekli

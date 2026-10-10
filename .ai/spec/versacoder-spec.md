@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Ürün Şartnamesi (`spec/versacoder-spec.md`)
 
-**Zorunlu Bağlantılar:** [index.md](../index.md) · [CLAUDE.md](../claude.md) · [keys.md](../governance/keys.md) · [protocol-spec.md](protocol-spec.md) · [session-spec.md](session-spec.md) · [tool-spec.md](tool-spec.md) · [test-strategy.md](test-strategy.md) · [../reports/00-kapsam-analizi.md](../ops/log.md)
+**Zorunlu Bağlantılar:** [[index|index.md]] · [[claude|CLAUDE.md]] · [[governance/keys|keys.md]] · [[spec/protocol-spec|protocol-spec.md]] · [[spec/session-spec|session-spec.md]] · [[spec/tool-spec|tool-spec.md]] · [[spec/test-strategy|test-strategy.md]] · [[ops/log|../reports/00-kapsam-analizi.md]]
 
 > **Tek cümlelik sorumluluk:** *VersaCoder ne yapar, hangi ekranlar vardır, hangi gereksinimler test edilebilir* sorusunun tek cevabıdır.
 > Gereksinim kimliği biçimi: **`VC-PRD-NNN`**. Her madde **test edilebilir** yazılır; kabul kriteri olmadan gereksinim sayılmaz (G5).

@@ -14,16 +14,16 @@ supersedes: ""
 
 # Gözlemlenebilirlik Şartnamesi — VersaCoder
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [testing-rules](../.rules/testing-rules.md) · [architecture](../architecture/index.md) · [versacoder-spec](versacoder-spec.md) · [error-handling](error-handling-spec.md) · [notification](notification-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[.rules/testing-rules|testing-rules]] · [[architecture/index|architecture]] · [[spec/versacoder-spec|versacoder-spec]] · [[spec/error-handling-spec|error-handling]] · [[spec/notification-spec|notification]]
 
 > **Tek cümlelik sorumluluk:** *Ne loglanır, ne ölçülür, nasıl izlenir ve bunların hepsi l3 Crosscutting ile nasıl tutarlı kalır* sorusunun tek cevabıdır.
-> **SSOT:** log/cache/clock/config/retry arayüzleri [l3 Crosscutting](../architecture/index.md) şartnamesindedir; bu dosya yalnız **kullanım sözleşmesini** yazar.
+> **SSOT:** log/cache/clock/config/retry arayüzleri [[architecture/index|l3 Crosscutting]] şartnamesindedir; bu dosya yalnız **kullanım sözleşmesini** yazar.
 
 ---
 
 ## §0 Özet (Answer First)
 
-Tek loglama yüzeyi l3 **`ILogSink`**'tir (`Trace..Error`, alanlı `LogEntry`); sink'ler `FileLogSink` + `DebugLogSink` + `CompositeLogSink` (masaüstü varsayılanı), testte `NullLogSink`. Metrik **BCL ile** üretilir (paket yok — G8): sayaç + süre (`Stopwatch`), gün sonunda tek JSON özete yazılır. Her olayda **`traceId` (oturum) + `taskId`** vardır; hata kaydı [error-handling](error-handling-spec.md) kodunu taşır. Uzun sessizlik görünür olmalıdır (G11).
+Tek loglama yüzeyi l3 **`ILogSink`**'tir (`Trace..Error`, alanlı `LogEntry`); sink'ler `FileLogSink` + `DebugLogSink` + `CompositeLogSink` (masaüstü varsayılanı), testte `NullLogSink`. Metrik **BCL ile** üretilir (paket yok — G8): sayaç + süre (`Stopwatch`), gün sonunda tek JSON özete yazılır. Her olayda **`traceId` (oturum) + `taskId`** vardır; hata kaydı [[spec/error-handling-spec|error-handling]] kodunu taşır. Uzun sessizlik görünür olmalıdır (G11).
 
 ---
 
@@ -31,11 +31,11 @@ Tek loglama yüzeyi l3 **`ILogSink`**'tir (`Trace..Error`, alanlı `LogEntry`); 
 
 | # | Kapsam içi | Kapsam dışı | Nerede |
 |---|---|---|---|
-| 1 | Log kayıt biçimi, seviye seçimi, alan adları | `ILogSink`/`LogEntry` tipi tanımı | [architecture](../architecture/index.md) l3 |
+| 1 | Log kayıt biçimi, seviye seçimi, alan adları | `ILogSink`/`LogEntry` tipi tanımı | [[architecture/index|architecture]] l3 |
 | 2 | Metrik sayaçları ve toplama periyodu | Harici izleme sunucusu / agent | kapsam dışı (masaüstü, tek kullanıcı) |
-| 3 | Teşhis/izleme ekranının verisi | Bildirim/toast kanalları | [notification](notification-spec.md) |
-| 4 | Hata kaydının içeriği (kod + alanlar) | Hata kodu üretimi | [error-handling](error-handling-spec.md) |
-| 5 | Günlük dosyası döngüsü/boyut sınırı | Dosya yolları/atomik yazım | [persistence](persistence-spec.md) |
+| 3 | Teşhis/izleme ekranının verisi | Bildirim/toast kanalları | [[spec/notification-spec|notification]] |
+| 4 | Hata kaydının içeriği (kod + alanlar) | Hata kodu üretimi | [[spec/error-handling-spec|error-handling]] |
+| 5 | Günlük dosyası döngüsü/boyut sınırı | Dosya yolları/atomik yazım | [[spec/persistence-spec|persistence]] |
 
 ---
 

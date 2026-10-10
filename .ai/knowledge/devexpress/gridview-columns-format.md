@@ -14,9 +14,9 @@ supersedes: ""
 
 # GridView Kolon Baglari ve Bicim
 
-**Zorunlu Baglantilar:** [vault indeks](../index.md) · [devexpress-rules](../../.rules/devexpress-rules.md) · [gridcontrol-basics](gridcontrol-basics.md) · [grid-conditional-format-rules](grid-conditional-format-rules.md) · [datasource-binding-dapper](datasource-binding-dapper.md) · [skin-customization](skin-customization.md)
-**Küme + Hub:** [devexpress index](index.md) · [index](../../index.md) · [CLAUDE](../../claude.md) · [AGENTS](../../definitions/agents.md) · [brain](../../.decisions/brain.md) · [glossary](../../definitions/glossary.md) · [keys](../../governance/keys.md)
-**Kardeşler (devexpress 7/35):** [accessibility-keyboard-nav](accessibility-keyboard-nav.md) [accordion-navigation](accordion-navigation.md) [alertcontrol-notifications](alertcontrol-notifications.md) [bar-status-items](bar-status-items.md) [chartcontrol-basics](chartcontrol-basics.md) [checkedcomboedit-values](checkedcomboedit-values.md) [comboboxedit-autocomplete](comboboxedit-autocomplete.md) [dateedit-timeedit](dateedit-timeedit.md) [designer-runtime-customization](designer-runtime-customization.md) [docklayout-persistence](docklayout-persistence.md) [dockmanager-panels](dockmanager-panels.md) [dx-validation-provider](dx-validation-provider.md) [grid-export-excel-pdf](grid-export-excel-pdf.md) [grid-filtering-sorting](grid-filtering-sorting.md) [grid-grouping-summaries](grid-grouping-summaries.md) [grid-paging-virtual-mode](grid-paging-virtual-mode.md) [grid-search-panel-find](grid-search-panel-find.md) [layoutcontrol-grouping](layoutcontrol-grouping.md) [lookUpEdit-cascading](lookupedit-cascading.md) [mvvm-pattern-devexpress](mvvm-pattern-devexpress.md) [nuget-references-cpm](nuget-references-cpm.md) [performance-grid-optimization](performance-grid-optimization.md) [ribbon-control-office2010](ribbon-control-office2010.md) [ribbon-form-basics](ribbon-form-basics.md) [ribbon-pages-groups-items](ribbon-pages-groups-items.md) [splashscreen-waitform](splashscreen-waitform.md) [tabcontrol-multipage](tabcontrol-multipage.md) [theme-manager-office2010](theme-manager-office2010.md)
+**Zorunlu Baglantilar:** [[knowledge/index|vault indeks]] · [[.rules/devexpress-rules|devexpress-rules]] · [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] · [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] · [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] · [[knowledge/devexpress/skin-customization|skin-customization]]
+**Küme + Hub:** [[knowledge/devexpress/index|devexpress index]] · [[index|index]] · [[claude|CLAUDE]] · [[definitions/agents|AGENTS]] · [[.decisions/brain|brain]] · [[definitions/glossary|glossary]] · [[governance/keys|keys]]
+**Kardeşler (devexpress 7/35):** [[knowledge/devexpress/accessibility-keyboard-nav|accessibility-keyboard-nav]] [[knowledge/devexpress/accordion-navigation|accordion-navigation]] [[knowledge/devexpress/alertcontrol-notifications|alertcontrol-notifications]] [[knowledge/devexpress/bar-status-items|bar-status-items]] [[knowledge/devexpress/chartcontrol-basics|chartcontrol-basics]] [[knowledge/devexpress/checkedcomboedit-values|checkedcomboedit-values]] [[knowledge/devexpress/comboboxedit-autocomplete|comboboxedit-autocomplete]] [[knowledge/devexpress/dateedit-timeedit|dateedit-timeedit]] [[knowledge/devexpress/designer-runtime-customization|designer-runtime-customization]] [[knowledge/devexpress/docklayout-persistence|docklayout-persistence]] [[knowledge/devexpress/dockmanager-panels|dockmanager-panels]] [[knowledge/devexpress/dx-validation-provider|dx-validation-provider]] [[knowledge/devexpress/grid-export-excel-pdf|grid-export-excel-pdf]] [[knowledge/devexpress/grid-filtering-sorting|grid-filtering-sorting]] [[knowledge/devexpress/grid-grouping-summaries|grid-grouping-summaries]] [[knowledge/devexpress/grid-paging-virtual-mode|grid-paging-virtual-mode]] [[knowledge/devexpress/grid-search-panel-find|grid-search-panel-find]] [[knowledge/devexpress/layoutcontrol-grouping|layoutcontrol-grouping]] [[knowledge/devexpress/lookupedit-cascading|lookUpEdit-cascading]] [[knowledge/devexpress/mvvm-pattern-devexpress|mvvm-pattern-devexpress]] [[knowledge/devexpress/nuget-references-cpm|nuget-references-cpm]] [[knowledge/devexpress/performance-grid-optimization|performance-grid-optimization]] [[knowledge/devexpress/ribbon-control-office2010|ribbon-control-office2010]] [[knowledge/devexpress/ribbon-form-basics|ribbon-form-basics]] [[knowledge/devexpress/ribbon-pages-groups-items|ribbon-pages-groups-items]] [[knowledge/devexpress/splashscreen-waitform|splashscreen-waitform]] [[knowledge/devexpress/tabcontrol-multipage|tabcontrol-multipage]] [[knowledge/devexpress/theme-manager-office2010|theme-manager-office2010]]
 
 > **Tek cumlelik sorumluluk:** *Bir kolon veriyi nereden alir, nasil bicimlenir ve ne zaman metni kodda degistirilir* sorusunun tek cevabidir.
 
@@ -115,10 +115,10 @@ gridView1.CustomUnboundColumnData += (s, e) =>
 |---|---|---|
 | Baslik degistirme | `Caption` (Designer) | kolon |
 | Sayi/tarih bicimi | `FormatType` + `FormatString` | bicim |
-| Kosullu renk/format | format rule | [grid-conditional-format-rules](grid-conditional-format-rules.md) |
+| Kosullu renk/format | format rule | [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] |
 | Maskeleme (IBAN, telefon) | `CustomColumnDisplayText` | olay |
-| Zemin/font (genel) | `Appearance` / skin | [skin-customization](skin-customization.md) |
-| Sutun sirasi kalici | `SaveLayoutToXml` | [docking-saved-layout-xml](docking-saved-layout-xml.md) |
+| Zemin/font (genel) | `Appearance` / skin | [[knowledge/devexpress/skin-customization|skin-customization]] |
+| Sutun sirasi kalici | `SaveLayoutToXml` | [[knowledge/devexpress/docking-saved-layout-xml|docking-saved-layout-xml]] |
 
 ---
 
@@ -139,11 +139,11 @@ gridView1.CustomUnboundColumnData += (s, e) =>
 
 | Konu | Dosya |
 |---|---|
-| Grid iskeleti | [gridcontrol-basics](gridcontrol-basics.md) |
-| Kosullu bicimlendirme | [grid-conditional-format-rules](grid-conditional-format-rules.md) |
-| Veri kaynagi (Dapper) | [datasource-binding-dapper](datasource-binding-dapper.md) |
-| Duzenleme + editör | [grid-editing-modes](grid-editing-modes.md) |
-| Layout kaydi | [docking-saved-layout-xml](docking-saved-layout-xml.md) |
+| Grid iskeleti | [[knowledge/devexpress/gridcontrol-basics|gridcontrol-basics]] |
+| Kosullu bicimlendirme | [[knowledge/devexpress/grid-conditional-format-rules|grid-conditional-format-rules]] |
+| Veri kaynagi (Dapper) | [[knowledge/devexpress/datasource-binding-dapper|datasource-binding-dapper]] |
+| Duzenleme + editör | [[knowledge/devexpress/grid-editing-modes|grid-editing-modes]] |
+| Layout kaydi | [[knowledge/devexpress/docking-saved-layout-xml|docking-saved-layout-xml]] |
 
 ---
 

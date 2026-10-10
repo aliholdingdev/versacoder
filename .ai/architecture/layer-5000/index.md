@@ -7,13 +7,13 @@ version: 1.0.0
 updated: 2026-10-07
 authority: primary
 scope: "ADR-030 eksenleri + katalog/layer-5000 hedef yolları; veri henüz yok, iskelet sabit"
-tags: [['architecture', 'layer-5000', 'catalog', '5000', 'adr-030']]
+tags: [architecture, layer-5000, catalog, 5000, adr-030]
 source: "ADR-030 + spec/layering-5000-spec.md v2.1.0 (kaynak dosya); veri katmanı henüz üretilmedi (G9)"
 supersedes: ""
 ---
 
 
-**Zorunlu Bağlantılar:** [architecture index](../index.md) · [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md) · [ADR-028](../../.decisions/accepted/adr-028-layered-baseline-9-projects.md) · [layer-5000-check](../../checklists/layer-5000-check.md)
+**Zorunlu Bağlantılar:** [[architecture/index|architecture index]] · [[.decisions/accepted/adr-030-5000-layers-class-level|ADR-030]] · [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] · [[checklists/layer-5000-check|layer-5000-check]]
 
 # layer-5000 — İskelet
 
@@ -49,5 +49,5 @@ powershell -NoProfile -File ..\..\scripts\count-components.ps1 -MinRecords 5000 
 
 ## İlgili
 
-- [spec/layering-5000-spec](../../spec/layering-5000-spec.md) — davranış spec'i
-- [ADR-030](../../.decisions/accepted/adr-030-5000-layers-class-level.md)
+- [[spec/layering-5000-spec|spec/layering-5000-spec]] — davranış spec'i
+- [[.decisions/accepted/adr-030-5000-layers-class-level|ADR-030]]

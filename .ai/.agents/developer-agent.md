@@ -13,7 +13,7 @@ supersedes: ""
 ---
 # Developer Agent Profili
 
-**Zorunlu Baglantilar:** [index](../index.md) | [AGENTS.md](../definitions/agents.md) | [WORKFLOW.md](../governance/workflow.md) | [ROLE.md](../definitions/role.md) | [ADR index](../.decisions/adr-index.md) | [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) | [layer-boundary-check](../checklists/layer-boundary-check.md) | [architect](architect-agent.md) | [reviewer](reviewer-agent.md) | [tester](tester-agent.md) | [ui-designer](ui-designer-agent.md) | [general](general-agent.md)
+**Zorunlu Baglantilar:** [[index|index]] | [[definitions/agents|AGENTS.md]] | [[governance/workflow|WORKFLOW.md]] | [[definitions/role|ROLE.md]] | [[.decisions/adr-index|ADR index]] | [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] | [[checklists/layer-boundary-check|layer-boundary-check]] | [[.agents/architect-agent|architect]] | [[.agents/reviewer-agent|reviewer]] | [[.agents/tester-agent|tester]] | [[.agents/ui-designer-agent|ui-designer]] | [[.agents/general-agent|general]]
 
 > **Tek cumlelik sorumluluk:** Developer; mimariye uygun, tip guvenli, Result/Either deseniyle hata yoneten kodu uretir ve her dosya icin test biraktirir.
 
@@ -25,14 +25,14 @@ Developer, mimari karari uygulayan ajan. Profilin tamami AGENTS.md §1.1 icindek
 |---|---|---|
 | Tip guvenligi | as, bang, any yok | build uyarisi 0 |
 | Hata yonetimi | Result/Either | metod imzasi |
-| Katman | Domain'e harici bagimlilik yok | [layer-boundary-check](../checklists/layer-boundary-check.md) |
+| Katman | Domain'e harici bagimlilik yok | [[checklists/layer-boundary-check|layer-boundary-check]] |
 | Test | Her dosya icin test | test dosyasi |
 
 ## §1 On Kosullar
 
-- [ADR-028](../.decisions/accepted/adr-028-layered-baseline-9-projects.md) katmanlari biliniyor.
-- [AGENTS.md](../definitions/agents.md) cikti kutusu (§2) hatirlaniyor.
-- [WORKFLOW.md](../governance/workflow.md) kapidaki kural okundu.
+- [[.decisions/accepted/adr-028-layered-baseline-9-projects|ADR-028]] katmanlari biliniyor.
+- [[definitions/agents|AGENTS.md]] cikti kutusu (§2) hatirlaniyor.
+- [[governance/workflow|WORKFLOW.md]] kapidaki kural okundu.
 
 ## §2 Adimlar
 
@@ -83,14 +83,14 @@ Developer, mimari karari uygulayan ajan. Profilin tamami AGENTS.md §1.1 icindek
 |---|---|---|
 | Kod suresi | 15 dk | Derlendi mi |
 | Test suresi | 10 dk | Gecti mi |
-| Kontrol | [index](../index.md) | Rapor |
+| Kontrol | [[index|index]] | Rapor |
 
 ## §8 Kapsam Disi
 
-- Mimari karar (bkz. [architect](architect-agent.md)).
-- Kod incelemesi (bkz. [reviewer](reviewer-agent.md)).
-- Test stratejisi (bkz. [tester](tester-agent.md)).
-- UI tasarimi (bkz. [ui-designer](ui-designer-agent.md)).
+- Mimari karar (bkz. [[.agents/architect-agent|architect]]).
+- Kod incelemesi (bkz. [[.agents/reviewer-agent|reviewer]]).
+- Test stratejisi (bkz. [[.agents/tester-agent|tester]]).
+- UI tasarimi (bkz. [[.agents/ui-designer-agent|ui-designer]]).
 
 ## §9 Kanit
 

@@ -14,7 +14,7 @@ supersedes: ""
 
 # VersaCoder — Güvenlik Şartnamesi (`spec/security-spec.md`)
 
-**Zorunlu Bağlantılar:** [index](../index.md) · [CLAUDE.md](../claude.md) · [keys](../governance/keys.md) · [WORKFLOW](../governance/workflow.md) · [architecture/index](../architecture/index.md) · [tool-contract-spec](tool-contract-spec.md) · [data-layer-spec](data-layer-spec.md) · [host-layer-spec](host-layer-spec.md)
+**Zorunlu Bağlantılar:** [[index|index]] · [[claude|CLAUDE.md]] · [[governance/keys|keys]] · [[governance/workflow|WORKFLOW]] · [[architecture/index|architecture/index]] · [[spec/tool-contract-spec|tool-contract-spec]] · [[spec/data-layer-spec|data-layer-spec]] · [[spec/host-layer-spec|host-layer-spec]]
 
 > **Tek cümlelik sorumluluk:** *Secret nerede ve nasıl saklanır, kim neye izinlidir ve SQL enjeksiyonu hangi üç katmanda durdurulur* sorusunun tek cevabıdır.
 > Kural numaraları (SEC-01..SEC-16) `.rules/security-rules.md`'dedir; bu belge **uygulama davranışı**nı anlatır (tekrar yok).
@@ -31,11 +31,11 @@ Secret **repo'da ve düz metinde durmaz** (DPAPI / AES-256-GCM ile şifreli, ana
 
 | # | Kapsam | Kapsam dışı (nerede) |
 |---|---|---|
-| 1 | Secret saklama/çözme akışı (açılışta) | Açılmış config'in DI'a gidişi: [host-layer-spec](host-layer-spec.md) |
-| 2 | İzin modeli davranışı (`allow/ask/deny`, timeout'ta `deny`) | İzin matrisi + sandbox şeması: [tool-contract-spec](tool-contract-spec.md) |
-| 3 | SQL injection savunmasının üç katmanı | Repository davranışı: [data-layer-spec](data-layer-spec.md) |
-| 4 | Log/transcript kırmızıaltma (maskelenen değer tipleri) | Hata kodu listesi: [protocol-spec](protocol-spec.md) |
-| 5 | Yıkıcı işlem onayı (G7/G11) ve audit izi | Onay mercii/gate: [WORKFLOW](../governance/workflow.md) §3 |
+| 1 | Secret saklama/çözme akışı (açılışta) | Açılmış config'in DI'a gidişi: [[spec/host-layer-spec|host-layer-spec]] |
+| 2 | İzin modeli davranışı (`allow/ask/deny`, timeout'ta `deny`) | İzin matrisi + sandbox şeması: [[spec/tool-contract-spec|tool-contract-spec]] |
+| 3 | SQL injection savunmasının üç katmanı | Repository davranışı: [[spec/data-layer-spec|data-layer-spec]] |
+| 4 | Log/transcript kırmızıaltma (maskelenen değer tipleri) | Hata kodu listesi: [[spec/protocol-spec|protocol-spec]] |
+| 5 | Yıkıcı işlem onayı (G7/G11) ve audit izi | Onay mercii/gate: [[governance/workflow|WORKFLOW]] §3 |
 
 > **YASAK:** Repo'ya ham anahtar/`Password=`/`sk-` · `ECB`/sabit IV · `BinaryFormatter` · maskelenmemiş log · onaysız migration/silme (SEC-15).
 
